@@ -17,3 +17,7 @@ filename인 한글 파일을 읽어서  HWPFile 객체를 생성한 후 이 객�
 각각의 객체들과 객체에 포함된 메소스들에 대해선 "/doc" 디렉토리에 있는 javadoc 문서를 참고하실 바랍니다.
 
 요구사항이나 질문이 있으시면 issue로 올려주세요.
+
+한컴에서 제공하는 문서(HWP 5.0)는 아래URL에서 받을 수 있습니다. 
+
+http://www.hancom.com/etc/hwpDownload.do?gnb0=269&gnb1=271&gnb0=101&gnb1=140
