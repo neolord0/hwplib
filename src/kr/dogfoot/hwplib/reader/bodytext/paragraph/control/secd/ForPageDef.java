@@ -1,4 +1,4 @@
-﻿package kr.dogfoot.hwplib.reader.bodytext.paragraph.control.secd;
+package kr.dogfoot.hwplib.reader.bodytext.paragraph.control.secd;
 
 import java.io.IOException;
 

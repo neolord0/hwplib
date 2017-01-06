@@ -1,4 +1,4 @@
-﻿package kr.dogfoot.hwplib.object.docinfo.parashape;
+package kr.dogfoot.hwplib.object.docinfo.parashape;
 
 /**
  * 줄 나눔 기준 영어 단위

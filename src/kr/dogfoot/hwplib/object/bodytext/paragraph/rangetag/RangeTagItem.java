@@ -1,4 +1,4 @@
-﻿package kr.dogfoot.hwplib.object.bodytext.paragraph.rangetag;
+package kr.dogfoot.hwplib.object.bodytext.paragraph.rangetag;
 
 /**
  * 영역 태그 정보에 대한 객체

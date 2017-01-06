@@ -1,4 +1,4 @@
-﻿package kr.dogfoot.hwplib.reader.bodytext.paragraph.control.tbl;
+package kr.dogfoot.hwplib.reader.bodytext.paragraph.control.tbl;
 
 import java.io.IOException;
 
@@ -67,7 +67,7 @@ public class ForCell {
 			lh.setFieldName(sr.readUTF16LEString());
 			unknownBytes(8, sr);
 		} else {
-			unknownBytes(8, sr);
+			unknownBytes(7, sr);
 		}
 	}
 

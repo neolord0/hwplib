@@ -1,4 +1,4 @@
-﻿package kr.dogfoot.hwplib.object.bodytext.paragraph.header;
+package kr.dogfoot.hwplib.object.bodytext.paragraph.header;
 
 /**
  * 문단 헤더 레코드

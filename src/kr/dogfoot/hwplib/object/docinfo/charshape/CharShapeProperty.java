@@ -1,4 +1,4 @@
-﻿package kr.dogfoot.hwplib.object.docinfo.charshape;
+package kr.dogfoot.hwplib.object.docinfo.charshape;
 
 import kr.dogfoot.hwplib.object.docinfo.borderfill.BorderType;
 import kr.dogfoot.hwplib.util.binary.BitFlag;

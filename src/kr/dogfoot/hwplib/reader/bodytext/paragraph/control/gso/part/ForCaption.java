@@ -1,4 +1,4 @@
-﻿package kr.dogfoot.hwplib.reader.bodytext.paragraph.control.gso.part;
+package kr.dogfoot.hwplib.reader.bodytext.paragraph.control.gso.part;
 
 import java.io.IOException;
 

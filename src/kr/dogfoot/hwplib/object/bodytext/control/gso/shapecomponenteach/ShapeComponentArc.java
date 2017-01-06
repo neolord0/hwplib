@@ -1,4 +1,4 @@
-﻿package kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponenteach;
+package kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponenteach;
 
 import kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponenteach.arc.ArcBorder;
 

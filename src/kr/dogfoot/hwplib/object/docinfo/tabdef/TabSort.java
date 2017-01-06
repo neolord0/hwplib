@@ -1,4 +1,4 @@
-﻿package kr.dogfoot.hwplib.object.docinfo.tabdef;
+package kr.dogfoot.hwplib.object.docinfo.tabdef;
 
 /**
  * 탭의 종류

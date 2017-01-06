@@ -1,4 +1,4 @@
-﻿package kr.dogfoot.hwplib.object.docinfo.facename;
+package kr.dogfoot.hwplib.object.docinfo.facename;
 
 /**
  * 글꼴 유형 정보에 대한 객체

@@ -1,4 +1,4 @@
-﻿package kr.dogfoot.hwplib.object.bodytext.control.ctrlheader.columndefine;
+package kr.dogfoot.hwplib.object.bodytext.control.ctrlheader.columndefine;
 
 /**
  * 하나의 단에 대한 정보를 나태내는 객체

@@ -1,4 +1,4 @@
-﻿package kr.dogfoot.hwplib.object.bindata;
+package kr.dogfoot.hwplib.object.bindata;
 
 import java.util.ArrayList;
 

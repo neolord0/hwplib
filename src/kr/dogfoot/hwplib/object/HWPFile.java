@@ -1,4 +1,4 @@
-﻿package kr.dogfoot.hwplib.object;
+package kr.dogfoot.hwplib.object;
 
 import kr.dogfoot.hwplib.object.bindata.BinData;
 import kr.dogfoot.hwplib.object.bodytext.BodyText;

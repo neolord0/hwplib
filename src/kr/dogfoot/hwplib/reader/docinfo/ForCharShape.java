@@ -1,4 +1,4 @@
-﻿package kr.dogfoot.hwplib.reader.docinfo;
+package kr.dogfoot.hwplib.reader.docinfo;
 
 import kr.dogfoot.hwplib.object.docinfo.CharShape;
 import kr.dogfoot.hwplib.object.docinfo.charshape.CharOffsets;

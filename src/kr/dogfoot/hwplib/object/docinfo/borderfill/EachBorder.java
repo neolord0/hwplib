@@ -1,4 +1,4 @@
-﻿package kr.dogfoot.hwplib.object.docinfo.borderfill;
+package kr.dogfoot.hwplib.object.docinfo.borderfill;
 
 import kr.dogfoot.hwplib.object.etc.Color4Byte;
 

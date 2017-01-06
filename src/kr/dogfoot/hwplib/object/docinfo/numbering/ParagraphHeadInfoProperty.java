@@ -1,4 +1,4 @@
-﻿package kr.dogfoot.hwplib.object.docinfo.numbering;
+package kr.dogfoot.hwplib.object.docinfo.numbering;
 
 import kr.dogfoot.hwplib.util.binary.BitFlag;
 

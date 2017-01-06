@@ -1,4 +1,4 @@
-﻿package kr.dogfoot.hwplib.object.bodytext.control.ctrlheader.columndefine;
+package kr.dogfoot.hwplib.object.bodytext.control.ctrlheader.columndefine;
 
 /**
  * 단 종류

@@ -1,4 +1,4 @@
-﻿package kr.dogfoot.hwplib.object.fileheader;
+package kr.dogfoot.hwplib.object.fileheader;
 
 /**
  * 파일 버전를 나타내는 객체

@@ -1,4 +1,4 @@
-﻿package kr.dogfoot.hwplib.object.bodytext.control.ctrlheader.gso;
+package kr.dogfoot.hwplib.object.bodytext.control.ctrlheader.gso;
 
 /**
  * 가로 위치의 기준

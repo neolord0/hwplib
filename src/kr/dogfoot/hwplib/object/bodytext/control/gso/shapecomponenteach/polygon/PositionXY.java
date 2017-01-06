@@ -1,4 +1,4 @@
-﻿package kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponenteach.polygon;
+package kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponenteach.polygon;
 
 /**
  * 좌표를 나태내는 객체

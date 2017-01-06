@@ -1,4 +1,4 @@
-﻿package kr.dogfoot.hwplib.object.docinfo.borderfill.fillinfo;
+package kr.dogfoot.hwplib.object.docinfo.borderfill.fillinfo;
 
 /**
  * 채우기 정보를 나태내는 객체

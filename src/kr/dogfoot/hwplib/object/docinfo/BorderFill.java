@@ -1,4 +1,4 @@
-﻿package kr.dogfoot.hwplib.object.docinfo;
+package kr.dogfoot.hwplib.object.docinfo;
 
 import kr.dogfoot.hwplib.object.docinfo.borderfill.BorderFillProperty;
 import kr.dogfoot.hwplib.object.docinfo.borderfill.BorderThickness;

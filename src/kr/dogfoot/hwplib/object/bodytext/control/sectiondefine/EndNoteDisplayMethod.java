@@ -1,4 +1,4 @@
-﻿package kr.dogfoot.hwplib.object.bodytext.control.sectiondefine;
+package kr.dogfoot.hwplib.object.bodytext.control.sectiondefine;
 
 /**
  * 미주를 위치시킬 방법

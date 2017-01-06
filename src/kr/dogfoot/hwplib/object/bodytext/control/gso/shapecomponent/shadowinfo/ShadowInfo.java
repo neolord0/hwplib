@@ -1,4 +1,4 @@
-﻿package kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponent.shadowinfo;
+package kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponent.shadowinfo;
 
 import kr.dogfoot.hwplib.object.etc.Color4Byte;
 

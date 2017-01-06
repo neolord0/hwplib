@@ -1,4 +1,4 @@
-﻿package kr.dogfoot.hwplib.object.docinfo.charshape;
+package kr.dogfoot.hwplib.object.docinfo.charshape;
 
 /**
  * 강조점 종류

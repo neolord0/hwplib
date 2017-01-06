@@ -1,4 +1,4 @@
-﻿package kr.dogfoot.hwplib.object.bodytext.control.gso.textbox;
+package kr.dogfoot.hwplib.object.bodytext.control.gso.textbox;
 
 /**
  * 텍스트 세로 정렬 방법

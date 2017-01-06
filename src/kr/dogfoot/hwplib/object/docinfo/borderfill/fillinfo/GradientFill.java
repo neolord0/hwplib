@@ -1,4 +1,4 @@
-﻿package kr.dogfoot.hwplib.object.docinfo.borderfill.fillinfo;
+package kr.dogfoot.hwplib.object.docinfo.borderfill.fillinfo;
 
 import java.util.ArrayList;
 

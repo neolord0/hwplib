@@ -1,4 +1,4 @@
-﻿package kr.dogfoot.hwplib.object.bodytext.paragraph.text;
+package kr.dogfoot.hwplib.object.bodytext.paragraph.text;
 
 /**
  * 한글(HWP) 글자의 종류

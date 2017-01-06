@@ -1,4 +1,4 @@
-﻿package kr.dogfoot.hwplib.object.bodytext.control.footnoteendnote;
+package kr.dogfoot.hwplib.object.bodytext.control.footnoteendnote;
 
 import kr.dogfoot.hwplib.object.bodytext.control.gso.textbox.ListHeaderProperty;
 

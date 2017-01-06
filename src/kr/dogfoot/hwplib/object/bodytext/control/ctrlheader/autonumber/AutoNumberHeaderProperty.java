@@ -1,4 +1,4 @@
-﻿package kr.dogfoot.hwplib.object.bodytext.control.ctrlheader.autonumber;
+package kr.dogfoot.hwplib.object.bodytext.control.ctrlheader.autonumber;
 
 import kr.dogfoot.hwplib.object.bodytext.control.sectiondefine.NumberShape;
 import kr.dogfoot.hwplib.util.binary.BitFlag;

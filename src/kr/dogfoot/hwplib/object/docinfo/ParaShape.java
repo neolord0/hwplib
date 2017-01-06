@@ -1,4 +1,4 @@
-﻿package kr.dogfoot.hwplib.object.docinfo;
+package kr.dogfoot.hwplib.object.docinfo;
 
 import kr.dogfoot.hwplib.object.docinfo.parashape.ParaShapeProperty1;
 import kr.dogfoot.hwplib.object.docinfo.parashape.ParaShapeProperty2;

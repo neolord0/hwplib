@@ -1,4 +1,4 @@
-﻿package kr.dogfoot.hwplib.object.bodytext.paragraph.header;
+package kr.dogfoot.hwplib.object.bodytext.paragraph.header;
 
 import kr.dogfoot.hwplib.util.binary.BitFlag;
 

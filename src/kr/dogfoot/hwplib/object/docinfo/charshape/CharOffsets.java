@@ -1,4 +1,4 @@
-﻿package kr.dogfoot.hwplib.object.docinfo.charshape;
+package kr.dogfoot.hwplib.object.docinfo.charshape;
 
 /**
  * 언어별 글자 위치에 대한 객체

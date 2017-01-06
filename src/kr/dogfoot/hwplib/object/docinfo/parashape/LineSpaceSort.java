@@ -1,4 +1,4 @@
-﻿package kr.dogfoot.hwplib.object.docinfo.parashape;
+package kr.dogfoot.hwplib.object.docinfo.parashape;
 
 /**
  * 줄 간격 종류(한글 2007이하 버전에만 사용)

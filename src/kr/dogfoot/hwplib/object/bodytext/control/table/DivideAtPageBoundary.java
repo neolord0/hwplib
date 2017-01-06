@@ -1,4 +1,4 @@
-﻿package kr.dogfoot.hwplib.object.bodytext.control.table;
+package kr.dogfoot.hwplib.object.bodytext.control.table;
 
 /**
  * 쪽 경계에서 나눔 방법

@@ -1,4 +1,4 @@
-﻿package kr.dogfoot.hwplib.object.docinfo.bindata;
+package kr.dogfoot.hwplib.object.docinfo.bindata;
 
 /**
  * 바이너리 데이터의 상태

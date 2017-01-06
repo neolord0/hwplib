@@ -1,4 +1,4 @@
-﻿package kr.dogfoot.hwplib.object.bodytext.control.gso.textbox;
+package kr.dogfoot.hwplib.object.bodytext.control.gso.textbox;
 
 import kr.dogfoot.hwplib.object.bodytext.paragraph.ParagraphList;
 

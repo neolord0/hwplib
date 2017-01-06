@@ -1,4 +1,4 @@
-﻿package kr.dogfoot.hwplib.object.bodytext.control.ctrlheader.newnumber;
+package kr.dogfoot.hwplib.object.bodytext.control.ctrlheader.newnumber;
 
 import kr.dogfoot.hwplib.object.bodytext.control.ctrlheader.autonumber.NumberSort;
 import kr.dogfoot.hwplib.util.binary.BitFlag;

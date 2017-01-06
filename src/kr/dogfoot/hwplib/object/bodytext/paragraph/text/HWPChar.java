@@ -1,4 +1,4 @@
-﻿package kr.dogfoot.hwplib.object.bodytext.paragraph.text;
+package kr.dogfoot.hwplib.object.bodytext.paragraph.text;
 
 /**
  * ParaText에 저장되는 글자를 나타내는 추상 객체

@@ -1,4 +1,4 @@
-﻿package kr.dogfoot.hwplib.util.binary;
+package kr.dogfoot.hwplib.util.binary;
 
 /**
  * 이진 연산을 하는 객체

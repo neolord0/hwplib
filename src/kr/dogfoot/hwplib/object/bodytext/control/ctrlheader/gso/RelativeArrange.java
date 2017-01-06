@@ -1,4 +1,4 @@
-﻿package kr.dogfoot.hwplib.object.bodytext.control.ctrlheader.gso;
+package kr.dogfoot.hwplib.object.bodytext.control.ctrlheader.gso;
 
 /**
  * 상대적인 배열 방식

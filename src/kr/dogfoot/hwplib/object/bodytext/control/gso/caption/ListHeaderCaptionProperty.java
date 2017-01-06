@@ -1,4 +1,4 @@
-﻿package kr.dogfoot.hwplib.object.bodytext.control.gso.caption;
+package kr.dogfoot.hwplib.object.bodytext.control.gso.caption;
 
 import kr.dogfoot.hwplib.util.binary.BitFlag;
 

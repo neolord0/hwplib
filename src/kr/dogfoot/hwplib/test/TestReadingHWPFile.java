@@ -1,4 +1,4 @@
-﻿package kr.dogfoot.hwplib.test;
+package kr.dogfoot.hwplib.test;
 
 import kr.dogfoot.hwplib.object.HWPFile;
 import kr.dogfoot.hwplib.reader.HWPReader;
@@ -26,10 +26,13 @@ public class TestReadingHWPFile {
 		test("sample_hwp\\test-책갈피.hwp");
 		test("sample_hwp\\test-페이지숨김.hwp");
 		test("sample_hwp\\test-필드.hwp");
+		
 	}
 
 	private static void test(String filename) throws Exception {
-		HWPFile hwpfile = HWPReader.fromFile(filename);
-		System.out.println(filename + "  읽기 성공 !!");
+		HWPFile hwpFile = HWPReader.fromFile(filename);
+		if (hwpFile.getBodyText().getSectionList().size() > 0){
+			System.out.println(filename + "  읽기 성공 !!");
+		}
 	}
 }

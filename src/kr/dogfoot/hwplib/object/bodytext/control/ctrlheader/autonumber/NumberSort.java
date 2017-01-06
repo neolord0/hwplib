@@ -1,4 +1,4 @@
-﻿package kr.dogfoot.hwplib.object.bodytext.control.ctrlheader.autonumber;
+package kr.dogfoot.hwplib.object.bodytext.control.ctrlheader.autonumber;
 
 /**
  * 번호 종류

@@ -1,4 +1,4 @@
-﻿package kr.dogfoot.hwplib.object.docinfo.borderfill;
+package kr.dogfoot.hwplib.object.docinfo.borderfill;
 
 /**
  * BackSlash의 대각선 모양

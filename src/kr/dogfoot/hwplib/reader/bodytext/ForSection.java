@@ -1,4 +1,4 @@
-﻿package kr.dogfoot.hwplib.reader.bodytext;
+package kr.dogfoot.hwplib.reader.bodytext;
 
 import kr.dogfoot.hwplib.object.bodytext.Section;
 import kr.dogfoot.hwplib.object.bodytext.control.sectiondefine.BatangPageInfo;

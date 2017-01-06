@@ -1,4 +1,4 @@
-﻿package kr.dogfoot.hwplib.object.bodytext.control.equation;
+package kr.dogfoot.hwplib.object.bodytext.control.equation;
 
 import kr.dogfoot.hwplib.object.etc.Color4Byte;
 

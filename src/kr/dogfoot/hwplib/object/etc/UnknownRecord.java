@@ -1,4 +1,4 @@
-﻿package kr.dogfoot.hwplib.object.etc;
+package kr.dogfoot.hwplib.object.etc;
 
 import kr.dogfoot.hwplib.reader.RecordHeader;
 

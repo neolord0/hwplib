@@ -1,4 +1,4 @@
-﻿package kr.dogfoot.hwplib.object.docinfo.numbering;
+package kr.dogfoot.hwplib.object.docinfo.numbering;
 
 /**
  * 문단의 정렬 종류

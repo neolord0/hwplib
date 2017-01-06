@@ -1,4 +1,4 @@
-﻿package kr.dogfoot.hwplib.object.bodytext.control.ctrlheader.pagehide;
+package kr.dogfoot.hwplib.object.bodytext.control.ctrlheader.pagehide;
 
 import kr.dogfoot.hwplib.util.binary.BitFlag;
 

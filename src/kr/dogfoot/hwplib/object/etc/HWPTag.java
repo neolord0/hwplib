@@ -1,4 +1,4 @@
-﻿package kr.dogfoot.hwplib.object.etc;
+package kr.dogfoot.hwplib.object.etc;
 
 /**
  * Record의 테그 리스트

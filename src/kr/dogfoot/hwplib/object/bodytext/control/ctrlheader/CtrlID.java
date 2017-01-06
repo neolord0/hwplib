@@ -1,4 +1,4 @@
-﻿package kr.dogfoot.hwplib.object.bodytext.control.ctrlheader;
+package kr.dogfoot.hwplib.object.bodytext.control.ctrlheader;
 
 /**
  * 컨트롤 id을 생성하기 위한 객체

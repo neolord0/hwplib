@@ -1,4 +1,4 @@
-﻿package kr.dogfoot.hwplib.object.bodytext.control.bookmark;
+package kr.dogfoot.hwplib.object.bodytext.control.bookmark;
 
 /**
  * 북마크의 임의 데이터 레코드

@@ -1,4 +1,4 @@
-﻿package kr.dogfoot.hwplib.object.bodytext.control.table;
+package kr.dogfoot.hwplib.object.bodytext.control.table;
 
 /**
  * 영역 속성

@@ -1,4 +1,4 @@
-﻿package kr.dogfoot.hwplib.object.bodytext.control.table;
+package kr.dogfoot.hwplib.object.bodytext.control.table;
 
 import kr.dogfoot.hwplib.object.bodytext.control.ctrlheader.sectiondefine.TextDirection;
 import kr.dogfoot.hwplib.object.bodytext.control.gso.textbox.LineChange;

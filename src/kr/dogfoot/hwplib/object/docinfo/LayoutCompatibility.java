@@ -1,4 +1,4 @@
-﻿package kr.dogfoot.hwplib.object.docinfo;
+package kr.dogfoot.hwplib.object.docinfo;
 
 /**
  * 레이아웃 호환성에 대한  레코드

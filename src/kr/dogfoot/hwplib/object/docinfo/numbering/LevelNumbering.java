@@ -1,4 +1,4 @@
-﻿package kr.dogfoot.hwplib.object.docinfo.numbering;
+package kr.dogfoot.hwplib.object.docinfo.numbering;
 
 /**
  * 각 수준(1~7)에 해당하는 문단 번호 정보

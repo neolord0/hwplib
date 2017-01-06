@@ -1,4 +1,4 @@
-﻿package kr.dogfoot.hwplib.object.bodytext.control.ctrlheader.gso;
+package kr.dogfoot.hwplib.object.bodytext.control.ctrlheader.gso;
 
 /**
  * 오브젝트 높이의 기준

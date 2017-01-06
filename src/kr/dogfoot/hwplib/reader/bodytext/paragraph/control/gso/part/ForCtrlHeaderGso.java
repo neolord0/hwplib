@@ -1,4 +1,4 @@
-﻿package kr.dogfoot.hwplib.reader.bodytext.paragraph.control.gso.part;
+package kr.dogfoot.hwplib.reader.bodytext.paragraph.control.gso.part;
 
 import java.io.IOException;
 
@@ -36,6 +36,8 @@ public class ForCtrlHeaderGso {
 		header.setInstanceId(sr.readUInt4());
 		int temp = sr.readSInt4();
 		header.setPreventPageDivide(BitFlag.get(temp, 0));
-		header.setExplanation(sr.readUTF16LEString());
+		if (sr.getCurrentRecordHeader().getSize() > sr.getCurrentPositionAfterHeader()) {
+			header.setExplanation(sr.readUTF16LEString());
+		}
 	}
 }

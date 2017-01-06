@@ -1,4 +1,4 @@
-﻿package kr.dogfoot.hwplib.object.bodytext.control.gso.textbox;
+package kr.dogfoot.hwplib.object.bodytext.control.gso.textbox;
 
 /**
  * 문단의 줄바꿈 방법

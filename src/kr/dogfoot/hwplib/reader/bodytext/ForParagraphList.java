@@ -1,4 +1,4 @@
-﻿package kr.dogfoot.hwplib.reader.bodytext;
+package kr.dogfoot.hwplib.reader.bodytext;
 
 import kr.dogfoot.hwplib.object.bodytext.ParagraphListInterface;
 import kr.dogfoot.hwplib.object.bodytext.paragraph.Paragraph;

@@ -1,4 +1,4 @@
-﻿package kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponenteach.ole;
+package kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponenteach.ole;
 
 /**
  * OLE 객체 종류

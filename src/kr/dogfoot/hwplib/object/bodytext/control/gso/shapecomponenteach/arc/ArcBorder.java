@@ -1,4 +1,4 @@
-﻿package kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponenteach.arc;
+package kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponenteach.arc;
 
 /**
  * 호 테두리

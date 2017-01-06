@@ -1,4 +1,4 @@
-﻿package kr.dogfoot.hwplib.reader.docinfo;
+package kr.dogfoot.hwplib.reader.docinfo;
 
 import java.io.IOException;
 

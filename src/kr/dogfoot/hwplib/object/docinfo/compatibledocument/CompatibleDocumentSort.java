@@ -1,4 +1,4 @@
-﻿package kr.dogfoot.hwplib.object.docinfo.compatibledocument;
+package kr.dogfoot.hwplib.object.docinfo.compatibledocument;
 
 /**
  * 대상 프로그램의 종류

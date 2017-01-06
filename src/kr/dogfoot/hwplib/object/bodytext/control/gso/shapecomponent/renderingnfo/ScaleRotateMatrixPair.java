@@ -1,4 +1,4 @@
-﻿package kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponent.renderingnfo;
+package kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponent.renderingnfo;
 
 /**
  * 확장/회전을 위한 행렬의 쌍을 나타내는 객체

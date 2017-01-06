@@ -1,4 +1,4 @@
-﻿package kr.dogfoot.hwplib.object.bodytext.control.sectiondefine;
+package kr.dogfoot.hwplib.object.bodytext.control.sectiondefine;
 
 /**
  * 채워질 영역의 종류

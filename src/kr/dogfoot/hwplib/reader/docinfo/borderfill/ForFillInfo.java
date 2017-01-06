@@ -1,4 +1,4 @@
-﻿package kr.dogfoot.hwplib.reader.docinfo.borderfill;
+package kr.dogfoot.hwplib.reader.docinfo.borderfill;
 
 import java.io.IOException;
 

@@ -1,4 +1,4 @@
-﻿package kr.dogfoot.hwplib.reader.bodytext.paragraph.control.secd;
+package kr.dogfoot.hwplib.reader.bodytext.paragraph.control.secd;
 
 import kr.dogfoot.hwplib.object.bodytext.control.sectiondefine.BatangPageInfo;
 import kr.dogfoot.hwplib.object.bodytext.control.sectiondefine.ListHeaderForBatangPage;

@@ -1,4 +1,4 @@
-﻿package kr.dogfoot.hwplib.object.bodytext.control.ctrlheader.pagenumberposition;
+package kr.dogfoot.hwplib.object.bodytext.control.ctrlheader.pagenumberposition;
 
 import kr.dogfoot.hwplib.object.bodytext.control.sectiondefine.NumberShape;
 import kr.dogfoot.hwplib.util.binary.BitFlag;

@@ -1,4 +1,4 @@
-﻿package kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponent.shadowinfo;
+package kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponent.shadowinfo;
 
 /**
  * 그림자 종류

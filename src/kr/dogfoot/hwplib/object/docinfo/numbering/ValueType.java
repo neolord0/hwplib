@@ -1,4 +1,4 @@
-﻿package kr.dogfoot.hwplib.object.docinfo.numbering;
+package kr.dogfoot.hwplib.object.docinfo.numbering;
 
 /**
  * 수준별 본문과의 거리 종류

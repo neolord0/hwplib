@@ -1,4 +1,4 @@
-﻿package kr.dogfoot.hwplib.object.docinfo.charshape;
+package kr.dogfoot.hwplib.object.docinfo.charshape;
 
 /**
  * 외곽선 종류

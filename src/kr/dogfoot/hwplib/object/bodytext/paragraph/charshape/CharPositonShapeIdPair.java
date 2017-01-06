@@ -1,4 +1,4 @@
-﻿package kr.dogfoot.hwplib.object.bodytext.paragraph.charshape;
+package kr.dogfoot.hwplib.object.bodytext.paragraph.charshape;
 
 /**
  * 글자 위치와 글자 모양의 쌍

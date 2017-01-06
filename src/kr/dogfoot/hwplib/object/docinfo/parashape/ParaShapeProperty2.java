@@ -1,4 +1,4 @@
-﻿package kr.dogfoot.hwplib.object.docinfo.parashape;
+package kr.dogfoot.hwplib.object.docinfo.parashape;
 
 import kr.dogfoot.hwplib.util.binary.BitFlag;
 

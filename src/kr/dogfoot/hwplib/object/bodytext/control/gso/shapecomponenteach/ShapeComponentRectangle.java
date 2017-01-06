@@ -1,4 +1,4 @@
-﻿package kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponenteach;
+package kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponenteach;
 
 /**
  * 사각형 개체 속성 레코드

@@ -1,4 +1,4 @@
-﻿package kr.dogfoot.hwplib.object.docinfo;
+package kr.dogfoot.hwplib.object.docinfo;
 
 /**
  * 아이디 매핑 헤더를 나타내는  레코드. "DocInfo" stream 안에 있는 다른 객체들의 개수를 저전한다.

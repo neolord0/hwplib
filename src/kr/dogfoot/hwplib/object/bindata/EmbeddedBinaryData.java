@@ -1,4 +1,4 @@
-﻿package kr.dogfoot.hwplib.object.bindata;
+package kr.dogfoot.hwplib.object.bindata;
 
 /**
  * HWP 파일내에서 사용하는 이미지등의 바이너리 데이터를 저장하는 객체

@@ -1,4 +1,4 @@
-﻿package kr.dogfoot.hwplib.reader.bodytext.paragraph.control.gso;
+package kr.dogfoot.hwplib.reader.bodytext.paragraph.control.gso;
 
 import java.io.IOException;
 
@@ -66,11 +66,12 @@ public class ForControlPicture {
 
 		scp.setBorderTransparency(sr.readUInt1());
 		scp.setInstanceId(sr.readUInt4());
+		if (sr.getCurrentRecordHeader().getSize() > sr.getCurrentPositionAfterHeader()) {
+			ForPictureEffect.read(scp.getPictureEffect(), sr);
 
-		ForPictureEffect.read(scp.getPictureEffect(), sr);
-
-		scp.setImageWidth(sr.readUInt4());
-		scp.setImageHeight(sr.readUInt4());
+			scp.setImageWidth(sr.readUInt4());
+			scp.setImageHeight(sr.readUInt4());
+		}
 	}
 
 	/**

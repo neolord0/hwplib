@@ -1,4 +1,4 @@
-﻿package kr.dogfoot.hwplib.object.docinfo.borderfill;
+package kr.dogfoot.hwplib.object.docinfo.borderfill;
 
 /**
  * 테두리선의 두께

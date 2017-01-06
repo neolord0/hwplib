@@ -1,4 +1,4 @@
-﻿package kr.dogfoot.hwplib.reader.bodytext.paragraph.control.eqed;
+package kr.dogfoot.hwplib.reader.bodytext.paragraph.control.eqed;
 
 import java.io.IOException;
 

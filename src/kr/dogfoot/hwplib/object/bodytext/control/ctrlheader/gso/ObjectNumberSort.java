@@ -1,4 +1,4 @@
-﻿package kr.dogfoot.hwplib.object.bodytext.control.ctrlheader.gso;
+package kr.dogfoot.hwplib.object.bodytext.control.ctrlheader.gso;
 
 /**
  * 개체가 속하는 번호 범주

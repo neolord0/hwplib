@@ -1,4 +1,4 @@
-﻿package kr.dogfoot.hwplib.object.bodytext.paragraph.lineseg;
+package kr.dogfoot.hwplib.object.bodytext.paragraph.lineseg;
 
 import java.util.ArrayList;
 

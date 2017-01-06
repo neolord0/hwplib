@@ -1,4 +1,4 @@
-﻿package kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponenteach.picture;
+package kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponenteach.picture;
 
 import kr.dogfoot.hwplib.util.binary.BitFlag;
 

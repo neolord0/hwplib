@@ -1,4 +1,4 @@
-﻿package kr.dogfoot.hwplib.reader.bodytext.paragraph.control;
+package kr.dogfoot.hwplib.reader.bodytext.paragraph.control;
 
 import kr.dogfoot.hwplib.object.bodytext.control.ControlBookmark;
 import kr.dogfoot.hwplib.object.bodytext.control.bookmark.CtrlData;

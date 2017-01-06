@@ -1,4 +1,4 @@
-﻿package kr.dogfoot.hwplib.object.bodytext.control.ctrlheader.gso;
+package kr.dogfoot.hwplib.object.bodytext.control.ctrlheader.gso;
 
 import kr.dogfoot.hwplib.util.binary.BitFlag;
 

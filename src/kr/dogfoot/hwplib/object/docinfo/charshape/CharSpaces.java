@@ -1,4 +1,4 @@
-﻿package kr.dogfoot.hwplib.object.docinfo.charshape;
+package kr.dogfoot.hwplib.object.docinfo.charshape;
 
 /**
  * 언어별 자간에 대한 객체

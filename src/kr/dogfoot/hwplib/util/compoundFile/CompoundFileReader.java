@@ -1,4 +1,4 @@
-﻿package kr.dogfoot.hwplib.util.compoundFile;
+package kr.dogfoot.hwplib.util.compoundFile;
 
 import java.io.File;
 import java.io.FileNotFoundException;

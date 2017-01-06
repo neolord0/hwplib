@@ -1,4 +1,4 @@
-﻿package kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponent.lineinfo;
+package kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponent.lineinfo;
 
 import kr.dogfoot.hwplib.object.etc.Color4Byte;
 

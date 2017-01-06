@@ -1,4 +1,4 @@
-﻿package kr.dogfoot.hwplib.object.docinfo.borderfill;
+package kr.dogfoot.hwplib.object.docinfo.borderfill;
 
 /**
  * 대각선 종류

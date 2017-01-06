@@ -1,4 +1,4 @@
-﻿package kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponenteach.curve;
+package kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponenteach.curve;
 
 /**
  * 곡선의 Segment Type

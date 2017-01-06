@@ -1,4 +1,4 @@
-﻿package kr.dogfoot.hwplib.object.bodytext.control.ctrlheader.pagenumberposition;
+package kr.dogfoot.hwplib.object.bodytext.control.ctrlheader.pagenumberposition;
 
 /**
  * 번호의 표시 위치

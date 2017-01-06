@@ -1,4 +1,4 @@
-﻿package kr.dogfoot.hwplib.object.docinfo.documentproperties;
+package kr.dogfoot.hwplib.object.docinfo.documentproperties;
 
 /**
  * 캐럿의 위치 정보

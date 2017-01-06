@@ -1,4 +1,4 @@
-﻿package kr.dogfoot.hwplib.object.docinfo.documentproperties;
+package kr.dogfoot.hwplib.object.docinfo.documentproperties;
 
 /**
  * 각종 시작번호에 대한 정보

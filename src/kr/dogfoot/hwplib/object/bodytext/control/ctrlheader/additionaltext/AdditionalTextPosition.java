@@ -1,4 +1,4 @@
-﻿package kr.dogfoot.hwplib.object.bodytext.control.ctrlheader.additionaltext;
+package kr.dogfoot.hwplib.object.bodytext.control.ctrlheader.additionaltext;
 
 /**
  * 덧말의 위치

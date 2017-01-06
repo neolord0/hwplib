@@ -1,4 +1,4 @@
-﻿package kr.dogfoot.hwplib.object.docinfo.tabdef;
+package kr.dogfoot.hwplib.object.docinfo.tabdef;
 
 import kr.dogfoot.hwplib.util.binary.BitFlag;
 

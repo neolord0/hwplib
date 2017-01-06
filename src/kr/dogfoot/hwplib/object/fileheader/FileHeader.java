@@ -1,4 +1,4 @@
-﻿package kr.dogfoot.hwplib.object.fileheader;
+package kr.dogfoot.hwplib.object.fileheader;
 
 /**
  * 파일 인식 정보를 나타내는 객체. HWP 파일내의 "FileHeader" stream에 저장된다.

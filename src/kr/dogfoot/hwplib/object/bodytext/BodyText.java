@@ -1,4 +1,4 @@
-﻿package kr.dogfoot.hwplib.object.bodytext;
+package kr.dogfoot.hwplib.object.bodytext;
 
 import java.util.ArrayList;
 

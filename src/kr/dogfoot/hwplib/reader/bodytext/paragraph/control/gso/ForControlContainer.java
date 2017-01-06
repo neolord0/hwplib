@@ -1,4 +1,4 @@
-﻿package kr.dogfoot.hwplib.reader.bodytext.paragraph.control.gso;
+package kr.dogfoot.hwplib.reader.bodytext.paragraph.control.gso;
 
 import kr.dogfoot.hwplib.object.bodytext.control.gso.ControlContainer;
 import kr.dogfoot.hwplib.object.bodytext.control.gso.GsoControl;

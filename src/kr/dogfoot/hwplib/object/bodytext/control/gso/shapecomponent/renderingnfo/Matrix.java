@@ -1,4 +1,4 @@
-﻿package kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponent.renderingnfo;
+package kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponent.renderingnfo;
 
 /**
  * 행렬을 나타내는 객체. 각 행렬는 원소가 double로 표현되는 3 X 3 matrix로 구현된다. 마지막 행은 항상 [0,0,1]이기

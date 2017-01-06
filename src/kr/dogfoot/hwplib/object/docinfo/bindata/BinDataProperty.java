@@ -1,4 +1,4 @@
-﻿package kr.dogfoot.hwplib.object.docinfo.bindata;
+package kr.dogfoot.hwplib.object.docinfo.bindata;
 
 import kr.dogfoot.hwplib.util.binary.BitFlag;
 

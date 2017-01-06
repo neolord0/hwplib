@@ -1,4 +1,4 @@
-﻿package kr.dogfoot.hwplib.object.bodytext.paragraph.rangetag;
+package kr.dogfoot.hwplib.object.bodytext.paragraph.rangetag;
 
 import java.util.ArrayList;
 

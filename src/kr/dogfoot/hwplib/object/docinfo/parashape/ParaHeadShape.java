@@ -1,4 +1,4 @@
-﻿package kr.dogfoot.hwplib.object.docinfo.parashape;
+package kr.dogfoot.hwplib.object.docinfo.parashape;
 
 /**
  * 문단 머리 모양의 종류

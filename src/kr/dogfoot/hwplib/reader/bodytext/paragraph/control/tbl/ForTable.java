@@ -1,4 +1,4 @@
-﻿package kr.dogfoot.hwplib.reader.bodytext.paragraph.control.tbl;
+package kr.dogfoot.hwplib.reader.bodytext.paragraph.control.tbl;
 
 import java.io.IOException;
 

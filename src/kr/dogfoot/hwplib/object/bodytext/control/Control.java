@@ -1,4 +1,4 @@
-﻿package kr.dogfoot.hwplib.object.bodytext.control;
+package kr.dogfoot.hwplib.object.bodytext.control;
 
 import kr.dogfoot.hwplib.object.bodytext.control.ctrlheader.CtrlHeader;
 
@@ -30,5 +30,9 @@ public abstract class Control {
 	 */
 	public ControlType getType() {
 		return ControlType.ctrlIdOf(header.getCtrlId());
+	}
+	
+	public boolean isField() {
+		return ControlType.isField(header.getCtrlId());
 	}
 }

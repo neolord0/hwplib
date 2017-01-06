@@ -1,4 +1,4 @@
-﻿package kr.dogfoot.hwplib.object.bodytext.control.ctrlheader;
+package kr.dogfoot.hwplib.object.bodytext.control.ctrlheader;
 
 /**
  * 컨트롤 헤더 객체들을 위한 부모 클래스

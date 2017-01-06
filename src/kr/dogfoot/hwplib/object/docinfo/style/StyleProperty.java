@@ -1,4 +1,4 @@
-﻿package kr.dogfoot.hwplib.object.docinfo.style;
+package kr.dogfoot.hwplib.object.docinfo.style;
 
 import kr.dogfoot.hwplib.util.binary.BitFlag;
 

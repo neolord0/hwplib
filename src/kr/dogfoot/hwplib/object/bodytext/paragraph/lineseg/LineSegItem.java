@@ -1,4 +1,4 @@
-﻿package kr.dogfoot.hwplib.object.bodytext.paragraph.lineseg;
+package kr.dogfoot.hwplib.object.bodytext.paragraph.lineseg;
 
 /**
  * 각 중의 align 정보에 대한 객체
