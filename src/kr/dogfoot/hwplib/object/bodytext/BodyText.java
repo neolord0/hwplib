@@ -1,30 +1,30 @@
-package kr.dogfoot.hwplib.object.bodytext;
+ï»¿package kr.dogfoot.hwplib.object.bodytext;
 
 import java.util.ArrayList;
 
 /**
- * º»¹®¸¦ ³ªÅ¸³ª´Â °´Ã¼. HWPÆÄÀÏ ³»¿¡ "BodyText" storage¿¡ ÀúÀåµÈ´Ù.
+ * ë³¸ë¬¸ë¥¼ ë‚˜íƒ€ë‚˜ëŠ” ê°ì²´. HWPíŒŒì¼ ë‚´ì— "BodyText" storageì— ì €ì¥ëœë‹¤.
  * 
  * @author neolord
  */
 
 public class BodyText {
 	/**
-	 * ¹®¼­ ¿µ¿ª(¼½¼Ç) ¸®½ºÆ®
+	 * ë¬¸ì„œ ì˜ì—­(ì„¹ì…˜) ë¦¬ìŠ¤íŠ¸
 	 */
 	private ArrayList<Section> sectionList;
 
 	/**
-	 * »ı¼ºÀÚ
+	 * ìƒì„±ì
 	 */
 	public BodyText() {
 		sectionList = new ArrayList<Section>();
 	}
 
 	/**
-	 * »õ·Î¿î ¹®¼­ ¿µ¿ª(¼½¼Ç)À» »ı¼ºÇÏ°í ¸®½ºÆ®¿¡ Ãß°¡ÇÑ´Ù.
+	 * ìƒˆë¡œìš´ ë¬¸ì„œ ì˜ì—­(ì„¹ì…˜)ì„ ìƒì„±í•˜ê³  ë¦¬ìŠ¤íŠ¸ì— ì¶”ê°€í•œë‹¤.
 	 * 
-	 * @return »õ·Î »ı¼ºµÈ ¹®¼­ ¿µ¿ª(¼½¼Ç)
+	 * @return ìƒˆë¡œ ìƒì„±ëœ ë¬¸ì„œ ì˜ì—­(ì„¹ì…˜)
 	 */
 	public Section addNewSection() {
 		Section s = new Section();
@@ -33,9 +33,9 @@ public class BodyText {
 	}
 
 	/**
-	 * ¹®¼­ ¿µ¿ª(¼½¼Ç) ¸®½ºÆ®¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ë¬¸ì„œ ì˜ì—­(ì„¹ì…˜) ë¦¬ìŠ¤íŠ¸ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ¹®¼­ ¿µ¿ª(¼½¼Ç) ¸®½ºÆ®
+	 * @return ë¬¸ì„œ ì˜ì—­(ì„¹ì…˜) ë¦¬ìŠ¤íŠ¸
 	 */
 	public ArrayList<Section> getSectionList() {
 		return sectionList;

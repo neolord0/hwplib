@@ -1,50 +1,50 @@
-package kr.dogfoot.hwplib.object.docinfo.borderfill.fillinfo;
+ï»¿package kr.dogfoot.hwplib.object.docinfo.borderfill.fillinfo;
 
 /**
- * ÀÌ¹ÌÁö Ã¤¿ì±â °´Ã¼
+ * ì´ë¯¸ì§€ ì±„ìš°ê¸° ê°ì²´
  * 
  * @author neolord
  */
 public class ImageFill {
 	/**
-	 * ÀÌ¹ÌÁö Ã¤¿ì±â À¯Çü
+	 * ì´ë¯¸ì§€ ì±„ìš°ê¸° ìœ í˜•
 	 */
 	private ImageFillType imageFillType;
 	/**
-	 * ±×¸² Á¤º¸
+	 * ê·¸ë¦¼ ì •ë³´
 	 */
 	private PictureInfo pictureInfo;
 
 	/**
-	 * »ı¼ºÀÚ
+	 * ìƒì„±ì
 	 */
 	public ImageFill() {
 		pictureInfo = new PictureInfo();
 	}
 
 	/**
-	 * ÀÌ¹ÌÁö Ã¤¿ì±â À¯ÇüÀ» ¹İÈ¯ÇÑ´Ù.
+	 * ì´ë¯¸ì§€ ì±„ìš°ê¸° ìœ í˜•ì„ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ÀÌ¹ÌÁö Ã¤¿ì±â À¯Çü
+	 * @return ì´ë¯¸ì§€ ì±„ìš°ê¸° ìœ í˜•
 	 */
 	public ImageFillType getImageFillType() {
 		return imageFillType;
 	}
 
 	/**
-	 * ÀÌ¹ÌÁö Ã¤¿ì±â À¯ÇüÀ» ¼³Á¤ÇÑ´Ù.
+	 * ì´ë¯¸ì§€ ì±„ìš°ê¸° ìœ í˜•ì„ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param imageFillType
-	 *            ÀÌ¹ÌÁö Ã¤¿ì±â À¯Çü
+	 *            ì´ë¯¸ì§€ ì±„ìš°ê¸° ìœ í˜•
 	 */
 	public void setImageFillType(ImageFillType imageFillType) {
 		this.imageFillType = imageFillType;
 	}
 
 	/**
-	 * ±×¸² Á¤º¸ °´Ã¼¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ê·¸ë¦¼ ì •ë³´ ê°ì²´ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ±×¸² Á¤º¸ °´Ã¼
+	 * @return ê·¸ë¦¼ ì •ë³´ ê°ì²´
 	 */
 	public PictureInfo getPictureInfo() {
 		return pictureInfo;

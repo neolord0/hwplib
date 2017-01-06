@@ -1,29 +1,29 @@
-package kr.dogfoot.hwplib.object.docinfo;
+ï»¿package kr.dogfoot.hwplib.object.docinfo;
 
 import kr.dogfoot.hwplib.object.docinfo.documentproperties.CaretPosition;
 import kr.dogfoot.hwplib.object.docinfo.documentproperties.StartNumber;
 
 /**
- * ¹®¼­ ¼Ó¼º¸¦ ³ªÅ¸³»´Â ·¹ÄÚµå
+ * ë¬¸ì„œ ì†ì„±ë¥¼ ë‚˜íƒ€ë‚´ëŠ” ë ˆì½”ë“œ
  * 
  * @author neolord
  */
 public class DocumentPropeties {
 	/**
-	 * ±¸¿ª °³¼ö
+	 * êµ¬ì—­ ê°œìˆ˜
 	 */
 	private int sectionCount;
 	/**
-	 * ¹®¼­ ³» °¢Á¾ ½ÃÀÛ¹øÈ£¿¡ ´ëÇÑ Á¤º¸
+	 * ë¬¸ì„œ ë‚´ ê°ì¢… ì‹œì‘ë²ˆí˜¸ì— ëŒ€í•œ ì •ë³´
 	 */
 	private StartNumber startNumber;
 	/**
-	 * ¹®¼­ ³» Ä³·µÀÇ À§Ä¡ Á¤º¸
+	 * ë¬¸ì„œ ë‚´ ìºëŸ¿ì˜ ìœ„ì¹˜ ì •ë³´
 	 */
 	private CaretPosition currentPosition;
 
 	/**
-	 * »ı¼ºÀÚ
+	 * ìƒì„±ì
 	 */
 	public DocumentPropeties() {
 		startNumber = new StartNumber();
@@ -31,37 +31,37 @@ public class DocumentPropeties {
 	}
 
 	/**
-	 * ±¸¿ª °³¼ö¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * êµ¬ì—­ ê°œìˆ˜ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ±¸¿ª °³¼ö
+	 * @return êµ¬ì—­ ê°œìˆ˜
 	 */
 	public int getSectionCount() {
 		return sectionCount;
 	}
 
 	/**
-	 * ±¸¿ª °³¼ö¸¦ ¼³Á¤ÇÑ´Ù.
+	 * êµ¬ì—­ ê°œìˆ˜ë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param sectionCount
-	 *            ±¸¿ª °³¼ö
+	 *            êµ¬ì—­ ê°œìˆ˜
 	 */
 	public void setSectionCount(int sectionCount) {
 		this.sectionCount = sectionCount;
 	}
 
 	/**
-	 * ¹®¼­ ³» °¢Á¾ ½ÃÀÛ¹øÈ£¿¡ ´ëÇÑ Á¤º¸ °´Ã¼¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ë¬¸ì„œ ë‚´ ê°ì¢… ì‹œì‘ë²ˆí˜¸ì— ëŒ€í•œ ì •ë³´ ê°ì²´ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ¹®¼­ ³» °¢Á¾ ½ÃÀÛ¹øÈ£¿¡ ´ëÇÑ Á¤º¸ °´Ã¼
+	 * @return ë¬¸ì„œ ë‚´ ê°ì¢… ì‹œì‘ë²ˆí˜¸ì— ëŒ€í•œ ì •ë³´ ê°ì²´
 	 */
 	public StartNumber getStartNumber() {
 		return startNumber;
 	}
 
 	/**
-	 * ¹®¼­ ³» Ä³·µÀÇ À§Ä¡ Á¤º¸ °´Ã¼¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ë¬¸ì„œ ë‚´ ìºëŸ¿ì˜ ìœ„ì¹˜ ì •ë³´ ê°ì²´ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ¹®¼­ ³» Ä³·µÀÇ À§Ä¡ Á¤º¸ °´Ã¼
+	 * @return ë¬¸ì„œ ë‚´ ìºëŸ¿ì˜ ìœ„ì¹˜ ì •ë³´ ê°ì²´
 	 */
 	public CaretPosition getCurrentPosition() {
 		return currentPosition;

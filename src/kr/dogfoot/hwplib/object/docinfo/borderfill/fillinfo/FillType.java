@@ -1,95 +1,95 @@
-package kr.dogfoot.hwplib.object.docinfo.borderfill.fillinfo;
+ï»¿package kr.dogfoot.hwplib.object.docinfo.borderfill.fillinfo;
 
 import kr.dogfoot.hwplib.util.binary.BitFlag;
 
 /**
- * Ã¤¿ì±â Á¾·ù
+ * ì±„ìš°ê¸° ì¢…ë¥˜
  * 
  * @author neolord
  */
 public class FillType {
 	/**
-	 * ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª(unsigned 4 byte)
+	 * íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’(unsigned 4 byte)
 	 */
 	private long value;
 
 	/**
-	 * »ı¼ºÀÚ
+	 * ìƒì„±ì
 	 */
 	public FillType() {
 	}
 
 	/**
-	 * ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ªÀ» ¹İÈ¯ÇÑ´Ù.
+	 * íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’ì„ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª
+	 * @return íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’
 	 */
 	public long getValue() {
 		return value;
 	}
 
 	/**
-	 * ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ªÀ» ¼³Á¤ÇÑ´Ù.
+	 * íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’ì„ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param value
-	 *            ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª
+	 *            íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’
 	 */
 	public void setValue(long value) {
 		this.value = value;
 	}
 
 	/**
-	 * ´Ü»ö Ã¤¿ì±â Àû¿ë ¿©ºÎ¸¦ ¹İÈ¯ÇÑ´Ù. (0 bit)
+	 * ë‹¨ìƒ‰ ì±„ìš°ê¸° ì ìš© ì—¬ë¶€ë¥¼ ë°˜í™˜í•œë‹¤. (0 bit)
 	 * 
-	 * @return ´Ü»ö Ã¤¿ì±â Àû¿ë ¿©ºÎ
+	 * @return ë‹¨ìƒ‰ ì±„ìš°ê¸° ì ìš© ì—¬ë¶€
 	 */
 	public boolean hasPatternFill() {
 		return BitFlag.get(value, 0);
 	}
 
 	/**
-	 * ´Ü»ö Ã¤¿ì±â Àû¿ë ¿©ºÎ¸¦ ¼³Á¤ÇÑ´Ù. (0 bit)
+	 * ë‹¨ìƒ‰ ì±„ìš°ê¸° ì ìš© ì—¬ë¶€ë¥¼ ì„¤ì •í•œë‹¤. (0 bit)
 	 * 
 	 * @param patternFill
-	 *            ´Ü»ö Ã¤¿ì±â Àû¿ë ¿©ºÎ
+	 *            ë‹¨ìƒ‰ ì±„ìš°ê¸° ì ìš© ì—¬ë¶€
 	 */
 	public void setPatternFill(boolean patternFill) {
 		value = BitFlag.set(value, 0, patternFill);
 	}
 
 	/**
-	 * ÀÌ¹ÌÁö Ã¤¿ì±â Àû¿ë ¿©ºÎ¸¦ ¹İÈ¯ÇÑ´Ù. (1 bit)
+	 * ì´ë¯¸ì§€ ì±„ìš°ê¸° ì ìš© ì—¬ë¶€ë¥¼ ë°˜í™˜í•œë‹¤. (1 bit)
 	 * 
-	 * @return ÀÌ¹ÌÁö Ã¤¿ì±â Àû¿ë ¿©ºÎ
+	 * @return ì´ë¯¸ì§€ ì±„ìš°ê¸° ì ìš© ì—¬ë¶€
 	 */
 	public boolean hasImageFill() {
 		return BitFlag.get(value, 1);
 	}
 
 	/**
-	 * ÀÌ¹ÌÁö Ã¤¿ì±â Àû¿ë ¿©ºÎ¸¦ ¼³Á¤ÇÑ´Ù. (1 bit)
+	 * ì´ë¯¸ì§€ ì±„ìš°ê¸° ì ìš© ì—¬ë¶€ë¥¼ ì„¤ì •í•œë‹¤. (1 bit)
 	 * 
 	 * @param imageFill
-	 *            ÀÌ¹ÌÁö Ã¤¿ì±â Àû¿ë ¿©ºÎ
+	 *            ì´ë¯¸ì§€ ì±„ìš°ê¸° ì ìš© ì—¬ë¶€
 	 */
 	public void setImageFill(boolean imageFill) {
 		value = BitFlag.set(value, 1, imageFill);
 	}
 
 	/**
-	 * ±×·¯µ¥ÀÌ¼Ç Ã¤¿ì±â Àû¿ë ¿©ºÎ¸¦ ¹İÈ¯ÇÑ´Ù. (2 bit)
+	 * ê·¸ëŸ¬ë°ì´ì…˜ ì±„ìš°ê¸° ì ìš© ì—¬ë¶€ë¥¼ ë°˜í™˜í•œë‹¤. (2 bit)
 	 * 
-	 * @return ±×·¯µ¥ÀÌ¼Ç Ã¤¿ì±â Àû¿ë ¿©ºÎ
+	 * @return ê·¸ëŸ¬ë°ì´ì…˜ ì±„ìš°ê¸° ì ìš© ì—¬ë¶€
 	 */
 	public boolean hasGradientFill() {
 		return BitFlag.get(value, 2);
 	}
 
 	/**
-	 * ±×·¯µ¥ÀÌ¼Ç Ã¤¿ì±â Àû¿ë ¿©ºÎ¸¦ ¼³Á¤ÇÑ´Ù. (2 bit)
+	 * ê·¸ëŸ¬ë°ì´ì…˜ ì±„ìš°ê¸° ì ìš© ì—¬ë¶€ë¥¼ ì„¤ì •í•œë‹¤. (2 bit)
 	 * 
 	 * @param gradientFill
-	 *            ±×·¯µ¥ÀÌ¼Ç Ã¤¿ì±â Àû¿ë ¿©ºÎ
+	 *            ê·¸ëŸ¬ë°ì´ì…˜ ì±„ìš°ê¸° ì ìš© ì—¬ë¶€
 	 */
 	public void setGradientFill(boolean gradientFill) {
 		value = BitFlag.set(value, 2, gradientFill);

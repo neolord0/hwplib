@@ -1,24 +1,24 @@
-package kr.dogfoot.hwplib.object.bodytext.control.sectiondefine;
+ï»¿package kr.dogfoot.hwplib.object.bodytext.control.sectiondefine;
 
 import kr.dogfoot.hwplib.object.bodytext.paragraph.ParagraphList;
 
 /**
- * ¹ÙÅÁ ÆäÀÌÁö Á¤º¸¸¦ ³ªÅ¸³»´Â °´Ã¼
+ * ë°”íƒ• í˜ì´ì§€ ì •ë³´ë¥¼ ë‚˜íƒ€ë‚´ëŠ” ê°ì²´
  * 
  * @author neolord
  */
 public class BatangPageInfo {
 	/**
-	 * ¹®´Ü ¸®½ºÆ® Çì´õ
+	 * ë¬¸ë‹¨ ë¦¬ìŠ¤íŠ¸ í—¤ë”
 	 */
 	private ListHeaderForBatangPage listHeader;
 	/**
-	 * ¹®´Ü ¸®½ºÆ®
+	 * ë¬¸ë‹¨ ë¦¬ìŠ¤íŠ¸
 	 */
 	private ParagraphList paragraphList;
 
 	/**
-	 * »ı¼ºÀÚ
+	 * ìƒì„±ì
 	 */
 	public BatangPageInfo() {
 		listHeader = new ListHeaderForBatangPage();
@@ -26,18 +26,18 @@ public class BatangPageInfo {
 	}
 
 	/**
-	 * ¹®´Ü ¸®½ºÆ® Çì´õ¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ë¬¸ë‹¨ ë¦¬ìŠ¤íŠ¸ í—¤ë”ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ¹®´Ü ¸®½ºÆ® Çì´õ
+	 * @return ë¬¸ë‹¨ ë¦¬ìŠ¤íŠ¸ í—¤ë”
 	 */
 	public ListHeaderForBatangPage getListHeader() {
 		return listHeader;
 	}
 
 	/**
-	 * ¹®´Ü ¸®½ºÆ®¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ë¬¸ë‹¨ ë¦¬ìŠ¤íŠ¸ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ¹®´Ü ¸®½ºÆ®
+	 * @return ë¬¸ë‹¨ ë¦¬ìŠ¤íŠ¸
 	 */
 	public ParagraphList getParagraphList() {
 		return paragraphList;

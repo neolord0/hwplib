@@ -1,96 +1,96 @@
-package kr.dogfoot.hwplib.object.docinfo.numbering;
+ï»¿package kr.dogfoot.hwplib.object.docinfo.numbering;
 
 /**
- * ¹®´Ü ¸Ó¸® Á¤º¸ °´Ã¼
+ * ë¬¸ë‹¨ ë¨¸ë¦¬ ì •ë³´ ê°ì²´
  * 
  * @author neolord
  */
 public class ParagraphHeadInfo {
 	/**
-	 * ¼Ó¼º
+	 * ì†ì„±
 	 */
 	private ParagraphHeadInfoProperty property;
 	/**
-	 * ³Êºñ º¸Á¤°ª
+	 * ë„ˆë¹„ ë³´ì •ê°’
 	 */
 	private int correctionValueForWidth;
 	/**
-	 * º»¹®°úÀÇ °Å¸®
+	 * ë³¸ë¬¸ê³¼ì˜ ê±°ë¦¬
 	 */
 	private int distanceFromBody;
 	/**
-	 * ÂüÁ¶µÈ ±ÛÀÚ ¸ğ¾ç ¾ÆÀÌµğ
+	 * ì°¸ì¡°ëœ ê¸€ì ëª¨ì–‘ ì•„ì´ë””
 	 */
 	private long charShapeID;
 
 	/**
-	 * »ı¼ºÀÚ
+	 * ìƒì„±ì
 	 */
 	public ParagraphHeadInfo() {
 		property = new ParagraphHeadInfoProperty();
 	}
 
 	/**
-	 * ¹®´Ü ¸Ó¸® Á¤º¸ÀÇ ¼Ó¼º °´Ã¼¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ë¬¸ë‹¨ ë¨¸ë¦¬ ì •ë³´ì˜ ì†ì„± ê°ì²´ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ¹®´Ü ¸Ó¸® Á¤º¸ÀÇ ¼Ó¼º °´Ã¼
+	 * @return ë¬¸ë‹¨ ë¨¸ë¦¬ ì •ë³´ì˜ ì†ì„± ê°ì²´
 	 */
 	public ParagraphHeadInfoProperty getProperty() {
 		return property;
 	}
 
 	/**
-	 * ³Êºñ º¸Á¤°ªÀ» ¹İÈ¯ÇÑ´Ù.
+	 * ë„ˆë¹„ ë³´ì •ê°’ì„ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ³Êºñ º¸Á¤°ª
+	 * @return ë„ˆë¹„ ë³´ì •ê°’
 	 */
 	public int getCorrectionValueForWidth() {
 		return correctionValueForWidth;
 	}
 
 	/**
-	 * ³Êºñ º¸Á¤°ªÀ» ¼³Á¤ÇÑ´Ù.
+	 * ë„ˆë¹„ ë³´ì •ê°’ì„ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param correctionValueForWidth
-	 *            ³Êºñ º¸Á¤°ª
+	 *            ë„ˆë¹„ ë³´ì •ê°’
 	 */
 	public void setCorrectionValueForWidth(int correctionValueForWidth) {
 		this.correctionValueForWidth = correctionValueForWidth;
 	}
 
 	/**
-	 * º»¹®°úÀÇ °Å¸®¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ë³¸ë¬¸ê³¼ì˜ ê±°ë¦¬ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return º»¹®°úÀÇ °Å¸®
+	 * @return ë³¸ë¬¸ê³¼ì˜ ê±°ë¦¬
 	 */
 	public int getDistanceFromBody() {
 		return distanceFromBody;
 	}
 
 	/**
-	 * º»¹®°úÀÇ °Å¸®¸¦ ¼³Á¤ÇÑ´Ù.
+	 * ë³¸ë¬¸ê³¼ì˜ ê±°ë¦¬ë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param distanceFromBody
-	 *            º»¹®°úÀÇ °Å¸®
+	 *            ë³¸ë¬¸ê³¼ì˜ ê±°ë¦¬
 	 */
 	public void setDistanceFromBody(int distanceFromBody) {
 		this.distanceFromBody = distanceFromBody;
 	}
 
 	/**
-	 * ÂüÁ¶µÈ ±ÛÀÚ ¸ğ¾ç ¾ÆÀÌµğ¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ì°¸ì¡°ëœ ê¸€ì ëª¨ì–‘ ì•„ì´ë””ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ÂüÁ¶µÈ ±ÛÀÚ ¸ğ¾ç ¾ÆÀÌµğ
+	 * @return ì°¸ì¡°ëœ ê¸€ì ëª¨ì–‘ ì•„ì´ë””
 	 */
 	public long getCharShapeID() {
 		return charShapeID;
 	}
 
 	/**
-	 * ÂüÁ¶µÈ ±ÛÀÚ ¸ğ¾ç ¾ÆÀÌµğ¸¦ ¼³Á¤ÇÑ´Ù.
+	 * ì°¸ì¡°ëœ ê¸€ì ëª¨ì–‘ ì•„ì´ë””ë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param charShapeID
-	 *            ÂüÁ¶µÈ ±ÛÀÚ ¸ğ¾ç ¾ÆÀÌµğ
+	 *            ì°¸ì¡°ëœ ê¸€ì ëª¨ì–‘ ì•„ì´ë””
 	 */
 	public void setCharShapeID(long charShapeID) {
 		this.charShapeID = charShapeID;

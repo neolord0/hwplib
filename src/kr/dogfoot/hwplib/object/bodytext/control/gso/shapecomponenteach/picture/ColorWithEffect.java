@@ -1,75 +1,75 @@
-package kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponenteach.picture;
+ï»¿package kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponenteach.picture;
 
 import java.util.ArrayList;
 
 /**
- * »ö»ó È¿°ú°¡ Æ÷ÇÔµÈ »ö»ó
+ * ìƒ‰ìƒ íš¨ê³¼ê°€ í¬í•¨ëœ ìƒ‰ìƒ
  * 
  * @author neolord
  */
 public class ColorWithEffect {
 	/**
-	 * »ö»ó Å¸ÀÔ (Á¤º¸ ¾øÀ½)
+	 * ìƒ‰ìƒ íƒ€ì… (ì •ë³´ ì—†ìŒ)
 	 */
 	private int type;
 	/**
-	 * Å¸ÀÔ¿¡ µû¸¥ »ö»ó °ª (Á¤º¸ ¾øÀ½)
+	 * íƒ€ì…ì— ë”°ë¥¸ ìƒ‰ìƒ ê°’ (ì •ë³´ ì—†ìŒ)
 	 */
 	private byte[] color;
 	/**
-	 * »ö»ó È¿°úÀÇ ¸®½ºÆ®
+	 * ìƒ‰ìƒ íš¨ê³¼ì˜ ë¦¬ìŠ¤íŠ¸
 	 */
 	private ArrayList<ColorEffect> colorEffectList;
 
 	/**
-	 * »ı¼ºÀÚ
+	 * ìƒì„±ì
 	 */
 	public ColorWithEffect() {
 		colorEffectList = new ArrayList<ColorEffect>();
 	}
 
 	/**
-	 * »ö»ó Å¸ÀÔÀ» ¹İÈ¯ÇÑ´Ù. (Á¤º¸ ¾øÀ½)
+	 * ìƒ‰ìƒ íƒ€ì…ì„ ë°˜í™˜í•œë‹¤. (ì •ë³´ ì—†ìŒ)
 	 * 
-	 * @return »ö»ó Å¸ÀÔ
+	 * @return ìƒ‰ìƒ íƒ€ì…
 	 */
 	public int getType() {
 		return type;
 	}
 
 	/**
-	 * »ö»ó Å¸ÀÔÀ» ¼³Á¤ÇÑ´Ù. (Á¤º¸ ¾øÀ½)
+	 * ìƒ‰ìƒ íƒ€ì…ì„ ì„¤ì •í•œë‹¤. (ì •ë³´ ì—†ìŒ)
 	 * 
 	 * @param type
-	 *            »ö»ó Å¸ÀÔ
+	 *            ìƒ‰ìƒ íƒ€ì…
 	 */
 	public void setType(int type) {
 		this.type = type;
 	}
 
 	/**
-	 * Å¸ÀÔ¿¡ µû¸¥ »ö»ó °ªÀ» ¹İÈ¯ÇÑ´Ù.(Á¤º¸ ¾øÀ½)
+	 * íƒ€ì…ì— ë”°ë¥¸ ìƒ‰ìƒ ê°’ì„ ë°˜í™˜í•œë‹¤.(ì •ë³´ ì—†ìŒ)
 	 * 
-	 * @return Å¸ÀÔ¿¡ µû¸¥ »ö»ó °ª
+	 * @return íƒ€ì…ì— ë”°ë¥¸ ìƒ‰ìƒ ê°’
 	 */
 	public byte[] getColor() {
 		return color;
 	}
 
 	/**
-	 * Å¸ÀÔ¿¡ µû¸¥ »ö»ó °ªÀ» ¼³Á¤ÇÑ´Ù.
+	 * íƒ€ì…ì— ë”°ë¥¸ ìƒ‰ìƒ ê°’ì„ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param color
-	 *            Å¸ÀÔ¿¡ µû¸¥ »ö»ó °ª
+	 *            íƒ€ì…ì— ë”°ë¥¸ ìƒ‰ìƒ ê°’
 	 */
 	public void setColor(byte[] color) {
 		this.color = color;
 	}
 
 	/**
-	 * »õ·Î¿î »ö¼º È¿°ú °´Ã¼¸¦ »ı¼ºÇÏ°í ¸®½ºÆ®¿¡ Ãß°¡ÇÑ´Ù.
+	 * ìƒˆë¡œìš´ ìƒ‰ì„± íš¨ê³¼ ê°ì²´ë¥¼ ìƒì„±í•˜ê³  ë¦¬ìŠ¤íŠ¸ì— ì¶”ê°€í•œë‹¤.
 	 * 
-	 * @return »õ·Î »ı¼ºµÈ »ö¼º È¿°ú °´Ã¼
+	 * @return ìƒˆë¡œ ìƒì„±ëœ ìƒ‰ì„± íš¨ê³¼ ê°ì²´
 	 */
 	public ColorEffect addNewColorEffect() {
 		ColorEffect ce = new ColorEffect();
@@ -78,9 +78,9 @@ public class ColorWithEffect {
 	}
 
 	/**
-	 * »ö¼º È¿°úÀÇ ¸®½ºÆ®¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ìƒ‰ì„± íš¨ê³¼ì˜ ë¦¬ìŠ¤íŠ¸ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return »ö¼º È¿°úÀÇ ¸®½ºÆ®
+	 * @return ìƒ‰ì„± íš¨ê³¼ì˜ ë¦¬ìŠ¤íŠ¸
 	 */
 	public ArrayList<ColorEffect> getColorEffectList() {
 		return colorEffectList;

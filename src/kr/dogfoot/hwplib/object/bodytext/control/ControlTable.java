@@ -1,4 +1,4 @@
-package kr.dogfoot.hwplib.object.bodytext.control;
+ï»¿package kr.dogfoot.hwplib.object.bodytext.control;
 
 import java.util.ArrayList;
 
@@ -9,36 +9,36 @@ import kr.dogfoot.hwplib.object.bodytext.control.table.Row;
 import kr.dogfoot.hwplib.object.bodytext.control.table.Table;
 
 /**
- * Ç¥ ÄÁÆ®·Ñ
+ * í‘œ ì»¨íŠ¸ë¡¤
  * 
  * @author neolord
  */
 public class ControlTable extends Control {
 	/**
-	 * Ä¸¼Ç
+	 * ìº¡ì…˜
 	 */
 	private Caption caption;
 	/**
-	 * Ç¥ Á¤º¸
+	 * í‘œ ì •ë³´
 	 */
 	private Table table;
 	/**
-	 * Çà ¸®½ºÆ®
+	 * í–‰ ë¦¬ìŠ¤íŠ¸
 	 */
 	private ArrayList<Row> rowList;
 
 	/**
-	 * »ı¼ºÀÚ
+	 * ìƒì„±ì
 	 */
 	public ControlTable() {
 		this(new CtrlHeaderGso(ControlType.Table));
 	}
 
 	/**
-	 * »ı¼ºÀÚ
+	 * ìƒì„±ì
 	 * 
 	 * @param header
-	 *            ÄÁÆ®·Ñ Çì´õ
+	 *            ì»¨íŠ¸ë¡¤ í—¤ë”
 	 */
 	public ControlTable(CtrlHeader header) {
 		super(header);
@@ -48,50 +48,50 @@ public class ControlTable extends Control {
 	}
 
 	/**
-	 * ±×¸®±â °´Ã¼ ¿ë ÄÁÆ®·Ñ Çì´õ¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ê·¸ë¦¬ê¸° ê°ì²´ ìš© ì»¨íŠ¸ë¡¤ í—¤ë”ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ±×¸®±â °´Ã¼ ¿ë ÄÁÆ®·Ñ Çì´õ
+	 * @return ê·¸ë¦¬ê¸° ê°ì²´ ìš© ì»¨íŠ¸ë¡¤ í—¤ë”
 	 */
 	public CtrlHeaderGso getHeader() {
 		return (CtrlHeaderGso) header;
 	}
 
 	/**
-	 * Ä¸¼Ç °´Ã¼¸¦ »ı¼ºÇÑ´Ù.
+	 * ìº¡ì…˜ ê°ì²´ë¥¼ ìƒì„±í•œë‹¤.
 	 */
 	public void createCaption() {
 		caption = new Caption();
 	}
 
 	/**
-	 * Ä¸¼Ç °´Ã¼¸¦ »èÁ¦ÇÑ´Ù.
+	 * ìº¡ì…˜ ê°ì²´ë¥¼ ì‚­ì œí•œë‹¤.
 	 */
 	public void deleteCaption() {
 		caption = null;
 	}
 
 	/**
-	 * Ä¸¼Ç °´Ã¼¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ìº¡ì…˜ ê°ì²´ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return Ä¸¼Ç °´Ã¼
+	 * @return ìº¡ì…˜ ê°ì²´
 	 */
 	public Caption getCaption() {
 		return caption;
 	}
 
 	/**
-	 * Ç¥ Á¤º¸ °´Ã¼¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * í‘œ ì •ë³´ ê°ì²´ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return Ç¥ Á¤º¸ °´Ã¼
+	 * @return í‘œ ì •ë³´ ê°ì²´
 	 */
 	public Table getTable() {
 		return table;
 	}
 
 	/**
-	 * »õ·Î¿î Çà °´Ã¼¸¦ »ı¼ºÇÏ°í ¸®½ºÆ®¿¡ Ãß°¡ÇÑ´Ù.
+	 * ìƒˆë¡œìš´ í–‰ ê°ì²´ë¥¼ ìƒì„±í•˜ê³  ë¦¬ìŠ¤íŠ¸ì— ì¶”ê°€í•œë‹¤.
 	 * 
-	 * @return »õ·Î »ı¼ºµÈ Çà °´Ã¼
+	 * @return ìƒˆë¡œ ìƒì„±ëœ í–‰ ê°ì²´
 	 */
 	public Row addNewRow() {
 		Row r = new Row();
@@ -100,9 +100,9 @@ public class ControlTable extends Control {
 	}
 
 	/**
-	 * Çà ¸®½ºÆ®¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * í–‰ ë¦¬ìŠ¤íŠ¸ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return Çà ¸®½ºÆ®
+	 * @return í–‰ ë¦¬ìŠ¤íŠ¸
 	 */
 	public ArrayList<Row> getRowList() {
 		return rowList;

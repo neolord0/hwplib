@@ -1,18 +1,18 @@
-package kr.dogfoot.hwplib.object.bodytext.paragraph.text;
+ï»¿package kr.dogfoot.hwplib.object.bodytext.paragraph.text;
 
 /**
- * ¹®ÀÚ ÄÁÆ®·Ñ Character
+ * ë¬¸ì ì»¨íŠ¸ë¡¤ Character
  * 
  * @author neolord
  */
 public class HWPCharControlChar extends HWPChar {
 	/**
-	 * ¹ÈÀÚ ÄÚµå
+	 * ë¯„ì ì½”ë“œ
 	 */
 	private int code;
 
 	/**
-	 * »ı¼ºÀÚ
+	 * ìƒì„±ì
 	 */
 	public HWPCharControlChar() {
 	}
@@ -23,19 +23,19 @@ public class HWPCharControlChar extends HWPChar {
 	}
 
 	/**
-	 * ¹®ÀÚ ÄÚµå¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ë¬¸ì ì½”ë“œë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ¹®ÀÚ ÄÚµå
+	 * @return ë¬¸ì ì½”ë“œ
 	 */
 	public int getCode() {
 		return code;
 	}
 
 	/**
-	 * ¹®ÀÚ ÄÚµå¸¦ ¼³Á¤ÇÑ´Ù.
+	 * ë¬¸ì ì½”ë“œë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param code
-	 *            ¹®ÀÚ ÄÚµå
+	 *            ë¬¸ì ì½”ë“œ
 	 */
 	public void setCode(int code) {
 		this.code = code;

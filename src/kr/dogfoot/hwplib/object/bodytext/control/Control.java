@@ -1,32 +1,32 @@
-package kr.dogfoot.hwplib.object.bodytext.control;
+ï»¿package kr.dogfoot.hwplib.object.bodytext.control;
 
 import kr.dogfoot.hwplib.object.bodytext.control.ctrlheader.CtrlHeader;
 
 /**
- * ÄÁÆ®·Ñ¿¡ ´ëÇÑ Ãß»ó °´Ã¼
+ * ì»¨íŠ¸ë¡¤ì— ëŒ€í•œ ì¶”ìƒ ê°ì²´
  * 
  * @author neolord
  */
 public abstract class Control {
 	/**
-	 * ÄÁÆ®·Ñ Çì´õ °´Ã¼
+	 * ì»¨íŠ¸ë¡¤ í—¤ë” ê°ì²´
 	 */
 	protected CtrlHeader header;
 
 	/**
-	 * »ı¼ºÀÚ
+	 * ìƒì„±ì
 	 * 
 	 * @param header
-	 *            ÄÁÆ®·Ñ Çì´õ °´Ã¼
+	 *            ì»¨íŠ¸ë¡¤ í—¤ë” ê°ì²´
 	 */
 	public Control(CtrlHeader header) {
 		this.header = header;
 	}
 
 	/**
-	 * ÄÁÆ®·Ñ Çì´õ °´Ã¼¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ì»¨íŠ¸ë¡¤ í—¤ë” ê°ì²´ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ÄÁÆ®·Ñ Çì´õ °´Ã¼
+	 * @return ì»¨íŠ¸ë¡¤ í—¤ë” ê°ì²´
 	 */
 	public ControlType getType() {
 		return ControlType.ctrlIdOf(header.getCtrlId());

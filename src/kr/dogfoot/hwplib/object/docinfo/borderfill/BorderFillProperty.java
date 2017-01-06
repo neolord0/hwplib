@@ -1,73 +1,73 @@
-package kr.dogfoot.hwplib.object.docinfo.borderfill;
+ï»¿package kr.dogfoot.hwplib.object.docinfo.borderfill;
 
 import kr.dogfoot.hwplib.util.binary.BitFlag;
 
 /**
- * Å×µÎ¸®/¹è°æ °´Ã¼ÀÇ ¼Ó¼º
+ * í…Œë‘ë¦¬/ë°°ê²½ ê°ì²´ì˜ ì†ì„±
  * 
  * @author neolord
  */
 public class BorderFillProperty {
 	/**
-	 * ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª(unsigned 2 byte)
+	 * íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’(unsigned 2 byte)
 	 */
 	private int value;
 
 	/**
-	 * »ı¼ºÀÚ
+	 * ìƒì„±ì
 	 */
 	public BorderFillProperty() {
 	}
 
 	/**
-	 * ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ªÀ» ¹İÈ¯ÇÑ´Ù.
+	 * íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’ì„ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª
+	 * @return íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’
 	 */
 	public int getValue() {
 		return value;
 	}
 
 	/**
-	 * ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ªÀ» ¼³Á¤ÇÑ´Ù.
+	 * íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’ì„ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param value
-	 *            ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª
+	 *            íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’
 	 */
 	public void setValue(int value) {
 		this.value = value;
 	}
 
 	/**
-	 * 3D È¿°úÀÇ À¯¹«¸¦ ¹İÇÑÇÑ´Ù.(0 bit)
+	 * 3D íš¨ê³¼ì˜ ìœ ë¬´ë¥¼ ë°˜í•œí•œë‹¤.(0 bit)
 	 * 
-	 * @return 3D È¿°úÀÇ À¯¹«¸¦
+	 * @return 3D íš¨ê³¼ì˜ ìœ ë¬´ë¥¼
 	 */
 	public boolean is3DEffect() {
 		return BitFlag.get(value, 0);
 	}
 
 	/**
-	 * 3D È¿°úÀÇ À¯¹«¸¦ ¼³Á¤ÇÑ´Ù.(0 bit)
+	 * 3D íš¨ê³¼ì˜ ìœ ë¬´ë¥¼ ì„¤ì •í•œë‹¤.(0 bit)
 	 * 
 	 * @param _3DEffect
-	 *            3D È¿°úÀÇ À¯¹«
+	 *            3D íš¨ê³¼ì˜ ìœ ë¬´
 	 */
 	public void set3DEffect(boolean _3DEffect) {
 		value = BitFlag.set(value, 0, _3DEffect);
 	}
 
 	/**
-	 * ±×¸²ÀÚ È¿°úÀÇ À¯¹«¸¦ ¹İÈ¯ÇÑ´Ù. (1 bit)
+	 * ê·¸ë¦¼ì íš¨ê³¼ì˜ ìœ ë¬´ë¥¼ ë°˜í™˜í•œë‹¤. (1 bit)
 	 * 
-	 * @return ±×¸²ÀÚ È¿°úÀÇ À¯¹«
+	 * @return ê·¸ë¦¼ì íš¨ê³¼ì˜ ìœ ë¬´
 	 */
 	public boolean isShadowEffect() {
 		return BitFlag.get(value, 1);
 	}
 
 	/**
-	 * ±×¸²ÀÚ È¿°úÀÇ À¯¹«¸¦ ¼³Á¤ÇÑ´Ù. (1 bit)
+	 * ê·¸ë¦¼ì íš¨ê³¼ì˜ ìœ ë¬´ë¥¼ ì„¤ì •í•œë‹¤. (1 bit)
 	 * 
 	 * @param shadowEffect
 	 */
@@ -76,57 +76,57 @@ public class BorderFillProperty {
 	}
 
 	/**
-	 * Slash ´ë°¢¼± ¸ğ¾çÀ» ¹İÈ¯ÇÑ´Ù.(2~4 BitFlag)
+	 * Slash ëŒ€ê°ì„  ëª¨ì–‘ì„ ë°˜í™˜í•œë‹¤.(2~4 BitFlag)
 	 * 
-	 * @return Slash ´ë°¢¼± ¸ğ¾ç
+	 * @return Slash ëŒ€ê°ì„  ëª¨ì–‘
 	 */
 	public SlashDiagonaShape getSlashDiagonalShape() {
 		return SlashDiagonaShape.valueOf((byte) BitFlag.get(value, 2, 4));
 	}
 
 	/**
-	 * Slash ´ë°¢¼± ¸ğ¾ç¸¦ ¼³Á¤ÇÑ´Ù. (2~4 BitFlag)
+	 * Slash ëŒ€ê°ì„  ëª¨ì–‘ë¥¼ ì„¤ì •í•œë‹¤. (2~4 BitFlag)
 	 * 
 	 * @param diagonaShape
-	 *            Slash ´ë°¢¼± ¸ğ¾ç
+	 *            Slash ëŒ€ê°ì„  ëª¨ì–‘
 	 */
 	public void setSlashDiagonalShape(SlashDiagonaShape diagonaShape) {
 		value = BitFlag.set(value, 2, 4, diagonaShape.getValue());
 	}
 
 	/**
-	 * BackSlash ´ë°¢¼± ¸ğ¾çÀ» ¹İÈ¯ÇÑ´Ù. (5~7 BitFlag)
+	 * BackSlash ëŒ€ê°ì„  ëª¨ì–‘ì„ ë°˜í™˜í•œë‹¤. (5~7 BitFlag)
 	 * 
-	 * @return BackSlash ´ë°¢¼± ¸ğ¾ç
+	 * @return BackSlash ëŒ€ê°ì„  ëª¨ì–‘
 	 */
 	public BackSlashDiagonaShape getBackSlashDiagonalShape() {
 		return BackSlashDiagonaShape.valueOf((byte) BitFlag.get(value, 5, 7));
 	}
 
 	/**
-	 * BackSlash ´ë°¢¼± ¸ğ¾ç¸¦ ¼³Á¤ÇÑ´Ù. (5~7 BitFlag)
+	 * BackSlash ëŒ€ê°ì„  ëª¨ì–‘ë¥¼ ì„¤ì •í•œë‹¤. (5~7 BitFlag)
 	 * 
 	 * @param diagonaShape
-	 *            BackSlash ´ë°¢¼± ¸ğ¾ç
+	 *            BackSlash ëŒ€ê°ì„  ëª¨ì–‘
 	 */
 	public void setBackSlashDiagonalShape(BackSlashDiagonaShape diagonaShape) {
 		value = BitFlag.set(value, 5, 7, diagonaShape.getValue());
 	}
 
 	/**
-	 * Slash ´ë°¢¼±ÀÌ ²©Àº¼±ÀÎÁö ¾Æ´ÑÁö ¿©ºÎ¸¦ ¹İÈ¯ÇÑ´Ù. (8~9 BitFlag)
+	 * Slash ëŒ€ê°ì„ ì´ êº½ì€ì„ ì¸ì§€ ì•„ë‹Œì§€ ì—¬ë¶€ë¥¼ ë°˜í™˜í•œë‹¤. (8~9 BitFlag)
 	 * 
-	 * @return Slash ´ë°¢¼±ÀÌ ²©Àº¼±ÀÎÁö ¾Æ´ÑÁö ¿©ºÎ
+	 * @return Slash ëŒ€ê°ì„ ì´ êº½ì€ì„ ì¸ì§€ ì•„ë‹Œì§€ ì—¬ë¶€
 	 */
 	public boolean isBrokenSlashDiagonal() {
 		return BitFlag.get(value, 8) || BitFlag.get(value, 9);
 	}
 
 	/**
-	 * Slash ´ë°¢¼±ÀÌ ²©Àº¼±ÀÎÁö ¾Æ´ÑÁö ¿©ºÎ¸¦ ¼³Á¤ÇÑ´Ù. (8~9 BitFlag)
+	 * Slash ëŒ€ê°ì„ ì´ êº½ì€ì„ ì¸ì§€ ì•„ë‹Œì§€ ì—¬ë¶€ë¥¼ ì„¤ì •í•œë‹¤. (8~9 BitFlag)
 	 * 
 	 * @param brokenSlashDiagonal
-	 *            Slash ´ë°¢¼±ÀÌ ²©Àº¼±ÀÎÁö ¾Æ´ÑÁö ¿©ºÎ
+	 *            Slash ëŒ€ê°ì„ ì´ êº½ì€ì„ ì¸ì§€ ì•„ë‹Œì§€ ì—¬ë¶€
 	 */
 	public void setBrokenSlashDiagonal(boolean brokenSlashDiagonal) {
 		value = BitFlag.set(value, 8, brokenSlashDiagonal);
@@ -134,76 +134,76 @@ public class BorderFillProperty {
 	}
 
 	/**
-	 * BackSlash ´ë°¢¼±ÀÌ ²©Àº¼±ÀÎÁö ¾Æ´ÑÁö ¿©ºÎ¸¦ ¹İÈ¯ÇÑ´Ù. (10 bit)
+	 * BackSlash ëŒ€ê°ì„ ì´ êº½ì€ì„ ì¸ì§€ ì•„ë‹Œì§€ ì—¬ë¶€ë¥¼ ë°˜í™˜í•œë‹¤. (10 bit)
 	 * 
-	 * @return BackSlash ´ë°¢¼±ÀÌ ²©Àº¼±ÀÎÁö ¾Æ´ÑÁö ¿©ºÎ
+	 * @return BackSlash ëŒ€ê°ì„ ì´ êº½ì€ì„ ì¸ì§€ ì•„ë‹Œì§€ ì—¬ë¶€
 	 */
 	public boolean isBrokenBackSlashDiagonal() {
 		return BitFlag.get(value, 10);
 	}
 
 	/**
-	 * BackSlash ´ë°¢¼±ÀÌ ²©Àº¼±ÀÎÁö ¾Æ´ÑÁö ¿©ºÎ¸¦ ¼³Á¤ÇÑ´Ù. (10 bit)
+	 * BackSlash ëŒ€ê°ì„ ì´ êº½ì€ì„ ì¸ì§€ ì•„ë‹Œì§€ ì—¬ë¶€ë¥¼ ì„¤ì •í•œë‹¤. (10 bit)
 	 * 
 	 * @param brokenBackSlashDiagonal
-	 *            BackSlash ´ë°¢¼±ÀÌ ²©Àº¼±ÀÎÁö ¾Æ´ÑÁö ¿©ºÎ
+	 *            BackSlash ëŒ€ê°ì„ ì´ êº½ì€ì„ ì¸ì§€ ì•„ë‹Œì§€ ì—¬ë¶€
 	 */
 	public void setBrokenBackSlashDiagonal(boolean brokenBackSlashDiagonal) {
 		value = BitFlag.set(value, 10, brokenBackSlashDiagonal);
 	}
 
 	/**
-	 * Slash ´ë°¢¼±ÀÇ 180µµ È¸Àü ¿©ºÎ¸¦ ¹İÈ¯ÇÑ´Ù. (11 bit)
+	 * Slash ëŒ€ê°ì„ ì˜ 180ë„ íšŒì „ ì—¬ë¶€ë¥¼ ë°˜í™˜í•œë‹¤. (11 bit)
 	 * 
-	 * @return Slash ´ë°¢¼±ÀÇ 180µµ È¸Àü ¿©ºÎ
+	 * @return Slash ëŒ€ê°ì„ ì˜ 180ë„ íšŒì „ ì—¬ë¶€
 	 */
 	public boolean isRotateSlashDiagonal180() {
 		return BitFlag.get(value, 11);
 	}
 
 	/**
-	 * Slash ´ë°¢¼±ÀÇ 180µµ È¸Àü ¿©ºÎ¸¦ ¼³Á¤ÇÑ´Ù (11 bit)
+	 * Slash ëŒ€ê°ì„ ì˜ 180ë„ íšŒì „ ì—¬ë¶€ë¥¼ ì„¤ì •í•œë‹¤ (11 bit)
 	 * 
 	 * @param rotateSlashDiagonal180
-	 *            Slash ´ë°¢¼±ÀÇ 180µµ È¸Àü ¿©ºÎ
+	 *            Slash ëŒ€ê°ì„ ì˜ 180ë„ íšŒì „ ì—¬ë¶€
 	 */
 	public void setRotateSlashDiagonal180(boolean rotateSlashDiagonal180) {
 		value = BitFlag.set(value, 11, rotateSlashDiagonal180);
 	}
 
 	/**
-	 * BackSlash ´ë°¢¼±ÀÇ 180µµ È¸Àü ¿©ºÎ¸¦ ¹İÈ¯ÇÑ´Ù. (12 bit)
+	 * BackSlash ëŒ€ê°ì„ ì˜ 180ë„ íšŒì „ ì—¬ë¶€ë¥¼ ë°˜í™˜í•œë‹¤. (12 bit)
 	 * 
-	 * @return BackSlash ´ë°¢¼±ÀÇ 180µµ È¸Àü ¿©ºÎ
+	 * @return BackSlash ëŒ€ê°ì„ ì˜ 180ë„ íšŒì „ ì—¬ë¶€
 	 */
 	public boolean isRotateBackSlashDiagonal180() {
 		return BitFlag.get(value, 12);
 	}
 
 	/**
-	 * BackSlash ´ë°¢¼±ÀÇ 180µµ È¸Àü ¿©ºÎ¸¦ ¼³Á¤ÇÑ´Ù. (12 bit)
+	 * BackSlash ëŒ€ê°ì„ ì˜ 180ë„ íšŒì „ ì—¬ë¶€ë¥¼ ì„¤ì •í•œë‹¤. (12 bit)
 	 * 
 	 * @param rotateBackSlashDiagonal180
-	 *            BackSlash ´ë°¢¼±ÀÇ 180µµ È¸Àü ¿©ºÎ
+	 *            BackSlash ëŒ€ê°ì„ ì˜ 180ë„ íšŒì „ ì—¬ë¶€
 	 */
 	public void setRotateBackSlashDiagonal180(boolean rotateBackSlashDiagonal180) {
 		value = BitFlag.set(value, 12, rotateBackSlashDiagonal180);
 	}
 
 	/**
-	 * Áß½É¼±À» °¡Á³´ÂÁö ¿©ºÎ¸¦ ¹İÈ¯ÇÑ´Ù. (13 bit)
+	 * ì¤‘ì‹¬ì„ ì„ ê°€ì¡ŒëŠ”ì§€ ì—¬ë¶€ë¥¼ ë°˜í™˜í•œë‹¤. (13 bit)
 	 * 
-	 * @return Áß½É¼±À» °¡Á³´ÂÁö ¿©ºÎ
+	 * @return ì¤‘ì‹¬ì„ ì„ ê°€ì¡ŒëŠ”ì§€ ì—¬ë¶€
 	 */
 	public boolean hasCenterLine() {
 		return BitFlag.get(value, 13);
 	}
 
 	/**
-	 * Áß½É¼±À» °¡Á³´ÂÁö ¿©ºÎ¸¦ ¼³Á¤ÇÑ´Ù. (13 bit)
+	 * ì¤‘ì‹¬ì„ ì„ ê°€ì¡ŒëŠ”ì§€ ì—¬ë¶€ë¥¼ ì„¤ì •í•œë‹¤. (13 bit)
 	 * 
 	 * @param hasCenterLine
-	 *            Áß½É¼±À» °¡Á³´ÂÁö ¿©ºÎ¸¦
+	 *            ì¤‘ì‹¬ì„ ì„ ê°€ì¡ŒëŠ”ì§€ ì—¬ë¶€ë¥¼
 	 */
 	public void setHasCenterLine(boolean hasCenterLine) {
 		value = BitFlag.set(value, 13, hasCenterLine);

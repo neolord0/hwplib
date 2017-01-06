@@ -1,238 +1,238 @@
-package kr.dogfoot.hwplib.object.docinfo.charshape;
+ï»¿package kr.dogfoot.hwplib.object.docinfo.charshape;
 
 import kr.dogfoot.hwplib.object.docinfo.borderfill.BorderType;
 import kr.dogfoot.hwplib.util.binary.BitFlag;
 
 /**
- * ±ÛÀÚ ¸ğ¾ç °´Ã¼ÀÇ ¼Ó¼º
+ * ê¸€ì ëª¨ì–‘ ê°ì²´ì˜ ì†ì„±
  * 
  * @author neolord
  */
 public class CharShapeProperty {
 	/**
-	 * ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª(unsigned 4 byte)
+	 * íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’(unsigned 4 byte)
 	 */
 	private long value;
 
 	/**
-	 * »ı¼ºÀÚ
+	 * ìƒì„±ì
 	 */
 	public CharShapeProperty() {
 	}
 
 	/**
-	 * ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ªÀ» ¹İÈ¯ÇÑ´Ù.
+	 * íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’ì„ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª
+	 * @return íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’
 	 */
 	public long getValue() {
 		return value;
 	}
 
 	/**
-	 * ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ªÀ» ¼³Á¤ÇÑ´Ù.
+	 * íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’ì„ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param value
-	 *            ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª
+	 *            íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’
 	 */
 	public void setValue(long value) {
 		this.value = value;
 	}
 
 	/**
-	 * ±Û²Ã ±â¿ïÀÓ ¿©ºÎ¸¦ ¹İÈ¯ÇÑ´Ù. (0 bit)
+	 * ê¸€ê¼´ ê¸°ìš¸ì„ ì—¬ë¶€ë¥¼ ë°˜í™˜í•œë‹¤. (0 bit)
 	 * 
-	 * @return ±Û²Ã ±â¿ïÀÓ ¿©ºÎ
+	 * @return ê¸€ê¼´ ê¸°ìš¸ì„ ì—¬ë¶€
 	 */
 	public boolean isItalic() {
 		return BitFlag.get(value, 0);
 	}
 
 	/**
-	 * ±Û²Ã ±â¿ïÀÓ ¿©ºÎ¸¦ ¼³Á¤ÇÑ´Ù. (0 bit)
+	 * ê¸€ê¼´ ê¸°ìš¸ì„ ì—¬ë¶€ë¥¼ ì„¤ì •í•œë‹¤. (0 bit)
 	 * 
 	 * @param italic
-	 *            ±Û²Ã ±â¿ïÀÓ ¿©ºÎ
+	 *            ê¸€ê¼´ ê¸°ìš¸ì„ ì—¬ë¶€
 	 */
 	public void setItalic(boolean italic) {
 		value = BitFlag.set(value, 0, italic);
 	}
 
 	/**
-	 * ±Û²Ã ÁøÇÏ°Ô ¿©ºÎ¸¦ ¹İÈ¯ÇÑ´Ù. (1 bit)
+	 * ê¸€ê¼´ ì§„í•˜ê²Œ ì—¬ë¶€ë¥¼ ë°˜í™˜í•œë‹¤. (1 bit)
 	 * 
-	 * @return ±Û²Ã ÁøÇÏ°Ô ¿©ºÎ
+	 * @return ê¸€ê¼´ ì§„í•˜ê²Œ ì—¬ë¶€
 	 */
 	public boolean isBold() {
 		return BitFlag.get(value, 1);
 	}
 
 	/**
-	 * ±Û²Ã ÁøÇÏ°Ô ¿©ºÎ¸¦ ¼³Á¤ÇÑ´Ù. (1 bit)
+	 * ê¸€ê¼´ ì§„í•˜ê²Œ ì—¬ë¶€ë¥¼ ì„¤ì •í•œë‹¤. (1 bit)
 	 * 
 	 * @param bold
-	 *            ±Û²Ã ÁøÇÏ°Ô ¿©ºÎ
+	 *            ê¸€ê¼´ ì§„í•˜ê²Œ ì—¬ë¶€
 	 */
 	public void setBold(boolean bold) {
 		value = BitFlag.set(value, 1, bold);
 	}
 
 	/**
-	 * ¹ØÁÙÀÇ Á¾·ù¸¦ ¹İÈ¯ÇÑ´Ù. (2~3 bit)
+	 * ë°‘ì¤„ì˜ ì¢…ë¥˜ë¥¼ ë°˜í™˜í•œë‹¤. (2~3 bit)
 	 * 
-	 * @return ¹ØÁÙÀÇ Á¾·ù
+	 * @return ë°‘ì¤„ì˜ ì¢…ë¥˜
 	 */
 	public UnderLineSort getUnderLineSort() {
 		return UnderLineSort.valueOf((byte) BitFlag.get(value, 2, 3));
 	}
 
 	/**
-	 * ¹ØÁÙÀÇ Á¾·ù¸¦ ¼³Á¤ÇÑ´Ù. (2~3 bit)
+	 * ë°‘ì¤„ì˜ ì¢…ë¥˜ë¥¼ ì„¤ì •í•œë‹¤. (2~3 bit)
 	 * 
 	 * @param underLineSort
-	 *            ¹ØÁÙÀÇ Á¾·ù
+	 *            ë°‘ì¤„ì˜ ì¢…ë¥˜
 	 */
 	public void setUnderLineSort(UnderLineSort underLineSort) {
 		value = BitFlag.set(value, 2, 3, underLineSort.getValue());
 	}
 
 	/**
-	 * ¹ØÁÙÀÇ ¸ğ¾çÀ» ¹İÈ¯ÇÑ´Ù. (4~7 bit)
+	 * ë°‘ì¤„ì˜ ëª¨ì–‘ì„ ë°˜í™˜í•œë‹¤. (4~7 bit)
 	 * 
-	 * @return ¹ØÁÙÀÇ ¸ğ¾ç
+	 * @return ë°‘ì¤„ì˜ ëª¨ì–‘
 	 */
 	public BorderType getUnderLineShape() {
 		return BorderType.valueOf((byte) BitFlag.get(value, 4, 7));
 	}
 
 	/**
-	 * ¹ØÁÙÀÇ ¸ğ¾çÀ» ¼³Á¤ÇÑ´Ù. (4~7 bit)
+	 * ë°‘ì¤„ì˜ ëª¨ì–‘ì„ ì„¤ì •í•œë‹¤. (4~7 bit)
 	 * 
 	 * @param underLineShape
-	 *            ¹ØÁÙÀÇ ¸ğ¾ç
+	 *            ë°‘ì¤„ì˜ ëª¨ì–‘
 	 */
 	public void setUnderLineShape(BorderType underLineShape) {
 		value = BitFlag.set(value, 4, 7, underLineShape.getValue());
 	}
 
 	/**
-	 * ¿Ü°û¼±ÀÇ Á¾·ù¸¦ ¹İÈ¯ÇÑ´Ù. (8~10 bit)
+	 * ì™¸ê³½ì„ ì˜ ì¢…ë¥˜ë¥¼ ë°˜í™˜í•œë‹¤. (8~10 bit)
 	 * 
-	 * @return ¿Ü°û¼±ÀÇ Á¾·ù
+	 * @return ì™¸ê³½ì„ ì˜ ì¢…ë¥˜
 	 */
 	public OutterLineSort getOutterLineSort() {
 		return OutterLineSort.valueOf((byte) BitFlag.get(value, 8, 10));
 	}
 
 	/**
-	 * ¿Ü°û¼±ÀÇ Á¾·ù¸¦ ¼³Á¤ÇÑ´Ù. (8~10 bit)
+	 * ì™¸ê³½ì„ ì˜ ì¢…ë¥˜ë¥¼ ì„¤ì •í•œë‹¤. (8~10 bit)
 	 * 
 	 * @param outterLineSort
-	 *            ¿Ü°û¼±ÀÇ Á¾·ù
+	 *            ì™¸ê³½ì„ ì˜ ì¢…ë¥˜
 	 */
 	public void setOutterLineSort(OutterLineSort outterLineSort) {
 		value = BitFlag.set(value, 8, 10, outterLineSort.getValue());
 	}
 
 	/**
-	 * ±×¸²ÀÚÀÇ Á¾·ù¸¦ ¹İÈ¯ÇÑ´Ù. (11~12 bit)
+	 * ê·¸ë¦¼ìì˜ ì¢…ë¥˜ë¥¼ ë°˜í™˜í•œë‹¤. (11~12 bit)
 	 * 
-	 * @return ±×¸²ÀÚÀÇ Á¾·ù
+	 * @return ê·¸ë¦¼ìì˜ ì¢…ë¥˜
 	 */
 	public ShadowSort getShadowSort() {
 		return ShadowSort.valueOf((byte) BitFlag.get(value, 11, 12));
 	}
 
 	/**
-	 * ±×¸²ÀÚÀÇ Á¾·ù¸¦ ¼³Á¤ÇÑ´Ù. (11~12 bit)
+	 * ê·¸ë¦¼ìì˜ ì¢…ë¥˜ë¥¼ ì„¤ì •í•œë‹¤. (11~12 bit)
 	 * 
 	 * @param shadowSort
-	 *            ±×¸²ÀÚÀÇ Á¾·ù
+	 *            ê·¸ë¦¼ìì˜ ì¢…ë¥˜
 	 */
 	public void setShadowSort(ShadowSort shadowSort) {
 		value = BitFlag.set(value, 11, 12, shadowSort.getValue());
 	}
 
 	/**
-	 * ¾ç°¢ ¿©ºÎ¸¦ ¹İÈ¯ÇÑ´Ù. (13 bit)
+	 * ì–‘ê° ì—¬ë¶€ë¥¼ ë°˜í™˜í•œë‹¤. (13 bit)
 	 * 
-	 * @return ¾ç°¢ ¿©ºÎ
+	 * @return ì–‘ê° ì—¬ë¶€
 	 */
 	public boolean isEmboss() {
 		return BitFlag.get(value, 13);
 	}
 
 	/**
-	 * ¾ç°¢ ¿©ºÎ¸¦ ¼³Á¤ÇÑ´Ù. (13 bit)
+	 * ì–‘ê° ì—¬ë¶€ë¥¼ ì„¤ì •í•œë‹¤. (13 bit)
 	 * 
 	 * @param emboss
-	 *            ¾ç°¢ ¿©ºÎ
+	 *            ì–‘ê° ì—¬ë¶€
 	 */
 	public void setEmboss(boolean emboss) {
 		value = BitFlag.set(value, 13, emboss);
 	}
 
 	/**
-	 * À½°¢ ¿©ºÎ¸¦ ¹İÈ¯ÇÑ´Ù. (14 bit)
+	 * ìŒê° ì—¬ë¶€ë¥¼ ë°˜í™˜í•œë‹¤. (14 bit)
 	 * 
-	 * @return À½°¢ ¿©ºÎ
+	 * @return ìŒê° ì—¬ë¶€
 	 */
 	public boolean isEngrave() {
 		return BitFlag.get(value, 14);
 	}
 
 	/**
-	 * À½°¢ ¿©ºÎ¸¦ ¼³Á¤ÇÑ´Ù. (14 bit)
+	 * ìŒê° ì—¬ë¶€ë¥¼ ì„¤ì •í•œë‹¤. (14 bit)
 	 * 
 	 * @param engrave
-	 *            À½°¢ ¿©ºÎ
+	 *            ìŒê° ì—¬ë¶€
 	 */
 	public void setEngrave(boolean engrave) {
 		value = BitFlag.set(value, 14, engrave);
 	}
 
 	/**
-	 * À§ Ã·ÀÚ ¿©ºÎ¸¦ ¹İÈ¯ÇÑ´Ù. (15 bit)
+	 * ìœ„ ì²¨ì ì—¬ë¶€ë¥¼ ë°˜í™˜í•œë‹¤. (15 bit)
 	 * 
-	 * @return À§ Ã·ÀÚ ¿©ºÎ
+	 * @return ìœ„ ì²¨ì ì—¬ë¶€
 	 */
 	public boolean isSuperScript() {
 		return BitFlag.get(value, 15);
 	}
 
 	/**
-	 * À§ Ã·ÀÚ ¿©ºÎ¸¦ ¼³Á¤ÇÑ´Ù. (15 bit)
+	 * ìœ„ ì²¨ì ì—¬ë¶€ë¥¼ ì„¤ì •í•œë‹¤. (15 bit)
 	 * 
 	 * @param superScript
-	 *            À§ Ã·ÀÚ ¿©ºÎ
+	 *            ìœ„ ì²¨ì ì—¬ë¶€
 	 */
 	public void setSuperScript(boolean superScript) {
 		value = BitFlag.set(value, 15, superScript);
 	}
 
 	/**
-	 * ¾Æ·¡ Ã·ÀÚ ¿©ºÎ¸¦ ¹İÈ¯ÇÑ´Ù. (16 bit)
+	 * ì•„ë˜ ì²¨ì ì—¬ë¶€ë¥¼ ë°˜í™˜í•œë‹¤. (16 bit)
 	 * 
-	 * @return ¾Æ·¡ Ã·ÀÚ ¿©ºÎ
+	 * @return ì•„ë˜ ì²¨ì ì—¬ë¶€
 	 */
 	public boolean isSubScript() {
 		return BitFlag.get(value, 16);
 	}
 
 	/**
-	 * ¾Æ·¡ Ã·ÀÚ ¿©ºÎ¸¦ ¼³Á¤ÇÑ´Ù. (16 bit)
+	 * ì•„ë˜ ì²¨ì ì—¬ë¶€ë¥¼ ì„¤ì •í•œë‹¤. (16 bit)
 	 * 
 	 * @param subScript
-	 *            ¾Æ·¡ Ã·ÀÚ ¿©ºÎ
+	 *            ì•„ë˜ ì²¨ì ì—¬ë¶€
 	 */
 	public void setSubScript(boolean subScript) {
 		value = BitFlag.set(value, 16, subScript);
 	}
 
 	/**
-	 * Ãë¼Ò¼± ¿©ºÎ¸¦ ¹İÈ¯ÇÑ´Ù. (18~20 bit)
+	 * ì·¨ì†Œì„  ì—¬ë¶€ë¥¼ ë°˜í™˜í•œë‹¤. (18~20 bit)
 	 * 
-	 * @return Ãë¼Ò¼± ¿©ºÎ
+	 * @return ì·¨ì†Œì„  ì—¬ë¶€
 	 */
 	public boolean isStrikeLine() {
 		return BitFlag.get(value, 18) | BitFlag.get(value, 19)
@@ -240,10 +240,10 @@ public class CharShapeProperty {
 	}
 
 	/**
-	 * Ãë¼Ò¼± ¿©ºÎ¸¦ ¼³Á¤ÇÑ´Ù. (18~20 bit)
+	 * ì·¨ì†Œì„  ì—¬ë¶€ë¥¼ ì„¤ì •í•œë‹¤. (18~20 bit)
 	 * 
 	 * @param strikeLine
-	 *            Ãë¼Ò¼± ¿©ºÎ
+	 *            ì·¨ì†Œì„  ì—¬ë¶€
 	 */
 	public void setStrikeLine(boolean strikeLine) {
 		value = BitFlag.set(value, 18, strikeLine);
@@ -252,38 +252,38 @@ public class CharShapeProperty {
 	}
 
 	/**
-	 * °­Á¶Á¡ÀÇ Á¾·ù¸¦ ¹İÈ¯ÇÑ´Ù. (21~24 bit)
+	 * ê°•ì¡°ì ì˜ ì¢…ë¥˜ë¥¼ ë°˜í™˜í•œë‹¤. (21~24 bit)
 	 * 
-	 * @return °­Á¶Á¡ÀÇ Á¾·ù
+	 * @return ê°•ì¡°ì ì˜ ì¢…ë¥˜
 	 */
 	public EmphasisSort getEmphasisSort() {
 		return EmphasisSort.valueOf((byte) BitFlag.get(value, 21, 24));
 	}
 
 	/**
-	 * °­Á¶Á¡ÀÇ Á¾·ù¸¦ ¼³Á¤ÇÑ´Ù. (21~24 bit)
+	 * ê°•ì¡°ì ì˜ ì¢…ë¥˜ë¥¼ ì„¤ì •í•œë‹¤. (21~24 bit)
 	 * 
 	 * @param emphasisSort
-	 *            °­Á¶Á¡ÀÇ Á¾·ù
+	 *            ê°•ì¡°ì ì˜ ì¢…ë¥˜
 	 */
 	public void setEmphasisSort(EmphasisSort emphasisSort) {
 		value = BitFlag.set(value, 21, 24, emphasisSort.getValue());
 	}
 
 	/**
-	 * ±Û²Ã¿¡ ¾î¿ï¸®´Â ºóÄ­ »ç¿ë ¿©ºÎ¸¦ ¹İÈ¯ÇÑ´Ù. (25 bit)
+	 * ê¸€ê¼´ì— ì–´ìš¸ë¦¬ëŠ” ë¹ˆì¹¸ ì‚¬ìš© ì—¬ë¶€ë¥¼ ë°˜í™˜í•œë‹¤. (25 bit)
 	 * 
-	 * @return ±Û²Ã¿¡ ¾î¿ï¸®´Â ºóÄ­ »ç¿ë ¿©ºÎ
+	 * @return ê¸€ê¼´ì— ì–´ìš¸ë¦¬ëŠ” ë¹ˆì¹¸ ì‚¬ìš© ì—¬ë¶€
 	 */
 	public boolean isUsingSpaceAppropriateForFont() {
 		return BitFlag.get(value, 25);
 	}
 
 	/**
-	 * ±Û²Ã¿¡ ¾î¿ï¸®´Â ºóÄ­ »ç¿ë ¿©ºÎ¸¦ ¼³Á¤ÇÑ´Ù. (25 bit)
+	 * ê¸€ê¼´ì— ì–´ìš¸ë¦¬ëŠ” ë¹ˆì¹¸ ì‚¬ìš© ì—¬ë¶€ë¥¼ ì„¤ì •í•œë‹¤. (25 bit)
 	 * 
 	 * @param usingSpaceAppropriateForFont
-	 *            ±Û²Ã¿¡ ¾î¿ï¸®´Â ºóÄ­ »ç¿ë ¿©ºÎ
+	 *            ê¸€ê¼´ì— ì–´ìš¸ë¦¬ëŠ” ë¹ˆì¹¸ ì‚¬ìš© ì—¬ë¶€
 	 */
 	public void setUsingSpaceAppropriateForFont(
 			boolean usingSpaceAppropriateForFont) {
@@ -291,38 +291,38 @@ public class CharShapeProperty {
 	}
 
 	/**
-	 * Ãë¼Ò¼±ÀÇ ¸ğ¾çÀ» ¹İÈ¯ÇÑ´Ù. (26~29 bit)
+	 * ì·¨ì†Œì„ ì˜ ëª¨ì–‘ì„ ë°˜í™˜í•œë‹¤. (26~29 bit)
 	 * 
-	 * @return Ãë¼Ò¼±ÀÇ ¸ğ¾ç
+	 * @return ì·¨ì†Œì„ ì˜ ëª¨ì–‘
 	 */
 	public BorderType getStrikeLineShape() {
 		return BorderType.valueOf((byte) BitFlag.get(value, 26, 29));
 	}
 
 	/**
-	 * Ãë¼Ò¼±ÀÇ ¸ğ¾çÀ» ¼³Á¤ÇÑ´Ù. (26~29 bit)
+	 * ì·¨ì†Œì„ ì˜ ëª¨ì–‘ì„ ì„¤ì •í•œë‹¤. (26~29 bit)
 	 * 
 	 * @param strikeLineShape
-	 *            Ãë¼Ò¼±ÀÇ ¸ğ¾ç
+	 *            ì·¨ì†Œì„ ì˜ ëª¨ì–‘
 	 */
 	public void setStrikeLineShape(BorderType strikeLineShape) {
 		value = BitFlag.set(value, 26, 29, strikeLineShape.getValue());
 	}
 
 	/**
-	 * Kerning ¿©ºÎ¸¦ ¹İÈ¯ÇÑ´Ù. (30 bit)
+	 * Kerning ì—¬ë¶€ë¥¼ ë°˜í™˜í•œë‹¤. (30 bit)
 	 * 
-	 * @return Kerning ¿©ºÎ
+	 * @return Kerning ì—¬ë¶€
 	 */
 	public boolean isKerning() {
 		return BitFlag.get(value, 30);
 	}
 
 	/**
-	 * Kerning ¿©ºÎ¸¦ ¼³Á¤ÇÑ´Ù. (30 bit)
+	 * Kerning ì—¬ë¶€ë¥¼ ì„¤ì •í•œë‹¤. (30 bit)
 	 * 
 	 * @param kerning
-	 *            Kerning ¿©ºÎ
+	 *            Kerning ì—¬ë¶€
 	 */
 	public void setKerning(boolean kerning) {
 		value = BitFlag.set(value, 30, kerning);

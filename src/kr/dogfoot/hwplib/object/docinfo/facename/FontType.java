@@ -1,54 +1,54 @@
-package kr.dogfoot.hwplib.object.docinfo.facename;
+ï»¿package kr.dogfoot.hwplib.object.docinfo.facename;
 
 /**
- * ´ëÃ¼ ±Û²Ã À¯Çü
+ * ëŒ€ì²´ ê¸€ê¼´ ìœ í˜•
  * 
  * @author neolord
  */
 public enum FontType {
 	/**
-	 * ¿ø·¡ Á¾·ù¸¦ ¾Ë ¼ö ¾øÀ» ¶§
+	 * ì›ë˜ ì¢…ë¥˜ë¥¼ ì•Œ ìˆ˜ ì—†ì„ ë•Œ
 	 */
 	Unknown((byte) 0),
 	/**
-	 * Æ®·çÅ¸ÀÔ ±Û²Ã(TTF)
+	 * íŠ¸ë£¨íƒ€ì… ê¸€ê¼´(TTF)
 	 */
 	TTF((byte) 1),
 	/**
-	 * ÇÑ±Û Àü¿ë ±Û²Ã(HFT)
+	 * í•œê¸€ ì „ìš© ê¸€ê¼´(HFT)
 	 */
 	HFT((byte) 2);
 
 	/**
-	 * ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª
+	 * íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’
 	 */
 	private byte value;
 
 	/**
-	 * »ı¼ºÀÚ
+	 * ìƒì„±ì
 	 * 
 	 * @param value
-	 *            ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª
+	 *            íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’
 	 */
 	private FontType(byte value) {
 		this.value = value;
 	}
 
 	/**
-	 * ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ªÀ» ¹İÈ¯ÇÑ´Ù.
+	 * íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’ì„ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª
+	 * @return íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’
 	 */
 	public byte getValue() {
 		return value;
 	}
 
 	/**
-	 * ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª¿¡ ÇØ´çµÇ´Â enum °ªÀ» ¹İÈ¯ÇÑ´Ù.
+	 * íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’ì— í•´ë‹¹ë˜ëŠ” enum ê°’ì„ ë°˜í™˜í•œë‹¤.
 	 * 
 	 * @param value
-	 *            ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª
-	 * @return enum °ª
+	 *            íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’
+	 * @return enum ê°’
 	 */
 	public static FontType valueOf(byte value) {
 		for (FontType ft : values()) {

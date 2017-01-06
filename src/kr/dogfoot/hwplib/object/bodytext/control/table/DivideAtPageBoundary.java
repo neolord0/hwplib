@@ -1,54 +1,54 @@
-package kr.dogfoot.hwplib.object.bodytext.control.table;
+ï»¿package kr.dogfoot.hwplib.object.bodytext.control.table;
 
 /**
- * ÂÊ °æ°è¿¡¼­ ³ª´® ¹æ¹ı
+ * ìª½ ê²½ê³„ì—ì„œ ë‚˜ëˆ” ë°©ë²•
  * 
  * @author neolord
  */
 public enum DivideAtPageBoundary {
 	/**
-	 * ³ª´©Áö ¾ÊÀ½
+	 * ë‚˜ëˆ„ì§€ ì•ŠìŒ
 	 */
 	NoDivide((byte) 0),
 	/**
-	 * ¼¿ ´ÜÀ§·Î ³ª´®
+	 * ì…€ ë‹¨ìœ„ë¡œ ë‚˜ëˆ”
 	 */
 	DivideByCell((byte) 1),
 	/**
-	 * ³ª´®
+	 * ë‚˜ëˆ”
 	 */
 	Divide((byte) 2);
 
 	/**
-	 * ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª
+	 * íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’
 	 */
 	private byte value;
 
 	/**
-	 * »ı¼ºÀÚ
+	 * ìƒì„±ì
 	 * 
 	 * @param value
-	 *            ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª
+	 *            íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’
 	 */
 	private DivideAtPageBoundary(byte value) {
 		this.value = value;
 	}
 
 	/**
-	 * ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ªÀ» ¹İÈ¯ÇÑ´Ù.
+	 * íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’ì„ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª
+	 * @return íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’
 	 */
 	public byte getValue() {
 		return value;
 	}
 
 	/**
-	 * ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª¿¡ ÇØ´çµÇ´Â enum °ªÀ» ¹İÈ¯ÇÑ´Ù.
+	 * íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’ì— í•´ë‹¹ë˜ëŠ” enum ê°’ì„ ë°˜í™˜í•œë‹¤.
 	 * 
 	 * @param value
-	 *            ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª
-	 * @return enum °ª
+	 *            íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’
+	 * @return enum ê°’
 	 */
 	public static DivideAtPageBoundary valueOf(byte value) {
 		for (DivideAtPageBoundary dapb : values()) {

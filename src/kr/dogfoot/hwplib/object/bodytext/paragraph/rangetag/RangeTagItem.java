@@ -1,107 +1,107 @@
-package kr.dogfoot.hwplib.object.bodytext.paragraph.rangetag;
+ï»¿package kr.dogfoot.hwplib.object.bodytext.paragraph.rangetag;
 
 /**
- * ¿µ¿ª ÅÂ±× Á¤º¸¿¡ ´ëÇÑ °´Ã¼
+ * ì˜ì—­ íƒœê·¸ ì •ë³´ì— ëŒ€í•œ ê°ì²´
  * 
  * @author neolord
  */
 public class RangeTagItem {
 	/**
-	 * ¿µ¿ª ½ÃÀÛ
+	 * ì˜ì—­ ì‹œì‘
 	 */
 	private long rangeStart;
 	/**
-	 * ¿µ¿ª ³¡
+	 * ì˜ì—­ ë
 	 */
 	private long rangeEnd;
 	/**
-	 * ÅÂ±× Á¾·ù
+	 * íƒœê·¸ ì¢…ë¥˜
 	 */
 	private short sort;
 	/**
-	 * ÅÂ±× µ¥ÀÌÅ¸ (3byte)
+	 * íƒœê·¸ ë°ì´íƒ€ (3byte)
 	 */
 	private byte[] data;
 
 	/**
-	 * »ı¼ºÀÚ
+	 * ìƒì„±ì
 	 */
 	public RangeTagItem() {
 	}
 
 	/**
-	 * ¿µ¿ª ½ÃÀÛÀ» ¹İÈ¯ÇÑ´Ù.
+	 * ì˜ì—­ ì‹œì‘ì„ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ¿µ¿ª ½ÃÀÛ
+	 * @return ì˜ì—­ ì‹œì‘
 	 */
 	public long getRangeStart() {
 		return rangeStart;
 	}
 
 	/**
-	 * ¿µ¿ª ½ÃÀÛÀ» ¼³Á¤ÇÑ´Ù.
+	 * ì˜ì—­ ì‹œì‘ì„ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param rangeStart
-	 *            ¿µ¿ª ½ÃÀÛ
+	 *            ì˜ì—­ ì‹œì‘
 	 */
 	public void setRangeStart(long rangeStart) {
 		this.rangeStart = rangeStart;
 	}
 
 	/**
-	 * ¿µ¿ª ³¡À» ¹İÈ¯ÇÑ´Ù.
+	 * ì˜ì—­ ëì„ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ¿µ¿ª ³¡
+	 * @return ì˜ì—­ ë
 	 */
 	public long getRangeEnd() {
 		return rangeEnd;
 	}
 
 	/**
-	 * ¿µ¿ª ³¡À» ¼³Á¤ÇÑ´Ù.
+	 * ì˜ì—­ ëì„ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param rangeEnd
-	 *            ¿µ¿ª ³¡
+	 *            ì˜ì—­ ë
 	 */
 	public void setRangeEnd(long rangeEnd) {
 		this.rangeEnd = rangeEnd;
 	}
 
 	/**
-	 * ÅÂ±× Á¾·ù¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * íƒœê·¸ ì¢…ë¥˜ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ÅÂ±× Á¾·ù
+	 * @return íƒœê·¸ ì¢…ë¥˜
 	 */
 	public short getSort() {
 		return sort;
 	}
 
 	/**
-	 * ÅÂ±× Á¾·ù¸¦ ¼³Á¤ÇÑ´Ù.
+	 * íƒœê·¸ ì¢…ë¥˜ë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param sort
-	 *            ÅÂ±× Á¾·ù
+	 *            íƒœê·¸ ì¢…ë¥˜
 	 */
 	public void setSort(short sort) {
 		this.sort = sort;
 	}
 
 	/**
-	 * ÅÂ±× µ¥ÀÌÅ¸¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * íƒœê·¸ ë°ì´íƒ€ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ÅÂ±× µ¥ÀÌÅ¸
+	 * @return íƒœê·¸ ë°ì´íƒ€
 	 */
 	public byte[] getData() {
 		return data;
 	}
 
 	/**
-	 * ÅÂ±× µ¥ÀÌÅ¸¸¦ ¼³Á¤ÇÑ´Ù.
+	 * íƒœê·¸ ë°ì´íƒ€ë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param data
-	 *            ÅÂ±× µ¥ÀÌÅ¸
+	 *            íƒœê·¸ ë°ì´íƒ€
 	 * @throws Exception
-	 *             ÅÂ±× µ¥ÀÌÅ¸°¡ 3 bytes°¡ ¾Æ´Ò ¶§.
+	 *             íƒœê·¸ ë°ì´íƒ€ê°€ 3 bytesê°€ ì•„ë‹ ë•Œ.
 	 */
 	public void setData(byte[] data) throws Exception {
 		if (data.length != 3) {

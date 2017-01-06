@@ -1,361 +1,361 @@
-package kr.dogfoot.hwplib.object.bodytext.paragraph.header;
+ï»¿package kr.dogfoot.hwplib.object.bodytext.paragraph.header;
 
 import kr.dogfoot.hwplib.util.binary.BitFlag;
 
 /**
- * ¹®´Ü¿¡ Æ÷ÇÔµÈ ÄÁÆ®·ÑÀÇ Á¾·ù¸¦ ³ªÅ¸³»´Â °´Ã¼
+ * ë¬¸ë‹¨ì— í¬í•¨ëœ ì»¨íŠ¸ë¡¤ì˜ ì¢…ë¥˜ë¥¼ ë‚˜íƒ€ë‚´ëŠ” ê°ì²´
  * 
  * @author neolord
  */
 public class ControlMask {
 	/**
-	 * ÆÄÀÏ¿¡ ÀúÀåµÇ´Â °ª (unsigned 4 byte)
+	 * íŒŒì¼ì— ì €ì¥ë˜ëŠ” ê°’ (unsigned 4 byte)
 	 */
 	private long value;
 
 	/**
-	 * »ı¼ºÀÚ
+	 * ìƒì„±ì
 	 */
 	public ControlMask() {
 	}
 
 	/**
-	 * ÆÄÀÏ¿¡ ÀúÀåµÇ´Â °ªÀ» ¹İÈ¯ÇÑ´Ù.
+	 * íŒŒì¼ì— ì €ì¥ë˜ëŠ” ê°’ì„ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ÆÄÀÏ¿¡ ÀúÀåµÇ´Â °ª
+	 * @return íŒŒì¼ì— ì €ì¥ë˜ëŠ” ê°’
 	 */
 	public long getValue() {
 		return value;
 	}
 
 	/**
-	 * ÆÄÀÏ¿¡ ÀúÀåµÇ´Â °ªÀ» ¼³Á¤ÇÑ´Ù.
+	 * íŒŒì¼ì— ì €ì¥ë˜ëŠ” ê°’ì„ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param value
-	 *            ÆÄÀÏ¿¡ ÀúÀåµÇ´Â °ª
+	 *            íŒŒì¼ì— ì €ì¥ë˜ëŠ” ê°’
 	 */
 	public void setValue(long value) {
 		this.value = value;
 	}
 
 	/**
-	 * ¹®´ÜÀÌ ±¸¿ª/´Ü Á¤ÀÇ ÄÁÆ®·ÑÀ» °¡Á³´ÂÁö ¿©ºÎ¸¦ ¹İÈ¯ÇÑ´Ù. (2 bit)
+	 * ë¬¸ë‹¨ì´ êµ¬ì—­/ë‹¨ ì •ì˜ ì»¨íŠ¸ë¡¤ì„ ê°€ì¡ŒëŠ”ì§€ ì—¬ë¶€ë¥¼ ë°˜í™˜í•œë‹¤. (2 bit)
 	 * 
-	 * @return ¹®´ÜÀÌ ±¸¿ª/´Ü Á¤ÀÇ ÄÁÆ®·ÑÀ» °¡Á³´ÂÁö ¿©ºÎ
+	 * @return ë¬¸ë‹¨ì´ êµ¬ì—­/ë‹¨ ì •ì˜ ì»¨íŠ¸ë¡¤ì„ ê°€ì¡ŒëŠ”ì§€ ì—¬ë¶€
 	 */
 	public boolean hasSectColDef() {
 		return BitFlag.get(value, 2);
 	}
 
 	/**
-	 * ¹®´ÜÀÌ ±¸¿ª/´Ü Á¤ÀÇ ÄÁÆ®·ÑÀ» °¡Á³´ÂÁö ¿©ºÎ¸¦ ¼³Á¤ÇÑ´Ù. (2 bit)
+	 * ë¬¸ë‹¨ì´ êµ¬ì—­/ë‹¨ ì •ì˜ ì»¨íŠ¸ë¡¤ì„ ê°€ì¡ŒëŠ”ì§€ ì—¬ë¶€ë¥¼ ì„¤ì •í•œë‹¤. (2 bit)
 	 * 
 	 * @param hasSectColDef
-	 *            ¹®´ÜÀÌ ±¸¿ª/´Ü Á¤ÀÇ ÄÁÆ®·ÑÀ» °¡Á³´ÂÁö ¿©ºÎ
+	 *            ë¬¸ë‹¨ì´ êµ¬ì—­/ë‹¨ ì •ì˜ ì»¨íŠ¸ë¡¤ì„ ê°€ì¡ŒëŠ”ì§€ ì—¬ë¶€
 	 */
 	public void setHasSectColDef(boolean hasSectColDef) {
 		value = BitFlag.set(value, 2, hasSectColDef);
 	}
 
 	/**
-	 * ÇÊµå ½ÃÀÛ ÄÁÆ®·ÑÀ» °¡Á³´ÂÁö ¿©ºÎ¸¦ ¹İÈ¯ÇÑ´Ù. (3 bit)
+	 * í•„ë“œ ì‹œì‘ ì»¨íŠ¸ë¡¤ì„ ê°€ì¡ŒëŠ”ì§€ ì—¬ë¶€ë¥¼ ë°˜í™˜í•œë‹¤. (3 bit)
 	 * 
-	 * @return ÇÊµå ½ÃÀÛ ÄÁÆ®·ÑÀ» °¡Á³´ÂÁö ¿©ºÎ
+	 * @return í•„ë“œ ì‹œì‘ ì»¨íŠ¸ë¡¤ì„ ê°€ì¡ŒëŠ”ì§€ ì—¬ë¶€
 	 */
 	public boolean hasFieldStart() {
 		return BitFlag.get(value, 3);
 	}
 
 	/**
-	 * ÇÊµå ½ÃÀÛ ÄÁÆ®·ÑÀ» °¡Á³´ÂÁö ¿©ºÎ¸¦ ¼³Á¤ÇÑ´Ù. (3 bit)
+	 * í•„ë“œ ì‹œì‘ ì»¨íŠ¸ë¡¤ì„ ê°€ì¡ŒëŠ”ì§€ ì—¬ë¶€ë¥¼ ì„¤ì •í•œë‹¤. (3 bit)
 	 * 
 	 * @param hasFieldStart
-	 *            ÇÊµå ½ÃÀÛ ÄÁÆ®·ÑÀ» °¡Á³´ÂÁö ¿©ºÎ
+	 *            í•„ë“œ ì‹œì‘ ì»¨íŠ¸ë¡¤ì„ ê°€ì¡ŒëŠ”ì§€ ì—¬ë¶€
 	 */
 	public void setHasFieldStart(boolean hasFieldStart) {
 		value = BitFlag.set(value, 3, hasFieldStart);
 	}
 
 	/**
-	 * ÇÊµå ³¡ ÄÁÆ®·ÑÀ» °¡Á³´ÂÁö ¿©ºÎ¸¦ ¹İÈ¯ÇÑ´Ù. (4 bit)
+	 * í•„ë“œ ë ì»¨íŠ¸ë¡¤ì„ ê°€ì¡ŒëŠ”ì§€ ì—¬ë¶€ë¥¼ ë°˜í™˜í•œë‹¤. (4 bit)
 	 * 
-	 * @return ÇÊµå ³¡ ÄÁÆ®·ÑÀ» °¡Á³´ÂÁö ¿©ºÎ
+	 * @return í•„ë“œ ë ì»¨íŠ¸ë¡¤ì„ ê°€ì¡ŒëŠ”ì§€ ì—¬ë¶€
 	 */
 	public boolean hasFieldEnd() {
 		return BitFlag.get(value, 4);
 	}
 
 	/**
-	 * ÇÊµå ³¡ ÄÁÆ®·ÑÀ» °¡Á³´ÂÁö ¿©ºÎ¸¦ ¼³Á¤ÇÑ´Ù. (4 bit)
+	 * í•„ë“œ ë ì»¨íŠ¸ë¡¤ì„ ê°€ì¡ŒëŠ”ì§€ ì—¬ë¶€ë¥¼ ì„¤ì •í•œë‹¤. (4 bit)
 	 * 
 	 * @param hasFieldEnd
-	 *            ÇÊµå ³¡ ÄÁÆ®·ÑÀ» °¡Á³´ÂÁö ¿©ºÎ
+	 *            í•„ë“œ ë ì»¨íŠ¸ë¡¤ì„ ê°€ì¡ŒëŠ”ì§€ ì—¬ë¶€
 	 */
 	public void setHasFieldEnd(boolean hasFieldEnd) {
 		value = BitFlag.set(value, 4, hasFieldEnd);
 	}
 
 	/**
-	 * ÅÇÀ» °¡Á³´ÂÁö ¿©ºÎ¸¦ ¹İÈ¯ÇÑ´Ù. (9 bit)
+	 * íƒ­ì„ ê°€ì¡ŒëŠ”ì§€ ì—¬ë¶€ë¥¼ ë°˜í™˜í•œë‹¤. (9 bit)
 	 * 
-	 * @return ÅÇÀ» °¡Á³´ÂÁö ¿©ºÎ
+	 * @return íƒ­ì„ ê°€ì¡ŒëŠ”ì§€ ì—¬ë¶€
 	 */
 	public boolean hasTab() {
 		return BitFlag.get(value, 9);
 	}
 
 	/**
-	 * ÅÇÀ» °¡Á³´ÂÁö ¿©ºÎ¸¦ ¼³Á¤ÇÑ´Ù. (9 bit)
+	 * íƒ­ì„ ê°€ì¡ŒëŠ”ì§€ ì—¬ë¶€ë¥¼ ì„¤ì •í•œë‹¤. (9 bit)
 	 * 
 	 * @param hasTab
-	 *            ÅÇÀ» °¡Á³´ÂÁö ¿©ºÎ
+	 *            íƒ­ì„ ê°€ì¡ŒëŠ”ì§€ ì—¬ë¶€
 	 */
 	public void setHasTab(boolean hasTab) {
 		value = BitFlag.set(value, 9, hasTab);
 	}
 
 	/**
-	 * °­Á¦ ÁÙ ³ª´®À» °¡Á³´ÂÁö ¿©ºÎ¸¦ ¹İÈ¯ÇÑ´Ù. (10 bit)
+	 * ê°•ì œ ì¤„ ë‚˜ëˆ”ì„ ê°€ì¡ŒëŠ”ì§€ ì—¬ë¶€ë¥¼ ë°˜í™˜í•œë‹¤. (10 bit)
 	 * 
-	 * @return °­Á¦ ÁÙ ³ª´®À» °¡Á³´ÂÁö ¿©ºÎ
+	 * @return ê°•ì œ ì¤„ ë‚˜ëˆ”ì„ ê°€ì¡ŒëŠ”ì§€ ì—¬ë¶€
 	 */
 	public boolean hasDivideLineForce() {
 		return BitFlag.get(value, 10);
 	}
 
 	/**
-	 * °­Á¦ ÁÙ ³ª´®À» °¡Á³´ÂÁö ¿©ºÎ¸¦ ¼³Á¤ÇÑ´Ù. (10 bit)
+	 * ê°•ì œ ì¤„ ë‚˜ëˆ”ì„ ê°€ì¡ŒëŠ”ì§€ ì—¬ë¶€ë¥¼ ì„¤ì •í•œë‹¤. (10 bit)
 	 * 
 	 * @param hasDivideLineForce
-	 *            °­Á¦ ÁÙ ³ª´®À» °¡Á³´ÂÁö ¿©ºÎ
+	 *            ê°•ì œ ì¤„ ë‚˜ëˆ”ì„ ê°€ì¡ŒëŠ”ì§€ ì—¬ë¶€
 	 */
 	public void setHasDivideLineForce(boolean hasDivideLineForce) {
 		value = BitFlag.set(value, 10, hasDivideLineForce);
 	}
 
 	/**
-	 * ±×¸®±â °´Ã¼ ¶Ç´Â Ç¥ °´Ã¼¸¦ °¡Á³´ÂÁö ¿©ºÎ¸¦ ¹İÈ¯ÇÑ´Ù. (11 bit)
+	 * ê·¸ë¦¬ê¸° ê°ì²´ ë˜ëŠ” í‘œ ê°ì²´ë¥¼ ê°€ì¡ŒëŠ”ì§€ ì—¬ë¶€ë¥¼ ë°˜í™˜í•œë‹¤. (11 bit)
 	 * 
-	 * @return ±×¸®±â °´Ã¼ ¶Ç´Â Ç¥ °´Ã¼¸¦ °¡Á³´ÂÁö ¿©ºÎ
+	 * @return ê·¸ë¦¬ê¸° ê°ì²´ ë˜ëŠ” í‘œ ê°ì²´ë¥¼ ê°€ì¡ŒëŠ”ì§€ ì—¬ë¶€
 	 */
 	public boolean hasGsoTable() {
 		return BitFlag.get(value, 11);
 	}
 
 	/**
-	 * ±×¸®±â °´Ã¼ ¶Ç´Â Ç¥ °´Ã¼¸¦ °¡Á³´ÂÁö ¿©ºÎ¸¦ ¼³Á¤ÇÑ´Ù. (11 bit)
+	 * ê·¸ë¦¬ê¸° ê°ì²´ ë˜ëŠ” í‘œ ê°ì²´ë¥¼ ê°€ì¡ŒëŠ”ì§€ ì—¬ë¶€ë¥¼ ì„¤ì •í•œë‹¤. (11 bit)
 	 * 
 	 * @param hasObjectTable
-	 *            ±×¸®±â °´Ã¼ ¶Ç´Â Ç¥ °´Ã¼¸¦ °¡Á³´ÂÁö ¿©ºÎ
+	 *            ê·¸ë¦¬ê¸° ê°ì²´ ë˜ëŠ” í‘œ ê°ì²´ë¥¼ ê°€ì¡ŒëŠ”ì§€ ì—¬ë¶€
 	 */
 	public void setHasGsoTable(boolean hasObjectTable) {
 		value = BitFlag.set(value, 11, hasObjectTable);
 	}
 
 	/**
-	 * ¹®´Ü ³ª´©±â¸¦ °¡Á³´ÂÁö ¿©ºÎ¸¦ ¹İÈ¯ÇÑ´Ù. (13 bit)
+	 * ë¬¸ë‹¨ ë‚˜ëˆ„ê¸°ë¥¼ ê°€ì¡ŒëŠ”ì§€ ì—¬ë¶€ë¥¼ ë°˜í™˜í•œë‹¤. (13 bit)
 	 * 
-	 * @return ¹®´Ü ³ª´©±â¸¦ °¡Á³´ÂÁö ¿©ºÎ
+	 * @return ë¬¸ë‹¨ ë‚˜ëˆ„ê¸°ë¥¼ ê°€ì¡ŒëŠ”ì§€ ì—¬ë¶€
 	 */
 	public boolean hasDivideParagraph() {
 		return BitFlag.get(value, 13);
 	}
 
 	/**
-	 * ¹®´Ü ³ª´©±â¸¦ °¡Á³´ÂÁö ¿©ºÎ¸¦ ¼³Á¤ÇÑ´Ù. (13 bit)
+	 * ë¬¸ë‹¨ ë‚˜ëˆ„ê¸°ë¥¼ ê°€ì¡ŒëŠ”ì§€ ì—¬ë¶€ë¥¼ ì„¤ì •í•œë‹¤. (13 bit)
 	 * 
 	 * @param hasDivideParagraph
-	 *            ¹®´Ü ³ª´©±â¸¦ °¡Á³´ÂÁö ¿©ºÎ
+	 *            ë¬¸ë‹¨ ë‚˜ëˆ„ê¸°ë¥¼ ê°€ì¡ŒëŠ”ì§€ ì—¬ë¶€
 	 */
 	public void setHasDivideParagraph(boolean hasDivideParagraph) {
 		value = BitFlag.set(value, 13, hasDivideParagraph);
 	}
 
 	/**
-	 * ÁÖ¼®À» °¡Á³´ÂÁö ¿©ºÎ¸¦ ¹İÈ¯ÇÑ´Ù. (15 bit)
+	 * ì£¼ì„ì„ ê°€ì¡ŒëŠ”ì§€ ì—¬ë¶€ë¥¼ ë°˜í™˜í•œë‹¤. (15 bit)
 	 * 
-	 * @return ÁÖ¼®À» °¡Á³´ÂÁö ¿©ºÎ
+	 * @return ì£¼ì„ì„ ê°€ì¡ŒëŠ”ì§€ ì—¬ë¶€
 	 */
 	public boolean hasRemark() {
 		return BitFlag.get(value, 15);
 	}
 
 	/**
-	 * ÁÖ¼®À» °¡Á³´ÂÁö ¿©ºÎ¸¦ ¼³Á¤ÇÑ´Ù. (15 bit)
+	 * ì£¼ì„ì„ ê°€ì¡ŒëŠ”ì§€ ì—¬ë¶€ë¥¼ ì„¤ì •í•œë‹¤. (15 bit)
 	 * 
 	 * @param hasRemark
-	 *            ÁÖ¼®À» °¡Á³´ÂÁö ¿©ºÎ
+	 *            ì£¼ì„ì„ ê°€ì¡ŒëŠ”ì§€ ì—¬ë¶€
 	 */
 	public void setHasRemark(boolean hasRemark) {
 		value = BitFlag.set(value, 15, hasRemark);
 	}
 
 	/**
-	 * ¸Ó¸®¸» ¶Ç´Â ²¿¸®¸»À» °¡Á³´ÂÁö ¿©ºÎ¸¦ ¹İÈ¯ÇÑ´Ù. (16 bit)
+	 * ë¨¸ë¦¬ë§ ë˜ëŠ” ê¼¬ë¦¬ë§ì„ ê°€ì¡ŒëŠ”ì§€ ì—¬ë¶€ë¥¼ ë°˜í™˜í•œë‹¤. (16 bit)
 	 * 
-	 * @return ¸Ó¸®¸» ¶Ç´Â ²¿¸®¸»À» °¡Á³´ÂÁö ¿©ºÎ
+	 * @return ë¨¸ë¦¬ë§ ë˜ëŠ” ê¼¬ë¦¬ë§ì„ ê°€ì¡ŒëŠ”ì§€ ì—¬ë¶€
 	 */
 	public boolean hasHeaderFooter() {
 		return BitFlag.get(value, 16);
 	}
 
 	/**
-	 * ¸Ó¸®¸» ¶Ç´Â ²¿¸®¸»À» °¡Á³´ÂÁö ¿©ºÎ¸¦ ¼³Á¤ÇÑ´Ù. (16 bit)
+	 * ë¨¸ë¦¬ë§ ë˜ëŠ” ê¼¬ë¦¬ë§ì„ ê°€ì¡ŒëŠ”ì§€ ì—¬ë¶€ë¥¼ ì„¤ì •í•œë‹¤. (16 bit)
 	 * 
 	 * @param hasHeaderFooter
-	 *            ¸Ó¸®¸» ¶Ç´Â ²¿¸®¸»À» °¡Á³´ÂÁö ¿©ºÎ
+	 *            ë¨¸ë¦¬ë§ ë˜ëŠ” ê¼¬ë¦¬ë§ì„ ê°€ì¡ŒëŠ”ì§€ ì—¬ë¶€
 	 */
 	public void setHasHeaderFooter(boolean hasHeaderFooter) {
 		value = BitFlag.set(value, 16, hasHeaderFooter);
 	}
 
 	/**
-	 * °¢ÁÖ ¶Ç´Â ¹ÌÁÖ¸¦ °¡Á³´ÂÁö ¿©ºÎ¸¦ ¹İÈ¯ÇÑ´Ù. (17 bit)
+	 * ê°ì£¼ ë˜ëŠ” ë¯¸ì£¼ë¥¼ ê°€ì¡ŒëŠ”ì§€ ì—¬ë¶€ë¥¼ ë°˜í™˜í•œë‹¤. (17 bit)
 	 * 
-	 * @return °¢ÁÖ ¶Ç´Â ¹ÌÁÖ¸¦ °¡Á³´ÂÁö ¿©ºÎ
+	 * @return ê°ì£¼ ë˜ëŠ” ë¯¸ì£¼ë¥¼ ê°€ì¡ŒëŠ”ì§€ ì—¬ë¶€
 	 */
 	public boolean hasFootnoteEndnote() {
 		return BitFlag.get(value, 17);
 	}
 
 	/**
-	 * °¢ÁÖ ¶Ç´Â ¹ÌÁÖ¸¦ °¡Á³´ÂÁö ¿©ºÎ¸¦ ¼³Á¤ÇÑ´Ù. (17 bit)
+	 * ê°ì£¼ ë˜ëŠ” ë¯¸ì£¼ë¥¼ ê°€ì¡ŒëŠ”ì§€ ì—¬ë¶€ë¥¼ ì„¤ì •í•œë‹¤. (17 bit)
 	 * 
 	 * @param hasFootnoteEndnote
-	 *            °¢ÁÖ ¶Ç´Â ¹ÌÁÖ¸¦ °¡Á³´ÂÁö ¿©ºÎ
+	 *            ê°ì£¼ ë˜ëŠ” ë¯¸ì£¼ë¥¼ ê°€ì¡ŒëŠ”ì§€ ì—¬ë¶€
 	 */
 	public void setHasFootnoteEndnote(boolean hasFootnoteEndnote) {
 		value = BitFlag.set(value, 17, hasFootnoteEndnote);
 	}
 
 	/**
-	 * ÀÚµ¿ ¹øÈ£¸¦ °¡Á®¾´Áö ¿©ºÎ¸¦ ¹İÈ¯ÇÑ´Ù. (18 bit)
+	 * ìë™ ë²ˆí˜¸ë¥¼ ê°€ì ¸ì“´ì§€ ì—¬ë¶€ë¥¼ ë°˜í™˜í•œë‹¤. (18 bit)
 	 * 
-	 * @return ÀÚµ¿ ¹øÈ£¸¦ °¡Á®¾´Áö ¿©ºÎ
+	 * @return ìë™ ë²ˆí˜¸ë¥¼ ê°€ì ¸ì“´ì§€ ì—¬ë¶€
 	 */
 	public boolean hasAutoNumber() {
 		return BitFlag.get(value, 18);
 	}
 
 	/**
-	 * ÀÚµ¿ ¹øÈ£¸¦ °¡Á®¾´Áö ¿©ºÎ¸¦ ¼³Á¤ÇÑ´Ù. (18 bit)
+	 * ìë™ ë²ˆí˜¸ë¥¼ ê°€ì ¸ì“´ì§€ ì—¬ë¶€ë¥¼ ì„¤ì •í•œë‹¤. (18 bit)
 	 * 
 	 * @param hasAutoNumber
-	 *            ÀÚµ¿ ¹øÈ£¸¦ °¡Á®¾´Áö ¿©ºÎ
+	 *            ìë™ ë²ˆí˜¸ë¥¼ ê°€ì ¸ì“´ì§€ ì—¬ë¶€
 	 */
 	public void setHasAutoNumber(boolean hasAutoNumber) {
 		value = BitFlag.set(value, 18, hasAutoNumber);
 	}
 
 	/**
-	 * ÂÊ ¹Ù²ŞÀ» °¡Á³´ÂÁö ¿©ºÎ¸¦ ¹İÈ¯ÇÑ´Ù. (21 bit)
+	 * ìª½ ë°”ê¿ˆì„ ê°€ì¡ŒëŠ”ì§€ ì—¬ë¶€ë¥¼ ë°˜í™˜í•œë‹¤. (21 bit)
 	 * 
-	 * @return ÂÊ ¹Ù²ŞÀ» °¡Á³´ÂÁö ¿©ºÎ
+	 * @return ìª½ ë°”ê¿ˆì„ ê°€ì¡ŒëŠ”ì§€ ì—¬ë¶€
 	 */
 	public boolean hasPageFeed() {
 		return BitFlag.get(value, 21);
 	}
 
 	/**
-	 * ÂÊ ¹Ù²ŞÀ» °¡Á³´ÂÁö ¿©ºÎ¸¦ ¼³Á¤ÇÑ´Ù. (21 bit)
+	 * ìª½ ë°”ê¿ˆì„ ê°€ì¡ŒëŠ”ì§€ ì—¬ë¶€ë¥¼ ì„¤ì •í•œë‹¤. (21 bit)
 	 * 
 	 * @param hasPageFeed
-	 *            ÂÊ ¹Ù²ŞÀ» °¡Á³´ÂÁö ¿©ºÎ
+	 *            ìª½ ë°”ê¿ˆì„ ê°€ì¡ŒëŠ”ì§€ ì—¬ë¶€
 	 */
 	public void setHasPageFeed(boolean hasPageFeed) {
 		value = BitFlag.set(value, 21, hasPageFeed);
 	}
 
 	/**
-	 * Ã¥°¥ÇÇ/Ã£ÀÌº¸±â Ç¥½Ã¸¦ °¡Á³´ÂÁö ¿©ºÎ¸¦ ¹İÈ¯ÇÑ´Ù. (22 bit)
+	 * ì±…ê°ˆí”¼/ì°¾ì´ë³´ê¸° í‘œì‹œë¥¼ ê°€ì¡ŒëŠ”ì§€ ì—¬ë¶€ë¥¼ ë°˜í™˜í•œë‹¤. (22 bit)
 	 * 
-	 * @return Ã¥°¥ÇÇ/Ã£ÀÌº¸±â Ç¥½Ã¸¦ °¡Á³´ÂÁö ¿©ºÎ
+	 * @return ì±…ê°ˆí”¼/ì°¾ì´ë³´ê¸° í‘œì‹œë¥¼ ê°€ì¡ŒëŠ”ì§€ ì—¬ë¶€
 	 */
 	public boolean hasBookmark() {
 		return BitFlag.get(value, 22);
 	}
 
 	/**
-	 * Ã¥°¥ÇÇ/Ã£ÀÌº¸±â Ç¥½Ã¸¦ °¡Á³´ÂÁö ¿©ºÎ¸¦ ¼³Á¤ÇÑ´Ù. (22 bit)
+	 * ì±…ê°ˆí”¼/ì°¾ì´ë³´ê¸° í‘œì‹œë¥¼ ê°€ì¡ŒëŠ”ì§€ ì—¬ë¶€ë¥¼ ì„¤ì •í•œë‹¤. (22 bit)
 	 * 
 	 * @param hasBookmark
-	 *            Ã¥°¥ÇÇ/Ã£ÀÌº¸±â Ç¥½Ã¸¦ °¡Á³´ÂÁö ¿©ºÎ
+	 *            ì±…ê°ˆí”¼/ì°¾ì´ë³´ê¸° í‘œì‹œë¥¼ ê°€ì¡ŒëŠ”ì§€ ì—¬ë¶€
 	 */
 	public void setHasBookmark(boolean hasBookmark) {
 		value = BitFlag.set(value, 22, hasBookmark);
 	}
 
 	/**
-	 * µ¡¸»/±ÛÀÚ °ãÄ§À» °¡Á³´ÂÁö ¿©ºÎ¸¦ ¹İÈ¯ÇÑ´Ù. (23 bit)
+	 * ë§ë§/ê¸€ì ê²¹ì¹¨ì„ ê°€ì¡ŒëŠ”ì§€ ì—¬ë¶€ë¥¼ ë°˜í™˜í•œë‹¤. (23 bit)
 	 * 
-	 * @return µ¡¸»/±ÛÀÚ °ãÄ§¸¦ °¡Á³´ÂÁö ¿©ºÎ
+	 * @return ë§ë§/ê¸€ì ê²¹ì¹¨ë¥¼ ê°€ì¡ŒëŠ”ì§€ ì—¬ë¶€
 	 */
 	public boolean hasDutMalOverlapLetter() {
 		return BitFlag.get(value, 23);
 	}
 
 	/**
-	 * µ¡¸»/±ÛÀÚ °ãÄ§À» °¡Á³´ÂÁö ¿©ºÎ¸¦ ¼³Á¤ÇÑ´Ù. (23 bit)
+	 * ë§ë§/ê¸€ì ê²¹ì¹¨ì„ ê°€ì¡ŒëŠ”ì§€ ì—¬ë¶€ë¥¼ ì„¤ì •í•œë‹¤. (23 bit)
 	 * 
 	 * @param hasOverlapLetter
-	 *            µ¡¸»/±ÛÀÚ °ãÄ§¸¦ °¡Á³´ÂÁö ¿©ºÎ
+	 *            ë§ë§/ê¸€ì ê²¹ì¹¨ë¥¼ ê°€ì¡ŒëŠ”ì§€ ì—¬ë¶€
 	 */
 	public void setHasDutMalOverlapLetter(boolean hasOverlapLetter) {
 		value = BitFlag.set(value, 23, hasOverlapLetter);
 	}
 
 	/**
-	 * ÇÏÀÌÇÂÀ» °¡Á³´ÂÁö ¿©ºÎ¸¦ ¹İÈ¯ÇÑ´Ù. (24 bit)
+	 * í•˜ì´í”ˆì„ ê°€ì¡ŒëŠ”ì§€ ì—¬ë¶€ë¥¼ ë°˜í™˜í•œë‹¤. (24 bit)
 	 * 
-	 * @return ÇÏÀÌÇÂÀ» °¡Á³´ÂÁö ¿©ºÎ
+	 * @return í•˜ì´í”ˆì„ ê°€ì¡ŒëŠ”ì§€ ì—¬ë¶€
 	 */
 	public boolean hasHyphen() {
 		return BitFlag.get(value, 24);
 	}
 
 	/**
-	 * ÇÏÀÌÇÂÀ» °¡Á³´ÂÁö ¿©ºÎ¸¦ ¼³Á¤ÇÑ´Ù. (24 bit)
+	 * í•˜ì´í”ˆì„ ê°€ì¡ŒëŠ”ì§€ ì—¬ë¶€ë¥¼ ì„¤ì •í•œë‹¤. (24 bit)
 	 * 
 	 * @param hasHyphen
-	 *            ÇÏÀÌÇÂÀ» °¡Á³´ÂÁö ¿©ºÎ
+	 *            í•˜ì´í”ˆì„ ê°€ì¡ŒëŠ”ì§€ ì—¬ë¶€
 	 */
 	public void setHasHyphen(boolean hasHyphen) {
 		value = BitFlag.set(value, 24, hasHyphen);
 	}
 
 	/**
-	 * ¹­À½ ºóÄ­À» °¡Á³´ÂÁö ¿©ºÎ¸¦ ¹İÈ¯ÇÑ´Ù. (30 bit)
+	 * ë¬¶ìŒ ë¹ˆì¹¸ì„ ê°€ì¡ŒëŠ”ì§€ ì—¬ë¶€ë¥¼ ë°˜í™˜í•œë‹¤. (30 bit)
 	 * 
-	 * @return ¹­À½ ºóÄ­À» °¡Á³´ÂÁö ¿©ºÎ
+	 * @return ë¬¶ìŒ ë¹ˆì¹¸ì„ ê°€ì¡ŒëŠ”ì§€ ì—¬ë¶€
 	 */
 	public boolean hasBundleBlank() {
 		return BitFlag.get(value, 30);
 	}
 
 	/**
-	 * ¹­À½ ºóÄ­À» °¡Á³´ÂÁö ¿©ºÎ¸¦ ¼³Á¤ÇÑ´Ù. (30 bit)
+	 * ë¬¶ìŒ ë¹ˆì¹¸ì„ ê°€ì¡ŒëŠ”ì§€ ì—¬ë¶€ë¥¼ ì„¤ì •í•œë‹¤. (30 bit)
 	 * 
 	 * @param hasBundleBlank
-	 *            ¹­À½ ºóÄ­À» °¡Á³´ÂÁö ¿©ºÎ
+	 *            ë¬¶ìŒ ë¹ˆì¹¸ì„ ê°€ì¡ŒëŠ”ì§€ ì—¬ë¶€
 	 */
 	public void setHasBundleBlank(boolean hasBundleBlank) {
 		value = BitFlag.set(value, 30, hasBundleBlank);
 	}
 
 	/**
-	 * °íÁ¤ Æø ºóÄ­À» °¡Á³´ÂÁö ¿©ºÎ¸¦ ¹İÈ¯ÇÑ´Ù. (31 bit)
+	 * ê³ ì • í­ ë¹ˆì¹¸ì„ ê°€ì¡ŒëŠ”ì§€ ì—¬ë¶€ë¥¼ ë°˜í™˜í•œë‹¤. (31 bit)
 	 * 
-	 * @return °íÁ¤ Æø ºóÄ­À» °¡Á³´ÂÁö ¿©ºÎ
+	 * @return ê³ ì • í­ ë¹ˆì¹¸ì„ ê°€ì¡ŒëŠ”ì§€ ì—¬ë¶€
 	 */
 	public boolean hasFixWidthBlank() {
 		return BitFlag.get(value, 31);
 	}
 
 	/**
-	 * °íÁ¤ Æø ºóÄ­À» °¡Á³´ÂÁö ¿©ºÎ¸¦ ¼³Á¤ÇÑ´Ù. (31 bit)
+	 * ê³ ì • í­ ë¹ˆì¹¸ì„ ê°€ì¡ŒëŠ”ì§€ ì—¬ë¶€ë¥¼ ì„¤ì •í•œë‹¤. (31 bit)
 	 * 
 	 * @param hasFixWidthBlank
-	 *            °íÁ¤ Æø ºóÄ­À» °¡Á³´ÂÁö ¿©ºÎ
+	 *            ê³ ì • í­ ë¹ˆì¹¸ì„ ê°€ì¡ŒëŠ”ì§€ ì—¬ë¶€
 	 */
 	public void setHasFixWidthBlank(boolean hasFixWidthBlank) {
 		value = BitFlag.set(value, 31, hasFixWidthBlank);

@@ -1,4 +1,4 @@
-package kr.dogfoot.hwplib.reader.bodytext.paragraph;
+ï»¿package kr.dogfoot.hwplib.reader.bodytext.paragraph;
 
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
@@ -11,18 +11,18 @@ import kr.dogfoot.hwplib.object.bodytext.paragraph.text.ParaText;
 import kr.dogfoot.hwplib.util.compoundFile.StreamReader;
 
 /**
- * ¹®´ÜÀÇ ÅØ½ºÆ® ·¹ÄÚµå¸¦ ÀĞ±â À§ÇÑ °´Ã¼
+ * ë¬¸ë‹¨ì˜ í…ìŠ¤íŠ¸ ë ˆì½”ë“œë¥¼ ì½ê¸° ìœ„í•œ ê°ì²´
  * 
  * @author neolord
  */
 public class ForParaText {
 	/**
-	 * ¹®´ÜÀÇ ÅØ½ºÆ® ·¹ÄÚµå¸¦ ÀĞ´Â´Ù.
+	 * ë¬¸ë‹¨ì˜ í…ìŠ¤íŠ¸ ë ˆì½”ë“œë¥¼ ì½ëŠ”ë‹¤.
 	 * 
 	 * @param p
-	 *            ¹®´Ü
+	 *            ë¬¸ë‹¨
 	 * @param sr
-	 *            ½ºÆ®¸² ¸®´õ
+	 *            ìŠ¤íŠ¸ë¦¼ ë¦¬ë”
 	 * @throws Exception
 	 */
 	public static void read(Paragraph p, StreamReader sr) throws Exception {
@@ -36,13 +36,13 @@ public class ForParaText {
 	}
 
 	/**
-	 * HWP¹®ÀÚ¸¦ Á¾·ù¿¡ µû¶ó ÀĞ´Â´Ù.
+	 * HWPë¬¸ìë¥¼ ì¢…ë¥˜ì— ë”°ë¼ ì½ëŠ”ë‹¤.
 	 * 
 	 * @param paraText
-	 *            ¹®´ÜÀÇ ÅØ½ºÆ® ·¹ÄÚµå
+	 *            ë¬¸ë‹¨ì˜ í…ìŠ¤íŠ¸ ë ˆì½”ë“œ
 	 * @param sr
-	 *            ½ºÆ®¸² ¸®´õ
-	 * @return ÀĞÀº byte ¼ö
+	 *            ìŠ¤íŠ¸ë¦¼ ë¦¬ë”
+	 * @return ì½ì€ byte ìˆ˜
 	 * @throws Exception
 	 */
 	private static int hwpChar(ParaText paraText, StreamReader sr)
@@ -66,11 +66,11 @@ public class ForParaText {
 	}
 
 	/**
-	 * 2 byte ¹®ÀÚÄÚµå¸¦ ¹®ÀÚ¿­·Î º¯È¯ÇÑ´Ù.
+	 * 2 byte ë¬¸ìì½”ë“œë¥¼ ë¬¸ìì—´ë¡œ ë³€í™˜í•œë‹¤.
 	 * 
 	 * @param code
-	 *            2 byte ¹®ÀÚÄÚµå
-	 * @return º¯È¯µÈ ¹®ÀÚ¿­
+	 *            2 byte ë¬¸ìì½”ë“œ
+	 * @return ë³€í™˜ëœ ë¬¸ìì—´
 	 * @throws UnsupportedEncodingException
 	 */
 	private static String shortToString(short code)
@@ -82,12 +82,12 @@ public class ForParaText {
 	}
 
 	/**
-	 * È®Àå ÄÁÆ®·Ñ ¹®ÀÚÀ» ÀĞ´Â´Ù.
+	 * í™•ì¥ ì»¨íŠ¸ë¡¤ ë¬¸ìì„ ì½ëŠ”ë‹¤.
 	 * 
 	 * @param extendChar
-	 *            È®Àå ÄÁÆ®·Ñ ¹®ÀÚ
+	 *            í™•ì¥ ì»¨íŠ¸ë¡¤ ë¬¸ì
 	 * @param sr
-	 *            ½ºÆ®¸² ¸®´õ
+	 *            ìŠ¤íŠ¸ë¦¼ ë¦¬ë”
 	 * @throws IOException
 	 */
 	private static void extendChar(HWPCharControlExtend extendChar,
@@ -99,11 +99,11 @@ public class ForParaText {
 	}
 
 	/**
-	 * È®Àå ÄÁÆ®·ÑÀÌ °¡¸®Å°´Â °´Ã¼ÀÇ ÀÎ½ºÅÏ½º ¾ÆÀÌµğ¸¦ ¸¸µç´Ù.
+	 * í™•ì¥ ì»¨íŠ¸ë¡¤ì´ ê°€ë¦¬í‚¤ëŠ” ê°ì²´ì˜ ì¸ìŠ¤í„´ìŠ¤ ì•„ì´ë””ë¥¼ ë§Œë“ ë‹¤.
 	 * 
 	 * @param bytes
-	 *            ÆÄÀÏ¿¡ Á¤ÀåµÈ ¹ÙÀÌ³Ê¸® ¹è¿­
-	 * @return È®Àå ÄÁÆ®·ÑÀÌ °¡¸®Å°´Â °´Ã¼ÀÇ ÀÎ½ºÅÏ½º ¾ÆÀÌµğ
+	 *            íŒŒì¼ì— ì •ì¥ëœ ë°”ì´ë„ˆë¦¬ ë°°ì—´
+	 * @return í™•ì¥ ì»¨íŠ¸ë¡¤ì´ ê°€ë¦¬í‚¤ëŠ” ê°ì²´ì˜ ì¸ìŠ¤í„´ìŠ¤ ì•„ì´ë””
 	 */
 	private static String makeInstanceId(byte[] bytes) {
 		int bufferIndex = 0;
@@ -123,12 +123,12 @@ public class ForParaText {
 	}
 
 	/**
-	 * ÀÎ¶óÀÎ ÄÁÆ®¸¦ ¹®ÀÚ¸¦ ÀĞ´Â´Ù.
+	 * ì¸ë¼ì¸ ì»¨íŠ¸ë¥¼ ë¬¸ìë¥¼ ì½ëŠ”ë‹¤.
 	 * 
 	 * @param inlineChar
-	 *            ÀÎ¶óÀÎ ÄÁÆ®¸¦ ¹®ÀÚ
+	 *            ì¸ë¼ì¸ ì»¨íŠ¸ë¥¼ ë¬¸ì
 	 * @param sr
-	 *            ½ºÆ®¸² ¸®´õ
+	 *            ìŠ¤íŠ¸ë¦¼ ë¦¬ë”
 	 * @throws IOException
 	 */
 	private static void inlineChar(HWPCharControlInline inlineChar,

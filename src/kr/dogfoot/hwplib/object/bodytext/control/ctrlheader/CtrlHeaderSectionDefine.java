@@ -1,61 +1,61 @@
-package kr.dogfoot.hwplib.object.bodytext.control.ctrlheader;
+ï»¿package kr.dogfoot.hwplib.object.bodytext.control.ctrlheader;
 
 import kr.dogfoot.hwplib.object.bodytext.control.ControlType;
 import kr.dogfoot.hwplib.object.bodytext.control.ctrlheader.sectiondefine.SectionDefineHeaderProperty;
 
 /**
- * ±¸¿ª Á¤ÀÇ ÄÁÆ®·ÑÀ» À§ÇÑ ÄÁÆ®·Ñ Çì´õ ·¹ÄÚµå
+ * êµ¬ì—­ ì •ì˜ ì»¨íŠ¸ë¡¤ì„ ìœ„í•œ ì»¨íŠ¸ë¡¤ í—¤ë” ë ˆì½”ë“œ
  * 
  * @author neolord
  */
 public class CtrlHeaderSectionDefine extends CtrlHeader {
 	/**
-	 * ¼Ó¼º
+	 * ì†ì„±
 	 */
 	private SectionDefineHeaderProperty property;
 	/**
-	 * µ¿ÀÏÇÑ ÆäÀÌÁö¿¡¼­ ¼­·Î ´Ù¸¥ ´Ü »çÀÌÀÇ °£°İ
+	 * ë™ì¼í•œ í˜ì´ì§€ì—ì„œ ì„œë¡œ ë‹¤ë¥¸ ë‹¨ ì‚¬ì´ì˜ ê°„ê²©
 	 */
 	private int columnGap;
 	/**
-	 * ¼¼·Î·Î ÁÙ¸ÂÃãÀ» ÇÒÁö ¿©ºÎ
+	 * ì„¸ë¡œë¡œ ì¤„ë§ì¶¤ì„ í• ì§€ ì—¬ë¶€
 	 */
 	private int verticalLineAlign;
 	/**
-	 * °¡·Î·Î ÁÙ¸ÂÃãÀ» ÇÒÁö ¿©ºÎ
+	 * ê°€ë¡œë¡œ ì¤„ë§ì¶¤ì„ í• ì§€ ì—¬ë¶€
 	 */
 	private int horizontalLineAlign;
 	/**
-	 * ±âº» ÅÇ °£°İ
+	 * ê¸°ë³¸ íƒ­ ê°„ê²©
 	 */
 	private long defaultTabGap;
 	/**
-	 * ¹øÈ£ ¹®´Ü ¸ğ¾ç ID
+	 * ë²ˆí˜¸ ë¬¸ë‹¨ ëª¨ì–‘ ID
 	 */
 	private int numberParaShapeId;
 	/**
-	 * ÂÊ ½ÃÀÛ ¹øÈ£
+	 * ìª½ ì‹œì‘ ë²ˆí˜¸
 	 */
 	private int pageStartNumber;
 	/**
-	 * ±×¸² ½ÃÀÛ ¹øÈ£
+	 * ê·¸ë¦¼ ì‹œì‘ ë²ˆí˜¸
 	 */
 	private int imageStartNumber;
 	/**
-	 * Ç¥ ½ÃÀÛ ¹øÈ£
+	 * í‘œ ì‹œì‘ ë²ˆí˜¸
 	 */
 	private int tableStartNumber;
 	/**
-	 * ¼ö½Ä ½ÃÀÛ ¹øÈ£
+	 * ìˆ˜ì‹ ì‹œì‘ ë²ˆí˜¸
 	 */
 	private int equationStartNumber;
 	/**
-	 * ´ëÇ¥Language(5.0.1.5 ÀÌ»ó)
+	 * ëŒ€í‘œLanguage(5.0.1.5 ì´ìƒ)
 	 */
 	private int defaultLanguage;
 
 	/**
-	 * »ı¼ºÀÚ
+	 * ìƒì„±ì
 	 */
 	public CtrlHeaderSectionDefine() {
 		super(ControlType.SectionDefine.getCtrlId());
@@ -63,199 +63,199 @@ public class CtrlHeaderSectionDefine extends CtrlHeader {
 	}
 
 	/**
-	 * ±¸¿ª Á¤ÀÇ ÄÁÆ®·ÑÀÇ ¼Ó¼º °´Ã¼¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * êµ¬ì—­ ì •ì˜ ì»¨íŠ¸ë¡¤ì˜ ì†ì„± ê°ì²´ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ±¸¿ª Á¤ÀÇ ÄÁÆ®·ÑÀÇ ¼Ó¼º °´Ã¼
+	 * @return êµ¬ì—­ ì •ì˜ ì»¨íŠ¸ë¡¤ì˜ ì†ì„± ê°ì²´
 	 */
 	public SectionDefineHeaderProperty getProperty() {
 		return property;
 	}
 
 	/**
-	 * µ¿ÀÏÇÑ ÆäÀÌÁö¿¡¼­ ¼­·Î ´Ù¸¥ ´Ü »çÀÌÀÇ °£°İÀ» ¹İÈ¯ÇÑ´Ù.
+	 * ë™ì¼í•œ í˜ì´ì§€ì—ì„œ ì„œë¡œ ë‹¤ë¥¸ ë‹¨ ì‚¬ì´ì˜ ê°„ê²©ì„ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return µ¿ÀÏÇÑ ÆäÀÌÁö¿¡¼­ ¼­·Î ´Ù¸¥ ´Ü »çÀÌÀÇ °£°İ
+	 * @return ë™ì¼í•œ í˜ì´ì§€ì—ì„œ ì„œë¡œ ë‹¤ë¥¸ ë‹¨ ì‚¬ì´ì˜ ê°„ê²©
 	 */
 	public int getColumnGap() {
 		return columnGap;
 	}
 
 	/**
-	 * µ¿ÀÏÇÑ ÆäÀÌÁö¿¡¼­ ¼­·Î ´Ù¸¥ ´Ü »çÀÌÀÇ °£°İÀ» ¼³Á¤ÇÑ´Ù.
+	 * ë™ì¼í•œ í˜ì´ì§€ì—ì„œ ì„œë¡œ ë‹¤ë¥¸ ë‹¨ ì‚¬ì´ì˜ ê°„ê²©ì„ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param columnGap
-	 *            µ¿ÀÏÇÑ ÆäÀÌÁö¿¡¼­ ¼­·Î ´Ù¸¥ ´Ü »çÀÌÀÇ °£°İ
+	 *            ë™ì¼í•œ í˜ì´ì§€ì—ì„œ ì„œë¡œ ë‹¤ë¥¸ ë‹¨ ì‚¬ì´ì˜ ê°„ê²©
 	 */
 	public void setColumnGap(int columnGap) {
 		this.columnGap = columnGap;
 	}
 
 	/**
-	 * ¼¼·Î·Î ÁÙ¸ÂÃãÀ» ÇÒÁö ¿©ºÎ¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ì„¸ë¡œë¡œ ì¤„ë§ì¶¤ì„ í• ì§€ ì—¬ë¶€ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ¼¼·Î·Î ÁÙ¸ÂÃãÀ» ÇÒÁö ¿©ºÎ
+	 * @return ì„¸ë¡œë¡œ ì¤„ë§ì¶¤ì„ í• ì§€ ì—¬ë¶€
 	 */
 	public int getVerticalLineAlign() {
 		return verticalLineAlign;
 	}
 
 	/**
-	 * ¼¼·Î·Î ÁÙ¸ÂÃãÀ» ÇÒÁö ¿©ºÎ¸¦ ¼³Á¤ÇÑ´Ù.
+	 * ì„¸ë¡œë¡œ ì¤„ë§ì¶¤ì„ í• ì§€ ì—¬ë¶€ë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param verticalLineAlign
-	 *            ¼¼·Î·Î ÁÙ¸ÂÃãÀ» ÇÒÁö ¿©ºÎ
+	 *            ì„¸ë¡œë¡œ ì¤„ë§ì¶¤ì„ í• ì§€ ì—¬ë¶€
 	 */
 	public void setVerticalLineAlign(int verticalLineAlign) {
 		this.verticalLineAlign = verticalLineAlign;
 	}
 
 	/**
-	 * °¡·Î·Î ÁÙ¸ÂÃãÀ» ÇÒÁö ¿©ºÎ¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ê°€ë¡œë¡œ ì¤„ë§ì¶¤ì„ í• ì§€ ì—¬ë¶€ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return °¡·Î·Î ÁÙ¸ÂÃãÀ» ÇÒÁö ¿©ºÎ
+	 * @return ê°€ë¡œë¡œ ì¤„ë§ì¶¤ì„ í• ì§€ ì—¬ë¶€
 	 */
 	public int getHorizontalLineAlign() {
 		return horizontalLineAlign;
 	}
 
 	/**
-	 * °¡·Î·Î ÁÙ¸ÂÃãÀ» ÇÒÁö ¿©ºÎ¸¦ ¼³Á¤ÇÑ´Ù.
+	 * ê°€ë¡œë¡œ ì¤„ë§ì¶¤ì„ í• ì§€ ì—¬ë¶€ë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param horizontalLineAlign
-	 *            °¡·Î·Î ÁÙ¸ÂÃãÀ» ÇÒÁö ¿©ºÎ
+	 *            ê°€ë¡œë¡œ ì¤„ë§ì¶¤ì„ í• ì§€ ì—¬ë¶€
 	 */
 	public void setHorizontalLineAlign(int horizontalLineAlign) {
 		this.horizontalLineAlign = horizontalLineAlign;
 	}
 
 	/**
-	 * ±âº» ÅÇ °£°İÀ» ¹İÈ¯ÇÑ´Ù.
+	 * ê¸°ë³¸ íƒ­ ê°„ê²©ì„ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ±âº» ÅÇ °£°İ
+	 * @return ê¸°ë³¸ íƒ­ ê°„ê²©
 	 */
 	public long getDefaultTabGap() {
 		return defaultTabGap;
 	}
 
 	/**
-	 * ±âº» ÅÇ °£°İÀ» ¼³Á¤ÇÑ´Ù.
+	 * ê¸°ë³¸ íƒ­ ê°„ê²©ì„ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param defaultTabGap
-	 *            ±âº» ÅÇ °£°İ
+	 *            ê¸°ë³¸ íƒ­ ê°„ê²©
 	 */
 	public void setDefaultTabGap(long defaultTabGap) {
 		this.defaultTabGap = defaultTabGap;
 	}
 
 	/**
-	 * ¹øÈ£ ¹®´Ü ¸ğ¾ç ID¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ë²ˆí˜¸ ë¬¸ë‹¨ ëª¨ì–‘ IDë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ¹øÈ£ ¹®´Ü ¸ğ¾ç ID
+	 * @return ë²ˆí˜¸ ë¬¸ë‹¨ ëª¨ì–‘ ID
 	 */
 	public int getNumberParaShapeId() {
 		return numberParaShapeId;
 	}
 
 	/**
-	 * ¹øÈ£ ¹®´Ü ¸ğ¾ç ID¸¦ ¼³Á¤ÇÑ´Ù.
+	 * ë²ˆí˜¸ ë¬¸ë‹¨ ëª¨ì–‘ IDë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param numberParaShapeId
-	 *            ¹øÈ£ ¹®´Ü ¸ğ¾ç ID
+	 *            ë²ˆí˜¸ ë¬¸ë‹¨ ëª¨ì–‘ ID
 	 */
 	public void setNumberParaShapeId(int numberParaShapeId) {
 		this.numberParaShapeId = numberParaShapeId;
 	}
 
 	/**
-	 * ÂÊ ½ÃÀÛ ¹øÈ£¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ìª½ ì‹œì‘ ë²ˆí˜¸ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ÂÊ ½ÃÀÛ ¹øÈ£
+	 * @return ìª½ ì‹œì‘ ë²ˆí˜¸
 	 */
 	public int getPageStartNumber() {
 		return pageStartNumber;
 	}
 
 	/**
-	 * ÂÊ ½ÃÀÛ ¹øÈ£¸¦ ˜ıÁ¤ÇÑ´Ù.
+	 * ìª½ ì‹œì‘ ë²ˆí˜¸ë¥¼ ì„«ì •í•œë‹¤.
 	 * 
 	 * @param pageStartNumber
-	 *            ÂÊ ½ÃÀÛ ¹øÈ£
+	 *            ìª½ ì‹œì‘ ë²ˆí˜¸
 	 */
 	public void setPageStartNumber(int pageStartNumber) {
 		this.pageStartNumber = pageStartNumber;
 	}
 
 	/**
-	 * ¾Æ¹ÌÁö ½ÃÀÛ ¹øÈ£¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ì•„ë¯¸ì§€ ì‹œì‘ ë²ˆí˜¸ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ¾Æ¹ÌÁö ½ÃÀÛ ¹øÈ£
+	 * @return ì•„ë¯¸ì§€ ì‹œì‘ ë²ˆí˜¸
 	 */
 	public int getImageStartNumber() {
 		return imageStartNumber;
 	}
 
 	/**
-	 * ¾Æ¹ÌÁö ½ÃÀÛ ¹øÈ£¸¦ ¼³Á¤ÇÑ´Ù.
+	 * ì•„ë¯¸ì§€ ì‹œì‘ ë²ˆí˜¸ë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param imageStartNumber
-	 *            ¾Æ¹ÌÁö ½ÃÀÛ ¹øÈ£
+	 *            ì•„ë¯¸ì§€ ì‹œì‘ ë²ˆí˜¸
 	 */
 	public void setImageStartNumber(int imageStartNumber) {
 		this.imageStartNumber = imageStartNumber;
 	}
 
 	/**
-	 * Ç¥ ½ÃÀÛ ¹øÈ£¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * í‘œ ì‹œì‘ ë²ˆí˜¸ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return Ç¥ ½ÃÀÛ ¹øÈ£
+	 * @return í‘œ ì‹œì‘ ë²ˆí˜¸
 	 */
 	public int getTableStartNumber() {
 		return tableStartNumber;
 	}
 
 	/**
-	 * Ç¥ ½ÃÀÛ ¹øÈ£¸¦ ¼³Á¤ÇÑ´Ù.
+	 * í‘œ ì‹œì‘ ë²ˆí˜¸ë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param tableStartNumber
-	 *            Ç¥ ½ÃÀÛ ¹øÈ£
+	 *            í‘œ ì‹œì‘ ë²ˆí˜¸
 	 */
 	public void setTableStartNumber(int tableStartNumber) {
 		this.tableStartNumber = tableStartNumber;
 	}
 
 	/**
-	 * ¼ö½Ä ½ÃÀÛ ¹øÈ£¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ìˆ˜ì‹ ì‹œì‘ ë²ˆí˜¸ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ¼ö½Ä ½ÃÀÛ ¹øÈ£
+	 * @return ìˆ˜ì‹ ì‹œì‘ ë²ˆí˜¸
 	 */
 	public int getEquationStartNumber() {
 		return equationStartNumber;
 	}
 
 	/**
-	 * ¼ö½Ä ½ÃÀÛ ¹øÈ£¸¦ ¼³Á¤ÇÑ´Ù.
+	 * ìˆ˜ì‹ ì‹œì‘ ë²ˆí˜¸ë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param equationStartNumber
-	 *            ¼ö½Ä ½ÃÀÛ ¹øÈ£
+	 *            ìˆ˜ì‹ ì‹œì‘ ë²ˆí˜¸
 	 */
 	public void setEquationStartNumber(int equationStartNumber) {
 		this.equationStartNumber = equationStartNumber;
 	}
 
 	/**
-	 * ´ëÇ¥Language °ªÀ» ¹İÈ¯ÇÑ´Ù. (5.0.1.5 ÀÌ»ó)
+	 * ëŒ€í‘œLanguage ê°’ì„ ë°˜í™˜í•œë‹¤. (5.0.1.5 ì´ìƒ)
 	 * 
-	 * @return ´ëÇ¥Language °ª
+	 * @return ëŒ€í‘œLanguage ê°’
 	 */
 	public int getDefaultLanguage() {
 		return defaultLanguage;
 	}
 
 	/**
-	 * ´ëÇ¥Language °ªÀ» ¼³Á¤ÇÑ´Ù. (5.0.1.5 ÀÌ»ó)
+	 * ëŒ€í‘œLanguage ê°’ì„ ì„¤ì •í•œë‹¤. (5.0.1.5 ì´ìƒ)
 	 * 
 	 * @param defaultLanguage
-	 *            ´ëÇ¥Language °ª
+	 *            ëŒ€í‘œLanguage ê°’
 	 */
 	public void setDefaultLanguage(int defaultLanguage) {
 		this.defaultLanguage = defaultLanguage;

@@ -1,63 +1,63 @@
-package kr.dogfoot.hwplib.object.bodytext.control.ctrlheader;
+ï»¿package kr.dogfoot.hwplib.object.bodytext.control.ctrlheader;
 
 import kr.dogfoot.hwplib.object.bodytext.control.ControlType;
 import kr.dogfoot.hwplib.object.bodytext.control.ctrlheader.header.HeaderFooterApplyPage;
 
 /**
- * ¸Ó¸®¸» ÄÁÆ®·ÑÀ» À§ÇÑ ÄÁÆ®·Ñ Çì´õ ·¹ÄÚµå
+ * ë¨¸ë¦¬ë§ ì»¨íŠ¸ë¡¤ì„ ìœ„í•œ ì»¨íŠ¸ë¡¤ í—¤ë” ë ˆì½”ë“œ
  * 
  * @author neolord
  */
 public class CtrlHeaderHeader extends CtrlHeader {
 	/**
-	 * ¸Ó¸®±ÛÀÌ Àû¿ëµÉ ¹üÀ§(ÆäÀÌÁö Á¾·ù)
+	 * ë¨¸ë¦¬ê¸€ì´ ì ìš©ë  ë²”ìœ„(í˜ì´ì§€ ì¢…ë¥˜)
 	 */
 	private HeaderFooterApplyPage applyPage;
 	/**
-	 * »ı¼º ¼ø¼­ (??)
+	 * ìƒì„± ìˆœì„œ (??)
 	 */
 	private int createIndex;
 
 	/**
-	 * »ı¼ºÀÚ
+	 * ìƒì„±ì
 	 */
 	public CtrlHeaderHeader() {
 		super(ControlType.Header.getCtrlId());
 	}
 
 	/**
-	 * ¸Ó¸®¸»ÀÌ Àû¿ëµÉ ¹üÀ§¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ë¨¸ë¦¬ë§ì´ ì ìš©ë  ë²”ìœ„ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ¸Ó¸®¸»ÀÌ Àû¿ëµÉ ¹üÀ§
+	 * @return ë¨¸ë¦¬ë§ì´ ì ìš©ë  ë²”ìœ„
 	 */
 	public HeaderFooterApplyPage getApplyPage() {
 		return applyPage;
 	}
 
 	/**
-	 * ¸Ó¸®¸»ÀÌ Àû¿ëµÉ ¹üÀ§¸¦ ¼³Á¤ÇÑ´Ù.
+	 * ë¨¸ë¦¬ë§ì´ ì ìš©ë  ë²”ìœ„ë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param applyPage
-	 *            ¸Ó¸®¸»ÀÌ Àû¿ëµÉ ¹üÀ§
+	 *            ë¨¸ë¦¬ë§ì´ ì ìš©ë  ë²”ìœ„
 	 */
 	public void setApplyPage(HeaderFooterApplyPage applyPage) {
 		this.applyPage = applyPage;
 	}
 
 	/**
-	 * »ı¼º ¼ø¼­¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ìƒì„± ìˆœì„œë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return »ı¼º ¼ø¼­
+	 * @return ìƒì„± ìˆœì„œ
 	 */
 	public int getCreateIndex() {
 		return createIndex;
 	}
 
 	/**
-	 * »ı¼º ¼ø¼­¸¦ ¼³Á¤ÇÑ´Ù.
+	 * ìƒì„± ìˆœì„œë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param createIndex
-	 *            »ı¼º ¼ø¼­
+	 *            ìƒì„± ìˆœì„œ
 	 */
 	public void setCreateIndex(int createIndex) {
 		this.createIndex = createIndex;

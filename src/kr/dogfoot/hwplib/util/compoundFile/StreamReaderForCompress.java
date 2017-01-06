@@ -1,4 +1,4 @@
-package kr.dogfoot.hwplib.util.compoundFile;
+ï»¿package kr.dogfoot.hwplib.util.compoundFile;
 
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
@@ -13,21 +13,21 @@ import org.apache.poi.poifs.filesystem.DocumentEntry;
 import org.apache.poi.poifs.filesystem.DocumentInputStream;
 
 /**
- * ¾ĞÃàµÈ ½ºÆ®¸²À» ÀĞ±â À§ÇÑ °´Ã¼
+ * ì••ì¶•ëœ ìŠ¤íŠ¸ë¦¼ì„ ì½ê¸° ìœ„í•œ ê°ì²´
  * 
  * @author neolord
  */
 public class StreamReaderForCompress extends StreamReader {
 	/**
-	 * ¾ĞÃà Ç®¸° µ¥ÀÌÅÍ¸¦ ÀĞ±â À§ÇÑ InputStream
+	 * ì••ì¶• í’€ë¦° ë°ì´í„°ë¥¼ ì½ê¸° ìœ„í•œ InputStream
 	 */
 	private ByteArrayInputStream bis;
 
 	/**
-	 * »ı¼ºÀÚ. ¾ĞÃàµÈ ½ºÆ®¸²À» ÀĞ¾î ¾ĞÃàÀ» Ç®¾î¼­ ¾ĞÃà Ç®¸° µ¥ÀÌÅÍ·Î InputStreamÀ» ¸¸µç´Ù.
+	 * ìƒì„±ì. ì••ì¶•ëœ ìŠ¤íŠ¸ë¦¼ì„ ì½ì–´ ì••ì¶•ì„ í’€ì–´ì„œ ì••ì¶• í’€ë¦° ë°ì´í„°ë¡œ InputStreamì„ ë§Œë“ ë‹¤.
 	 * 
 	 * @param de
-	 *            ½ºÆ®¸²À» °¡¸®Å°´Â Apache POI °´Ã¼
+	 *            ìŠ¤íŠ¸ë¦¼ì„ ê°€ë¦¬í‚¤ëŠ” Apache POI ê°ì²´
 	 * @param fileVersion
 	 * @throws Exception
 	 */
@@ -38,10 +38,10 @@ public class StreamReaderForCompress extends StreamReader {
 	}
 
 	/**
-	 * ¾ĞÃàµÈ ½ºÆ®¸²À» ÀĞ¾î ¾ĞÃàÀ» Ç®¾î¼­ ¾ĞÃà Ç®¸° µ¥ÀÌÅÍ·Î InputStreamÀ» ¸¸µç´Ù.
+	 * ì••ì¶•ëœ ìŠ¤íŠ¸ë¦¼ì„ ì½ì–´ ì••ì¶•ì„ í’€ì–´ì„œ ì••ì¶• í’€ë¦° ë°ì´í„°ë¡œ InputStreamì„ ë§Œë“ ë‹¤.
 	 * 
 	 * @param de
-	 *            ½ºÆ®¸²À» °¡¸®Å°´Â Apache POI °´Ã¼
+	 *            ìŠ¤íŠ¸ë¦¼ì„ ê°€ë¦¬í‚¤ëŠ” Apache POI ê°ì²´
 	 * @throws Exception
 	 */
 	private void setByteArrayInputStream(DocumentEntry de) throws Exception {
@@ -61,13 +61,13 @@ public class StreamReaderForCompress extends StreamReader {
 	}
 
 	/**
-	 * ½ºÆ®¸²¿¡¼­ ¾ĞÃàµÈ µ¥ÀÌÅÍ¸¦ ÀĞ´Â´Ù.
+	 * ìŠ¤íŠ¸ë¦¼ì—ì„œ ì••ì¶•ëœ ë°ì´í„°ë¥¼ ì½ëŠ”ë‹¤.
 	 * 
 	 * @param dis
-	 *            ½ºÆ®¸²À» ÀĞ±â À§ÇÑ Apache POI InputStream °´Ã¼
+	 *            ìŠ¤íŠ¸ë¦¼ì„ ì½ê¸° ìœ„í•œ Apache POI InputStream ê°ì²´
 	 * @param size
-	 *            ÀĞÀ» Å©±â
-	 * @return ¾ĞÃàµÈ µ¥ÀÌÅÍ
+	 *            ì½ì„ í¬ê¸°
+	 * @return ì••ì¶•ëœ ë°ì´í„°
 	 * @throws IOException
 	 */
 	private byte[] getCompressedBytes(DocumentInputStream dis, int size)
@@ -78,11 +78,11 @@ public class StreamReaderForCompress extends StreamReader {
 	}
 
 	/**
-	 * ¾ĞÃàµÈ ½ºÆ®¸²¿¡ ³¡¿¡¼­ ¿øº» µ¥ÀÌÅÍÀÇ Å©±â¸¦ ÀĞ´Â´Ù.
+	 * ì••ì¶•ëœ ìŠ¤íŠ¸ë¦¼ì— ëì—ì„œ ì›ë³¸ ë°ì´í„°ì˜ í¬ê¸°ë¥¼ ì½ëŠ”ë‹¤.
 	 * 
 	 * @param dis
-	 *            ½ºÆ®¸²À» ÀĞ±â À§ÇÑ InputStream °´Ã¼
-	 * @return ¿øº» µ¥ÀÌÅÍÀÇ Å©±â
+	 *            ìŠ¤íŠ¸ë¦¼ì„ ì½ê¸° ìœ„í•œ InputStream ê°ì²´
+	 * @return ì›ë³¸ ë°ì´í„°ì˜ í¬ê¸°
 	 * @throws IOException
 	 */
 	private int readOriginalSize(DocumentInputStream dis) throws IOException {
@@ -90,13 +90,13 @@ public class StreamReaderForCompress extends StreamReader {
 	}
 
 	/**
-	 * ¾ĞÃàµÈ µ¥ÀÌÅÍ¸¦ Ç®¾î¼­ ¿øº» µ¥ÀÌÅÍ¸¦ ¾ò´Â´Ù.
+	 * ì••ì¶•ëœ ë°ì´í„°ë¥¼ í’€ì–´ì„œ ì›ë³¸ ë°ì´í„°ë¥¼ ì–»ëŠ”ë‹¤.
 	 * 
 	 * @param compressed
-	 *            ¾ĞÃàµÈ µ¥ÀÌÅÍ
+	 *            ì••ì¶•ëœ ë°ì´í„°
 	 * @param originSize
-	 *            ¿øº» µ¥ÀÌÅÍ Å©±â
-	 * @return ¿øº» µ¥ÀÌÅÍ
+	 *            ì›ë³¸ ë°ì´í„° í¬ê¸°
+	 * @return ì›ë³¸ ë°ì´í„°
 	 * @throws DataFormatException
 	 * @throws IOException
 	 */
@@ -123,11 +123,11 @@ public class StreamReaderForCompress extends StreamReader {
 	}
 
 	/**
-	 * n byte¸¦ ÀĞ¾î¼­ byte ¹è¿­¤¤À» ¹İÈ¯ÇÑ´Ù.
+	 * n byteë¥¼ ì½ì–´ì„œ byte ë°°ì—´ã„´ì„ ë°˜í™˜í•œë‹¤.
 	 * 
 	 * @param n
-	 *            ÀĞÀ» ¹ÙÀÌÆ® ¼ö
-	 * @return »õ·Î ÀĞÀº byte ¹è¿­
+	 *            ì½ì„ ë°”ì´íŠ¸ ìˆ˜
+	 * @return ìƒˆë¡œ ì½ì€ byte ë°°ì—´
 	 * @throws IOException
 	 */
 	private byte[] readBytes(int n) throws IOException {

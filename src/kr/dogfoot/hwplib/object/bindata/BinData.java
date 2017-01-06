@@ -1,29 +1,29 @@
-package kr.dogfoot.hwplib.object.bindata;
+ï»¿package kr.dogfoot.hwplib.object.bindata;
 
 import java.util.ArrayList;
 
 /**
- * ¹ÙÀÌ³Ê¸® µ¥ÀÌÅÍ¸¦ ³ªÅ¸³»´Â °´Ã¼ HWPÆÄÀÏ ³»ÀÇ "BinData" storage¿¡ ÀúÀåµÈ´Ù.
+ * ë°”ì´ë„ˆë¦¬ ë°ì´í„°ë¥¼ ë‚˜íƒ€ë‚´ëŠ” ê°ì²´ HWPíŒŒì¼ ë‚´ì˜ "BinData" storageì— ì €ì¥ëœë‹¤.
  * 
  * @author neolord
  */
 public class BinData {
 	/**
-	 * HWP ÆÄÀÏ ¼Ó¿¡ Ã·ºÎµÈ ¹ÙÀÌ³Ê¸® µ¥ÀÌÅÍ(ÀÌ¹ÌÁö µî)ÀÇ ¸®½ºÆ®
+	 * HWP íŒŒì¼ ì†ì— ì²¨ë¶€ëœ ë°”ì´ë„ˆë¦¬ ë°ì´í„°(ì´ë¯¸ì§€ ë“±)ì˜ ë¦¬ìŠ¤íŠ¸
 	 */
 	private ArrayList<EmbeddedBinaryData> embeddedBinaryDataList;
 
 	/**
-	 * »ı¼ºÀÚ
+	 * ìƒì„±ì
 	 */
 	public BinData() {
 		embeddedBinaryDataList = new ArrayList<EmbeddedBinaryData>();
 	}
 
 	/**
-	 * »õ·Î¿î Ã·ºÎµÈ ¹ÙÀÌ³Ê¸® µ¥ÀÌÅÍ °´Ã¼¸¦ »ı¼ºÇÏ°í list¿¡ Ãß°¡ÇÕ´Ï´Ù.
+	 * ìƒˆë¡œìš´ ì²¨ë¶€ëœ ë°”ì´ë„ˆë¦¬ ë°ì´í„° ê°ì²´ë¥¼ ìƒì„±í•˜ê³  listì— ì¶”ê°€í•©ë‹ˆë‹¤.
 	 * 
-	 * @return »õ·Î »ı¼ºµÈ Ã·ºÎµÈ ¹ÙÀÌ³Ê¸® µ¥ÀÌÅÍ °´Ã¼
+	 * @return ìƒˆë¡œ ìƒì„±ëœ ì²¨ë¶€ëœ ë°”ì´ë„ˆë¦¬ ë°ì´í„° ê°ì²´
 	 */
 	public EmbeddedBinaryData addNewEmbeddedBinaryData() {
 		EmbeddedBinaryData ebd = new EmbeddedBinaryData();
@@ -32,21 +32,21 @@ public class BinData {
 	}
 
 	/**
-	 * Ã·ºÎµÈ ¹ÙÀÌ³Ê¸® µ¥ÀÌÅÍÀÇ ¸®½ºÆ®¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ì²¨ë¶€ëœ ë°”ì´ë„ˆë¦¬ ë°ì´í„°ì˜ ë¦¬ìŠ¤íŠ¸ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return Ã·ºÎµÈ ¹ÙÀÌ³Ê¸® µ¥ÀÌÅÍÀÇ ¸®½ºÆ®;
+	 * @return ì²¨ë¶€ëœ ë°”ì´ë„ˆë¦¬ ë°ì´í„°ì˜ ë¦¬ìŠ¤íŠ¸;
 	 */
 	public ArrayList<EmbeddedBinaryData> getEmbeddedBinaryDataList() {
 		return embeddedBinaryDataList;
 	}
 
 	/**
-	 * »õ·Î¿î Ã·ºÎµÈ ¹ÙÀÌ³Ê¸® µ¥ÀÌÅÍ °´Ã¼¸¦ »ı¼ºÇÏ¿© list¿¡ Ãß°¡ÇÕ´Ï´Ù.
+	 * ìƒˆë¡œìš´ ì²¨ë¶€ëœ ë°”ì´ë„ˆë¦¬ ë°ì´í„° ê°ì²´ë¥¼ ìƒì„±í•˜ì—¬ listì— ì¶”ê°€í•©ë‹ˆë‹¤.
 	 * 
 	 * @param name
-	 *            »õ·Î¿î Ã·ºÎµÈ ¹ÙÀÌ³Ê¸® µ¥ÀÌÅÍ °´Ã¼ÀÇ ÀÌ¸§
+	 *            ìƒˆë¡œìš´ ì²¨ë¶€ëœ ë°”ì´ë„ˆë¦¬ ë°ì´í„° ê°ì²´ì˜ ì´ë¦„
 	 * @param data
-	 *            »õ·Î¿î Ã·ºÎµÈ ¹ÙÀÌ³Ê¸® µ¥ÀÌÅÍ °´Ã¼ÀÇ µ¥ÀÌÅÍ
+	 *            ìƒˆë¡œìš´ ì²¨ë¶€ëœ ë°”ì´ë„ˆë¦¬ ë°ì´í„° ê°ì²´ì˜ ë°ì´í„°
 	 */
 	public void addNewEmbeddedBinaryData(String name, byte[] data) {
 		EmbeddedBinaryData ebd = addNewEmbeddedBinaryData();

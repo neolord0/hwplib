@@ -1,4 +1,4 @@
-package kr.dogfoot.hwplib.reader.bodytext.paragraph.control.tbl;
+ï»¿package kr.dogfoot.hwplib.reader.bodytext.paragraph.control.tbl;
 
 import java.io.IOException;
 
@@ -7,18 +7,18 @@ import kr.dogfoot.hwplib.object.bodytext.control.table.ZoneInfo;
 import kr.dogfoot.hwplib.util.compoundFile.StreamReader;
 
 /**
- * Ç¥ Á¤º¸ ·¹ÄÚµå¸¦ ÀĞ±â À§ÇÑ °´Ã¼
+ * í‘œ ì •ë³´ ë ˆì½”ë“œë¥¼ ì½ê¸° ìœ„í•œ ê°ì²´
  * 
  * @author neolord
  */
 public class ForTable {
 	/**
-	 * Ç¥ Á¤º¸ ·¹ÄÚµå¸¦ ÀĞ´Â´Ù.
+	 * í‘œ ì •ë³´ ë ˆì½”ë“œë¥¼ ì½ëŠ”ë‹¤.
 	 * 
 	 * @param table
-	 *            Ç¥ Á¤º¸ ·¹ÄÚµå
+	 *            í‘œ ì •ë³´ ë ˆì½”ë“œ
 	 * @param sr
-	 *            ½ºÆ®¸² ¸®´õ
+	 *            ìŠ¤íŠ¸ë¦¼ ë¦¬ë”
 	 * @throws IOException
 	 */
 	public static void read(Table table, StreamReader sr) throws IOException {
@@ -41,12 +41,12 @@ public class ForTable {
 	}
 
 	/**
-	 * zone infoÀ» ÀĞ´Â´Ù.
+	 * zone infoì„ ì½ëŠ”ë‹¤.
 	 * 
 	 * @param table
-	 *            Ç¥ Á¤º¸ ·¹ÄÚµå
+	 *            í‘œ ì •ë³´ ë ˆì½”ë“œ
 	 * @param sr
-	 *            ½ºÆ®¸² ¸®´õ
+	 *            ìŠ¤íŠ¸ë¦¼ ë¦¬ë”
 	 * @throws IOException
 	 */
 	private static void zoneInfo(Table table, StreamReader sr)

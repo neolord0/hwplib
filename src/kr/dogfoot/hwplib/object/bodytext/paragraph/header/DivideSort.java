@@ -1,54 +1,54 @@
-package kr.dogfoot.hwplib.object.bodytext.paragraph.header;
+ï»¿package kr.dogfoot.hwplib.object.bodytext.paragraph.header;
 
 import kr.dogfoot.hwplib.util.binary.BitFlag;
 
 /**
- * ´Ü ³ª´©±âÀÇ Á¾·ù¿¡ ´ëÇÑ °´Ã¼
+ * ë‹¨ ë‚˜ëˆ„ê¸°ì˜ ì¢…ë¥˜ì— ëŒ€í•œ ê°ì²´
  * 
  * @author neolord
  */
 public class DivideSort {
 	/**
-	 * ÆÄÀÏ¿¡ ÀúÀåµÇ´Â °ª (unsigned 1 byte)
+	 * íŒŒì¼ì— ì €ì¥ë˜ëŠ” ê°’ (unsigned 1 byte)
 	 */
 	private short value;
 
 	/**
-	 * »ı¼ºÀÚ
+	 * ìƒì„±ì
 	 */
 	public DivideSort() {
 	}
 
 	/**
-	 * ÆÄÀÏ¿¡ ÀúÀåµÇ´Â °ªÀ» ¹İÈ¯ÇÑ´Ù.
+	 * íŒŒì¼ì— ì €ì¥ë˜ëŠ” ê°’ì„ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ÆÄÀÏ¿¡ ÀúÀåµÇ´Â °ª
+	 * @return íŒŒì¼ì— ì €ì¥ë˜ëŠ” ê°’
 	 */
 	public short getValue() {
 		return value;
 	}
 
 	/**
-	 * ÆÄÀÏ¿¡ ÀúÀåµÇ´Â °ªÀ» ¼³Á¤ÇÑ´Ù.
+	 * íŒŒì¼ì— ì €ì¥ë˜ëŠ” ê°’ì„ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param value
-	 *            ÆÄÀÏ¿¡ ÀúÀåµÇ´Â °ª
+	 *            íŒŒì¼ì— ì €ì¥ë˜ëŠ” ê°’
 	 */
 	public void setValue(short value) {
 		this.value = value;
 	}
 
 	/**
-	 * ±¸¿ª ³ª´©±â°¡ Àû¿ëµÇ¾ú´ÂÁö ¿©ºÎ¸¦ ¹İÈ¯ÇÑ´Ù. (0 bit)
+	 * êµ¬ì—­ ë‚˜ëˆ„ê¸°ê°€ ì ìš©ë˜ì—ˆëŠ”ì§€ ì—¬ë¶€ë¥¼ ë°˜í™˜í•œë‹¤. (0 bit)
 	 * 
-	 * @return ±¸¿ª ³ª´©±â°¡ Àû¿ëµÇ¾ú´ÂÁö ¿©ºÎ
+	 * @return êµ¬ì—­ ë‚˜ëˆ„ê¸°ê°€ ì ìš©ë˜ì—ˆëŠ”ì§€ ì—¬ë¶€
 	 */
 	public boolean isDivideSection() {
 		return BitFlag.get(value, 0);
 	}
 
 	/**
-	 * ±¸¿ª ³ª´©±â°¡ Àû¿ëµÇ¾ú´ÂÁö ¿©ºÎ¸¦ ¼³Á¤ÇÑ´Ù. (0 bit)
+	 * êµ¬ì—­ ë‚˜ëˆ„ê¸°ê°€ ì ìš©ë˜ì—ˆëŠ”ì§€ ì—¬ë¶€ë¥¼ ì„¤ì •í•œë‹¤. (0 bit)
 	 * 
 	 * @param divideSection
 	 */
@@ -57,57 +57,57 @@ public class DivideSort {
 	}
 
 	/**
-	 * ´Ù´Ü ³ª´©±â°¡ ÀûöµÇ¾ú´ÂÁö ¿©ºÎ¸¦ ¹İÈ¯ÇÑ´Ù. (1 bit)
+	 * ë‹¤ë‹¨ ë‚˜ëˆ„ê¸°ê°€ ì ìš›ë˜ì—ˆëŠ”ì§€ ì—¬ë¶€ë¥¼ ë°˜í™˜í•œë‹¤. (1 bit)
 	 * 
-	 * @return ´Ù´Ü ³ª´©±â°¡ ÀûöµÇ¾ú´ÂÁö ¿©ºÎ
+	 * @return ë‹¤ë‹¨ ë‚˜ëˆ„ê¸°ê°€ ì ìš›ë˜ì—ˆëŠ”ì§€ ì—¬ë¶€
 	 */
 	public boolean isDivideMultiColumn() {
 		return BitFlag.get(value, 1);
 	}
 
 	/**
-	 * ´Ù´Ü ³ª´©±â°¡ ÀûöµÇ¾ú´ÂÁö ¿©ºÎ¸¦ ¼µÁ¤ÇÑ´Ù. (1 bit)
+	 * ë‹¤ë‹¨ ë‚˜ëˆ„ê¸°ê°€ ì ìš›ë˜ì—ˆëŠ”ì§€ ì—¬ë¶€ë¥¼ ì„§ì •í•œë‹¤. (1 bit)
 	 * 
 	 * @param divideMultiColumn
-	 *            ´Ù´Ü ³ª´©±â°¡ ÀûöµÇ¾ú´ÂÁö ¿©ºÎ
+	 *            ë‹¤ë‹¨ ë‚˜ëˆ„ê¸°ê°€ ì ìš›ë˜ì—ˆëŠ”ì§€ ì—¬ë¶€
 	 */
 	public void setDivideMultiColumn(boolean divideMultiColumn) {
 		value = BitFlag.set(value, 1, divideMultiColumn);
 	}
 
 	/**
-	 * ÂÊ ³ª´©±â°¡ ÀûöµÇ¾ú´ÂÁö ¿©ºÎ¸¦ ¹İÈ¯ÇÑ´Ù. (2 bit)
+	 * ìª½ ë‚˜ëˆ„ê¸°ê°€ ì ìš›ë˜ì—ˆëŠ”ì§€ ì—¬ë¶€ë¥¼ ë°˜í™˜í•œë‹¤. (2 bit)
 	 * 
-	 * @return ÂÊ ³ª´©±â°¡ ÀûöµÇ¾ú´ÂÁö ¿©ºÎ
+	 * @return ìª½ ë‚˜ëˆ„ê¸°ê°€ ì ìš›ë˜ì—ˆëŠ”ì§€ ì—¬ë¶€
 	 */
 	public boolean isDividePage() {
 		return BitFlag.get(value, 2);
 	}
 
 	/**
-	 * ÂÊ ³ª´©±â°¡ ÀûöµÇ¾ú´ÂÁö ¿©ºÎ¸¦ ¼³Á¤ÇÑ´Ù. (2 bit)
+	 * ìª½ ë‚˜ëˆ„ê¸°ê°€ ì ìš›ë˜ì—ˆëŠ”ì§€ ì—¬ë¶€ë¥¼ ì„¤ì •í•œë‹¤. (2 bit)
 	 * 
 	 * @param dividePage
-	 *            ÂÊ ³ª´©±â°¡ ÀûöµÇ¾ú´ÂÁö ¿©ºÎ
+	 *            ìª½ ë‚˜ëˆ„ê¸°ê°€ ì ìš›ë˜ì—ˆëŠ”ì§€ ì—¬ë¶€
 	 */
 	public void setDividePage(boolean dividePage) {
 		value = BitFlag.set(value, 2, dividePage);
 	}
 
 	/**
-	 * ´Ü ³ª´©±â°¡ ÀûöµÇ¾ú´ÂÁö ¿©ºÎ¸¦ ¹İÈ¯ÇÑ´Ù. (3 bit)
+	 * ë‹¨ ë‚˜ëˆ„ê¸°ê°€ ì ìš›ë˜ì—ˆëŠ”ì§€ ì—¬ë¶€ë¥¼ ë°˜í™˜í•œë‹¤. (3 bit)
 	 * 
-	 * @return ´Ü ³ª´©±â°¡ ÀûöµÇ¾ú´ÂÁö ¿©ºÎ
+	 * @return ë‹¨ ë‚˜ëˆ„ê¸°ê°€ ì ìš›ë˜ì—ˆëŠ”ì§€ ì—¬ë¶€
 	 */
 	public boolean isDivideColumn() {
 		return BitFlag.get(value, 3);
 	}
 
 	/**
-	 * ´Ü ³ª´©±â°¡ ÀûöµÇ¾ú´ÂÁö ¿©ºÎ¸¦ ¼³Á¤ÇÑ´Ù. (3 bit)
+	 * ë‹¨ ë‚˜ëˆ„ê¸°ê°€ ì ìš›ë˜ì—ˆëŠ”ì§€ ì—¬ë¶€ë¥¼ ì„¤ì •í•œë‹¤. (3 bit)
 	 * 
 	 * @param divideColumn
-	 *            ´Ü ³ª´©±â°¡ ÀûöµÇ¾ú´ÂÁö ¿©ºÎ
+	 *            ë‹¨ ë‚˜ëˆ„ê¸°ê°€ ì ìš›ë˜ì—ˆëŠ”ì§€ ì—¬ë¶€
 	 */
 	public void setDivideColumn(boolean divideColumn) {
 		value = BitFlag.set(value, 3, divideColumn);

@@ -1,128 +1,128 @@
-package kr.dogfoot.hwplib.object.bodytext.control.table;
+ï»¿package kr.dogfoot.hwplib.object.bodytext.control.table;
 
 /**
- * ¿µ¿ª ¼Ó¼º
+ * ì˜ì—­ ì†ì„±
  * 
  * @author neolord
  */
 public class ZoneInfo {
 	/**
-	 * ½ÃÀÛ ¿­ ÁÖ¼Ò
+	 * ì‹œì‘ ì—´ ì£¼ì†Œ
 	 */
 	private int startColumn;
 	/**
-	 * ½ÃÀÛ Çà ÁÖ¼Ò
+	 * ì‹œì‘ í–‰ ì£¼ì†Œ
 	 */
 	private int startRow;
 	/**
-	 * ³¡ ¿­ ÁÖ¼Ò
+	 * ë ì—´ ì£¼ì†Œ
 	 */
 	private int endColumn;
 	/**
-	 * ³¡ Çà ÁÖ¼Ò
+	 * ë í–‰ ì£¼ì†Œ
 	 */
 	private int endRow;
 	/**
-	 * ÂüÁ¶µÈ Å×µÎ¸®/¹è°æ Id
+	 * ì°¸ì¡°ëœ í…Œë‘ë¦¬/ë°°ê²½ Id
 	 */
 	private int bordefFillId;
 
 	/**
-	 * »ı¼ºÀÚ
+	 * ìƒì„±ì
 	 */
 	public ZoneInfo() {
 	}
 
 	/**
-	 * ½ÃÀÛ ¿­ ÁÖ¼Ò¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ì‹œì‘ ì—´ ì£¼ì†Œë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ½ÃÀÛ ¿­ ÁÖ¼Ò
+	 * @return ì‹œì‘ ì—´ ì£¼ì†Œ
 	 */
 	public int getStartColumn() {
 		return startColumn;
 	}
 
 	/**
-	 * ½ÃÀÛ ¿­ ÁÖ¼Ò¸¦ ¼³Á¤ÇÑ´Ù.
+	 * ì‹œì‘ ì—´ ì£¼ì†Œë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param startColumn
-	 *            ½ÃÀÛ ¿­ ÁÖ¼Ò
+	 *            ì‹œì‘ ì—´ ì£¼ì†Œ
 	 */
 	public void setStartColumn(int startColumn) {
 		this.startColumn = startColumn;
 	}
 
 	/**
-	 * ½ÃÀÛ Çà ÁÖ¼Ò¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ì‹œì‘ í–‰ ì£¼ì†Œë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ½ÃÀÛ Çà ÁÖ¼Ò
+	 * @return ì‹œì‘ í–‰ ì£¼ì†Œ
 	 */
 	public int getStartRow() {
 		return startRow;
 	}
 
 	/**
-	 * ½ÃÀÛ Çà ÁÖ¼Ò¸¦ ¼³Á¤ÇÑ´Ù.
+	 * ì‹œì‘ í–‰ ì£¼ì†Œë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param startRow
-	 *            ½ÃÀÛ Çà ÁÖ¼Ò
+	 *            ì‹œì‘ í–‰ ì£¼ì†Œ
 	 */
 	public void setStartRow(int startRow) {
 		this.startRow = startRow;
 	}
 
 	/**
-	 * ³¡ ¿­ ÁÖ¼Ò¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ë ì—´ ì£¼ì†Œë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ³¡ ¿­ ÁÖ¼Ò
+	 * @return ë ì—´ ì£¼ì†Œ
 	 */
 	public int getEndColumn() {
 		return endColumn;
 	}
 
 	/**
-	 * ³¡ ¿­ ÁÖ¼Ò¸¦ ¼³Á¤ÇÑ´Ù.
+	 * ë ì—´ ì£¼ì†Œë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param endColumn
-	 *            ³¡ ¿­ ÁÖ¼Ò
+	 *            ë ì—´ ì£¼ì†Œ
 	 */
 	public void setEndColumn(int endColumn) {
 		this.endColumn = endColumn;
 	}
 
 	/**
-	 * ³¡ Çà ÁÖ¼Ò¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ë í–‰ ì£¼ì†Œë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ³¡ Çà ÁÖ¼Ò
+	 * @return ë í–‰ ì£¼ì†Œ
 	 */
 	public int getEndRow() {
 		return endRow;
 	}
 
 	/**
-	 * ³¡ Çà ÁÖ¼Ò¸¦ ¼³Á¤ÇÑ´Ù.
+	 * ë í–‰ ì£¼ì†Œë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param endRow
-	 *            ³¡ Çà ÁÖ¼Ò
+	 *            ë í–‰ ì£¼ì†Œ
 	 */
 	public void setEndRow(int endRow) {
 		this.endRow = endRow;
 	}
 
 	/**
-	 * ÂüÁ¶µÈ Å×µÎ¸®/¹è°æ Id¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ì°¸ì¡°ëœ í…Œë‘ë¦¬/ë°°ê²½ Idë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ÂüÁ¶µÈ Å×µÎ¸®/¹è°æ Id
+	 * @return ì°¸ì¡°ëœ í…Œë‘ë¦¬/ë°°ê²½ Id
 	 */
 	public int getBordefFillId() {
 		return bordefFillId;
 	}
 
 	/**
-	 * ÂüÁ¶µÈ Å×µÎ¸®/¹è°æ Id¸¦ ¼³Á¤ÇÑ´Ù.
+	 * ì°¸ì¡°ëœ í…Œë‘ë¦¬/ë°°ê²½ Idë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param bordefFillId
-	 *            ÂüÁ¶µÈ Å×µÎ¸®/¹è°æ Id
+	 *            ì°¸ì¡°ëœ í…Œë‘ë¦¬/ë°°ê²½ Id
 	 */
 	public void setBordefFillId(int bordefFillId) {
 		this.bordefFillId = bordefFillId;

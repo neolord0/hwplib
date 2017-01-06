@@ -1,4 +1,4 @@
-package kr.dogfoot.hwplib.util.compoundFile;
+ï»¿package kr.dogfoot.hwplib.util.compoundFile;
 
 import java.io.IOException;
 
@@ -7,125 +7,125 @@ import kr.dogfoot.hwplib.reader.RecordHeader;
 import kr.dogfoot.hwplib.util.binary.BitFlag;
 
 /**
- * MS Compound ÆÄÀÏÀÇ ½ºÆ®¸²À» ÀĞ±â À§ÇÑ °´Ã¼
+ * MS Compound íŒŒì¼ì˜ ìŠ¤íŠ¸ë¦¼ì„ ì½ê¸° ìœ„í•œ ê°ì²´
  * 
  * @author neolord
  */
 public abstract class StreamReader {
 	/**
-	 * ½ºÆ®¸² Å©±â
+	 * ìŠ¤íŠ¸ë¦¼ í¬ê¸°
 	 */
 	private long size;
 	/**
-	 * ÇöÀç±îÁö ÀĞÀº byte ¼ö.
+	 * í˜„ì¬ê¹Œì§€ ì½ì€ byte ìˆ˜.
 	 */
 	private long read;
 
 	/**
-	 * ÇÑ±Û ·¹ÄÚµå Çì´õ
+	 * í•œê¸€ ë ˆì½”ë“œ í—¤ë”
 	 */
 	private RecordHeader header;
 	/**
-	 * Çì´õ¸¦ ÀĞÀº ÈÄºÎÅÍ ÇöÀç±îÁö ÀĞÀº byte ¼ö
+	 * í—¤ë”ë¥¼ ì½ì€ í›„ë¶€í„° í˜„ì¬ê¹Œì§€ ì½ì€ byte ìˆ˜
 	 */
 	private long readAfterHeader;
 
 	/**
-	 * ÇÑ±Û ÆÄÀÏ ¹öÀü
+	 * í•œê¸€ íŒŒì¼ ë²„ì „
 	 */
 	private FileVersion fileVersion;
 
 	/**
-	 * byte ¹è¿­ÀÇ Å©±â ¸¸Å­ byte ¹è¿­À» ÀĞÀº´Ù.
+	 * byte ë°°ì—´ì˜ í¬ê¸° ë§Œí¼ byte ë°°ì—´ì„ ì½ì€ë‹¤.
 	 * 
 	 * @param buffer
-	 *            byte ¹è¿­
+	 *            byte ë°°ì—´
 	 * @throws IOException
 	 */
 	public abstract void readBytes(byte[] buffer) throws IOException;
 
 	/**
-	 * signed 1 byte Á¤¼ö°ªÀ» ÀĞ¾î¼­ ¹İÈ¯ÇÑ´Ù.
+	 * signed 1 byte ì •ìˆ˜ê°’ì„ ì½ì–´ì„œ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return signed 1 byte Á¤¼ö°ª
+	 * @return signed 1 byte ì •ìˆ˜ê°’
 	 * @throws IOException
 	 */
 	public abstract byte readSInt1() throws IOException;
 
 	/**
-	 * signed 2 byte Á¤¼ö°ªÀ» ÀĞ¾î¼­ ¹İÈ¯ÇÑ´Ù.
+	 * signed 2 byte ì •ìˆ˜ê°’ì„ ì½ì–´ì„œ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return signed 2 byte Á¤¼ö°ª
+	 * @return signed 2 byte ì •ìˆ˜ê°’
 	 * @throws IOException
 	 */
 	public abstract short readSInt2() throws IOException;
 
 	/**
-	 * signed 4 byte Á¤¼ö°ªÀ» ÀĞ¾î¼­ ¹İÈ¯ÇÑ´Ù.
+	 * signed 4 byte ì •ìˆ˜ê°’ì„ ì½ì–´ì„œ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return signed 4 byte Á¤¼ö°ª
+	 * @return signed 4 byte ì •ìˆ˜ê°’
 	 * @throws IOException
 	 */
 	public abstract int readSInt4() throws IOException;
 
 	/**
-	 * unsigned 1 byte Á¤¼ö°ªÀ» ÀĞ¾î¼­ ¹İÈ¯ÇÑ´Ù.
+	 * unsigned 1 byte ì •ìˆ˜ê°’ì„ ì½ì–´ì„œ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return unsigned 1 byte Á¤¼ö°ª
+	 * @return unsigned 1 byte ì •ìˆ˜ê°’
 	 * @throws IOException
 	 */
 	public abstract short readUInt1() throws IOException;
 
 	/**
-	 * unsigned 2 byte Á¤¼ö°ªÀ» ÀĞ¾î¼­ ¹İÈ¯ÇÑ´Ù.
+	 * unsigned 2 byte ì •ìˆ˜ê°’ì„ ì½ì–´ì„œ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return unsigned 2 byte Á¤¼ö°ª
+	 * @return unsigned 2 byte ì •ìˆ˜ê°’
 	 * @throws IOException
 	 */
 	public abstract int readUInt2() throws IOException;
 
 	/**
-	 * unsigned 4 byte Á¤¼ö°ªÀ» ÀĞ¾î¼­ ¹İÈ¯ÇÑ´Ù.
+	 * unsigned 4 byte ì •ìˆ˜ê°’ì„ ì½ì–´ì„œ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return unsigned 4 byte Á¤¼ö°ª
+	 * @return unsigned 4 byte ì •ìˆ˜ê°’
 	 * @throws IOException
 	 */
 	public abstract long readUInt4() throws IOException;
 
 	/**
-	 * double °ªÀ» ÀĞ¾î¼­ ¹İÈ¯ÇÑ´Ù.
+	 * double ê°’ì„ ì½ì–´ì„œ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return double °ª
+	 * @return double ê°’
 	 * @throws IOException
 	 */
 	public abstract double readDouble() throws IOException;
 
 	/**
-	 * float °ªÀ» ÀĞ¾î¼­ ¹İÈ¯ÇÑ´Ù.
+	 * float ê°’ì„ ì½ì–´ì„œ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return float °ª
+	 * @return float ê°’
 	 * @throws IOException
 	 */
 	public abstract float readFloat() throws IOException;
 
 	/**
-	 * n ¹ÙÀÌÆ® ¸¸Å­ °Ç³Ê¶Ú´Ù.
+	 * n ë°”ì´íŠ¸ ë§Œí¼ ê±´ë„ˆë›´ë‹¤.
 	 * 
 	 * @param n
-	 *            °Ç³Ê¶Û ¹ÙÀÌÆ® ¼ö
+	 *            ê±´ë„ˆë›¸ ë°”ì´íŠ¸ ìˆ˜
 	 * @throws IOException
 	 */
 	public abstract void skip(long n) throws IOException;
 
 	/**
-	 * ½ºÆ®¸²À» ÀĞ±â À§ÇÑ °´Ã¼¸¦ ´İ´Â´Ù.
+	 * ìŠ¤íŠ¸ë¦¼ì„ ì½ê¸° ìœ„í•œ ê°ì²´ë¥¼ ë‹«ëŠ”ë‹¤.
 	 * 
 	 * @throws IOException
 	 */
 	public abstract void close() throws IOException;
 
 	/**
-	 * »ı¼ºÀÚ
+	 * ìƒì„±ì
 	 */
 	protected StreamReader() {
 		size = 0;
@@ -135,10 +135,10 @@ public abstract class StreamReader {
 	}
 
 	/**
-	 * ÇöÀç±îÁö ÀĞÀº byte ¼ö, Çì´õ¸¦ ÀĞÀº ÈÄºÎÅÍ ÇöÀç±îÁö ÀĞÀº byte ¼öÀÇ °ªÀ» n¸¸Å­ Ãß°¡ÇÑ´Ù.
+	 * í˜„ì¬ê¹Œì§€ ì½ì€ byte ìˆ˜, í—¤ë”ë¥¼ ì½ì€ í›„ë¶€í„° í˜„ì¬ê¹Œì§€ ì½ì€ byte ìˆ˜ì˜ ê°’ì„ në§Œí¼ ì¶”ê°€í•œë‹¤.
 	 * 
 	 * @param n
-	 *            byte ¼ö
+	 *            byte ìˆ˜
 	 */
 	protected void forwardPosition(long n) {
 		read += n;
@@ -146,9 +146,9 @@ public abstract class StreamReader {
 	}
 
 	/**
-	 * ÇÑ±Û ·¹ÄÚµå Çì´õ¸¦ ÀĞ¾î¼­ ¹İÈ¯ÇÑ´Ù.
+	 * í•œê¸€ ë ˆì½”ë“œ í—¤ë”ë¥¼ ì½ì–´ì„œ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ÇÑ±Û ·¹ÄÚµå Çì´õ
+	 * @return í•œê¸€ ë ˆì½”ë“œ í—¤ë”
 	 * @throws IOException
 	 */
 	public RecordHeader readRecordHeder() throws IOException {
@@ -161,10 +161,10 @@ public abstract class StreamReader {
 	}
 
 	/**
-	 * ÇÑ±Û ¹®ÀÚ¿­À» ÀĞ¾î¼­ ¹İÈ¯ÇÑ´Ù. ÇÑ±Û ¹®ÀÚ¿­Àº 2 byteÀÇ ¹®ÀÚ¿­ ±æÀÌ°¡ ÀúÀåµÈ ºÎºĞ µÚ¿¡ UTF-16LE ÇüÅÂÀÇ byte·Î µÈ
-	 * ¹®ÀÚ¿­ ºÎºĞÀÌ µû¸¥´Ù.
+	 * í•œê¸€ ë¬¸ìì—´ì„ ì½ì–´ì„œ ë°˜í™˜í•œë‹¤. í•œê¸€ ë¬¸ìì—´ì€ 2 byteì˜ ë¬¸ìì—´ ê¸¸ì´ê°€ ì €ì¥ëœ ë¶€ë¶„ ë’¤ì— UTF-16LE í˜•íƒœì˜ byteë¡œ ëœ
+	 * ë¬¸ìì—´ ë¶€ë¶„ì´ ë”°ë¥¸ë‹¤.
 	 * 
-	 * @return ¹®ÀÚ¿­
+	 * @return ë¬¸ìì—´
 	 * @throws IOException
 	 */
 	public String readUTF16LEString() throws IOException {
@@ -179,9 +179,9 @@ public abstract class StreamReader {
 	}
 
 	/**
-	 * ÇÑ ±ÛÀÚ¸¦ ÀĞ¾î¼­ ¹İÈ¯ÇÑ´Ù.
+	 * í•œ ê¸€ìë¥¼ ì½ì–´ì„œ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ÇÑ ±ÛÀÚ
+	 * @return í•œ ê¸€ì
 	 * @throws IOException
 	 */
 	public String readWChar() throws IOException {
@@ -191,37 +191,37 @@ public abstract class StreamReader {
 	}
 
 	/**
-	 * ½ºÆ®¸² Å©±â¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ìŠ¤íŠ¸ë¦¼ í¬ê¸°ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ½ºÆ®¸² Å©±â
+	 * @return ìŠ¤íŠ¸ë¦¼ í¬ê¸°
 	 */
 	public long getSize() {
 		return size;
 	}
 
 	/**
-	 * ½ºÆ®¸² Å©±â¸¦ ¼³Á¤ÇÑ´Ù.
+	 * ìŠ¤íŠ¸ë¦¼ í¬ê¸°ë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param size
-	 *            ½ºÆ®¸² Å©±â
+	 *            ìŠ¤íŠ¸ë¦¼ í¬ê¸°
 	 */
 	protected void setSize(long size) {
 		this.size = size;
 	}
 
 	/**
-	 * ½ºÆ®¸² »óÀÇ ÇöÀç À§Ä¡¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ìŠ¤íŠ¸ë¦¼ ìƒì˜ í˜„ì¬ ìœ„ì¹˜ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ½ºÆ®¸² »óÀÇ ÇöÀç À§Ä¡
+	 * @return ìŠ¤íŠ¸ë¦¼ ìƒì˜ í˜„ì¬ ìœ„ì¹˜
 	 */
 	public long getCurrentPosition() {
 		return read;
 	}
 
 	/**
-	 * ÇöÀç À§Ä¡°¡ ½ºÆ®¸² ³¡ÀÎÁö ¿©ºÎ¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * í˜„ì¬ ìœ„ì¹˜ê°€ ìŠ¤íŠ¸ë¦¼ ëì¸ì§€ ì—¬ë¶€ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ÇöÀç À§Ä¡°¡ ½ºÆ®¸² ³¡ÀÎÁö ¿©ºÎ
+	 * @return í˜„ì¬ ìœ„ì¹˜ê°€ ìŠ¤íŠ¸ë¦¼ ëì¸ì§€ ì—¬ë¶€
 	 */
 	public boolean isEndOfStream() {
 		if (read >= size) {
@@ -231,34 +231,34 @@ public abstract class StreamReader {
 	}
 
 	/**
-	 * ÇöÀç ·¹ÄÚµå Çì´õ¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * í˜„ì¬ ë ˆì½”ë“œ í—¤ë”ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ÇöÀç ·¹ÄÚµå Çì´õ
+	 * @return í˜„ì¬ ë ˆì½”ë“œ í—¤ë”
 	 */
 	public RecordHeader getCurrentRecordHeader() {
 		return header;
 	}
 
 	/**
-	 * ·¹ÄÚµå »óÀÇ ÇöÀç À§Ä¡¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ë ˆì½”ë“œ ìƒì˜ í˜„ì¬ ìœ„ì¹˜ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ·¹ÄÚµå »óÀÇ ÇöÀç À§Ä¡
+	 * @return ë ˆì½”ë“œ ìƒì˜ í˜„ì¬ ìœ„ì¹˜
 	 */
 	public long getCurrentPositionAfterHeader() {
 		return readAfterHeader;
 	}
 
 	/**
-	 * ÇÑ±Û ÆÄÀÏ ¹öÀüÀ» ¹İÈ¯ÇÑ´Ù.
+	 * í•œê¸€ íŒŒì¼ ë²„ì „ì„ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ÇÑ±Û ÆÄÀÏ ¹öÀü
+	 * @return í•œê¸€ íŒŒì¼ ë²„ì „
 	 */
 	public FileVersion getFileVersion() {
 		return fileVersion;
 	}
 
 	/**
-	 * ÇÑ±Û ÆÄÀÏ ¹öÀüÀ» ¼³Á¤ÇÑ´Ù.
+	 * í•œê¸€ íŒŒì¼ ë²„ì „ì„ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param fileVersion
 	 */
@@ -267,9 +267,9 @@ public abstract class StreamReader {
 	}
 
 	/**
-	 * ÇöÀç À§Ä¡°¡ ·¹ÄÚµå ³¡ÀÎÁö ¿©ºÎ¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * í˜„ì¬ ìœ„ì¹˜ê°€ ë ˆì½”ë“œ ëì¸ì§€ ì—¬ë¶€ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ÇöÀç À§Ä¡°¡ ·¹ÄÚµå ³¡ÀÎÁö ¿©ºÎ
+	 * @return í˜„ì¬ ìœ„ì¹˜ê°€ ë ˆì½”ë“œ ëì¸ì§€ ì—¬ë¶€
 	 */
 	public boolean isEndOfRecord() {
 		if (readAfterHeader < header.getSize()) {
@@ -279,16 +279,16 @@ public abstract class StreamReader {
 	}
 
 	/**
-	 * ·¹ÄÚµå Çì´õ¸¦ ÀĞÀº Á÷ÈÄ ÀÎÁö ¿©ºÎ¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ë ˆì½”ë“œ í—¤ë”ë¥¼ ì½ì€ ì§í›„ ì¸ì§€ ì—¬ë¶€ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ·¹ÄÚµå Çì´õ¸¦ ÀĞÀº Á÷ÈÄ ÀÎÁö ¿©ºÎ
+	 * @return ë ˆì½”ë“œ í—¤ë”ë¥¼ ì½ì€ ì§í›„ ì¸ì§€ ì—¬ë¶€
 	 */
 	public boolean isImmediatelyAfterReadingHeader() {
 		return (readAfterHeader == 0);
 	}
 
 	/**
-	 * ·¹ÄÚµå ³¡±îÁö °Ç³Ê¶Ú´Ù.
+	 * ë ˆì½”ë“œ ëê¹Œì§€ ê±´ë„ˆë›´ë‹¤.
 	 * 
 	 * @throws IOException
 	 */

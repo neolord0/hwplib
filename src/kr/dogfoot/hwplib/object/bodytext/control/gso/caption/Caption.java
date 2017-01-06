@@ -1,24 +1,24 @@
-package kr.dogfoot.hwplib.object.bodytext.control.gso.caption;
+ï»¿package kr.dogfoot.hwplib.object.bodytext.control.gso.caption;
 
 import kr.dogfoot.hwplib.object.bodytext.paragraph.ParagraphList;
 
 /**
- * Ä¸¼Ç Á¤º¸À» ³ªÅ¸³»´Â °´Ã¼
+ * ìº¡ì…˜ ì •ë³´ì„ ë‚˜íƒ€ë‚´ëŠ” ê°ì²´
  * 
  * @author neolord
  */
 public class Caption {
 	/**
-	 * ¹®´Ü ¸®½ºÆ® Çì´õ
+	 * ë¬¸ë‹¨ ë¦¬ìŠ¤íŠ¸ í—¤ë”
 	 */
 	private ListHeaderForCaption listHeader;
 	/**
-	 * ¹®´Ü ¸®½ºÆ®
+	 * ë¬¸ë‹¨ ë¦¬ìŠ¤íŠ¸
 	 */
 	private ParagraphList paragraphList;
 
 	/**
-	 * »ı¼ºÀÚ
+	 * ìƒì„±ì
 	 */
 	public Caption() {
 		listHeader = new ListHeaderForCaption();
@@ -26,18 +26,18 @@ public class Caption {
 	}
 
 	/**
-	 * ¹®´Ü ¸®½ºÆ® Çì´õ¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ë¬¸ë‹¨ ë¦¬ìŠ¤íŠ¸ í—¤ë”ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ¹®´Ü ¸®½ºÆ® Çì´õ
+	 * @return ë¬¸ë‹¨ ë¦¬ìŠ¤íŠ¸ í—¤ë”
 	 */
 	public ListHeaderForCaption getListHeader() {
 		return listHeader;
 	}
 
 	/**
-	 * ¹®´Ü ¸®½ºÆ®¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ë¬¸ë‹¨ ë¦¬ìŠ¤íŠ¸ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ¹®´Ü ¸®½ºÆ®
+	 * @return ë¬¸ë‹¨ ë¦¬ìŠ¤íŠ¸
 	 */
 	public ParagraphList getParagraphList() {
 		return paragraphList;

@@ -1,30 +1,30 @@
-package kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponent;
+ï»¿package kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponent;
 
 import kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponent.lineinfo.LineInfo;
 import kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponent.shadowinfo.ShadowInfo;
 import kr.dogfoot.hwplib.object.docinfo.borderfill.fillinfo.FillInfo;
 
 /**
- * ÀÏ¹İ ÄÁÆ®·ÑÀ» À§ÇÑ °´Ã¼ °øÅë ¼Ó¼º ·¹ÄÚµå
+ * ì¼ë°˜ ì»¨íŠ¸ë¡¤ì„ ìœ„í•œ ê°ì²´ ê³µí†µ ì†ì„± ë ˆì½”ë“œ
  * 
  * @author neolord
  */
 public class ShapeComponentNormal extends ShapeComponent {
 	/**
-	 * Å×µÎ¸® ¼± Á¤º¸
+	 * í…Œë‘ë¦¬ ì„  ì •ë³´
 	 */
 	private LineInfo lineInfo;
 	/**
-	 * Ã¤¿ò Á¤º¸
+	 * ì±„ì›€ ì •ë³´
 	 */
 	private FillInfo fillInfo;
 	/**
-	 * ±×¸²ÀÚ Á¤º¸
+	 * ê·¸ë¦¼ì ì •ë³´
 	 */
 	private ShadowInfo shadowInfo;
 
 	/**
-	 * »ı¼ºÀÚ
+	 * ìƒì„±ì
 	 */
 	public ShapeComponentNormal() {
 		lineInfo = null;
@@ -33,69 +33,69 @@ public class ShapeComponentNormal extends ShapeComponent {
 	}
 
 	/**
-	 * Å×µÎ¸® ¼± Á¤º¸ °´Ã¼¸¦ »ı¼ºÇÑ´Ù.
+	 * í…Œë‘ë¦¬ ì„  ì •ë³´ ê°ì²´ë¥¼ ìƒì„±í•œë‹¤.
 	 */
 	public void createLineInfo() {
 		lineInfo = new LineInfo();
 	}
 
 	/**
-	 * Å×µÎ¸® ¼± Á¤º¸ °´Ã¼¸¦ »èÁ¦ÇÑ´Ù.
+	 * í…Œë‘ë¦¬ ì„  ì •ë³´ ê°ì²´ë¥¼ ì‚­ì œí•œë‹¤.
 	 */
 	public void deleteLineInfo() {
 		lineInfo = null;
 	}
 
 	/**
-	 * Å×µÎ¸® ¼± Á¤º¸ °´Ã¼¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * í…Œë‘ë¦¬ ì„  ì •ë³´ ê°ì²´ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return Å×µÎ¸® ¼± Á¤º¸ °´Ã¼
+	 * @return í…Œë‘ë¦¬ ì„  ì •ë³´ ê°ì²´
 	 */
 	public LineInfo getLineInfo() {
 		return lineInfo;
 	}
 
 	/**
-	 * Ã¤¿ò Á¤º¸ °´Ã¼¸¦ »ı¼ºÇÑ´Ù.
+	 * ì±„ì›€ ì •ë³´ ê°ì²´ë¥¼ ìƒì„±í•œë‹¤.
 	 */
 	public void createFillInfo() {
 		fillInfo = new FillInfo();
 	}
 
 	/**
-	 * Ã¤¿ò Á¤º¸ °´Ã¼¸¦ »èÁ¦ÇÑ´Ù.
+	 * ì±„ì›€ ì •ë³´ ê°ì²´ë¥¼ ì‚­ì œí•œë‹¤.
 	 */
 	public void deleteFillInfo() {
 		fillInfo = null;
 	}
 
 	/**
-	 * Ã¤¿ò Á¤º¸ °´Ã¼¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ì±„ì›€ ì •ë³´ ê°ì²´ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return Ã¤¿ò Á¤º¸ °´Ã¼
+	 * @return ì±„ì›€ ì •ë³´ ê°ì²´
 	 */
 	public FillInfo getFillInfo() {
 		return fillInfo;
 	}
 
 	/**
-	 * ±×¸²ÀÚ Á¤º¸ °´Ã¼¸¦ »ı¼ºÇÑ´Ù.
+	 * ê·¸ë¦¼ì ì •ë³´ ê°ì²´ë¥¼ ìƒì„±í•œë‹¤.
 	 */
 	public void createShadowInfo() {
 		shadowInfo = new ShadowInfo();
 	}
 
 	/***
-	 * ±×¸²ÀÚ Á¤º¸ °´Ã¼¸¦ »èÁ¦ÇÑ´Ù.
+	 * ê·¸ë¦¼ì ì •ë³´ ê°ì²´ë¥¼ ì‚­ì œí•œë‹¤.
 	 */
 	public void deleteShadowInfo() {
 		shadowInfo = null;
 	}
 
 	/**
-	 * ±×¸²ÀÚ Á¤º¸ °´Ã¼¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ê·¸ë¦¼ì ì •ë³´ ê°ì²´ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ±×¸²ÀÚ Á¤º¸ °´Ã¼
+	 * @return ê·¸ë¦¼ì ì •ë³´ ê°ì²´
 	 */
 	public ShadowInfo getShadowInfo() {
 		return shadowInfo;

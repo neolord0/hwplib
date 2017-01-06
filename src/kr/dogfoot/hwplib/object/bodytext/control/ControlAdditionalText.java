@@ -1,24 +1,24 @@
-package kr.dogfoot.hwplib.object.bodytext.control;
+ï»¿package kr.dogfoot.hwplib.object.bodytext.control;
 
 import kr.dogfoot.hwplib.object.bodytext.control.ctrlheader.CtrlHeaderAdditionalText;
 
 /**
- * µ¡¸» ÄÁÆ®·Ñ
+ * ë§ë§ ì»¨íŠ¸ë¡¤
  * 
  * @author neolord
  */
 public class ControlAdditionalText extends Control {
 	/**
-	 * »ı¼ºÀÚ
+	 * ìƒì„±ì
 	 */
 	public ControlAdditionalText() {
 		super(new CtrlHeaderAdditionalText());
 	}
 
 	/**
-	 * µ¡¸» ¿ë ÄÁÆ®·Ñ Çì´õ¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ë§ë§ ìš© ì»¨íŠ¸ë¡¤ í—¤ë”ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return µ¡¸» ¿ë ÄÁÆ®·Ñ Çì´õ
+	 * @return ë§ë§ ìš© ì»¨íŠ¸ë¡¤ í—¤ë”
 	 */
 	public CtrlHeaderAdditionalText getHeader() {
 		return (CtrlHeaderAdditionalText) header;

@@ -1,4 +1,4 @@
-package kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponenteach;
+ï»¿package kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponenteach;
 
 import java.util.ArrayList;
 
@@ -6,26 +6,26 @@ import kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponenteach.curve.Cu
 import kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponenteach.polygon.PositionXY;
 
 /**
- * °î¼± °³Ã¼ ¼Ó¼º ·¹ÄÚµå
+ * ê³¡ì„  ê°œì²´ ì†ì„± ë ˆì½”ë“œ
  * 
  * @author neolord
  */
 public class ShapeComponentCurve {
 	/**
-	 * ÁÂÇ¥ ¸®½ºÆ®
+	 * ì¢Œí‘œ ë¦¬ìŠ¤íŠ¸
 	 */
 	private ArrayList<PositionXY> positionList;
 	/**
-	 * segment type ¸®½ºÆ®
+	 * segment type ë¦¬ìŠ¤íŠ¸
 	 */
 	private ArrayList<CurveSegmentType> segmentTypeList;
 	/**
-	 * °î¼±ÀÌ ´İÇû´ÂÁö ¿©ºÎ
+	 * ê³¡ì„ ì´ ë‹«í˜”ëŠ”ì§€ ì—¬ë¶€
 	 */
 	private boolean closed;
 
 	/**
-	 * »ı¼ºÀÚ
+	 * ìƒì„±ì
 	 */
 	public ShapeComponentCurve() {
 		positionList = new ArrayList<PositionXY>();
@@ -33,9 +33,9 @@ public class ShapeComponentCurve {
 	}
 
 	/**
-	 * »õ·Î¿î ÁÂÇ¥ °´Ã¼¸¦ »ı¼ºÇÏ°í ¸®½ºÆ®¿¡ Ãß°¡ÇÑ´Ù.
+	 * ìƒˆë¡œìš´ ì¢Œí‘œ ê°ì²´ë¥¼ ìƒì„±í•˜ê³  ë¦¬ìŠ¤íŠ¸ì— ì¶”ê°€í•œë‹¤.
 	 * 
-	 * @return »õ·Î »ı¼ºµÈ ÁÂ·á °´Ã¼
+	 * @return ìƒˆë¡œ ìƒì„±ëœ ì¢Œë£Œ ê°ì²´
 	 */
 	public PositionXY addNewPosition() {
 		PositionXY p = new PositionXY();
@@ -44,16 +44,16 @@ public class ShapeComponentCurve {
 	}
 
 	/**
-	 * ÁÂÇ¥ ¸®½ºÆ®¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ì¢Œí‘œ ë¦¬ìŠ¤íŠ¸ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ÁÂÇ¥ ¸®½ºÆ®
+	 * @return ì¢Œí‘œ ë¦¬ìŠ¤íŠ¸
 	 */
 	public ArrayList<PositionXY> getPositionList() {
 		return positionList;
 	}
 
 	/**
-	 * segment typeÀ» ¸®½ºÆ®¿¡ Ãß°¡ÇÑ´Ù.
+	 * segment typeì„ ë¦¬ìŠ¤íŠ¸ì— ì¶”ê°€í•œë‹¤.
 	 * 
 	 * @param cst
 	 *            segment type
@@ -63,28 +63,28 @@ public class ShapeComponentCurve {
 	}
 
 	/**
-	 * segment type ¸®½ºÆ®¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * segment type ë¦¬ìŠ¤íŠ¸ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return segment type ¸®½ºÆ®
+	 * @return segment type ë¦¬ìŠ¤íŠ¸
 	 */
 	public ArrayList<CurveSegmentType> getSegmentTypeList() {
 		return segmentTypeList;
 	}
 
 	/**
-	 * °î¼±ÀÌ ´İÇû´ÂÁö ¿©ºÎ¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ê³¡ì„ ì´ ë‹«í˜”ëŠ”ì§€ ì—¬ë¶€ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return °î¼±ÀÌ ´İÇû´ÂÁö ¿©ºÎ
+	 * @return ê³¡ì„ ì´ ë‹«í˜”ëŠ”ì§€ ì—¬ë¶€
 	 */
 	public boolean isClosed() {
 		return closed;
 	}
 
 	/**
-	 * °î¼±ÀÌ ´İÇû´ÂÁö ¿©ºÎ¸¦ ¼³Á¤ÇÑ´Ù.
+	 * ê³¡ì„ ì´ ë‹«í˜”ëŠ”ì§€ ì—¬ë¶€ë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param closed
-	 *            °î¼±ÀÌ ´İÇû´ÂÁö ¿©ºÎ
+	 *            ê³¡ì„ ì´ ë‹«í˜”ëŠ”ì§€ ì—¬ë¶€
 	 */
 	public void setClosed(boolean closed) {
 		this.closed = closed;

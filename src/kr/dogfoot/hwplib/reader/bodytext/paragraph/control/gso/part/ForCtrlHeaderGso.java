@@ -1,4 +1,4 @@
-package kr.dogfoot.hwplib.reader.bodytext.paragraph.control.gso.part;
+ï»¿package kr.dogfoot.hwplib.reader.bodytext.paragraph.control.gso.part;
 
 import java.io.IOException;
 
@@ -7,18 +7,18 @@ import kr.dogfoot.hwplib.util.binary.BitFlag;
 import kr.dogfoot.hwplib.util.compoundFile.StreamReader;
 
 /**
- * ±×¸®±â °³Ã¼ÀÇ ÄÁÆ®·Ñ Çì´õ ·¹ÄÚµå¸¦ ÀĞ´Â´Ù.
+ * ê·¸ë¦¬ê¸° ê°œì²´ì˜ ì»¨íŠ¸ë¡¤ í—¤ë” ë ˆì½”ë“œë¥¼ ì½ëŠ”ë‹¤.
  * 
  * @author neolord
  */
 public class ForCtrlHeaderGso {
 	/**
-	 * ±×¸®±â °³Ã¼ÀÇ ÄÁÆ®·Ñ Çì´õ ·¹ÄÚµå¸¦ ÀĞ´Â´Ù.
+	 * ê·¸ë¦¬ê¸° ê°œì²´ì˜ ì»¨íŠ¸ë¡¤ í—¤ë” ë ˆì½”ë“œë¥¼ ì½ëŠ”ë‹¤.
 	 * 
 	 * @param header
-	 *            ±×¸®±â °³Ã¼ÀÇ ÄÁÆ®·Ñ Çì´õ ·¹ÄÚµå
+	 *            ê·¸ë¦¬ê¸° ê°œì²´ì˜ ì»¨íŠ¸ë¡¤ í—¤ë” ë ˆì½”ë“œ
 	 * @param sr
-	 *            ½ºÆ®¸² ¸®´õ
+	 *            ìŠ¤íŠ¸ë¦¼ ë¦¬ë”
 	 * @throws IOException
 	 */
 	public static void read(CtrlHeaderGso header, StreamReader sr)

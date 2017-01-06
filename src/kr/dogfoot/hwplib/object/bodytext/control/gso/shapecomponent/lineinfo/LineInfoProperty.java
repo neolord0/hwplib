@@ -1,190 +1,190 @@
-package kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponent.lineinfo;
+ï»¿package kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponent.lineinfo;
 
 import kr.dogfoot.hwplib.util.binary.BitFlag;
 
 /**
- * Å×µÎ¸® ¼± Á¤º¸ÀÇ ¼Ó¼ºÀ» ³ªÅ¸³»´Â °´Ã¼
+ * í…Œë‘ë¦¬ ì„  ì •ë³´ì˜ ì†ì„±ì„ ë‚˜íƒ€ë‚´ëŠ” ê°ì²´
  * 
  * @author neolord
  */
 public class LineInfoProperty {
 	/**
-	 * ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª(unsigned 4 byte)
+	 * íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’(unsigned 4 byte)
 	 */
 	private long value;
 
 	/**
-	 * »ı¼ºÀÚ
+	 * ìƒì„±ì
 	 */
 	public LineInfoProperty() {
 	}
 
 	/**
-	 * »ı¼ºÀÚ¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ìƒì„±ìë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return »ı¼ºÀÚ
+	 * @return ìƒì„±ì
 	 */
 	public long getValue() {
 		return value;
 	}
 
 	/**
-	 * »ı¼ºÀÚ¸¦ ¼³Á¤ÇÑ´Ù.
+	 * ìƒì„±ìë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param value
-	 *            »ı¼ºÀÚ
+	 *            ìƒì„±ì
 	 */
 	public void setValue(long value) {
 		this.value = value;
 	}
 
 	/**
-	 * ¼± Á¾·ù¸¦ ¹İÈ¯ÇÑ´Ù. (0~5 bit)
+	 * ì„  ì¢…ë¥˜ë¥¼ ë°˜í™˜í•œë‹¤. (0~5 bit)
 	 * 
-	 * @return ¼± Á¾·ù
+	 * @return ì„  ì¢…ë¥˜
 	 */
 	public LineType getLineType() {
 		return LineType.valueOf((byte) BitFlag.get(value, 0, 5));
 	}
 
 	/**
-	 * ¼± Á¾·ù¸¦ ¼³Á¤ÇÑ´Ù. (0~5 bit)
+	 * ì„  ì¢…ë¥˜ë¥¼ ì„¤ì •í•œë‹¤. (0~5 bit)
 	 * 
 	 * @param lineType
-	 *            ¼± Á¾·ù
+	 *            ì„  ì¢…ë¥˜
 	 */
 	public void setLineType(LineType lineType) {
 		value = BitFlag.set(value, 0, 5, lineType.getValue());
 	}
 
 	/**
-	 * ¼± ³¡ ¸ğ¾çÀ» ¹İÈ¯ÇÑ´Ù. (6~9 bit)
+	 * ì„  ë ëª¨ì–‘ì„ ë°˜í™˜í•œë‹¤. (6~9 bit)
 	 * 
-	 * @return ¼± ³¡ ¸ğ¾ç
+	 * @return ì„  ë ëª¨ì–‘
 	 */
 	public LineEndShape getLineEndShape() {
 		return LineEndShape.valueOf((byte) BitFlag.get(value, 6, 9));
 	}
 
 	/**
-	 * ¼± ³¡ ¸ğ¾çÀ» ¼³Á¤ÇÑ´Ù. (6~9 bit)
+	 * ì„  ë ëª¨ì–‘ì„ ì„¤ì •í•œë‹¤. (6~9 bit)
 	 * 
 	 * @param lineEndShape
-	 *            ¼± ³¡ ¸ğ¾ç
+	 *            ì„  ë ëª¨ì–‘
 	 */
 	public void setLineEndShape(LineEndShape lineEndShape) {
 		value = BitFlag.set(value, 6, 9, lineEndShape.getValue());
 	}
 
 	/**
-	 * È­»ìÇ¥ ½ÃÀÛ ¸ğ¾çÀ» ¹İÈ¯ÇÑ´Ù. (10~15 bit)
+	 * í™”ì‚´í‘œ ì‹œì‘ ëª¨ì–‘ì„ ë°˜í™˜í•œë‹¤. (10~15 bit)
 	 * 
-	 * @return È­»ìÇ¥ ½ÃÀÛ ¸ğ¾ç
+	 * @return í™”ì‚´í‘œ ì‹œì‘ ëª¨ì–‘
 	 */
 	public LineArrowShape getStartArrowShape() {
 		return LineArrowShape.valueOf((byte) BitFlag.get(value, 10, 15));
 	}
 
 	/**
-	 * È­»ìÇ¥ ½ÃÀÛ ¸ğ¾çÀ» ¼³Á¤ÇÑ´Ù. (10~15 bit)
+	 * í™”ì‚´í‘œ ì‹œì‘ ëª¨ì–‘ì„ ì„¤ì •í•œë‹¤. (10~15 bit)
 	 * 
 	 * @param startArrowShape
-	 *            È­»ìÇ¥ ½ÃÀÛ ¸ğ¾ç
+	 *            í™”ì‚´í‘œ ì‹œì‘ ëª¨ì–‘
 	 */
 	public void setStartArrowShape(LineArrowShape startArrowShape) {
 		value = BitFlag.set(value, 10, 15, startArrowShape.getValue());
 	}
 
 	/**
-	 * È­»ìÇ¥ ³¡ ¸ğ¾çÀ» ¹İÈ¯ÇÑ´Ù. (16~21 bit)
+	 * í™”ì‚´í‘œ ë ëª¨ì–‘ì„ ë°˜í™˜í•œë‹¤. (16~21 bit)
 	 * 
-	 * @return È­»ìÇ¥ ³¡ ¸ğ¾ç
+	 * @return í™”ì‚´í‘œ ë ëª¨ì–‘
 	 */
 	public LineArrowShape getEndArrowShape() {
 		return LineArrowShape.valueOf((byte) BitFlag.get(value, 16, 21));
 	}
 
 	/**
-	 * È­»ìÇ¥ ³¡ ¸ğ¾çÀ» ¼³Á¤ÇÑ´Ù. (16~21 bit)
+	 * í™”ì‚´í‘œ ë ëª¨ì–‘ì„ ì„¤ì •í•œë‹¤. (16~21 bit)
 	 * 
 	 * @param endArrowShape
-	 *            È­»ìÇ¥ ³¡ ¸ğ¾ç
+	 *            í™”ì‚´í‘œ ë ëª¨ì–‘
 	 */
 	public void setEndArrowShape(LineArrowShape endArrowShape) {
 		value = BitFlag.set(value, 16, 21, endArrowShape.getValue());
 	}
 
 	/**
-	 * È­»ìÇ¥ ½ÃÀÛ Å©±â¸¦ ¹İÈ¯ÇÑ´Ù. (22~25 bit)
+	 * í™”ì‚´í‘œ ì‹œì‘ í¬ê¸°ë¥¼ ë°˜í™˜í•œë‹¤. (22~25 bit)
 	 * 
-	 * @return È­»ìÇ¥ ½ÃÀÛ Å©±â
+	 * @return í™”ì‚´í‘œ ì‹œì‘ í¬ê¸°
 	 */
 	public LineArrowSize getStartArrowSize() {
 		return LineArrowSize.valueOf((byte) BitFlag.get(value, 22, 25));
 	}
 
 	/**
-	 * È­»ìÇ¥ ½ÃÀÛ Å©±â¸¦ ¼³Á¤ÇÑ´Ù. (22~25 bit)
+	 * í™”ì‚´í‘œ ì‹œì‘ í¬ê¸°ë¥¼ ì„¤ì •í•œë‹¤. (22~25 bit)
 	 * 
 	 * @param startArrowSize
-	 *            È­»ìÇ¥ ½ÃÀÛ Å©±â
+	 *            í™”ì‚´í‘œ ì‹œì‘ í¬ê¸°
 	 */
 	public void setStartArrowSize(LineArrowSize startArrowSize) {
 		value = BitFlag.set(value, 22, 25, startArrowSize.getValue());
 	}
 
 	/**
-	 * È­»ìÇ¥ ³¡ Å©±â¸¦ ¹İÈ¯ÇÑ´Ù. (26~29 bit)
+	 * í™”ì‚´í‘œ ë í¬ê¸°ë¥¼ ë°˜í™˜í•œë‹¤. (26~29 bit)
 	 * 
-	 * @return È­»ìÇ¥ ³¡ Å©±â
+	 * @return í™”ì‚´í‘œ ë í¬ê¸°
 	 */
 	public LineArrowSize getEndArrowSize() {
 		return LineArrowSize.valueOf((byte) BitFlag.get(value, 26, 29));
 	}
 
 	/**
-	 * È­»ìÇ¥ ³¡ Å©±â¸¦ ¼³Á¤ÇÑ´Ù. (26~29 bit)
+	 * í™”ì‚´í‘œ ë í¬ê¸°ë¥¼ ì„¤ì •í•œë‹¤. (26~29 bit)
 	 * 
 	 * @param endArrowSize
-	 *            È­»ìÇ¥ ³¡ Å©±â
+	 *            í™”ì‚´í‘œ ë í¬ê¸°
 	 */
 	public void setEndArrowSize(LineArrowSize endArrowSize) {
 		value = BitFlag.set(value, 26, 29, endArrowSize.getValue());
 	}
 
 	/**
-	 * ½ÃÀÛºÎºĞ È­»ìÇ¥ Ã¤¿ò ¿©ºÎ¸¦ ¹İÈ¯ÇÑ´Ù. (30 bit)
+	 * ì‹œì‘ë¶€ë¶„ í™”ì‚´í‘œ ì±„ì›€ ì—¬ë¶€ë¥¼ ë°˜í™˜í•œë‹¤. (30 bit)
 	 * 
-	 * @return ½ÃÀÛºÎºĞ È­»ìÇ¥ Ã¤¿ò ¿©ºÎ
+	 * @return ì‹œì‘ë¶€ë¶„ í™”ì‚´í‘œ ì±„ì›€ ì—¬ë¶€
 	 */
 	public boolean isFillStartArrow() {
 		return BitFlag.get(value, 30);
 	}
 
 	/**
-	 * ½ÃÀÛºÎºĞ È­»ìÇ¥ Ã¤¿ò ¿©ºÎ¸¦ ™EÁ¤ÇÑ´Ù. (30 bit)
+	 * ì‹œì‘ë¶€ë¶„ í™”ì‚´í‘œ ì±„ì›€ ì—¬ë¶€ë¥¼ ì„·ì •í•œë‹¤. (30 bit)
 	 * 
 	 * @param fillStartArrow
-	 *            ½ÃÀÛºÎºĞ È­»ìÇ¥ Ã¤¿ò ¿©ºÎ
+	 *            ì‹œì‘ë¶€ë¶„ í™”ì‚´í‘œ ì±„ì›€ ì—¬ë¶€
 	 */
 	public void setFillStartArrow(boolean fillStartArrow) {
 		value = BitFlag.set(value, 30, fillStartArrow);
 	}
 
 	/**
-	 * ³¡ºÎºĞ È­»ìÇ¥ Ã¤¿ò ¿©ºÎ¸¦ ¹İÈ¯ÇÑ´Ù. (31 bit)
+	 * ëë¶€ë¶„ í™”ì‚´í‘œ ì±„ì›€ ì—¬ë¶€ë¥¼ ë°˜í™˜í•œë‹¤. (31 bit)
 	 * 
-	 * @return ³¡ºÎºĞ È­»ìÇ¥ Ã¤¿ò ¿©ºÎ
+	 * @return ëë¶€ë¶„ í™”ì‚´í‘œ ì±„ì›€ ì—¬ë¶€
 	 */
 	public boolean isFillEndArrow() {
 		return BitFlag.get(value, 31);
 	}
 
 	/**
-	 * ³¡ºÎºĞ È­»ìÇ¥ Ã¤¿ò ¿©ºÎ¸¦ ¼³Á¤ÇÑ´Ù. (31 bit)
+	 * ëë¶€ë¶„ í™”ì‚´í‘œ ì±„ì›€ ì—¬ë¶€ë¥¼ ì„¤ì •í•œë‹¤. (31 bit)
 	 * 
 	 * @param fillEndArrow
-	 *            ³¡ºÎºĞ È­»ìÇ¥ Ã¤¿ò ¿©ºÎ
+	 *            ëë¶€ë¶„ í™”ì‚´í‘œ ì±„ì›€ ì—¬ë¶€
 	 */
 	public void setFillEndArrow(boolean fillEndArrow) {
 		value = BitFlag.set(value, 31, fillEndArrow);

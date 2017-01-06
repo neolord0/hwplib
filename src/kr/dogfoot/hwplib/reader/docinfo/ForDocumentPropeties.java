@@ -1,4 +1,4 @@
-package kr.dogfoot.hwplib.reader.docinfo;
+ï»¿package kr.dogfoot.hwplib.reader.docinfo;
 
 import java.io.IOException;
 
@@ -8,18 +8,18 @@ import kr.dogfoot.hwplib.object.docinfo.documentproperties.StartNumber;
 import kr.dogfoot.hwplib.util.compoundFile.StreamReader;
 
 /**
- * ¹®¼­ ¼Ó¼º ·¹ÄÚµå¸¦ ÀĞ±â À§ÇÑ °´Ã¼.
+ * ë¬¸ì„œ ì†ì„± ë ˆì½”ë“œë¥¼ ì½ê¸° ìœ„í•œ ê°ì²´.
  * 
  * @author neolord
  */
 public class ForDocumentPropeties {
 	/**
-	 * ¹®¼­ ¼Ó¼º ·¹ÄÚµå¸¦ ÀĞ´Â´Ù.
+	 * ë¬¸ì„œ ì†ì„± ë ˆì½”ë“œë¥¼ ì½ëŠ”ë‹¤.
 	 * 
 	 * @param dp
-	 *            ¹®¼­ ¼Ó¼º ·¹ÄÚµå
+	 *            ë¬¸ì„œ ì†ì„± ë ˆì½”ë“œ
 	 * @param sr
-	 *            ½ºÆ®¸² ¸®´õ
+	 *            ìŠ¤íŠ¸ë¦¼ ë¦¬ë”
 	 * @throws IOException
 	 */
 	public static void read(DocumentPropeties dp,
@@ -30,12 +30,12 @@ public class ForDocumentPropeties {
 	}
 
 	/**
-	 * ¼Ó¼º ºÎºĞÀ» ÀĞ´Â´Ù.
+	 * ì†ì„± ë¶€ë¶„ì„ ì½ëŠ”ë‹¤.
 	 * 
 	 * @param dp
-	 *            ¹®¼­ ¼Ó¼º ·¹ÄÚµå
+	 *            ë¬¸ì„œ ì†ì„± ë ˆì½”ë“œ
 	 * @param sr
-	 *            ½ºÆ®¸² ¸®´õ
+	 *            ìŠ¤íŠ¸ë¦¼ ë¦¬ë”
 	 * @throws IOException
 	 */
 	private static void property(DocumentPropeties dp,
@@ -44,12 +44,12 @@ public class ForDocumentPropeties {
 	}
 
 	/**
-	 * ½ÃÀÛ ¹øÈ£ ºÎºĞÀ» ÀĞ´Â´Ù.
+	 * ì‹œì‘ ë²ˆí˜¸ ë¶€ë¶„ì„ ì½ëŠ”ë‹¤.
 	 * 
 	 * @param sn
-	 *            ½ÃÀÛ ¹øÈ£ ºÎºĞ °´Ã¼
+	 *            ì‹œì‘ ë²ˆí˜¸ ë¶€ë¶„ ê°ì²´
 	 * @param sr
-	 *            ½ºÆ®¸² ¸®´õ
+	 *            ìŠ¤íŠ¸ë¦¼ ë¦¬ë”
 	 * @throws IOException
 	 */
 	private static void startNumber(StartNumber sn,
@@ -63,12 +63,12 @@ public class ForDocumentPropeties {
 	}
 
 	/**
-	 * Ä³¸´ À§Ä¡ ºÎºĞÀ» ÀĞ´Â´Ù.
+	 * ìºë¦¿ ìœ„ì¹˜ ë¶€ë¶„ì„ ì½ëŠ”ë‹¤.
 	 * 
 	 * @param cp
-	 *            Ä³¸´ À§Ä¡ ºÎºĞÀ» ³ªÅÂ³»´Â °´Ã¼
+	 *            ìºë¦¿ ìœ„ì¹˜ ë¶€ë¶„ì„ ë‚˜íƒœë‚´ëŠ” ê°ì²´
 	 * @param sr
-	 *            ½ºÆ®¸² ¸®´õ
+	 *            ìŠ¤íŠ¸ë¦¼ ë¦¬ë”
 	 * @throws IOException
 	 */
 	private static void caretPosition(CaretPosition cp,

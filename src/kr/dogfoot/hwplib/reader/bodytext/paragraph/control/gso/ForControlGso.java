@@ -1,4 +1,4 @@
-package kr.dogfoot.hwplib.reader.bodytext.paragraph.control.gso;
+ï»¿package kr.dogfoot.hwplib.reader.bodytext.paragraph.control.gso;
 
 import java.io.IOException;
 
@@ -23,37 +23,37 @@ import kr.dogfoot.hwplib.reader.bodytext.paragraph.control.gso.part.ForShapeComp
 import kr.dogfoot.hwplib.util.compoundFile.StreamReader;
 
 /**
- * ±×¸®±â °³Ã¼ ÄÁÆ®·ÑµéÀ» ÀĞ´Â´Ù.
+ * ê·¸ë¦¬ê¸° ê°œì²´ ì»¨íŠ¸ë¡¤ë“¤ì„ ì½ëŠ”ë‹¤.
  * 
  * @author neolord
  */
 public class ForControlGso {
 	/**
-	 * ¹®´Ü °´Ã¼
+	 * ë¬¸ë‹¨ ê°ì²´
 	 */
 	private Paragraph paragraph;
 	/**
-	 * ½ºÆ®¸² ¸®´õ
+	 * ìŠ¤íŠ¸ë¦¼ ë¦¬ë”
 	 */
 	private StreamReader sr;
 	/**
-	 * »ı¼ºµÈ ±×¸®±â °³Ã¼ ÄÁÆ®·Ñ
+	 * ìƒì„±ëœ ê·¸ë¦¬ê¸° ê°œì²´ ì»¨íŠ¸ë¡¤
 	 */
 	private GsoControl gsoControl;
 
 	/**
-	 * »ı¼ºÀÚ
+	 * ìƒì„±ì
 	 */
 	public ForControlGso() {
 	}
 
 	/**
-	 * ±×¸®±â °³Ã¼ ÄÁÆ®·ÑÀ» ÀĞ´Â´Ù.
+	 * ê·¸ë¦¬ê¸° ê°œì²´ ì»¨íŠ¸ë¡¤ì„ ì½ëŠ”ë‹¤.
 	 * 
 	 * @param paragraph
-	 *            ¹®´Ü °´Ã¼
+	 *            ë¬¸ë‹¨ ê°ì²´
 	 * @param sr
-	 *            ½ºÆ®¸² ¸®´õ
+	 *            ìŠ¤íŠ¸ë¦¼ ë¦¬ë”
 	 * @throws Exception
 	 */
 	public void read(Paragraph paragraph, StreamReader sr) throws Exception {
@@ -68,9 +68,9 @@ public class ForControlGso {
 	}
 
 	/**
-	 * ±×¸®±â °³Ã¼ÀÇ ÄÁÆ®·Ñ Çì´õ ·¹ÄÚµå¸¦ ÀĞ´Â´Ù.
+	 * ê·¸ë¦¬ê¸° ê°œì²´ì˜ ì»¨íŠ¸ë¡¤ í—¤ë” ë ˆì½”ë“œë¥¼ ì½ëŠ”ë‹¤.
 	 * 
-	 * @return ±×¸®±â °³Ã¼ÀÇ ÄÁÆ®·Ñ Çì´õ ·¹ÄÚµå
+	 * @return ê·¸ë¦¬ê¸° ê°œì²´ì˜ ì»¨íŠ¸ë¡¤ í—¤ë” ë ˆì½”ë“œ
 	 * @throws IOException
 	 */
 	private CtrlHeaderGso ctrlHeader() throws IOException {
@@ -80,9 +80,9 @@ public class ForControlGso {
 	}
 
 	/**
-	 * Ä¸¼Ç Á¤º¸¸¦ ÀĞ´Â´Ù.
+	 * ìº¡ì…˜ ì •ë³´ë¥¼ ì½ëŠ”ë‹¤.
 	 * 
-	 * @return Ä¸¼Ç Á¤º¸
+	 * @return ìº¡ì…˜ ì •ë³´
 	 * @throws Exception
 	 */
 	private Caption caption() throws Exception {
@@ -97,9 +97,9 @@ public class ForControlGso {
 	}
 
 	/**
-	 * °´Ã¼ °øÅë ¼Ó¼º ·¹ÄÚµå·Î ºÎÅÍ ±×¸®±â °³Ã¼ÀÇ id¸¦ ÀĞ´Â´Ù.
+	 * ê°ì²´ ê³µí†µ ì†ì„± ë ˆì½”ë“œë¡œ ë¶€í„° ê·¸ë¦¬ê¸° ê°œì²´ì˜ idë¥¼ ì½ëŠ”ë‹¤.
 	 * 
-	 * @return ±×¸®±â °³Ã¼ÀÇ id
+	 * @return ê·¸ë¦¬ê¸° ê°œì²´ì˜ id
 	 * @throws Exception
 	 */
 	private long gsoIDFromShapeComponent() throws Exception {
@@ -117,15 +117,15 @@ public class ForControlGso {
 	}
 
 	/**
-	 * ±×¸®±â °³Ã¼ ÄÁÆ®·ÑÀ» »ı¼ºÇÑ´Ù.
+	 * ê·¸ë¦¬ê¸° ê°œì²´ ì»¨íŠ¸ë¡¤ì„ ìƒì„±í•œë‹¤.
 	 * 
 	 * @param header
-	 *            ÄÁÆ®·Ñ Çì´õ
+	 *            ì»¨íŠ¸ë¡¤ í—¤ë”
 	 * @param caption
-	 *            Ä¸¼Ç Á¤º¸
+	 *            ìº¡ì…˜ ì •ë³´
 	 * @param gsoId
-	 *            ±×¸®±â °³Ã¼ ¾ÆÀÌµğ
-	 * @return »ı¼ºµÈ ±×¸®±â °³Ã¼ ÄÁÆ®·Ñ
+	 *            ê·¸ë¦¬ê¸° ê°œì²´ ì•„ì´ë””
+	 * @return ìƒì„±ëœ ê·¸ë¦¬ê¸° ê°œì²´ ì»¨íŠ¸ë¡¤
 	 */
 	private GsoControl createGsoControl(CtrlHeaderGso header, Caption caption,
 			long gsoId) {
@@ -135,7 +135,7 @@ public class ForControlGso {
 	}
 
 	/**
-	 * °´Ã¼ °øÅë ¼Ó¼º ·¹ÄÚµåÀÇ ³ª¸ÓÁö ºÎºĞÀ» ÀĞ´Â´Ù.
+	 * ê°ì²´ ê³µí†µ ì†ì„± ë ˆì½”ë“œì˜ ë‚˜ë¨¸ì§€ ë¶€ë¶„ì„ ì½ëŠ”ë‹¤.
 	 * 
 	 * @throws IOException
 	 */
@@ -144,7 +144,7 @@ public class ForControlGso {
 	}
 
 	/**
-	 * ÄÁÆ®·ÑÀÇ ³Ê¸ÓÁö ºÎºĞÀ» ÀĞ´Â´Ù.
+	 * ì»¨íŠ¸ë¡¤ì˜ ë„ˆë¨¸ì§€ ë¶€ë¶„ì„ ì½ëŠ”ë‹¤.
 	 * 
 	 * @throws Exception
 	 */
@@ -181,7 +181,7 @@ public class ForControlGso {
 	}
 
 	/**
-	 * ¼± ÄÁÆ®·ÑÀÇ ³ª¸ÓÁö ºÎºĞÀ» ÀĞ´Â´Ù.
+	 * ì„  ì»¨íŠ¸ë¡¤ì˜ ë‚˜ë¨¸ì§€ ë¶€ë¶„ì„ ì½ëŠ”ë‹¤.
 	 * 
 	 * @throws IOException
 	 */
@@ -190,7 +190,7 @@ public class ForControlGso {
 	}
 
 	/**
-	 * »ç°¢Çü ÄÁÆ®·ÑÀÇ ³ª¸ÓÁö ºÎºĞÀ» ÀĞ´Â´Ù.
+	 * ì‚¬ê°í˜• ì»¨íŠ¸ë¡¤ì˜ ë‚˜ë¨¸ì§€ ë¶€ë¶„ì„ ì½ëŠ”ë‹¤.
 	 * 
 	 * @throws Exception
 	 */
@@ -199,7 +199,7 @@ public class ForControlGso {
 	}
 
 	/**
-	 * Å¸¿ø ÄÁÆ®·ÑÀÇ ³ª¸ÓÁö ºÎºĞÀ» ÀĞ´Â´Ù.
+	 * íƒ€ì› ì»¨íŠ¸ë¡¤ì˜ ë‚˜ë¨¸ì§€ ë¶€ë¶„ì„ ì½ëŠ”ë‹¤.
 	 * 
 	 * @throws Exception
 	 */
@@ -208,7 +208,7 @@ public class ForControlGso {
 	}
 
 	/**
-	 * È£ ÄÁÆ®·ÑÀÇ ³ª¸ÓÁö ºÎºĞÀ» ÀĞ´Â´Ù.
+	 * í˜¸ ì»¨íŠ¸ë¡¤ì˜ ë‚˜ë¨¸ì§€ ë¶€ë¶„ì„ ì½ëŠ”ë‹¤.
 	 * 
 	 * @throws Exception
 	 */
@@ -217,7 +217,7 @@ public class ForControlGso {
 	}
 
 	/**
-	 * ´Ù°¢Çü ÄÁÆ®·ÑÀÇ ³ª¸ÓÁö ºÎºĞÀ» ÀĞ´Â´Ù.
+	 * ë‹¤ê°í˜• ì»¨íŠ¸ë¡¤ì˜ ë‚˜ë¨¸ì§€ ë¶€ë¶„ì„ ì½ëŠ”ë‹¤.
 	 * 
 	 * @throws Exception
 	 */
@@ -226,7 +226,7 @@ public class ForControlGso {
 	}
 
 	/**
-	 * °î¼± ÄÁÆ®·ÑÀÇ ³ª¸ÓÁö ºÎºĞÀ» ÀĞ´Â´Ù.
+	 * ê³¡ì„  ì»¨íŠ¸ë¡¤ì˜ ë‚˜ë¨¸ì§€ ë¶€ë¶„ì„ ì½ëŠ”ë‹¤.
 	 * 
 	 * @throws Exception
 	 */
@@ -235,7 +235,7 @@ public class ForControlGso {
 	}
 
 	/**
-	 * ±×¸² ÄÁÆ®·ÑÀÇ ³ª¸ÓÁö ºÎºĞÀ» ÀĞ´Â´Ù.
+	 * ê·¸ë¦¼ ì»¨íŠ¸ë¡¤ì˜ ë‚˜ë¨¸ì§€ ë¶€ë¶„ì„ ì½ëŠ”ë‹¤.
 	 * 
 	 * @throws Exception
 	 */
@@ -244,7 +244,7 @@ public class ForControlGso {
 	}
 
 	/**
-	 * OLE ÄÁÆ®·ÑÀÇ ³ª¸ÓÁö ºÎºĞÀ» ÀĞ´Â´Ù.
+	 * OLE ì»¨íŠ¸ë¡¤ì˜ ë‚˜ë¨¸ì§€ ë¶€ë¶„ì„ ì½ëŠ”ë‹¤.
 	 * 
 	 * @throws IOException
 	 */
@@ -253,7 +253,7 @@ public class ForControlGso {
 	}
 
 	/**
-	 * ¹­À½ ÄÁÆ®·ÑÀÇ ³ª¸ÓÁö ºÎºĞÀ» ÀĞ´Â´Ù.
+	 * ë¬¶ìŒ ì»¨íŠ¸ë¡¤ì˜ ë‚˜ë¨¸ì§€ ë¶€ë¶„ì„ ì½ëŠ”ë‹¤.
 	 * 
 	 * @throws Exception
 	 */
@@ -262,11 +262,11 @@ public class ForControlGso {
 	}
 
 	/**
-	 * ¹­À½ ÄÁÆ®·Ñ ¾È¿¡ Æ÷ÇÔµÈ ÄÁÆ®·ÑÀ» ÀĞ´Â´Ù.
+	 * ë¬¶ìŒ ì»¨íŠ¸ë¡¤ ì•ˆì— í¬í•¨ëœ ì»¨íŠ¸ë¡¤ì„ ì½ëŠ”ë‹¤.
 	 * 
 	 * @param sr
-	 *            ½ºÆ®¸² ¸®´õ
-	 * @return ¹­À½ ÄÁÆ®·Ñ ¾È¿¡ Æ÷ÇÔµÈ ÄÁÆ®·Ñ
+	 *            ìŠ¤íŠ¸ë¦¼ ë¦¬ë”
+	 * @return ë¬¶ìŒ ì»¨íŠ¸ë¡¤ ì•ˆì— í¬í•¨ëœ ì»¨íŠ¸ë¡¤
 	 * @throws Exception
 	 */
 	public GsoControl readInContainer(StreamReader sr) throws Exception {
@@ -278,7 +278,7 @@ public class ForControlGso {
 	}
 
 	/**
-	 * ¹­À½ ÄÁÆ®·Ñ ¾È¿¡ Æ÷ÇÔµÈ ÄÁÆ®·ÑÀ» À§ÇÑ ±×¸®±â °³Ã¼ ÄÁÆ®·Ñ Çì´õ ·¹ÄÚµå¸¦ ÀĞ´Â´Ù.
+	 * ë¬¶ìŒ ì»¨íŠ¸ë¡¤ ì•ˆì— í¬í•¨ëœ ì»¨íŠ¸ë¡¤ì„ ìœ„í•œ ê·¸ë¦¬ê¸° ê°œì²´ ì»¨íŠ¸ë¡¤ í—¤ë” ë ˆì½”ë“œë¥¼ ì½ëŠ”ë‹¤.
 	 * 
 	 * @throws Exception
 	 */

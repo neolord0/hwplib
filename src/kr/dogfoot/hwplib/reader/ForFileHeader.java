@@ -1,4 +1,4 @@
-package kr.dogfoot.hwplib.reader;
+ï»¿package kr.dogfoot.hwplib.reader;
 
 import java.io.IOException;
 import java.util.Arrays;
@@ -9,18 +9,18 @@ import kr.dogfoot.hwplib.util.binary.BitFlag;
 import kr.dogfoot.hwplib.util.compoundFile.StreamReader;
 
 /**
- * ÆÄÀÏ Çì´õ¸¦ ÀĞ±â À§ÇÑ °´Ã¼
+ * íŒŒì¼ í—¤ë”ë¥¼ ì½ê¸° ìœ„í•œ ê°ì²´
  * 
  * @author neolord
  */
 public class ForFileHeader {
 	/**
-	 * File Header ½ºÆ®¸²À» ÀĞ´Â´Ù.
+	 * File Header ìŠ¤íŠ¸ë¦¼ì„ ì½ëŠ”ë‹¤.
 	 * 
 	 * @param fh
-	 *            ÆÄÀÏ Çì´õ °´Ã¼
+	 *            íŒŒì¼ í—¤ë” ê°ì²´
 	 * @param sr
-	 *            ½ºÆ®¸² ¸®´õ
+	 *            ìŠ¤íŠ¸ë¦¼ ë¦¬ë”
 	 * @throws Exception
 	 */
 	public static void read(FileHeader fh, StreamReader sr)
@@ -31,10 +31,10 @@ public class ForFileHeader {
 	}
 
 	/**
-	 * ÇÑ±Û ÆÄÀÏ ½Ã±×´ÏÃ³(ÀÌ ÆÄÀÏÀÌ ÇÑ±Û ÆÄÀÏÀÎÁö È®ÀÎÇÏ´Â ºÎºĞ)À» ÀĞ´Â´Ù.
+	 * í•œê¸€ íŒŒì¼ ì‹œê·¸ë‹ˆì²˜(ì´ íŒŒì¼ì´ í•œê¸€ íŒŒì¼ì¸ì§€ í™•ì¸í•˜ëŠ” ë¶€ë¶„)ì„ ì½ëŠ”ë‹¤.
 	 * 
 	 * @param sr
-	 *            ½ºÆ®¸² ¸®´õ
+	 *            ìŠ¤íŠ¸ë¦¼ ë¦¬ë”
 	 * @throws Exception
 	 */
 	private static void signature(StreamReader sr) throws Exception {
@@ -47,12 +47,12 @@ public class ForFileHeader {
 	}
 
 	/**
-	 * ÆÄÀÏ ¹öÀü ºÎºĞÀ» ÀĞ´Â´Ù.
+	 * íŒŒì¼ ë²„ì „ ë¶€ë¶„ì„ ì½ëŠ”ë‹¤.
 	 * 
 	 * @param fv
-	 *            ÀĞÀº ³»À»À» ÀúÀåÇÒ °´Ã¼
+	 *            ì½ì€ ë‚´ì„ì„ ì €ì¥í•  ê°ì²´
 	 * @param sr
-	 *            ½ºÆ®¸² ¸®´õ
+	 *            ìŠ¤íŠ¸ë¦¼ ë¦¬ë”
 	 * @throws IOException
 	 */
 	private static void fileVersion(FileVersion fv, StreamReader sr)
@@ -61,12 +61,12 @@ public class ForFileHeader {
 	}
 
 	/**
-	 * ¼Ó¼º ºÎºĞÀ» ÀĞ´Â´Ù.
+	 * ì†ì„± ë¶€ë¶„ì„ ì½ëŠ”ë‹¤.
 	 * 
 	 * @param fh
-	 *            ÀĞÀº ³»À»À» ÀúÀåÇÒ °´Ã¼
+	 *            ì½ì€ ë‚´ì„ì„ ì €ì¥í•  ê°ì²´
 	 * @param sr
-	 *            ½ºÆ®¸² ¸®´õ
+	 *            ìŠ¤íŠ¸ë¦¼ ë¦¬ë”
 	 * @throws IOException
 	 */
 	private static void properties(FileHeader fh, StreamReader sr)

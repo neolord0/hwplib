@@ -1,19 +1,19 @@
-package kr.dogfoot.hwplib.util.binary;
+ï»¿package kr.dogfoot.hwplib.util.binary;
 
 /**
- * ÀÌÁø ¿¬»êÀ» ÇÏ´Â °´Ã¼
+ * ì´ì§„ ì—°ì‚°ì„ í•˜ëŠ” ê°ì²´
  * 
  * @author neolord
  */
 public class BitFlag {
 	/**
-	 * mask¿¡¼­ position¹øÂ° ºñÆ®°¡ 1ÀÎÁö ¿©ºÎ¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * maskì—ì„œ positionë²ˆì§¸ ë¹„íŠ¸ê°€ 1ì¸ì§€ ì—¬ë¶€ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
 	 * @param mask
-	 *            long °ª
+	 *            long ê°’
 	 * @param position
-	 *            ºñÆ® À§Ä¡
-	 * @return mask°ª¿¡¼­ position¹øÂ° ºñÆ®°¡ 1ÀÎÁö ¿©ºÎ
+	 *            ë¹„íŠ¸ ìœ„ì¹˜
+	 * @return maskê°’ì—ì„œ positionë²ˆì§¸ ë¹„íŠ¸ê°€ 1ì¸ì§€ ì—¬ë¶€
 	 */
 	public static boolean get(long mask, int position) {
 		long mask2 = 1 << position;
@@ -21,13 +21,13 @@ public class BitFlag {
 	}
 
 	/**
-	 * mask¿¡¼­ position¹øÂ° ºñÆ®°¡ 1ÀÎÁö ¿©ºÎ¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * maskì—ì„œ positionë²ˆì§¸ ë¹„íŠ¸ê°€ 1ì¸ì§€ ì—¬ë¶€ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
 	 * @param mask
-	 *            int °ª
+	 *            int ê°’
 	 * @param position
-	 *            ºñÆ® À§Ä¡
-	 * @return mask°ª¿¡¼­ position¹øÂ° ºñÆ®°¡ 1ÀÎÁö ¿©ºÎ
+	 *            ë¹„íŠ¸ ìœ„ì¹˜
+	 * @return maskê°’ì—ì„œ positionë²ˆì§¸ ë¹„íŠ¸ê°€ 1ì¸ì§€ ì—¬ë¶€
 	 */
 	public static boolean get(int mask, int position) {
 		int mask2 = 1 << position;
@@ -35,13 +35,13 @@ public class BitFlag {
 	}
 
 	/**
-	 * mask¿¡¼­ position¹øÂ° ºñÆ®°¡ 1ÀÎÁö ¿©ºÎ¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * maskì—ì„œ positionë²ˆì§¸ ë¹„íŠ¸ê°€ 1ì¸ì§€ ì—¬ë¶€ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
 	 * @param mask
-	 *            short °ª
+	 *            short ê°’
 	 * @param position
-	 *            ºñÆ® À§Ä¡
-	 * @return mask°ª¿¡¼­ position¹øÂ° ºñÆ®°¡ 1ÀÎÁö ¿©ºÎ
+	 *            ë¹„íŠ¸ ìœ„ì¹˜
+	 * @return maskê°’ì—ì„œ positionë²ˆì§¸ ë¹„íŠ¸ê°€ 1ì¸ì§€ ì—¬ë¶€
 	 */
 	public static boolean get(short mask, int position) {
 		short mask2 = (short) (1 << position);
@@ -49,15 +49,15 @@ public class BitFlag {
 	}
 
 	/**
-	 * maskÀÇ position¹øÂ° ºñÆ®À» flag°ªÀÌ trueÀÏ¶§ 1, falseÀÏ¶§ 0À¸·Î ¼³Á¤ÇÑ´Ù..
+	 * maskì˜ positionë²ˆì§¸ ë¹„íŠ¸ì„ flagê°’ì´ trueì¼ë•Œ 1, falseì¼ë•Œ 0ìœ¼ë¡œ ì„¤ì •í•œë‹¤..
 	 * 
 	 * @param mask
-	 *            ÀÌÀü long °ª
+	 *            ì´ì „ long ê°’
 	 * @param position
-	 *            ºñÆ® À§Ä¡
+	 *            ë¹„íŠ¸ ìœ„ì¹˜
 	 * @param flag
-	 *            bool °ª
-	 * @return maskÀÇ position¹øÂ° ºñÆ®À» flag°ªÀÌ trueÀÏ¶§ 1, falseÀÏ¶§ 0À¸·Î ¼³Á¤ÇÑ °á°ú°ª
+	 *            bool ê°’
+	 * @return maskì˜ positionë²ˆì§¸ ë¹„íŠ¸ì„ flagê°’ì´ trueì¼ë•Œ 1, falseì¼ë•Œ 0ìœ¼ë¡œ ì„¤ì •í•œ ê²°ê³¼ê°’
 	 */
 	public static long set(long mask, int position, boolean flag) {
 		if (flag) {
@@ -71,15 +71,15 @@ public class BitFlag {
 	}
 
 	/**
-	 * maskÀÇ position¹øÂ° ºñÆ®À» flag°ªÀÌ trueÀÏ¶§ 1, falseÀÏ¶§ 0À¸·Î ¼³Á¤ÇÑ´Ù..
+	 * maskì˜ positionë²ˆì§¸ ë¹„íŠ¸ì„ flagê°’ì´ trueì¼ë•Œ 1, falseì¼ë•Œ 0ìœ¼ë¡œ ì„¤ì •í•œë‹¤..
 	 * 
 	 * @param mask
-	 *            ÀÌÀü int °ª
+	 *            ì´ì „ int ê°’
 	 * @param position
-	 *            ºñÆ® À§Ä¡
+	 *            ë¹„íŠ¸ ìœ„ì¹˜
 	 * @param flag
-	 *            bool °ª
-	 * @return maskÀÇ position¹øÂ° ºñÆ®À» flag°ªÀÌ trueÀÏ¶§ 1, falseÀÏ¶§ 0À¸·Î ¼³Á¤ÇÑ °á°ú°ª
+	 *            bool ê°’
+	 * @return maskì˜ positionë²ˆì§¸ ë¹„íŠ¸ì„ flagê°’ì´ trueì¼ë•Œ 1, falseì¼ë•Œ 0ìœ¼ë¡œ ì„¤ì •í•œ ê²°ê³¼ê°’
 	 */
 	public static int set(int mask, int position, boolean flag) {
 		if (flag) {
@@ -93,15 +93,15 @@ public class BitFlag {
 	}
 
 	/**
-	 * maskÀÇ position¹øÂ° ºñÆ®À» flag°ªÀÌ trueÀÏ¶§ 1, falseÀÏ¶§ 0À¸·Î ¼³Á¤ÇÑ´Ù..
+	 * maskì˜ positionë²ˆì§¸ ë¹„íŠ¸ì„ flagê°’ì´ trueì¼ë•Œ 1, falseì¼ë•Œ 0ìœ¼ë¡œ ì„¤ì •í•œë‹¤..
 	 * 
 	 * @param mask
-	 *            ÀÌÀü short °ª
+	 *            ì´ì „ short ê°’
 	 * @param position
-	 *            ºñÆ® À§Ä¡
+	 *            ë¹„íŠ¸ ìœ„ì¹˜
 	 * @param flag
-	 *            bool °ª
-	 * @return maskÀÇ position¹øÂ° ºñÆ®À» flag°ªÀÌ trueÀÏ¶§ 1, falseÀÏ¶§ 0À¸·Î ¼³Á¤ÇÑ °á°ú°ª
+	 *            bool ê°’
+	 * @return maskì˜ positionë²ˆì§¸ ë¹„íŠ¸ì„ flagê°’ì´ trueì¼ë•Œ 1, falseì¼ë•Œ 0ìœ¼ë¡œ ì„¤ì •í•œ ê²°ê³¼ê°’
 	 */
 	public static short set(short mask, int position, boolean flag) {
 		if (flag) {
@@ -115,15 +115,15 @@ public class BitFlag {
 	}
 
 	/**
-	 * mask °ª¿¡¼­ startºÎÅÍ end±îÁöÀÇ ºñÆ®ÀÇ °ªÀ» ¹İÈ¯ÇÑ´Ù.
+	 * mask ê°’ì—ì„œ startë¶€í„° endê¹Œì§€ì˜ ë¹„íŠ¸ì˜ ê°’ì„ ë°˜í™˜í•œë‹¤.
 	 * 
 	 * @param mask
-	 *            long °ª
+	 *            long ê°’
 	 * @param start
-	 *            ºñÆ® ½ÃÀÛ À§Ä¡
+	 *            ë¹„íŠ¸ ì‹œì‘ ìœ„ì¹˜
 	 * @param end
-	 *            ºñÆ® ³¡ À§Ä¡
-	 * @return mask °ª¿¡¼­ startºÎÅÍ end±îÁö ºñÆ®ÀÇ Á¤¼ö°ª
+	 *            ë¹„íŠ¸ ë ìœ„ì¹˜
+	 * @return mask ê°’ì—ì„œ startë¶€í„° endê¹Œì§€ ë¹„íŠ¸ì˜ ì •ìˆ˜ê°’
 	 */
 	public static long get(long mask, int start, int end) {
 		long ret = 0;
@@ -141,15 +141,15 @@ public class BitFlag {
 	}
 
 	/**
-	 * mask °ª¿¡¼­ startºÎÅÍ end±îÁöÀÇ ºñÆ®ÀÇ °ªÀ» ¹İÈ¯ÇÑ´Ù.
+	 * mask ê°’ì—ì„œ startë¶€í„° endê¹Œì§€ì˜ ë¹„íŠ¸ì˜ ê°’ì„ ë°˜í™˜í•œë‹¤.
 	 * 
 	 * @param mask
-	 *            int °ª
+	 *            int ê°’
 	 * @param start
-	 *            ºñÆ® ½ÃÀÛ À§Ä¡
+	 *            ë¹„íŠ¸ ì‹œì‘ ìœ„ì¹˜
 	 * @param end
-	 *            ºñÆ® ³¡ À§Ä¡
-	 * @return mask °ª¿¡¼­ startºÎÅÍ end±îÁö ºñÆ®ÀÇ Á¤¼ö°ª
+	 *            ë¹„íŠ¸ ë ìœ„ì¹˜
+	 * @return mask ê°’ì—ì„œ startë¶€í„° endê¹Œì§€ ë¹„íŠ¸ì˜ ì •ìˆ˜ê°’
 	 */
 	public static int get(int mask, int start, int end) {
 		int ret = 0;
@@ -167,15 +167,15 @@ public class BitFlag {
 	}
 
 	/**
-	 * mask °ª¿¡¼­ startºÎÅÍ end±îÁöÀÇ ºñÆ®ÀÇ °ªÀ» ¹İÈ¯ÇÑ´Ù.
+	 * mask ê°’ì—ì„œ startë¶€í„° endê¹Œì§€ì˜ ë¹„íŠ¸ì˜ ê°’ì„ ë°˜í™˜í•œë‹¤.
 	 * 
 	 * @param mask
-	 *            short °ª
+	 *            short ê°’
 	 * @param start
-	 *            ºñÆ® ½ÃÀÛ À§Ä¡
+	 *            ë¹„íŠ¸ ì‹œì‘ ìœ„ì¹˜
 	 * @param end
-	 *            ºñÆ® ³¡ À§Ä¡
-	 * @return mask °ª¿¡¼­ startºÎÅÍ end±îÁö ºñÆ®ÀÇ Á¤¼ö°ª
+	 *            ë¹„íŠ¸ ë ìœ„ì¹˜
+	 * @return mask ê°’ì—ì„œ startë¶€í„° endê¹Œì§€ ë¹„íŠ¸ì˜ ì •ìˆ˜ê°’
 	 */
 	public static short get(short mask, int start, int end) {
 		short ret = 0;
@@ -193,17 +193,17 @@ public class BitFlag {
 	}
 
 	/**
-	 * mask°ª¿¡¼­ startºÎÅÍ end±îÁöÀÇ ºñÆ®¸¦ value°ªÀ¸·Î ¼³Á¤ÇÑ´Ù.
+	 * maskê°’ì—ì„œ startë¶€í„° endê¹Œì§€ì˜ ë¹„íŠ¸ë¥¼ valueê°’ìœ¼ë¡œ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param mask
-	 *            ÀÌÀü long °ª
+	 *            ì´ì „ long ê°’
 	 * @param start
-	 *            ºñÆ® ½ÃÀÛ À§Ä¡
+	 *            ë¹„íŠ¸ ì‹œì‘ ìœ„ì¹˜
 	 * @param end
-	 *            ºñÆ® ³¡ À§Ä¡
+	 *            ë¹„íŠ¸ ë ìœ„ì¹˜
 	 * @param value
-	 *            ¼³Á¤°ª
-	 * @return mask°ª¿¡¼­ startºÎÅÍ end±îÁöÀÇ ºñÆ®¸¦ value°ªÀ¸·Î ¼³Á¤ÇÑ °á°ú°ª
+	 *            ì„¤ì •ê°’
+	 * @return maskê°’ì—ì„œ startë¶€í„° endê¹Œì§€ì˜ ë¹„íŠ¸ë¥¼ valueê°’ìœ¼ë¡œ ì„¤ì •í•œ ê²°ê³¼ê°’
 	 */
 	public static long set(long mask, int start, int end, int value) {
 		for (int position = start; position <= end; position++) {
@@ -214,17 +214,17 @@ public class BitFlag {
 	}
 
 	/**
-	 * mask°ª¿¡¼­ startºÎÅÍ end±îÁöÀÇ ºñÆ®¸¦ value°ªÀ¸·Î ¼³Á¤ÇÑ´Ù.
+	 * maskê°’ì—ì„œ startë¶€í„° endê¹Œì§€ì˜ ë¹„íŠ¸ë¥¼ valueê°’ìœ¼ë¡œ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param mask
-	 *            ÀÌÀü int °ª
+	 *            ì´ì „ int ê°’
 	 * @param start
-	 *            ºñÆ® ½ÃÀÛ À§Ä¡
+	 *            ë¹„íŠ¸ ì‹œì‘ ìœ„ì¹˜
 	 * @param end
-	 *            ºñÆ® ³¡ À§Ä¡
+	 *            ë¹„íŠ¸ ë ìœ„ì¹˜
 	 * @param value
-	 *            ¼³Á¤°ª
-	 * @return mask°ª¿¡¼­ startºÎÅÍ end±îÁöÀÇ ºñÆ®¸¦ value°ªÀ¸·Î ¼³Á¤ÇÑ °á°ú°ª
+	 *            ì„¤ì •ê°’
+	 * @return maskê°’ì—ì„œ startë¶€í„° endê¹Œì§€ì˜ ë¹„íŠ¸ë¥¼ valueê°’ìœ¼ë¡œ ì„¤ì •í•œ ê²°ê³¼ê°’
 	 */
 	public static int set(int mask, int start, int end, int value) {
 		for (int position = start; position <= end; position++) {
@@ -235,17 +235,17 @@ public class BitFlag {
 	}
 
 	/**
-	 * mask°ª¿¡¼­ startºÎÅÍ end±îÁöÀÇ ºñÆ®¸¦ value°ªÀ¸·Î ¼³Á¤ÇÑ´Ù.
+	 * maskê°’ì—ì„œ startë¶€í„° endê¹Œì§€ì˜ ë¹„íŠ¸ë¥¼ valueê°’ìœ¼ë¡œ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param mask
-	 *            ÀÌÀü short °ª
+	 *            ì´ì „ short ê°’
 	 * @param start
-	 *            ºñÆ® ½ÃÀÛ À§Ä¡
+	 *            ë¹„íŠ¸ ì‹œì‘ ìœ„ì¹˜
 	 * @param end
-	 *            ºñÆ® ³¡ À§Ä¡
+	 *            ë¹„íŠ¸ ë ìœ„ì¹˜
 	 * @param value
-	 *            ¼³Á¤°ª
-	 * @return mask°ª¿¡¼­ startºÎÅÍ end±îÁöÀÇ ºñÆ®¸¦ value°ªÀ¸·Î ¼³Á¤ÇÑ °á°ú°ª
+	 *            ì„¤ì •ê°’
+	 * @return maskê°’ì—ì„œ startë¶€í„° endê¹Œì§€ì˜ ë¹„íŠ¸ë¥¼ valueê°’ìœ¼ë¡œ ì„¤ì •í•œ ê²°ê³¼ê°’
 	 */
 	public static short set(short mask, int start, int end, int value) {
 		for (int position = start; position <= end; position++) {

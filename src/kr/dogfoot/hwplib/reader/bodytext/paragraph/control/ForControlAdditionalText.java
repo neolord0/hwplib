@@ -1,4 +1,4 @@
-package kr.dogfoot.hwplib.reader.bodytext.paragraph.control;
+ï»¿package kr.dogfoot.hwplib.reader.bodytext.paragraph.control;
 
 import java.io.IOException;
 
@@ -9,18 +9,18 @@ import kr.dogfoot.hwplib.object.docinfo.parashape.Alignment;
 import kr.dogfoot.hwplib.util.compoundFile.StreamReader;
 
 /**
- * µ¡¸» ÄÁÆ®·ÑÀ» ÀĞ±â À§ÇÑ °´Ã¼
+ * ë§ë§ ì»¨íŠ¸ë¡¤ì„ ì½ê¸° ìœ„í•œ ê°ì²´
  * 
  * @author neolord
  */
 public class ForControlAdditionalText {
 	/**
-	 * µ¡¸» ÄÁÆ®·ÑÀ» ÀĞ´Â´Ù.
+	 * ë§ë§ ì»¨íŠ¸ë¡¤ì„ ì½ëŠ”ë‹¤.
 	 * 
 	 * @param at
-	 *            µ¡¸» ÄÁÆ®·Ñ
+	 *            ë§ë§ ì»¨íŠ¸ë¡¤
 	 * @param sr
-	 *            ½ºÆ®¸² ¸®´õ
+	 *            ìŠ¤íŠ¸ë¦¼ ë¦¬ë”
 	 * @throws IOException
 	 */
 	public static void read(ControlAdditionalText at, StreamReader sr)
@@ -29,12 +29,12 @@ public class ForControlAdditionalText {
 	}
 
 	/**
-	 * µ¡¸» ÄÁÆ®·ÑÀÇ ÄÁÆ®·Ñ Çì´õ ·¹ÄÚµå¸¦ ÀĞ´Â´Ù.
+	 * ë§ë§ ì»¨íŠ¸ë¡¤ì˜ ì»¨íŠ¸ë¡¤ í—¤ë” ë ˆì½”ë“œë¥¼ ì½ëŠ”ë‹¤.
 	 * 
 	 * @param h
-	 *            µ¡¸» ÄÁÆ®·ÑÀÇ ÄÁÆ®·Ñ Çì´õ ·¹ÄÚµå
+	 *            ë§ë§ ì»¨íŠ¸ë¡¤ì˜ ì»¨íŠ¸ë¡¤ í—¤ë” ë ˆì½”ë“œ
 	 * @param sr
-	 *            ½ºÆ®¸² ¸®´õ
+	 *            ìŠ¤íŠ¸ë¦¼ ë¦¬ë”
 	 * @throws IOException
 	 */
 	private static void ctrlHeader(CtrlHeaderAdditionalText h, StreamReader sr)

@@ -1,52 +1,52 @@
-package kr.dogfoot.hwplib.object.bodytext.control.footnoteendnote;
+ï»¿package kr.dogfoot.hwplib.object.bodytext.control.footnoteendnote;
 
 import kr.dogfoot.hwplib.object.bodytext.control.gso.textbox.ListHeaderProperty;
 
 /**
- * ¹ÌÁÖ/°¢ÁÖÀ» À§ÇÑ ¹®´Ü ¸®½ºÆ® Çì´õ ·¹ÄÚµå
+ * ë¯¸ì£¼/ê°ì£¼ì„ ìœ„í•œ ë¬¸ë‹¨ ë¦¬ìŠ¤íŠ¸ í—¤ë” ë ˆì½”ë“œ
  * 
  * @author neolord
  */
 public class ListHeaderForFootnodeEndnote {
 	/**
-	 * ¹®´Ü °³¼ö
+	 * ë¬¸ë‹¨ ê°œìˆ˜
 	 */
 	private int paraCount;
 	/**
-	 * ¼Ó¼º
+	 * ì†ì„±
 	 */
 	private ListHeaderProperty property;
 
 	/**
-	 * »ı¼ºÀÚ
+	 * ìƒì„±ì
 	 */
 	public ListHeaderForFootnodeEndnote() {
 		property = new ListHeaderProperty();
 	}
 
 	/**
-	 * ¹®´Ü °³¼ö¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ë¬¸ë‹¨ ê°œìˆ˜ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ¹®´Ü °³¼ö
+	 * @return ë¬¸ë‹¨ ê°œìˆ˜
 	 */
 	public int getParaCount() {
 		return paraCount;
 	}
 
 	/**
-	 * ¹®´Ü °³¼ö¸¦ ¼³Á¤ÇÑ´Ù.
+	 * ë¬¸ë‹¨ ê°œìˆ˜ë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param paraCount
-	 *            ¹®´Ü °³¼ö
+	 *            ë¬¸ë‹¨ ê°œìˆ˜
 	 */
 	public void setParaCount(int paraCount) {
 		this.paraCount = paraCount;
 	}
 
 	/**
-	 * ¼Ó¼º °´Ã¼¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ì†ì„± ê°ì²´ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ¼Ó¼º °´Ã¼
+	 * @return ì†ì„± ê°ì²´
 	 */
 	public ListHeaderProperty getProperty() {
 		return property;

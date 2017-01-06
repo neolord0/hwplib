@@ -1,51 +1,51 @@
-package kr.dogfoot.hwplib.object.docinfo.parashape;
+ï»¿package kr.dogfoot.hwplib.object.docinfo.parashape;
 
 import kr.dogfoot.hwplib.util.binary.BitFlag;
 
 /**
- * ¹®´Ü ¸ğ¾çÀÇ ¼Ó¼º3 °´Ã¼. (5.0.2.5 ¹öÀü ÀÌ»ó)
+ * ë¬¸ë‹¨ ëª¨ì–‘ì˜ ì†ì„±3 ê°ì²´. (5.0.2.5 ë²„ì „ ì´ìƒ)
  * 
  * @author neolord
  */
 public class ParaShapeProperty3 {
 	/**
-	 * ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª(unsigned 4 byte)
+	 * íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’(unsigned 4 byte)
 	 */
 	private long value;
 	
 	/**
-	 * »ı¼ºÀÚ
+	 * ìƒì„±ì
 	 */
 	public ParaShapeProperty3() {
 	}
 
 	/**
-	 * ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ªÀ» ¹İÈ¯ÇÑ´Ù.
-	 * @return ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª
+	 * íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’ì„ ë°˜í™˜í•œë‹¤.
+	 * @return íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’
 	 */
 	public long getValue() {
 		return value;
 	}
 	
 	/**
-	 * ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ªÀ» ¼³Á¤ÇÑ´Ù.
-	 * @param value ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª
+	 * íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’ì„ ì„¤ì •í•œë‹¤.
+	 * @param value íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’
 	 */
 	public void setValue(long value) {
 		this.value = value;
 	}
 
 	/**
-	 * ÁÙ °£°İ Á¾·ù¸¦ ¹İÈ¯ÇÑ´Ù. (0~4 bit)
-	 * @return ÁÙ °£°İ Á¾·ù
+	 * ì¤„ ê°„ê²© ì¢…ë¥˜ë¥¼ ë°˜í™˜í•œë‹¤. (0~4 bit)
+	 * @return ì¤„ ê°„ê²© ì¢…ë¥˜
 	 */
 	public LineSpaceSort getLineSpaceSort() {
 		return LineSpaceSort.valueOf((byte) BitFlag.get(value, 0, 4));
 	}
 	
 	/**
-	 * ÁÙ °£°İ Á¾·ù¸¦ ¼³Á¤ÇÑ´Ù. (0~4 bit)
-	 * @param lineSpaceSort ÁÙ °£°İ Á¾·ù
+	 * ì¤„ ê°„ê²© ì¢…ë¥˜ë¥¼ ì„¤ì •í•œë‹¤. (0~4 bit)
+	 * @param lineSpaceSort ì¤„ ê°„ê²© ì¢…ë¥˜
 	 */
 	public void setLineSpaceSort(LineSpaceSort lineSpaceSort) {
 		value = BitFlag.set(value, 0, 4, lineSpaceSort.getValue());

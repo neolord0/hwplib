@@ -1,4 +1,4 @@
-package kr.dogfoot.hwplib.object.docinfo;
+ï»¿package kr.dogfoot.hwplib.object.docinfo;
 
 import kr.dogfoot.hwplib.object.docinfo.charshape.CharOffsets;
 import kr.dogfoot.hwplib.object.docinfo.charshape.CharShapeProperty;
@@ -9,74 +9,74 @@ import kr.dogfoot.hwplib.object.docinfo.charshape.RelativeSizes;
 import kr.dogfoot.hwplib.object.etc.Color4Byte;
 
 /**
- * ±ÛÀÚ ¸ğ¾çÀ» ³ªÅ¸³»´Â ·¹ÄÚµå
+ * ê¸€ì ëª¨ì–‘ì„ ë‚˜íƒ€ë‚´ëŠ” ë ˆì½”ë“œ
  * 
  * @author neolord
  */
 public class CharShape {
 	/**
-	 * ¾ğ¾îº° ±Û²Ã ID(FaceID) ÂüÁ¶ °ª
+	 * ì–¸ì–´ë³„ ê¸€ê¼´ ID(FaceID) ì°¸ì¡° ê°’
 	 */
 	private FaceNameIds faceNameIds;
 	/**
-	 * ¾ğ¾îº° ÀåÆò, 50%~200%
+	 * ì–¸ì–´ë³„ ì¥í‰, 50%~200%
 	 */
 	private Ratios ratios;
 	/**
-	 * ¾ğ¾îº° ÀÚ°£, -50%~50%
+	 * ì–¸ì–´ë³„ ìê°„, -50%~50%
 	 */
 	private CharSpaces charSpaces;
 	/**
-	 * ¾ğ¾îº° »ó´ë Å©±â, 10%~250%
+	 * ì–¸ì–´ë³„ ìƒëŒ€ í¬ê¸°, 10%~250%
 	 */
 	private RelativeSizes relativeSizes;
 	/**
-	 * ¾ğ¾îº° ±ÛÀÚ À§Ä¡, -100%~100%
+	 * ì–¸ì–´ë³„ ê¸€ì ìœ„ì¹˜, -100%~100%
 	 */
 	private CharOffsets charOffsets;
 	/**
-	 * ±âÁØ Å©±â
+	 * ê¸°ì¤€ í¬ê¸°
 	 */
 	private int baseSize;
 	/**
-	 * ¼Ó¼º
+	 * ì†ì„±
 	 */
 	private CharShapeProperty property;
 	/**
-	 * ±×¸²ÀÚ °£°İ1, -100%~100%
+	 * ê·¸ë¦¼ì ê°„ê²©1, -100%~100%
 	 */
 	private byte shadowGap1;
 	/**
-	 * ±×¸²ÀÚ °£°İ2, -100%¢¦100%
+	 * ê·¸ë¦¼ì ê°„ê²©2, -100%ï½100%
 	 */
 	private byte shadowGap2;
 	/**
-	 * ±ÛÀÚ »ö
+	 * ê¸€ì ìƒ‰
 	 */
 	private Color4Byte charColor;
 	/**
-	 * ¹ØÁÙ »ö
+	 * ë°‘ì¤„ ìƒ‰
 	 */
 	private Color4Byte underLineColor;
 	/**
-	 * À½¿µ »ö
+	 * ìŒì˜ ìƒ‰
 	 */
 	private Color4Byte shadeColor;
 	/**
-	 * ±×¸²ÀÚ »ö
+	 * ê·¸ë¦¼ì ìƒ‰
 	 */
 	private Color4Byte shadowColor;
 	/**
-	 * ±ÛÀÚÀÇ Å×µÎ¸®/¹è°æ ID ÂüÁ¶ °ª
+	 * ê¸€ìì˜ í…Œë‘ë¦¬/ë°°ê²½ ID ì°¸ì¡° ê°’
 	 */
 	private int borderFillId;
 	/**
-	 * Ãë¼Ò¼± »ö (5.0.3.0 ÀÌ»ó)
+	 * ì·¨ì†Œì„  ìƒ‰ (5.0.3.0 ì´ìƒ)
 	 */
 	private Color4Byte strikeLineColor;
 
 	/**
-	 * »ı¼ºÀÚ
+	 * ìƒì„±ì
 	 */
 	public CharShape() {
 		faceNameIds = new FaceNameIds();
@@ -93,175 +93,175 @@ public class CharShape {
 	}
 
 	/**
-	 * ¾ğ¾îº°·Î ÂüÁ¶µÈ ±Û²Ã ID(FaceID)¿¡ ´ëÇÑ °´Ã¼¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ì–¸ì–´ë³„ë¡œ ì°¸ì¡°ëœ ê¸€ê¼´ ID(FaceID)ì— ëŒ€í•œ ê°ì²´ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ¾ğ¾îº°·Î ÂüÁ¶µÈ ±Û²Ã ID(FaceID)¿¡ ´ëÇÑ °´Ã¼
+	 * @return ì–¸ì–´ë³„ë¡œ ì°¸ì¡°ëœ ê¸€ê¼´ ID(FaceID)ì— ëŒ€í•œ ê°ì²´
 	 */
 	public FaceNameIds getFaceNameIds() {
 		return faceNameIds;
 	}
 
 	/**
-	 * ¾ğ¾îº° ÀåÆò¿¡ ´ëÇÑ °´Ã¼¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ì–¸ì–´ë³„ ì¥í‰ì— ëŒ€í•œ ê°ì²´ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ¾ğ¾îº° ÀåÆò¿¡ ´ëÇÑ °´Ã¼
+	 * @return ì–¸ì–´ë³„ ì¥í‰ì— ëŒ€í•œ ê°ì²´
 	 */
 	public Ratios getRatios() {
 		return ratios;
 	}
 
 	/**
-	 * ¾ğ¾îº° ÀÚ°£¿¡ ´ëÇÑ °´Ã¼¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ì–¸ì–´ë³„ ìê°„ì— ëŒ€í•œ ê°ì²´ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ¾ğ¾îº° ÀÚ°£¿¡ ´ëÇÑ °´Ã¼
+	 * @return ì–¸ì–´ë³„ ìê°„ì— ëŒ€í•œ ê°ì²´
 	 */
 	public CharSpaces getCharSpaces() {
 		return charSpaces;
 	}
 
 	/**
-	 * ¾ğ¾îº° »ó´ë Å©±â¿¡ ´ëÇÑ °´Ã¼¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ì–¸ì–´ë³„ ìƒëŒ€ í¬ê¸°ì— ëŒ€í•œ ê°ì²´ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ¾ğ¾îº° »ó´ë Å©±â
+	 * @return ì–¸ì–´ë³„ ìƒëŒ€ í¬ê¸°
 	 */
 	public RelativeSizes getRelativeSizes() {
 		return relativeSizes;
 	}
 
 	/**
-	 * ¾ğ¾îº° ±ÛÀÚ À§Ä¡¿¡ ´ëÇÑ °´Ã¼¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ì–¸ì–´ë³„ ê¸€ì ìœ„ì¹˜ì— ëŒ€í•œ ê°ì²´ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ¾ğ¾îº° ±ÛÀÚ À§Ä¡¿¡ ´ëÇÑ °´Ã¼
+	 * @return ì–¸ì–´ë³„ ê¸€ì ìœ„ì¹˜ì— ëŒ€í•œ ê°ì²´
 	 */
 	public CharOffsets getCharOffsets() {
 		return charOffsets;
 	}
 
 	/**
-	 * ±âÁØ Å©±â¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ê¸°ì¤€ í¬ê¸°ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ±âÁØ Å©±â
+	 * @return ê¸°ì¤€ í¬ê¸°
 	 */
 	public int getBaseSize() {
 		return baseSize;
 	}
 
 	/**
-	 * ±âÁØ Å©±â¸¦ ¼³Á¤ÇÑ´Ù.
+	 * ê¸°ì¤€ í¬ê¸°ë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param baseSize
-	 *            ±âÁØ Å©±â
+	 *            ê¸°ì¤€ í¬ê¸°
 	 */
 	public void setBaseSize(int baseSize) {
 		this.baseSize = baseSize;
 	}
 
 	/**
-	 * ±ÛÀÚ¸ğ¾ç ¼Ó¼º¿¡ ´ëÇÑ °´Ã¼¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ê¸€ìëª¨ì–‘ ì†ì„±ì— ëŒ€í•œ ê°ì²´ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ±ÛÀÚ¸ğ¾ç ¼Ó¼º¿¡ ´ëÇÑ °´Ã¼
+	 * @return ê¸€ìëª¨ì–‘ ì†ì„±ì— ëŒ€í•œ ê°ì²´
 	 */
 	public CharShapeProperty getProperty() {
 		return property;
 	}
 
 	/**
-	 * ±×¸²ÀÚ °£°İ1À» ¹İÇÑÇÑ´Ù.
+	 * ê·¸ë¦¼ì ê°„ê²©1ì„ ë°˜í•œí•œë‹¤.
 	 * 
-	 * @return ±×¸²ÀÚ °£°İ1
+	 * @return ê·¸ë¦¼ì ê°„ê²©1
 	 */
 	public byte getShadowGap1() {
 		return shadowGap1;
 	}
 
 	/**
-	 * ±×¸²ÀÚ °£°İ1¸¦ ¼³Á¤ÇÑ´Ù.
+	 * ê·¸ë¦¼ì ê°„ê²©1ë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param shadowGap1
-	 *            ±×¸²ÀÚ °£°İ1
+	 *            ê·¸ë¦¼ì ê°„ê²©1
 	 */
 	public void setShadowGap1(byte shadowGap1) {
 		this.shadowGap1 = shadowGap1;
 	}
 
 	/**
-	 * ±×¸²ÀÚ °£°İ2¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ê·¸ë¦¼ì ê°„ê²©2ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ±×¸²ÀÚ °£°İ2¤±
+	 * @return ê·¸ë¦¼ì ê°„ê²©2ã…
 	 */
 	public byte getShadowGap2() {
 		return shadowGap2;
 	}
 
 	/**
-	 * ±×¸²ÀÚ °£°İ2¸¦ ¼³Á¤ÇÑ´Ù.
+	 * ê·¸ë¦¼ì ê°„ê²©2ë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param shadowGap2
-	 *            ±×¸²ÀÚ °£°İ2
+	 *            ê·¸ë¦¼ì ê°„ê²©2
 	 */
 	public void setShadowGap2(byte shadowGap2) {
 		this.shadowGap2 = shadowGap2;
 	}
 
 	/**
-	 * ±ÛÀÚ »ö °´Ã¼¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ê¸€ì ìƒ‰ ê°ì²´ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ±ÛÀÚ »ö °´Ã¼
+	 * @return ê¸€ì ìƒ‰ ê°ì²´
 	 */
 	public Color4Byte getCharColor() {
 		return charColor;
 	}
 
 	/**
-	 * ¹ØÁÙ »ö °´Ã¼¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ë°‘ì¤„ ìƒ‰ ê°ì²´ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ¹ØÁÙ »ö °´Ã¼
+	 * @return ë°‘ì¤„ ìƒ‰ ê°ì²´
 	 */
 	public Color4Byte getUnderLineColor() {
 		return underLineColor;
 	}
 
 	/**
-	 * À½¿µ »ö °´Ã¼¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ìŒì˜ ìƒ‰ ê°ì²´ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return À½¿µ »ö °´Ã¼
+	 * @return ìŒì˜ ìƒ‰ ê°ì²´
 	 */
 	public Color4Byte getShadeColor() {
 		return shadeColor;
 	}
 
 	/**
-	 * ±×¸²ÀÚ »ö °´Ã¼¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ê·¸ë¦¼ì ìƒ‰ ê°ì²´ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ±×¸²ÀÚ »ö °´Ã¼
+	 * @return ê·¸ë¦¼ì ìƒ‰ ê°ì²´
 	 */
 	public Color4Byte getShadowColor() {
 		return shadowColor;
 	}
 
 	/**
-	 * ÂüÁ¶µÈ Å×µÎ¸®/¹è°æ ÀÇ id¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ì°¸ì¡°ëœ í…Œë‘ë¦¬/ë°°ê²½ ì˜ idë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ÂüÁ¶µÈ Å×µÎ¸®/¹è°æ ÀÇ id
+	 * @return ì°¸ì¡°ëœ í…Œë‘ë¦¬/ë°°ê²½ ì˜ id
 	 */
 	public int getBorderFillId() {
 		return borderFillId;
 	}
 
 	/**
-	 * ÂüÁ¶µÈ Å×µÎ¸®/¹è°æ ÀÇ id¸¦ ¼³Á¤ÇÑ´Ù.
+	 * ì°¸ì¡°ëœ í…Œë‘ë¦¬/ë°°ê²½ ì˜ idë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param borderFillId
-	 *            ÂüÁ¶µÈ Å×µÎ¸®/¹è°æ ÀÇ id
+	 *            ì°¸ì¡°ëœ í…Œë‘ë¦¬/ë°°ê²½ ì˜ id
 	 */
 	public void setBorderFillId(int borderFillId) {
 		this.borderFillId = borderFillId;
 	}
 
 	/**
-	 * Ãë¼Ò¼± »ö °´Ã¼¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ì·¨ì†Œì„  ìƒ‰ ê°ì²´ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return Ãë¼Ò¼± »ö °´Ã¼ (5.0.3.0 ÀÌ»ó)
+	 * @return ì·¨ì†Œì„  ìƒ‰ ê°ì²´ (5.0.3.0 ì´ìƒ)
 	 */
 	public Color4Byte getStrikeLineColor() {
 		return strikeLineColor;

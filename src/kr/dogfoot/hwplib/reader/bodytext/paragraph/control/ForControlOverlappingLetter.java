@@ -1,4 +1,4 @@
-package kr.dogfoot.hwplib.reader.bodytext.paragraph.control;
+ï»¿package kr.dogfoot.hwplib.reader.bodytext.paragraph.control;
 
 import java.io.IOException;
 
@@ -7,18 +7,18 @@ import kr.dogfoot.hwplib.object.bodytext.control.ctrlheader.CtrlHeaderOverlappin
 import kr.dogfoot.hwplib.util.compoundFile.StreamReader;
 
 /**
- * ±ÛÀÚ °ãÄ§ ÄÁÆ®·ÑÀ» ÀĞ±â À§ÇÑ °´Ã¼
+ * ê¸€ì ê²¹ì¹¨ ì»¨íŠ¸ë¡¤ì„ ì½ê¸° ìœ„í•œ ê°ì²´
  * 
  * @author neolord
  */
 public class ForControlOverlappingLetter {
 	/**
-	 * ±ÛÀÚ °ãÄ§ ÄÁÆ®·ÑÀ» ÀĞ´Â´Ù.
+	 * ê¸€ì ê²¹ì¹¨ ì»¨íŠ¸ë¡¤ì„ ì½ëŠ”ë‹¤.
 	 * 
 	 * @param tcps
-	 *            ±ÛÀÚ °ãÄ§ ÄÁÆ®·Ñ
+	 *            ê¸€ì ê²¹ì¹¨ ì»¨íŠ¸ë¡¤
 	 * @param sr
-	 *            ½ºÆ®¸² ¸®´õ
+	 *            ìŠ¤íŠ¸ë¦¼ ë¦¬ë”
 	 * @throws IOException
 	 */
 	public static void read(ControlOverlappingLetter tcps, StreamReader sr)
@@ -27,12 +27,12 @@ public class ForControlOverlappingLetter {
 	}
 
 	/**
-	 * ±ÛÀÚ °ãÄ§ ÄÁÆ®·ÑÀÇ ÄÁÆ®·Ñ Çì´õ ·¹ÄÚµåÀ» ÀĞ´Â´Ù.
+	 * ê¸€ì ê²¹ì¹¨ ì»¨íŠ¸ë¡¤ì˜ ì»¨íŠ¸ë¡¤ í—¤ë” ë ˆì½”ë“œì„ ì½ëŠ”ë‹¤.
 	 * 
 	 * @param header
-	 *            ±ÛÀÚ °ãÄ§ ÄÁÆ®·ÑÀÇ ÄÁÆ®·Ñ Çì´õ ·¹ÄÚµå
+	 *            ê¸€ì ê²¹ì¹¨ ì»¨íŠ¸ë¡¤ì˜ ì»¨íŠ¸ë¡¤ í—¤ë” ë ˆì½”ë“œ
 	 * @param sr
-	 *            ½ºÆ®¸² ¸®´õ
+	 *            ìŠ¤íŠ¸ë¦¼ ë¦¬ë”
 	 * @throws IOException
 	 */
 	private static void ctrlHeader(CtrlHeaderOverlappingLetter header,
@@ -47,12 +47,12 @@ public class ForControlOverlappingLetter {
 	}
 
 	/**
-	 * °ãÄ§ ±ÛÀÚ ºÎºĞÀ» ÀĞ´Â´Ù.
+	 * ê²¹ì¹¨ ê¸€ì ë¶€ë¶„ì„ ì½ëŠ”ë‹¤.
 	 * 
 	 * @param header
-	 *            ±ÛÀÚ °ãÄ§ ÄÁÆ®·ÑÀÇ ÄÁÆ®·Ñ Çì´õ ·¹ÄÚµå
+	 *            ê¸€ì ê²¹ì¹¨ ì»¨íŠ¸ë¡¤ì˜ ì»¨íŠ¸ë¡¤ í—¤ë” ë ˆì½”ë“œ
 	 * @param sr
-	 *            ½ºÆ®¸² ¸®´õ
+	 *            ìŠ¤íŠ¸ë¦¼ ë¦¬ë”
 	 * @throws IOException
 	 */
 	private static void overlappingLetters(CtrlHeaderOverlappingLetter header,
@@ -65,12 +65,12 @@ public class ForControlOverlappingLetter {
 	}
 
 	/**
-	 * ±ÛÀÚ ¸ğ¾ç ºÎºĞÀ» ÀĞ´Â´Ù.
+	 * ê¸€ì ëª¨ì–‘ ë¶€ë¶„ì„ ì½ëŠ”ë‹¤.
 	 * 
 	 * @param header
-	 *            ±ÛÀÚ °ãÄ§ ÄÁÆ®·ÑÀÇ ÄÁÆ®·Ñ Çì´õ ·¹ÄÚµå
+	 *            ê¸€ì ê²¹ì¹¨ ì»¨íŠ¸ë¡¤ì˜ ì»¨íŠ¸ë¡¤ í—¤ë” ë ˆì½”ë“œ
 	 * @param sr
-	 *            ½ºÆ®¸² ¸®´õ
+	 *            ìŠ¤íŠ¸ë¦¼ ë¦¬ë”
 	 * @throws IOException
 	 */
 	private static void charShapeIds(CtrlHeaderOverlappingLetter header,

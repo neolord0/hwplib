@@ -1,4 +1,4 @@
-package kr.dogfoot.hwplib.object.docinfo;
+ï»¿package kr.dogfoot.hwplib.object.docinfo;
 
 import java.util.ArrayList;
 
@@ -6,22 +6,22 @@ import kr.dogfoot.hwplib.object.docinfo.tabdef.TabDefProperty;
 import kr.dogfoot.hwplib.object.docinfo.tabdef.TabInfo;
 
 /**
- * ÅÇ Á¤ÀÇ¿¡ ´ëÇÑ  ·¹ÄÚµå
+ * íƒ­ ì •ì˜ì— ëŒ€í•œ  ë ˆì½”ë“œ
  * 
  * @author neolord
  */
 public class TabDef {
 	/**
-	 * ¼Ó¼º
+	 * ì†ì„±
 	 */
 	private TabDefProperty property;
 	/**
-	 * ÅÇ Á¤º¸ ¸®½ºÆ®
+	 * íƒ­ ì •ë³´ ë¦¬ìŠ¤íŠ¸
 	 */
 	private ArrayList<TabInfo> tabInfoList;
 
 	/**
-	 * »ı¼ºÀÚ
+	 * ìƒì„±ì
 	 */
 	public TabDef() {
 		property = new TabDefProperty();
@@ -29,18 +29,18 @@ public class TabDef {
 	}
 
 	/**
-	 * ÅÇ Á¤ÀÇÀÇ ¼Ó¼º °´Ã¼¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * íƒ­ ì •ì˜ì˜ ì†ì„± ê°ì²´ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ÅÇ Á¤ÀÇÀÇ ¼Ó¼º °´Ã¼
+	 * @return íƒ­ ì •ì˜ì˜ ì†ì„± ê°ì²´
 	 */
 	public TabDefProperty getProperty() {
 		return property;
 	}
 
 	/**
-	 * »õ·Î¿î ÅÇ Á¤º¸¸¦ »ı¼ºÇÏ°í ¸®½ºÆ®¿¡ Ãß°¡ÇÑ´Ù.
+	 * ìƒˆë¡œìš´ íƒ­ ì •ë³´ë¥¼ ìƒì„±í•˜ê³  ë¦¬ìŠ¤íŠ¸ì— ì¶”ê°€í•œë‹¤.
 	 * 
-	 * @return ¼¼·Î »ı¼ºµÈ ÅÇ Á¤º¸
+	 * @return ì„¸ë¡œ ìƒì„±ëœ íƒ­ ì •ë³´
 	 */
 	public TabInfo addNewTabInfo() {
 		TabInfo ti = new TabInfo();
@@ -49,9 +49,9 @@ public class TabDef {
 	}
 
 	/**
-	 * ÅÇ Á¤º¸ ¸®½ºÆ®¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * íƒ­ ì •ë³´ ë¦¬ìŠ¤íŠ¸ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ÅÇ Á¤º¸ ¸®½ºÆ®
+	 * @return íƒ­ ì •ë³´ ë¦¬ìŠ¤íŠ¸
 	 */
 	public ArrayList<TabInfo> getTabInfoList() {
 		return tabInfoList;

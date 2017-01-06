@@ -1,76 +1,76 @@
-package kr.dogfoot.hwplib.object.bodytext.control.ctrlheader.field;
+ï»¿package kr.dogfoot.hwplib.object.bodytext.control.ctrlheader.field;
 
 import kr.dogfoot.hwplib.util.binary.BitFlag;
 
 /**
- * ÇÊµå ÄÁÆ®·ÑÀÇ ¼Ó¼ºÀ» ³ªÅ¸³»´Â °´Ã¼
+ * í•„ë“œ ì»¨íŠ¸ë¡¤ì˜ ì†ì„±ì„ ë‚˜íƒ€ë‚´ëŠ” ê°ì²´
  * 
  * @author neolord
  */
 public class FieldHeaderProperty {
 	/**
-	 * ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª(unsigned 4 byte)
+	 * íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’(unsigned 4 byte)
 	 */
 	private long value;
 
 	/**
-	 * »ı¼ºÀÚ
+	 * ìƒì„±ì
 	 */
 	public FieldHeaderProperty() {
 	}
 
 	/**
-	 * ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ªÀ» ¹İ·×ÇÑ´Ù.
+	 * íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’ì„ ë°˜ë¡¼í•œë‹¤.
 	 * 
-	 * @return ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª
+	 * @return íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’
 	 */
 	public long getValue() {
 		return value;
 	}
 
 	/**
-	 * ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ªÀ» ¼³Á¤ÇÑ´Ù.
+	 * íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’ì„ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param value
-	 *            ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª
+	 *            íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’
 	 */
 	public void setValue(long value) {
 		this.value = value;
 	}
 
 	/**
-	 * ÀĞ±â Àü¿ë »óÅÂ¿¡¼­µµ ¼öÁ¤ °¡´ÉÇÑÁö ¿©ºÎÀ» ¹İÈ¯ÇÑ´Ù. (0 bit)
+	 * ì½ê¸° ì „ìš© ìƒíƒœì—ì„œë„ ìˆ˜ì • ê°€ëŠ¥í•œì§€ ì—¬ë¶€ì„ ë°˜í™˜í•œë‹¤. (0 bit)
 	 * 
-	 * @return ÀĞ±â Àü¿ë »óÅÂ¿¡¼­µµ ¼öÁ¤ °¡´ÉÇÑÁö ¿©ºÎ
+	 * @return ì½ê¸° ì „ìš© ìƒíƒœì—ì„œë„ ìˆ˜ì • ê°€ëŠ¥í•œì§€ ì—¬ë¶€
 	 */
 	public boolean canModifyInReadOnlyState() {
 		return BitFlag.get(value, 0);
 	}
 
 	/**
-	 * ÀĞ±â Àü¿ë »óÅÂ¿¡¼­µµ ¼öÁ¤ °¡´ÉÇÑÁö ¿©ºÎ¸¦ ¼³Á¤ÇÑ´Ù. (0 bit)
+	 * ì½ê¸° ì „ìš© ìƒíƒœì—ì„œë„ ìˆ˜ì • ê°€ëŠ¥í•œì§€ ì—¬ë¶€ë¥¼ ì„¤ì •í•œë‹¤. (0 bit)
 	 * 
 	 * @param canModifyInReadOnlyState
-	 *            ÀĞ±â Àü¿ë »óÅÂ¿¡¼­µµ ¼öÁ¤ °¡´ÉÇÑÁö ¿©ºÎ
+	 *            ì½ê¸° ì „ìš© ìƒíƒœì—ì„œë„ ìˆ˜ì • ê°€ëŠ¥í•œì§€ ì—¬ë¶€
 	 */
 	public void setCanModifyInReadOnlyState(boolean canModifyInReadOnlyState) {
 		value = BitFlag.set(value, 0, canModifyInReadOnlyState);
 	}
 
 	/**
-	 * ¿­¾îº¸Áö ¾ÊÀº ÇÏÀÌÆÛ¸µÅ© ÇÊµå ¾÷µ¥ÀÌÆ® ½Ã ±ÛÀÚ ¼Ó¼º ¾÷µ¥ÀÌÆ® ¿©ºÎ¸¦ ¹İÈ¯ÇÑ´Ù. (11 bit)
+	 * ì—´ì–´ë³´ì§€ ì•Šì€ í•˜ì´í¼ë§í¬ í•„ë“œ ì—…ë°ì´íŠ¸ ì‹œ ê¸€ì ì†ì„± ì—…ë°ì´íŠ¸ ì—¬ë¶€ë¥¼ ë°˜í™˜í•œë‹¤. (11 bit)
 	 * 
-	 * @return ¿­¾îº¸Áö ¾ÊÀº ÇÏÀÌÆÛ¸µÅ© ÇÊµå ¾÷µ¥ÀÌÆ® ½Ã ±ÛÀÚ ¼Ó¼º ¾÷µ¥ÀÌÆ® ¿©ºÎ
+	 * @return ì—´ì–´ë³´ì§€ ì•Šì€ í•˜ì´í¼ë§í¬ í•„ë“œ ì—…ë°ì´íŠ¸ ì‹œ ê¸€ì ì†ì„± ì—…ë°ì´íŠ¸ ì—¬ë¶€
 	 */
 	public boolean isUpdateTextPropertyAtUpdatingHyperlinkNotOpened() {
 		return BitFlag.get(value, 11);
 	}
 
 	/**
-	 * ¿­¾îº¸Áö ¾ÊÀº ÇÏÀÌÆÛ¸µÅ© ÇÊµå ¾÷µ¥ÀÌÆ® ½Ã ±ÛÀÚ ¼Ó¼º ¾÷µ¥ÀÌÆ® ¿©ºÎ¸¦ ¼³Á¤ÇÑ´Ù. (11 bit)
+	 * ì—´ì–´ë³´ì§€ ì•Šì€ í•˜ì´í¼ë§í¬ í•„ë“œ ì—…ë°ì´íŠ¸ ì‹œ ê¸€ì ì†ì„± ì—…ë°ì´íŠ¸ ì—¬ë¶€ë¥¼ ì„¤ì •í•œë‹¤. (11 bit)
 	 * 
 	 * @param updateTextPropertyAtUpdatingHyperlinkNotOpened
-	 *            ¿­¾îº¸Áö ¾ÊÀº ÇÏÀÌÆÛ¸µÅ© ÇÊµå ¾÷µ¥ÀÌÆ® ½Ã ±ÛÀÚ ¼Ó¼º ¾÷µ¥ÀÌÆ® ¿©ºÎ
+	 *            ì—´ì–´ë³´ì§€ ì•Šì€ í•˜ì´í¼ë§í¬ í•„ë“œ ì—…ë°ì´íŠ¸ ì‹œ ê¸€ì ì†ì„± ì—…ë°ì´íŠ¸ ì—¬ë¶€
 	 */
 	public void setUpdateTextPropertyAtUpdatingHyperlinkNotOpened(
 			boolean updateTextPropertyAtUpdatingHyperlinkNotOpened) {
@@ -79,19 +79,19 @@ public class FieldHeaderProperty {
 	}
 
 	/**
-	 * ¿­¾îº» ÇÏÀÌÆÛ¸µÅ© ÇÊµå ¾÷µ¥ÀÌÆ® ½Ã ±ÛÀÚ ¼Ó¼º ¾÷µ¥ÀÌÆ® ¿©ºÎ¸¦ ¹İÈ¯ÇÑ´Ù. (12 bit)
+	 * ì—´ì–´ë³¸ í•˜ì´í¼ë§í¬ í•„ë“œ ì—…ë°ì´íŠ¸ ì‹œ ê¸€ì ì†ì„± ì—…ë°ì´íŠ¸ ì—¬ë¶€ë¥¼ ë°˜í™˜í•œë‹¤. (12 bit)
 	 * 
-	 * @return ¿­¾îº» ÇÏÀÌÆÛ¸µÅ© ÇÊµå ¾÷µ¥ÀÌÆ® ½Ã ±ÛÀÚ ¼Ó¼º ¾÷µ¥ÀÌÆ® ¿©ºÎ
+	 * @return ì—´ì–´ë³¸ í•˜ì´í¼ë§í¬ í•„ë“œ ì—…ë°ì´íŠ¸ ì‹œ ê¸€ì ì†ì„± ì—…ë°ì´íŠ¸ ì—¬ë¶€
 	 */
 	public boolean isUpdateTextPropertyAtUpdatingHyperlinkOpened() {
 		return BitFlag.get(value, 12);
 	}
 
 	/**
-	 * ¿­¾îº» ÇÏÀÌÆÛ¸µÅ© ÇÊµå ¾÷µ¥ÀÌÆ® ½Ã ±ÛÀÚ ¼Ó¼º ¾÷µ¥ÀÌÆ® ¿©ºÎ¸¦ ¼³Á¤ÇÑ´Ù. (12 bit)
+	 * ì—´ì–´ë³¸ í•˜ì´í¼ë§í¬ í•„ë“œ ì—…ë°ì´íŠ¸ ì‹œ ê¸€ì ì†ì„± ì—…ë°ì´íŠ¸ ì—¬ë¶€ë¥¼ ì„¤ì •í•œë‹¤. (12 bit)
 	 * 
 	 * @param updateTextPropertyAtUpdatingHyperlinkOpened
-	 *            ¿­¾îº» ÇÏÀÌÆÛ¸µÅ© ÇÊµå ¾÷µ¥ÀÌÆ® ½Ã ±ÛÀÚ ¼Ó¼º ¾÷µ¥ÀÌÆ® ¿©ºÎ
+	 *            ì—´ì–´ë³¸ í•˜ì´í¼ë§í¬ í•„ë“œ ì—…ë°ì´íŠ¸ ì‹œ ê¸€ì ì†ì„± ì—…ë°ì´íŠ¸ ì—¬ë¶€
 	 */
 	public void setUpdateTextPropertyAtUpdatingHyperlinkOpened(
 			boolean updateTextPropertyAtUpdatingHyperlinkOpened) {
@@ -100,16 +100,16 @@ public class FieldHeaderProperty {
 	}
 
 	/**
-	 * »ı¼ºµÈ ÇÏÀÌÆÛ¸µÅ© ÇÊµå ¾÷µ¥ÀÌÆ® ½Ã ±ÛÀÚ ¼Ó¼º ¾÷µ¥ÀÌÆ® ¿©ºÎ¸¦ ¹İÈ¯ÇÑ´Ù. (13 bit)
+	 * ìƒì„±ëœ í•˜ì´í¼ë§í¬ í•„ë“œ ì—…ë°ì´íŠ¸ ì‹œ ê¸€ì ì†ì„± ì—…ë°ì´íŠ¸ ì—¬ë¶€ë¥¼ ë°˜í™˜í•œë‹¤. (13 bit)
 	 * 
-	 * @return »ı¼ºµÈ ÇÏÀÌÆÛ¸µÅ© ÇÊµå ¾÷µ¥ÀÌÆ® ½Ã ±ÛÀÚ ¼Ó¼º ¾÷µ¥ÀÌÆ® ¿©ºÎ
+	 * @return ìƒì„±ëœ í•˜ì´í¼ë§í¬ í•„ë“œ ì—…ë°ì´íŠ¸ ì‹œ ê¸€ì ì†ì„± ì—…ë°ì´íŠ¸ ì—¬ë¶€
 	 */
 	public boolean isUpdateTextPropertyAtUpdatingHyperlinkCreating() {
 		return BitFlag.get(value, 13);
 	}
 
 	/**
-	 * »ı¼ºµÈ ÇÏÀÌÆÛ¸µÅ© ÇÊµå ¾÷µ¥ÀÌÆ® ½Ã ±ÛÀÚ ¼Ó¼º ¾÷µ¥ÀÌÆ® ¿©ºÎ¸¦ ¼³Á¤ÇÑ´Ù. (13 bit)
+	 * ìƒì„±ëœ í•˜ì´í¼ë§í¬ í•„ë“œ ì—…ë°ì´íŠ¸ ì‹œ ê¸€ì ì†ì„± ì—…ë°ì´íŠ¸ ì—¬ë¶€ë¥¼ ì„¤ì •í•œë‹¤. (13 bit)
 	 * 
 	 * @param updateTextPropertyAtUpdatingHyperlinkCreating
 	 */
@@ -120,19 +120,19 @@ public class FieldHeaderProperty {
 	}
 
 	/**
-	 * ÇÊµå ³»¿ëÀÌ ¼öÁ¤µÇ¾ú´ÂÁö ¿©ºÎ¸¦ ¹İÈ¯ÇÑ´Ù. (15 bit)
+	 * í•„ë“œ ë‚´ìš©ì´ ìˆ˜ì •ë˜ì—ˆëŠ”ì§€ ì—¬ë¶€ë¥¼ ë°˜í™˜í•œë‹¤. (15 bit)
 	 * 
-	 * @return ÇÊµå ³»¿ëÀÌ ¼öÁ¤µÇ¾ú´ÂÁö ¿©ºÎ
+	 * @return í•„ë“œ ë‚´ìš©ì´ ìˆ˜ì •ë˜ì—ˆëŠ”ì§€ ì—¬ë¶€
 	 */
 	public boolean isModifiedContent() {
 		return BitFlag.get(value, 15);
 	}
 
 	/**
-	 * ÇÊµå ³»¿ëÀÌ ¼öÁ¤µÇ¾ú´ÂÁö ¿©ºÎ¸¦ ¼³Á¤ÇÑ´Ù. (15 bit)
+	 * í•„ë“œ ë‚´ìš©ì´ ìˆ˜ì •ë˜ì—ˆëŠ”ì§€ ì—¬ë¶€ë¥¼ ì„¤ì •í•œë‹¤. (15 bit)
 	 * 
 	 * @param modifiedContent
-	 *            ÇÊµå ³»¿ëÀÌ ¼öÁ¤µÇ¾ú´ÂÁö ¿©ºÎ
+	 *            í•„ë“œ ë‚´ìš©ì´ ìˆ˜ì •ë˜ì—ˆëŠ”ì§€ ì—¬ë¶€
 	 */
 	public void setModifiedContent(boolean modifiedContent) {
 		value = BitFlag.set(value, 15, modifiedContent);

@@ -1,26 +1,26 @@
-package kr.dogfoot.hwplib.object.bodytext.control;
+ï»¿package kr.dogfoot.hwplib.object.bodytext.control;
 
 import kr.dogfoot.hwplib.object.bodytext.control.ctrlheader.CtrlHeader;
 import kr.dogfoot.hwplib.object.bodytext.control.hiddencomment.ListHeaderForHiddenComment;
 import kr.dogfoot.hwplib.object.bodytext.paragraph.ParagraphList;
 
 /**
- * ¼ûÀº ¼³¸í ÄÁÆ®·Ñ
+ * ìˆ¨ì€ ì„¤ëª… ì»¨íŠ¸ë¡¤
  * 
  * @author neolord
  */
 public class ControlHiddenComment extends Control {
 	/**
-	 * ¼ûÀº ¼³¸í ¿ë ¸®½ºÆ® Çì´õ
+	 * ìˆ¨ì€ ì„¤ëª… ìš© ë¦¬ìŠ¤íŠ¸ í—¤ë”
 	 */
 	private ListHeaderForHiddenComment listHeader;
 	/**
-	 * ¹®´Ü ¸®½ºÆ®
+	 * ë¬¸ë‹¨ ë¦¬ìŠ¤íŠ¸
 	 */
 	private ParagraphList paragraphList;
 
 	/**
-	 * »ı¼ºÀÚ
+	 * ìƒì„±ì
 	 */
 	public ControlHiddenComment() {
 		super(new CtrlHeader(ControlType.HiddenComment.getCtrlId()));
@@ -30,27 +30,27 @@ public class ControlHiddenComment extends Control {
 	}
 
 	/**
-	 * ÄÁÆ®·Ñ Çì´õ¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ì»¨íŠ¸ë¡¤ í—¤ë”ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ÄÁÆ®·Ñ Çì´õ
+	 * @return ì»¨íŠ¸ë¡¤ í—¤ë”
 	 */
 	public CtrlHeader getHeader() {
 		return header;
 	}
 
 	/**
-	 * ¼ûÀº ¼³¸í ¿ë ¸®½ºÆ® Çì´õ¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ìˆ¨ì€ ì„¤ëª… ìš© ë¦¬ìŠ¤íŠ¸ í—¤ë”ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ¼ûÀº ¼³¸í ¿ë ¸®½ºÆ® Çì´õ
+	 * @return ìˆ¨ì€ ì„¤ëª… ìš© ë¦¬ìŠ¤íŠ¸ í—¤ë”
 	 */
 	public ListHeaderForHiddenComment getListHeader() {
 		return listHeader;
 	}
 
 	/**
-	 * ¹®´Ü ¸®½ºÆ®¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ë¬¸ë‹¨ ë¦¬ìŠ¤íŠ¸ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ¹®´Ü ¸®½ºÆ®
+	 * @return ë¬¸ë‹¨ ë¦¬ìŠ¤íŠ¸
 	 */
 	public ParagraphList getParagraphList() {
 		return paragraphList;

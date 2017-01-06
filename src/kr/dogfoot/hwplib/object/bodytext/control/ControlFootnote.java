@@ -1,26 +1,26 @@
-package kr.dogfoot.hwplib.object.bodytext.control;
+ï»¿package kr.dogfoot.hwplib.object.bodytext.control;
 
 import kr.dogfoot.hwplib.object.bodytext.control.ctrlheader.CtrlHeaderFootnote;
 import kr.dogfoot.hwplib.object.bodytext.control.footnoteendnote.ListHeaderForFootnodeEndnote;
 import kr.dogfoot.hwplib.object.bodytext.paragraph.ParagraphList;
 
 /**
- * °¢ÁÖ(FootNote) ÄÁÆ®·Ñ
+ * ê°ì£¼(FootNote) ì»¨íŠ¸ë¡¤
  * 
  * @author neolord
  */
 public class ControlFootnote extends Control {
 	/**
-	 * °¢ÁÖ/¹ÌÁÖ¿ë ¸®½ºÆ® Çì´õ
+	 * ê°ì£¼/ë¯¸ì£¼ìš© ë¦¬ìŠ¤íŠ¸ í—¤ë”
 	 */
 	private ListHeaderForFootnodeEndnote listHeader;
 	/**
-	 * ¹®´Ü ¸®½ºÆ®
+	 * ë¬¸ë‹¨ ë¦¬ìŠ¤íŠ¸
 	 */
 	private ParagraphList paragraphList;
 
 	/**
-	 * »ı¼ºÀÚ
+	 * ìƒì„±ì
 	 */
 	public ControlFootnote() {
 		super(new CtrlHeaderFootnote());
@@ -30,27 +30,27 @@ public class ControlFootnote extends Control {
 	}
 
 	/**
-	 * °¢ÁÖ¿ë ÄÁÆ®·Ñ Çì´õ¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ê°ì£¼ìš© ì»¨íŠ¸ë¡¤ í—¤ë”ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return °¢ÁÖ¿ë ÄÁÆ®·Ñ Çì´õ
+	 * @return ê°ì£¼ìš© ì»¨íŠ¸ë¡¤ í—¤ë”
 	 */
 	public CtrlHeaderFootnote getHeader() {
 		return (CtrlHeaderFootnote) header;
 	}
 
 	/**
-	 * °¢ÁÖ/¹ÌÁÖ¿ë ¸®½ºÆ® Çì´õ¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ê°ì£¼/ë¯¸ì£¼ìš© ë¦¬ìŠ¤íŠ¸ í—¤ë”ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return °¢ÁÖ/¹ÌÁÖ¿ë ¸®½ºÆ® Çì´õ
+	 * @return ê°ì£¼/ë¯¸ì£¼ìš© ë¦¬ìŠ¤íŠ¸ í—¤ë”
 	 */
 	public ListHeaderForFootnodeEndnote getListHeader() {
 		return listHeader;
 	}
 
 	/**
-	 * ¹®´Ü ¸®½ºÆ®¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ë¬¸ë‹¨ ë¦¬ìŠ¤íŠ¸ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ¹®´Ü ¸®½ºÆ®
+	 * @return ë¬¸ë‹¨ ë¦¬ìŠ¤íŠ¸
 	 */
 	public ParagraphList getParagraphList() {
 		return paragraphList;

@@ -1,37 +1,37 @@
-package kr.dogfoot.hwplib.object.bodytext.control.ctrlheader;
+ï»¿package kr.dogfoot.hwplib.object.bodytext.control.ctrlheader;
 
 import kr.dogfoot.hwplib.object.bodytext.control.ControlType;
 import kr.dogfoot.hwplib.object.bodytext.control.ctrlheader.autonumber.AutoNumberHeaderProperty;
 
 /**
- * ÀÚµ¿¹øÈ£ ÄÁÆ®·ÑÀ» À§ÇÑ ÄÁÆ®·Ñ Çì´õ ·¹ÄÚµå
+ * ìë™ë²ˆí˜¸ ì»¨íŠ¸ë¡¤ì„ ìœ„í•œ ì»¨íŠ¸ë¡¤ í—¤ë” ë ˆì½”ë“œ
  * 
  * @author neolord
  */
 public class CtrlHeaderAutoNumber extends CtrlHeader {
 	/**
-	 * ¼Ó¼º
+	 * ì†ì„±
 	 */
 	private AutoNumberHeaderProperty property;
 	/**
-	 * ¹øÈ£
+	 * ë²ˆí˜¸
 	 */
 	private int number;
 	/**
-	 * »ç¿ëÀÚ ±âÈ£
+	 * ì‚¬ìš©ì ê¸°í˜¸
 	 */
 	private String userSymbol;
 	/**
-	 * ¾Õ Àå½Ä ¹®ÀÚ
+	 * ì• ì¥ì‹ ë¬¸ì
 	 */
 	private String beforeDecorationLetter;
 	/**
-	 * µÚ Àå½Ä ¹®ÀÚ
+	 * ë’¤ ì¥ì‹ ë¬¸ì
 	 */
 	private String afterDecorationLetter;
 
 	/**
-	 * »ı¼ºÀÚ
+	 * ìƒì„±ì
 	 */
 	public CtrlHeaderAutoNumber() {
 		super(ControlType.AutoNumber.getCtrlId());
@@ -40,85 +40,85 @@ public class CtrlHeaderAutoNumber extends CtrlHeader {
 	}
 
 	/**
-	 * ÀÚµ¿¹øÈ£ ÄÁÆ®·ÑÀÇ ¼Ó¼º °´Ã¼¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ìë™ë²ˆí˜¸ ì»¨íŠ¸ë¡¤ì˜ ì†ì„± ê°ì²´ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ÀÚµ¿¹øÈ£ ÄÁÆ®·ÑÀÇ ¼Ó¼º °´Ã¼
+	 * @return ìë™ë²ˆí˜¸ ì»¨íŠ¸ë¡¤ì˜ ì†ì„± ê°ì²´
 	 */
 	public AutoNumberHeaderProperty getProperty() {
 		return property;
 	}
 
 	/**
-	 * ¹øÈ£¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ë²ˆí˜¸ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ¹øÈ£
+	 * @return ë²ˆí˜¸
 	 */
 	public int getNumber() {
 		return number;
 	}
 
 	/**
-	 * ¹øÈ£¸¦ ¼³Á¤ÇÑ´Ù.
+	 * ë²ˆí˜¸ë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param number
-	 *            ¹øÈ£
+	 *            ë²ˆí˜¸
 	 */
 	public void setNumber(int number) {
 		this.number = number;
 	}
 
 	/**
-	 * »ç¿ëÀÚ ±âÈ£¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ì‚¬ìš©ì ê¸°í˜¸ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return »ç¿ëÀÚ ±âÈ£
+	 * @return ì‚¬ìš©ì ê¸°í˜¸
 	 */
 	public String getUserSymbol() {
 		return userSymbol;
 	}
 
 	/**
-	 * »ç¿ëÀÚ ±âÈ£¸¦ ¼³Á¤ÇÑ´Ù.
+	 * ì‚¬ìš©ì ê¸°í˜¸ë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param userSymbol
-	 *            »ç¿ëÀÚ ±âÈ£
+	 *            ì‚¬ìš©ì ê¸°í˜¸
 	 */
 	public void setUserSymbol(String userSymbol) {
 		this.userSymbol = userSymbol;
 	}
 
 	/**
-	 * ¾Õ Àå½Ä ¹®ÀÚ¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ì• ì¥ì‹ ë¬¸ìë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ¾Õ Àå½Ä ¹®ÀÚ
+	 * @return ì• ì¥ì‹ ë¬¸ì
 	 */
 	public String getBeforeDecorationLetter() {
 		return beforeDecorationLetter;
 	}
 
 	/**
-	 * ¾Õ Àå½Ä ¹®ÀÚ¸¦ ¼³Á¤ÇÑ´Ù.
+	 * ì• ì¥ì‹ ë¬¸ìë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param beforeDecorationLetter
-	 *            ¾Õ Àå½Ä ¹®ÀÚ
+	 *            ì• ì¥ì‹ ë¬¸ì
 	 */
 	public void setBeforeDecorationLetter(String beforeDecorationLetter) {
 		this.beforeDecorationLetter = beforeDecorationLetter;
 	}
 
 	/**
-	 * µÚ Àå½Ä ¹®ÀÚ¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ë’¤ ì¥ì‹ ë¬¸ìë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return µÚ Àå½Ä ¹®ÀÚ
+	 * @return ë’¤ ì¥ì‹ ë¬¸ì
 	 */
 	public String getAfterDecorationLetter() {
 		return afterDecorationLetter;
 	}
 
 	/**
-	 * µÚ Àå½Ä ¹®ÀÚ¸¦ ¼³Á¤ÇÑ´Ù.
+	 * ë’¤ ì¥ì‹ ë¬¸ìë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param afterDecorationLetter
-	 *            µÚ Àå½Ä ¹®ÀÚ
+	 *            ë’¤ ì¥ì‹ ë¬¸ì
 	 */
 	public void setAfterDecorationLetter(String afterDecorationLetter) {
 		this.afterDecorationLetter = afterDecorationLetter;

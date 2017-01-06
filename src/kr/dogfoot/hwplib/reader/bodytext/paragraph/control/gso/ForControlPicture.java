@@ -1,4 +1,4 @@
-package kr.dogfoot.hwplib.reader.bodytext.paragraph.control.gso;
+ï»¿package kr.dogfoot.hwplib.reader.bodytext.paragraph.control.gso;
 
 import java.io.IOException;
 
@@ -12,18 +12,18 @@ import kr.dogfoot.hwplib.reader.docinfo.borderfill.ForFillInfo;
 import kr.dogfoot.hwplib.util.compoundFile.StreamReader;
 
 /**
- * ±×¸² ÄÁÆ®·ÑÀ» ÀĞ±â À§ÇÑ °´Ã¼
+ * ê·¸ë¦¼ ì»¨íŠ¸ë¡¤ì„ ì½ê¸° ìœ„í•œ ê°ì²´
  * 
  * @author neolord
  */
 public class ForControlPicture {
 	/**
-	 * ±×¸² ÄÁÆ®·ÑÀ» ÀĞ´Â´Ù.
+	 * ê·¸ë¦¼ ì»¨íŠ¸ë¡¤ì„ ì½ëŠ”ë‹¤.
 	 * 
 	 * @param picture
-	 *            ±×¸² ÄÁÆ®·Ñ
+	 *            ê·¸ë¦¼ ì»¨íŠ¸ë¡¤
 	 * @param sr
-	 *            ½ºÆ®¸² ¸®´õ
+	 *            ìŠ¤íŠ¸ë¦¼ ë¦¬ë”
 	 * @throws Exception
 	 */
 	public static void read(ControlPicture picture, StreamReader sr)
@@ -35,12 +35,12 @@ public class ForControlPicture {
 	}
 
 	/**
-	 * ±×¸² °³Ã¼ ¼Ó¼º ·¹ÄÚµå¸¦ ÀĞ´Â´Ù.
+	 * ê·¸ë¦¼ ê°œì²´ ì†ì„± ë ˆì½”ë“œë¥¼ ì½ëŠ”ë‹¤.
 	 * 
 	 * @param scp
-	 *            ±×¸² °³Ã¼ ¼Ó¼º ·¹ÄÚµå
+	 *            ê·¸ë¦¼ ê°œì²´ ì†ì„± ë ˆì½”ë“œ
 	 * @param sr
-	 *            ½ºÆ®¸² ¸®´õ
+	 *            ìŠ¤íŠ¸ë¦¼ ë¦¬ë”
 	 * @throws Exception
 	 */
 	private static void shapeComponentPicture(ShapeComponentPicture scp,
@@ -74,12 +74,12 @@ public class ForControlPicture {
 	}
 
 	/**
-	 * ±×¸² °³Ã¼ ¼Ó¼º ·¹ÄÚµåÀÇ ³»ºÎ ¿©¹é ºÎºĞÀ» ÀĞ´Â´Ù.
+	 * ê·¸ë¦¼ ê°œì²´ ì†ì„± ë ˆì½”ë“œì˜ ë‚´ë¶€ ì—¬ë°± ë¶€ë¶„ì„ ì½ëŠ”ë‹¤.
 	 * 
 	 * @param im
-	 *            ³»ºÎ ¿©¹éÀ» ³ªÅ¸³»´Â °´Ã¼
+	 *            ë‚´ë¶€ ì—¬ë°±ì„ ë‚˜íƒ€ë‚´ëŠ” ê°ì²´
 	 * @param sr
-	 *            ½ºÆ®¸² ¸®´õ
+	 *            ìŠ¤íŠ¸ë¦¼ ë¦¬ë”
 	 * @throws IOException
 	 */
 	private static void innerMargin(InnerMargin im, StreamReader sr)

@@ -1,30 +1,30 @@
-package kr.dogfoot.hwplib.object.docinfo;
+ï»¿package kr.dogfoot.hwplib.object.docinfo;
 
 import java.util.ArrayList;
 
 import kr.dogfoot.hwplib.object.docinfo.numbering.LevelNumbering;
 
 /**
- * ¹®´Ü ¹øÈ£  ·¹ÄÚµå
+ * ë¬¸ë‹¨ ë²ˆí˜¸  ë ˆì½”ë“œ
  * 
  * @author neolord
  */
 public class Numbering {
 	/**
-	 * ¼öÁØ(1¢¦7)¿¡ ÇØ´çÇÏ´Â ¹®´Ü ¹øÈ£ Á¤º¸ °´Ã¼ÀÇ ¸®½ºÆ®
+	 * ìˆ˜ì¤€(1ï½7)ì— í•´ë‹¹í•˜ëŠ” ë¬¸ë‹¨ ë²ˆí˜¸ ì •ë³´ ê°ì²´ì˜ ë¦¬ìŠ¤íŠ¸
 	 */
 	private ArrayList<LevelNumbering> levelNumberingList;
 	/**
-	 * ½ÃÀÛ ¹øÈ£
+	 * ì‹œì‘ ë²ˆí˜¸
 	 */
 	private int startNumber;
 	/**
-	 * ¼öÁØº° ½ÃÀÛ¹øÈ£ (5.0.2.5 ÀÌ»ó)
+	 * ìˆ˜ì¤€ë³„ ì‹œì‘ë²ˆí˜¸ (5.0.2.5 ì´ìƒ)
 	 */
 	private long[] startNumbersForLevel;
 
 	/**
-	 * »ı¼ºÀÚ
+	 * ìƒì„±ì
 	 */
 	public Numbering() {
 		createLevelNumberings();
@@ -32,7 +32,7 @@ public class Numbering {
 	}
 
 	/**
-	 * ¼öÁØ(1¢¦7)¿¡ ÇØ´çÇÏ´Â ¹®´Ü ¹øÈ£ Á¤º¸ °´Ã¼¸¦ »ı¼ºÇÑ´Ù.
+	 * ìˆ˜ì¤€(1ï½7)ì— í•´ë‹¹í•˜ëŠ” ë¬¸ë‹¨ ë²ˆí˜¸ ì •ë³´ ê°ì²´ë¥¼ ìƒì„±í•œë‹¤.
 	 */
 	private void createLevelNumberings() {
 		levelNumberingList = new ArrayList<LevelNumbering>();
@@ -43,13 +43,13 @@ public class Numbering {
 	}
 
 	/**
-	 * level¿¡ ÇØ´çÇÏ´Â ¹®´Ü ¹øÈ£ Á¤º¸ °´Ã¼¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * levelì— í•´ë‹¹í•˜ëŠ” ë¬¸ë‹¨ ë²ˆí˜¸ ì •ë³´ ê°ì²´ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
 	 * @param level
-	 *            ¹®´Ü ¹øÈ£ Á¤º¸ °´Ã¼¸¦ ¾ò°íÀÚ ÇÏ´Â ¼öÁØ(1~7)
-	 * @return level¿¡ ÇØ´çÇÏ´Â ¹®´Ü ¹øÈ£ Á¤º¸ °´Ã¼
+	 *            ë¬¸ë‹¨ ë²ˆí˜¸ ì •ë³´ ê°ì²´ë¥¼ ì–»ê³ ì í•˜ëŠ” ìˆ˜ì¤€(1~7)
+	 * @return levelì— í•´ë‹¹í•˜ëŠ” ë¬¸ë‹¨ ë²ˆí˜¸ ì •ë³´ ê°ì²´
 	 * @throws Exception
-	 *             (level <1 || level>7) ÀÏ¶¼ ¹ß»øÇÑ´Ù.
+	 *             (level <1 || level>7) ì¼ë–¼ ë°œìƒí•œë‹¤.
 	 */
 	public LevelNumbering getLevelNumbering(int level) throws Exception {
 		if (level >= 1 && level <= 7) {
@@ -60,31 +60,31 @@ public class Numbering {
 	}
 
 	/**
-	 * ½ÃÀÛ ¹øÈ£¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ì‹œì‘ ë²ˆí˜¸ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ½ÃÀÛ ¹øÈ£
+	 * @return ì‹œì‘ ë²ˆí˜¸
 	 */
 	public int getStartNumber() {
 		return startNumber;
 	}
 
 	/**
-	 * ½ÃÀÛ ¹øÈ£¸¦ ¼³Á¤ÇÑ´Ù.
+	 * ì‹œì‘ ë²ˆí˜¸ë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
-	 * @param startNumber ½ÃÀÛ ¹øÈ£
+	 * @param startNumber ì‹œì‘ ë²ˆí˜¸
 	 */
 	public void setStartNumber(int startNumber) {
 		this.startNumber = startNumber;
 	}
 
 	/**
-	 * ¼öÁØº° ½ÃÀÛ¹øÈ£¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ìˆ˜ì¤€ë³„ ì‹œì‘ë²ˆí˜¸ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
 	 * @param level
-	 *            ½ÃÀÛ¹øÈ£¸¦ ¾ò°íÀÚ ÇÏ´Â ¼öÁØ
-	 * @return ½ÃÀÛ¹øÈ£
+	 *            ì‹œì‘ë²ˆí˜¸ë¥¼ ì–»ê³ ì í•˜ëŠ” ìˆ˜ì¤€
+	 * @return ì‹œì‘ë²ˆí˜¸
 	 * @throws Exception
-	 *             (level <1 || level>7) ÀÏ¶¼ ¹ß»øÇÑ´Ù.
+	 *             (level <1 || level>7) ì¼ë–¼ ë°œìƒí•œë‹¤.
 	 */
 	public long getStartNumberForLevel(int level) throws Exception {
 		if (level >= 1 && level <= 7) {
@@ -95,14 +95,14 @@ public class Numbering {
 	}
 
 	/**
-	 * ¼öÁØº° ½ÃÀÛ¹øÈ£¸¦ ¼³Á¤ÇÑÇÑ´Ù.
+	 * ìˆ˜ì¤€ë³„ ì‹œì‘ë²ˆí˜¸ë¥¼ ì„¤ì •í•œí•œë‹¤.
 	 * 
 	 * @param startNumber
-	 *            ¼öÁØÀÇ ½ÃÀÛ¹øÈ£
+	 *            ìˆ˜ì¤€ì˜ ì‹œì‘ë²ˆí˜¸
 	 * @param level
-	 *            ½ÃÀÛ¹øÈ£¸¦ ¼³Á¤ÇÏ°íÀÚ ÇÏ´Â ¼öÁØ
+	 *            ì‹œì‘ë²ˆí˜¸ë¥¼ ì„¤ì •í•˜ê³ ì í•˜ëŠ” ìˆ˜ì¤€
 	 * @throws Exception
-	 *             (level <1 || level>7) ÀÏ¶¼ ¹ß»øÇÑ´Ù.
+	 *             (level <1 || level>7) ì¼ë–¼ ë°œìƒí•œë‹¤.
 	 */
 	public void setStartNumberForLevel(long startNumber, int level)
 			throws Exception {

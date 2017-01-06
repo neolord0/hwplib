@@ -1,15 +1,15 @@
-package kr.dogfoot.hwplib.object.docinfo;
+ï»¿package kr.dogfoot.hwplib.object.docinfo;
 
 import kr.dogfoot.hwplib.object.docinfo.compatibledocument.CompatibleDocumentSort;
 
 /**
- * È£È¯ ¹®¼­¿¡ ´ëÇÑ ·¹ÄÚµå
+ * í˜¸í™˜ ë¬¸ì„œì— ëŒ€í•œ ë ˆì½”ë“œ
  * 
  * @author neolord
  */
 public class CompatibleDocument {
 	/**
-	 * ´ë»ó ÇÁ·Î±×·¥ÀÇ Á¾·ù
+	 * ëŒ€ìƒ í”„ë¡œê·¸ë¨ì˜ ì¢…ë¥˜
 	 */
 	private CompatibleDocumentSort targetProgream;
 
@@ -17,19 +17,19 @@ public class CompatibleDocument {
 	}
 
 	/**
-	 * ´ë»ó ÇÁ·Î±×·¥ÀÇ Á¾·ù¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ëŒ€ìƒ í”„ë¡œê·¸ë¨ì˜ ì¢…ë¥˜ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ´ë»ó ÇÁ·Î±×·¥ÀÇ Á¾·ù
+	 * @return ëŒ€ìƒ í”„ë¡œê·¸ë¨ì˜ ì¢…ë¥˜
 	 */
 	public CompatibleDocumentSort getTargetProgream() {
 		return targetProgream;
 	}
 
 	/**
-	 * ´ë»ó ÇÁ·Î±×·¥ÀÇ Á¾·ù¸¦ ¼³Á¤ÇÑ´Ù.
+	 * ëŒ€ìƒ í”„ë¡œê·¸ë¨ì˜ ì¢…ë¥˜ë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param targetProgream
-	 *            ´ë»ó ÇÁ·Î±×·¥ÀÇ Á¾·ù
+	 *            ëŒ€ìƒ í”„ë¡œê·¸ë¨ì˜ ì¢…ë¥˜
 	 */
 	public void setTargetProgream(CompatibleDocumentSort targetProgream) {
 		this.targetProgream = targetProgream;

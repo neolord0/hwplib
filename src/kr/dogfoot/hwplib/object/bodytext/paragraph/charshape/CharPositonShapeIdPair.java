@@ -1,27 +1,27 @@
-package kr.dogfoot.hwplib.object.bodytext.paragraph.charshape;
+ï»¿package kr.dogfoot.hwplib.object.bodytext.paragraph.charshape;
 
 /**
- * ±ÛÀÚ À§Ä¡¿Í ±ÛÀÚ ¸ğ¾çÀÇ ½Ö
+ * ê¸€ì ìœ„ì¹˜ì™€ ê¸€ì ëª¨ì–‘ì˜ ìŒ
  * 
  * @author neolord
  */
 public class CharPositonShapeIdPair {
 	/**
-	 * ±ÛÀÚ ¸ğ¾çÀÌ ¹Ù²î´Â ½ÃÀÛ À§Ä¡
+	 * ê¸€ì ëª¨ì–‘ì´ ë°”ë€ŒëŠ” ì‹œì‘ ìœ„ì¹˜
 	 */
 	private long positon;
 	/**
-	 * ±ÛÀÚ ¸ğ¾ç ID
+	 * ê¸€ì ëª¨ì–‘ ID
 	 */
 	private long shapeId;
 
 	/**
-	 * »ı¼ºÀÚ
+	 * ìƒì„±ì
 	 * 
 	 * @param position
-	 *            ±ÛÀÚ ¸ğ¾çÀÌ ¹Ù²î´Â ½ÃÀÛ À§Ä¡
+	 *            ê¸€ì ëª¨ì–‘ì´ ë°”ë€ŒëŠ” ì‹œì‘ ìœ„ì¹˜
 	 * @param shapeId
-	 *            ±ÛÀÚ ¸ğ¾ç ID
+	 *            ê¸€ì ëª¨ì–‘ ID
 	 */
 	public CharPositonShapeIdPair(long position, long shapeId) {
 		this.positon = position;
@@ -29,38 +29,38 @@ public class CharPositonShapeIdPair {
 	}
 
 	/**
-	 * ±ÛÀÚ ¸ğ¾çÀÌ ¹Ù²î´Â ½ÃÀÛ À§Ä¡¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ê¸€ì ëª¨ì–‘ì´ ë°”ë€ŒëŠ” ì‹œì‘ ìœ„ì¹˜ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ±ÛÀÚ ¸ğ¾çÀÌ ¹Ù²î´Â ½ÃÀÛ À§Ä¡
+	 * @return ê¸€ì ëª¨ì–‘ì´ ë°”ë€ŒëŠ” ì‹œì‘ ìœ„ì¹˜
 	 */
 	public long getPositon() {
 		return positon;
 	}
 
 	/**
-	 * ±ÛÀÚ ¸ğ¾çÀÌ ¹Ù²î´Â ½ÃÀÛ À§Ä¡¸¦ ¼³Á¤ÇÑ´Ù.
+	 * ê¸€ì ëª¨ì–‘ì´ ë°”ë€ŒëŠ” ì‹œì‘ ìœ„ì¹˜ë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param positon
-	 *            ±ÛÀÚ ¸ğ¾çÀÌ ¹Ù²î´Â ½ÃÀÛ À§Ä¡
+	 *            ê¸€ì ëª¨ì–‘ì´ ë°”ë€ŒëŠ” ì‹œì‘ ìœ„ì¹˜
 	 */
 	public void setPositon(long positon) {
 		this.positon = positon;
 	}
 
 	/**
-	 * ÂüÁ¶µÈ ±ÛÀÚ ¸ğ¾ç ID¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ì°¸ì¡°ëœ ê¸€ì ëª¨ì–‘ IDë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ÂüÁ¶µÈ ±ÛÀÚ ¸ğ¾ç ID
+	 * @return ì°¸ì¡°ëœ ê¸€ì ëª¨ì–‘ ID
 	 */
 	public long getShapeId() {
 		return shapeId;
 	}
 
 	/**
-	 * ÂüÁ¶µÈ ±ÛÀÚ ¸ğ¾ç ID¸¦ ¼³Á¤ÇÑ´Ù.
+	 * ì°¸ì¡°ëœ ê¸€ì ëª¨ì–‘ IDë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param shapeId
-	 *            ÂüÁ¶µÈ ±ÛÀÚ ¸ğ¾ç ID
+	 *            ì°¸ì¡°ëœ ê¸€ì ëª¨ì–‘ ID
 	 */
 	public void setShapeId(long shapeId) {
 		this.shapeId = shapeId;

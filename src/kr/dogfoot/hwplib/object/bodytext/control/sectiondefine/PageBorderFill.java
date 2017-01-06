@@ -1,142 +1,142 @@
-package kr.dogfoot.hwplib.object.bodytext.control.sectiondefine;
+ï»¿package kr.dogfoot.hwplib.object.bodytext.control.sectiondefine;
 
 /**
- * ÂÊ Å×µÎ¸®/¹è°æ Á¤º¸¿¡ ´ëÇÑ ·¹ÄÚµå
+ * ìª½ í…Œë‘ë¦¬/ë°°ê²½ ì •ë³´ì— ëŒ€í•œ ë ˆì½”ë“œ
  * 
  * @author neolord
  */
 public class PageBorderFill {
 	/**
-	 * ¼Ó¼º
+	 * ì†ì„±
 	 */
 	private PageBorderFillProperty property;
 	/**
-	 * Å×µÎ¸®/¹è°æ À§Ä¡ ¿ŞÂÊ °£°İ
+	 * í…Œë‘ë¦¬/ë°°ê²½ ìœ„ì¹˜ ì™¼ìª½ ê°„ê²©
 	 */
 	private int leftGap;
 	/**
-	 * Å×µÎ¸®/¹è°æ À§Ä¡ ¿À¸¥ÂÊ °£°İ
+	 * í…Œë‘ë¦¬/ë°°ê²½ ìœ„ì¹˜ ì˜¤ë¥¸ìª½ ê°„ê²©
 	 */
 	private int rightGap;
 	/**
-	 * Å×µÎ¸®/¹è°æ À§Ä¡ À§ÂÊ °£°İ
+	 * í…Œë‘ë¦¬/ë°°ê²½ ìœ„ì¹˜ ìœ„ìª½ ê°„ê²©
 	 */
 	private int topGap;
 	/**
-	 * Å×µÎ¸®/¹è°æ À§Ä¡ ¾Æ·¡ÂÊ °£°İ
+	 * í…Œë‘ë¦¬/ë°°ê²½ ìœ„ì¹˜ ì•„ë˜ìª½ ê°„ê²©
 	 */
 	private int bottomGap;
 	/**
-	 * ÂüÁ¶µÈ Å×µÎ¸®/¹è°æÀÇ id
+	 * ì°¸ì¡°ëœ í…Œë‘ë¦¬/ë°°ê²½ì˜ id
 	 */
 	private int borderFillId;
 
 	/**
-	 * »ı¼ºÀÚ
+	 * ìƒì„±ì
 	 */
 	public PageBorderFill() {
 		property = new PageBorderFillProperty();
 	}
 
 	/**
-	 * ¼Ó¼º °´Ã¼¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ì†ì„± ê°ì²´ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ¼Ó¼º °´Ã¼
+	 * @return ì†ì„± ê°ì²´
 	 */
 	public PageBorderFillProperty getProperty() {
 		return property;
 	}
 
 	/**
-	 * Å×µÎ¸®/¹è°æ À§Ä¡ ¿ŞÂÊ °£°İÀ» ¹İÈ¯ÇÑ´Ù.
+	 * í…Œë‘ë¦¬/ë°°ê²½ ìœ„ì¹˜ ì™¼ìª½ ê°„ê²©ì„ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return Å×µÎ¸®/¹è°æ À§Ä¡ ¿ŞÂÊ °£°İ
+	 * @return í…Œë‘ë¦¬/ë°°ê²½ ìœ„ì¹˜ ì™¼ìª½ ê°„ê²©
 	 */
 	public int getLeftGap() {
 		return leftGap;
 	}
 
 	/**
-	 * Å×µÎ¸®/¹è°æ À§Ä¡ ¿ŞÂÊ °£°İÀ» ¼³Á¤ÇÑ´Ù.
+	 * í…Œë‘ë¦¬/ë°°ê²½ ìœ„ì¹˜ ì™¼ìª½ ê°„ê²©ì„ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param leftGap
-	 *            Å×µÎ¸®/¹è°æ À§Ä¡ ¿ŞÂÊ °£°İ
+	 *            í…Œë‘ë¦¬/ë°°ê²½ ìœ„ì¹˜ ì™¼ìª½ ê°„ê²©
 	 */
 	public void setLeftGap(int leftGap) {
 		this.leftGap = leftGap;
 	}
 
 	/**
-	 * Å×µÎ¸®/¹è°æ À§Ä¡ ¿À¸¥ÂÊ °£°İÀ» ¹İÈ¯ÇÑ´Ù.
+	 * í…Œë‘ë¦¬/ë°°ê²½ ìœ„ì¹˜ ì˜¤ë¥¸ìª½ ê°„ê²©ì„ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return Å×µÎ¸®/¹è°æ À§Ä¡ ¿À¸¥ÂÊ °£°İ
+	 * @return í…Œë‘ë¦¬/ë°°ê²½ ìœ„ì¹˜ ì˜¤ë¥¸ìª½ ê°„ê²©
 	 */
 	public int getRightGap() {
 		return rightGap;
 	}
 
 	/**
-	 * Å×µÎ¸®/¹è°æ À§Ä¡ ¿À¸¥ÂÊ °£°İÀ» ¼³Á¤ÇÑ´Ù.
+	 * í…Œë‘ë¦¬/ë°°ê²½ ìœ„ì¹˜ ì˜¤ë¥¸ìª½ ê°„ê²©ì„ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param rightGap
-	 *            Å×µÎ¸®/¹è°æ À§Ä¡ ¿À¸¥ÂÊ °£°İ
+	 *            í…Œë‘ë¦¬/ë°°ê²½ ìœ„ì¹˜ ì˜¤ë¥¸ìª½ ê°„ê²©
 	 */
 	public void setRightGap(int rightGap) {
 		this.rightGap = rightGap;
 	}
 
 	/**
-	 * Å×µÎ¸®/¹è°æ À§Ä¡ À§ÂÊ °£°İÀ» ¹İÈ¯ÇÑ´Ù.
+	 * í…Œë‘ë¦¬/ë°°ê²½ ìœ„ì¹˜ ìœ„ìª½ ê°„ê²©ì„ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return Å×µÎ¸®/¹è°æ À§Ä¡ À§ÂÊ °£°İ
+	 * @return í…Œë‘ë¦¬/ë°°ê²½ ìœ„ì¹˜ ìœ„ìª½ ê°„ê²©
 	 */
 	public int getTopGap() {
 		return topGap;
 	}
 
 	/**
-	 * Å×µÎ¸®/¹è°æ À§Ä¡ À§ÂÊ °£°İÀ» ¼³Á¤ÇÑ´Ù.
+	 * í…Œë‘ë¦¬/ë°°ê²½ ìœ„ì¹˜ ìœ„ìª½ ê°„ê²©ì„ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param topGap
-	 *            Å×µÎ¸®/¹è°æ À§Ä¡ À§ÂÊ °£°İ
+	 *            í…Œë‘ë¦¬/ë°°ê²½ ìœ„ì¹˜ ìœ„ìª½ ê°„ê²©
 	 */
 	public void setTopGap(int topGap) {
 		this.topGap = topGap;
 	}
 
 	/**
-	 * Å×µÎ¸®/¹è°æ À§Ä¡ ¾Æ·¡ÂÊ °£°İÀ» ¹İÈ¯ÇÑ´Ù.
+	 * í…Œë‘ë¦¬/ë°°ê²½ ìœ„ì¹˜ ì•„ë˜ìª½ ê°„ê²©ì„ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return Å×µÎ¸®/¹è°æ À§Ä¡ ¾Æ·¡ÂÊ °£°İ
+	 * @return í…Œë‘ë¦¬/ë°°ê²½ ìœ„ì¹˜ ì•„ë˜ìª½ ê°„ê²©
 	 */
 	public int getBottomGap() {
 		return bottomGap;
 	}
 
 	/**
-	 * Å×µÎ¸®/¹è°æ À§Ä¡ ¾Æ·¡ÂÊ °£°İÀ» ¼³Á¤ÇÑ´Ù.
+	 * í…Œë‘ë¦¬/ë°°ê²½ ìœ„ì¹˜ ì•„ë˜ìª½ ê°„ê²©ì„ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param bottomGap
-	 *            Å×µÎ¸®/¹è°æ À§Ä¡ ¾Æ·¡ÂÊ °£°İ
+	 *            í…Œë‘ë¦¬/ë°°ê²½ ìœ„ì¹˜ ì•„ë˜ìª½ ê°„ê²©
 	 */
 	public void setBottomGap(int bottomGap) {
 		this.bottomGap = bottomGap;
 	}
 
 	/**
-	 * ÂüÁ¶µÈ Å×µÎ¸®/¹è°æÀÇ id¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ì°¸ì¡°ëœ í…Œë‘ë¦¬/ë°°ê²½ì˜ idë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ÂüÁ¶µÈ Å×µÎ¸®/¹è°æÀÇ id
+	 * @return ì°¸ì¡°ëœ í…Œë‘ë¦¬/ë°°ê²½ì˜ id
 	 */
 	public int getBorderFillId() {
 		return borderFillId;
 	}
 
 	/**
-	 * ÂüÁ¶µÈ Å×µÎ¸®/¹è°æÀÇ id¸¦ ¼³Á¤ÇÑ´Ù.
+	 * ì°¸ì¡°ëœ í…Œë‘ë¦¬/ë°°ê²½ì˜ idë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param borderFillId
-	 *            ÂüÁ¶µÈ Å×µÎ¸®/¹è°æÀÇ id
+	 *            ì°¸ì¡°ëœ í…Œë‘ë¦¬/ë°°ê²½ì˜ id
 	 */
 	public void setBorderFillId(int borderFillId) {
 		this.borderFillId = borderFillId;

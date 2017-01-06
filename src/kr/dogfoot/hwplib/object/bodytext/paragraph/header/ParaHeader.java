@@ -1,17 +1,17 @@
-package kr.dogfoot.hwplib.object.bodytext.paragraph.header;
+ï»¿package kr.dogfoot.hwplib.object.bodytext.paragraph.header;
 
 /**
- * ¹®´Ü Çì´õ ·¹ÄÚµå
+ * ë¬¸ë‹¨ í—¤ë” ë ˆì½”ë“œ
  * 
  * @author neolord
  */
 public class ParaHeader {
 	/**
-	 * ¹®´Ü ¸®½ºÆ®¿¡¼­ ÀÌ ¹®´ÜÀÌ ¸¶Áö¸· ¹®´ÜÀÎÁö ¿©ºÎ
+	 * ë¬¸ë‹¨ ë¦¬ìŠ¤íŠ¸ì—ì„œ ì´ ë¬¸ë‹¨ì´ ë§ˆì§€ë§‰ ë¬¸ë‹¨ì¸ì§€ ì—¬ë¶€
 	 */
 	private boolean lastInList;
 	/**
-	 * ÅØ½ºÆ®°¡ °¡Áö°í ÀÖ´Â ¹®ÀÚÀÇ °´¼ö
+	 * í…ìŠ¤íŠ¸ê°€ ê°€ì§€ê³  ìˆëŠ” ë¬¸ìì˜ ê°ìˆ˜
 	 */
 	private long characterCount;
 	/**
@@ -19,40 +19,40 @@ public class ParaHeader {
 	 */
 	private ControlMask controlMask;
 	/**
-	 * ÂüÁ¶µÈ ¹®´Ü ¸ğ¾ç id
+	 * ì°¸ì¡°ëœ ë¬¸ë‹¨ ëª¨ì–‘ id
 	 */
 	private int paraShapeId;
 	/**
-	 * ÂüÁ¶µÈ ½ºÅ¸ÀÏ id
+	 * ì°¸ì¡°ëœ ìŠ¤íƒ€ì¼ id
 	 */
 	private short styleId;
 	/**
-	 * ´Ü ³ª´©±â Á¾·ù
+	 * ë‹¨ ë‚˜ëˆ„ê¸° ì¢…ë¥˜
 	 */
 	private DivideSort divideSort;
 	/**
-	 * ±ÛÀÚ ¸ğ¾ç Á¤º¸ÀÇ °³¼ö. ParaCharShape¿¡ ±ÛÀÚ À§Ä¡-±ÛÀÚ ¸ğ¾ç ½ÖÀÇ °³¼ö
+	 * ê¸€ì ëª¨ì–‘ ì •ë³´ì˜ ê°œìˆ˜. ParaCharShapeì— ê¸€ì ìœ„ì¹˜-ê¸€ì ëª¨ì–‘ ìŒì˜ ê°œìˆ˜
 	 */
 	private int charShapeCount;
 	/**
-	 * range tag Á¤º¸ÀÇ °³¼ö. ParaRangeTagÀÇ ¿µ¿ª ÅÂ±×ÀÇ °³¼ö
+	 * range tag ì •ë³´ì˜ ê°œìˆ˜. ParaRangeTagì˜ ì˜ì—­ íƒœê·¸ì˜ ê°œìˆ˜
 	 */
 	private int rangeTagCount;
 	/**
-	 * °¢ ÁÙ¿¡ ´ëÇÑ align¿¡ ´ëÇÑ Á¤º¸ÀÇ °³¼ö. ParaLineSegÀÇ Á¤º¸ÀÇ °´¼ö
+	 * ê° ì¤„ì— ëŒ€í•œ alignì— ëŒ€í•œ ì •ë³´ì˜ ê°œìˆ˜. ParaLineSegì˜ ì •ë³´ì˜ ê°ìˆ˜
 	 */
 	private int lineAlignCount;
 	/**
-	 * ¹®´Ü Instance ID (unique ID)
+	 * ë¬¸ë‹¨ Instance ID (unique ID)
 	 */
 	private long instanceID;
 	/**
-	 * º¯°æÃßÀû º´ÇÕ ¹®´Ü¿©ºÎ. (5.0.3.2 ¹öÀü ÀÌ»ó)
+	 * ë³€ê²½ì¶”ì  ë³‘í•© ë¬¸ë‹¨ì—¬ë¶€. (5.0.3.2 ë²„ì „ ì´ìƒ)
 	 */
 	private int isMergedByTrack;
 
 	/**
-	 * »ı¼ºÀÚ
+	 * ìƒì„±ì
 	 */
 	public ParaHeader() {
 		controlMask = new ControlMask();
@@ -60,189 +60,189 @@ public class ParaHeader {
 	}
 
 	/**
-	 * ¹®´Ü ¸®½ºÆ®¿¡¼­ ÀÌ ¹®´ÜÀÌ ¸¶Áö¸· ¹®´ÜÀÎÁö ¿©ºÎ¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ë¬¸ë‹¨ ë¦¬ìŠ¤íŠ¸ì—ì„œ ì´ ë¬¸ë‹¨ì´ ë§ˆì§€ë§‰ ë¬¸ë‹¨ì¸ì§€ ì—¬ë¶€ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ¹®´Ü ¸®½ºÆ®¿¡¼­ ÀÌ ¹®´ÜÀÌ ¸¶Áö¸· ¹®´ÜÀÎÁö ¿©ºÎ
+	 * @return ë¬¸ë‹¨ ë¦¬ìŠ¤íŠ¸ì—ì„œ ì´ ë¬¸ë‹¨ì´ ë§ˆì§€ë§‰ ë¬¸ë‹¨ì¸ì§€ ì—¬ë¶€
 	 */
 	public boolean isLastInList() {
 		return lastInList;
 	}
 
 	/**
-	 * ¹®´Ü ¸®½ºÆ®¿¡¼­ ÀÌ ¹®´ÜÀÌ ¸¶Áö¸· ¹®´ÜÀÎÁö ¿©ºÎ¸¦ ¼³Á¤ÇÑ´Ù.
+	 * ë¬¸ë‹¨ ë¦¬ìŠ¤íŠ¸ì—ì„œ ì´ ë¬¸ë‹¨ì´ ë§ˆì§€ë§‰ ë¬¸ë‹¨ì¸ì§€ ì—¬ë¶€ë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param lastInList
-	 *            ¹®´Ü ¸®½ºÆ®¿¡¼­ ÀÌ ¹®´ÜÀÌ ¸¶Áö¸· ¹®´ÜÀÎÁö ¿©ºÎ
+	 *            ë¬¸ë‹¨ ë¦¬ìŠ¤íŠ¸ì—ì„œ ì´ ë¬¸ë‹¨ì´ ë§ˆì§€ë§‰ ë¬¸ë‹¨ì¸ì§€ ì—¬ë¶€
 	 */
 	public void setLastInList(boolean lastInList) {
 		this.lastInList = lastInList;
 	}
 
 	/**
-	 * ÅØ½ºÆ®°¡ °¡Áö°í ÀÖ´Â ¹®ÀÚÀÇ °´¼ö¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * í…ìŠ¤íŠ¸ê°€ ê°€ì§€ê³  ìˆëŠ” ë¬¸ìì˜ ê°ìˆ˜ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ÅØ½ºÆ®°¡ °¡Áö°í ÀÖ´Â ¹®ÀÚÀÇ °´¼ö
+	 * @return í…ìŠ¤íŠ¸ê°€ ê°€ì§€ê³  ìˆëŠ” ë¬¸ìì˜ ê°ìˆ˜
 	 */
 	public long getCharacterCount() {
 		return characterCount;
 	}
 
 	/**
-	 * ÅØ½ºÆ®°¡ °¡Áö°í ÀÖ´Â ¹®ÀÚÀÇ °´¼ö¸¦ ¼³Á¤ÇÑ´Ù.
+	 * í…ìŠ¤íŠ¸ê°€ ê°€ì§€ê³  ìˆëŠ” ë¬¸ìì˜ ê°ìˆ˜ë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param characterCount
-	 *            ÅØ½ºÆ®°¡ °¡Áö°í ÀÖ´Â ¹®ÀÚÀÇ °´¼ö
+	 *            í…ìŠ¤íŠ¸ê°€ ê°€ì§€ê³  ìˆëŠ” ë¬¸ìì˜ ê°ìˆ˜
 	 */
 	public void setCharacterCount(long characterCount) {
 		this.characterCount = characterCount;
 	}
 
 	/**
-	 * control mask °´Ã¼¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * control mask ê°ì²´ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return control mask °´Ã¼
+	 * @return control mask ê°ì²´
 	 */
 	public ControlMask getControlMask() {
 		return controlMask;
 	}
 
 	/**
-	 * ÂüÁ¶µÈ ¹®´Ü ¸ğ¾ç °´Ã¼ÀÇ id¸­ ¹İÈ¯ÇÑ´Ù.
+	 * ì°¸ì¡°ëœ ë¬¸ë‹¨ ëª¨ì–‘ ê°ì²´ì˜ idë¦ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ÂüÁ¶µÈ ¹®´Ü ¸ğ¾ç °´Ã¼ÀÇ id
+	 * @return ì°¸ì¡°ëœ ë¬¸ë‹¨ ëª¨ì–‘ ê°ì²´ì˜ id
 	 */
 	public int getParaShapeId() {
 		return paraShapeId;
 	}
 
 	/**
-	 * ÂüÁ¶µÈ ¹®´Ü ¸ğ¾ç °´Ã¼ÀÇ id¸¦ ¼³Á¤ÇÑ´Ù.
+	 * ì°¸ì¡°ëœ ë¬¸ë‹¨ ëª¨ì–‘ ê°ì²´ì˜ idë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param paraShapeId
-	 *            ÂüÁ¶µÈ ¹®´Ü ¸ğ¾ç °´Ã¼ÀÇ id
+	 *            ì°¸ì¡°ëœ ë¬¸ë‹¨ ëª¨ì–‘ ê°ì²´ì˜ id
 	 */
 	public void setParaShapeId(int paraShapeId) {
 		this.paraShapeId = paraShapeId;
 	}
 
 	/**
-	 * ÂüÁ¶µÈ ½ºÅ¸ÀÏ °´Ã¼ÀÇ Id¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ì°¸ì¡°ëœ ìŠ¤íƒ€ì¼ ê°ì²´ì˜ Idë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ÂüÁ¶µÈ ½ºÅ¸ÀÏ °´Ã¼ÀÇ Id
+	 * @return ì°¸ì¡°ëœ ìŠ¤íƒ€ì¼ ê°ì²´ì˜ Id
 	 */
 	public short getStyleId() {
 		return styleId;
 	}
 
 	/**
-	 * ÂüÁ¶µÈ ½ºÅ¸ÀÏ °´Ã¼ÀÇ Id¸¦ ¼³Á¤ÇÑ´Ù.
+	 * ì°¸ì¡°ëœ ìŠ¤íƒ€ì¼ ê°ì²´ì˜ Idë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param styleId
-	 *            ÂüÁ¶µÈ ½ºÅ¸ÀÏ °´Ã¼ÀÇ Id
+	 *            ì°¸ì¡°ëœ ìŠ¤íƒ€ì¼ ê°ì²´ì˜ Id
 	 */
 	public void setStyleId(short styleId) {
 		this.styleId = styleId;
 	}
 
 	/**
-	 * ´Ü ³ª´©±â Á¾·ù °´Ã¼¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ë‹¨ ë‚˜ëˆ„ê¸° ì¢…ë¥˜ ê°ì²´ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ´Ü ³ª´©±â Á¾·ù °´Ã¼
+	 * @return ë‹¨ ë‚˜ëˆ„ê¸° ì¢…ë¥˜ ê°ì²´
 	 */
 	public DivideSort getDivideSort() {
 		return divideSort;
 	}
 
 	/**
-	 * ±ÛÀÚ ¸ğ¾ç Á¤º¸ÀÇ °³¼ö¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ê¸€ì ëª¨ì–‘ ì •ë³´ì˜ ê°œìˆ˜ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ±ÛÀÚ ¸ğ¾ç Á¤º¸ÀÇ °³¼ö
+	 * @return ê¸€ì ëª¨ì–‘ ì •ë³´ì˜ ê°œìˆ˜
 	 */
 	public int getCharShapeCount() {
 		return charShapeCount;
 	}
 
 	/**
-	 * ±ÛÀÚ ¸ğ¾ç Á¤º¸ÀÇ °³¼ö¸¦ ¼³Á¤ÇÑ´Ù.
+	 * ê¸€ì ëª¨ì–‘ ì •ë³´ì˜ ê°œìˆ˜ë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param charShapeCount
-	 *            ±ÛÀÚ ¸ğ¾ç Á¤º¸ÀÇ °³¼ö
+	 *            ê¸€ì ëª¨ì–‘ ì •ë³´ì˜ ê°œìˆ˜
 	 */
 	public void setCharShapeCount(int charShapeCount) {
 		this.charShapeCount = charShapeCount;
 	}
 
 	/**
-	 * range tag Á¤º¸ÀÇ °³¼ö¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * range tag ì •ë³´ì˜ ê°œìˆ˜ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return range tag Á¤º¸ÀÇ °³¼ö
+	 * @return range tag ì •ë³´ì˜ ê°œìˆ˜
 	 */
 	public int getRangeTagCount() {
 		return rangeTagCount;
 	}
 
 	/**
-	 * range tag Á¤º¸ÀÇ °³¼ö¸¦ ¼³Á¤ÇÑ´Ù.
+	 * range tag ì •ë³´ì˜ ê°œìˆ˜ë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param rangeTagCount
-	 *            range tag Á¤º¸ÀÇ °³¼ö
+	 *            range tag ì •ë³´ì˜ ê°œìˆ˜
 	 */
 	public void setRangeTagCount(int rangeTagCount) {
 		this.rangeTagCount = rangeTagCount;
 	}
 
 	/**
-	 * °¢ ÁÙ¿¡ ´ëÇÑ align¿¡ ´ëÇÑ Á¤º¸ÀÇ °³¼ö¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ê° ì¤„ì— ëŒ€í•œ alignì— ëŒ€í•œ ì •ë³´ì˜ ê°œìˆ˜ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return °¢ ÁÙ¿¡ ´ëÇÑ align¿¡ ´ëÇÑ Á¤º¸ÀÇ °³¼ö
+	 * @return ê° ì¤„ì— ëŒ€í•œ alignì— ëŒ€í•œ ì •ë³´ì˜ ê°œìˆ˜
 	 */
 	public int getLineAlignCount() {
 		return lineAlignCount;
 	}
 
 	/**
-	 * °¢ ÁÙ¿¡ ´ëÇÑ align¿¡ ´ëÇÑ Á¤º¸ÀÇ °³¼ö¸¦ ¼³Á¤ÇÑ´Ù.
+	 * ê° ì¤„ì— ëŒ€í•œ alignì— ëŒ€í•œ ì •ë³´ì˜ ê°œìˆ˜ë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param lineAlignCount
-	 *            °¢ ÁÙ¿¡ ´ëÇÑ align¿¡ ´ëÇÑ Á¤º¸ÀÇ °³¼ö.
+	 *            ê° ì¤„ì— ëŒ€í•œ alignì— ëŒ€í•œ ì •ë³´ì˜ ê°œìˆ˜.
 	 */
 	public void setLineAlignCount(int lineAlignCount) {
 		this.lineAlignCount = lineAlignCount;
 	}
 
 	/**
-	 * ¹®´ÜÀÇ instance id¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ë¬¸ë‹¨ì˜ instance idë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ¹®´ÜÀÇ instance id
+	 * @return ë¬¸ë‹¨ì˜ instance id
 	 */
 	public long getInstanceID() {
 		return instanceID;
 	}
 
 	/**
-	 * ¹®´ÜÀÇ instance id¸¦ ¼³Á¤ÇÑ´Ù.
+	 * ë¬¸ë‹¨ì˜ instance idë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param instanceID
-	 *            ¹®´ÜÀÇ instance id
+	 *            ë¬¸ë‹¨ì˜ instance id
 	 */
 	public void setInstanceID(long instanceID) {
 		this.instanceID = instanceID;
 	}
 
 	/**
-	 * º¯°æÃßÀû º´ÇÕ ¹®´Ü¿©ºÎ¸¦ ¹İÈ¯ÇÑ´Ù. (5.0.3.2 ¹öÀü ÀÌ»ó)
+	 * ë³€ê²½ì¶”ì  ë³‘í•© ë¬¸ë‹¨ì—¬ë¶€ë¥¼ ë°˜í™˜í•œë‹¤. (5.0.3.2 ë²„ì „ ì´ìƒ)
 	 * 
-	 * @return º¯°æÃßÀû º´ÇÕ ¹®´Ü¿©ºÎ
+	 * @return ë³€ê²½ì¶”ì  ë³‘í•© ë¬¸ë‹¨ì—¬ë¶€
 	 */
 	public int getIsMergedByTrack() {
 		return isMergedByTrack;
 	}
 
 	/**
-	 * º¯°æÃßÀû º´ÇÕ ¹®´Ü¿©ºÎ¸¦ ¼³Á¤ÇÑ´Ù.
+	 * ë³€ê²½ì¶”ì  ë³‘í•© ë¬¸ë‹¨ì—¬ë¶€ë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param isMergedByTrack
-	 *            º¯°æÃßÀû º´ÇÕ ¹®´Ü¿©ºÎ
+	 *            ë³€ê²½ì¶”ì  ë³‘í•© ë¬¸ë‹¨ì—¬ë¶€
 	 */
 	public void setIsMergedByTrack(int isMergedByTrack) {
 		this.isMergedByTrack = isMergedByTrack;

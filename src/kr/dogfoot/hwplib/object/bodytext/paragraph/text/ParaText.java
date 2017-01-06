@@ -1,29 +1,29 @@
-package kr.dogfoot.hwplib.object.bodytext.paragraph.text;
+ï»¿package kr.dogfoot.hwplib.object.bodytext.paragraph.text;
 
 import java.util.ArrayList;
 
 /**
- * ¹®´ÜÀÇ ÅØ½ºÆ® ·¹ÄÚµå
+ * ë¬¸ë‹¨ì˜ í…ìŠ¤íŠ¸ ë ˆì½”ë“œ
  * 
  * @author neolord
  */
 public class ParaText {
 	/**
-	 * ±ÛÀÚ(Character) ¸®½ºÆ®
+	 * ê¸€ì(Character) ë¦¬ìŠ¤íŠ¸
 	 */
 	private ArrayList<HWPChar> charList;
 
 	/**
-	 * »ı¼ºÀÚ
+	 * ìƒì„±ì
 	 */
 	public ParaText() {
 		charList = new ArrayList<HWPChar>();
 	}
 
 	/**
-	 * »õ·Î¿î [ÀÏ¹İ Character]¸¦ »ı¼ºÇÏ°í ¸®½ºÆ®¿¡ Ãß°¡ÇÑ´Ù.
+	 * ìƒˆë¡œìš´ [ì¼ë°˜ Character]ë¥¼ ìƒì„±í•˜ê³  ë¦¬ìŠ¤íŠ¸ì— ì¶”ê°€í•œë‹¤.
 	 * 
-	 * @return »õ·Î »ı¼ºµÈ [ÀÏ¹İ Character]
+	 * @return ìƒˆë¡œ ìƒì„±ëœ [ì¼ë°˜ Character]
 	 */
 	public HWPCharNormal addNewNormalChar() {
 		HWPCharNormal nc = new HWPCharNormal();
@@ -32,9 +32,9 @@ public class ParaText {
 	}
 
 	/**
-	 * »õ·Î¿î [¹®ÀÚ ÄÁÆ®·Ñ Character]¸¦ »ı¼ºÇÏ°í ¸®½ºÆ®¿¡ Ãß°¡ÇÑ´Ù.
+	 * ìƒˆë¡œìš´ [ë¬¸ì ì»¨íŠ¸ë¡¤ Character]ë¥¼ ìƒì„±í•˜ê³  ë¦¬ìŠ¤íŠ¸ì— ì¶”ê°€í•œë‹¤.
 	 * 
-	 * @return »õ·Î »ı¼ºµÈ [¹®ÀÚ ÄÁÆ®·Ñ Character]
+	 * @return ìƒˆë¡œ ìƒì„±ëœ [ë¬¸ì ì»¨íŠ¸ë¡¤ Character]
 	 */
 	public HWPCharControlChar addNewCharControlChar() {
 		HWPCharControlChar ccc = new HWPCharControlChar();
@@ -43,9 +43,9 @@ public class ParaText {
 	}
 
 	/**
-	 * »õ·Î¿î [ÀÎ¶óÀÎ ÄÁÆ®·Ñ Character]¸¦ »ı¼ºÇÏ°í ¸®½ºÆ®¿¡ Ãß°¡ÇÑ´Ù.
+	 * ìƒˆë¡œìš´ [ì¸ë¼ì¸ ì»¨íŠ¸ë¡¤ Character]ë¥¼ ìƒì„±í•˜ê³  ë¦¬ìŠ¤íŠ¸ì— ì¶”ê°€í•œë‹¤.
 	 * 
-	 * @return »õ·Î »ı¼ºµÈ [ÀÎ¶óÀÎ ÄÁÆ®·Ñ Character]
+	 * @return ìƒˆë¡œ ìƒì„±ëœ [ì¸ë¼ì¸ ì»¨íŠ¸ë¡¤ Character]
 	 */
 	public HWPCharControlInline addNewInlineControlChar() {
 		HWPCharControlInline icc = new HWPCharControlInline();
@@ -54,9 +54,9 @@ public class ParaText {
 	}
 
 	/**
-	 * »õ·Î¿î [È®Àå ÄÁÆ®·Ñ Character]¸¦ »ı¼ºÇÏ°í ¸®½ºÆ®¿¡ Ãß°¡ÇÑ´Ù.
+	 * ìƒˆë¡œìš´ [í™•ì¥ ì»¨íŠ¸ë¡¤ Character]ë¥¼ ìƒì„±í•˜ê³  ë¦¬ìŠ¤íŠ¸ì— ì¶”ê°€í•œë‹¤.
 	 * 
-	 * @return »õ·Î »ı¼ºµÈ [È®Àå ÄÁÆ®·Ñ Character]
+	 * @return ìƒˆë¡œ ìƒì„±ëœ [í™•ì¥ ì»¨íŠ¸ë¡¤ Character]
 	 */
 	public HWPCharControlExtend addNewExtendControlChar() {
 		HWPCharControlExtend ecc = new HWPCharControlExtend();
@@ -65,9 +65,9 @@ public class ParaText {
 	}
 
 	/**
-	 * ±ÛÀÚ(Character) ¸®½ºÆ®¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ê¸€ì(Character) ë¦¬ìŠ¤íŠ¸ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ±ÛÀÚ(Character) ¸®½ºÆ®
+	 * @return ê¸€ì(Character) ë¦¬ìŠ¤íŠ¸
 	 */
 	public ArrayList<HWPChar> getCharList() {
 		return charList;

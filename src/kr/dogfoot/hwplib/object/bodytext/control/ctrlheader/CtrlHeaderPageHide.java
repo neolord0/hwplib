@@ -1,21 +1,21 @@
-package kr.dogfoot.hwplib.object.bodytext.control.ctrlheader;
+ï»¿package kr.dogfoot.hwplib.object.bodytext.control.ctrlheader;
 
 import kr.dogfoot.hwplib.object.bodytext.control.ControlType;
 import kr.dogfoot.hwplib.object.bodytext.control.ctrlheader.pagehide.PagehideHeaderProperty;
 
 /**
- * °¨Ãß±â ÄÁÆ®·ÑÀ» À§ÇÑ ÄÁÆ®·Ñ Çì´õ ·¹ÄÚµå
+ * ê°ì¶”ê¸° ì»¨íŠ¸ë¡¤ì„ ìœ„í•œ ì»¨íŠ¸ë¡¤ í—¤ë” ë ˆì½”ë“œ
  * 
  * @author neolord
  */
 public class CtrlHeaderPageHide extends CtrlHeader {
 	/**
-	 * ¼Ó¼º
+	 * ì†ì„±
 	 */
 	private PagehideHeaderProperty property;
 
 	/**
-	 * »ı¼ºÀÚ
+	 * ìƒì„±ì
 	 */
 	public CtrlHeaderPageHide() {
 		super(ControlType.PageHide.getCtrlId());
@@ -24,9 +24,9 @@ public class CtrlHeaderPageHide extends CtrlHeader {
 	}
 
 	/**
-	 * °¨Ãß±â ÄÁÆ®·ÑÀÇ ¼Ó¼º °´Ã¼¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ê°ì¶”ê¸° ì»¨íŠ¸ë¡¤ì˜ ì†ì„± ê°ì²´ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return °¨Ãß±â ÄÁÆ®·ÑÀÇ ¼Ó¼º °´Ã¼
+	 * @return ê°ì¶”ê¸° ì»¨íŠ¸ë¡¤ì˜ ì†ì„± ê°ì²´
 	 */
 	public PagehideHeaderProperty getProperty() {
 		return property;

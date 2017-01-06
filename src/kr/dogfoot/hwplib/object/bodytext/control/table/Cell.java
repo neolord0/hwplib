@@ -1,24 +1,24 @@
-package kr.dogfoot.hwplib.object.bodytext.control.table;
+ï»¿package kr.dogfoot.hwplib.object.bodytext.control.table;
 
 import kr.dogfoot.hwplib.object.bodytext.paragraph.ParagraphList;
 
 /**
- * Ç¥ÀÇ ¼¿À» ³ªÅ¸³»´Â °´Ã¼
+ * í‘œì˜ ì…€ì„ ë‚˜íƒ€ë‚´ëŠ” ê°ì²´
  * 
  * @author neolord
  */
 public class Cell {
 	/**
-	 * ¹®´Ü ¸®½ºÆ® Çì´õ
+	 * ë¬¸ë‹¨ ë¦¬ìŠ¤íŠ¸ í—¤ë”
 	 */
 	private ListHeaderForCell listHeader;
 	/**
-	 * ¹®´Ü ¸®½ºÆ®
+	 * ë¬¸ë‹¨ ë¦¬ìŠ¤íŠ¸
 	 */
 	private ParagraphList paragraphList;
 
 	/**
-	 * »ı¼ºÀÚ
+	 * ìƒì„±ì
 	 */
 	public Cell() {
 		listHeader = new ListHeaderForCell();
@@ -26,18 +26,18 @@ public class Cell {
 	}
 
 	/**
-	 * ¹®´Ü ¸®½ºÆ® Çì´õ¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ë¬¸ë‹¨ ë¦¬ìŠ¤íŠ¸ í—¤ë”ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ¹®´Ü ¸®½ºÆ® Çì´õ
+	 * @return ë¬¸ë‹¨ ë¦¬ìŠ¤íŠ¸ í—¤ë”
 	 */
 	public ListHeaderForCell getListHeader() {
 		return listHeader;
 	}
 
 	/**
-	 * ¹®´Ü ¸®½ºÆ®¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ë¬¸ë‹¨ ë¦¬ìŠ¤íŠ¸ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ¹®´Ü ¸®½ºÆ®
+	 * @return ë¬¸ë‹¨ ë¦¬ìŠ¤íŠ¸
 	 */
 	public ParagraphList getParagraphList() {
 		return paragraphList;

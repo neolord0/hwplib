@@ -1,26 +1,26 @@
-package kr.dogfoot.hwplib.object.bodytext.control;
+ï»¿package kr.dogfoot.hwplib.object.bodytext.control;
 
 import kr.dogfoot.hwplib.object.bodytext.control.ctrlheader.CtrlHeaderFooter;
 import kr.dogfoot.hwplib.object.bodytext.control.headerfooter.ListHeaderForHeaderFooter;
 import kr.dogfoot.hwplib.object.bodytext.paragraph.ParagraphList;
 
 /**
- * ²¿¸®¸» ÄÁÆ®·Ñ
+ * ê¼¬ë¦¬ë§ ì»¨íŠ¸ë¡¤
  * 
  * @author neolord
  */
 public class ControlFooter extends Control {
 	/**
-	 * ¸Ó¸®¸»/²¿¸®¸»¿ë ¸®½ºÆ® Çì´õ
+	 * ë¨¸ë¦¬ë§/ê¼¬ë¦¬ë§ìš© ë¦¬ìŠ¤íŠ¸ í—¤ë”
 	 */
 	private ListHeaderForHeaderFooter listHeader;
 	/**
-	 * ¹®´Ü ¸®½ºÆ®
+	 * ë¬¸ë‹¨ ë¦¬ìŠ¤íŠ¸
 	 */
 	private ParagraphList paragraphList;
 
 	/**
-	 * »ı¼ºÀÚ
+	 * ìƒì„±ì
 	 */
 	public ControlFooter() {
 		super(new CtrlHeaderFooter());
@@ -30,27 +30,27 @@ public class ControlFooter extends Control {
 	}
 
 	/**
-	 * ²¿¸®¸»¿ë ÄÁÆ®·Ñ Çì´õ¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ê¼¬ë¦¬ë§ìš© ì»¨íŠ¸ë¡¤ í—¤ë”ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ²¿¸®¸»¿ë ÄÁÆ®·Ñ Çì´õ
+	 * @return ê¼¬ë¦¬ë§ìš© ì»¨íŠ¸ë¡¤ í—¤ë”
 	 */
 	public CtrlHeaderFooter getHeader() {
 		return (CtrlHeaderFooter) header;
 	}
 
 	/**
-	 * ¸Ó¸®¸»/²¿¸®¸»¿ë ¸®½ºÆ® Çì´õ¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ë¨¸ë¦¬ë§/ê¼¬ë¦¬ë§ìš© ë¦¬ìŠ¤íŠ¸ í—¤ë”ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ¸Ó¸®¸»/²¿¸®¸»¿ë ¸®½ºÆ® Çì´õ
+	 * @return ë¨¸ë¦¬ë§/ê¼¬ë¦¬ë§ìš© ë¦¬ìŠ¤íŠ¸ í—¤ë”
 	 */
 	public ListHeaderForHeaderFooter getListHeader() {
 		return listHeader;
 	}
 
 	/**
-	 * ¹®´Ü ¸®½ºÆ®¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ë¬¸ë‹¨ ë¦¬ìŠ¤íŠ¸ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ¹®´Ü ¸®½ºÆ®
+	 * @return ë¬¸ë‹¨ ë¦¬ìŠ¤íŠ¸
 	 */
 	public ParagraphList getParagraphList() {
 		return paragraphList;

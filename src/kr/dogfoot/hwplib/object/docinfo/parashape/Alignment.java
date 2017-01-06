@@ -1,66 +1,66 @@
-package kr.dogfoot.hwplib.object.docinfo.parashape;
+ï»¿package kr.dogfoot.hwplib.object.docinfo.parashape;
 
 /**
- * Á¤·Ä ¹æ½Ä
+ * ì •ë ¬ ë°©ì‹
  * 
  * @author neolord
  */
 public enum Alignment {
 	/**
-	 * ¾çÂÊ Á¤·Ä
+	 * ì–‘ìª½ ì •ë ¬
 	 */
 	Justify((byte) 0),
 	/**
-	 * ¿ŞÂÊ Á¤·Ä
+	 * ì™¼ìª½ ì •ë ¬
 	 */
 	Left((byte) 1),
 	/**
-	 * ¿À¸¥ÂÊ Á¤·Ä
+	 * ì˜¤ë¥¸ìª½ ì •ë ¬
 	 */
 	Right((byte) 2),
 	/**
-	 * °¡¿îµ¥ Á¤·Ä
+	 * ê°€ìš´ë° ì •ë ¬
 	 */
 	Center((byte) 3),
 	/**
-	 * ¹èºĞ Á¤·Ä
+	 * ë°°ë¶„ ì •ë ¬
 	 */
 	Distribute((byte) 4),
 	/**
-	 * ³ª´® Á¤·Ä
+	 * ë‚˜ëˆ” ì •ë ¬
 	 */
 	Divide((byte) 5);
 
 	/**
-	 * ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª
+	 * íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’
 	 */
 	private byte value;
 
 	/**
-	 * »ı¼ºÀÚ
+	 * ìƒì„±ì
 	 * 
 	 * @param value
-	 *            ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª
+	 *            íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’
 	 */
 	private Alignment(byte value) {
 		this.value = value;
 	}
 
 	/**
-	 * ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ªÀ» ¹İÈ¯ÇÑ´Ù.
+	 * íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’ì„ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª
+	 * @return íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’
 	 */
 	public byte getValue() {
 		return value;
 	}
 
 	/**
-	 * ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª¿¡ ÇØ´çµÇ´Â enum °ªÀ» ¹İÈ¯ÇÑ´Ù.
+	 * íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’ì— í•´ë‹¹ë˜ëŠ” enum ê°’ì„ ë°˜í™˜í•œë‹¤.
 	 * 
 	 * @param value
-	 *            ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª
-	 * @return enum °ª
+	 *            íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’
+	 * @return enum ê°’
 	 */
 	public static Alignment valueOf(byte value) {
 		for (Alignment a : values()) {

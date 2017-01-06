@@ -1,4 +1,4 @@
-package kr.dogfoot.hwplib.reader.bodytext.paragraph.control.gso;
+ï»¿package kr.dogfoot.hwplib.reader.bodytext.paragraph.control.gso;
 
 import java.io.IOException;
 
@@ -10,18 +10,18 @@ import kr.dogfoot.hwplib.reader.bodytext.paragraph.control.gso.part.ForTextBox;
 import kr.dogfoot.hwplib.util.compoundFile.StreamReader;
 
 /**
- * Å¸¿ø ÄÁÆ®·ÑÀ» ÀĞ´Â´Ù.
+ * íƒ€ì› ì»¨íŠ¸ë¡¤ì„ ì½ëŠ”ë‹¤.
  * 
  * @author neolord
  */
 public class ForControlEllipse {
 	/**
-	 * Å¸¿ø ÄÁÆ®·ÑÀ» ÀĞ´Â´Ù.
+	 * íƒ€ì› ì»¨íŠ¸ë¡¤ì„ ì½ëŠ”ë‹¤.
 	 * 
 	 * @param ellipse
-	 *            Å¸¿ø ÄÁÆ®·Ñ
+	 *            íƒ€ì› ì»¨íŠ¸ë¡¤
 	 * @param sr
-	 *            ½ºÆ®¸² ¸®´õ
+	 *            ìŠ¤íŠ¸ë¦¼ ë¦¬ë”
 	 * @throws Exception
 	 */
 	public static void read(ControlEllipse ellipse, StreamReader sr)
@@ -40,12 +40,12 @@ public class ForControlEllipse {
 	}
 
 	/**
-	 * Å¸¿ø °³Ã¼ ¼Ó¼º ·¹ÄÚµå¸¦ ÀĞ´Â´Ù.
+	 * íƒ€ì› ê°œì²´ ì†ì„± ë ˆì½”ë“œë¥¼ ì½ëŠ”ë‹¤.
 	 * 
 	 * @param sce
-	 *            Å¸¿ø °³Ã¼ ¼Ó¼º ·¹ÄÚµå
+	 *            íƒ€ì› ê°œì²´ ì†ì„± ë ˆì½”ë“œ
 	 * @param sr
-	 *            ½ºÆ®¸² ¸®´õ
+	 *            ìŠ¤íŠ¸ë¦¼ ë¦¬ë”
 	 * @throws IOException
 	 */
 	private static void shapeComponentEllipse(ShapeComponentEllipse sce,

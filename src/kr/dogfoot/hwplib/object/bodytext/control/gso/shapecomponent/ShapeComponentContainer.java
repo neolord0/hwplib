@@ -1,39 +1,39 @@
-package kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponent;
+ï»¿package kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponent;
 
 import java.util.ArrayList;
 
 /**
- * ÄÁÅ×ÀÌ³Ê ÄÁÆ®·ÑÀ» À§ÇÑ °´Ã¼ °øÅë ¼Ó¼º ·¹ÄÚµå
+ * ì»¨í…Œì´ë„ˆ ì»¨íŠ¸ë¡¤ì„ ìœ„í•œ ê°ì²´ ê³µí†µ ì†ì„± ë ˆì½”ë“œ
  * 
  * @author neolord
  */
 public class ShapeComponentContainer extends ShapeComponent {
 	/**
-	 * ÄÁÅ×ÀÌ³Ê¿¡ Æ÷ÇÔµÈ ÄÁÆ®·ÑÀÇ id ¸®½ºÆ®
+	 * ì»¨í…Œì´ë„ˆì— í¬í•¨ëœ ì»¨íŠ¸ë¡¤ì˜ id ë¦¬ìŠ¤íŠ¸
 	 */
 	private ArrayList<Long> childControlIdList;
 
 	/**
-	 * »ı¼ºÀÚ
+	 * ìƒì„±ì
 	 */
 	public ShapeComponentContainer() {
 		childControlIdList = new ArrayList<Long>();
 	}
 
 	/**
-	 * ÄÁÅ×ÀÌ³Ê¿¡ Æ÷ÇÔµÈ ÄÁÆ®·ÑÀÇ id¸¦ ¸®½ºÆ® Ãß°¡ÇÑ´Ù.
+	 * ì»¨í…Œì´ë„ˆì— í¬í•¨ëœ ì»¨íŠ¸ë¡¤ì˜ idë¥¼ ë¦¬ìŠ¤íŠ¸ ì¶”ê°€í•œë‹¤.
 	 * 
 	 * @param id
-	 *            ÄÁÅ×ÀÌ³Ê¿¡ Æ÷ÇÔµÈ ÄÁÆ®·ÑÀÇ id
+	 *            ì»¨í…Œì´ë„ˆì— í¬í•¨ëœ ì»¨íŠ¸ë¡¤ì˜ id
 	 */
 	public void addChildControlId(long id) {
 		childControlIdList.add(id);
 	}
 
 	/**
-	 * ÄÁÅ×ÀÌ³Ê¿¡ Æ÷ÇÔµÈ ÄÁÆ®·ÑÀÇ id ¸®½ºÆ®¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ì»¨í…Œì´ë„ˆì— í¬í•¨ëœ ì»¨íŠ¸ë¡¤ì˜ id ë¦¬ìŠ¤íŠ¸ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ÄÁÅ×ÀÌ³Ê¿¡ Æ÷ÇÔµÈ ÄÁÆ®·ÑÀÇ id ¸®½ºÆ®
+	 * @return ì»¨í…Œì´ë„ˆì— í¬í•¨ëœ ì»¨íŠ¸ë¡¤ì˜ id ë¦¬ìŠ¤íŠ¸
 	 */
 	public ArrayList<Long> getChildControlIdList() {
 		return childControlIdList;

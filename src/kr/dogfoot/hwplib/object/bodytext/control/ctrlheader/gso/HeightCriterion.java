@@ -1,54 +1,54 @@
-package kr.dogfoot.hwplib.object.bodytext.control.ctrlheader.gso;
+ï»¿package kr.dogfoot.hwplib.object.bodytext.control.ctrlheader.gso;
 
 /**
- * ¿ÀºêÁ§Æ® ³ôÀÌÀÇ ±âÁØ
+ * ì˜¤ë¸Œì íŠ¸ ë†’ì´ì˜ ê¸°ì¤€
  * 
  * @author neolord
  */
 public enum HeightCriterion {
 	/**
-	 * Á¾ÀÌ
+	 * ì¢…ì´
 	 */
 	Paper((byte) 0),
 	/**
-	 * ÂÊ
+	 * ìª½
 	 */
 	Page((byte) 1),
 	/**
-	 * Àı´ë°ª
+	 * ì ˆëŒ€ê°’
 	 */
 	Absolute((byte) 2);
 
 	/**
-	 * ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª
+	 * íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’
 	 */
 	private byte value;
 
 	/**
-	 * »ı¼ºÀÚ
+	 * ìƒì„±ì
 	 * 
 	 * @param value
-	 *            ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª
+	 *            íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’
 	 */
 	private HeightCriterion(byte value) {
 		this.value = value;
 	}
 
 	/**
-	 * ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ªÀ» ¹İÈ¯ÇÑ´Ù.
+	 * íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’ì„ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª
+	 * @return íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’
 	 */
 	public byte getValue() {
 		return value;
 	}
 
 	/**
-	 * ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª¿¡ ÇØ´çµÇ´Â enum °ªÀ» ¹İÈ¯ÇÑ´Ù.
+	 * íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’ì— í•´ë‹¹ë˜ëŠ” enum ê°’ì„ ë°˜í™˜í•œë‹¤.
 	 * 
 	 * @param value
-	 *            ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª
-	 * @return enum °ª
+	 *            íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’
+	 * @return enum ê°’
 	 */
 	public static HeightCriterion valueOf(byte value) {
 		for (HeightCriterion hc : values()) {

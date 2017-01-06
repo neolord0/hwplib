@@ -1,4 +1,4 @@
-package kr.dogfoot.hwplib.reader.bodytext.paragraph.control;
+ï»¿package kr.dogfoot.hwplib.reader.bodytext.paragraph.control;
 
 import java.io.IOException;
 
@@ -25,87 +25,87 @@ import kr.dogfoot.hwplib.object.bodytext.control.ControlType;
 import kr.dogfoot.hwplib.util.compoundFile.StreamReader;
 
 /**
- * ÄÁÆ®·ÑÀ» ÀĞ±â À§ÇÑ °´Ã¼
+ * ì»¨íŠ¸ë¡¤ì„ ì½ê¸° ìœ„í•œ ê°ì²´
  * 
  * @author neolord
  */
 public class ForControl {
 	/**
-	 * ÄÁÆ®·ÑÀÇ Á¾·ù¿¡ µû¶ó ÄÁÆ®·ÑÀ» ÀĞ´Â´Ù.
+	 * ì»¨íŠ¸ë¡¤ì˜ ì¢…ë¥˜ì— ë”°ë¼ ì»¨íŠ¸ë¡¤ì„ ì½ëŠ”ë‹¤.
 	 * 
 	 * @param c
-	 *            ÄÁÆ®·Ñ °´Ã¼
+	 *            ì»¨íŠ¸ë¡¤ ê°ì²´
 	 * @param sr
-	 *            ½ºÆ®¸² ¸®´õ
+	 *            ìŠ¤íŠ¸ë¦¼ ë¦¬ë”
 	 * @throws Exception
 	 */
 	public static void read(Control c, StreamReader sr) throws Exception {
 		if (ControlType.isField(c.getType().getCtrlId())) {
-			field(c, sr); // ÇÊµå
+			field(c, sr); // í•„ë“œ
 			return;
 		}
 		switch (c.getType()) {
-		case Table: // Ç¥
+		case Table: // í‘œ
 			table(c, sr);
 			break;
-		case Equation: // ¼ö½Ä
+		case Equation: // ìˆ˜ì‹
 			equation(c, sr);
 			break;
-		case SectionDefine: // ±¸¿ª Á¤ÀÇ
+		case SectionDefine: // êµ¬ì—­ ì •ì˜
 			sectionDefine(c, sr);
 			break;
-		case ColumnDefine: // ´Ü Á¤ÀÇ
+		case ColumnDefine: // ë‹¨ ì •ì˜
 			columnDefine(c, sr);
 			break;
-		case Header: // ¸Ó¸®¸»
+		case Header: // ë¨¸ë¦¬ë§
 			header(c, sr);
 			break;
-		case Footer: // ²¿¸®¸»
+		case Footer: // ê¼¬ë¦¬ë§
 			footer(c, sr);
 			break;
-		case Footnote: // °¢ÁÖ
+		case Footnote: // ê°ì£¼
 			footnote(c, sr);
 			break;
-		case Endnote: // ¹ÌÁÖ
+		case Endnote: // ë¯¸ì£¼
 			endnote(c, sr);
 			break;
-		case AutoNumber: // ÀÚµ¿ ¹øÈ£
+		case AutoNumber: // ìë™ ë²ˆí˜¸
 			autoNumber(c, sr);
 			break;
-		case NewNumber: // »õ ¹øÈ£ ÁöÁ¤
+		case NewNumber: // ìƒˆ ë²ˆí˜¸ ì§€ì •
 			newNumber(c, sr);
 			break;
-		case PageHide: // °¨Ãß±â
+		case PageHide: // ê°ì¶”ê¸°
 			pageHide(c, sr);
 			break;
-		case PageNumberPositon: // ÂÊ ¹øÈ£ À§Ä¡
+		case PageNumberPositon: // ìª½ ë²ˆí˜¸ ìœ„ì¹˜
 			pageNumberPositon(c, sr);
 			break;
-		case IndexMark: // Ã£¾Æº¸±â Ç¥½Ä
+		case IndexMark: // ì°¾ì•„ë³´ê¸° í‘œì‹
 			indexMark(c, sr);
 			break;
-		case Bookmark: // Ã¥°¥ÇÇ
+		case Bookmark: // ì±…ê°ˆí”¼
 			bookmark(c, sr);
 			break;
-		case OverlappingLetter: // ±ÛÀÚ °ãÄ§
+		case OverlappingLetter: // ê¸€ì ê²¹ì¹¨
 			overlappingLetter(c, sr);
 			break;
-		case AdditionalText: // µ¡¸»
+		case AdditionalText: // ë§ë§
 			additionalText(c, sr);
 			break;
-		case HiddenComment: // ¼ûÀº ¼³¸í
+		case HiddenComment: // ìˆ¨ì€ ì„¤ëª…
 			hiddenComment(c, sr);
 			break;
 		}
 	}
 
 	/**
-	 * ÇÊµå ÄÁÆ®¸¦À» ÀĞ´Â´Ù.
+	 * í•„ë“œ ì»¨íŠ¸ë¥¼ì„ ì½ëŠ”ë‹¤.
 	 * 
 	 * @param c
-	 *            ÄÁÆ®·Ñ °´Ã¼
+	 *            ì»¨íŠ¸ë¡¤ ê°ì²´
 	 * @param sr
-	 *            ½ºÆ®¸² ¸®´õ
+	 *            ìŠ¤íŠ¸ë¦¼ ë¦¬ë”
 	 * @throws IOException
 	 */
 	private static void field(Control c, StreamReader sr) throws IOException {
@@ -113,12 +113,12 @@ public class ForControl {
 	}
 
 	/**
-	 * Ç¥ ÄÁÆ®·ÑÀ» ÀĞ´Â´Ù.
+	 * í‘œ ì»¨íŠ¸ë¡¤ì„ ì½ëŠ”ë‹¤.
 	 * 
 	 * @param c
-	 *            ÄÁÆ®·Ñ
+	 *            ì»¨íŠ¸ë¡¤
 	 * @param sr
-	 *            ½ºÆ®¸² ¸®´õ
+	 *            ìŠ¤íŠ¸ë¦¼ ë¦¬ë”
 	 * @throws Exception
 	 */
 	private static void table(Control c, StreamReader sr) throws Exception {
@@ -127,12 +127,12 @@ public class ForControl {
 	}
 
 	/**
-	 * ÇÑ±Û ¼ö½Ä ÄÁÆ®·ÑÀ» ÀĞ´Â´Ù.
+	 * í•œê¸€ ìˆ˜ì‹ ì»¨íŠ¸ë¡¤ì„ ì½ëŠ”ë‹¤.
 	 * 
 	 * @param c
-	 *            ÄÁÆ®·Ñ
+	 *            ì»¨íŠ¸ë¡¤
 	 * @param sr
-	 *            ½ºÆ®¸² ¸®´õ
+	 *            ìŠ¤íŠ¸ë¦¼ ë¦¬ë”
 	 * @throws Exception
 	 */
 	private static void equation(Control c, StreamReader sr) throws Exception {
@@ -141,12 +141,12 @@ public class ForControl {
 	}
 
 	/**
-	 * ±¸¿ª Á¤ÀÇ ÄÁÆ®·ÑÀ» ÀĞ´Â´Ù.
+	 * êµ¬ì—­ ì •ì˜ ì»¨íŠ¸ë¡¤ì„ ì½ëŠ”ë‹¤.
 	 * 
 	 * @param c
-	 *            ÄÁÆ®·Ñ
+	 *            ì»¨íŠ¸ë¡¤
 	 * @param sr
-	 *            ½ºÆ®¸² ¸®´õ
+	 *            ìŠ¤íŠ¸ë¦¼ ë¦¬ë”
 	 * @throws Exception
 	 */
 	private static void sectionDefine(Control c, StreamReader sr)
@@ -156,12 +156,12 @@ public class ForControl {
 	}
 
 	/**
-	 * ´Ü Á¤ÀÇ ÄÁÆ®·ÑÀ» ÀĞ´Â´Ù.
+	 * ë‹¨ ì •ì˜ ì»¨íŠ¸ë¡¤ì„ ì½ëŠ”ë‹¤.
 	 * 
 	 * @param c
-	 *            ÄÁÆ®·Ñ
+	 *            ì»¨íŠ¸ë¡¤
 	 * @param sr
-	 *            ½ºÆ®¸² ¸®´õ
+	 *            ìŠ¤íŠ¸ë¦¼ ë¦¬ë”
 	 * @throws IOException
 	 */
 	private static void columnDefine(Control c, StreamReader sr)
@@ -170,12 +170,12 @@ public class ForControl {
 	}
 
 	/**
-	 * ¸Ó¸®¸» ÄÁÆ®·ÑÀ» ÀĞ´Â´Ù.
+	 * ë¨¸ë¦¬ë§ ì»¨íŠ¸ë¡¤ì„ ì½ëŠ”ë‹¤.
 	 * 
 	 * @param c
-	 *            ÄÁÆ®·Ñ
+	 *            ì»¨íŠ¸ë¡¤
 	 * @param sr
-	 *            ½ºÆ®¸² ¸®´õ
+	 *            ìŠ¤íŠ¸ë¦¼ ë¦¬ë”
 	 * @throws Exception
 	 */
 	private static void header(Control c, StreamReader sr) throws Exception {
@@ -184,12 +184,12 @@ public class ForControl {
 	}
 
 	/**
-	 * ²¿¸®¸» ÄÁÆ®·ÑÀ» ÀĞ´Â´Ù.
+	 * ê¼¬ë¦¬ë§ ì»¨íŠ¸ë¡¤ì„ ì½ëŠ”ë‹¤.
 	 * 
 	 * @param c
-	 *            ÄÁÆ®·Ñ °´Ã¼
+	 *            ì»¨íŠ¸ë¡¤ ê°ì²´
 	 * @param sr
-	 *            ½ºÆ®¸² ¸®´õ
+	 *            ìŠ¤íŠ¸ë¦¼ ë¦¬ë”
 	 * @throws Exception
 	 */
 	private static void footer(Control c, StreamReader sr) throws Exception {
@@ -198,12 +198,12 @@ public class ForControl {
 	}
 
 	/**
-	 * °¢ÁÖ ÄÁÆ®·ÑÀ» ÀĞ´Â´Ù.
+	 * ê°ì£¼ ì»¨íŠ¸ë¡¤ì„ ì½ëŠ”ë‹¤.
 	 * 
 	 * @param c
-	 *            ÄÁÆ®·Ñ
+	 *            ì»¨íŠ¸ë¡¤
 	 * @param sr
-	 *            ½ºÆ®¸² ¸®´õ
+	 *            ìŠ¤íŠ¸ë¦¼ ë¦¬ë”
 	 * @throws Exception
 	 */
 	private static void footnote(Control c, StreamReader sr) throws Exception {
@@ -212,12 +212,12 @@ public class ForControl {
 	}
 
 	/**
-	 * ¹ÌÁÖ ÄÁÆ®·ÑÀ» ÀĞ´Â´Ù.
+	 * ë¯¸ì£¼ ì»¨íŠ¸ë¡¤ì„ ì½ëŠ”ë‹¤.
 	 * 
 	 * @param c
-	 *            ÄÁÆ®·Ñ °´Ã¼
+	 *            ì»¨íŠ¸ë¡¤ ê°ì²´
 	 * @param sr
-	 *            ½ºÆ®¸² ¸®´õ
+	 *            ìŠ¤íŠ¸ë¦¼ ë¦¬ë”
 	 * @throws Exception
 	 */
 	private static void endnote(Control c, StreamReader sr) throws Exception {
@@ -226,12 +226,12 @@ public class ForControl {
 	}
 
 	/**
-	 * ÀÚµ¿ ¹øÈ£ ÄÁÆ®·ÑÀ» ÀĞ´Â´Ù.
+	 * ìë™ ë²ˆí˜¸ ì»¨íŠ¸ë¡¤ì„ ì½ëŠ”ë‹¤.
 	 * 
 	 * @param c
-	 *            ÄÁÆ®·Ñ
+	 *            ì»¨íŠ¸ë¡¤
 	 * @param sr
-	 *            ½ºÆ®¸² ¸®´õ
+	 *            ìŠ¤íŠ¸ë¦¼ ë¦¬ë”
 	 * @throws IOException
 	 */
 	private static void autoNumber(Control c, StreamReader sr)
@@ -240,12 +240,12 @@ public class ForControl {
 	}
 
 	/**
-	 * »õ ¹øÈ£ ÁöÁ¤ ÄÁÆ®·ÑÀ» ÀĞ´Â´Ù.
+	 * ìƒˆ ë²ˆí˜¸ ì§€ì • ì»¨íŠ¸ë¡¤ì„ ì½ëŠ”ë‹¤.
 	 * 
 	 * @param c
-	 *            ÄÁÆ®·Ñ °´Ã¼
+	 *            ì»¨íŠ¸ë¡¤ ê°ì²´
 	 * @param sr
-	 *            ½ºÆ®¸² ¸®´õ
+	 *            ìŠ¤íŠ¸ë¦¼ ë¦¬ë”
 	 * @throws IOException
 	 */
 	private static void newNumber(Control c, StreamReader sr)
@@ -254,12 +254,12 @@ public class ForControl {
 	}
 
 	/**
-	 * °¨Ãß±â ÄÁÆ®·ÑÀ» ÀĞ´Â´Ù.
+	 * ê°ì¶”ê¸° ì»¨íŠ¸ë¡¤ì„ ì½ëŠ”ë‹¤.
 	 * 
 	 * @param c
-	 *            ÄÁÆ®·Ñ °´Ã¼
+	 *            ì»¨íŠ¸ë¡¤ ê°ì²´
 	 * @param sr
-	 *            ½ºÆ®¸² ¸®´õ
+	 *            ìŠ¤íŠ¸ë¦¼ ë¦¬ë”
 	 * @throws IOException
 	 */
 	private static void pageHide(Control c, StreamReader sr) throws IOException {
@@ -267,12 +267,12 @@ public class ForControl {
 	}
 
 	/**
-	 * ÂÊ ¹øÈ£ À§Ä¡ ÄÁÆ®·ÑÀ» ÀĞ´Â´Ù.
+	 * ìª½ ë²ˆí˜¸ ìœ„ì¹˜ ì»¨íŠ¸ë¡¤ì„ ì½ëŠ”ë‹¤.
 	 * 
 	 * @param c
-	 *            ÄÁÆ®·Ñ
+	 *            ì»¨íŠ¸ë¡¤
 	 * @param sr
-	 *            ½ºÆ®¸² ¸®´õ
+	 *            ìŠ¤íŠ¸ë¦¼ ë¦¬ë”
 	 * @throws IOException
 	 */
 	private static void pageNumberPositon(Control c, StreamReader sr)
@@ -281,12 +281,12 @@ public class ForControl {
 	}
 
 	/**
-	 * Ã£¾Æº¸±â Ç¥½Ä ÄÁÆ®·ÑÀ» ÀĞ´Â´Ù.
+	 * ì°¾ì•„ë³´ê¸° í‘œì‹ ì»¨íŠ¸ë¡¤ì„ ì½ëŠ”ë‹¤.
 	 * 
 	 * @param c
-	 *            ÄÁÆ®·Ñ
+	 *            ì»¨íŠ¸ë¡¤
 	 * @param sr
-	 *            ½ºÆ®¸² ¸®´õ
+	 *            ìŠ¤íŠ¸ë¦¼ ë¦¬ë”
 	 * @throws IOException
 	 */
 	private static void indexMark(Control c, StreamReader sr)
@@ -295,12 +295,12 @@ public class ForControl {
 	}
 
 	/**
-	 * Ã¥°¥ÇÇ ÄÁÆ®·ÑÀ» ÀĞ´Â´Ù.
+	 * ì±…ê°ˆí”¼ ì»¨íŠ¸ë¡¤ì„ ì½ëŠ”ë‹¤.
 	 * 
 	 * @param c
-	 *            ÄÁÆ®·Ñ °´Ã¼
+	 *            ì»¨íŠ¸ë¡¤ ê°ì²´
 	 * @param sr
-	 *            ½ºÆ®¸² ¸®´õ
+	 *            ìŠ¤íŠ¸ë¦¼ ë¦¬ë”
 	 * @throws Exception
 	 */
 	private static void bookmark(Control c, StreamReader sr) throws Exception {
@@ -308,12 +308,12 @@ public class ForControl {
 	}
 
 	/**
-	 * ±ÛÀÚ °ãÄ§ ÄÁÆ®·ÑÀ» ÀĞ´Â´Ù.
+	 * ê¸€ì ê²¹ì¹¨ ì»¨íŠ¸ë¡¤ì„ ì½ëŠ”ë‹¤.
 	 * 
 	 * @param c
-	 *            ÄÁÆ®·Ñ
+	 *            ì»¨íŠ¸ë¡¤
 	 * @param sr
-	 *            ½ºÆ®¸² ¸®´õ
+	 *            ìŠ¤íŠ¸ë¦¼ ë¦¬ë”
 	 * @throws IOException
 	 */
 	private static void overlappingLetter(Control c, StreamReader sr)
@@ -322,12 +322,12 @@ public class ForControl {
 	}
 
 	/**
-	 * µ¡¸» ÄÁÆ®·ÑÀ» ÀĞ´Â´Ù.
+	 * ë§ë§ ì»¨íŠ¸ë¡¤ì„ ì½ëŠ”ë‹¤.
 	 * 
 	 * @param c
-	 *            ÄÁÆ®·Ñ
+	 *            ì»¨íŠ¸ë¡¤
 	 * @param sr
-	 *            ½ºÆ®¸² ¸®´õ
+	 *            ìŠ¤íŠ¸ë¦¼ ë¦¬ë”
 	 * @throws IOException
 	 */
 	private static void additionalText(Control c, StreamReader sr)
@@ -336,12 +336,12 @@ public class ForControl {
 	}
 
 	/**
-	 * ¼ûÀº ¼³¸í ÄÁÆ®·ÑÀ» ÀĞ´Â´Ù.
+	 * ìˆ¨ì€ ì„¤ëª… ì»¨íŠ¸ë¡¤ì„ ì½ëŠ”ë‹¤.
 	 * 
 	 * @param c
-	 *            ÄÁÆ®·Ñ
+	 *            ì»¨íŠ¸ë¡¤
 	 * @param sr
-	 *            ½ºÆ®¸² ¸®´õ
+	 *            ìŠ¤íŠ¸ë¦¼ ë¦¬ë”
 	 * @throws Exception
 	 */
 	private static void hiddenComment(Control c, StreamReader sr)

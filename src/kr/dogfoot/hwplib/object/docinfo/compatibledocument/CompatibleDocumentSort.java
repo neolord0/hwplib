@@ -1,54 +1,54 @@
-package kr.dogfoot.hwplib.object.docinfo.compatibledocument;
+ï»¿package kr.dogfoot.hwplib.object.docinfo.compatibledocument;
 
 /**
- * ´ë»ó ÇÁ·Î±×·¥ÀÇ Á¾·ù
+ * ëŒ€ìƒ í”„ë¡œê·¸ë¨ì˜ ì¢…ë¥˜
  * 
  * @author neolord
  */
 public enum CompatibleDocumentSort {
 	/**
-	 * ÇÑ±Û ¹®¼­(ÇöÀç ¹öÀü)
+	 * í•œê¸€ ë¬¸ì„œ(í˜„ì¬ ë²„ì „)
 	 */
 	HWPCurrent((byte) 0),
 	/**
-	 * ÇÑ±Û 2007 È£È¯ ¹®¼­
+	 * í•œê¸€ 2007 í˜¸í™˜ ë¬¸ì„œ
 	 */
 	HWP2007((byte) 1),
 	/**
-	 * MS ¿öµå È£È¯ ¹®¼­
+	 * MS ì›Œë“œ í˜¸í™˜ ë¬¸ì„œ
 	 */
 	MSWord((byte) 2);
 
 	/**
-	 * ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª
+	 * íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’
 	 */
 	private byte value;
 
 	/**
-	 * »ı¼ºÀÚ
+	 * ìƒì„±ì
 	 * 
 	 * @param value
-	 *            ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª
+	 *            íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’
 	 */
 	private CompatibleDocumentSort(byte value) {
 		this.value = value;
 	}
 
 	/**
-	 * ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ªÀ» ¹İÈ¯ÇÑ´Ù.
+	 * íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’ì„ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª
+	 * @return íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’
 	 */
 	public byte getValue() {
 		return value;
 	}
 
 	/**
-	 * ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª¿¡ ÇØ´çµÇ´Â enum °ªÀ» ¹İÈ¯ÇÑ´Ù.
+	 * íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’ì— í•´ë‹¹ë˜ëŠ” enum ê°’ì„ ë°˜í™˜í•œë‹¤.
 	 * 
 	 * @param value
-	 *            ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª
-	 * @return enum °ª
+	 *            íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’
+	 * @return enum ê°’
 	 */
 	public static CompatibleDocumentSort valueOf(byte value) {
 		for (CompatibleDocumentSort cds : values()) {

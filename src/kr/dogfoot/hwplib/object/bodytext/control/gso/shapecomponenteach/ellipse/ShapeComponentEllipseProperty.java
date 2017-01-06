@@ -1,57 +1,57 @@
-package kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponenteach.ellipse;
+ï»¿package kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponenteach.ellipse;
 
 import kr.dogfoot.hwplib.util.binary.BitFlag;
 
 /**
- * Å¸¿ø °³Ã¼ÀÇ ¼Ó¼ºÀ» ³ªÅ¸³»´Â °´Ã¼
+ * íƒ€ì› ê°œì²´ì˜ ì†ì„±ì„ ë‚˜íƒ€ë‚´ëŠ” ê°ì²´
  * 
  * @author neolord
  */
 public class ShapeComponentEllipseProperty {
 	/**
-	 * ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª(unsigned 4 byte)
+	 * íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’(unsigned 4 byte)
 	 */
 	private long value;
 
 	/**
-	 * »ı¼ºÀÚ
+	 * ìƒì„±ì
 	 */
 	public ShapeComponentEllipseProperty() {
 	}
 
 	/**
-	 * ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ªÀ» ¹İÈ¯ÇÑ´Ù.
+	 * íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’ì„ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª
+	 * @return íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’
 	 */
 	public long getValue() {
 		return value;
 	}
 
 	/**
-	 * ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ªÀ» ¼³Á¤ÇÑ´Ù.
+	 * íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’ì„ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param value
-	 *            ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª
+	 *            íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’
 	 */
 	public void setValue(long value) {
 		this.value = value;
 	}
 
 	/**
-	 * È£(ARC)·Î ¹Ù²î¾úÀ» ¶§ intervalÀ» ´Ù½Ã °è»êÇØ¾ß ÇÒ ÇÊ¿ä°¡ ÀÖ´ÂÁö ¿©ºÎ¸¦ ¹İÈ¯ÇÑ´Ù. (0 bit)
+	 * í˜¸(ARC)ë¡œ ë°”ë€Œì—ˆì„ ë•Œ intervalì„ ë‹¤ì‹œ ê³„ì‚°í•´ì•¼ í•  í•„ìš”ê°€ ìˆëŠ”ì§€ ì—¬ë¶€ë¥¼ ë°˜í™˜í•œë‹¤. (0 bit)
 	 * 
-	 * @return È£(ARC)·Î ¹Ù²î¾úÀ» ¶§ intervalÀ» ´Ù½Ã °è»êÇØ¾ß ÇÒ ÇÊ¿ä°¡ ÀÖ´ÂÁö ¿©ºÎ
+	 * @return í˜¸(ARC)ë¡œ ë°”ë€Œì—ˆì„ ë•Œ intervalì„ ë‹¤ì‹œ ê³„ì‚°í•´ì•¼ í•  í•„ìš”ê°€ ìˆëŠ”ì§€ ì—¬ë¶€
 	 */
 	public boolean isRecalculateIntervalWhenChangingArc() {
 		return BitFlag.get(value, 0);
 	}
 
 	/**
-	 * È£(ARC)·Î ¹Ù²î¾úÀ» ¶§ intervalÀ» ´Ù½Ã °è»êÇØ¾ß ÇÒ ÇÊ¿ä°¡ ÀÖ´ÂÁö ¿©ºÎ¸¦ ¼³Á¤ÇÑ´Ù. (0 bit)
+	 * í˜¸(ARC)ë¡œ ë°”ë€Œì—ˆì„ ë•Œ intervalì„ ë‹¤ì‹œ ê³„ì‚°í•´ì•¼ í•  í•„ìš”ê°€ ìˆëŠ”ì§€ ì—¬ë¶€ë¥¼ ì„¤ì •í•œë‹¤. (0 bit)
 	 * 
 	 * @param recalculateIntervalWhenChanging
-	 *            È£(ARC)·Î ¹Ù²î¾úÀ» ¶§ intervalÀ» ´Ù½Ã °è»êÇØ¾ß ÇÒ ÇÊ¿ä°¡ ÀÖ´ÂÁö ¿©ºÎ
+	 *            í˜¸(ARC)ë¡œ ë°”ë€Œì—ˆì„ ë•Œ intervalì„ ë‹¤ì‹œ ê³„ì‚°í•´ì•¼ í•  í•„ìš”ê°€ ìˆëŠ”ì§€ ì—¬ë¶€
 	 */
 	public void setRecalculateIntervalWhenChangingArc(
 			boolean recalculateIntervalWhenChanging) {
@@ -59,38 +59,38 @@ public class ShapeComponentEllipseProperty {
 	}
 
 	/**
-	 * È£(ARC)·Î ¹Ù²î¾ú´ÂÁö ¿©ºÎ¸¦ ¹İÈ¯ÇÑ´Ù. (1 bit)
+	 * í˜¸(ARC)ë¡œ ë°”ë€Œì—ˆëŠ”ì§€ ì—¬ë¶€ë¥¼ ë°˜í™˜í•œë‹¤. (1 bit)
 	 * 
-	 * @return È£(ARC)·Î ¹Ù²î¾ú´ÂÁö ¿©ºÎ
+	 * @return í˜¸(ARC)ë¡œ ë°”ë€Œì—ˆëŠ”ì§€ ì—¬ë¶€
 	 */
 	public boolean isChangeArc() {
 		return BitFlag.get(value, 1);
 	}
 
 	/**
-	 * È£(ARC)·Î ¹Ù²î¾ú´ÂÁö ¿©ºÎ¸¦ ¼³Á¤ÇÑ´Ù. (1 bit)
+	 * í˜¸(ARC)ë¡œ ë°”ë€Œì—ˆëŠ”ì§€ ì—¬ë¶€ë¥¼ ì„¤ì •í•œë‹¤. (1 bit)
 	 * 
 	 * @param changeArc
-	 *            È£(ARC)·Î ¹Ù²î¾ú´ÂÁö ¿©ºÎ
+	 *            í˜¸(ARC)ë¡œ ë°”ë€Œì—ˆëŠ”ì§€ ì—¬ë¶€
 	 */
 	public void setChangeArc(boolean changeArc) {
 		value = BitFlag.set(value, 1, changeArc);
 	}
 
 	/**
-	 * È£(ARC)ÀÇ Á¾·ù¸¦ ¹İÈ¯ÇÑ´Ù.(Á¤º¸ ºÎÁ·) (2~9 bit)
+	 * í˜¸(ARC)ì˜ ì¢…ë¥˜ë¥¼ ë°˜í™˜í•œë‹¤.(ì •ë³´ ë¶€ì¡±) (2~9 bit)
 	 * 
-	 * @return È£(ARC)ÀÇ Á¾·ù
+	 * @return í˜¸(ARC)ì˜ ì¢…ë¥˜
 	 */
 	public short getArcSort() {
 		return (short) BitFlag.get(value, 2, 9);
 	}
 
 	/**
-	 * È£(ARC)ÀÇ Á¾·ù¸¦ ¼³Á¤ÇÑ´Ù. (Á¤º¸ ºÎÁ·) (2~9 bit)
+	 * í˜¸(ARC)ì˜ ì¢…ë¥˜ë¥¼ ì„¤ì •í•œë‹¤. (ì •ë³´ ë¶€ì¡±) (2~9 bit)
 	 * 
 	 * @param arcSort
-	 *            È£(ARC)ÀÇ Á¾·ù
+	 *            í˜¸(ARC)ì˜ ì¢…ë¥˜
 	 */
 	public void setArcSort(short arcSort) {
 		value = BitFlag.set(value, 2, 9, arcSort);

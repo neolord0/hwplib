@@ -1,50 +1,50 @@
-package kr.dogfoot.hwplib.object.docinfo.numbering;
+ï»¿package kr.dogfoot.hwplib.object.docinfo.numbering;
 
 /**
- * °¢ ¼öÁØ(1~7)¿¡ ÇØ´çÇÏ´Â ¹®´Ü ¹øÈ£ Á¤º¸
+ * ê° ìˆ˜ì¤€(1~7)ì— í•´ë‹¹í•˜ëŠ” ë¬¸ë‹¨ ë²ˆí˜¸ ì •ë³´
  * 
  * @author neolord
  */
 public class LevelNumbering {
 	/**
-	 * ¹®´Ü ¸Ó¸® Á¤º¸
+	 * ë¬¸ë‹¨ ë¨¸ë¦¬ ì •ë³´
 	 */
 	private ParagraphHeadInfo paragraphHeadInfo;
 	/**
-	 * ¹øÈ£ Çü½Ä
+	 * ë²ˆí˜¸ í˜•ì‹
 	 */
 	private String numberFormat;
 
 	/**
-	 * »ı¼ºÀÚ
+	 * ìƒì„±ì
 	 */
 	public LevelNumbering() {
 		paragraphHeadInfo = new ParagraphHeadInfo();
 	}
 
 	/**
-	 * ¹®´Ü ¸Ó¸® Á¤º¸¿¡ ´ëÇÑ °´Ã¼¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ë¬¸ë‹¨ ë¨¸ë¦¬ ì •ë³´ì— ëŒ€í•œ ê°ì²´ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ¹®´Ü ¸Ó¸® Á¤º¸¿¡ ´ëÇÑ °´Ã¼
+	 * @return ë¬¸ë‹¨ ë¨¸ë¦¬ ì •ë³´ì— ëŒ€í•œ ê°ì²´
 	 */
 	public ParagraphHeadInfo getParagraphHeadInfo() {
 		return paragraphHeadInfo;
 	}
 
 	/**
-	 * ¹øÈ£ Çü½ÄÀ» ¹İÈ¯ÇÑ´Ù.
+	 * ë²ˆí˜¸ í˜•ì‹ì„ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ¹øÈ£ Çü½Ä
+	 * @return ë²ˆí˜¸ í˜•ì‹
 	 */
 	public String getNumberFormat() {
 		return numberFormat;
 	}
 
 	/**
-	 * ¹øÈ£ Çü½ÄÀ» ¼³Á¤ÇÑ´Ù.
+	 * ë²ˆí˜¸ í˜•ì‹ì„ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param numberFormat
-	 *            ¹øÈ£ Çü½Ä
+	 *            ë²ˆí˜¸ í˜•ì‹
 	 */
 	public void setNumberFormat(String numberFormat) {
 		this.numberFormat = numberFormat;

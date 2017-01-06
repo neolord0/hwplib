@@ -1,76 +1,76 @@
-package kr.dogfoot.hwplib.object.bodytext.control.gso.caption;
+ï»¿package kr.dogfoot.hwplib.object.bodytext.control.gso.caption;
 
 import kr.dogfoot.hwplib.util.binary.BitFlag;
 
 /**
- * Ä¸¼Ç Á¤º¸ÀÇ ¼Ó¼ºÀ» ³ªÅÂ³»´Â °´Ã¼
+ * ìº¡ì…˜ ì •ë³´ì˜ ì†ì„±ì„ ë‚˜íƒœë‚´ëŠ” ê°ì²´
  * 
  * @author neolord
  */
 public class ListHeaderCaptionProperty {
 	/**
-	 * ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª(unsigned 4 byte)
+	 * íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’(unsigned 4 byte)
 	 */
 	private long value;
 
 	/**
-	 * »ı¼ºÀÚ
+	 * ìƒì„±ì
 	 */
 	public ListHeaderCaptionProperty() {
 	}
 
 	/**
-	 * ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ªÀ» ¹İÈ¯ÇÑ´Ù.
+	 * íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’ì„ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª
+	 * @return íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’
 	 */
 	public long getValue() {
 		return value;
 	}
 
 	/**
-	 * ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ªÀ» ¼³Á¤ÇÑ´Ù.
+	 * íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’ì„ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param value
-	 *            ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª
+	 *            íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’
 	 */
 	public void setValue(long value) {
 		this.value = value;
 	}
 
 	/**
-	 * Ä¸¼Ç ¹æÇâÀ» ¹İÈ¯ÇÑ´Ù. (0~1 bit)
+	 * ìº¡ì…˜ ë°©í–¥ì„ ë°˜í™˜í•œë‹¤. (0~1 bit)
 	 * 
-	 * @return Ä¸¼Ç ¹æÇâ
+	 * @return ìº¡ì…˜ ë°©í–¥
 	 */
 	public CaptionDirection getDirection() {
 		return CaptionDirection.valueOf((byte) BitFlag.get(value, 0, 1));
 	}
 
 	/**
-	 * Ä¸¼Ç ¹æÇâÀ» ¼³Á¤ÇÑ´Ù. (0~1 bit)
+	 * ìº¡ì…˜ ë°©í–¥ì„ ì„¤ì •í•œë‹¤. (0~1 bit)
 	 * 
 	 * @param direction
-	 *            Ä¸¼Ç ¹æÇâ
+	 *            ìº¡ì…˜ ë°©í–¥
 	 */
 	public void setDirection(CaptionDirection direction) {
 		value = BitFlag.set(value, 0, 1, direction.getValue());
 	}
 
 	/**
-	 * Ä¸¼Ç Æø¿¡ ¿©¹éÀ» Æ÷ÇÔÇÒ °ÍÀÎÁö ¿©ºÎ¸¦ ¹İÈ¯ÇÑ´Ù. (2 bit)
+	 * ìº¡ì…˜ í­ì— ì—¬ë°±ì„ í¬í•¨í•  ê²ƒì¸ì§€ ì—¬ë¶€ë¥¼ ë°˜í™˜í•œë‹¤. (2 bit)
 	 * 
-	 * @return Ä¸¼Ç Æø¿¡ ¿©¹éÀ» Æ÷ÇÔÇÒ °ÍÀÎÁö ¿©ºÎ
+	 * @return ìº¡ì…˜ í­ì— ì—¬ë°±ì„ í¬í•¨í•  ê²ƒì¸ì§€ ì—¬ë¶€
 	 */
 	public boolean isIncludeMargin() {
 		return BitFlag.get(value, 2);
 	}
 
 	/**
-	 * Ä¸¼Ç Æø¿¡ ¿©¹éÀ» Æ÷ÇÔÇÒ °ÍÀÎÁö ¿©ºÎ¸¦ ¼³Á¤ÇÑ´Ù. (2 bit)
+	 * ìº¡ì…˜ í­ì— ì—¬ë°±ì„ í¬í•¨í•  ê²ƒì¸ì§€ ì—¬ë¶€ë¥¼ ì„¤ì •í•œë‹¤. (2 bit)
 	 * 
 	 * @param includeMargin
-	 *            Ä¸¼Ç Æø¿¡ ¿©¹éÀ» Æ÷ÇÔÇÒ °ÍÀÎÁö ¿©ºÎ
+	 *            ìº¡ì…˜ í­ì— ì—¬ë°±ì„ í¬í•¨í•  ê²ƒì¸ì§€ ì—¬ë¶€
 	 */
 	public void setIncludeMargin(boolean includeMargin) {
 		value = BitFlag.set(value, 2, includeMargin);

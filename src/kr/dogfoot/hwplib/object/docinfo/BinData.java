@@ -1,121 +1,121 @@
-package kr.dogfoot.hwplib.object.docinfo;
+ï»¿package kr.dogfoot.hwplib.object.docinfo;
 
 import kr.dogfoot.hwplib.object.docinfo.bindata.BinDataProperty;
 
 /**
- * ¹ÙÀÌ³Ê¸® µ¥ÀÌÅÍ¸¦ ³ªÅ¸³»´Â ·¹ÄÚµå
+ * ë°”ì´ë„ˆë¦¬ ë°ì´í„°ë¥¼ ë‚˜íƒ€ë‚´ëŠ” ë ˆì½”ë“œ
  * 
  * @author neolord
  */
 public class BinData {
 	/**
-	 * ¼Ó¼º
+	 * ì†ì„±
 	 */
 	private BinDataProperty property;
 	/**
-	 * TypeÀÌ "LINK"ÀÏ ¶§, ¿¬°á ÆÄÀÏÀÇ Àı´ë °æ·Î
+	 * Typeì´ "LINK"ì¼ ë•Œ, ì—°ê²° íŒŒì¼ì˜ ì ˆëŒ€ ê²½ë¡œ
 	 */
 	private String absolutePathForLink;
 	/**
-	 * TypeÀÌ "LINK"ÀÏ ¶§, ¿¬°á ÆÄÀÏÀÇ »ó´ë °æ·Î
+	 * Typeì´ "LINK"ì¼ ë•Œ, ì—°ê²° íŒŒì¼ì˜ ìƒëŒ€ ê²½ë¡œ
 	 */
 	private String relativePathForLink;
 	/**
-	 * TypeÀÌ "EMBEDDING"ÀÌ°Å³ª "STORAGE"ÀÏ ¶§, BINDATASTORAGE¿¡ ÀúÀåµÈ ¹ÙÀÌ³Ê¸® µ¥ÀÌÅÍÀÇ ¾ÆÀÌµğ
+	 * Typeì´ "EMBEDDING"ì´ê±°ë‚˜ "STORAGE"ì¼ ë•Œ, BINDATASTORAGEì— ì €ì¥ëœ ë°”ì´ë„ˆë¦¬ ë°ì´í„°ì˜ ì•„ì´ë””
 	 */
 	private int binDataID;
 	/**
-	 * TypeÀÌ "EMBEDDING"ÀÏ ¶§ extension("." Á¦¿Ü)
+	 * Typeì´ "EMBEDDING"ì¼ ë•Œ extension("." ì œì™¸)
 	 */
 	private String extensionForEmbedding;
 
 	/**
-	 * »ı¼ºÀÚ
+	 * ìƒì„±ì
 	 */
 	public BinData() {
 		property = new BinDataProperty();
 	}
 
 	/**
-	 * ¹ÙÀÌ³Ê¸® µ¥ÀÌÅÍÀÇ ¼Ó¼º °´Ã¼¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ë°”ì´ë„ˆë¦¬ ë°ì´í„°ì˜ ì†ì„± ê°ì²´ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ¹ÙÀÌ³Ê¸® µ¥ÀÌÅÍÀÇ ¼Ó¼º °´Ã¼
+	 * @return ë°”ì´ë„ˆë¦¬ ë°ì´í„°ì˜ ì†ì„± ê°ì²´
 	 */
 	public BinDataProperty getProperty() {
 		return property;
 	}
 
 	/**
-	 * TypeÀÌ "LINK"ÀÏ ¶§, ¿¬°á ÆÄÀÏÀÇ Àı´ë °æ·Î¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * Typeì´ "LINK"ì¼ ë•Œ, ì—°ê²° íŒŒì¼ì˜ ì ˆëŒ€ ê²½ë¡œë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ¿¬°á ÆÄÀÏÀÇ Àı´ë °æ·Î
+	 * @return ì—°ê²° íŒŒì¼ì˜ ì ˆëŒ€ ê²½ë¡œ
 	 */
 	public String getAbsolutePathForLink() {
 		return absolutePathForLink;
 	}
 
 	/**
-	 * TypeÀÌ "LINK"ÀÏ ¶§, ¿¬°á ÆÄÀÏÀÇ Àı´ë °æ·Î¸¦ ¼³Á¤ÇÑ´Ù.
+	 * Typeì´ "LINK"ì¼ ë•Œ, ì—°ê²° íŒŒì¼ì˜ ì ˆëŒ€ ê²½ë¡œë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param absolutePathForLink
-	 *            ¿¬°á ÆÄÀÏÀÇ Àı´ë °æ·Î
+	 *            ì—°ê²° íŒŒì¼ì˜ ì ˆëŒ€ ê²½ë¡œ
 	 */
 	public void setAbsolutePathForLink(String absolutePathForLink) {
 		this.absolutePathForLink = absolutePathForLink;
 	}
 
 	/**
-	 * TypeÀÌ "LINK"ÀÏ ¶§, ¿¬°á ÆÄÀÏÀÇ »ó´ë °æ·Î¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * Typeì´ "LINK"ì¼ ë•Œ, ì—°ê²° íŒŒì¼ì˜ ìƒëŒ€ ê²½ë¡œë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ¿¬°á ÆÄÀÏÀÇ »ó´ë °æ·Î
+	 * @return ì—°ê²° íŒŒì¼ì˜ ìƒëŒ€ ê²½ë¡œ
 	 */
 	public String getRelativePathForLink() {
 		return relativePathForLink;
 	}
 
 	/**
-	 * TypeÀÌ "LINK"ÀÏ ¶§, ¿¬°á ÆÄÀÏÀÇ »ó´ë °æ·Î¸¦ ¼³Á¤ÇÑ´Ù.
+	 * Typeì´ "LINK"ì¼ ë•Œ, ì—°ê²° íŒŒì¼ì˜ ìƒëŒ€ ê²½ë¡œë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param relativePathForLink
-	 *            ¿¬°á ÆÄÀÏÀÇ »ó´ë °æ·Î
+	 *            ì—°ê²° íŒŒì¼ì˜ ìƒëŒ€ ê²½ë¡œ
 	 */
 	public void setRelativePathForLink(String relativePathForLink) {
 		this.relativePathForLink = relativePathForLink;
 	}
 
 	/**
-	 * TypeÀÌ "EMBEDDING"ÀÌ°Å³ª "STORAGE"ÀÏ ¶§, ¹ÙÀÌ³Ê¸® µ¥ÀÌÅÍÀÇ ¾ÆÀÌµğ¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * Typeì´ "EMBEDDING"ì´ê±°ë‚˜ "STORAGE"ì¼ ë•Œ, ë°”ì´ë„ˆë¦¬ ë°ì´í„°ì˜ ì•„ì´ë””ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ¹ÙÀÌ³Ê¸® µ¥ÀÌÅÍÀÇ ¾ÆÀÌµğ
+	 * @return ë°”ì´ë„ˆë¦¬ ë°ì´í„°ì˜ ì•„ì´ë””
 	 */
 	public int getBinDataID() {
 		return binDataID;
 	}
 
 	/**
-	 * TypeÀÌ "EMBEDDING"ÀÌ°Å³ª "STORAGE"ÀÏ ¶§, ¹ÙÀÌ³Ê¸® µ¥ÀÌÅÍÀÇ ¾ÆÀÌµğ¸¦ ¼³Á¤ÇÑ´Ù.
+	 * Typeì´ "EMBEDDING"ì´ê±°ë‚˜ "STORAGE"ì¼ ë•Œ, ë°”ì´ë„ˆë¦¬ ë°ì´í„°ì˜ ì•„ì´ë””ë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param binDataID
-	 *            ¹ÙÀÌ³Ê¸® µ¥ÀÌÅÍÀÇ ¾ÆÀÌµğ
+	 *            ë°”ì´ë„ˆë¦¬ ë°ì´í„°ì˜ ì•„ì´ë””
 	 */
 	public void setBinDataID(int binDataID) {
 		this.binDataID = binDataID;
 	}
 
 	/**
-	 * TypeÀÌ "EMBEDDING"ÀÏ ¶§, ÆÄÀÏÀÇ extensionÀ» ¹İÈ¯ÇÑ´Ù.
+	 * Typeì´ "EMBEDDING"ì¼ ë•Œ, íŒŒì¼ì˜ extensionì„ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ÆÄÀÏÀÇ extension
+	 * @return íŒŒì¼ì˜ extension
 	 */
 	public String getExtensionForEmbedding() {
 		return extensionForEmbedding;
 	}
 
 	/**
-	 * TypeÀÌ "EMBEDDING"ÀÏ ¶§, ÆÄÀÏÀÇ extensionÀ» ¼³Á¤ÇÑ´Ù.
+	 * Typeì´ "EMBEDDING"ì¼ ë•Œ, íŒŒì¼ì˜ extensionì„ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param extensionForEmbedding
-	 *            ÆÄÀÏÀÇ extension
+	 *            íŒŒì¼ì˜ extension
 	 */
 	public void setExtensionForEmbedding(String extensionForEmbedding) {
 		this.extensionForEmbedding = extensionForEmbedding;

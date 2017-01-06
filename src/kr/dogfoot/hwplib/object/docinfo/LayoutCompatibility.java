@@ -1,128 +1,128 @@
-package kr.dogfoot.hwplib.object.docinfo;
+ï»¿package kr.dogfoot.hwplib.object.docinfo;
 
 /**
- * ·¹ÀÌ¾Æ¿ô È£È¯¼º¿¡ ´ëÇÑ  ·¹ÄÚµå
+ * ë ˆì´ì•„ì›ƒ í˜¸í™˜ì„±ì— ëŒ€í•œ  ë ˆì½”ë“œ
  * 
  * @author neolord
  */
 public class LayoutCompatibility {
 	/**
-	 * ±ÛÀÚ ´ÜÀ§ ¼­½Ä
+	 * ê¸€ì ë‹¨ìœ„ ì„œì‹
 	 */
 	private long letterLevelFormat;
 	/**
-	 * ¹®´Ü ´ÜÀ§ ¼­½Ä
+	 * ë¬¸ë‹¨ ë‹¨ìœ„ ì„œì‹
 	 */
 	private long paragraphLevelFormat;
 	/**
-	 * ±¸¿ª ´ÜÀ§ ¼­½Ä
+	 * êµ¬ì—­ ë‹¨ìœ„ ì„œì‹
 	 */
 	private long sectionLevelFormat;
 	/**
-	 * °³Ã¼ ´ÜÀ§ ¼­½Ä
+	 * ê°œì²´ ë‹¨ìœ„ ì„œì‹
 	 */
 	private long objectLevelFormat;
 	/**
-	 * ÇÊµå ´ÜÀ§ ¼­½Ä
+	 * í•„ë“œ ë‹¨ìœ„ ì„œì‹
 	 */
 	private long fieldLevelFormat;
 
 	/**
-	 * »ı¼ºÀÚ
+	 * ìƒì„±ì
 	 */
 	public LayoutCompatibility() {
 	}
 
 	/**
-	 * ±ÛÀÚ ´ÜÀ§ ¼­½ÄÀ» ¹İÈ¯ÇÑ´Ù.
+	 * ê¸€ì ë‹¨ìœ„ ì„œì‹ì„ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ±ÛÀÚ ´ÜÀ§ ¼­½Ä
+	 * @return ê¸€ì ë‹¨ìœ„ ì„œì‹
 	 */
 	public long getLetterLevelFormat() {
 		return letterLevelFormat;
 	}
 
 	/**
-	 * ±ÛÀÚ ´ÜÀ§ ¼­½ÄÀ» ¼³Á¤ÇÑ´Ù.
+	 * ê¸€ì ë‹¨ìœ„ ì„œì‹ì„ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param letterLevelFormat
-	 *            ±ÛÀÚ ´ÜÀ§ ¼­½Ä
+	 *            ê¸€ì ë‹¨ìœ„ ì„œì‹
 	 */
 	public void setLetterLevelFormat(long letterLevelFormat) {
 		this.letterLevelFormat = letterLevelFormat;
 	}
 
 	/**
-	 * ¹®´Ü ´ÜÀ§ ¼­½ÄÀ» ¹İÈ¯ÇÑ´Ù.
+	 * ë¬¸ë‹¨ ë‹¨ìœ„ ì„œì‹ì„ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ¹®´Ü ´ÜÀ§ ¼­½Ä
+	 * @return ë¬¸ë‹¨ ë‹¨ìœ„ ì„œì‹
 	 */
 	public long getParagraphLevelFormat() {
 		return paragraphLevelFormat;
 	}
 
 	/**
-	 * ¹®´Ü ´ÜÀ§ ¼­½ÄÀ» ¼³Á¤ÇÑ´Ù.
+	 * ë¬¸ë‹¨ ë‹¨ìœ„ ì„œì‹ì„ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param paragraphLevelFormat
-	 *            ¹®´Ü ´ÜÀ§ ¼­½Ä
+	 *            ë¬¸ë‹¨ ë‹¨ìœ„ ì„œì‹
 	 */
 	public void setParagraphLevelFormat(long paragraphLevelFormat) {
 		this.paragraphLevelFormat = paragraphLevelFormat;
 	}
 
 	/**
-	 * ±¸¿ª ´ÜÀ§ ¼­½ÄÀ» ¹İÈ¯ÇÑ´Ù.
+	 * êµ¬ì—­ ë‹¨ìœ„ ì„œì‹ì„ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ±¸¿ª ´ÜÀ§ ¼­½Ä
+	 * @return êµ¬ì—­ ë‹¨ìœ„ ì„œì‹
 	 */
 	public long getSectionLevelFormat() {
 		return sectionLevelFormat;
 	}
 
 	/**
-	 * ±¸¿ª ´ÜÀ§ ¼­½ÄÀ» ¼³Á¤ÇÑ´Ù.
+	 * êµ¬ì—­ ë‹¨ìœ„ ì„œì‹ì„ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param sectionLevelFormat
-	 *            ±¸¿ª ´ÜÀ§ ¼­½Ä
+	 *            êµ¬ì—­ ë‹¨ìœ„ ì„œì‹
 	 */
 	public void setSectionLevelFormat(long sectionLevelFormat) {
 		this.sectionLevelFormat = sectionLevelFormat;
 	}
 
 	/**
-	 * °³Ã¼ ´ÜÀ§ ¼­½ÄÀ» ¹İÈ¯ÇÑ´Ù.
+	 * ê°œì²´ ë‹¨ìœ„ ì„œì‹ì„ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return °³Ã¼ ´ÜÀ§ ¼­½Ä
+	 * @return ê°œì²´ ë‹¨ìœ„ ì„œì‹
 	 */
 	public long getObjectLevelFormat() {
 		return objectLevelFormat;
 	}
 
 	/**
-	 * °³Ã¼ ´ÜÀ§ ¼­½ÄÀ» ¼³Á¤ÇÑ´Ù.
+	 * ê°œì²´ ë‹¨ìœ„ ì„œì‹ì„ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param objectLevelFormat
-	 *            °³Ã¼ ´ÜÀ§ ¼­½Ä
+	 *            ê°œì²´ ë‹¨ìœ„ ì„œì‹
 	 */
 	public void setObjectLevelFormat(long objectLevelFormat) {
 		this.objectLevelFormat = objectLevelFormat;
 	}
 
 	/**
-	 * ÇÊµå ´ÜÀ§ ¼­½ÄÀ» ¹İÈ¯ÇÑ´Ù.
+	 * í•„ë“œ ë‹¨ìœ„ ì„œì‹ì„ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ÇÊµå ´ÜÀ§ ¼­½Ä
+	 * @return í•„ë“œ ë‹¨ìœ„ ì„œì‹
 	 */
 	public long getFieldLevelFormat() {
 		return fieldLevelFormat;
 	}
 
 	/**
-	 * ÇÊµå ´ÜÀ§ ¼­½ÄÀ» ¼³Á¤ÇÑ´Ù.
+	 * í•„ë“œ ë‹¨ìœ„ ì„œì‹ì„ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param fieldLevelFormat
-	 *            ÇÊµå ´ÜÀ§ ¼­½Ä
+	 *            í•„ë“œ ë‹¨ìœ„ ì„œì‹
 	 */
 	public void setFieldLevelFormat(long fieldLevelFormat) {
 		this.fieldLevelFormat = fieldLevelFormat;

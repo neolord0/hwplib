@@ -1,27 +1,27 @@
-package kr.dogfoot.hwplib.object.bodytext.control.equation;
+ï»¿package kr.dogfoot.hwplib.object.bodytext.control.equation;
 
 import kr.dogfoot.hwplib.object.etc.Color4Byte;
 
 /**
- * ¼ö½Ä ÄÁÆ®·ÑÀÇ ¼ö½Ä Á¤º¸¸¦ ³ªÅ¸³»´Â ·¹ÄÚµå
+ * ìˆ˜ì‹ ì»¨íŠ¸ë¡¤ì˜ ìˆ˜ì‹ ì •ë³´ë¥¼ ë‚˜íƒ€ë‚´ëŠ” ë ˆì½”ë“œ
  * 
  * @author neolord
  */
 public class EQEdit {
 	/**
-	 * ¼Ó¼º(½ºÅ©¸³Æ®°¡ Â÷ÁöÇÏ´Â ¹üÀ§. Ã¹ ºñÆ®°¡ ÄÑÁ® ÀÖÀ¸¸é ÁÙ ´ÜÀ§, ²¨Á® ÀÖÀ¸¸é ±ÛÀÚ ´ÜÀ§??)
+	 * ì†ì„±(ìŠ¤í¬ë¦½íŠ¸ê°€ ì°¨ì§€í•˜ëŠ” ë²”ìœ„. ì²« ë¹„íŠ¸ê°€ ì¼œì ¸ ìˆìœ¼ë©´ ì¤„ ë‹¨ìœ„, êº¼ì ¸ ìˆìœ¼ë©´ ê¸€ì ë‹¨ìœ„??)
 	 */
 	private long property;
 	/**
-	 * ÇÑ±Û ¼ö½Ä ½ºÅ©¸³Æ®
+	 * í•œê¸€ ìˆ˜ì‹ ìŠ¤í¬ë¦½íŠ¸
 	 */
 	private String script;
 	/**
-	 * ¼ö½Ä ±ÛÀÚ Å©±â
+	 * ìˆ˜ì‹ ê¸€ì í¬ê¸°
 	 */
 	private long letterSize;
 	/**
-	 * ±ÛÀÚ »ö»ó
+	 * ê¸€ì ìƒ‰ìƒ
 	 */
 	private Color4Byte letterColor;
 	/**
@@ -29,85 +29,85 @@ public class EQEdit {
 	 */
 	private short baseLine;
 	/**
-	 * ¹öÀü Á¤º¸ ??
+	 * ë²„ì „ ì •ë³´ ??
 	 */
 	private String versionInfo;
 
 	/**
-	 * »ı¼ºÀÚ
+	 * ìƒì„±ì
 	 */
 	public EQEdit() {
 		letterColor = new Color4Byte();
 	}
 
 	/**
-	 * ¼Ó¼º°ªÀ» ¹İÈ¯ÇÑ´Ù.
+	 * ì†ì„±ê°’ì„ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ¼Ó¼º°ª
+	 * @return ì†ì„±ê°’
 	 */
 	public long getProperty() {
 		return property;
 	}
 
 	/**
-	 * ¼Ó¼º°ªÀ» ¼³Á¤ÇÑ´Ù.
+	 * ì†ì„±ê°’ì„ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param property
-	 *            ¼Ó¼º°ª
+	 *            ì†ì„±ê°’
 	 */
 	public void setProperty(long property) {
 		this.property = property;
 	}
 
 	/**
-	 * ÇÑ±Û ¼ö½Ä ½ºÅ©¸³Æ®¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * í•œê¸€ ìˆ˜ì‹ ìŠ¤í¬ë¦½íŠ¸ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ÇÑ±Û ¼ö½Ä ½ºÅ©¸³Æ®
+	 * @return í•œê¸€ ìˆ˜ì‹ ìŠ¤í¬ë¦½íŠ¸
 	 */
 	public String getScript() {
 		return script;
 	}
 
 	/**
-	 * ÇÑ±Û ¼ö½Ä ½ºÅ©¸³Æ®¸¦ ¼³Á¤ÇÑ´Ù.
+	 * í•œê¸€ ìˆ˜ì‹ ìŠ¤í¬ë¦½íŠ¸ë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param script
-	 *            ÇÑ±Û ¼ö½Ä ½ºÅ©¸³Æ®
+	 *            í•œê¸€ ìˆ˜ì‹ ìŠ¤í¬ë¦½íŠ¸
 	 */
 	public void setScript(String script) {
 		this.script = script;
 	}
 
 	/**
-	 * ¼ö½Ä ±ÛÀÚ Å©±â¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ìˆ˜ì‹ ê¸€ì í¬ê¸°ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ¼ö½Ä ±ÛÀÚ Å©±â
+	 * @return ìˆ˜ì‹ ê¸€ì í¬ê¸°
 	 */
 	public long getLetterSize() {
 		return letterSize;
 	}
 
 	/**
-	 * ¼ö½Ä ±ÛÀÚ Å©±â¸¦ ¼³Á¤ÇÑ´Ù.
+	 * ìˆ˜ì‹ ê¸€ì í¬ê¸°ë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param letterSize
-	 *            ¼ö½Ä ±ÛÀÚ Å©±â
+	 *            ìˆ˜ì‹ ê¸€ì í¬ê¸°
 	 */
 	public void setLetterSize(long letterSize) {
 		this.letterSize = letterSize;
 	}
 
 	/**
-	 * ±ÛÀÚ »ö»ó °´Ã¼¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ê¸€ì ìƒ‰ìƒ ê°ì²´ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ±ÛÀÚ »ö»ó °´Ã¼
+	 * @return ê¸€ì ìƒ‰ìƒ ê°ì²´
 	 */
 	public Color4Byte getLetterColor() {
 		return letterColor;
 	}
 
 	/**
-	 * base lineÀ» ¹İÈ¯ÇÑ´Ù.
+	 * base lineì„ ë°˜í™˜í•œë‹¤.
 	 * 
 	 * @return base line
 	 */
@@ -116,7 +116,7 @@ public class EQEdit {
 	}
 
 	/**
-	 * base lineÀ» ¼³Á¤ÇÑ´Ù.
+	 * base lineì„ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param baseLine
 	 *            base line
@@ -126,19 +126,19 @@ public class EQEdit {
 	}
 
 	/**
-	 * ¹öÀü Á¤º¸¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ë²„ì „ ì •ë³´ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ¹öÀü Á¤º¸
+	 * @return ë²„ì „ ì •ë³´
 	 */
 	public String getVersionInfo() {
 		return versionInfo;
 	}
 
 	/**
-	 * ¹öÀü Á¤º¸¸¦ ¼³Á¤ÇÑ´Ù.
+	 * ë²„ì „ ì •ë³´ë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param versionInfo
-	 *            ¹öÀü Á¤º¸
+	 *            ë²„ì „ ì •ë³´
 	 */
 	public void setVersionInfo(String versionInfo) {
 		this.versionInfo = versionInfo;

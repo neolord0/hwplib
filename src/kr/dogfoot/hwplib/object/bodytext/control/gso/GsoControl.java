@@ -1,4 +1,4 @@
-package kr.dogfoot.hwplib.object.bodytext.control.gso;
+ï»¿package kr.dogfoot.hwplib.object.bodytext.control.gso;
 
 import kr.dogfoot.hwplib.object.bodytext.control.Control;
 import kr.dogfoot.hwplib.object.bodytext.control.ctrlheader.CtrlHeaderGso;
@@ -7,36 +7,36 @@ import kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponent.ShapeCompone
 import kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponent.ShapeComponentNormal;
 
 /**
- * ±×¸®±â °³Ã¼ ÄÁÆ®·Ñ
+ * ê·¸ë¦¬ê¸° ê°œì²´ ì»¨íŠ¸ë¡¤
  * 
  * @author neolord
  */
 public class GsoControl extends Control {
 	/**
-	 * ±×¸®±â °³Ã¼ ¾ÆÀÌµğ
+	 * ê·¸ë¦¬ê¸° ê°œì²´ ì•„ì´ë””
 	 */
 	private long gsoId;
 	/**
-	 * Ä¸¼Ç Á¤º¸
+	 * ìº¡ì…˜ ì •ë³´
 	 */
 	private Caption caption;
 	/**
-	 * ±×¸®±â °³Ã¼ÀÇ °øÅë ¿ä¼Ò
+	 * ê·¸ë¦¬ê¸° ê°œì²´ì˜ ê³µí†µ ìš”ì†Œ
 	 */
 	protected ShapeComponent shapeComponent;
 
 	/**
-	 * »ı¼ºÀÚ
+	 * ìƒì„±ì
 	 */
 	public GsoControl() {
 		this(new CtrlHeaderGso());
 	}
 
 	/**
-	 * »ı»óÀÚ
+	 * ìƒìƒì
 	 * 
 	 * @param header
-	 *            ±×¸®±â °³Ã¼¸¦ À§ÇÑ ÄÁÆ®·Ñ Çì´õ
+	 *            ê·¸ë¦¬ê¸° ê°œì²´ë¥¼ ìœ„í•œ ì»¨íŠ¸ë¡¤ í—¤ë”
 	 */
 	public GsoControl(CtrlHeaderGso header) {
 		super(header);
@@ -45,65 +45,65 @@ public class GsoControl extends Control {
 	}
 
 	/**
-	 * ±×¸®±â °³Ã¼¸¦ À§ÇÑ ÄÁÆ®·Ñ Çì´õ °´Ã¼¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ê·¸ë¦¬ê¸° ê°œì²´ë¥¼ ìœ„í•œ ì»¨íŠ¸ë¡¤ í—¤ë” ê°ì²´ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ±×¸®±â °³Ã¼¸¦ À§ÇÑ ÄÁÆ®·Ñ Çì´õ °´Ã¼
+	 * @return ê·¸ë¦¬ê¸° ê°œì²´ë¥¼ ìœ„í•œ ì»¨íŠ¸ë¡¤ í—¤ë” ê°ì²´
 	 */
 	public CtrlHeaderGso getHeader() {
 		return (CtrlHeaderGso) header;
 	}
 
 	/**
-	 * ±×¸®±â °³Ã¼ ¾ÆÀÌµğ¸¦ ¹İÈ¯È¯´Ù.
+	 * ê·¸ë¦¬ê¸° ê°œì²´ ì•„ì´ë””ë¥¼ ë°˜í™˜í™˜ë‹¤.
 	 * 
-	 * @return ±×¸®±â °³Ã¼ ¾ÆÀÌµğ
+	 * @return ê·¸ë¦¬ê¸° ê°œì²´ ì•„ì´ë””
 	 */
 	public long getGsoId() {
 		return gsoId;
 	}
 
 	/**
-	 * ±×¸®±â °³Ã¼ ¾ÆÀÌµğ¸¦ ¼³Á¤ÇÑ´Ù.
+	 * ê·¸ë¦¬ê¸° ê°œì²´ ì•„ì´ë””ë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param gsoId
-	 *            ±×¸®±â °³Ã¼ ¾ÆÀÌµğ
+	 *            ê·¸ë¦¬ê¸° ê°œì²´ ì•„ì´ë””
 	 */
 	public void setGsoId(long gsoId) {
 		this.gsoId = gsoId;
 	}
 
 	/**
-	 * ±×¸®±â °³Ã¼ Å¸ÀÔÀ» ¹İÈ¯ÇÑ´Ù.
+	 * ê·¸ë¦¬ê¸° ê°œì²´ íƒ€ì…ì„ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ±×¸®±â °³Ã¼ Å¸ÀÔ
+	 * @return ê·¸ë¦¬ê¸° ê°œì²´ íƒ€ì…
 	 */
 	public GsoControlType getGsoType() {
 		return GsoControlType.idOf(gsoId);
 	}
 
 	/**
-	 * Ä¸¼Ç Á¤º¸ °´Ã¼¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ìº¡ì…˜ ì •ë³´ ê°ì²´ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return Ä¸¼Ç Á¤º¸ °´Ã¼
+	 * @return ìº¡ì…˜ ì •ë³´ ê°ì²´
 	 */
 	public Caption getCaption() {
 		return caption;
 	}
 
 	/**
-	 * Ä¸¼Ç Á¤º¸ °´Ã¼À» ¼³Á¤ÇÑ´Ù.
+	 * ìº¡ì…˜ ì •ë³´ ê°ì²´ì„ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param caption
-	 *            Ä¸¼Ç Á¤º¸ °´Ã¼
+	 *            ìº¡ì…˜ ì •ë³´ ê°ì²´
 	 */
 	public void setCaption(Caption caption) {
 		this.caption = caption;
 	}
 
 	/**
-	 * ±×¸®±â °³Ã¼ÀÇ °øÅë ¿ä¼ÒÀ» ³ªÅÂ³»´Â °´Ã¼¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ê·¸ë¦¬ê¸° ê°œì²´ì˜ ê³µí†µ ìš”ì†Œì„ ë‚˜íƒœë‚´ëŠ” ê°ì²´ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ±×¸®±â °³Ã¼ÀÇ °øÅë ¿ä¼ÒÀ» ³ªÅÂ³»´Â °´Ã¼
+	 * @return ê·¸ë¦¬ê¸° ê°œì²´ì˜ ê³µí†µ ìš”ì†Œì„ ë‚˜íƒœë‚´ëŠ” ê°ì²´
 	 */
 	public ShapeComponent getShapeComponent() {
 		return shapeComponent;

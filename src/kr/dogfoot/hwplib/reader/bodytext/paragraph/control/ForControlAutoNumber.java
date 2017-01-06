@@ -1,4 +1,4 @@
-package kr.dogfoot.hwplib.reader.bodytext.paragraph.control;
+ï»¿package kr.dogfoot.hwplib.reader.bodytext.paragraph.control;
 
 import java.io.IOException;
 
@@ -7,18 +7,18 @@ import kr.dogfoot.hwplib.object.bodytext.control.ctrlheader.CtrlHeaderAutoNumber
 import kr.dogfoot.hwplib.util.compoundFile.StreamReader;
 
 /**
- * ÀÚµ¿ ¹øÈ£ ÄÁÆ®·ÑÀ» ÀĞ±â À§ÇÑ °´Ã¼
+ * ìë™ ë²ˆí˜¸ ì»¨íŠ¸ë¡¤ì„ ì½ê¸° ìœ„í•œ ê°ì²´
  * 
  * @author neolord
  */
 public class ForControlAutoNumber {
 	/**
-	 * ÀÚµ¿ ¹øÈ£ ÄÁÆ®·ÑÀ» ÀĞ´Â´Ù.
+	 * ìë™ ë²ˆí˜¸ ì»¨íŠ¸ë¡¤ì„ ì½ëŠ”ë‹¤.
 	 * 
 	 * @param an
-	 *            ÀÚµ¿¹øÈ£ ÄÁÆ®·Ñ
+	 *            ìë™ë²ˆí˜¸ ì»¨íŠ¸ë¡¤
 	 * @param sr
-	 *            ½ºÆ®¸² ¸®´õ
+	 *            ìŠ¤íŠ¸ë¦¼ ë¦¬ë”
 	 * @throws IOException
 	 */
 	public static void read(ControlAutoNumber an, StreamReader sr)
@@ -27,12 +27,12 @@ public class ForControlAutoNumber {
 	}
 
 	/**
-	 * ÀÚµ¿ ¹øÈ£ ÄÁÆ®·ÑÀÇ ÄÁÆ®·Ñ Çì´õ ·¹ÄÚµå¸¦ ÀĞ´Â´Ù.
+	 * ìë™ ë²ˆí˜¸ ì»¨íŠ¸ë¡¤ì˜ ì»¨íŠ¸ë¡¤ í—¤ë” ë ˆì½”ë“œë¥¼ ì½ëŠ”ë‹¤.
 	 * 
 	 * @param h
-	 *            ÀÚµ¿ ¹øÈ£ ÄÁÆ®·ÑÀÇ ÄÁÆ®·Ñ Çì´õ ·¹ÄÚµå
+	 *            ìë™ ë²ˆí˜¸ ì»¨íŠ¸ë¡¤ì˜ ì»¨íŠ¸ë¡¤ í—¤ë” ë ˆì½”ë“œ
 	 * @param sr
-	 *            ½ºÆ®¸² ¸®´õ
+	 *            ìŠ¤íŠ¸ë¦¼ ë¦¬ë”
 	 * @throws IOException
 	 */
 	private static void ctrlHeader(CtrlHeaderAutoNumber h, StreamReader sr)

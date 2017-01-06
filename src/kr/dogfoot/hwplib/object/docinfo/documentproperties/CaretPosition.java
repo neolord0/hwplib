@@ -1,82 +1,82 @@
-package kr.dogfoot.hwplib.object.docinfo.documentproperties;
+ï»¿package kr.dogfoot.hwplib.object.docinfo.documentproperties;
 
 /**
- * Ä³·µÀÇ À§Ä¡ Á¤º¸
+ * ìºëŸ¿ì˜ ìœ„ì¹˜ ì •ë³´
  * 
  * @author neolord
  */
 public class CaretPosition {
 	/**
-	 * ¸®½ºÆ® ¾ÆÀÌµğ - (±¸¿ª ??)
+	 * ë¦¬ìŠ¤íŠ¸ ì•„ì´ë”” - (êµ¬ì—­ ??)
 	 */
 	private long listID;
 	/**
-	 * ¹®´Ü ¾ÆÀÌµğ
+	 * ë¬¸ë‹¨ ì•„ì´ë””
 	 */
 	private long paragraphID;
 	/**
-	 * ¹®´Ü ³»¿¡¼­ÀÇ ±ÛÀÚ ´ÜÀ§ À§Ä¡
+	 * ë¬¸ë‹¨ ë‚´ì—ì„œì˜ ê¸€ì ë‹¨ìœ„ ìœ„ì¹˜
 	 */
 	private long positionInParagraph;
 
 	/**
-	 * »ı¼ºÀÚ
+	 * ìƒì„±ì
 	 */
 	public CaretPosition() {
 	}
 
 	/**
-	 * ¸®½ºÆ® ¾ÆÀÌµğ¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ë¦¬ìŠ¤íŠ¸ ì•„ì´ë””ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ¸®½ºÆ® ¾ÆÀÌµğ
+	 * @return ë¦¬ìŠ¤íŠ¸ ì•„ì´ë””
 	 */
 	public long getListID() {
 		return listID;
 	}
 
 	/**
-	 * ¸®½ºÆ® ¾ÆÀÌµğ¸¦ ¼³Á¤ÇÑ´Ù.
+	 * ë¦¬ìŠ¤íŠ¸ ì•„ì´ë””ë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param listID
-	 *            ¸®½ºÆ® ¾ÆÀÌµğ
+	 *            ë¦¬ìŠ¤íŠ¸ ì•„ì´ë””
 	 */
 	public void setListID(long listID) {
 		this.listID = listID;
 	}
 
 	/**
-	 * ¹®´Ü ¾ÆÀÌµğ¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ë¬¸ë‹¨ ì•„ì´ë””ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ¹®´Ü ¾ÆÀÌµğ
+	 * @return ë¬¸ë‹¨ ì•„ì´ë””
 	 */
 	public long getParagraphID() {
 		return paragraphID;
 	}
 
 	/**
-	 * ¹®´Ü ¾ÆÀÌµğ¸¦ ¼³Á¤ÇÑ´Ù.
+	 * ë¬¸ë‹¨ ì•„ì´ë””ë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param paragraphID
-	 *            ¹®´Ü ¾ÆÀÌµğ
+	 *            ë¬¸ë‹¨ ì•„ì´ë””
 	 */
 	public void setParagraphID(long paragraphID) {
 		this.paragraphID = paragraphID;
 	}
 
 	/**
-	 * ¹®´Ü ³»¿¡¼­ÀÇ ±ÛÀÚ ´ÜÀ§ À§Ä¡¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ë¬¸ë‹¨ ë‚´ì—ì„œì˜ ê¸€ì ë‹¨ìœ„ ìœ„ì¹˜ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ¹®´Ü ³»¿¡¼­ÀÇ ±ÛÀÚ ´ÜÀ§ À§Ä¡
+	 * @return ë¬¸ë‹¨ ë‚´ì—ì„œì˜ ê¸€ì ë‹¨ìœ„ ìœ„ì¹˜
 	 */
 	public long getPositionInParagraph() {
 		return positionInParagraph;
 	}
 
 	/**
-	 * ¹®´Ü ³»¿¡¼­ÀÇ ±ÛÀÚ ´ÜÀ§ À§Ä¡¸¦ ¼³Á¤ÇÑ´Ù.
+	 * ë¬¸ë‹¨ ë‚´ì—ì„œì˜ ê¸€ì ë‹¨ìœ„ ìœ„ì¹˜ë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param positionInParagraph
-	 *            ¹®´Ü ³»¿¡¼­ÀÇ ±ÛÀÚ ´ÜÀ§ À§Ä¡
+	 *            ë¬¸ë‹¨ ë‚´ì—ì„œì˜ ê¸€ì ë‹¨ìœ„ ìœ„ì¹˜
 	 */
 	public void setPositionInParagraph(long positionInParagraph) {
 		this.positionInParagraph = positionInParagraph;

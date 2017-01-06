@@ -1,4 +1,4 @@
-package kr.dogfoot.hwplib.reader.bodytext.paragraph.control;
+ï»¿package kr.dogfoot.hwplib.reader.bodytext.paragraph.control;
 
 import java.io.IOException;
 
@@ -7,18 +7,18 @@ import kr.dogfoot.hwplib.object.bodytext.control.ctrlheader.CtrlHeaderPageNumber
 import kr.dogfoot.hwplib.util.compoundFile.StreamReader;
 
 /**
- * ÂÊ ¹øÈ£ À§Ä¡ ÄÁÆ®·ÑÀ» ÀĞ±â À§ÇÑ °´Ã¼
+ * ìª½ ë²ˆí˜¸ ìœ„ì¹˜ ì»¨íŠ¸ë¡¤ì„ ì½ê¸° ìœ„í•œ ê°ì²´
  * 
  * @author neolord
  */
 public class ForControlPageNumberPosition {
 	/**
-	 * ÂÊ ¹øÈ£ À§Ä¡ ÄÁÆ®·ÑÀ» ÀĞ´Â´Ù.
+	 * ìª½ ë²ˆí˜¸ ìœ„ì¹˜ ì»¨íŠ¸ë¡¤ì„ ì½ëŠ”ë‹¤.
 	 * 
 	 * @param pgnp
-	 *            ÂÊ ¹øÈ£ À§Ä¡ ÄÁÆ®·Ñ °´Ã¼
+	 *            ìª½ ë²ˆí˜¸ ìœ„ì¹˜ ì»¨íŠ¸ë¡¤ ê°ì²´
 	 * @param sr
-	 *            ½ºÆ®¸² ¸®´õ
+	 *            ìŠ¤íŠ¸ë¦¼ ë¦¬ë”
 	 * @throws IOException
 	 */
 	public static void read(ControlPageNumberPosition pgnp, StreamReader sr)
@@ -27,12 +27,12 @@ public class ForControlPageNumberPosition {
 	}
 
 	/**
-	 * ÂÊ ¹øÈ£ À§Ä¡ ÄÁÆ®·ÑÀÇ ÄÁÆ®·Ñ Çì´õ ·¹ÄÚµå¸¦ ÀĞ´Â´Ù.
+	 * ìª½ ë²ˆí˜¸ ìœ„ì¹˜ ì»¨íŠ¸ë¡¤ì˜ ì»¨íŠ¸ë¡¤ í—¤ë” ë ˆì½”ë“œë¥¼ ì½ëŠ”ë‹¤.
 	 * 
 	 * @param header
-	 *            ÂÊ ¹øÈ£ À§Ä¡ ÄÁÆ®·Ñ Çì´õ ·¹ÄÚµå
+	 *            ìª½ ë²ˆí˜¸ ìœ„ì¹˜ ì»¨íŠ¸ë¡¤ í—¤ë” ë ˆì½”ë“œ
 	 * @param sr
-	 *            ½ºÆ®¸² ¸®´õ
+	 *            ìŠ¤íŠ¸ë¦¼ ë¦¬ë”
 	 * @throws IOException
 	 */
 	private static void ctrlHeader(CtrlHeaderPageNumberPosition header,

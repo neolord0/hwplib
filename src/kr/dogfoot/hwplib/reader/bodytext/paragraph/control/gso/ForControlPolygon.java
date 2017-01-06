@@ -1,4 +1,4 @@
-package kr.dogfoot.hwplib.reader.bodytext.paragraph.control.gso;
+ï»¿package kr.dogfoot.hwplib.reader.bodytext.paragraph.control.gso;
 
 import java.io.IOException;
 
@@ -11,16 +11,16 @@ import kr.dogfoot.hwplib.reader.bodytext.paragraph.control.gso.part.ForTextBox;
 import kr.dogfoot.hwplib.util.compoundFile.StreamReader;
 
 /**
- * ´Ù°¢Çü ÄÁÆ®·ÑÀ» ÀĞ±â À§ÇÑ °´Ã¼
+ * ë‹¤ê°í˜• ì»¨íŠ¸ë¡¤ì„ ì½ê¸° ìœ„í•œ ê°ì²´
  * 
  * @author neolord
  */
 public class ForControlPolygon {
 	/**
-	 * ´Ù°¢Çü ÄÁÆ®·ÑÀ» ÀĞ´Â´Ù.
+	 * ë‹¤ê°í˜• ì»¨íŠ¸ë¡¤ì„ ì½ëŠ”ë‹¤.
 	 * 
-	 * @param polygon ´Ù°¢Çü ÄÁÆ®·Ñ
-	 * @param sr ½ºÆ®¸² ¸®´õ
+	 * @param polygon ë‹¤ê°í˜• ì»¨íŠ¸ë¡¤
+	 * @param sr ìŠ¤íŠ¸ë¦¼ ë¦¬ë”
 	 * @throws Exception
 	 */
 	public static void read(ControlPolygon polygon, StreamReader sr) throws Exception {
@@ -38,10 +38,10 @@ public class ForControlPolygon {
 	}
 
 	/**
-	 * ´Ù°¢Çü °³Ã¼ ¼Ó¼º ·¹ÄÚµåÀ» ÀĞ´Â´Ù.
+	 * ë‹¤ê°í˜• ê°œì²´ ì†ì„± ë ˆì½”ë“œì„ ì½ëŠ”ë‹¤.
 	 * 
-	 * @param scp ´Ù°¢Çü °³Ã¼ ¼Ó¼º ·¹ÄÚµå
-	 * @param sr ½ºÆ®¸² ¸®´õ
+	 * @param scp ë‹¤ê°í˜• ê°œì²´ ì†ì„± ë ˆì½”ë“œ
+	 * @param sr ìŠ¤íŠ¸ë¦¼ ë¦¬ë”
 	 * @throws IOException
 	 */
 	private static void shapeComponentPolygon(

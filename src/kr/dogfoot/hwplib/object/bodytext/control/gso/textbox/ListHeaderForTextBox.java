@@ -1,66 +1,66 @@
-package kr.dogfoot.hwplib.object.bodytext.control.gso.textbox;
+ï»¿package kr.dogfoot.hwplib.object.bodytext.control.gso.textbox;
 
 /**
- * ±Û»óÀÚ¸¦ À§ÇÑ ¹®´Ü ¸®½ºÆ® Çì´õ ·¹ÄÚµå
+ * ê¸€ìƒìë¥¼ ìœ„í•œ ë¬¸ë‹¨ ë¦¬ìŠ¤íŠ¸ í—¤ë” ë ˆì½”ë“œ
  * 
  * @author neolord
  */
 public class ListHeaderForTextBox {
 	/**
-	 * ¹®´Ü °³¼ö
+	 * ë¬¸ë‹¨ ê°œìˆ˜
 	 */
 	private int paraCount;
 	/**
-	 * ¼Ó¼º
+	 * ì†ì„±
 	 */
 	private ListHeaderProperty property;
 	/**
-	 * ±Û»óÀÚ ÅØ½ºÆ® ¿ŞÂÊ ¿©¹é
+	 * ê¸€ìƒì í…ìŠ¤íŠ¸ ì™¼ìª½ ì—¬ë°±
 	 */
 	private int leftMargin;
 	/**
-	 * ±Û»óÀÚ ÅØ½ºÆ® ¿À¸¥ÂÊ ¿©¹é
+	 * ê¸€ìƒì í…ìŠ¤íŠ¸ ì˜¤ë¥¸ìª½ ì—¬ë°±
 	 */
 	private int rightMargin;
 	/**
-	 * ±Û»óÀÚ ÅØ½ºÆ® À§ÂÊ ¿©¹é
+	 * ê¸€ìƒì í…ìŠ¤íŠ¸ ìœ„ìª½ ì—¬ë°±
 	 */
 	private int topMargin;
 	/**
-	 * ±Û»óÀÚ ÅØ½ºÆ® ¾Æ·¡ÂÊ ¿©¹é
+	 * ê¸€ìƒì í…ìŠ¤íŠ¸ ì•„ë˜ìª½ ì—¬ë°±
 	 */
 	private int bottomMargin;
 	/**
-	 * ÅØ½ºÆ® ¹®ÀÚ¿­ÀÇ ÃÖ´ë Æø
+	 * í…ìŠ¤íŠ¸ ë¬¸ìì—´ì˜ ìµœëŒ€ í­
 	 */
 	private long textWidth;
 	/**
-	 * ¾ç½Ä ¸ğµå¿¡¼­ ÆíÁı °¡´É
+	 * ì–‘ì‹ ëª¨ë“œì—ì„œ í¸ì§‘ ê°€ëŠ¥
 	 */
 	private boolean editableAtFormMode;
 	/**
-	 * ÇÊµå ÀÌ¸§
+	 * í•„ë“œ ì´ë¦„
 	 */
 	private String fieldName;
 
 	/**
-	 * »ı¼ºÀÚ
+	 * ìƒì„±ì
 	 */
 	public ListHeaderForTextBox() {
 		property = new ListHeaderProperty();
 	}
 
 	/**
-	 * ¹®´Ü °³¼ö¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ë¬¸ë‹¨ ê°œìˆ˜ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ¹®´Ü °³¼ö
+	 * @return ë¬¸ë‹¨ ê°œìˆ˜
 	 */
 	public int getParaCount() {
 		return paraCount;
 	}
 
 	/**
-	 * ¹®´Ü °³¼ö¸¦ ¼³Á¤ÇÑ´Ù.
+	 * ë¬¸ë‹¨ ê°œìˆ˜ë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param paraCount
 	 */
@@ -69,142 +69,142 @@ public class ListHeaderForTextBox {
 	}
 
 	/**
-	 * ¼Ó¼º °´Ã¼¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ì†ì„± ê°ì²´ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ¼Ó¼º °´Ã¼
+	 * @return ì†ì„± ê°ì²´
 	 */
 	public ListHeaderProperty getProperty() {
 		return property;
 	}
 
 	/**
-	 * ±Û»óÀÚ ÅØ½ºÆ® ¿ŞÂÊ ¿©¹éÀÇ Å©±â¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ê¸€ìƒì í…ìŠ¤íŠ¸ ì™¼ìª½ ì—¬ë°±ì˜ í¬ê¸°ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ±Û»óÀÚ ÅØ½ºÆ® ¿ŞÂÊ ¿©¹éÀÇ Å©±â
+	 * @return ê¸€ìƒì í…ìŠ¤íŠ¸ ì™¼ìª½ ì—¬ë°±ì˜ í¬ê¸°
 	 */
 	public int getLeftMargin() {
 		return leftMargin;
 	}
 
 	/**
-	 * ±Û»óÀÚ ÅØ½ºÆ® ¿ŞÂÊ ¿©¹éÀÇ Å©±â¸¦ ¼³Á¤ÇÑ´Ù.
+	 * ê¸€ìƒì í…ìŠ¤íŠ¸ ì™¼ìª½ ì—¬ë°±ì˜ í¬ê¸°ë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param leftMargin
-	 *            ±Û»óÀÚ ÅØ½ºÆ® ¿ŞÂÊ ¿©¹éÀÇ Å©±â
+	 *            ê¸€ìƒì í…ìŠ¤íŠ¸ ì™¼ìª½ ì—¬ë°±ì˜ í¬ê¸°
 	 */
 	public void setLeftMargin(int leftMargin) {
 		this.leftMargin = leftMargin;
 	}
 
 	/**
-	 * ±Û»óÀÚ ÅØ½ºÆ® ¿À¸¥ÂÊ ¿©¹éÀÇ Å©±â¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ê¸€ìƒì í…ìŠ¤íŠ¸ ì˜¤ë¥¸ìª½ ì—¬ë°±ì˜ í¬ê¸°ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ±Û»óÀÚ ÅØ½ºÆ® ¿À¸¥ÂÊ ¿©¹éÀÇ Å©±â
+	 * @return ê¸€ìƒì í…ìŠ¤íŠ¸ ì˜¤ë¥¸ìª½ ì—¬ë°±ì˜ í¬ê¸°
 	 */
 	public int getRightMargin() {
 		return rightMargin;
 	}
 
 	/**
-	 * ±Û»óÀÚ ÅØ½ºÆ® ¿À¸¥ÂÊ ¿©¹éÀÇ Å©±â¸¦ ¼³Á¤ÇÑ´Ù.
+	 * ê¸€ìƒì í…ìŠ¤íŠ¸ ì˜¤ë¥¸ìª½ ì—¬ë°±ì˜ í¬ê¸°ë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param rightMargin
-	 *            ±Û»óÀÚ ÅØ½ºÆ® ¿À¸¥ÂÊ ¿©¹éÀÇ Å©±â
+	 *            ê¸€ìƒì í…ìŠ¤íŠ¸ ì˜¤ë¥¸ìª½ ì—¬ë°±ì˜ í¬ê¸°
 	 */
 	public void setRightMargin(int rightMargin) {
 		this.rightMargin = rightMargin;
 	}
 
 	/**
-	 * ±Û»óÀÚ ÅØ½ºÆ® À§ÂÊ ¿©¹éÀÇ Å©±â¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ê¸€ìƒì í…ìŠ¤íŠ¸ ìœ„ìª½ ì—¬ë°±ì˜ í¬ê¸°ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ±Û»óÀÚ ÅØ½ºÆ® À§ÂÊ ¿©¹éÀÇ Å©±â
+	 * @return ê¸€ìƒì í…ìŠ¤íŠ¸ ìœ„ìª½ ì—¬ë°±ì˜ í¬ê¸°
 	 */
 	public int getTopMargin() {
 		return topMargin;
 	}
 
 	/**
-	 * ±Û»óÀÚ ÅØ½ºÆ® À§ÂÊ ¿©¹éÀÇ Å©±â¸¦ ¼³Á¤ÇÑ´Ù.
+	 * ê¸€ìƒì í…ìŠ¤íŠ¸ ìœ„ìª½ ì—¬ë°±ì˜ í¬ê¸°ë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param topMargin
-	 *            ±Û»óÀÚ ÅØ½ºÆ® À§ÂÊ ¿©¹éÀÇ Å©±â
+	 *            ê¸€ìƒì í…ìŠ¤íŠ¸ ìœ„ìª½ ì—¬ë°±ì˜ í¬ê¸°
 	 */
 	public void setTopMargin(int topMargin) {
 		this.topMargin = topMargin;
 	}
 
 	/**
-	 * ±Û»óÀÚ ÅØ½ºÆ® ¾Æ·¡ÂÊ ¿©¹éÀÇ Å©±â¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ê¸€ìƒì í…ìŠ¤íŠ¸ ì•„ë˜ìª½ ì—¬ë°±ì˜ í¬ê¸°ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ±Û»óÀÚ ÅØ½ºÆ® ¾Æ·¡ÂÊ ¿©¹éÀÇ Å©±â
+	 * @return ê¸€ìƒì í…ìŠ¤íŠ¸ ì•„ë˜ìª½ ì—¬ë°±ì˜ í¬ê¸°
 	 */
 	public int getBottomMargin() {
 		return bottomMargin;
 	}
 
 	/**
-	 * ±Û»óÀÚ ÅØ½ºÆ® ¾Æ·¡ÂÊ ¿©¹éÀÇ Å©±â¸¦ ¼³Á¤ÇÑ´Ù.
+	 * ê¸€ìƒì í…ìŠ¤íŠ¸ ì•„ë˜ìª½ ì—¬ë°±ì˜ í¬ê¸°ë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param bottomMargin
-	 *            ±Û»óÀÚ ÅØ½ºÆ® ¾Æ·¡ÂÊ ¿©¹éÀÇ Å©±â
+	 *            ê¸€ìƒì í…ìŠ¤íŠ¸ ì•„ë˜ìª½ ì—¬ë°±ì˜ í¬ê¸°
 	 */
 	public void setBottomMargin(int bottomMargin) {
 		this.bottomMargin = bottomMargin;
 	}
 
 	/**
-	 * ÅØ½ºÆ® ¹®ÀÚ¿­ÀÇ ÃÖ´ë ÆøÀ» ¹İÈ¯ÇÑ´Ù.
+	 * í…ìŠ¤íŠ¸ ë¬¸ìì—´ì˜ ìµœëŒ€ í­ì„ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ÅØ½ºÆ® ¹®ÀÚ¿­ÀÇ ÃÖ´ë Æø
+	 * @return í…ìŠ¤íŠ¸ ë¬¸ìì—´ì˜ ìµœëŒ€ í­
 	 */
 	public long getTextWidth() {
 		return textWidth;
 	}
 
 	/**
-	 * ÅØ½ºÆ® ¹®ÀÚ¿­ÀÇ ÃÖ´ë ÆøÀ» ¼³Á¤ÇÑ´Ù.
+	 * í…ìŠ¤íŠ¸ ë¬¸ìì—´ì˜ ìµœëŒ€ í­ì„ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param textWidth
-	 *            ÅØ½ºÆ® ¹®ÀÚ¿­ÀÇ ÃÖ´ë Æø
+	 *            í…ìŠ¤íŠ¸ ë¬¸ìì—´ì˜ ìµœëŒ€ í­
 	 */
 	public void setTextWidth(long textWidth) {
 		this.textWidth = textWidth;
 	}
 
 	/**
-	 * ¾ç½Ä ¸ğµå¿¡¼­ ÆíÁı °¡´É ¿©ºÎ¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ì–‘ì‹ ëª¨ë“œì—ì„œ í¸ì§‘ ê°€ëŠ¥ ì—¬ë¶€ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ¾ç½Ä ¸ğµå¿¡¼­ ÆíÁı °¡´É ¿©ºÎ
+	 * @return ì–‘ì‹ ëª¨ë“œì—ì„œ í¸ì§‘ ê°€ëŠ¥ ì—¬ë¶€
 	 */
 	public boolean isEditableAtFormMode() {
 		return editableAtFormMode;
 	}
 
 	/**
-	 * ¾ç½Ä ¸ğµå¿¡¼­ ÆíÁı °¡´É ¿©ºÎ¸¦ ¼³Á¤ÇÑ´Ù.
+	 * ì–‘ì‹ ëª¨ë“œì—ì„œ í¸ì§‘ ê°€ëŠ¥ ì—¬ë¶€ë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param editableAtFormMode
-	 *            ¾ç½Ä ¸ğµå¿¡¼­ ÆíÁı °¡´É ¿©ºÎ
+	 *            ì–‘ì‹ ëª¨ë“œì—ì„œ í¸ì§‘ ê°€ëŠ¥ ì—¬ë¶€
 	 */
 	public void setEditableAtFormMode(boolean editableAtFormMode) {
 		this.editableAtFormMode = editableAtFormMode;
 	}
 
 	/**
-	 * ÇÊµå ÀÌ¸§À» ¹İÈ¯ÇÑ´Ù.
+	 * í•„ë“œ ì´ë¦„ì„ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ÇÊµå ÀÌ¸§
+	 * @return í•„ë“œ ì´ë¦„
 	 */
 	public String getFieldName() {
 		return fieldName;
 	}
 
 	/**
-	 * ÇÊµå ÀÌ¸§À» ¼³Á¤ÇÑ´Ù.
+	 * í•„ë“œ ì´ë¦„ì„ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param fieldName
-	 *            ÇÊµå ÀÌ¸§
+	 *            í•„ë“œ ì´ë¦„
 	 */
 	public void setFieldName(String fieldName) {
 		this.fieldName = fieldName;

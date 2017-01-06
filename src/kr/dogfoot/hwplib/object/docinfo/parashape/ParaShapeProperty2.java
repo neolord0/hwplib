@@ -1,51 +1,51 @@
-package kr.dogfoot.hwplib.object.docinfo.parashape;
+ï»¿package kr.dogfoot.hwplib.object.docinfo.parashape;
 
 import kr.dogfoot.hwplib.util.binary.BitFlag;
 
 /**
- * ¹®´Ü ¸ğ¾çÀÇ ¼Ó¼º2 °´Ã¼. (5.0.1.7 ¹öÀü ÀÌ»ó)
+ * ë¬¸ë‹¨ ëª¨ì–‘ì˜ ì†ì„±2 ê°ì²´. (5.0.1.7 ë²„ì „ ì´ìƒ)
  * 
  * @author neolord
  */
 public class ParaShapeProperty2 {
 	/**
-	 * ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª(unsigned 4 byte)
+	 * íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’(unsigned 4 byte)
 	 */
 	private long value;
 	
 	/**
-	 * »ı¼ºÀÚ
+	 * ìƒì„±ì
 	 */
 	public ParaShapeProperty2() {
 	}
 	
 	/**
-	 * ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ªÀ» ¹İÈ¯ÇÑ´Ù.
-	 * @return ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª
+	 * íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’ì„ ë°˜í™˜í•œë‹¤.
+	 * @return íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’
 	 */
 	public long getValue() {
 		return value;
 	}
 
 	/**
-	 * ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ªÀ» ¼³Á¤ÇÑ´Ù.
-	 * @param value ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª
+	 * íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’ì„ ì„¤ì •í•œë‹¤.
+	 * @param value íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’
 	 */
 	public void setValue(long value) {
 		this.value = value;
 	}
 	
 	/**
-	 * ÇÑ ÁÙ·Î ÀÔ·Â ¿©ºÎ¸¦ ¼³Á¤ÇÑ´Ù. (0~1 bit)
-	 * @return ÇÑ ÁÙ·Î ÀÔ·Â ¿©ºÎ 
+	 * í•œ ì¤„ë¡œ ì…ë ¥ ì—¬ë¶€ë¥¼ ì„¤ì •í•œë‹¤. (0~1 bit)
+	 * @return í•œ ì¤„ë¡œ ì…ë ¥ ì—¬ë¶€ 
 	 */
 	public boolean isInputSingleLine() {
 		return BitFlag.get(value, 0) | BitFlag.get(value, 1);
 	}
 	
 	/**
-	 * ÇÑ ÁÙ·Î ÀÔ·Â ¿©ºÎ¸¦ ¼³Á¤ÇÑ´Ù. (0~1 bit)
-	 * @param inputSingleLine ÇÑ ÁÙ·Î ÀÔ·Â ¿©ºÎ
+	 * í•œ ì¤„ë¡œ ì…ë ¥ ì—¬ë¶€ë¥¼ ì„¤ì •í•œë‹¤. (0~1 bit)
+	 * @param inputSingleLine í•œ ì¤„ë¡œ ì…ë ¥ ì—¬ë¶€
 	 */
 	public void setInputSingleLine(boolean inputSingleLine) {
 		value = BitFlag.set(value, 0, inputSingleLine);
@@ -53,32 +53,32 @@ public class ParaShapeProperty2 {
 	}
 
 	/**
-	 * ÇÑ±Û°ú ¿µ¾î °£°İÀ» ÀÚµ¿ Á¶Àı ¿©ºÎ¸¦ ¹İÈ¯ÇÑ´Ù. (4 bit)
-	 * @return ÇÑ±Û°ú ¿µ¾î °£°İÀ» ÀÚµ¿ Á¶Àı ¿©ºÎ
+	 * í•œê¸€ê³¼ ì˜ì–´ ê°„ê²©ì„ ìë™ ì¡°ì ˆ ì—¬ë¶€ë¥¼ ë°˜í™˜í•œë‹¤. (4 bit)
+	 * @return í•œê¸€ê³¼ ì˜ì–´ ê°„ê²©ì„ ìë™ ì¡°ì ˆ ì—¬ë¶€
 	 */
 	public boolean isAutoAdjustGapHangulEnglish() {
 		return BitFlag.get(value, 4);
 	}
 	
 	/**
-	 * ÇÑ±Û°ú ¿µ¾î °£°İÀ» ÀÚµ¿ Á¶Àı ¿©ºÎ¸¦ ¼³Á¤ÇÑ´Ù. (4 bit)
-	 * @param autoAdjustGapHangulEnglish ÇÑ±Û°ú ¿µ¾î °£°İÀ» ÀÚµ¿ Á¶Àı ¿©ºÎ
+	 * í•œê¸€ê³¼ ì˜ì–´ ê°„ê²©ì„ ìë™ ì¡°ì ˆ ì—¬ë¶€ë¥¼ ì„¤ì •í•œë‹¤. (4 bit)
+	 * @param autoAdjustGapHangulEnglish í•œê¸€ê³¼ ì˜ì–´ ê°„ê²©ì„ ìë™ ì¡°ì ˆ ì—¬ë¶€
 	 */
 	public void setAutoAdjustGapHangulEnglish(boolean autoAdjustGapHangulEnglish) {
 		value = BitFlag.set(value, 4, autoAdjustGapHangulEnglish);
 	}
 	
 	/**
-	 * ÇÑ±Û°ú ¼ıÀÚ °£°İÀ» ÀÚµ¿ Á¶Àı ¿©ºÎ¸¦ ¹İÈ¯ÇÑ´Ù. (5 bit)
-	 * @return ÇÑ±Û°ú ¼ıÀÚ °£°İÀ» ÀÚµ¿ Á¶Àı ¿©ºÎ
+	 * í•œê¸€ê³¼ ìˆ«ì ê°„ê²©ì„ ìë™ ì¡°ì ˆ ì—¬ë¶€ë¥¼ ë°˜í™˜í•œë‹¤. (5 bit)
+	 * @return í•œê¸€ê³¼ ìˆ«ì ê°„ê²©ì„ ìë™ ì¡°ì ˆ ì—¬ë¶€
 	 */
 	public boolean isAutoAdjustGapHangulNumber() {
 		return BitFlag.get(value, 5);
 	}
 	
 	/**
-	 * ÇÑ±Û°ú ¼ıÀÚ °£°İÀ» ÀÚµ¿ Á¶Àı ¿©ºÎ¸¦ ¼³Á¤ÇÑ´Ù. (5 bit)
-	 * @param autoAdjustGapHangulNumber ÇÑ±Û°ú ¼ıÀÚ °£°İÀ» ÀÚµ¿ Á¶Àı ¿©ºÎ
+	 * í•œê¸€ê³¼ ìˆ«ì ê°„ê²©ì„ ìë™ ì¡°ì ˆ ì—¬ë¶€ë¥¼ ì„¤ì •í•œë‹¤. (5 bit)
+	 * @param autoAdjustGapHangulNumber í•œê¸€ê³¼ ìˆ«ì ê°„ê²©ì„ ìë™ ì¡°ì ˆ ì—¬ë¶€
 	 */
 	public void setAutoAdjustGapHangulNumber(boolean autoAdjustGapHangulNumber) {
 		value = BitFlag.set(value, 5, autoAdjustGapHangulNumber);

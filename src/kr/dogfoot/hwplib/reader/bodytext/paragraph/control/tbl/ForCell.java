@@ -1,4 +1,4 @@
-package kr.dogfoot.hwplib.reader.bodytext.paragraph.control.tbl;
+ï»¿package kr.dogfoot.hwplib.reader.bodytext.paragraph.control.tbl;
 
 import java.io.IOException;
 
@@ -9,19 +9,19 @@ import kr.dogfoot.hwplib.reader.bodytext.ForParagraphList;
 import kr.dogfoot.hwplib.util.compoundFile.StreamReader;
 
 /**
- * Ç¥ÀÇ ¼¿À» ÀĞ±â À§ÇÑ °´Ã¼
+ * í‘œì˜ ì…€ì„ ì½ê¸° ìœ„í•œ ê°ì²´
  * 
- * @author ¹Ú¼º±Õ
+ * @author ë°•ì„±ê· 
  * 
  */
 public class ForCell {
 	/**
-	 * Ç¥ÀÇ ¼¿À» ÀĞ´Â´Ù.
+	 * í‘œì˜ ì…€ì„ ì½ëŠ”ë‹¤.
 	 * 
 	 * @param cell
-	 *            Ç¥ÀÇ ¼¿
+	 *            í‘œì˜ ì…€
 	 * @param sr
-	 *            ½ºÆ®¸² ¸®´õ
+	 *            ìŠ¤íŠ¸ë¦¼ ë¦¬ë”
 	 * @throws Exception
 	 */
 	public static void read(Cell cell, StreamReader sr) throws Exception {
@@ -37,12 +37,12 @@ public class ForCell {
 	}
 
 	/**
-	 * ¼¿ÀÇ ¹®´Ü ¸®½ºÆ® Çì´õ ·¹ÄÚµå¸¦ ÀĞ´Â´Ù.
+	 * ì…€ì˜ ë¬¸ë‹¨ ë¦¬ìŠ¤íŠ¸ í—¤ë” ë ˆì½”ë“œë¥¼ ì½ëŠ”ë‹¤.
 	 * 
 	 * @param lh
-	 *            ¼¿ÀÇ ¹®´Ü ¸®½ºÆ® Çì´õ ·¹ÄÚµå
+	 *            ì…€ì˜ ë¬¸ë‹¨ ë¦¬ìŠ¤íŠ¸ í—¤ë” ë ˆì½”ë“œ
 	 * @param sr
-	 *            ½ºÆ®¸² ¸®´õ
+	 *            ìŠ¤íŠ¸ë¦¼ ë¦¬ë”
 	 * @throws IOException
 	 */
 	private static void listHeader(ListHeaderForCell lh, StreamReader sr)
@@ -72,12 +72,12 @@ public class ForCell {
 	}
 
 	/**
-	 * ¾Ë·ÁÁöÁö ¾ÊÀº n ¹ÙÀÌÆ®À» Ã³¸®ÇÑ´Ù.
+	 * ì•Œë ¤ì§€ì§€ ì•Šì€ n ë°”ì´íŠ¸ì„ ì²˜ë¦¬í•œë‹¤.
 	 * 
 	 * @param n
-	 *            ¾Ë·ÁÁöÁö ¾ÊÀº ¹ÙÀÌÆ® ¼ö
+	 *            ì•Œë ¤ì§€ì§€ ì•Šì€ ë°”ì´íŠ¸ ìˆ˜
 	 * @param sr
-	 *            ½ºÆ®¸² ¸®´õ
+	 *            ìŠ¤íŠ¸ë¦¼ ë¦¬ë”
 	 * @throws IOException
 	 */
 	private static void unknownBytes(int n, StreamReader sr) throws IOException {

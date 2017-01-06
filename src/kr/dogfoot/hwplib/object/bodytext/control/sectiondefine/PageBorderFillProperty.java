@@ -1,47 +1,47 @@
-package kr.dogfoot.hwplib.object.bodytext.control.sectiondefine;
+ï»¿package kr.dogfoot.hwplib.object.bodytext.control.sectiondefine;
 
 import kr.dogfoot.hwplib.util.binary.BitFlag;
 
 /**
- * ÂÊ Å×µÎ¸®/¹è°æ Á¤º¸ÀÇ ¼Ó¼º¿¡ ´ëÇÑ °´Ã¼
+ * ìª½ í…Œë‘ë¦¬/ë°°ê²½ ì •ë³´ì˜ ì†ì„±ì— ëŒ€í•œ ê°ì²´
  * 
  * @author neolord
  */
 public class PageBorderFillProperty {
 	/**
-	 * ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª(unsigned 4 byte)
+	 * íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’(unsigned 4 byte)
 	 */
 	private long value;
 
 	/**
-	 * »ı¼ºÀÚ
+	 * ìƒì„±ì
 	 */
 	public PageBorderFillProperty() {
 	}
 
 	/**
-	 * ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ªÀ» ¹İÈ¯ÇÑ´Ù.
+	 * íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’ì„ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª
+	 * @return íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’
 	 */
 	public long getValue() {
 		return value;
 	}
 
 	/**
-	 * ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ªÀ» ¼³Á¤ÇÑ´Ù.
+	 * íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’ì„ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param value
-	 *            ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª
+	 *            íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’
 	 */
 	public void setValue(long value) {
 		this.value = value;
 	}
 
 	/**
-	 * À§Ä¡ ±âÁØÀ» ¹İÈ¯ÇÑ´Ù. (0 bit)
+	 * ìœ„ì¹˜ ê¸°ì¤€ì„ ë°˜í™˜í•œë‹¤. (0 bit)
 	 * 
-	 * @return À§Ä¡ ±âÁØ
+	 * @return ìœ„ì¹˜ ê¸°ì¤€
 	 */
 	public PositionCriterion getPositionCriterion() {
 		if (BitFlag.get(value, 0) == true) {
@@ -52,7 +52,7 @@ public class PageBorderFillProperty {
 	}
 
 	/**
-	 * À§Ä¡ ±âÁØÀ» ¼³Á¤ÇÑ´Ù. (0 bit)
+	 * ìœ„ì¹˜ ê¸°ì¤€ì„ ì„¤ì •í•œë‹¤. (0 bit)
 	 * 
 	 * @param positionCriterion
 	 */
@@ -65,57 +65,57 @@ public class PageBorderFillProperty {
 	}
 
 	/**
-	 * ¸Ó¸®¸» Æ÷Ãc ¿©ºÎ¸¦ ¹İÈ¯ÇÑ´Ù. (1 bit)
+	 * ë¨¸ë¦¬ë§ í¬í™¤ ì—¬ë¶€ë¥¼ ë°˜í™˜í•œë‹¤. (1 bit)
 	 * 
-	 * @return ¸Ó¸®¸» Æ÷Ãc ¿©ºÎ
+	 * @return ë¨¸ë¦¬ë§ í¬í™¤ ì—¬ë¶€
 	 */
 	public boolean isIncludeHeader() {
 		return BitFlag.get(value, 1);
 	}
 
 	/**
-	 * ¸Ó¸®¸» Æ÷Ãc ¿©ºÎ¸¦ ¼³Á¤ÇÑ´Ù. (1 bit)
+	 * ë¨¸ë¦¬ë§ í¬í™¤ ì—¬ë¶€ë¥¼ ì„¤ì •í•œë‹¤. (1 bit)
 	 * 
 	 * @param includeHeader
-	 *            ¸Ó¸®¸» Æ÷Ãc ¿©ºÎ
+	 *            ë¨¸ë¦¬ë§ í¬í™¤ ì—¬ë¶€
 	 */
 	public void setIncludeHeader(boolean includeHeader) {
 		value = BitFlag.set(value, 1, includeHeader);
 	}
 
 	/**
-	 * ²¿¸®¸» Æ÷ÇÔ ¿©ºÎ¸¦ ¹İÈ¯ÇÑ´Ù. (2 bit)
+	 * ê¼¬ë¦¬ë§ í¬í•¨ ì—¬ë¶€ë¥¼ ë°˜í™˜í•œë‹¤. (2 bit)
 	 * 
-	 * @return ²¿¸®¸» Æ÷ÇÔ ¿©ºÎ
+	 * @return ê¼¬ë¦¬ë§ í¬í•¨ ì—¬ë¶€
 	 */
 	public boolean isIncludeFooter() {
 		return BitFlag.get(value, 2);
 	}
 
 	/**
-	 * ²¿¸®¸» Æ÷ÇÔ ¿©ºÎ¸¦ ¼³Á¤ÇÑ´Ù. (2 bit)
+	 * ê¼¬ë¦¬ë§ í¬í•¨ ì—¬ë¶€ë¥¼ ì„¤ì •í•œë‹¤. (2 bit)
 	 * 
 	 * @param includeFooter
-	 *            ²¿¸®¸» Æ÷ÇÔ ¿©ºÎ
+	 *            ê¼¬ë¦¬ë§ í¬í•¨ ì—¬ë¶€
 	 */
 	public void setIncludeFooter(boolean includeFooter) {
 		value = BitFlag.set(value, 2, includeFooter);
 	}
 
 	/**
-	 * Ã¤¿öÁú ¿µ¿ªÀÇ Á¾·ù¸¦ ¹İÈ¯ÇÑ´Ù. (3~4 bit)
+	 * ì±„ì›Œì§ˆ ì˜ì—­ì˜ ì¢…ë¥˜ë¥¼ ë°˜í™˜í•œë‹¤. (3~4 bit)
 	 * 
-	 * @return Ã¤¿öÁú ¿µ¿ªÀÇ Á¾·ù
+	 * @return ì±„ì›Œì§ˆ ì˜ì—­ì˜ ì¢…ë¥˜
 	 */
 	public FillArea getFillArea() {
 		return FillArea.valueOf((byte) BitFlag.get(value, 3, 4));
 	}
 
 	/**
-	 * Ã¤¿öÁú ¿µ¿ªÀÇ Á¾·ù¸¦ ¼³Á¤ÇÑ´Ù. (3~4 bit)
+	 * ì±„ì›Œì§ˆ ì˜ì—­ì˜ ì¢…ë¥˜ë¥¼ ì„¤ì •í•œë‹¤. (3~4 bit)
 	 * 
 	 * @param fillArea
-	 *            Ã¤¿öÁú ¿µ¿ªÀÇ Á¾·ù
+	 *            ì±„ì›Œì§ˆ ì˜ì—­ì˜ ì¢…ë¥˜
 	 */
 	public void setFillArea(FillArea fillArea) {
 		value = BitFlag.set(value, 3, 4, fillArea.getValue());

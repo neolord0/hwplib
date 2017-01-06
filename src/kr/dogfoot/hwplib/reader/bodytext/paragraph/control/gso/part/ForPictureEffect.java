@@ -1,4 +1,4 @@
-package kr.dogfoot.hwplib.reader.bodytext.paragraph.control.gso.part;
+ï»¿package kr.dogfoot.hwplib.reader.bodytext.paragraph.control.gso.part;
 
 import java.io.IOException;
 
@@ -12,18 +12,18 @@ import kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponenteach.picture.
 import kr.dogfoot.hwplib.util.compoundFile.StreamReader;
 
 /**
- * ±×¸² °³Ã¼ ¼Ó¼º ·¹ÄÚµåÀÇ ±×¸² È¿°ú ºÎºĞÀ» ÀĞ±â À§ÇÑ °´Ã¼
+ * ê·¸ë¦¼ ê°œì²´ ì†ì„± ë ˆì½”ë“œì˜ ê·¸ë¦¼ íš¨ê³¼ ë¶€ë¶„ì„ ì½ê¸° ìœ„í•œ ê°ì²´
  * 
  * @author neolord
  */
 public class ForPictureEffect {
 	/**
-	 * ±×¸² °³Ã¼ ¼Ó¼º ·¹ÄÚµåÀÇ ±×¸² È¿°ú ºÎºĞÀ» ÀĞ´Â´Ù.
+	 * ê·¸ë¦¼ ê°œì²´ ì†ì„± ë ˆì½”ë“œì˜ ê·¸ë¦¼ íš¨ê³¼ ë¶€ë¶„ì„ ì½ëŠ”ë‹¤.
 	 * 
 	 * @param pe
-	 *            ±×¸² °³Ã¼ ¼Ó¼º ·¹ÄÚµåÀÇ ±×¸² È¿°ú¸¦ ³ªÅ¸³»´Â °´Ã¼
+	 *            ê·¸ë¦¼ ê°œì²´ ì†ì„± ë ˆì½”ë“œì˜ ê·¸ë¦¼ íš¨ê³¼ë¥¼ ë‚˜íƒ€ë‚´ëŠ” ê°ì²´
 	 * @param sr
-	 *            ½ºÆ®¸² ¸®´õ
+	 *            ìŠ¤íŠ¸ë¦¼ ë¦¬ë”
 	 * @throws Exception
 	 */
 	public static void read(PictureEffect pe, StreamReader sr) throws Exception {
@@ -47,12 +47,12 @@ public class ForPictureEffect {
 	}
 
 	/**
-	 * ±×¸²ÀÚ È¿°ú ºÎºĞÀ» ÀĞ´Â´Ù.
+	 * ê·¸ë¦¼ì íš¨ê³¼ ë¶€ë¶„ì„ ì½ëŠ”ë‹¤.
 	 * 
 	 * @param se
-	 *            ±×¸²ÀÚ È¿°ú ºÎºĞÀ» ³ªÅ¸³»´Â °´Ã¼
+	 *            ê·¸ë¦¼ì íš¨ê³¼ ë¶€ë¶„ì„ ë‚˜íƒ€ë‚´ëŠ” ê°ì²´
 	 * @param sr
-	 *            ½ºÆ®¸² ¸®´õ
+	 *            ìŠ¤íŠ¸ë¦¼ ë¦¬ë”
 	 * @throws Exception
 	 */
 	private static void shadowEffect(ShadowEffect se, StreamReader sr)
@@ -73,12 +73,12 @@ public class ForPictureEffect {
 	}
 
 	/**
-	 * »ö»ó ¼Ó¼º ºÎºĞÀ» ÀĞ´Â´Ù.
+	 * ìƒ‰ìƒ ì†ì„± ë¶€ë¶„ì„ ì½ëŠ”ë‹¤.
 	 * 
 	 * @param cp
-	 *            »ö»ó ¼Ó¼º ºÎºĞÀ» ³ªÅ¸³»´Â  °´Ã¼
+	 *            ìƒ‰ìƒ ì†ì„± ë¶€ë¶„ì„ ë‚˜íƒ€ë‚´ëŠ”  ê°ì²´
 	 * @param sr
-	 *            ½ºÆ®¸² ¸®´õ
+	 *            ìŠ¤íŠ¸ë¦¼ ë¦¬ë”
 	 * @throws Exception
 	 */
 	private static void colorPropery(ColorWithEffect cp, StreamReader sr)
@@ -100,12 +100,12 @@ public class ForPictureEffect {
 	}
 
 	/**
-	 * ³×¿Â È¿°ú ºÎºĞÀ» ÀĞ´Â´Ù.
+	 * ë„¤ì˜¨ íš¨ê³¼ ë¶€ë¶„ì„ ì½ëŠ”ë‹¤.
 	 * 
 	 * @param ne
-	 *            ³×¿Â È¿°ú ºÎºĞÀ» ³ªÅ¸³»´Â °´Ã¼
+	 *            ë„¤ì˜¨ íš¨ê³¼ ë¶€ë¶„ì„ ë‚˜íƒ€ë‚´ëŠ” ê°ì²´
 	 * @param sr
-	 *            ½ºÆ®¸² ¸®´õ
+	 *            ìŠ¤íŠ¸ë¦¼ ë¦¬ë”
 	 * @throws Exception
 	 */
 	private static void neonEffect(NeonEffect ne, StreamReader sr)
@@ -116,12 +116,12 @@ public class ForPictureEffect {
 	}
 
 	/**
-	 * ºÎµå·¯¿î °¡ÀåÀÚ¸® È¿°ú ºÎºĞÀ» ÀĞ´Â´Ù.
+	 * ë¶€ë“œëŸ¬ìš´ ê°€ì¥ìë¦¬ íš¨ê³¼ ë¶€ë¶„ì„ ì½ëŠ”ë‹¤.
 	 * 
 	 * @param see
-	 *            ºÎµå·¯¿î °¡ÀåÀÚ¸® È¿°ú ºÎºĞÀ» ³ªÅ¸³»´Â °´Ã¼
+	 *            ë¶€ë“œëŸ¬ìš´ ê°€ì¥ìë¦¬ íš¨ê³¼ ë¶€ë¶„ì„ ë‚˜íƒ€ë‚´ëŠ” ê°ì²´
 	 * @param sr
-	 *            ½ºÆ®¸² ¸®´õ
+	 *            ìŠ¤íŠ¸ë¦¼ ë¦¬ë”
 	 * @throws IOException
 	 */
 	private static void softEdgeEffect(SoftEdgeEffect see, StreamReader sr)
@@ -130,12 +130,12 @@ public class ForPictureEffect {
 	}
 
 	/**
-	 * ¹İ»ç È¿°ú ºÎºĞÀ» ÀĞ´Â´Ù.
+	 * ë°˜ì‚¬ íš¨ê³¼ ë¶€ë¶„ì„ ì½ëŠ”ë‹¤.
 	 * 
 	 * @param re
-	 *            ¹İ»ç È¿°ú ºÎºĞÀ» ³ªÅ¸³»´Â °´Ã¼
+	 *            ë°˜ì‚¬ íš¨ê³¼ ë¶€ë¶„ì„ ë‚˜íƒ€ë‚´ëŠ” ê°ì²´
 	 * @param sr
-	 *            ½ºÆ®¸² ¸®´õ
+	 *            ìŠ¤íŠ¸ë¦¼ ë¦¬ë”
 	 * @throws IOException
 	 */
 	private static void reflectionEffect(ReflectionEffect re, StreamReader sr)

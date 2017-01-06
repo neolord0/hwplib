@@ -1,15 +1,15 @@
-package kr.dogfoot.hwplib.object.etc;
+ï»¿package kr.dogfoot.hwplib.object.etc;
 
 import kr.dogfoot.hwplib.util.binary.BitFlag;
 
 /**
- * 4byte »ö»ó °´Ã¼. windows APIÀÇ COLORREF¿¡ ´ëÀÀÇÏ´Â °´Ã¼
+ * 4byte ìƒ‰ìƒ ê°ì²´. windows APIì˜ COLORREFì— ëŒ€ì‘í•˜ëŠ” ê°ì²´
  * 
  * @author neolord
  */
 public class Color4Byte {
 	/**
-	 * unsigned 4 byte color °ªÀ» ÀúÀå
+	 * unsigned 4 byte color ê°’ì„ ì €ì¥
 	 */
 	private long color;
 
@@ -17,95 +17,95 @@ public class Color4Byte {
 	}
 
 	/**
-	 * unsigned 4 byte color °ªÀ» ¹İÈ¯ÇÑ´Ù.
+	 * unsigned 4 byte color ê°’ì„ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return unsigned 4 byte color °ª
+	 * @return unsigned 4 byte color ê°’
 	 */
 	public long getColor() {
 		return color;
 	}
 
 	/**
-	 * unsigned 4 byte color °ªÀ» ¼³Á¤ÇÑ´Ù.
+	 * unsigned 4 byte color ê°’ì„ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param color
-	 *            unsigned 4 byte color °ª, windows API¿¡¼­ COLORREFÀÇ °ª
+	 *            unsigned 4 byte color ê°’, windows APIì—ì„œ COLORREFì˜ ê°’
 	 */
 	public void setColor(long color) {
 		this.color = color;
 	}
 
 	/**
-	 * »ö»óÀÇ red °ªÀ» ¹İÈ¯ÇÑ´Ù.
+	 * ìƒ‰ìƒì˜ red ê°’ì„ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return red °ª(0~255)
+	 * @return red ê°’(0~255)
 	 */
 	public short getR() {
 		return (short) BitFlag.get(color, 0, 7);
 	}
 
 	/**
-	 * »ö»óÀÇ red °ªÀ» ¼³Á¤ÇÑ´Ù.
+	 * ìƒ‰ìƒì˜ red ê°’ì„ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param r
-	 *            red °ª(0~255)
+	 *            red ê°’(0~255)
 	 */
 	public void setR(short r) {
 		BitFlag.set(color, 0, 7, r);
 	}
 
 	/**
-	 * »ö»óÀÇ green °ªÀ» ¹İÈ¯ÇÑ´Ù.
+	 * ìƒ‰ìƒì˜ green ê°’ì„ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return green °ª(0~255)
+	 * @return green ê°’(0~255)
 	 */
 	public short getG() {
 		return (short) BitFlag.get(color, 8, 15);
 	}
 
 	/**
-	 * »ö»óÀÇ green °ªÀ» ¼³Á¤ÇÑ´Ù.
+	 * ìƒ‰ìƒì˜ green ê°’ì„ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param g
-	 *            green °ª(0~255)
+	 *            green ê°’(0~255)
 	 */
 	public void setG(short g) {
 		BitFlag.set(color, 8, 15, g);
 	}
 
 	/**
-	 * »ö»óÀÇ blue °ªÀ» ¹İÈ¯ÇÑ´Ù.
+	 * ìƒ‰ìƒì˜ blue ê°’ì„ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return blue °ª(0~255)
+	 * @return blue ê°’(0~255)
 	 */
 	public short getB() {
 		return (short) BitFlag.get(color, 16, 23);
 	}
 
 	/**
-	 * »ö»óÀÇ blue °ªÀ» ¼³Á¤ÇÑ´Ù.
+	 * ìƒ‰ìƒì˜ blue ê°’ì„ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param b
-	 *            blue °ª(0~255)
+	 *            blue ê°’(0~255)
 	 */
 	public void setB(short b) {
 		BitFlag.set(color, 16, 23, b);
 	}
 
 	/**
-	 * »ö»óÀÇ alpha °ªÀ» ¹İÈ¯ÇÑ´Ù.
+	 * ìƒ‰ìƒì˜ alpha ê°’ì„ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return alpha °ª(0~255)
+	 * @return alpha ê°’(0~255)
 	 */
 	public short getA() {
 		return (short) BitFlag.get(color, 24, 31);
 	}
 
 	/**
-	 * »ö»óÀÇ alpha °ªÀ» ¼³Á¤ÇÑ´Ù.
+	 * ìƒ‰ìƒì˜ alpha ê°’ì„ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param a
-	 *            alpha °ª(0~255)
+	 *            alpha ê°’(0~255)
 	 */
 	public void setA(short a) {
 		BitFlag.set(color, 24, 31, a);

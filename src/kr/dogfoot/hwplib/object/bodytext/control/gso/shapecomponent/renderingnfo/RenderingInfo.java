@@ -1,24 +1,24 @@
-package kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponent.renderingnfo;
+ï»¿package kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponent.renderingnfo;
 
 import java.util.ArrayList;
 
 /**
- * Rendering Á¤º¸
+ * Rendering ì •ë³´
  * 
  * @author neolord
  */
 public class RenderingInfo {
 	/**
-	 * ÀÌµ¿À» À§ÇÑ Çà·Ä
+	 * ì´ë™ì„ ìœ„í•œ í–‰ë ¬
 	 */
 	private Matrix translationMatrix;
 	/**
-	 * È®Àå/È¸ÀüÀ» À§ÇÑ Çà·ÉÀÇ ½Ö¿¡ ´ëÇÑ ¸®½ºÆ®
+	 * í™•ì¥/íšŒì „ì„ ìœ„í•œ í–‰ë ¹ì˜ ìŒì— ëŒ€í•œ ë¦¬ìŠ¤íŠ¸
 	 */
 	private ArrayList<ScaleRotateMatrixPair> scaleRotateMatrixPairList;
 
 	/**
-	 * »ı¼ºÀÚ
+	 * ìƒì„±ì
 	 */
 	public RenderingInfo() {
 		translationMatrix = new Matrix();
@@ -26,18 +26,18 @@ public class RenderingInfo {
 	}
 
 	/**
-	 * ÀÌµ¿À» À§ÇÑ Çà·Ä °´Ã¼¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ì´ë™ì„ ìœ„í•œ í–‰ë ¬ ê°ì²´ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ÀÌµ¿À» À§ÇÑ Çà·Ä °´Ã¼
+	 * @return ì´ë™ì„ ìœ„í•œ í–‰ë ¬ ê°ì²´
 	 */
 	public Matrix getTranslationMatrix() {
 		return translationMatrix;
 	}
 
 	/**
-	 * »õ·Î¿î È®Àå/È¸ÀüÀ» À§ÇÑ Çà·ÉÀÇ ½ÖÀ» »ı¼ºÇÏ°í ¸®½ºÆ®¿¡ Ãß°¡ÇÑ´Ù.
+	 * ìƒˆë¡œìš´ í™•ì¥/íšŒì „ì„ ìœ„í•œ í–‰ë ¹ì˜ ìŒì„ ìƒì„±í•˜ê³  ë¦¬ìŠ¤íŠ¸ì— ì¶”ê°€í•œë‹¤.
 	 * 
-	 * @return »õ·Î »ı¼ºµÈ È®Àå/È¸ÀüÀ» À§ÇÑ Çà·ÉÀÇ ½Ö
+	 * @return ìƒˆë¡œ ìƒì„±ëœ í™•ì¥/íšŒì „ì„ ìœ„í•œ í–‰ë ¹ì˜ ìŒ
 	 */
 	public ScaleRotateMatrixPair addNewScaleRotateMatrixPair() {
 		ScaleRotateMatrixPair srmp = new ScaleRotateMatrixPair();
@@ -46,9 +46,9 @@ public class RenderingInfo {
 	}
 
 	/**
-	 * È®Àå/È¸ÀüÀ» À§ÇÑ Çà·ÉÀÇ ½Ö¿¡ ´ëÇÑ ¸®½ºÆ®¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * í™•ì¥/íšŒì „ì„ ìœ„í•œ í–‰ë ¹ì˜ ìŒì— ëŒ€í•œ ë¦¬ìŠ¤íŠ¸ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return È®Àå/È¸ÀüÀ» À§ÇÑ Çà·ÉÀÇ ½Ö¿¡ ´ëÇÑ ¸®½ºÆ®
+	 * @return í™•ì¥/íšŒì „ì„ ìœ„í•œ í–‰ë ¹ì˜ ìŒì— ëŒ€í•œ ë¦¬ìŠ¤íŠ¸
 	 */
 	public ArrayList<ScaleRotateMatrixPair> getScaleRotateMatrixPairList() {
 		return scaleRotateMatrixPairList;

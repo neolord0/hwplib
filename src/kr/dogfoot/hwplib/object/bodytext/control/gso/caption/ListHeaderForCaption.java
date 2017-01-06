@@ -1,40 +1,40 @@
-package kr.dogfoot.hwplib.object.bodytext.control.gso.caption;
+ï»¿package kr.dogfoot.hwplib.object.bodytext.control.gso.caption;
 
 import kr.dogfoot.hwplib.object.bodytext.control.gso.textbox.ListHeaderProperty;
 
 /**
- * Ä¸¼ÇÀ» À§ÇÑ ¹®´Ü ¸®½ºÆ® Çì´õ ·¹ÄÚµå
+ * ìº¡ì…˜ì„ ìœ„í•œ ë¬¸ë‹¨ ë¦¬ìŠ¤íŠ¸ í—¤ë” ë ˆì½”ë“œ
  * 
  * @author neolord
  */
 public class ListHeaderForCaption {
 	/**
-	 * ¹®´Ü °³¼ö
+	 * ë¬¸ë‹¨ ê°œìˆ˜
 	 */
 	private int paraCount;
 	/**
-	 * ¼Ó¼º
+	 * ì†ì„±
 	 */
 	private ListHeaderProperty property;
 	/**
-	 * caption ¼Ó¼º
+	 * caption ì†ì„±
 	 */
 	private ListHeaderCaptionProperty captionProperty;
 	/**
-	 * Ä¸¼Ç Æø(¼¼·Î ¹æÇâÀÏ ¶§¸¸ »ç¿ë)
+	 * ìº¡ì…˜ í­(ì„¸ë¡œ ë°©í–¥ì¼ ë•Œë§Œ ì‚¬ìš©)
 	 */
 	private long captionWidth;
 	/**
-	 * Ä¸¼Ç°ú Æ² »çÀÌ °£°İ
+	 * ìº¡ì…˜ê³¼ í‹€ ì‚¬ì´ ê°„ê²©
 	 */
 	private int spaceBetweenCaptionAndFrame;
 	/**
-	 * ÅØ½ºÆ®ÀÇ ÃÖ´ë ±æÀÌ(=°´Ã¼ Æø)
+	 * í…ìŠ¤íŠ¸ì˜ ìµœëŒ€ ê¸¸ì´(=ê°ì²´ í­)
 	 */
 	private long textWidth;
 
 	/**
-	 * »ı¼ºÀÚ
+	 * ìƒì„±ì
 	 */
 	public ListHeaderForCaption() {
 		property = new ListHeaderProperty();
@@ -42,94 +42,94 @@ public class ListHeaderForCaption {
 	}
 
 	/**
-	 * ¹®´Ü °³¼ö¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ë¬¸ë‹¨ ê°œìˆ˜ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ¹®´Ü °³¼ö
+	 * @return ë¬¸ë‹¨ ê°œìˆ˜
 	 */
 	public int getParaCount() {
 		return paraCount;
 	}
 
 	/**
-	 * ¹®´Ü °³¼ö¸¦ ¼³Á¤ÇÑ´Ù.
+	 * ë¬¸ë‹¨ ê°œìˆ˜ë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param paraCount
-	 *            ¹®´Ü °³¼ö
+	 *            ë¬¸ë‹¨ ê°œìˆ˜
 	 */
 	public void setParaCount(int paraCount) {
 		this.paraCount = paraCount;
 	}
 
 	/**
-	 * ¼Ó¼º °´Ã¼¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ì†ì„± ê°ì²´ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ¼Ó¼º °´Ã¼
+	 * @return ì†ì„± ê°ì²´
 	 */
 	public ListHeaderProperty getProperty() {
 		return property;
 	}
 
 	/**
-	 * caption ¼Ó¼º °´Ã¼¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * caption ì†ì„± ê°ì²´ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return caption ¼Ó¼º °´Ã¼
+	 * @return caption ì†ì„± ê°ì²´
 	 */
 	public ListHeaderCaptionProperty getCaptionProperty() {
 		return captionProperty;
 	}
 
 	/**
-	 * Ä¸¼Ç ÆøÀ» ¹İÈ¯ÇÑ´Ù. (¼¼·Î ¹æÇâÀÏ ¶§¸¸ »ç¿ë)
+	 * ìº¡ì…˜ í­ì„ ë°˜í™˜í•œë‹¤. (ì„¸ë¡œ ë°©í–¥ì¼ ë•Œë§Œ ì‚¬ìš©)
 	 * 
-	 * @return Ä¸¼Ç Æø
+	 * @return ìº¡ì…˜ í­
 	 */
 	public long getCaptionWidth() {
 		return captionWidth;
 	}
 
 	/**
-	 * Ä¸¼Ç ÆøÀ» ¼³Á¤ÇÑ´Ù.
+	 * ìº¡ì…˜ í­ì„ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param captionWidth
-	 *            Ä¸¼Ç Æø
+	 *            ìº¡ì…˜ í­
 	 */
 	public void setCaptionWidth(long captionWidth) {
 		this.captionWidth = captionWidth;
 	}
 
 	/**
-	 * Ä¸¼Ç°ú Æ² »çÀÌ °£°İÀÇ Å©±â¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ìº¡ì…˜ê³¼ í‹€ ì‚¬ì´ ê°„ê²©ì˜ í¬ê¸°ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return Ä¸¼Ç°ú Æ² »çÀÌ °£°İÀÇ Å©±â
+	 * @return ìº¡ì…˜ê³¼ í‹€ ì‚¬ì´ ê°„ê²©ì˜ í¬ê¸°
 	 */
 	public int getSpaceBetweenCaptionAndFrame() {
 		return spaceBetweenCaptionAndFrame;
 	}
 
 	/**
-	 * Ä¸¼Ç°ú Æ² »çÀÌ °£°İÀÇ Å©±â¸¦ ¼³Á¤ÇÑ´Ù.
+	 * ìº¡ì…˜ê³¼ í‹€ ì‚¬ì´ ê°„ê²©ì˜ í¬ê¸°ë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param spaceBetweenCaptionAndFrame
-	 *            Ä¸¼Ç°ú Æ² »çÀÌ °£°İÀÇ Å©±â
+	 *            ìº¡ì…˜ê³¼ í‹€ ì‚¬ì´ ê°„ê²©ì˜ í¬ê¸°
 	 */
 	public void setSpaceBetweenCaptionAndFrame(int spaceBetweenCaptionAndFrame) {
 		this.spaceBetweenCaptionAndFrame = spaceBetweenCaptionAndFrame;
 	}
 
 	/**
-	 * ÅØ½ºÆ®ÀÇ Æø¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * í…ìŠ¤íŠ¸ì˜ í­ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ÅØ½ºÆ®ÀÇ Æø
+	 * @return í…ìŠ¤íŠ¸ì˜ í­
 	 */
 	public long getTextWidth() {
 		return textWidth;
 	}
 
 	/**
-	 * ÅØ½ºÆ®ÀÇ Æø¸¦ ¼³Á¤ÇÑ´Ù.
+	 * í…ìŠ¤íŠ¸ì˜ í­ë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param textWidth
-	 *            ÅØ½ºÆ®ÀÇ Æø
+	 *            í…ìŠ¤íŠ¸ì˜ í­
 	 */
 	public void setTextWidth(long textWidth) {
 		this.textWidth = textWidth;

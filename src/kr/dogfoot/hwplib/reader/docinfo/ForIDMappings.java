@@ -1,4 +1,4 @@
-package kr.dogfoot.hwplib.reader.docinfo;
+ï»¿package kr.dogfoot.hwplib.reader.docinfo;
 
 import java.io.IOException;
 
@@ -6,18 +6,18 @@ import kr.dogfoot.hwplib.object.docinfo.IDMappings;
 import kr.dogfoot.hwplib.util.compoundFile.StreamReader;
 
 /**
- * ¾ÆÀÌµğ ¸ÅÇÎ ·¹ÄÚµå¸¦ ÀĞ±â À§ÇÑ °´Ã¼
+ * ì•„ì´ë”” ë§¤í•‘ ë ˆì½”ë“œë¥¼ ì½ê¸° ìœ„í•œ ê°ì²´
  * 
  * @author neolord
  */
 public class ForIDMappings {
 	/**
-	 * ¾ÆÀÌµğ ¸ÅÇÎ ·¹ÄÚµå¸¦ ÀĞ´Â´Ù.
+	 * ì•„ì´ë”” ë§¤í•‘ ë ˆì½”ë“œë¥¼ ì½ëŠ”ë‹¤.
 	 * 
 	 * @param idm
-	 *            ¾ÆÀÌµğ ¸ÅÇÎ ·¹ÄÚµå
+	 *            ì•„ì´ë”” ë§¤í•‘ ë ˆì½”ë“œ
 	 * @param sr
-	 *            ½ºÆ®¸² ¸®´õ
+	 *            ìŠ¤íŠ¸ë¦¼ ë¦¬ë”
 	 * @throws IOException
 	 */
 	public static void read(IDMappings idm, StreamReader sr) throws IOException {

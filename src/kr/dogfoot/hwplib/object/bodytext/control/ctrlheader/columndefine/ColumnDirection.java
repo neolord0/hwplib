@@ -1,54 +1,54 @@
-package kr.dogfoot.hwplib.object.bodytext.control.ctrlheader.columndefine;
+ï»¿package kr.dogfoot.hwplib.object.bodytext.control.ctrlheader.columndefine;
 
 /**
- * ´Ü ¹æÇâ
+ * ë‹¨ ë°©í–¥
  * 
  * @author neolord
  */
 public enum ColumnDirection {
 	/**
-	 * ¿ŞÂÊºÎÅÍ
+	 * ì™¼ìª½ë¶€í„°
 	 */
 	FromLeft((byte) 0),
 	/**
-	 * ¿À¸¥ÂÊºÎÅÍ
+	 * ì˜¤ë¥¸ìª½ë¶€í„°
 	 */
 	FromRight((byte) 1),
 	/**
-	 * ¸ÂÂÊ
+	 * ë§ìª½
 	 */
 	Both((byte) 2);
 
 	/**
-	 * ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª
+	 * íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’
 	 */
 	private byte value;
 
 	/**
-	 * »ı¼ºÀÚ
+	 * ìƒì„±ì
 	 * 
 	 * @param value
-	 *            ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª
+	 *            íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’
 	 */
 	private ColumnDirection(byte value) {
 		this.value = value;
 	}
 
 	/**
-	 * ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ªÀ» ¹İÈ¯ÇÑ´Ù.
+	 * íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’ì„ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª
+	 * @return íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’
 	 */
 	public byte getValue() {
 		return value;
 	}
 
 	/**
-	 * ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª¿¡ ÇØ´çµÇ´Â enum °ªÀ» ¹İÈ¯ÇÑ´Ù.
+	 * íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’ì— í•´ë‹¹ë˜ëŠ” enum ê°’ì„ ë°˜í™˜í•œë‹¤.
 	 * 
 	 * @param value
-	 *            ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª
-	 * @return enum °ª
+	 *            íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’
+	 * @return enum ê°’
 	 */
 	public static ColumnDirection valueOf(byte value) {
 		for (ColumnDirection cd : values()) {

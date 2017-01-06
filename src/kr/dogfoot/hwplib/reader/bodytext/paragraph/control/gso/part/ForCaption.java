@@ -1,4 +1,4 @@
-package kr.dogfoot.hwplib.reader.bodytext.paragraph.control.gso.part;
+ï»¿package kr.dogfoot.hwplib.reader.bodytext.paragraph.control.gso.part;
 
 import java.io.IOException;
 
@@ -9,18 +9,18 @@ import kr.dogfoot.hwplib.reader.bodytext.ForParagraphList;
 import kr.dogfoot.hwplib.util.compoundFile.StreamReader;
 
 /**
- * Ä¸¼Ç Á¤º¸À» ÀĞ±â À§ÇÑ °´Ã¼
+ * ìº¡ì…˜ ì •ë³´ì„ ì½ê¸° ìœ„í•œ ê°ì²´
  * 
  * @author neolord
  */
 public class ForCaption {
 	/**
-	 * Ä¸¼Ç Á¤º¸À» ÀĞ´Â´Ù.
+	 * ìº¡ì…˜ ì •ë³´ì„ ì½ëŠ”ë‹¤.
 	 * 
 	 * @param caption
-	 *            Ä¸¼Ç Á¤º¸
+	 *            ìº¡ì…˜ ì •ë³´
 	 * @param sr
-	 *            ½ºÆ®¸² ¸®´õ
+	 *            ìŠ¤íŠ¸ë¦¼ ë¦¬ë”
 	 * @throws Exception
 	 */
 	public static void read(Caption caption, StreamReader sr) throws Exception {
@@ -29,12 +29,12 @@ public class ForCaption {
 	}
 
 	/**
-	 * Ä¸¼Ç Á¤º¸ÀÇ ¹®´Ü ¸®½ºÆ® Çì´õ ·¹ÄÚµå¸¦ ÀĞ´Â´Ù.
+	 * ìº¡ì…˜ ì •ë³´ì˜ ë¬¸ë‹¨ ë¦¬ìŠ¤íŠ¸ í—¤ë” ë ˆì½”ë“œë¥¼ ì½ëŠ”ë‹¤.
 	 * 
 	 * @param listHeader
-	 *            Ä¸¼Ç Á¤º¸ÀÇ ¹®´Ü ¸®½ºÆ® Çì´õ ·¹ÄÚµå
+	 *            ìº¡ì…˜ ì •ë³´ì˜ ë¬¸ë‹¨ ë¦¬ìŠ¤íŠ¸ í—¤ë” ë ˆì½”ë“œ
 	 * @param sr
-	 *            ½ºÆ®¸² ¸®´õ
+	 *            ìŠ¤íŠ¸ë¦¼ ë¦¬ë”
 	 * @throws IOException
 	 */
 	private static void listHeader(ListHeaderForCaption listHeader,
@@ -49,10 +49,10 @@ public class ForCaption {
 	}
 
 	/**
-	 * ¾Ë·ÁÁöÁö ¾ÊÀº 8 ¹ÙÀÌÆ®¸¦ Ã³¸®ÇÑ´Ù.
+	 * ì•Œë ¤ì§€ì§€ ì•Šì€ 8 ë°”ì´íŠ¸ë¥¼ ì²˜ë¦¬í•œë‹¤.
 	 * 
 	 * @param sr
-	 *            ½ºÆ®¸² ¸®´õ
+	 *            ìŠ¤íŠ¸ë¦¼ ë¦¬ë”
 	 * @throws IOException
 	 */
 	private static void unknown8bytes(StreamReader sr) throws IOException {
@@ -60,12 +60,12 @@ public class ForCaption {
 	}
 
 	/**
-	 * ¹®´Ü ¸®½ºÆ®¸¦ ÀĞ´Â´Ù.
+	 * ë¬¸ë‹¨ ë¦¬ìŠ¤íŠ¸ë¥¼ ì½ëŠ”ë‹¤.
 	 * 
 	 * @param paragraphList
-	 *            ¹®´Ü ¸®½ºÆ®
+	 *            ë¬¸ë‹¨ ë¦¬ìŠ¤íŠ¸
 	 * @param sr
-	 *            ½ºÆ®¸² ¸®´õ
+	 *            ìŠ¤íŠ¸ë¦¼ ë¦¬ë”
 	 * @throws Exception
 	 */
 	private static void paragraphList(ParagraphList paragraphList,

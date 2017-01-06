@@ -1,62 +1,62 @@
-package kr.dogfoot.hwplib.object.bodytext.control.ctrlheader.gso;
+ï»¿package kr.dogfoot.hwplib.object.bodytext.control.ctrlheader.gso;
 
 /**
- * »ó´ëÀûÀÎ ¹è¿­ ¹æ½Ä
+ * ìƒëŒ€ì ì¸ ë°°ì—´ ë°©ì‹
  * 
  * @author neolord
  */
 public enum RelativeArrange {
 	/**
-	 * VerRelToÀÌ ¡®paper¡¯³ª ¡®page¡¯ ÀÌ¸é top, ±×·¸Áö ¾ÊÀ¸¸é left
+	 * VerRelToì´ â€˜paperâ€™ë‚˜ â€˜pageâ€™ ì´ë©´ top, ê·¸ë ‡ì§€ ì•Šìœ¼ë©´ left
 	 */
 	TopOrLeft((byte) 0),
 	/**
-	 * VerRelToÀÌ ¡®paper¡¯³ª ¡®page¡¯ ÀÌ¸é center
+	 * VerRelToì´ â€˜paperâ€™ë‚˜ â€˜pageâ€™ ì´ë©´ center
 	 */
 	Center((byte) 1),
 	/**
-	 * erRelToÀÌ ¡®paper¡¯³ª ¡®page¡¯ ÀÌ¸é bottom, ±×·¸Áö ¾ÊÀ¸¸é right
+	 * erRelToì´ â€˜paperâ€™ë‚˜ â€˜pageâ€™ ì´ë©´ bottom, ê·¸ë ‡ì§€ ì•Šaìœ¼ë©´ right
 	 */
 	BottomOrRight((byte) 2),
 	/**
-	 * VerRelToÀÌ ¡®paper¡¯³ª ¡®page¡¯ ÀÌ¸é inside
+	 * VerRelToì´ â€˜paperâ€™ë‚˜ â€˜pageâ€™ ì´ë©´ inside
 	 */
 	Inside((byte) 3),
 	/**
-	 * VerRelToÀÌ ¡®paper¡¯³ª ¡®page¡¯ ÀÌ¸é outsides
+	 * VerRelToì´ â€˜paperâ€™ë‚˜ â€˜pageâ€™ ì´ë©´ outsides
 	 */
 	Outside((byte) 4);
 
 	/**
-	 * ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª
+	 * íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’
 	 */
 	private byte value;
 
 	/**
-	 * »ı¼ºÀÚ
+	 * ìƒì„±ì
 	 * 
 	 * @param value
-	 *            ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª
+	 *            íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’
 	 */
 	private RelativeArrange(byte value) {
 		this.value = value;
 	}
 
 	/**
-	 * ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ªÀ» ¹İÈ¯ÇÑ´Ù.
+	 * íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’ì„ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª
+	 * @return íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’
 	 */
 	public byte getValue() {
 		return value;
 	}
 
 	/**
-	 * ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª¿¡ ÇØ´çµÇ´Â enum °ªÀ» ¹İÈ¯ÇÑ´Ù.
+	 * íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’ì— í•´ë‹¹ë˜ëŠ” enum ê°’ì„ ë°˜í™˜í•œë‹¤.
 	 * 
 	 * @param value
-	 *            ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª
-	 * @return enum °ª
+	 *            íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’
+	 * @return enum ê°’
 	 */
 	public static RelativeArrange valueOf(byte value) {
 		for (RelativeArrange vrta : values()) {

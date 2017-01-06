@@ -1,35 +1,35 @@
-package kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponenteach;
+ï»¿package kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponenteach;
 
 import java.util.ArrayList;
 
 import kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponenteach.polygon.PositionXY;
 
 /**
- * ´Ù°¢Çü °³Ã¼ ¼Ó¼º ·¹ÄÚµå
+ * ë‹¤ê°í˜• ê°œì²´ ì†ì„± ë ˆì½”ë“œ
  * 
  * @author neolord
  */
 public class ShapeComponentPolygon {
 	/**
-	 * ÁÂÇ¥ ¸®½ºÆ®
+	 * ì¢Œí‘œ ë¦¬ìŠ¤íŠ¸
 	 */
 	private ArrayList<PositionXY> positionList;
 	/**
-	 * ´Ù°¢ÇüÀÌ ´İÇû´ÂÁö ¿©ºÎ
+	 * ë‹¤ê°í˜•ì´ ë‹«í˜”ëŠ”ì§€ ì—¬ë¶€
 	 */
 	private boolean closed;
 
 	/**
-	 * »ı¼ºÀÚ
+	 * ìƒì„±ì
 	 */
 	public ShapeComponentPolygon() {
 		positionList = new ArrayList<PositionXY>();
 	}
 
 	/**
-	 * »õ·Î¿î ÁÂÇ¥ °´Ã¼¸¦ »ı¼ºÇÏ°í ¸®½ºÆ®¿¡ Ãß°¡ÇÑ´Ù.
+	 * ìƒˆë¡œìš´ ì¢Œí‘œ ê°ì²´ë¥¼ ìƒì„±í•˜ê³  ë¦¬ìŠ¤íŠ¸ì— ì¶”ê°€í•œë‹¤.
 	 * 
-	 * @return »õ·Î »ı¼ºµÈ ÁÂÇ¥ °´Ã¼
+	 * @return ìƒˆë¡œ ìƒì„±ëœ ì¢Œí‘œ ê°ì²´
 	 */
 	public PositionXY addNewPosition() {
 		PositionXY p = new PositionXY();
@@ -38,28 +38,28 @@ public class ShapeComponentPolygon {
 	}
 
 	/**
-	 * ÁÂÇ¥ ¸®½ºÆ®¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ì¢Œí‘œ ë¦¬ìŠ¤íŠ¸ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ÁÂÇ¥ ¸®½ºÆ®
+	 * @return ì¢Œí‘œ ë¦¬ìŠ¤íŠ¸
 	 */
 	public ArrayList<PositionXY> getPositionList() {
 		return positionList;
 	}
 
 	/**
-	 * ´Ù°¢ÇüÀÌ ´İÇû´ÂÁö ¿©ºÎ¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ë‹¤ê°í˜•ì´ ë‹«í˜”ëŠ”ì§€ ì—¬ë¶€ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ´Ù°¢ÇüÀÌ ´İÇû´ÂÁö ¿©ºÎ
+	 * @return ë‹¤ê°í˜•ì´ ë‹«í˜”ëŠ”ì§€ ì—¬ë¶€
 	 */
 	public boolean isClosed() {
 		return closed;
 	}
 
 	/**
-	 * ´Ù°¢ÇüÀÌ ´İÇû´ÂÁö ¿©ºÎ¸¦ ¼³Á¤ÇÑ´Ù.
+	 * ë‹¤ê°í˜•ì´ ë‹«í˜”ëŠ”ì§€ ì—¬ë¶€ë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param closed
-	 *            ´Ù°¢ÇüÀÌ ´İÇû´ÂÁö ¿©ºÎ
+	 *            ë‹¤ê°í˜•ì´ ë‹«í˜”ëŠ”ì§€ ì—¬ë¶€
 	 */
 	public void setClosed(boolean closed) {
 		this.closed = closed;

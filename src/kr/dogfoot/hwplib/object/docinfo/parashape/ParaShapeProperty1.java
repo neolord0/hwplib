@@ -1,15 +1,15 @@
-package kr.dogfoot.hwplib.object.docinfo.parashape;
+ï»¿package kr.dogfoot.hwplib.object.docinfo.parashape;
 
 import kr.dogfoot.hwplib.util.binary.BitFlag;
 
 /**
- * ¹®´Ü ¸ğ¾çÀÇ ¼Ó¼º1 °´Ã¼
+ * ë¬¸ë‹¨ ëª¨ì–‘ì˜ ì†ì„±1 ê°ì²´
  * 
  * @author neolord
  */
 public class ParaShapeProperty1 {
 	/**
-	 * ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª(unsigned 4 byte)
+	 * íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’(unsigned 4 byte)
 	 */
 	private long value;
 	
@@ -17,72 +17,72 @@ public class ParaShapeProperty1 {
 	}
 
 	/**
-	 * ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ªÀ» ¹İÈ¯ÇÑ´Ù.
-	 * @return ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª
+	 * íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’ì„ ë°˜í™˜í•œë‹¤.
+	 * @return íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’
 	 */
 	public long getValue() {
 		return value;
 	}
 
 	/**
-	 * ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ªÀ» ¼³Á¤ÇÑ´Ù.
-	 * @param value ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª
+	 * íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’ì„ ì„¤ì •í•œë‹¤.
+	 * @param value íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’
 	 */
 	public void setValue(long value) {
 		this.value = value;
 	}
 	
 	/**
-	 * ÁÙ °£°İÀÇ Á¾·ù¸¦ ¹İÈ¯ÇÑ´Ù. (0~1 bit, ÇÑ±Û 2007 ÀÌÇÏ ¹öÀü¿¡¼­ »ç¿ë.)
-	 * @return ÁÙ °£°İÀÇ Á¾·ù
+	 * ì¤„ ê°„ê²©ì˜ ì¢…ë¥˜ë¥¼ ë°˜í™˜í•œë‹¤. (0~1 bit, í•œê¸€ 2007 ì´í•˜ ë²„ì „ì—ì„œ ì‚¬ìš©.)
+	 * @return ì¤„ ê°„ê²©ì˜ ì¢…ë¥˜
 	 */
 	public LineSpaceSort getLineSpaceSort() {
 		return LineSpaceSort.valueOf((byte) BitFlag.get(value, 0, 1));
 	}
 
 	/**
-	 * ÁÙ °£°İÀÇ Á¾·ù¸¦ ¼³Á¤ÇÑ´Ù. (0~1 bit, ÇÑ±Û 2007 ÀÌÇÏ ¹öÀü¿¡¼­ »ç¿ë.)
-	 * @param lineSpaceSort ÁÙ °£°İÀÇ Á¾·ù
+	 * ì¤„ ê°„ê²©ì˜ ì¢…ë¥˜ë¥¼ ì„¤ì •í•œë‹¤. (0~1 bit, í•œê¸€ 2007 ì´í•˜ ë²„ì „ì—ì„œ ì‚¬ìš©.)
+	 * @param lineSpaceSort ì¤„ ê°„ê²©ì˜ ì¢…ë¥˜
 	 */
 	public void setLineSpaceSort(LineSpaceSort lineSpaceSort) {
 		value = BitFlag.set(value, 0, 1, lineSpaceSort.getValue());
 	}
 	
 	/**
-	 * Á¤·Ä ¹æ½ÄÀ» ¹İÈ¯ÇÑ´Ù. (2~4 bit)
-	 * @return Á¤·Ä ¹æ½Ä
+	 * ì •ë ¬ ë°©ì‹ì„ ë°˜í™˜í•œë‹¤. (2~4 bit)
+	 * @return ì •ë ¬ ë°©ì‹
 	 */
 	public Alignment getAlignment()  {
 		return Alignment.valueOf((byte) BitFlag.get(value, 2, 4));
 	}
 	
 	/**
-	 * Á¤·Ä ¹æ½ÄÀ» ¼³Á¤ÇÑ´Ù. (2~4 bit)
-	 * @param alignment Á¤·Ä ¹æ½Ä
+	 * ì •ë ¬ ë°©ì‹ì„ ì„¤ì •í•œë‹¤. (2~4 bit)
+	 * @param alignment ì •ë ¬ ë°©ì‹
 	 */
 	public void setAlignment(Alignment alignment) {
 		value = BitFlag.set(value, 2, 4, alignment.getValue());
 	}
 	
 	/**
-	 * ÁÙ ³ª´® ±âÁØ ¿µ¾î ´ÜÀ§¸¦ ¹İÈ¯ÇÑ´Ù. (5~6 bit)
-	 * @return ÁÙ ³ª´® ±âÁØ ¿µ¾î ´ÜÀ§
+	 * ì¤„ ë‚˜ëˆ” ê¸°ì¤€ ì˜ì–´ ë‹¨ìœ„ë¥¼ ë°˜í™˜í•œë‹¤. (5~6 bit)
+	 * @return ì¤„ ë‚˜ëˆ” ê¸°ì¤€ ì˜ì–´ ë‹¨ìœ„
 	 */
 	public LineDivideForEnglish getLineDivideForEnglish() {
 		return LineDivideForEnglish.valueOf((byte) BitFlag.get(value, 5, 6));
 	}
 	
 	/**
-	 * ÁÙ ³ª´® ±âÁØ ¿µ¾î ´ÜÀ§¸¦ ¼³Á¤ÇÑ´Ù. (5~6 bit)
-	 * @param lineDivideForEnglish ÁÙ ³ª´® ±âÁØ ¿µ¾î ´ÜÀ§
+	 * ì¤„ ë‚˜ëˆ” ê¸°ì¤€ ì˜ì–´ ë‹¨ìœ„ë¥¼ ì„¤ì •í•œë‹¤. (5~6 bit)
+	 * @param lineDivideForEnglish ì¤„ ë‚˜ëˆ” ê¸°ì¤€ ì˜ì–´ ë‹¨ìœ„
 	 */
 	public void setLineDivideForEnglish(LineDivideForEnglish lineDivideForEnglish) { 
 		value = BitFlag.set(value, 5, 6, lineDivideForEnglish.getValue());
 	}
 	
 	/**
-	 * ÁÙ ³ª´® ±âÁØ ÇÑ±Û ´ÜÀ§¸¦ ¹İÈ¯ÇÑ´Ù. (7 bit)
-	 * @return ÁÙ ³ª´® ±âÁØ ÇÑ±Û ´ÜÀ§
+	 * ì¤„ ë‚˜ëˆ” ê¸°ì¤€ í•œê¸€ ë‹¨ìœ„ë¥¼ ë°˜í™˜í•œë‹¤. (7 bit)
+	 * @return ì¤„ ë‚˜ëˆ” ê¸°ì¤€ í•œê¸€ ë‹¨ìœ„
 	 */
 	public LineDivideForHangul getLineDivideForHangul() {
 		if (BitFlag.get(value, 7) == true) {
@@ -93,8 +93,8 @@ public class ParaShapeProperty1 {
 	}
 
 	/**
-	 * ÁÙ ³ª´® ±âÁØ ÇÑ±Û ´ÜÀ§¸¦ ¼³Á¤ÇÑ´Ù. (7 bit)
-	 * @param lineDivideForHangul ÁÙ ³ª´® ±âÁØ ÇÑ±Û ´ÜÀ§
+	 * ì¤„ ë‚˜ëˆ” ê¸°ì¤€ í•œê¸€ ë‹¨ìœ„ë¥¼ ì„¤ì •í•œë‹¤. (7 bit)
+	 * @param lineDivideForHangul ì¤„ ë‚˜ëˆ” ê¸°ì¤€ í•œê¸€ ë‹¨ìœ„
 	 */
 	public void setLineDivideForHangul(LineDivideForHangul lineDivideForHangul) {
 		if (lineDivideForHangul == LineDivideForHangul.ByLetter) {
@@ -105,208 +105,208 @@ public class ParaShapeProperty1 {
 	}
 
 	/**
-	 * ÆíÁı ¿ëÁöÀÇ ÁÙ °İÀÚ »ç¿ë ¿©ºÎ¸¦ ¹İÈ¯ÇÑ´Ù. (8 bit)
-	 * @return ÆíÁı ¿ëÁöÀÇ ÁÙ °İÀÚ »ç¿ë ¿©ºÎ
+	 * í¸ì§‘ ìš©ì§€ì˜ ì¤„ ê²©ì ì‚¬ìš© ì—¬ë¶€ë¥¼ ë°˜í™˜í•œë‹¤. (8 bit)
+	 * @return í¸ì§‘ ìš©ì§€ì˜ ì¤„ ê²©ì ì‚¬ìš© ì—¬ë¶€
 	 */
 	public boolean isUseGrid() {
 		return BitFlag.get(value, 8);
 	}
 	
 	/**
-	 * ÆíÁı ¿ëÁöÀÇ ÁÙ °İÀÚ »ç¿ë ¿©ºÎ¸¦ ¼³Á¤ÇÑ´Ù. (8 bit)
-	 * @param useGrid ÆíÁı ¿ëÁöÀÇ ÁÙ °İÀÚ »ç¿ë ¿©ºÎ
+	 * í¸ì§‘ ìš©ì§€ì˜ ì¤„ ê²©ì ì‚¬ìš© ì—¬ë¶€ë¥¼ ì„¤ì •í•œë‹¤. (8 bit)
+	 * @param useGrid í¸ì§‘ ìš©ì§€ì˜ ì¤„ ê²©ì ì‚¬ìš© ì—¬ë¶€
 	 */
 	public void setUseGrid(boolean useGrid) {
 		value = BitFlag.set(value, 8, useGrid);
 	}
 	
 	/**
-	 * °ø¹é ÃÖ¼Ò°ª (0%¢¦75%)À» ¹İÈ¯ÇÑ´Ù. (9~15 bit)
-	 * @return °ø¹é ÃÖ¼Ò°ª (0%¢¦75%)
+	 * ê³µë°± ìµœì†Œê°’ (0%ï½75%)ì„ ë°˜í™˜í•œë‹¤. (9~15 bit)
+	 * @return ê³µë°± ìµœì†Œê°’ (0%ï½75%)
 	 */
 	public byte getMinimumSpace() { 
 		return (byte) BitFlag.get(value, 9, 15);
 	}
 
 	/**
-	 * °ø¹é ÃÖ¼Ò°ª (0%¢¦75%)À» ¼³Á¤ÇÑ´Ù. (9~15 bit)
-	 * @param minimumSpace °ø¹é ÃÖ¼Ò°ª (0%¢¦75%)
+	 * ê³µë°± ìµœì†Œê°’ (0%ï½75%)ì„ ì„¤ì •í•œë‹¤. (9~15 bit)
+	 * @param minimumSpace ê³µë°± ìµœì†Œê°’ (0%ï½75%)
 	 */
 	public void setMinimumSpace(byte minimumSpace) {
 		value = BitFlag.set(value, 9, 15, minimumSpace);
 	}
 	
 	/**
-	 * ¿ÜÅçÀÌÁÙ º¸È£ ¿©ºÎ¸¦ ¹İÈ¯ÇÑ´Ù. (16 bit)
-	 * @return ¿ÜÅçÀÌÁÙ º¸È£ ¿©ºÎ
+	 * ì™¸í†¨ì´ì¤„ ë³´í˜¸ ì—¬ë¶€ë¥¼ ë°˜í™˜í•œë‹¤. (16 bit)
+	 * @return ì™¸í†¨ì´ì¤„ ë³´í˜¸ ì—¬ë¶€
 	 */
 	public boolean isProtectLoner() {
 		return BitFlag.get(value, 16);
 	}
 
 	/**
-	 * ¿ÜÅçÀÌÁÙ º¸È£ ¿©ºÎ¸¦ ¼³Á¤ÇÑ´Ù. (16 bit)
-	 * @param protectLoner ¿ÜÅçÀÌÁÙ º¸È£ ¿©ºÎ
+	 * ì™¸í†¨ì´ì¤„ ë³´í˜¸ ì—¬ë¶€ë¥¼ ì„¤ì •í•œë‹¤. (16 bit)
+	 * @param protectLoner ì™¸í†¨ì´ì¤„ ë³´í˜¸ ì—¬ë¶€
 	 */
 	public void setProtectLoner(boolean protectLoner) {
 		value = BitFlag.set(value, 16, protectLoner);
 	}
 	
 	/**
-	 * ´ÙÀ½ ¹®´Ü°ú ÇÔ²² ¿©ºÎ¸¦ ¹İÈ¯ÇÑ´Ù. (17 bit)
-	 * @return ´ÙÀ½ ¹®´Ü°ú ÇÔ²² ¿©ºÎ
+	 * ë‹¤ìŒ ë¬¸ë‹¨ê³¼ í•¨ê»˜ ì—¬ë¶€ë¥¼ ë°˜í™˜í•œë‹¤. (17 bit)
+	 * @return ë‹¤ìŒ ë¬¸ë‹¨ê³¼ í•¨ê»˜ ì—¬ë¶€
 	 */
 	public boolean isTogetherNextPara() {
 		return BitFlag.get(value, 17);
 	}
 
 	/**
-	 * ´ÙÀ½ ¹®´Ü°ú ÇÔ²² ¿©ºÎ¸¦ ¼³Á¤ÇÑ´Ù. (17 bit)
-	 * @param togetherNextPara ´ÙÀ½ ¹®´Ü°ú ÇÔ²² ¿©ºÎ
+	 * ë‹¤ìŒ ë¬¸ë‹¨ê³¼ í•¨ê»˜ ì—¬ë¶€ë¥¼ ì„¤ì •í•œë‹¤. (17 bit)
+	 * @param togetherNextPara ë‹¤ìŒ ë¬¸ë‹¨ê³¼ í•¨ê»˜ ì—¬ë¶€
 	 */
 	public void setTogetherNextPara(boolean togetherNextPara) {
 		value = BitFlag.set(value, 17, togetherNextPara);
 	}
 
 	/**
-	 * ¹®´Ü º¸È£ ¿©ºÎ¸¦ ¹İÈ¯ÇÑ´Ù. (18 bit)
-	 * @return ¹®´Ü º¸È£ ¿©ºÎ
+	 * ë¬¸ë‹¨ ë³´í˜¸ ì—¬ë¶€ë¥¼ ë°˜í™˜í•œë‹¤. (18 bit)
+	 * @return ë¬¸ë‹¨ ë³´í˜¸ ì—¬ë¶€
 	 */
 	public boolean isProtectPara() {
 		return BitFlag.get(value, 18);
 	}
 	
 	/**
-	 * ¹®´Ü º¸È£ ¿©ºÎ¸¦  ¼³Á¤ÇÑ´Ù. (18 bit)
-	 * @param protectPara ¹®´Ü º¸È£ ¿©ºÎ
+	 * ë¬¸ë‹¨ ë³´í˜¸ ì—¬ë¶€ë¥¼  ì„¤ì •í•œë‹¤. (18 bit)
+	 * @param protectPara ë¬¸ë‹¨ ë³´í˜¸ ì—¬ë¶€
 	 */
 	public void setProtectPara(boolean protectPara) {
 		value = BitFlag.set(value, 18, protectPara);
 	}
 	
 	/**
-	 * ¹®´Ü ¾Õ¿¡¼­ Ç×»ó ÂÊ ³ª´® ¿©ºÎ¸¦ ¹İÈ¯ÇÑ´Ù. (19 bit)
-	 * @return ¹®´Ü ¾Õ¿¡¼­ Ç×»ó ÂÊ ³ª´® ¿©ºÎ
+	 * ë¬¸ë‹¨ ì•ì—ì„œ í•­ìƒ ìª½ ë‚˜ëˆ” ì—¬ë¶€ë¥¼ ë°˜í™˜í•œë‹¤. (19 bit)
+	 * @return ë¬¸ë‹¨ ì•ì—ì„œ í•­ìƒ ìª½ ë‚˜ëˆ” ì—¬ë¶€
 	 */
 	public boolean isSplitPageBeforePara() {
 		return BitFlag.get(value, 19);
 	}
 	
 	/**
-	 * ¹®´Ü ¾Õ¿¡¼­ Ç×»ó ÂÊ ³ª´® ¿©ºÎ¸¦ ¼³Á¤ÇÑ´Ù. (19 bit)
-	 * @param splitPageBeforePara ¹®´Ü ¾Õ¿¡¼­ Ç×»ó ÂÊ ³ª´® ¿©ºÎ
+	 * ë¬¸ë‹¨ ì•ì—ì„œ í•­ìƒ ìª½ ë‚˜ëˆ” ì—¬ë¶€ë¥¼ ì„¤ì •í•œë‹¤. (19 bit)
+	 * @param splitPageBeforePara ë¬¸ë‹¨ ì•ì—ì„œ í•­ìƒ ìª½ ë‚˜ëˆ” ì—¬ë¶€
 	 */
 	public void setSplitPageBeforePara(boolean splitPageBeforePara) {
 		value = BitFlag.set(value, 19, splitPageBeforePara);
 	}
 	
 	/**
-	 * ¼¼·Î Á¤·ÄÀ» ¹İÈ¯ÇÑ´Ù. (20~21 bit) 
-	 * @return ¼¼·Î Á¤·Ä 
+	 * ì„¸ë¡œ ì •ë ¬ì„ ë°˜í™˜í•œë‹¤. (20~21 bit) 
+	 * @return ì„¸ë¡œ ì •ë ¬ 
 	 */
 	public VerticalAlignment getVerticalAlignment() {
 		return VerticalAlignment.valueOf((byte) BitFlag.get(value, 20, 21));
 	}
 	
 	/**
-	 * ¼¼·Î Á¤·ÄÀ» ¼³Á¤ÇÑ´Ù. (20~21 bit)
-	 * @param verticalAlignment ¼¼·Î Á¤·Ä
+	 * ì„¸ë¡œ ì •ë ¬ì„ ì„¤ì •í•œë‹¤. (20~21 bit)
+	 * @param verticalAlignment ì„¸ë¡œ ì •ë ¬
 	 */
 	public void setVerticalAlignment(VerticalAlignment verticalAlignment) {
 		value = BitFlag.set(value, 20, 21, verticalAlignment.getValue());
 	}
 	
 	/**
-	 * ±Û²Ã¿¡ ¾î¿ï¸®´Â ÁÙ ³ôÀÌ ¿©ºÎ¸¦ ¹İÈ¯ÇÑ´Ù. (22 bit)
-	 * @return ±Û²Ã¿¡ ¾î¿ï¸®´Â ÁÙ ³ôÀÌ ¿©ºÎ
+	 * ê¸€ê¼´ì— ì–´ìš¸ë¦¬ëŠ” ì¤„ ë†’ì´ ì—¬ë¶€ë¥¼ ë°˜í™˜í•œë‹¤. (22 bit)
+	 * @return ê¸€ê¼´ì— ì–´ìš¸ë¦¬ëŠ” ì¤„ ë†’ì´ ì—¬ë¶€
 	 */
 	public boolean isLineHeightForFont() {
 		return BitFlag.get(value, 22);
 	}
 
 	/**
-	 * ±Û²Ã¿¡ ¾î¿ï¸®´Â ÁÙ ³ôÀÌ ¿©ºÎ¸¦ ¼³Á¤ÇÑ´Ù. (22 bit)
-	 * @param lineHeightForFont ±Û²Ã¿¡ ¾î¿ï¸®´Â ÁÙ ³ôÀÌ ¿©ºÎ
+	 * ê¸€ê¼´ì— ì–´ìš¸ë¦¬ëŠ” ì¤„ ë†’ì´ ì—¬ë¶€ë¥¼ ì„¤ì •í•œë‹¤. (22 bit)
+	 * @param lineHeightForFont ê¸€ê¼´ì— ì–´ìš¸ë¦¬ëŠ” ì¤„ ë†’ì´ ì—¬ë¶€
  	 */
 	public void setLineHeightForFont(boolean lineHeightForFont) {
 		value = BitFlag.set(value, 22, lineHeightForFont);
 	}
 	
 	/**
-	 * ¹®´Ü ¸Ó¸®ÀÇ ¸ğ¾çÀ» ¹İÈ¯ÇÑ´Ù. (23~24 bit)
-	 * @return ¹®´Ü ¸Ó¸®ÀÇ ¸ğ¾ç
+	 * ë¬¸ë‹¨ ë¨¸ë¦¬ì˜ ëª¨ì–‘ì„ ë°˜í™˜í•œë‹¤. (23~24 bit)
+	 * @return ë¬¸ë‹¨ ë¨¸ë¦¬ì˜ ëª¨ì–‘
 	 */
 	public ParaHeadShape getParaHeadShape() {
 		return ParaHeadShape.valueOf((byte) BitFlag.get(value, 23, 24));
 	}
 	
 	/**
-	 * ¹®´Ü ¸Ó¸®ÀÇ ¸ğ¾çÀ» ¼³Á¤ÇÑ´Ù. (23~24 bit)
-	 * @param paraHeadShape ¹®´Ü ¸Ó¸®ÀÇ ¸ğ¾ç
+	 * ë¬¸ë‹¨ ë¨¸ë¦¬ì˜ ëª¨ì–‘ì„ ì„¤ì •í•œë‹¤. (23~24 bit)
+	 * @param paraHeadShape ë¬¸ë‹¨ ë¨¸ë¦¬ì˜ ëª¨ì–‘
 	 */
 	public void setParaHeadShape(ParaHeadShape paraHeadShape) {
 		value = BitFlag.set(value, 23,	24, paraHeadShape.getValue());
 	}
 	
 	/**
-	 * ¹®´Ü ¼öÁØ(1¼öÁØ¢¦7¼öÁØ)À» ¹İÈ­ÇÑ´Ù. (25~27 bit)
-	 * @return ¹®´Ü ¼öÁØ
+	 * ë¬¸ë‹¨ ìˆ˜ì¤€(1ìˆ˜ì¤€ï½7ìˆ˜ì¤€)ì„ ë°˜í™”í•œë‹¤. (25~27 bit)
+	 * @return ë¬¸ë‹¨ ìˆ˜ì¤€
 	 */
 	public byte getParaLevel() {
 		return (byte) BitFlag.get(value, 25, 27);
 	}
 	
 	/**
-	 * ¹®´Ü ¼öÁØÀ» ¼³Á¤ÇÑ´Ù. (25~27 bit)
-	 * @param paraLevel ¹®´Ü ¼öÁØ
+	 * ë¬¸ë‹¨ ìˆ˜ì¤€ì„ ì„¤ì •í•œë‹¤. (25~27 bit)
+	 * @param paraLevel ë¬¸ë‹¨ ìˆ˜ì¤€
 	 */
 	public void setParaLevel(byte paraLevel) {
 		value = BitFlag.set(value, 25, 27, paraLevel);
 	}
 	
 	/**
-	 * ¹®´Ü Å×µÎ¸® ¿¬°á ¿©ºÎ¸¦ ¹İÈ¯ÇÑ´Ù. (28 bit)
-	 * @return ¹®´Ü Å×µÎ¸® ¿¬°á ¿©ºÎ
+	 * ë¬¸ë‹¨ í…Œë‘ë¦¬ ì—°ê²° ì—¬ë¶€ë¥¼ ë°˜í™˜í•œë‹¤. (28 bit)
+	 * @return ë¬¸ë‹¨ í…Œë‘ë¦¬ ì—°ê²° ì—¬ë¶€
 	 */
 	public boolean isLinkBorder() {
 		return BitFlag.get(value, 28);
 	}
 
 	/**
-	 * ¹®´Ü Å×µÎ¸® ¿¬°á ¿©ºÎ¸¦ ¼³Á¤ÇÑ´Ù. (28 bit) 
-	 * @param linkBorder ¹®´Ü Å×µÎ¸® ¿¬°á ¿©ºÎ
+	 * ë¬¸ë‹¨ í…Œë‘ë¦¬ ì—°ê²° ì—¬ë¶€ë¥¼ ì„¤ì •í•œë‹¤. (28 bit) 
+	 * @param linkBorder ë¬¸ë‹¨ í…Œë‘ë¦¬ ì—°ê²° ì—¬ë¶€
 	 */
 	public void setLinkBorder(boolean linkBorder) {
 		value = BitFlag.set(value, 28, linkBorder);
 	}
 	
 	/**
-	 * ¹®´Ü ¿©¹é ¹«½Ã ¿©ºÎ¸¦ ¹İÈ¯ÇÑ´Ù. (29 bit) 
-	 * @return ¹®´Ü ¿©¹é ¹«½Ã ¿©ºÎ  
+	 * ë¬¸ë‹¨ ì—¬ë°± ë¬´ì‹œ ì—¬ë¶€ë¥¼ ë°˜í™˜í•œë‹¤. (29 bit) 
+	 * @return ë¬¸ë‹¨ ì—¬ë°± ë¬´ì‹œ ì—¬ë¶€  
 	 */
 	public boolean isIgnoreParaMargin() {
 		return BitFlag.get(value, 29);
 	}
 	
 	/**
-	 * ¹®´Ü ¿©¹é ¹«½Ã ¿©ºÎ¸¦ ¼³Á¤ÇÑ´Ù. (29 bit)
-	 * @param ignoreParaMargin ¹®´Ü ¿©¹é ¹«½Ã ¿©ºÎ
+	 * ë¬¸ë‹¨ ì—¬ë°± ë¬´ì‹œ ì—¬ë¶€ë¥¼ ì„¤ì •í•œë‹¤. (29 bit)
+	 * @param ignoreParaMargin ë¬¸ë‹¨ ì—¬ë°± ë¬´ì‹œ ì—¬ë¶€
 	 */
 	public void setIgnoreParaMargin(boolean ignoreParaMargin) {
 		value = BitFlag.set(value, 29, ignoreParaMargin);
 	}
 	
 	/**
-	 * ¹®´Ü ²¿¸® ¸ğ¾ç(??)À» ¹İÈ¯ÇÑ´Ù. (30 bit)
-	 * @return ¹®´Ü ²¿¸® ¸ğ¾ç(??)
+	 * ë¬¸ë‹¨ ê¼¬ë¦¬ ëª¨ì–‘(??)ì„ ë°˜í™˜í•œë‹¤. (30 bit)
+	 * @return ë¬¸ë‹¨ ê¼¬ë¦¬ ëª¨ì–‘(??)
 	 */
 	public boolean isParaTailShape() {
 		return BitFlag.get(value, 30);
 	}
 	
 	/**
-	 * ¹®´Ü ²¿¸® ¸ğ¾ç(??)À» ¼³Á¤ÇÑ´Ù. (30 bit)
-	 * @param paraTailShape ¹®´Ü ²¿¸® ¸ğ¾ç(??)
+	 * ë¬¸ë‹¨ ê¼¬ë¦¬ ëª¨ì–‘(??)ì„ ì„¤ì •í•œë‹¤. (30 bit)
+	 * @param paraTailShape ë¬¸ë‹¨ ê¼¬ë¦¬ ëª¨ì–‘(??)
 	 */
 	public void setParaTailShape(boolean paraTailShape) {
 		value = BitFlag.set(value, 30, paraTailShape);

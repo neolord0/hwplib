@@ -1,234 +1,234 @@
-package kr.dogfoot.hwplib.object.bodytext.control.sectiondefine;
+ï»¿package kr.dogfoot.hwplib.object.bodytext.control.sectiondefine;
 
 /**
- * ¿ëÁö ¼³Á¤¿¡ ´ëÇÑ ·¹ÄÚµå
+ * ìš©ì§€ ì„¤ì •ì— ëŒ€í•œ ë ˆì½”ë“œ
  * 
  * @author neolord
  */
 public class PageDef {
 	/**
-	 * ¿ëÁö °¡·Î Å©±â
+	 * ìš©ì§€ ê°€ë¡œ í¬ê¸°
 	 */
 	private long paperWidth;
 	/**
-	 * ¿ëÁö ¼¼·Î Å©±â
+	 * ìš©ì§€ ì„¸ë¡œ í¬ê¸°
 	 */
 	private long paperHeight;
 	/**
-	 * ¿ëÁö ¿ŞÂÊ ¿©¹é
+	 * ìš©ì§€ ì™¼ìª½ ì—¬ë°±
 	 */
 	private long leftMargin;
 	/**
-	 * ¿ëÁö ¿À¸¥ÂÊ ¿©¹é
+	 * ìš©ì§€ ì˜¤ë¥¸ìª½ ì—¬ë°±
 	 */
 	private long rightMargin;
 	/**
-	 * ¿ëÁö À§ÂÊ ¿©¹é
+	 * ìš©ì§€ ìœ„ìª½ ì—¬ë°±
 	 */
 	private long topMargin;
 	/**
-	 * ¿ëÁö ¾Æ·¡ÂÊ ¿©¹é
+	 * ìš©ì§€ ì•„ë˜ìª½ ì—¬ë°±
 	 */
 	private long bottomMargin;
 	/**
-	 * ¸Ó¸®¸» ¿©¹é
+	 * ë¨¸ë¦¬ë§ ì—¬ë°±
 	 */
 	private long headerMargin;
 	/**
-	 * ²¿¸®¸» ¿©¹é
+	 * ê¼¬ë¦¬ë§ ì—¬ë°±
 	 */
 	private long footerMargin;
 	/**
-	 * Á¦º» ¿©¹é
+	 * ì œë³¸ ì—¬ë°±
 	 */
 	private long gutterMargin;
 	/**
-	 * ¼Ó¼º
+	 * ì†ì„±
 	 */
 	private PageDefProperty property;
 
 	/**
-	 * »ı»óÀÚ
+	 * ìƒìƒì
 	 */
 	public PageDef() {
 		property = new PageDefProperty();
 	}
 
 	/**
-	 * ¿ëÁö °¡·Î Å©±â¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ìš©ì§€ ê°€ë¡œ í¬ê¸°ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ¿ëÁö °¡·Î Å©±â
+	 * @return ìš©ì§€ ê°€ë¡œ í¬ê¸°
 	 */
 	public long getPaperWidth() {
 		return paperWidth;
 	}
 
 	/**
-	 * ¿ëÁö °¡·Î Å©±â¸¦ ¼³Á¤ÇÑ´Ù.
+	 * ìš©ì§€ ê°€ë¡œ í¬ê¸°ë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param paperWidth
-	 *            ¿ëÁö °¡·Î Å©±â
+	 *            ìš©ì§€ ê°€ë¡œ í¬ê¸°
 	 */
 	public void setPaperWidth(long paperWidth) {
 		this.paperWidth = paperWidth;
 	}
 
 	/**
-	 * ¿ëÁö ¼¼·Î Å©±â¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ìš©ì§€ ì„¸ë¡œ í¬ê¸°ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ¿ëÁö ¼¼·Î Å©±â
+	 * @return ìš©ì§€ ì„¸ë¡œ í¬ê¸°
 	 */
 	public long getPaperHeight() {
 		return paperHeight;
 	}
 
 	/**
-	 * ¿ëÁö ¼¼·Î Å©±â¸¦ ¼³Á¤ÇÑ´Ù.
+	 * ìš©ì§€ ì„¸ë¡œ í¬ê¸°ë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param paperHeight
-	 *            ¿ëÁö ¼¼·Î Å©±â
+	 *            ìš©ì§€ ì„¸ë¡œ í¬ê¸°
 	 */
 	public void setPaperHeight(long paperHeight) {
 		this.paperHeight = paperHeight;
 	}
 
 	/**
-	 * ¿ëÁö ¿ŞÂÊ ¿©¹éÀÇ Å©±â¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ìš©ì§€ ì™¼ìª½ ì—¬ë°±ì˜ í¬ê¸°ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ¿ëÁö ¿ŞÂÊ ¿©¹éÀÇ Å©±â
+	 * @return ìš©ì§€ ì™¼ìª½ ì—¬ë°±ì˜ í¬ê¸°
 	 */
 	public long getLeftMargin() {
 		return leftMargin;
 	}
 
 	/**
-	 * ¿ëÁö ¿ŞÂÊ ¿©¹éÀÇ Å©±â¸¦ ¼³Á¤ÇÑ´Ù.
+	 * ìš©ì§€ ì™¼ìª½ ì—¬ë°±ì˜ í¬ê¸°ë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param leftMargin
-	 *            ¿ëÁö ¿ŞÂÊ ¿©¹éÀÇ Å©±â
+	 *            ìš©ì§€ ì™¼ìª½ ì—¬ë°±ì˜ í¬ê¸°
 	 */
 	public void setLeftMargin(long leftMargin) {
 		this.leftMargin = leftMargin;
 	}
 
 	/**
-	 * ¿ëÁö ¿À¸¥ÂÊ ¿©¹éÀÇ Å©±â¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ìš©ì§€ ì˜¤ë¥¸ìª½ ì—¬ë°±ì˜ í¬ê¸°ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ¿ëÁö ¿À¸¥ÂÊ ¿©¹éÀÇ Å©±â
+	 * @return ìš©ì§€ ì˜¤ë¥¸ìª½ ì—¬ë°±ì˜ í¬ê¸°
 	 */
 	public long getRightMargin() {
 		return rightMargin;
 	}
 
 	/**
-	 * ¿ëÁö ¿À¸¥ÂÊ ¿©¹éÀÇ Å©±â¸¦ ¼³Á¤ÇÑ´Ù.
+	 * ìš©ì§€ ì˜¤ë¥¸ìª½ ì—¬ë°±ì˜ í¬ê¸°ë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param rightMargin
-	 *            ¿ëÁö ¿À¸¥ÂÊ ¿©¹éÀÇ Å©±â
+	 *            ìš©ì§€ ì˜¤ë¥¸ìª½ ì—¬ë°±ì˜ í¬ê¸°
 	 */
 	public void setRightMargin(long rightMargin) {
 		this.rightMargin = rightMargin;
 	}
 
 	/**
-	 * ¿ëÁö À§ÂÊ ¿©¹éÀÇ Å©±â¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ìš©ì§€ ìœ„ìª½ ì—¬ë°±ì˜ í¬ê¸°ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ¿ëÁö À§ÂÊ ¿©¹éÀÇ Å©±â
+	 * @return ìš©ì§€ ìœ„ìª½ ì—¬ë°±ì˜ í¬ê¸°
 	 */
 	public long getTopMargin() {
 		return topMargin;
 	}
 
 	/**
-	 * ¿ëÁö À§ÂÊ ¿©¹éÀÇ Å©±â¸¦ ¼³Á¤ÇÑ´Ù.
+	 * ìš©ì§€ ìœ„ìª½ ì—¬ë°±ì˜ í¬ê¸°ë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param topMargin
-	 *            ¿ëÁö À§ÂÊ ¿©¹éÀÇ Å©±â
+	 *            ìš©ì§€ ìœ„ìª½ ì—¬ë°±ì˜ í¬ê¸°
 	 */
 	public void setTopMargin(long topMargin) {
 		this.topMargin = topMargin;
 	}
 
 	/**
-	 * ¿ëÁö ¾Æ·¡ÂÊ ¿©¹éÀÇ Å©±â¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ìš©ì§€ ì•„ë˜ìª½ ì—¬ë°±ì˜ í¬ê¸°ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ¿ëÁö ¾Æ·¡ÂÊ ¿©¹éÀÇ Å©±â
+	 * @return ìš©ì§€ ì•„ë˜ìª½ ì—¬ë°±ì˜ í¬ê¸°
 	 */
 	public long getBottomMargin() {
 		return bottomMargin;
 	}
 
 	/**
-	 * ¿ëÁö ¾Æ·¡ÂÊ ¿©¹éÀÇ Å©±â¸¦ ¼³Á¤ÇÑ´Ù.
+	 * ìš©ì§€ ì•„ë˜ìª½ ì—¬ë°±ì˜ í¬ê¸°ë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param bottomMargin
-	 *            ¿ëÁö ¾Æ·¡ÂÊ ¿©¹éÀÇ Å©±â
+	 *            ìš©ì§€ ì•„ë˜ìª½ ì—¬ë°±ì˜ í¬ê¸°
 	 */
 	public void setBottomMargin(long bottomMargin) {
 		this.bottomMargin = bottomMargin;
 	}
 
 	/**
-	 * ¸Ó¸®¸» ¿©¹éÀÇ Å©±â¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ë¨¸ë¦¬ë§ ì—¬ë°±ì˜ í¬ê¸°ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ¸Ó¸®¸» ¿©¹éÀÇ Å©±â
+	 * @return ë¨¸ë¦¬ë§ ì—¬ë°±ì˜ í¬ê¸°
 	 */
 	public long getHeaderMargin() {
 		return headerMargin;
 	}
 
 	/**
-	 * ¸Ó¸®¸» ¿©¹éÀÇ Å©±â¸¦ ¼³Á¤ÇÑ´Ù.
+	 * ë¨¸ë¦¬ë§ ì—¬ë°±ì˜ í¬ê¸°ë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param headerMargin
-	 *            ¸Ó¸®¸» ¿©¹éÀÇ Å©±â
+	 *            ë¨¸ë¦¬ë§ ì—¬ë°±ì˜ í¬ê¸°
 	 */
 	public void setHeaderMargin(long headerMargin) {
 		this.headerMargin = headerMargin;
 	}
 
 	/**
-	 * ²¿¸®¸» ¿©¹éÀÇ Å©±â¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ê¼¬ë¦¬ë§ ì—¬ë°±ì˜ í¬ê¸°ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ²¿¸®¸» ¿©¹éÀÇ Å©±â
+	 * @return ê¼¬ë¦¬ë§ ì—¬ë°±ì˜ í¬ê¸°
 	 */
 	public long getFooterMargin() {
 		return footerMargin;
 	}
 
 	/**
-	 * ²¿¸®¸» ¿©¹éÀÇ Å©±â¸¦ ¼³Á¤ÇÑ´Ù.
+	 * ê¼¬ë¦¬ë§ ì—¬ë°±ì˜ í¬ê¸°ë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param footerMargin
-	 *            ²¿¸®¸» ¿©¹éÀÇ Å©±â
+	 *            ê¼¬ë¦¬ë§ ì—¬ë°±ì˜ í¬ê¸°
 	 */
 	public void setFooterMargin(long footerMargin) {
 		this.footerMargin = footerMargin;
 	}
 
 	/**
-	 * Á¦º» ¿©¹éÀÇ Å©±â¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ì œë³¸ ì—¬ë°±ì˜ í¬ê¸°ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return Á¦º» ¿©¹éÀÇ Å©±â
+	 * @return ì œë³¸ ì—¬ë°±ì˜ í¬ê¸°
 	 */
 	public long getGutterMargin() {
 		return gutterMargin;
 	}
 
 	/**
-	 * Á¦º» ¿©¹éÀÇ Å©±â¸¦ ¼³Á¤ÇÑ´Ù.
+	 * ì œë³¸ ì—¬ë°±ì˜ í¬ê¸°ë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param gutterMargin
-	 *            Á¦º» ¿©¹éÀÇ Å©±â
+	 *            ì œë³¸ ì—¬ë°±ì˜ í¬ê¸°
 	 */
 	public void setGutterMargin(long gutterMargin) {
 		this.gutterMargin = gutterMargin;
 	}
 
 	/**
-	 * ¼Ó¼º °´Ã¼¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ì†ì„± ê°ì²´ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ¼Ó¼º °´Ã¼
+	 * @return ì†ì„± ê°ì²´
 	 */
 	public PageDefProperty getProperty() {
 		return property;

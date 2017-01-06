@@ -1,54 +1,54 @@
-package kr.dogfoot.hwplib.object.bodytext.control.sectiondefine;
+ï»¿package kr.dogfoot.hwplib.object.bodytext.control.sectiondefine;
 
 /**
- * ÇÑ ÆäÀÌÁö ³»¿¡¼­ °¢ÁÖ¸¦ ´Ù´Ü¿¡ À§Ä¡½ÃÅ³ ¹æ¹ı
+ * í•œ í˜ì´ì§€ ë‚´ì—ì„œ ê°ì£¼ë¥¼ ë‹¤ë‹¨ì— ìœ„ì¹˜ì‹œí‚¬ ë°©ë²•
  * 
  * @author neolord
  */
 public enum FootNoteDisplayMethod {
 	/**
-	 * °¢ ´Ü¸¶´Ù µû·Î ¹è¿­
+	 * ê° ë‹¨ë§ˆë‹¤ ë”°ë¡œ ë°°ì—´
 	 */
 	EachColumn((byte) 0),
 	/**
-	 * Åë´ÜÀ¸·Î ¹è¿­
+	 * í†µë‹¨ìœ¼ë¡œ ë°°ì—´
 	 */
 	AllColumn((byte) 1),
 	/**
-	 * °¡Àå ¿À¸¥ÂÊ ´Ü¿¡ ¹è¿­
+	 * ê°€ì¥ ì˜¤ë¥¸ìª½ ë‹¨ì— ë°°ì—´
 	 */
 	RightColumn((byte) 2);
 
 	/**
-	 * ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª
+	 * íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’
 	 */
 	private byte value;
 
 	/**
-	 * »ı¼ºÀÚ
+	 * ìƒì„±ì
 	 * 
 	 * @param value
-	 *            ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª
+	 *            íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’
 	 */
 	private FootNoteDisplayMethod(byte value) {
 		this.value = value;
 	}
 
 	/**
-	 * ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ªÀ» ¹İÈ¯ÇÑ´Ù.
+	 * íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’ì„ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª
+	 * @return íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’
 	 */
 	public byte getValue() {
 		return value;
 	}
 
 	/**
-	 * ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª¿¡ ÇØ´çµÇ´Â enum °ªÀ» ¹İÈ¯ÇÑ´Ù.
+	 * íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’ì— í•´ë‹¹ë˜ëŠ” enum ê°’ì„ ë°˜í™˜í•œë‹¤.
 	 * 
 	 * @param value
-	 *            ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª
-	 * @return enum °ª
+	 *            íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’
+	 * @return enum ê°’
 	 */
 	public static FootNoteDisplayMethod valueOf(byte value) {
 		for (FootNoteDisplayMethod fndm : values()) {

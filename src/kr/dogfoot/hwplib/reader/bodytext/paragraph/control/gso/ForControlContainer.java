@@ -1,4 +1,4 @@
-package kr.dogfoot.hwplib.reader.bodytext.paragraph.control.gso;
+ï»¿package kr.dogfoot.hwplib.reader.bodytext.paragraph.control.gso;
 
 import kr.dogfoot.hwplib.object.bodytext.control.gso.ControlContainer;
 import kr.dogfoot.hwplib.object.bodytext.control.gso.GsoControl;
@@ -6,18 +6,18 @@ import kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponent.ShapeCompone
 import kr.dogfoot.hwplib.util.compoundFile.StreamReader;
 
 /**
- * ¹­Àº ÄÁÆ®·ÑÀ» ÀĞ±â À§ÇÑ °´Ã¼
+ * ë¬¶ì€ ì»¨íŠ¸ë¡¤ì„ ì½ê¸° ìœ„í•œ ê°ì²´
  * 
  * @author neolord
  */
 public class ForControlContainer {
 	/**
-	 * ¹­Àº ÄÁÆ®·ÑÀ» ÀĞ´Â´Ù.
+	 * ë¬¶ì€ ì»¨íŠ¸ë¡¤ì„ ì½ëŠ”ë‹¤.
 	 * 
 	 * @param container
-	 *            ¹­Àº ÄÁÆ®·Ñ
+	 *            ë¬¶ì€ ì»¨íŠ¸ë¡¤
 	 * @param sr
-	 *            ½ºÆ®¸² ¸®´õ
+	 *            ìŠ¤íŠ¸ë¦¼ ë¦¬ë”
 	 * @throws Exception
 	 */
 	public static void read(ControlContainer container, StreamReader sr)

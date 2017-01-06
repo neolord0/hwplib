@@ -1,110 +1,110 @@
-package kr.dogfoot.hwplib.object.docinfo.borderfill;
+ï»¿package kr.dogfoot.hwplib.object.docinfo.borderfill;
 
 /**
- * Å×µÎ¸®¼± Á¾·ù
+ * í…Œë‘ë¦¬ì„  ì¢…ë¥˜
  * 
  * @author neolord
  */
 public enum BorderType {
 	/**
-	 * ½Ç¼±
+	 * ì‹¤ì„ 
 	 */
 	Solid((byte) 0),
 	/**
-	 * ±ä Á¡¼± (¼â¼±)
+	 * ê¸´ ì ì„  (ì‡„ì„ )
 	 */
 	Dash((byte) 1),
 	/**
-	 * Á¡¼±
+	 * ì ì„ 
 	 */
 	Dot((byte) 2),
 	/**
-	 * -.-.-.-.(ÀÏÁ¡ ¼â¼±)
+	 * -.-.-.-.(ì¼ì  ì‡„ì„ )
 	 */
 	DashDot((byte) 3),
 	/**
-	 * -..-..-..(ÀÌÁ¡ ¼â¼±)
+	 * -..-..-..(ì´ì  ì‡„ì„ )
 	 */
 	DashDotDot((byte) 4),
 	/**
-	 * Dashº¸´Ù ±ä ¼±ºĞÀÇ ¹İº¹
+	 * Dashë³´ë‹¤ ê¸´ ì„ ë¶„ì˜ ë°˜ë³µ
 	 */
 	LongDash((byte) 5),
 	/**
-	 * Dotº¸´Ù Å« µ¿±×¶ó¹ÌÀÇ ¹İº¹
+	 * Dotë³´ë‹¤ í° ë™ê·¸ë¼ë¯¸ì˜ ë°˜ë³µ
 	 */
 	CircleDot((byte) 6),
 	/**
-	 * 2Áß¼±
+	 * 2ì¤‘ì„ 
 	 */
 	Double((byte) 7),
 	/**
-	 * °¡´Â¼± + ±½Àº¼± 2Áß¼±
+	 * ê°€ëŠ”ì„  + êµµì€ì„  2ì¤‘ì„ 
 	 */
 	ThinThick((byte) 8),
 	/**
-	 * ±½Àº¼± + °¡´Â¼± 2Áß¼±
+	 * êµµì€ì„  + ê°€ëŠ”ì„  2ì¤‘ì„ 
 	 */
 	ThickThin((byte) 9),
 	/**
-	 * °¡´Â¼± + ±½Àº¼± + °¡´Â¼± 3Áß¼±
+	 * ê°€ëŠ”ì„  + êµµì€ì„  + ê°€ëŠ”ì„  3ì¤‘ì„ 
 	 */
 	ThinThickThn((byte) 10),
 	/**
-	 * ¹°°á
+	 * ë¬¼ê²°
 	 */
 	Wave((byte) 11),
 	/**
-	 * ¹°°á 2Áß¼±
+	 * ë¬¼ê²° 2ì¤‘ì„ 
 	 */
 	DoubleWave((byte) 12),
 	/**
-	 * µÎ²¨¿î 3D
+	 * ë‘êº¼ìš´ 3D
 	 */
 	Thick3D((byte) 13),
 	/**
-	 * µÎ²¨¿î 3D(±¤¿ø ¹İ´ë)
+	 * ë‘êº¼ìš´ 3D(ê´‘ì› ë°˜ëŒ€)
 	 */
 	Thick3DReverseLighting((byte) 13),
 	/**
-	 * 3D ´Ü¼±
+	 * 3D ë‹¨ì„ 
 	 */
 	Solid3D((byte) 15),
 	/**
-	 * 3D ´Ü¼±(±¤¿ø ¹İ´ë)
+	 * 3D ë‹¨ì„ (ê´‘ì› ë°˜ëŒ€)
 	 */
 	Solid3DReverseLighting((byte) 16);
 
 	/**
-	 * ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª
+	 * íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’
 	 */
 	private byte value;
 
 	/**
-	 * »ı¼ºÀÚ
+	 * ìƒì„±ì
 	 * 
 	 * @param value
-	 *            ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª
+	 *            íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’
 	 */
 	private BorderType(byte value) {
 		this.value = value;
 	}
 
 	/**
-	 * ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ªÀ» ¹İÈ¯ÇÑ´Ù.
+	 * íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’ì„ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª
+	 * @return íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’
 	 */
 	public byte getValue() {
 		return value;
 	}
 
 	/**
-	 * ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª¿¡ ÇØ´çµÇ´Â enum °ªÀ» ¹İÈ¯ÇÑ´Ù.
+	 * íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’ì— í•´ë‹¹ë˜ëŠ” enum ê°’ì„ ë°˜í™˜í•œë‹¤.
 	 * 
 	 * @param value
-	 *            ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª
-	 * @return enum °ª
+	 *            íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’
+	 * @return enum ê°’
 	 */
 	public static BorderType valueOf(byte value) {
 		for (BorderType bt : values()) {

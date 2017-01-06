@@ -1,4 +1,4 @@
-package kr.dogfoot.hwplib.reader;
+ï»¿package kr.dogfoot.hwplib.reader;
 
 import java.io.File;
 import java.util.Iterator;
@@ -12,17 +12,17 @@ import kr.dogfoot.hwplib.util.compoundFile.CompoundFileReader;
 import kr.dogfoot.hwplib.util.compoundFile.StreamReader;
 
 /**
- * ÇÑ±Û ÆÄÀÏÀ» ÀĞ´Â °´Ã¼
+ * í•œê¸€ íŒŒì¼ì„ ì½ëŠ” ê°ì²´
  * 
  * @author neolord
  */
 public class HWPReader {
 	/**
-	 * hwp ÆÄÀÏÀ» ÀĞ´Â´Ù.
+	 * hwp íŒŒì¼ì„ ì½ëŠ”ë‹¤.
 	 * 
 	 * @param filepath
-	 *            hwpÆÄÀÏÀÇ °æ·Î
-	 * @return HWPFile °´Ã¼
+	 *            hwpíŒŒì¼ì˜ ê²½ë¡œ
+	 * @return HWPFile ê°ì²´
 	 * @throws Exception
 	 */
 	public static HWPFile fromFile(String filepath) throws Exception {
@@ -43,22 +43,22 @@ public class HWPReader {
 	}
 
 	/**
-	 * HWPÆÄÀÏÀ» ³ªÅ¸³»´Â °´Ã¼
+	 * HWPíŒŒì¼ì„ ë‚˜íƒ€ë‚´ëŠ” ê°ì²´
 	 */
 	private HWPFile hwpFile;
 	/**
-	 * MS Compound ÆÄÀÏÀ» ÀĞ±â À§ÇÑ ¸®´õ °´Ã¼
+	 * MS Compound íŒŒì¼ì„ ì½ê¸° ìœ„í•œ ë¦¬ë” ê°ì²´
 	 */
 	private CompoundFileReader cfr;
 
 	/**
-	 * »ı¼ºÀÚ
+	 * ìƒì„±ì
 	 */
 	private HWPReader() {
 	}
 
 	/**
-	 * FileHeader ½ºÆ®¸²À» ÀĞ´Â´Ù.
+	 * FileHeader ìŠ¤íŠ¸ë¦¼ì„ ì½ëŠ”ë‹¤.
 	 * 
 	 * @throws Exception
 	 */
@@ -69,16 +69,16 @@ public class HWPReader {
 	}
 
 	/**
-	 * ¾ÏÈ£È­µÈ ÆÄÀÏÀÎÁö ¿©ºÎ¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ì•”í˜¸í™”ëœ íŒŒì¼ì¸ì§€ ì—¬ë¶€ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ¾ÏÈ£È­µÈ ÆÄÀÏÀÎÁö ¿©ºÎ
+	 * @return ì•”í˜¸í™”ëœ íŒŒì¼ì¸ì§€ ì—¬ë¶€
 	 */
 	private boolean hasPassword() {
 		return hwpFile.getFileHeader().hasPassword();
 	}
 
 	/**
-	 * DocInfo ½ºÆ®¸²À» ÀĞ´Â´Ù.
+	 * DocInfo ìŠ¤íŠ¸ë¦¼ì„ ì½ëŠ”ë‹¤.
 	 * 
 	 * @throws Exception
 	 */
@@ -90,25 +90,25 @@ public class HWPReader {
 	}
 
 	/**
-	 * ¾ĞÃàµÈ ÆÄÀÏÀÎÁö ¿©ºÎ¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ì••ì¶•ëœ íŒŒì¼ì¸ì§€ ì—¬ë¶€ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ¾ĞÃàµÈ ÆÄÀÏÀÎÁö ¿©ºÎ
+	 * @return ì••ì¶•ëœ íŒŒì¼ì¸ì§€ ì—¬ë¶€
 	 */
 	private boolean isCompressed() {
 		return hwpFile.getFileHeader().isCompressed();
 	}
 
 	/**
-	 * ÆÄÀÏÀÇ ¹öÀüÀ» ¹İÈ¯ÇÑ´Ù.
+	 * íŒŒì¼ì˜ ë²„ì „ì„ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ÆÄÀÏÀÇ ¹öÀü
+	 * @return íŒŒì¼ì˜ ë²„ì „
 	 */
 	private FileVersion getVersion() {
 		return hwpFile.getFileHeader().getVersion();
 	}
 
 	/**
-	 * BodyText ½ºÅä¸®Áö¸¦ ÀĞ´Â´Ù.
+	 * BodyText ìŠ¤í† ë¦¬ì§€ë¥¼ ì½ëŠ”ë‹¤.
 	 * 
 	 * @throws Exception
 	 */
@@ -123,10 +123,10 @@ public class HWPReader {
 	}
 
 	/**
-	 * Section ½ºÆ®¸²À» ÀĞ´Â´Ù.
+	 * Section ìŠ¤íŠ¸ë¦¼ì„ ì½ëŠ”ë‹¤.
 	 * 
 	 * @param sectionIndex
-	 *            ¼½¼Ç ÀÎµ¦½º
+	 *            ì„¹ì…˜ ì¸ë±ìŠ¤
 	 * @throws Exception
 	 */
 	private void section(int sectionIndex) throws Exception {
@@ -138,7 +138,7 @@ public class HWPReader {
 	}
 
 	/**
-	 * BinData ½ºÅä¸®Áö¸¦ ÀĞ´Â´Ù.
+	 * BinData ìŠ¤í† ë¦¬ì§€ë¥¼ ì½ëŠ”ë‹¤.
 	 * 
 	 * @throws Exception
 	 */
@@ -157,11 +157,11 @@ public class HWPReader {
 	}
 
 	/**
-	 * BinData ½ºÅä¸®Áö ¾Æ·¡¿¡ ½ºÆ®¸²À» ÀĞ´Â´Ù.
+	 * BinData ìŠ¤í† ë¦¬ì§€ ì•„ë˜ì— ìŠ¤íŠ¸ë¦¼ì„ ì½ëŠ”ë‹¤.
 	 * 
 	 * @param name
-	 *            ½ºÆ®¸² ÀÌ¸§
-	 * @return ½ºÆ®¸²¿¡ ÀúÀåµÈ µ¥ÀÌÅ¸
+	 *            ìŠ¤íŠ¸ë¦¼ ì´ë¦„
+	 * @return ìŠ¤íŠ¸ë¦¼ì— ì €ì¥ëœ ë°ì´íƒ€
 	 * @throws Exception
 	 */
 	private byte[] readEmbededBinaryData(String name) throws Exception {

@@ -1,4 +1,4 @@
-package kr.dogfoot.hwplib.reader.bodytext.paragraph.control;
+ï»¿package kr.dogfoot.hwplib.reader.bodytext.paragraph.control;
 
 import kr.dogfoot.hwplib.object.bodytext.control.ControlBookmark;
 import kr.dogfoot.hwplib.object.bodytext.control.bookmark.CtrlData;
@@ -7,18 +7,18 @@ import kr.dogfoot.hwplib.reader.RecordHeader;
 import kr.dogfoot.hwplib.util.compoundFile.StreamReader;
 
 /**
- * Ã¥°¥ÇÇ ÄÁÆ®·ÑÀ» ÀĞ±â À§ÇÑ °´Ã¼
+ * ì±…ê°ˆí”¼ ì»¨íŠ¸ë¡¤ì„ ì½ê¸° ìœ„í•œ ê°ì²´
  * 
  * @author neolord
  */
 public class ForControlBookmark {
 	/**
-	 * Ã¥°¥ÇÇ ÄÁÆ®·ÑÀ» ÀĞ´Â´Ù.
+	 * ì±…ê°ˆí”¼ ì»¨íŠ¸ë¡¤ì„ ì½ëŠ”ë‹¤.
 	 * 
 	 * @param b
-	 *            Ã¥°¥ÇÇ ÄÁÆ®·Ñ
+	 *            ì±…ê°ˆí”¼ ì»¨íŠ¸ë¡¤
 	 * @param sr
-	 *            ½ºÆ®¸² ¸®´õ
+	 *            ìŠ¤íŠ¸ë¦¼ ë¦¬ë”
 	 * @throws Exception
 	 */
 	public static void read(ControlBookmark b, StreamReader sr)
@@ -27,12 +27,12 @@ public class ForControlBookmark {
 	}
 
 	/**
-	 * ÄÁÆ®·Ñ µ¥ÀÌÅÍ ·¹ÄÚµå¸¦ ÀĞ´Â´Ù.
+	 * ì»¨íŠ¸ë¡¤ ë°ì´í„° ë ˆì½”ë“œë¥¼ ì½ëŠ”ë‹¤.
 	 * 
 	 * @param cd
-	 *            ÄÁÆ®·Ñ µ¥ÀÌÅÍ ·¹ÄÚµå
+	 *            ì»¨íŠ¸ë¡¤ ë°ì´í„° ë ˆì½”ë“œ
 	 * @param sr
-	 *            ½ºÆ®¸² ¸®´õ
+	 *            ìŠ¤íŠ¸ë¦¼ ë¦¬ë”
 	 * @throws Exception
 	 */
 	private static void ctrlData(CtrlData cd, StreamReader sr) throws Exception {

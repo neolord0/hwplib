@@ -1,39 +1,39 @@
-package kr.dogfoot.hwplib.object.docinfo.charshape;
+ï»¿package kr.dogfoot.hwplib.object.docinfo.charshape;
 
 /**
- * ¾ğ¾îº° »ó´ë Å©±â
+ * ì–¸ì–´ë³„ ìƒëŒ€ í¬ê¸°
  * 
  * @author neolord
  */
 public class RelativeSizes {
 	/**
-	 * ¾ğ¾îº° ±ÛÀÚ ÀåÆòÀÇ °ªÀÌ ÀúÀåµÈ ¹è¿­
+	 * ì–¸ì–´ë³„ ê¸€ì ì¥í‰ì˜ ê°’ì´ ì €ì¥ëœ ë°°ì—´
 	 */
 	private short[] array;
 
 	/**
-	 * »ı¼ºÀÚ
+	 * ìƒì„±ì
 	 */
 	public RelativeSizes() {
 		array = new short[7];
 	}
 
 	/**
-	 * ¾ğ¾îº° ±ÛÀÚ ÀåÆòÀÇ °ªÀÌ ÀúÀåµÈ ¹è¿­À» ¹İÈ¯ÇÑ´Ù.
+	 * ì–¸ì–´ë³„ ê¸€ì ì¥í‰ì˜ ê°’ì´ ì €ì¥ëœ ë°°ì—´ì„ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ¾ğ¾îº° ±ÛÀÚ ÀåÆòÀÇ °ªÀÌ ÀúÀåµÈ ¹è¿­
+	 * @return ì–¸ì–´ë³„ ê¸€ì ì¥í‰ì˜ ê°’ì´ ì €ì¥ëœ ë°°ì—´
 	 */
 	public short[] getArray() {
 		return array;
 	}
 
 	/**
-	 * ¾ğ¾îº° ±ÛÀÚ ÀåÆòÀÇ °ªÀÌ ÀúÀåµÈ ¹è¿­¸¦ ¼³Á¤ÇÑ´Ù.
+	 * ì–¸ì–´ë³„ ê¸€ì ì¥í‰ì˜ ê°’ì´ ì €ì¥ëœ ë°°ì—´ë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param array
-	 *            ¾ğ¾îº° ±ÛÀÚ ÀåÆòÀÇ °ªÀÌ ÀúÀåµÈ ¹è¿­
+	 *            ì–¸ì–´ë³„ ê¸€ì ì¥í‰ì˜ ê°’ì´ ì €ì¥ëœ ë°°ì—´
 	 * @throws Exception
-	 *             array Å©±â°¡ 7ÀÌ ¾Æ´Ò¶§ ¹ß»ı
+	 *             array í¬ê¸°ê°€ 7ì´ ì•„ë‹ë•Œ ë°œìƒ
 	 */
 	public void setArray(short[] array) throws Exception {
 		if (array.length != 7) {
@@ -43,133 +43,133 @@ public class RelativeSizes {
 	}
 
 	/**
-	 * ÇÑ±Û¿¡ ´ëÇÑ ±ÛÀÚ ÀåÆòÀ» ¹İÈ¯ÇÑ´Ù.
+	 * í•œê¸€ì— ëŒ€í•œ ê¸€ì ì¥í‰ì„ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ÇÑ±Û¿¡ ´ëÇÑ ±ÛÀÚ ÀåÆò
+	 * @return í•œê¸€ì— ëŒ€í•œ ê¸€ì ì¥í‰
 	 */
 	public short getHangul() {
 		return array[0];
 	}
 
 	/**
-	 * ÇÑ±Û¿¡ ´ëÇÑ ±ÛÀÚ ÀåÆòÀ» ¼³Á¤ÇÑ´Ù.
+	 * í•œê¸€ì— ëŒ€í•œ ê¸€ì ì¥í‰ì„ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param relativeSize
-	 *            ÇÑ±Û¿¡ ´ëÇÑ ±ÛÀÚ ÀåÆò
+	 *            í•œê¸€ì— ëŒ€í•œ ê¸€ì ì¥í‰
 	 */
 	public void setHangul(short relativeSize) {
 		array[0] = relativeSize;
 	}
 
 	/**
-	 * ¿µ¾î¿¡ ´ëÇÑ ±ÛÀÚ ÀåÆòÀ» ¹İÈ¯ÇÑ´Ù.
+	 * ì˜ì–´ì— ëŒ€í•œ ê¸€ì ì¥í‰ì„ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ¿µ¾î¿¡ ´ëÇÑ ±ÛÀÚ ÀåÆò
+	 * @return ì˜ì–´ì— ëŒ€í•œ ê¸€ì ì¥í‰
 	 */
 	public short getLatin() {
 		return array[1];
 	}
 
 	/**
-	 * ¿µ¾î¿¡ ´ëÇÑ ±ÛÀÚ ÀåÆòÀ» ¼³Á¤ÇÑ´Ù.
+	 * ì˜ì–´ì— ëŒ€í•œ ê¸€ì ì¥í‰ì„ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param relativeSize
-	 *            ¿µ¾î¿¡ ´ëÇÑ ±ÛÀÚ ÀåÆò
+	 *            ì˜ì–´ì— ëŒ€í•œ ê¸€ì ì¥í‰
 	 */
 	public void setLatin(short relativeSize) {
 		array[1] = relativeSize;
 	}
 
 	/**
-	 * ÇÑÀÚ¿¡ ´ëÇÑ ±ÛÀÚ ÀåÆòÀ» ¹İÈ¯ÇÑ´Ù.
+	 * í•œìì— ëŒ€í•œ ê¸€ì ì¥í‰ì„ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ÇÑÀÚ¿¡ ´ëÇÑ ±ÛÀÚ ÀåÆò
+	 * @return í•œìì— ëŒ€í•œ ê¸€ì ì¥í‰
 	 */
 	public short getHanja() {
 		return array[2];
 	}
 
 	/**
-	 * ÇÑÀÚ¿¡ ´ëÇÑ ±ÛÀÚ ÀåÆòÀ» ¼³Á¤ÇÑ´Ù.
+	 * í•œìì— ëŒ€í•œ ê¸€ì ì¥í‰ì„ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param relativeSize
-	 *            ÇÑÀÚ¿¡ ´ëÇÑ ±ÛÀÚ ÀåÆò
+	 *            í•œìì— ëŒ€í•œ ê¸€ì ì¥í‰
 	 */
 	public void setHanja(short relativeSize) {
 		array[2] = relativeSize;
 	}
 
 	/**
-	 * ÀÏº»¾î¿¡ ´ëÇÑ ±ÛÀÚ ÀåÆòÀ» ¹İÈ¯ÇÑ´Ù.
+	 * ì¼ë³¸ì–´ì— ëŒ€í•œ ê¸€ì ì¥í‰ì„ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ÀÏº»¾î¿¡ ´ëÇÑ ±ÛÀÚ ÀåÆò
+	 * @return ì¼ë³¸ì–´ì— ëŒ€í•œ ê¸€ì ì¥í‰
 	 */
 	public short getJapanese() {
 		return array[3];
 	}
 
 	/**
-	 * ÀÏº»¾î¿¡ ´ëÇÑ ±ÛÀÚ ÀåÆòÀ» ¼³Á¤ÇÑ´Ù.
+	 * ì¼ë³¸ì–´ì— ëŒ€í•œ ê¸€ì ì¥í‰ì„ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param relativeSize
-	 *            ÀÏº»¾î¿¡ ´ëÇÑ ±ÛÀÚ ÀåÆò
+	 *            ì¼ë³¸ì–´ì— ëŒ€í•œ ê¸€ì ì¥í‰
 	 */
 	public void setJapanese(short relativeSize) {
 		array[3] = relativeSize;
 	}
 
 	/**
-	 * ±âÅ¸ ¾ğ¾î¿¡ ´ëÇÑ ±ÛÀÚ ÀåÆòÀ» ¹İÈ¯ÇÑ´Ù.
+	 * ê¸°íƒ€ ì–¸ì–´ì— ëŒ€í•œ ê¸€ì ì¥í‰ì„ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ±âÅ¸ ¾ğ¾î¿¡ ´ëÇÑ ±ÛÀÚ ÀåÆò
+	 * @return ê¸°íƒ€ ì–¸ì–´ì— ëŒ€í•œ ê¸€ì ì¥í‰
 	 */
 	public short getOther() {
 		return array[4];
 	}
 
 	/**
-	 * ±âÅ¸ ¾ğ¾î¿¡ ´ëÇÑ ±ÛÀÚ ÀåÆòÀ» ¼³Á¤ÇÑ´Ù.
+	 * ê¸°íƒ€ ì–¸ì–´ì— ëŒ€í•œ ê¸€ì ì¥í‰ì„ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param relativeSize
-	 *            ±âÅ¸ ¾ğ¾î¿¡ ´ëÇÑ ±ÛÀÚ ÀåÆò
+	 *            ê¸°íƒ€ ì–¸ì–´ì— ëŒ€í•œ ê¸€ì ì¥í‰
 	 */
 	public void setOther(short relativeSize) {
 		array[4] = relativeSize;
 	}
 
 	/**
-	 * ±âÈ£¿¡ ´ëÇÑ ±ÛÀÚ ÀåÆòÀ» ¹İÈ¯ÇÑ´Ù.
+	 * ê¸°í˜¸ì— ëŒ€í•œ ê¸€ì ì¥í‰ì„ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ±âÈ£¿¡ ´ëÇÑ ±ÛÀÚ ÀåÆò
+	 * @return ê¸°í˜¸ì— ëŒ€í•œ ê¸€ì ì¥í‰
 	 */
 	public short getSymbol() {
 		return array[5];
 	}
 
 	/**
-	 * ±âÈ£¿¡ ´ëÇÑ ±ÛÀÚ ÀåÆòÀ» ¼³Á¤ÇÑ´Ù.
+	 * ê¸°í˜¸ì— ëŒ€í•œ ê¸€ì ì¥í‰ì„ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param relativeSize
-	 *            ±âÈ£¿¡ ´ëÇÑ ±ÛÀÚ ÀåÆò
+	 *            ê¸°í˜¸ì— ëŒ€í•œ ê¸€ì ì¥í‰
 	 */
 	public void setSymbol(short relativeSize) {
 		array[5] = relativeSize;
 	}
 
 	/**
-	 * »ç¿ëÀÚ Á¤ÀÇ ±ÛÀÚ ÀåÆòÀ» ¹İÈ¯ÇÑ´Ù.
+	 * ì‚¬ìš©ì ì •ì˜ ê¸€ì ì¥í‰ì„ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return »ç¿ëÀÚ Á¤ÀÇ ±ÛÀÚ ÀåÆò
+	 * @return ì‚¬ìš©ì ì •ì˜ ê¸€ì ì¥í‰
 	 */
 	public int getUser() {
 		return array[6];
 	}
 
 	/**
-	 * »ç¿ëÀÚ Á¤ÀÇ ±ÛÀÚ ÀåÆòÀ» ¼³Á¤ÇÑ´Ù.
+	 * ì‚¬ìš©ì ì •ì˜ ê¸€ì ì¥í‰ì„ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param relativeSize
-	 *            »ç¿ëÀÚ Á¤ÀÇ ±ÛÀÚ ÀåÆò
+	 *            ì‚¬ìš©ì ì •ì˜ ê¸€ì ì¥í‰
 	 */
 	public void setUser(short relativeSize) {
 		array[6] = relativeSize;

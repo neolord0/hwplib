@@ -1,59 +1,59 @@
-package kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponenteach.polygon;
+ï»¿package kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponenteach.polygon;
 
 /**
- * ÁÂÇ¥¸¦ ³ªÅÂ³»´Â °´Ã¼
+ * ì¢Œí‘œë¥¼ ë‚˜íƒœë‚´ëŠ” ê°ì²´
  * 
  * @author neolord
  */
 public class PositionXY {
 	/**
-	 * x°ª
+	 * xê°’
 	 */
 	private long x;
 	/**
-	 * y°ª
+	 * yê°’
 	 */
 	private long y;
 
 	/**
-	 * »ı¼ºÀÚ
+	 * ìƒì„±ì
 	 */
 	public PositionXY() {
 	}
 
 	/**
-	 * x°ªÀ» ¹İÈ¯ÇÑ´Ù.
+	 * xê°’ì„ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return x°ª
+	 * @return xê°’
 	 */
 	public long getX() {
 		return x;
 	}
 
 	/**
-	 * x°ªÀ» ¼³Á¤ÇÑ´Ù.
+	 * xê°’ì„ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param x
-	 *            x°ª
+	 *            xê°’
 	 */
 	public void setX(long x) {
 		this.x = x;
 	}
 
 	/**
-	 * y°ªÀ» ¹İÈ¯ÇÑ´Ù.
+	 * yê°’ì„ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return y°ª
+	 * @return yê°’
 	 */
 	public long getY() {
 		return y;
 	}
 
 	/**
-	 * y°ªÀ» ¼³Á¤ÇÑ´Ù.
+	 * yê°’ì„ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param y
-	 *            y°ª
+	 *            yê°’
 	 */
 	public void setY(long y) {
 		this.y = y;

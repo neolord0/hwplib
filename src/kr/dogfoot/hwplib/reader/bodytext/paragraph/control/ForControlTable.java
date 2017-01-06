@@ -1,4 +1,4 @@
-package kr.dogfoot.hwplib.reader.bodytext.paragraph.control;
+ï»¿package kr.dogfoot.hwplib.reader.bodytext.paragraph.control;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -14,33 +14,33 @@ import kr.dogfoot.hwplib.reader.bodytext.paragraph.control.tbl.ForTable;
 import kr.dogfoot.hwplib.util.compoundFile.StreamReader;
 
 /**
- * Ç¥ ÄÁÆ®·ÑÀ» ÀĞ±â À§ÇÑ °´Ã¼
+ * í‘œ ì»¨íŠ¸ë¡¤ì„ ì½ê¸° ìœ„í•œ ê°ì²´
  * 
- * @author ¹Ú¼º±Õ
+ * @author ë°•ì„±ê· 
  */
 public class ForControlTable {
 	/**
-	 * Ç¥ ÄÁÆ®·Ñ
+	 * í‘œ ì»¨íŠ¸ë¡¤
 	 */
 	private ControlTable table;
 	/**
-	 * ½ºÆ®¸² ¸®´õ
+	 * ìŠ¤íŠ¸ë¦¼ ë¦¬ë”
 	 */
 	private StreamReader sr;
 
 	/**
-	 * »ı¼ºÀÚ
+	 * ìƒì„±ì
 	 */
 	public ForControlTable() {
 	}
 
 	/**
-	 * Ç¥ ÄÁÆ®·ÑÀ» ÀĞ´Â´Ù.
+	 * í‘œ ì»¨íŠ¸ë¡¤ì„ ì½ëŠ”ë‹¤.
 	 * 
 	 * @param table
-	 *            Ç¥ ÄÁÆ®·Ñ °´Ã¼
+	 *            í‘œ ì»¨íŠ¸ë¡¤ ê°ì²´
 	 * @param sr
-	 *            ½ºÆ®¸² ¸®´õ
+	 *            ìŠ¤íŠ¸ë¦¼ ë¦¬ë”
 	 * @throws Exception
 	 */
 	public void read(ControlTable table, StreamReader sr) throws Exception {
@@ -54,7 +54,7 @@ public class ForControlTable {
 	}
 
 	/**
-	 * Ç¥ ÄÁÆ®·ÑÀÇ ÄÁÆ®·Ñ Çì´õ ·¹ÄÚµå¸¦ ÀĞ´Â´Ù.
+	 * í‘œ ì»¨íŠ¸ë¡¤ì˜ ì»¨íŠ¸ë¡¤ í—¤ë” ë ˆì½”ë“œë¥¼ ì½ëŠ”ë‹¤.
 	 * 
 	 * @throws IOException
 	 */
@@ -63,7 +63,7 @@ public class ForControlTable {
 	}
 
 	/**
-	 * Ä¸¼Ç Á¤º¸¸¦ ÀĞ´Â´Ù.
+	 * ìº¡ì…˜ ì •ë³´ë¥¼ ì½ëŠ”ë‹¤.
 	 * 
 	 * @throws Exception
 	 */
@@ -76,7 +76,7 @@ public class ForControlTable {
 	}
 
 	/**
-	 * Ç¥ Á¤º¸ ·¹ÄÚµå¸¦ ÀĞ´Â´Ù.
+	 * í‘œ ì •ë³´ ë ˆì½”ë“œë¥¼ ì½ëŠ”ë‹¤.
 	 * 
 	 * @throws IOException
 	 */
@@ -90,7 +90,7 @@ public class ForControlTable {
 	}
 
 	/**
-	 * ÇàµéÀ» ÀĞ´Â´Ù.
+	 * í–‰ë“¤ì„ ì½ëŠ”ë‹¤.
 	 * 
 	 * @throws Exception
 	 */
@@ -105,12 +105,12 @@ public class ForControlTable {
 	}
 
 	/**
-	 * ÇÏ³ªÀÇ Çà ¾È¿¡ ¼¿µéÀ» ÀĞ´Â´Ù.
+	 * í•˜ë‚˜ì˜ í–‰ ì•ˆì— ì…€ë“¤ì„ ì½ëŠ”ë‹¤.
 	 * 
 	 * @param r
-	 *            Çà
+	 *            í–‰
 	 * @param cellCount
-	 *            Çà¿¡ Æ÷ÇÔµÈ ¼¿ °³¼ö
+	 *            í–‰ì— í¬í•¨ëœ ì…€ ê°œìˆ˜
 	 * @throws Exception
 	 */
 	private void row(Row r, int cellCount) throws Exception {

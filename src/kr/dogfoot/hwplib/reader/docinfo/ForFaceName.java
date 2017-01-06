@@ -1,4 +1,4 @@
-package kr.dogfoot.hwplib.reader.docinfo;
+ï»¿package kr.dogfoot.hwplib.reader.docinfo;
 
 import java.io.IOException;
 
@@ -8,18 +8,18 @@ import kr.dogfoot.hwplib.object.docinfo.facename.FontType;
 import kr.dogfoot.hwplib.util.compoundFile.StreamReader;
 
 /**
- * ±Û²Ã ·¹ÄÚµå¸¦ ÀĞ±â À§ÇÑ °´Ã¼
+ * ê¸€ê¼´ ë ˆì½”ë“œë¥¼ ì½ê¸° ìœ„í•œ ê°ì²´
  * 
  * @author neolord
  */
 public class ForFaceName {
 	/**
-	 * ±Û²Ã ·¹ÄÚµå¸¦ ÀĞ´Â´Ù.
+	 * ê¸€ê¼´ ë ˆì½”ë“œë¥¼ ì½ëŠ”ë‹¤.
 	 * 
 	 * @param fn
-	 *            ±Û²Ã ·¹ÄÚµå
+	 *            ê¸€ê¼´ ë ˆì½”ë“œ
 	 * @param sr
-	 *            ½ºÆ®¸² ¸®´õ
+	 *            ìŠ¤íŠ¸ë¦¼ ë¦¬ë”
 	 * @throws IOException
 	 */
 	public static void read(FaceName fn, StreamReader sr) throws IOException {
@@ -40,12 +40,12 @@ public class ForFaceName {
 	}
 
 	/**
-	 * ´ëÃ¼ ±Û²Ã Á¤º¸ ºÎºĞÀ» ÀĞ´Â´Ù.
+	 * ëŒ€ì²´ ê¸€ê¼´ ì •ë³´ ë¶€ë¶„ì„ ì½ëŠ”ë‹¤.
 	 * 
 	 * @param fn
-	 *            ´ëÃ¼ ±Û²Ã Á¤º¸ ºÎºĞÀ» ³ªÅ¸³»´Â °´Ã¼
+	 *            ëŒ€ì²´ ê¸€ê¼´ ì •ë³´ ë¶€ë¶„ì„ ë‚˜íƒ€ë‚´ëŠ” ê°ì²´
 	 * @param sr
-	 *            ½ºÆ®¸² ¸®´õ
+	 *            ìŠ¤íŠ¸ë¦¼ ë¦¬ë”
 	 * @throws IOException
 	 */
 	private static void substituteFontInfo(FaceName fn, StreamReader sr)
@@ -56,12 +56,12 @@ public class ForFaceName {
 	}
 
 	/**
-	 * ±Û²Ã À¯Çü Á¤º¸ ºÎºĞÀ» ÀĞ´Â´Ù.
+	 * ê¸€ê¼´ ìœ í˜• ì •ë³´ ë¶€ë¶„ì„ ì½ëŠ”ë‹¤.
 	 * 
 	 * @param fti
-	 *            ±Û²Ã À¯Çü Á¤º¸ ºÎºĞÀ» ³ªÅ¸³»´Â °´Ã¼
+	 *            ê¸€ê¼´ ìœ í˜• ì •ë³´ ë¶€ë¶„ì„ ë‚˜íƒ€ë‚´ëŠ” ê°ì²´
 	 * @param sr
-	 *            ½ºÆ®¸² ¸®´õ
+	 *            ìŠ¤íŠ¸ë¦¼ ë¦¬ë”
 	 * @throws IOException
 	 */
 	private static void fontTypeInfo(FontTypeInfo fti, StreamReader sr)

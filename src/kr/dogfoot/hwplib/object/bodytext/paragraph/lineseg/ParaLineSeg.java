@@ -1,29 +1,29 @@
-package kr.dogfoot.hwplib.object.bodytext.paragraph.lineseg;
+ï»¿package kr.dogfoot.hwplib.object.bodytext.paragraph.lineseg;
 
 import java.util.ArrayList;
 
 /**
- * ¹®´ÜÀÇ ·¹ÀÌ¾Æ¿ô ·¹ÄÚµå
+ * ë¬¸ë‹¨ì˜ ë ˆì´ì•„ì›ƒ ë ˆì½”ë“œ
  * 
  * @author neolord
  */
 public class ParaLineSeg {
 	/**
-	 * °¢ ÁÙÀÇ align Á¤º¸ÀÇ ¸®½ºÆ®
+	 * ê° ì¤„ì˜ align ì •ë³´ì˜ ë¦¬ìŠ¤íŠ¸
 	 */
 	private ArrayList<LineSegItem> lineSegItemList;
 
 	/**
-	 * »ı¼ºÀÚ
+	 * ìƒì„±ì
 	 */
 	public ParaLineSeg() {
 		lineSegItemList = new ArrayList<LineSegItem>();
 	}
 
 	/**
-	 * °¢ ÁÙÀÇ align Á¤º¸¿¡ ´ëÇÑ °´Ã¼¸¦ »õ·Î »ı¼ºÇÏ°í ¸®½ºÆ®¿¡ Ãß°¡ÇÑ´Ù.
+	 * ê° ì¤„ì˜ align ì •ë³´ì— ëŒ€í•œ ê°ì²´ë¥¼ ìƒˆë¡œ ìƒì„±í•˜ê³  ë¦¬ìŠ¤íŠ¸ì— ì¶”ê°€í•œë‹¤.
 	 * 
-	 * @return »õ·Î »ı¼ºµÈ °¢ ÁÙÀÇ align Á¤º¸¿¡ ´ëÇÑ °´Ã¼
+	 * @return ìƒˆë¡œ ìƒì„±ëœ ê° ì¤„ì˜ align ì •ë³´ì— ëŒ€í•œ ê°ì²´
 	 */
 	public LineSegItem addNewLineSegItem() {
 		LineSegItem plsi = new LineSegItem();
@@ -32,9 +32,9 @@ public class ParaLineSeg {
 	}
 
 	/**
-	 * °¢ ÁÙÀÇ align Á¤º¸ÀÇ ¸®½ºÆ®¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ê° ì¤„ì˜ align ì •ë³´ì˜ ë¦¬ìŠ¤íŠ¸ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return °¢ ÁÙÀÇ align Á¤º¸ÀÇ ¸®½ºÆ®
+	 * @return ê° ì¤„ì˜ align ì •ë³´ì˜ ë¦¬ìŠ¤íŠ¸
 	 */
 	public ArrayList<LineSegItem> getLineSegItemList() {
 		return lineSegItemList;

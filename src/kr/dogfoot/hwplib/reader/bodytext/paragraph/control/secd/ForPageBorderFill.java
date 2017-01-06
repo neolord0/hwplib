@@ -1,4 +1,4 @@
-package kr.dogfoot.hwplib.reader.bodytext.paragraph.control.secd;
+ï»¿package kr.dogfoot.hwplib.reader.bodytext.paragraph.control.secd;
 
 import java.io.IOException;
 
@@ -6,18 +6,18 @@ import kr.dogfoot.hwplib.object.bodytext.control.sectiondefine.PageBorderFill;
 import kr.dogfoot.hwplib.util.compoundFile.StreamReader;
 
 /**
- * ÂÊ Å×µÎ¸®/¹è°æ ·¹ÄÚµå¸¦ ÀĞ±â À§ÇÑ °´Ã¼
+ * ìª½ í…Œë‘ë¦¬/ë°°ê²½ ë ˆì½”ë“œë¥¼ ì½ê¸° ìœ„í•œ ê°ì²´
  * 
  * @author neolord
  */
 public class ForPageBorderFill {
 	/**
-	 * ÂÊ Å×µÎ¸®/¹è°æ ·¹ÄÚµå¸¦ ÀĞ´Â´Ù.
+	 * ìª½ í…Œë‘ë¦¬/ë°°ê²½ ë ˆì½”ë“œë¥¼ ì½ëŠ”ë‹¤.
 	 * 
 	 * @param pbf
-	 *            ÂÊ Å×µÎ¸®/¹è°æ ·¹ÄÚµå
+	 *            ìª½ í…Œë‘ë¦¬/ë°°ê²½ ë ˆì½”ë“œ
 	 * @param sr
-	 *            ½ºÆ®¸² ¸®´õ
+	 *            ìŠ¤íŠ¸ë¦¼ ë¦¬ë”
 	 * @throws IOException
 	 */
 	public static void read(PageBorderFill pbf, StreamReader sr)

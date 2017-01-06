@@ -1,42 +1,42 @@
-package kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponent.renderingnfo;
+ï»¿package kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponent.renderingnfo;
 
 /**
- * Çà·ÄÀ» ³ªÅ¸³»´Â °´Ã¼. °¢ Çà·Ä´Â ¿ø¼Ò°¡ double·Î Ç¥ÇöµÇ´Â 3 X 3 matrix·Î ±¸ÇöµÈ´Ù. ¸¶Áö¸· ÇàÀº Ç×»ó [0,0,1]ÀÌ±â
- * ‹š¹®¿¡ »ı·«µÇ¾î ½ÇÁ¦ 6°³ÀÇ ¿ø¼Ò¸¸ ÀúÀåÇÑ´Ù.
+ * í–‰ë ¬ì„ ë‚˜íƒ€ë‚´ëŠ” ê°ì²´. ê° í–‰ë ¬ëŠ” ì›ì†Œê°€ doubleë¡œ í‘œí˜„ë˜ëŠ” 3 X 3 matrixë¡œ êµ¬í˜„ëœë‹¤. ë§ˆì§€ë§‰ í–‰ì€ í•­ìƒ [0,0,1]ì´ê¸°
+ * ë–„ë¬¸ì— ìƒëµë˜ì–´ ì‹¤ì œ 6ê°œì˜ ì›ì†Œë§Œ ì €ì¥í•œë‹¤.
  * 
  * @author neolord
  */
 public class Matrix {
 	/**
-	 * Çà·ÄÀÇ ¿ø¼Ò¸¦ ÀúÀåÇÏ´Â ¹è¿­
+	 * í–‰ë ¬ì˜ ì›ì†Œë¥¼ ì €ì¥í•˜ëŠ” ë°°ì—´
 	 */
 	private double[] values;
 
 	/**
-	 * »ı¼ºÀÚ
+	 * ìƒì„±ì
 	 */
 	public Matrix() {
 		values = new double[6];
 	}
 
 	/**
-	 * Çà·ÄÀÇ ¿ø¼Ò¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * í–‰ë ¬ì˜ ì›ì†Œë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
 	 * @param i
-	 *            ¿ø¼ÒÀÇ ÀÎµ¦½º
-	 * @return Çà·ÄÀÇ ¿ø¼Ò
+	 *            ì›ì†Œì˜ ì¸ë±ìŠ¤
+	 * @return í–‰ë ¬ì˜ ì›ì†Œ
 	 */
 	public double getValue(int i) {
 		return values[i];
 	}
 
 	/**
-	 * Çà·ÄÀÇ ¿ø¼Ò¸¦ ¼³Á¤ÇÑ´Ù.
+	 * í–‰ë ¬ì˜ ì›ì†Œë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param i
-	 *            ¿ø¼ÒÀÇ ÀÎµ¦½º
+	 *            ì›ì†Œì˜ ì¸ë±ìŠ¤
 	 * @param value
-	 *            Çà·ÄÀÇ ¿ø¼Ò
+	 *            í–‰ë ¬ì˜ ì›ì†Œ
 	 */
 	public void setValue(int i, double value) {
 		values[i] = value;

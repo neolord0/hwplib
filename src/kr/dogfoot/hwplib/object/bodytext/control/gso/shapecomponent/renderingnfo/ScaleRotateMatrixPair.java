@@ -1,22 +1,22 @@
-package kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponent.renderingnfo;
+ï»¿package kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponent.renderingnfo;
 
 /**
- * È®Àå/È¸ÀüÀ» À§ÇÑ Çà·ÄÀÇ ½ÖÀ» ³ªÅ¸³»´Â °´Ã¼
+ * í™•ì¥/íšŒì „ì„ ìœ„í•œ í–‰ë ¬ì˜ ìŒì„ ë‚˜íƒ€ë‚´ëŠ” ê°ì²´
  * 
  * @author neolord
  */
 public class ScaleRotateMatrixPair {
 	/**
-	 * È®ÀåÀ» À§ÇÑ Çà·Ä
+	 * í™•ì¥ì„ ìœ„í•œ í–‰ë ¬
 	 */
 	private Matrix scaleMatrix;
 	/**
-	 * È¸ÀüÀ» À§ÇÑ Çà·Ä
+	 * íšŒì „ì„ ìœ„í•œ í–‰ë ¬
 	 */
 	private Matrix rotateMatrix;
 
 	/**
-	 * »ı¼ºÀÚ
+	 * ìƒì„±ì
 	 */
 	public ScaleRotateMatrixPair() {
 		scaleMatrix = new Matrix();
@@ -24,18 +24,18 @@ public class ScaleRotateMatrixPair {
 	}
 
 	/**
-	 * È®ÀåÀ» À§ÇÑ Çà·ÄÀ» ¹İÈ¯ÇÑ´Ù.
+	 * í™•ì¥ì„ ìœ„í•œ í–‰ë ¬ì„ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return È®ÀåÀ» À§ÇÑ Çà·Ä
+	 * @return í™•ì¥ì„ ìœ„í•œ í–‰ë ¬
 	 */
 	public Matrix getScaleMatrix() {
 		return scaleMatrix;
 	}
 
 	/**
-	 * È¸ÀüÀ» À§ÇÑ Çà·ÄÀ» ¹İÈ¯ÇÑ´Ù.
+	 * íšŒì „ì„ ìœ„í•œ í–‰ë ¬ì„ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return È¸ÀüÀ» À§ÇÑ Çà·Ä
+	 * @return íšŒì „ì„ ìœ„í•œ í–‰ë ¬
 	 */
 	public Matrix getRotateMatrix() {
 		return rotateMatrix;

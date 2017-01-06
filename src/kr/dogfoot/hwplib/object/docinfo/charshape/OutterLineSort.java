@@ -1,70 +1,70 @@
-package kr.dogfoot.hwplib.object.docinfo.charshape;
+ï»¿package kr.dogfoot.hwplib.object.docinfo.charshape;
 
 /**
- * ¿Ü°û¼± Á¾·ù
+ * ì™¸ê³½ì„  ì¢…ë¥˜
  * 
  * @author neolord
  */
 public enum OutterLineSort {
 	/**
-	 * ¾øÀ½
+	 * ì—†ìŒ
 	 */
 	None((byte) 0),
 	/**
-	 * ½Ç¼±
+	 * ì‹¤ì„ 
 	 */
 	Solid((byte) 1),
 	/**
-	 * Á¡¼±
+	 * ì ì„ 
 	 */
 	Dot((byte) 2),
 	/**
-	 * ±½Àº ½Ç¼±(µÎ²¨¿î ¼±)
+	 * êµµì€ ì‹¤ì„ (ë‘êº¼ìš´ ì„ )
 	 */
 	BoldSolid((byte) 3),
 	/**
-	 * ¼â¼±(±ä Á¡¼±)
+	 * ì‡„ì„ (ê¸´ ì ì„ )
 	 */
 	Dash((byte) 4),
 	/**
-	 * ÀÏÁ¡¼â¼± (-.-.-.-.)
+	 * ì¼ì ì‡„ì„  (-.-.-.-.)
 	 */
 	DashDot((byte) 5),
 	/**
-	 * ÀÌÁ¡¼â¼± (-..-..-..)
+	 * ì´ì ì‡„ì„  (-..-..-..)
 	 */
 	DashDotDot((byte) 6);
 
 	/**
-	 * ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª
+	 * íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’
 	 */
     private byte value;
 
     /**
-	 * »ı¼ºÀÚ
+	 * ìƒì„±ì
 	 * 
 	 * @param value
-	 *            ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª
+	 *            íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’
 	 */    
     private OutterLineSort(byte value) {
         this.value = value;
     }
     
  	/**
- 	 * ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ªÀ» ¹İÈ¯ÇÑ´Ù.
+ 	 * íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’ì„ ë°˜í™˜í•œë‹¤.
  	 * 
- 	 * @return ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª
+ 	 * @return íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’
  	 */   
     public byte getValue() {
         return value;
     }
     
 	/**
-	 * ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª¿¡ ÇØ´çµÇ´Â enum °ªÀ» ¹İÈ¯ÇÑ´Ù.
+	 * íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’ì— í•´ë‹¹ë˜ëŠ” enum ê°’ì„ ë°˜í™˜í•œë‹¤.
 	 * 
 	 * @param value
-	 *            ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª
-	 * @return enum °ª
+	 *            íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’
+	 * @return enum ê°’
 	 */   
     public static OutterLineSort valueOf(byte value) {
         for (OutterLineSort ols : values()) {

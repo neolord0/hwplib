@@ -1,4 +1,4 @@
-package kr.dogfoot.hwplib.object.bodytext.paragraph;
+ï»¿package kr.dogfoot.hwplib.object.bodytext.paragraph;
 
 import java.util.ArrayList;
 
@@ -13,151 +13,151 @@ import kr.dogfoot.hwplib.object.bodytext.paragraph.rangetag.ParaRangeTag;
 import kr.dogfoot.hwplib.object.bodytext.paragraph.text.ParaText;
 
 /**
- * ÇÏ³ªÀÇ ¹®´ÜÀ» ³ªÅ¸³»´Â °´Ã¼
+ * í•˜ë‚˜ì˜ ë¬¸ë‹¨ì„ ë‚˜íƒ€ë‚´ëŠ” ê°ì²´
  * 
  * @author neolord
  */
 public class Paragraph {
 	/**
-	 * Çì´õ
+	 * í—¤ë”
 	 */
 	private ParaHeader header;
 	/**
-	 * ÅØ½ºÆ®
+	 * í…ìŠ¤íŠ¸
 	 */
 	private ParaText text;
 	/**
-	 * ±ÛÀÚ ¸ğ¾ç
+	 * ê¸€ì ëª¨ì–‘
 	 */
 	private ParaCharShape charShape;
 	/**
-	 * ·¹ÀÌ¾Æ¿ô
+	 * ë ˆì´ì•„ì›ƒ
 	 */
 	private ParaLineSeg lineSeg;
 	/**
-	 * ¿µ¿ª ÅÂ±×
+	 * ì˜ì—­ íƒœê·¸
 	 */
 	private ParaRangeTag rangeTag;
 
 	/**
-	 * ÄÁÆ®·Ñ ¸®½ºÆ®
+	 * ì»¨íŠ¸ë¡¤ ë¦¬ìŠ¤íŠ¸
 	 */
 	private ArrayList<Control> controlList;
 
 	/**
-	 * »ı¼ºÀÚ
+	 * ìƒì„±ì
 	 */
 	public Paragraph() {
 		header = new ParaHeader();
 	}
 
 	/**
-	 * Çì´õ¿¡ ´ëÇÑ °´Ã¼¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * í—¤ë”ì— ëŒ€í•œ ê°ì²´ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return Çì´õ¿¡ ´ëÇÑ °´Ã¼
+	 * @return í—¤ë”ì— ëŒ€í•œ ê°ì²´
 	 */
 	public ParaHeader getHeader() {
 		return header;
 	}
 
 	/**
-	 * ¹®´Ü ÅØ½ºÆ®¿¡ ´ëÇÑ °´Ã¼¸¦ »ı¼ºÇÑ´Ù.
+	 * ë¬¸ë‹¨ í…ìŠ¤íŠ¸ì— ëŒ€í•œ ê°ì²´ë¥¼ ìƒì„±í•œë‹¤.
 	 */
 	public void createText() {
 		text = new ParaText();
 	}
 
 	/**
-	 * ¹®´Ü ÅØ½ºÆ®¿¡ ´ëÇÑ °´Ã¼¸¦ »èÁ¦ÇÑ´Ù.
+	 * ë¬¸ë‹¨ í…ìŠ¤íŠ¸ì— ëŒ€í•œ ê°ì²´ë¥¼ ì‚­ì œí•œë‹¤.
 	 */
 	public void deleteText() {
 		text = null;
 	}
 
 	/**
-	 * ¹®´Ü ÅØ½ºÆ®¿¡ ´ëÇÑ °´Ã¼¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ë¬¸ë‹¨ í…ìŠ¤íŠ¸ì— ëŒ€í•œ ê°ì²´ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ¹®´Ü ÅØ½ºÆ®¿¡ ´ëÇÑ °´Ã¼
+	 * @return ë¬¸ë‹¨ í…ìŠ¤íŠ¸ì— ëŒ€í•œ ê°ì²´
 	 */
 	public ParaText getText() {
 		return text;
 	}
 
 	/**
-	 * ¹®´ÜÀÇ ±ÛÀÚ ¸ğ¾ç¿¡ ´ëÇÑ °´Ã¼¸¦ »ı¼ºÇÑ´Ù.
+	 * ë¬¸ë‹¨ì˜ ê¸€ì ëª¨ì–‘ì— ëŒ€í•œ ê°ì²´ë¥¼ ìƒì„±í•œë‹¤.
 	 */
 	public void createCharShape() {
 		charShape = new ParaCharShape();
 	}
 
 	/**
-	 * ¹®´ÜÀÇ ±ÛÀÚ ¸ğ¾ç¿¡ ´ëÇÑ °´Ã¼¸¦ »èÁ¦ÇÑ´Ù.
+	 * ë¬¸ë‹¨ì˜ ê¸€ì ëª¨ì–‘ì— ëŒ€í•œ ê°ì²´ë¥¼ ì‚­ì œí•œë‹¤.
 	 */
 	public void deleteCharShape() {
 		charShape = null;
 	}
 
 	/**
-	 * ¹®´ÜÀÇ ±ÛÀÚ ¸ğ¾ç¿¡ ´ëÇÑ °´Ã¼¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ë¬¸ë‹¨ì˜ ê¸€ì ëª¨ì–‘ì— ëŒ€í•œ ê°ì²´ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ¹®´ÜÀÇ ±ÛÀÚ ¸ğ¾ç¿¡ ´ëÇÑ °´Ã¼
+	 * @return ë¬¸ë‹¨ì˜ ê¸€ì ëª¨ì–‘ì— ëŒ€í•œ ê°ì²´
 	 */
 	public ParaCharShape getCharShape() {
 		return charShape;
 	}
 
 	/**
-	 * ¹®´ÜÀÇ ·¹ÀÌ¾Æ¿ô¿¡ ´ëÇÑ °´Ã¼¸¦ »ı¼ºÇÑ´Ù.
+	 * ë¬¸ë‹¨ì˜ ë ˆì´ì•„ì›ƒì— ëŒ€í•œ ê°ì²´ë¥¼ ìƒì„±í•œë‹¤.
 	 */
 	public void createLineSeg() {
 		lineSeg = new ParaLineSeg();
 	}
 
 	/**
-	 * ¹®´ÜÀÇ ·¹ÀÌ¾Æ¿ô¿¡ ´ëÇÑ °´Ã¼¸¦ »èÁ¦ÇÑ´Ù.
+	 * ë¬¸ë‹¨ì˜ ë ˆì´ì•„ì›ƒì— ëŒ€í•œ ê°ì²´ë¥¼ ì‚­ì œí•œë‹¤.
 	 */
 	public void deleteLineSeg() {
 		lineSeg = null;
 	}
 
 	/**
-	 * ¹®´ÜÀÇ ·¹ÀÌ¾Æ¿ô¿¡ ´ëÇÑ °´Ã¼¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ë¬¸ë‹¨ì˜ ë ˆì´ì•„ì›ƒì— ëŒ€í•œ ê°ì²´ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ¹®´ÜÀÇ ·¹ÀÌ¾Æ¿ô¿¡ ´ëÇÑ °´Ã¼
+	 * @return ë¬¸ë‹¨ì˜ ë ˆì´ì•„ì›ƒì— ëŒ€í•œ ê°ì²´
 	 */
 	public ParaLineSeg getLineSeg() {
 		return lineSeg;
 	}
 
 	/**
-	 * ¹®´ÜÀÇ ¿µ¿ª ÅÂ±×¿¡ ´ëÇÑ °´Ã¼¸¦ »ı¼ºÇÑ´Ù.
+	 * ë¬¸ë‹¨ì˜ ì˜ì—­ íƒœê·¸ì— ëŒ€í•œ ê°ì²´ë¥¼ ìƒì„±í•œë‹¤.
 	 */
 	public void createRangeTag() {
 		rangeTag = new ParaRangeTag();
 	}
 
 	/**
-	 * ¹®´ÜÀÇ ¿µ¿ª ÅÂ±×¿¡ ´ëÇÑ °´Ã¼¸¦ »èÁ¦ÇÑ´Ù.
+	 * ë¬¸ë‹¨ì˜ ì˜ì—­ íƒœê·¸ì— ëŒ€í•œ ê°ì²´ë¥¼ ì‚­ì œí•œë‹¤.
 	 */
 	public void deleteRangeTag() {
 		rangeTag = null;
 	}
 
 	/**
-	 * ¹®´ÜÀÇ ¿µ¿ª ÅÂ±×¿¡ ´ëÇÑ °´Ã¼¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ë¬¸ë‹¨ì˜ ì˜ì—­ íƒœê·¸ì— ëŒ€í•œ ê°ì²´ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ¹®´ÜÀÇ ¿µ¿ª ÅÂ±×¿¡ ´ëÇÑ °´Ã¼
+	 * @return ë¬¸ë‹¨ì˜ ì˜ì—­ íƒœê·¸ì— ëŒ€í•œ ê°ì²´
 	 */
 	public ParaRangeTag getRangeTag() {
 		return rangeTag;
 	}
 
 	/**
-	 * id¿¡ ÇØ´çÇÏ´Â »õ·Î¿î ÄÁÆ®·ÑÀ» »ı¼ºÇÏ°í ¸®½ºÆ®¿¡ Ãß°¡ÇÑ´Ù.
+	 * idì— í•´ë‹¹í•˜ëŠ” ìƒˆë¡œìš´ ì»¨íŠ¸ë¡¤ì„ ìƒì„±í•˜ê³  ë¦¬ìŠ¤íŠ¸ì— ì¶”ê°€í•œë‹¤.
 	 * 
 	 * @param id
-	 *            ÄÁÆ®·Ñ id°ª
-	 * @return »õ·Î »ı¼ºµÈ ÄÁÆ®·Ñ °´Ã¼
+	 *            ì»¨íŠ¸ë¡¤ idê°’
+	 * @return ìƒˆë¡œ ìƒì„±ëœ ì»¨íŠ¸ë¡¤ ê°ì²´
 	 */
 	public Control addNewControl(long id) {
 		if (controlList == null) {
@@ -169,14 +169,14 @@ public class Paragraph {
 	}
 
 	/**
-	 * gsoid¿¡ ÇØ´çÇÏ´Â »õ·Î¿î GSO ÄÁÆ®·Ñ(±×¸®±â °´Ã¼)¸¦ »ı¼ºÇÏ°í ¸®½ºÆ®¿¡ Ãß°¡ÇÑ´Ù. »õ·Î »ı¼ºÇÑ GSO ÄÁÆ®·ÑÀÇ Çì´õ¸¦
-	 * header·Î ¼³Á¤ÇÑ´Ù.
+	 * gsoidì— í•´ë‹¹í•˜ëŠ” ìƒˆë¡œìš´ GSO ì»¨íŠ¸ë¡¤(ê·¸ë¦¬ê¸° ê°ì²´)ë¥¼ ìƒì„±í•˜ê³  ë¦¬ìŠ¤íŠ¸ì— ì¶”ê°€í•œë‹¤. ìƒˆë¡œ ìƒì„±í•œ GSO ì»¨íŠ¸ë¡¤ì˜ í—¤ë”ë¥¼
+	 * headerë¡œ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param gsoId
-	 *            GSO ÄÁÆ®·Ñ(±×¸®±â °´Ã¼)ÀÇ id
+	 *            GSO ì»¨íŠ¸ë¡¤(ê·¸ë¦¬ê¸° ê°ì²´)ì˜ id
 	 * @param header
-	 *            ÄÁÆ®·Ñ Çì´õ °´Ã¼
-	 * @return »õ·Î »ı¼ºÇÑ GSO ÄÁÆ®·Ñ
+	 *            ì»¨íŠ¸ë¡¤ í—¤ë” ê°ì²´
+	 * @return ìƒˆë¡œ ìƒì„±í•œ GSO ì»¨íŠ¸ë¡¤
 	 */
 	public GsoControl addNewGsoControl(long gsoId, CtrlHeaderGso header) {
 		if (controlList == null) {
@@ -188,9 +188,9 @@ public class Paragraph {
 	}
 
 	/**
-	 * ÄÁÆ®·Ñ ¸®½ºÆ®¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ì»¨íŠ¸ë¡¤ ë¦¬ìŠ¤íŠ¸ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ÄÁÆ®·Ñ ¸®½ºÆ®
+	 * @return ì»¨íŠ¸ë¡¤ ë¦¬ìŠ¤íŠ¸
 	 */
 	public ArrayList<Control> getControlList() {
 		return controlList;

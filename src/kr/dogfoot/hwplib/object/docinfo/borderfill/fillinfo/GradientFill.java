@@ -1,50 +1,50 @@
-package kr.dogfoot.hwplib.object.docinfo.borderfill.fillinfo;
+ï»¿package kr.dogfoot.hwplib.object.docinfo.borderfill.fillinfo;
 
 import java.util.ArrayList;
 
 import kr.dogfoot.hwplib.object.etc.Color4Byte;
 
 /**
- * ±×·¯µ¥ÀÌ¼Ç Ã¤¿ì±â °´Ã¼
+ * ê·¸ëŸ¬ë°ì´ì…˜ ì±„ìš°ê¸° ê°ì²´
  * 
  * @author neolord
  */
 public class GradientFill {
 	/**
-	 * ±×·¯µ¥ÀÌ¼Ç À¯Çü
+	 * ê·¸ëŸ¬ë°ì´ì…˜ ìœ í˜•
 	 */
 	private GradientType gradientType;
 	/**
-	 * ±×·¯µ¥ÀÌ¼ÇÀÇ ±â¿ïÀÓ (¹®¼­ ¿À·ù : 4byte)
+	 * ê·¸ëŸ¬ë°ì´ì…˜ì˜ ê¸°ìš¸ì„ (ë¬¸ì„œ ì˜¤ë¥˜ : 4byte)
 	 */
 	private long startAngle;
 	/**
-	 * ±×·¯µ¥ÀÌ¼ÇÀÇ °¡·Î Áß½É (¹®¼­ ¿À·ù : 4byte)
+	 * ê·¸ëŸ¬ë°ì´ì…˜ì˜ ê°€ë¡œ ì¤‘ì‹¬ (ë¬¸ì„œ ì˜¤ë¥˜ : 4byte)
 	 */
 	private long centerX;
 	/**
-	 * ±×·¯µ¥ÀÌ¼ÇÀÇ ¼¼·Î Áß½É (¹®¼­ ¿À·ù : 4byte)
+	 * ê·¸ëŸ¬ë°ì´ì…˜ì˜ ì„¸ë¡œ ì¤‘ì‹¬ (ë¬¸ì„œ ì˜¤ë¥˜ : 4byte)
 	 */
 	private long centerY;
 	/**
-	 * ±×·¯µ¥ÀÌ¼Ç ¹øÁü Á¤µµ(0 -100) (¹®¼­ ¿À·ù : 4byte)
+	 * ê·¸ëŸ¬ë°ì´ì…˜ ë²ˆì§ ì •ë„(0 -100) (ë¬¸ì„œ ì˜¤ë¥˜ : 4byte)
 	 */
 	private long blurringDegree;
 	/**
-	 * »ö»óÀÌ ¹Ù²î´Â °÷ÀÇ À§Ä¡ ¸®½ºÆ® (num > 2 ÀÏ °æ¿ì¿¡¸¸)
+	 * ìƒ‰ìƒì´ ë°”ë€ŒëŠ” ê³³ì˜ ìœ„ì¹˜ ë¦¬ìŠ¤íŠ¸ (num > 2 ì¼ ê²½ìš°ì—ë§Œ)
 	 */
 	private ArrayList<Integer> changePointList;
 	/**
-	 * »ö»ó ¸®½ºÆ®
+	 * ìƒ‰ìƒ ë¦¬ìŠ¤íŠ¸
 	 */
 	private ArrayList<Color4Byte> colorList;
 	/**
-	 * ¹øÁü Áß½É (Ãß°¡ ¼Ó¼º)
+	 * ë²ˆì§ ì¤‘ì‹¬ (ì¶”ê°€ ì†ì„±)
 	 */
 	private short blurringCenter;
 
 	/**
-	 * »ı¼ºÀÚ
+	 * ìƒì„±ì
 	 */
 	public GradientFill() {
 		changePointList = new ArrayList<Integer>();
@@ -52,123 +52,123 @@ public class GradientFill {
 	}
 
 	/**
-	 * ±×·¯µ¥ÀÌ¼Ç À¯ÇüÀ» ¹İÈ¯ÇÑ´Ù.
+	 * ê·¸ëŸ¬ë°ì´ì…˜ ìœ í˜•ì„ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ±×·¯µ¥ÀÌ¼Ç À¯Çü
+	 * @return ê·¸ëŸ¬ë°ì´ì…˜ ìœ í˜•
 	 */
 	public GradientType getGradientType() {
 		return gradientType;
 	}
 
 	/**
-	 * ±×·¯µ¥ÀÌ¼Ç À¯ÇüÀ» ¼³Á¤ÇÑ´Ù.
+	 * ê·¸ëŸ¬ë°ì´ì…˜ ìœ í˜•ì„ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param gradientType
-	 *            ±×·¯µ¥ÀÌ¼Ç À¯Çü
+	 *            ê·¸ëŸ¬ë°ì´ì…˜ ìœ í˜•
 	 */
 	public void setGradientType(GradientType gradientType) {
 		this.gradientType = gradientType;
 	}
 
 	/**
-	 * ±×·¯µ¥ÀÌ¼ÇÀÇ ±â¿ïÀÓÀ» ¹İÈ¯ÇÑ´Ù.
+	 * ê·¸ëŸ¬ë°ì´ì…˜ì˜ ê¸°ìš¸ì„ì„ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ±×·¯µ¥ÀÌ¼ÇÀÇ ±â¿ïÀÓ
+	 * @return ê·¸ëŸ¬ë°ì´ì…˜ì˜ ê¸°ìš¸ì„
 	 */
 	public long getStartAngle() {
 		return startAngle;
 	}
 
 	/**
-	 * ±×·¯µ¥ÀÌ¼ÇÀÇ ±â¿ïÀÓ¸¦ ¼³Á¤ÇÑ´Ù.
+	 * ê·¸ëŸ¬ë°ì´ì…˜ì˜ ê¸°ìš¸ì„ë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param startAngle
-	 *            ±×·¯µ¥ÀÌ¼ÇÀÇ ±â¿ïÀÓ
+	 *            ê·¸ëŸ¬ë°ì´ì…˜ì˜ ê¸°ìš¸ì„
 	 */
 	public void setStartAngle(long startAngle) {
 		this.startAngle = startAngle;
 	}
 
 	/**
-	 * ±×·¯µ¥ÀÌ¼ÇÀÇ °¡·Î Áß½É¸¦ ¹İÈ²ÇÑ´Ù.
+	 * ê·¸ëŸ¬ë°ì´ì…˜ì˜ ê°€ë¡œ ì¤‘ì‹¬ë¥¼ ë°˜í™©í•œë‹¤.
 	 * 
-	 * @return ±×·¯µ¥ÀÌ¼ÇÀÇ °¡·Î Áß½É
+	 * @return ê·¸ëŸ¬ë°ì´ì…˜ì˜ ê°€ë¡œ ì¤‘ì‹¬
 	 */
 	public long getCenterX() {
 		return centerX;
 	}
 
 	/**
-	 * ±×·¯µ¥ÀÌ¼ÇÀÇ °¡·Î Áß½É¸¦ ¼³Á¤ÇÑ´Ù.
+	 * ê·¸ëŸ¬ë°ì´ì…˜ì˜ ê°€ë¡œ ì¤‘ì‹¬ë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param centerX
-	 *            ±×·¯µ¥ÀÌ¼ÇÀÇ °¡·Î Áß½É
+	 *            ê·¸ëŸ¬ë°ì´ì…˜ì˜ ê°€ë¡œ ì¤‘ì‹¬
 	 */
 	public void setCenterX(long centerX) {
 		this.centerX = centerX;
 	}
 
 	/**
-	 * ±×·¯µ¥ÀÌ¼ÇÀÇ ¼¼·Î Áß½ÉÀ» ¹İÈ¯ÇÑ´Ù.
+	 * ê·¸ëŸ¬ë°ì´ì…˜ì˜ ì„¸ë¡œ ì¤‘ì‹¬ì„ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ±×·¯µ¥ÀÌ¼ÇÀÇ ¼¼·Î Áß½É
+	 * @return ê·¸ëŸ¬ë°ì´ì…˜ì˜ ì„¸ë¡œ ì¤‘ì‹¬
 	 */
 	public long getCenterY() {
 		return centerY;
 	}
 
 	/**
-	 * ±×·¯µ¥ÀÌ¼ÇÀÇ ¼¼·Î Áß½ÉÀ» ¼³Á¤ÇÑ´Ù.
+	 * ê·¸ëŸ¬ë°ì´ì…˜ì˜ ì„¸ë¡œ ì¤‘ì‹¬ì„ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param centerY
-	 *            ±×·¯µ¥ÀÌ¼ÇÀÇ ¼¼·Î Áß½É
+	 *            ê·¸ëŸ¬ë°ì´ì…˜ì˜ ì„¸ë¡œ ì¤‘ì‹¬
 	 */
 	public void setCenterY(long centerY) {
 		this.centerY = centerY;
 	}
 
 	/**
-	 * ±×·¯µ¥ÀÌ¼Ç ¹øÁü Á¤µµÀ» ¹İÈ¯ÇÑ´Ù.
+	 * ê·¸ëŸ¬ë°ì´ì…˜ ë²ˆì§ ì •ë„ì„ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ±×·¯µ¥ÀÌ¼Ç ¹øÁü Á¤µµ
+	 * @return ê·¸ëŸ¬ë°ì´ì…˜ ë²ˆì§ ì •ë„
 	 */
 	public long getBlurringDegree() {
 		return blurringDegree;
 	}
 
 	/**
-	 * ±×·¯µ¥ÀÌ¼Ç ¹øÁü Á¤µµ¸¦ ¼³Á¤ÇÑ´Ù.
+	 * ê·¸ëŸ¬ë°ì´ì…˜ ë²ˆì§ ì •ë„ë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param blurringDegree
-	 *            ±×·¯µ¥ÀÌ¼Ç ¹øÁü Á¤µµ
+	 *            ê·¸ëŸ¬ë°ì´ì…˜ ë²ˆì§ ì •ë„
 	 */
 	public void setBlurringDegree(long blurringDegree) {
 		this.blurringDegree = blurringDegree;
 	}
 
 	/**
-	 * »ö»óÀÌ ¹Ù²î´Â °÷ÀÇ À§Ä¡¸¦ Ãß°¡ÇÑ´Ù.
+	 * ìƒ‰ìƒì´ ë°”ë€ŒëŠ” ê³³ì˜ ìœ„ì¹˜ë¥¼ ì¶”ê°€í•œë‹¤.
 	 * 
 	 * @param changePoint
-	 *            »ö»óÀÌ ¹Ù²î´Â °÷ÀÇ À§Ä¡
+	 *            ìƒ‰ìƒì´ ë°”ë€ŒëŠ” ê³³ì˜ ìœ„ì¹˜
 	 */
 	public void addChangePoint(int changePoint) {
 		changePointList.add(changePoint);
 	}
 
 	/**
-	 * »ö»óÀÌ ¹Ù²î´Â °÷ÀÇ À§Ä¡ ¸®½ºÆ®¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ìƒ‰ìƒì´ ë°”ë€ŒëŠ” ê³³ì˜ ìœ„ì¹˜ ë¦¬ìŠ¤íŠ¸ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return »ö»óÀÌ ¹Ù²î´Â °÷ÀÇ À§Ä¡ ¸®½ºÆ®
+	 * @return ìƒ‰ìƒì´ ë°”ë€ŒëŠ” ê³³ì˜ ìœ„ì¹˜ ë¦¬ìŠ¤íŠ¸
 	 */
 	public ArrayList<Integer> getChangePointList() {
 		return changePointList;
 	}
 
 	/**
-	 * »õ·Î¿î »ö»ó °´Ã¼¸¦ »ı¼ºÇÏ°í »ö»ó ¸®½ºÆ®¿¡ Ãß°¡ÇÑ´Ù.
+	 * ìƒˆë¡œìš´ ìƒ‰ìƒ ê°ì²´ë¥¼ ìƒì„±í•˜ê³  ìƒ‰ìƒ ë¦¬ìŠ¤íŠ¸ì— ì¶”ê°€í•œë‹¤.
 	 * 
-	 * @return »õ·Î »ı¼ºµÈ »ö»ó °´Ã¼
+	 * @return ìƒˆë¡œ ìƒì„±ëœ ìƒ‰ìƒ ê°ì²´
 	 */
 	public Color4Byte addNewColor() {
 		Color4Byte c = new Color4Byte();
@@ -177,28 +177,28 @@ public class GradientFill {
 	}
 
 	/**
-	 * »ö»ó ¸®½ºÆ®¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ìƒ‰ìƒ ë¦¬ìŠ¤íŠ¸ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return »ö»ó ¸®½ºÆ®
+	 * @return ìƒ‰ìƒ ë¦¬ìŠ¤íŠ¸
 	 */
 	public ArrayList<Color4Byte> getColorList() {
 		return colorList;
 	}
 
 	/**
-	 * ¹øÁü Áß½ÉÀ» ¹İÈ¯ÇÑ´Ù.
+	 * ë²ˆì§ ì¤‘ì‹¬ì„ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ¹øÁü Áß½É
+	 * @return ë²ˆì§ ì¤‘ì‹¬
 	 */
 	public short getBlurringCenter() {
 		return blurringCenter;
 	}
 
 	/**
-	 * ¹øÁü Áß½ÉÀ» ¼³Á¤ÇÑ´Ù.
+	 * ë²ˆì§ ì¤‘ì‹¬ì„ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param blurringCenter
-	 *            ¹øÁü Áß½É
+	 *            ë²ˆì§ ì¤‘ì‹¬
 	 */
 	public void setBlurringCenter(short blurringCenter) {
 		this.blurringCenter = blurringCenter;

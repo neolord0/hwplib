@@ -1,105 +1,105 @@
-package kr.dogfoot.hwplib.object.docinfo.borderfill.fillinfo;
+ï»¿package kr.dogfoot.hwplib.object.docinfo.borderfill.fillinfo;
 
 /**
- * ±×¸² Á¤º¸ °´Ã¼
+ * ê·¸ë¦¼ ì •ë³´ ê°ì²´
  * 
  * @author neolord
  */
 public class PictureInfo {
 	/**
-	 * ¹à±â
+	 * ë°ê¸°
 	 */
 	private byte brightness;
 	/**
-	 * ¸í¾Ï
+	 * ëª…ì•”
 	 */
 	private byte contrast;
 	/**
-	 * ±×¸² È¿°ú
+	 * ê·¸ë¦¼ íš¨ê³¼
 	 */
 	private PictureEffect effect;
 	/**
-	 * BinItemÀÇ ¾ÆÀÌµğ ÂüÁ¶°ª - ÀÌ¹ÌÁö°¡ ÀúÀåµÈ ¹ÙÀÌ³Ê¸® µ¥ÀÌÅÍÀÇ id
+	 * BinItemì˜ ì•„ì´ë”” ì°¸ì¡°ê°’ - ì´ë¯¸ì§€ê°€ ì €ì¥ëœ ë°”ì´ë„ˆë¦¬ ë°ì´í„°ì˜ id
 	 */
 	private int binItemID;
 
 	/**
-	 * »ı¼ºÀÚ
+	 * ìƒì„±ì
 	 */
 	public PictureInfo() {
 	}
 
 	/**
-	 * ¹à±â¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ë°ê¸°ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ¹à±â
+	 * @return ë°ê¸°
 	 */
 	public byte getBrightness() {
 		return brightness;
 	}
 
 	/**
-	 * ¹à±â¸¦ ¼³Á¤ÇÑ´Ù.
+	 * ë°ê¸°ë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param brightness
-	 *            ¹à±â
+	 *            ë°ê¸°
 	 */
 	public void setBrightness(byte brightness) {
 		this.brightness = brightness;
 	}
 
 	/**
-	 * ¸í¾ÏÀ» ¹İÈ¯ÇÑ´Ù.
+	 * ëª…ì•”ì„ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ¸í¾Ï
+	 * @return ëª…ì•”
 	 */
 	public byte getContrast() {
 		return contrast;
 	}
 
 	/**
-	 * ¸í¾Ï¸¦ ¼³Á¤ÇÑ´Ù.
+	 * ëª…ì•”ë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param contrast
-	 *            ¸í¾Ï
+	 *            ëª…ì•”
 	 */
 	public void setContrast(byte contrast) {
 		this.contrast = contrast;
 	}
 
 	/**
-	 * ±×¸² È¿°ú¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ê·¸ë¦¼ íš¨ê³¼ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ±×¸² È¿°ú
+	 * @return ê·¸ë¦¼ íš¨ê³¼
 	 */
 	public PictureEffect getEffect() {
 		return effect;
 	}
 
 	/**
-	 * ±×¸² È¿°ú¸¦ ¼³Á¤ÇÑ´Ù.
+	 * ê·¸ë¦¼ íš¨ê³¼ë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param effect
-	 *            ±×¸² È¿°ú
+	 *            ê·¸ë¦¼ íš¨ê³¼
 	 */
 	public void setEffect(PictureEffect effect) {
 		this.effect = effect;
 	}
 
 	/**
-	 * BinItemÀÇ ¾ÆÀÌµğ ÂüÁ¶°ª¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * BinItemì˜ ì•„ì´ë”” ì°¸ì¡°ê°’ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return BinItemÀÇ ¾ÆÀÌµğ ÂüÁ¶°ª
+	 * @return BinItemì˜ ì•„ì´ë”” ì°¸ì¡°ê°’
 	 */
 	public int getBinItemID() {
 		return binItemID;
 	}
 
 	/**
-	 * BinItemÀÇ ¾ÆÀÌµğ ÂüÁ¶°ª¸¦ ¼³Á¤ÇÑ´Ù.
+	 * BinItemì˜ ì•„ì´ë”” ì°¸ì¡°ê°’ë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param binItemID
-	 *            BinItemÀÇ ¾ÆÀÌµğ ÂüÁ¶°ª
+	 *            BinItemì˜ ì•„ì´ë”” ì°¸ì¡°ê°’
 	 */
 	public void setBinItemID(int binItemID) {
 		this.binItemID = binItemID;

@@ -1,4 +1,4 @@
-package kr.dogfoot.hwplib.reader.bodytext.paragraph.control;
+ï»¿package kr.dogfoot.hwplib.reader.bodytext.paragraph.control;
 
 import kr.dogfoot.hwplib.object.bodytext.control.ControlHiddenComment;
 import kr.dogfoot.hwplib.object.etc.HWPTag;
@@ -7,33 +7,33 @@ import kr.dogfoot.hwplib.reader.bodytext.ForParagraphList;
 import kr.dogfoot.hwplib.util.compoundFile.StreamReader;
 
 /**
- * ¼ûÀº ¼³¸í ÄÁÆ®·ÑÀ» ÀĞ±â À§ÇÑ °´Ã¼
+ * ìˆ¨ì€ ì„¤ëª… ì»¨íŠ¸ë¡¤ì„ ì½ê¸° ìœ„í•œ ê°ì²´
  * 
  * @author neolord
  */
 public class ForControlHiddenComment {
 	/**
-	 * ¼ûÀº ¼³¸í ÄÁÆ®·Ñ
+	 * ìˆ¨ì€ ì„¤ëª… ì»¨íŠ¸ë¡¤
 	 */
 	private ControlHiddenComment tcmt;
 	/**
-	 * ½ºÆ®¸² ¸®´õ
+	 * ìŠ¤íŠ¸ë¦¼ ë¦¬ë”
 	 */
 	private StreamReader sr;
 
 	/**
-	 * »ı¼ºÀÚ
+	 * ìƒì„±ì
 	 */
 	public ForControlHiddenComment() {
 	}
 
 	/**
-	 * ¼ûÀº ¼³¸í ÄÁÆ®·ÑÀ» ÀĞ´Â´Ù.
+	 * ìˆ¨ì€ ì„¤ëª… ì»¨íŠ¸ë¡¤ì„ ì½ëŠ”ë‹¤.
 	 * 
 	 * @param tcmt
-	 *            ¼ûÀº ¼³¸í ÄÁÆ®·Ñ
+	 *            ìˆ¨ì€ ì„¤ëª… ì»¨íŠ¸ë¡¤
 	 * @param sr
-	 *            ½ºÆ®¸² ¸®´õ
+	 *            ìŠ¤íŠ¸ë¦¼ ë¦¬ë”
 	 * @throws Exception
 	 */
 	public void read(ControlHiddenComment tcmt, StreamReader sr)
@@ -46,7 +46,7 @@ public class ForControlHiddenComment {
 	}
 
 	/**
-	 * ¼ûÀº ¼³¸í ÄÁÆ®·ÑÀÇ ¹®´Ü ¸®½ºÆ® Çì´õ ·¹ÄÚµåÀ» ÀĞ´Â´Ù.
+	 * ìˆ¨ì€ ì„¤ëª… ì»¨íŠ¸ë¡¤ì˜ ë¬¸ë‹¨ ë¦¬ìŠ¤íŠ¸ í—¤ë” ë ˆì½”ë“œì„ ì½ëŠ”ë‹¤.
 	 * 
 	 * @throws Exception
 	 */
@@ -62,7 +62,7 @@ public class ForControlHiddenComment {
 	}
 
 	/**
-	 * ¹®´Ü ¸®½ºÆ®¸¦ ÀĞ´Â´Ù.
+	 * ë¬¸ë‹¨ ë¦¬ìŠ¤íŠ¸ë¥¼ ì½ëŠ”ë‹¤.
 	 * 
 	 * @throws Exception
 	 */

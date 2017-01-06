@@ -1,54 +1,54 @@
-package kr.dogfoot.hwplib.object.bodytext.control.ctrlheader.header;
+ï»¿package kr.dogfoot.hwplib.object.bodytext.control.ctrlheader.header;
 
 /**
- * ¸Ó¸®±Û/²¿¸®±Û Àû¿ë ÆäÀÌÁö Á¾·ù
+ * ë¨¸ë¦¬ê¸€/ê¼¬ë¦¬ê¸€ ì ìš© í˜ì´ì§€ ì¢…ë¥˜
  * 
  * @author neolord
  */
 public enum HeaderFooterApplyPage {
 	/**
-	 * ¾ç ÂÊ
+	 * ì–‘ ìª½
 	 */
 	BothPage((byte) 0),
 	/**
-	 * Â¦¼ö ÂÊ¸¸
+	 * ì§ìˆ˜ ìª½ë§Œ
 	 */
 	EvenPage((byte) 1),
 	/**
-	 * È¦¼ö Á·¸¸
+	 * í™€ìˆ˜ ì¡±ë§Œ
 	 */
 	OddPage((byte) 2);
 
 	/**
-	 * ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª
+	 * íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’
 	 */
 	private byte value;
 
 	/**
-	 * »ı¼ºÀÚ
+	 * ìƒì„±ì
 	 * 
 	 * @param value
-	 *            ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª
+	 *            íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’
 	 */
 	private HeaderFooterApplyPage(byte value) {
 		this.value = value;
 	}
 
 	/**
-	 * ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ªÀ» ¹İÈ¯ÇÑ´Ù.
+	 * íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’ì„ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª
+	 * @return íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’
 	 */
 	public byte getValue() {
 		return value;
 	}
 
 	/**
-	 * ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª¿¡ ÇØ´çµÇ´Â enum °ªÀ» ¹İÈ¯ÇÑ´Ù.
+	 * íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’ì— í•´ë‹¹ë˜ëŠ” enum ê°’ì„ ë°˜í™˜í•œë‹¤.
 	 * 
 	 * @param value
-	 *            ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª
-	 * @return enum °ª
+	 *            íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’
+	 * @return enum ê°’
 	 */
 	public static HeaderFooterApplyPage valueOf(byte value) {
 		for (HeaderFooterApplyPage ap : values()) {

@@ -1,4 +1,4 @@
-package kr.dogfoot.hwplib.reader.bodytext.paragraph.control.eqed;
+ï»¿package kr.dogfoot.hwplib.reader.bodytext.paragraph.control.eqed;
 
 import java.io.IOException;
 
@@ -6,18 +6,18 @@ import kr.dogfoot.hwplib.object.bodytext.control.equation.EQEdit;
 import kr.dogfoot.hwplib.util.compoundFile.StreamReader;
 
 /**
- * ¼ö½Ä Á¤º¸ ·¹ÄÚµå¸¦ ÀĞ±â À§ÇÑ °´Ã¼
+ * ìˆ˜ì‹ ì •ë³´ ë ˆì½”ë“œë¥¼ ì½ê¸° ìœ„í•œ ê°ì²´
  * 
  * @author neolord
  */
 public class ForEQEdit {
 	/**
-	 * ¼ö½Ä Á¤º¸ ·¹ÄÚµå¸¦ ÀĞ´Â´Ù.
+	 * ìˆ˜ì‹ ì •ë³´ ë ˆì½”ë“œë¥¼ ì½ëŠ”ë‹¤.
 	 * 
 	 * @param eqEdit
-	 *            ¼ö½Ä Á¤º¸ ·¹ÄÚµå
+	 *            ìˆ˜ì‹ ì •ë³´ ë ˆì½”ë“œ
 	 * @param sr
-	 *            ½ºÆ®¸² ¸®´õ
+	 *            ìŠ¤íŠ¸ë¦¼ ë¦¬ë”
 	 * @throws IOException
 	 */
 	public static void read(EQEdit eqEdit, StreamReader sr) throws IOException {

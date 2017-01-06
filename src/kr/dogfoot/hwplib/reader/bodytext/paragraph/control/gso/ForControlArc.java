@@ -1,4 +1,4 @@
-package kr.dogfoot.hwplib.reader.bodytext.paragraph.control.gso;
+ï»¿package kr.dogfoot.hwplib.reader.bodytext.paragraph.control.gso;
 
 import java.io.IOException;
 
@@ -11,18 +11,18 @@ import kr.dogfoot.hwplib.reader.bodytext.paragraph.control.gso.part.ForTextBox;
 import kr.dogfoot.hwplib.util.compoundFile.StreamReader;
 
 /**
- * È£ ÄÁÆ®·ÑÀ» ÀĞ±â À§ÇÑ °´Ã¼
+ * í˜¸ ì»¨íŠ¸ë¡¤ì„ ì½ê¸° ìœ„í•œ ê°ì²´
  * 
  * @author neolord
  */
 public class ForControlArc {
 	/**
-	 * È£ ÄÁÆ®·ÑÀ» ÀĞ´Â´Ù.
+	 * í˜¸ ì»¨íŠ¸ë¡¤ì„ ì½ëŠ”ë‹¤.
 	 * 
 	 * @param arc
-	 *            È£ ÄÁÆ®·Ñ
+	 *            í˜¸ ì»¨íŠ¸ë¡¤
 	 * @param sr
-	 *            ½ºÆ®¸² ¸®´õ
+	 *            ìŠ¤íŠ¸ë¦¼ ë¦¬ë”
 	 * @throws Exception
 	 */
 	public static void read(ControlArc arc, StreamReader sr) throws Exception {
@@ -40,12 +40,12 @@ public class ForControlArc {
 	}
 
 	/**
-	 * È£ °³Ã¼ ¼Ó¼º ·¹ÄÚµå¸¦ ÀĞ´Â´Ù.
+	 * í˜¸ ê°œì²´ ì†ì„± ë ˆì½”ë“œë¥¼ ì½ëŠ”ë‹¤.
 	 * 
 	 * @param sca
-	 *            È£ °³Ã¼ ¼Ó¼º ·¹ÄÚµå
+	 *            í˜¸ ê°œì²´ ì†ì„± ë ˆì½”ë“œ
 	 * @param sr
-	 *            ½ºÆ®¸² ¸®´õ
+	 *            ìŠ¤íŠ¸ë¦¼ ë¦¬ë”
 	 * @throws IOException
 	 */
 	private static void shapeComponentArc(ShapeComponentArc sca, StreamReader sr)

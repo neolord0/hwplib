@@ -1,4 +1,4 @@
-package kr.dogfoot.hwplib.reader.bodytext.paragraph.control.secd;
+ï»¿package kr.dogfoot.hwplib.reader.bodytext.paragraph.control.secd;
 
 import java.io.IOException;
 
@@ -6,18 +6,18 @@ import kr.dogfoot.hwplib.object.bodytext.control.ctrlheader.CtrlHeaderSectionDef
 import kr.dogfoot.hwplib.util.compoundFile.StreamReader;
 
 /**
- * ±¸¿ª Á¤º¸ ÄÁÆ®·ÑÀÇ ÄÁÆ®·Ñ Çì´õ ·¹ÄÚµå¸¦ ÀĞ±â À§ÇÑ °´Ã¼
+ * êµ¬ì—­ ì •ë³´ ì»¨íŠ¸ë¡¤ì˜ ì»¨íŠ¸ë¡¤ í—¤ë” ë ˆì½”ë“œë¥¼ ì½ê¸° ìœ„í•œ ê°ì²´
  * 
  * @author neolord
  */
 public class ForCtrlHeaderSecd {
 	/**
-	 * ±¸¿ª Á¤º¸ ÄÁÆ®·ÑÀÇ ÄÁÆ®·Ñ Çì´õ ·¹ÄÚµå¸¦ ÀĞ´Â´Ù.
+	 * êµ¬ì—­ ì •ë³´ ì»¨íŠ¸ë¡¤ì˜ ì»¨íŠ¸ë¡¤ í—¤ë” ë ˆì½”ë“œë¥¼ ì½ëŠ”ë‹¤.
 	 * 
 	 * @param header
-	 *            ±¸¿ª Á¤º¸ ÄÁÆ®·ÑÀÇ ÄÁÆ®·Ñ Çì´õ ·¹ÄÚµå
+	 *            êµ¬ì—­ ì •ë³´ ì»¨íŠ¸ë¡¤ì˜ ì»¨íŠ¸ë¡¤ í—¤ë” ë ˆì½”ë“œ
 	 * @param sr
-	 *            ½ºÆ®¸² ¸®´õ
+	 *            ìŠ¤íŠ¸ë¦¼ ë¦¬ë”
 	 * @throws IOException
 	 */
 	public static void read(CtrlHeaderSectionDefine header, StreamReader sr)
@@ -39,10 +39,10 @@ public class ForCtrlHeaderSecd {
 	}
 
 	/**
-	 * ¾Ó·ÁÁöÁö ¾ÊÀº 8 bytesÀ» Ã³¸®ÇÑ´Ù.
+	 * ì•™ë ¤ì§€ì§€ ì•Šì€ 8 bytesì„ ì²˜ë¦¬í•œë‹¤.
 	 * 
 	 * @param sr
-	 *            ½ºÆ®¸² ¸®´õ
+	 *            ìŠ¤íŠ¸ë¦¼ ë¦¬ë”
 	 * @throws IOException
 	 */
 	private static void unknown8Bytes(StreamReader sr) throws IOException {

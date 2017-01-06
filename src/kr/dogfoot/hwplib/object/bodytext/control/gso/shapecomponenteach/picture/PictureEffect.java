@@ -1,135 +1,135 @@
-package kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponenteach.picture;
+ï»¿package kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponenteach.picture;
 
 /**
- * ±×¸² È¿°ú
+ * ê·¸ë¦¼ íš¨ê³¼
  * 
  * @author neolord
  */
 public class PictureEffect {
 	/**
-	 * ¼Ó¼º
+	 * ì†ì„±
 	 */
 	private PictureEffectProperty property;
 	/**
-	 * ±×¸²ÀÚ È¿°ú
+	 * ê·¸ë¦¼ì íš¨ê³¼
 	 */
 	private ShadowEffect shadowEffect;
 	/**
-	 * ³×¿Â È¿°ú
+	 * ë„¤ì˜¨ íš¨ê³¼
 	 */
 	private NeonEffect neonEffect;
 	/**
-	 * ºÎµå·¯¿î °¡ÀåÀÚ¸® È¿°ú
+	 * ë¶€ë“œëŸ¬ìš´ ê°€ì¥ìë¦¬ íš¨ê³¼
 	 */
 	private SoftEdgeEffect softEdgeEffect;
 	/**
-	 * ¹İ»ç È¿°ú
+	 * ë°˜ì‚¬ íš¨ê³¼
 	 */
 	private ReflectionEffect reflectionEffect;
 
 	/**
-	 * »ı¼ºÀÚ
+	 * ìƒì„±ì
 	 */
 	public PictureEffect() {
 		property = new PictureEffectProperty();
 	}
 
 	/**
-	 * ¼Ó¼º °´Ã¼¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ì†ì„± ê°ì²´ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ¼Ó¼º °´Ã¼
+	 * @return ì†ì„± ê°ì²´
 	 */
 	public PictureEffectProperty getProperty() {
 		return property;
 	}
 
 	/**
-	 * ±×¸²ÀÚ È¿°ú °´Ã¼¸¦ »ı¼ºÇÑ´Ù.
+	 * ê·¸ë¦¼ì íš¨ê³¼ ê°ì²´ë¥¼ ìƒì„±í•œë‹¤.
 	 */
 	public void createShadowEffect() {
 		shadowEffect = new ShadowEffect();
 	}
 
 	/**
-	 * ±×¸²ÀÚ È¿°ú °´Ã¼¸¦ »èÁ¦ÇÑ´Ù.
+	 * ê·¸ë¦¼ì íš¨ê³¼ ê°ì²´ë¥¼ ì‚­ì œí•œë‹¤.
 	 */
 	public void deleteShadowEffect() {
 		shadowEffect = null;
 	}
 
 	/**
-	 * ±×¸²ÀÚ È¿°ú °´Ã¼¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ê·¸ë¦¼ì íš¨ê³¼ ê°ì²´ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ±×¸²ÀÚ È¿°ú °´Ã¼
+	 * @return ê·¸ë¦¼ì íš¨ê³¼ ê°ì²´
 	 */
 	public ShadowEffect getShadowEffect() {
 		return shadowEffect;
 	}
 
 	/**
-	 * ³×¿Â È¿°ú °´Ã¼¸¦ »ı¼ºÇÑ´Ù.
+	 * ë„¤ì˜¨ íš¨ê³¼ ê°ì²´ë¥¼ ìƒì„±í•œë‹¤.
 	 */
 	public void createNeonEffect() {
 		neonEffect = new NeonEffect();
 	}
 
 	/**
-	 * ³×¿Â È¿°ú °´Ã¼¸¦ »èÁ¦ÇÑ´Ù.
+	 * ë„¤ì˜¨ íš¨ê³¼ ê°ì²´ë¥¼ ì‚­ì œí•œë‹¤.
 	 */
 	public void deleteNeonEffect() {
 		neonEffect = null;
 	}
 
 	/**
-	 * ³×¿Â È¿°ú °´Ã¼¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ë„¤ì˜¨ íš¨ê³¼ ê°ì²´ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ³×¿Â È¿°ú °´Ã¼
+	 * @return ë„¤ì˜¨ íš¨ê³¼ ê°ì²´
 	 */
 	public NeonEffect getNeonEffect() {
 		return neonEffect;
 	}
 
 	/**
-	 * ºÎµå·¯¿î °¡ÀåÀÚ¸® È¿°ú °´Ã¼¸¦ »ı¼ºÇÑ´Ù.
+	 * ë¶€ë“œëŸ¬ìš´ ê°€ì¥ìë¦¬ íš¨ê³¼ ê°ì²´ë¥¼ ìƒì„±í•œë‹¤.
 	 */
 	public void createSoftEdgeEffect() {
 		softEdgeEffect = new SoftEdgeEffect();
 	}
 
 	/**
-	 * ºÎµå·¯¿î °¡ÀåÀÚ¸® È¿°ú °´Ã¼¸¦ »èÁ¦ÇÑ´Ù.
+	 * ë¶€ë“œëŸ¬ìš´ ê°€ì¥ìë¦¬ íš¨ê³¼ ê°ì²´ë¥¼ ì‚­ì œí•œë‹¤.
 	 */
 	public void deleteSoftEdgeEffect() {
 		softEdgeEffect = null;
 	}
 
 	/**
-	 * ºÎµå·¯¿î °¡ÀåÀÚ¸® È¿°ú °´Ã¼¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ë¶€ë“œëŸ¬ìš´ ê°€ì¥ìë¦¬ íš¨ê³¼ ê°ì²´ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ºÎµå·¯¿î °¡ÀåÀÚ¸® È¿°ú °´Ã¼
+	 * @return ë¶€ë“œëŸ¬ìš´ ê°€ì¥ìë¦¬ íš¨ê³¼ ê°ì²´
 	 */
 	public SoftEdgeEffect getSoftEdgeEffect() {
 		return softEdgeEffect;
 	}
 
 	/**
-	 * ¹İ»ç È¿°ú °´Ã¼¸¦ »ı¼ºÇÑ´Ù.
+	 * ë°˜ì‚¬ íš¨ê³¼ ê°ì²´ë¥¼ ìƒì„±í•œë‹¤.
 	 */
 	public void createReflectionEffect() {
 		reflectionEffect = new ReflectionEffect();
 	}
 
 	/**
-	 * ¹İ»ç È¿°ú °´Ã¼¸¦ »èÁ¦ÇÑ´Ù.
+	 * ë°˜ì‚¬ íš¨ê³¼ ê°ì²´ë¥¼ ì‚­ì œí•œë‹¤.
 	 */
 	public void deleteReflectionEffect() {
 		reflectionEffect = null;
 	}
 
 	/**
-	 * ¹İ»ç È¿°ú °´Ã¼¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ë°˜ì‚¬ íš¨ê³¼ ê°ì²´ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ¹İ»ç È¿°ú °´Ã¼
+	 * @return ë°˜ì‚¬ íš¨ê³¼ ê°ì²´
 	 */
 	public ReflectionEffect getReflectionEffect() {
 		return reflectionEffect;

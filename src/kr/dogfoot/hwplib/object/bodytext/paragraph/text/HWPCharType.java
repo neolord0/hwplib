@@ -1,25 +1,25 @@
-package kr.dogfoot.hwplib.object.bodytext.paragraph.text;
+ï»¿package kr.dogfoot.hwplib.object.bodytext.paragraph.text;
 
 /**
- * ÇÑ±Û(HWP) ±ÛÀÚÀÇ Á¾·ù
+ * í•œê¸€(HWP) ê¸€ìì˜ ì¢…ë¥˜
  * 
  * @author neolord
  */
 public enum HWPCharType {
 	/**
-	 * ÀÏ¹İ
+	 * ì¼ë°˜
 	 */
 	Normal,
 	/**
-	 * ¹®ÀÚ ÄÁÆ®·Ñ
+	 * ë¬¸ì ì»¨íŠ¸ë¡¤
 	 */
 	ControlChar,
 	/**
-	 * ÀÎ¶óÀÎ ÄÁÆ®·Ñ
+	 * ì¸ë¼ì¸ ì»¨íŠ¸ë¡¤
 	 */
 	ControlInline,
 	/**
-	 * È®Àå ÄÁÆ®·Ñ
+	 * í™•ì¥ ì»¨íŠ¸ë¡¤
 	 */
 	ControlExtend
 }

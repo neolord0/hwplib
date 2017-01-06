@@ -1,90 +1,90 @@
-package kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponent.lineinfo;
+ï»¿package kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponent.lineinfo;
 
 /**
- * ¼± Á¾·ù
+ * ì„  ì¢…ë¥˜
  * 
  * @author neolord
  */
 public enum LineType {
 	/**
-	 * ¾øÀ½
+	 * ì—†ìŒ
 	 */
 	None((byte)0),
 	/**
-	 * ½Ç¼±
+	 * ì‹¤ì„ 
 	 */
 	Solid((byte)1),	
 	/**
-	 * ÆÄ¼±(¼â¼±)
+	 * íŒŒì„ (ì‡„ì„ )
 	 */
 	Dash((byte)2),
 	/**
-	 * Á¡¼±
+	 * ì ì„ 
 	 */
 	Dot((byte)3),
 	/**
-	 * ÀÏÁ¡¼â¼±
+	 * ì¼ì ì‡„ì„ 
 	 */
 	DashDot((byte)4),
 	/**
-	 * ÀÌÁ¡¼â¼±
+	 * ì´ì ì‡„ì„ 
 	 */
 	DashDotDot((byte)5),
 	/**
-	 * ±ä  ÆÄ¼±
+	 * ê¸´  íŒŒì„ 
 	 */
 	LongDash((byte)6),
 	/**
-	 * ¿øÇü Á¡¼±
+	 * ì›í˜• ì ì„ 
 	 */
 	CircleDot((byte)7),
 	/**
-	 * ÀÌÁß¼±
+	 * ì´ì¤‘ì„ 
 	 */
 	Double((byte)8),
 	/**
-	 * ù°í ±½Àº ÀÌÁß¼±
+	 * ì–‹ê³  êµµì€ ì´ì¤‘ì„ 
 	 */
 	ThinBold((byte)9),
 	/**
-	 * ±½°í ùÀº ÀÌÁß¼±
+	 * êµµê³  ì–‹ì€ ì´ì¤‘ì„ 
 	 */
 	BoldThin((byte)10),
 	/**
-	 * ù°í ±½°í ùÀº »ïÁß¼±
+	 * ì–‹ê³  êµµê³  ì–‹ì€ ì‚¼ì¤‘ì„ 
 	 */
 	ThinBoldThin((byte)11);
 	
 	/**
-	 * ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª
+	 * íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’
 	 */
     private byte value;
     
 	/**
-	 * »ı¼ºÀÚ
+	 * ìƒì„±ì
 	 * 
 	 * @param value
-	 *            ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª
+	 *            íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’
 	 */
     private LineType(byte value) {
         this.value = value;
     }
     
 	/**
-	 * ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ªÀ» ¹İÈ¯ÇÑ´Ù.
+	 * íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’ì„ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª
+	 * @return íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’
 	 */
 	public byte getValue() {
 		return value;
     }
     
 	/**
-	 * ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª¿¡ ÇØ´çµÇ´Â enum °ªÀ» ¹İÈ¯ÇÑ´Ù.
+	 * íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’ì— í•´ë‹¹ë˜ëŠ” enum ê°’ì„ ë°˜í™˜í•œë‹¤.
 	 * 
 	 * @param value
-	 *            ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª
-	 * @return enum °ª
+	 *            íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’
+	 * @return enum ê°’
 	 */
     public static LineType valueOf(byte value) {
         for (LineType bt2 : values()) {

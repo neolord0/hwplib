@@ -1,4 +1,4 @@
-package kr.dogfoot.hwplib.object.bodytext.control;
+ï»¿package kr.dogfoot.hwplib.object.bodytext.control;
 
 import kr.dogfoot.hwplib.object.bodytext.control.ctrlheader.CtrlHeaderGso;
 import kr.dogfoot.hwplib.object.bodytext.control.gso.ControlArc;
@@ -14,18 +14,18 @@ import kr.dogfoot.hwplib.object.bodytext.control.gso.GsoControl;
 import kr.dogfoot.hwplib.object.bodytext.control.gso.GsoControlType;
 
 /**
- * ÄÁÆ®·ÑÀ» »ı¼ºÇÏ´Â °´Ã¼
+ * ì»¨íŠ¸ë¡¤ì„ ìƒì„±í•˜ëŠ” ê°ì²´
  * 
  * @author neolord
  * 
  */
 public class FactoryForControl {
 	/**
-	 * ÄÁÆ®·Ñ id¿¡ ÇØ´çµÇ´Â ÄÁÆ®·ÑÀ» »ı¼ºÇÑ´Ù.
+	 * ì»¨íŠ¸ë¡¤ idì— í•´ë‹¹ë˜ëŠ” ì»¨íŠ¸ë¡¤ì„ ìƒì„±í•œë‹¤.
 	 * 
 	 * @param ctrlId
-	 *            ÄÁÆ®·Ñ id
-	 * @return »õ·Î »ı¼ºµÈ ÄÁÆ®·Ñ
+	 *            ì»¨íŠ¸ë¡¤ id
+	 * @return ìƒˆë¡œ ìƒì„±ëœ ì»¨íŠ¸ë¡¤
 	 */
 	public static Control create(long ctrlId) {
 		if (ctrlId == ControlType.SectionDefine.getCtrlId()) {
@@ -69,13 +69,13 @@ public class FactoryForControl {
 	}
 
 	/**
-	 * ±×¸®±â °´Ã¼ ¾ÆÀÌµğ(gsoId)¿¡ ÇØ´çµÇ´Â ±×¸®±â °´Ã¼ ÄÁÆ®·Ñ¸¦ »õ·Î »ı¼ºÇÑ´Ù.
+	 * ê·¸ë¦¬ê¸° ê°ì²´ ì•„ì´ë””(gsoId)ì— í•´ë‹¹ë˜ëŠ” ê·¸ë¦¬ê¸° ê°ì²´ ì»¨íŠ¸ë¡¤ë¥¼ ìƒˆë¡œ ìƒì„±í•œë‹¤.
 	 * 
 	 * @param gsoId
-	 *            ±×¸®±â °´Ã¼ ¾ÆÀÌµğ
+	 *            ê·¸ë¦¬ê¸° ê°ì²´ ì•„ì´ë””
 	 * @param header
-	 *            ±×¸®±â °´Ã¼¿ë ÄÁÆ®·Ñ Çì´õ
-	 * @return »õ·Î »ı¼ºµÈ ±×¸®±â °´Ã¼ ÄÁÆ®·Ñ
+	 *            ê·¸ë¦¬ê¸° ê°ì²´ìš© ì»¨íŠ¸ë¡¤ í—¤ë”
+	 * @return ìƒˆë¡œ ìƒì„±ëœ ê·¸ë¦¬ê¸° ê°ì²´ ì»¨íŠ¸ë¡¤
 	 */
 	public static GsoControl createGso(long gsoId, CtrlHeaderGso header) {
 		if (gsoId == GsoControlType.Line.getId()) {

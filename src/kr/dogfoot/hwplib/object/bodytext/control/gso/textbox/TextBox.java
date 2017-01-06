@@ -1,24 +1,24 @@
-package kr.dogfoot.hwplib.object.bodytext.control.gso.textbox;
+ï»¿package kr.dogfoot.hwplib.object.bodytext.control.gso.textbox;
 
 import kr.dogfoot.hwplib.object.bodytext.paragraph.ParagraphList;
 
 /**
- * ±Û»óÀÚÀ» ³ªÅ¸³»´Â °´Ã¼
+ * ê¸€ìƒìì„ ë‚˜íƒ€ë‚´ëŠ” ê°ì²´
  * 
  * @author neolord
  */
 public class TextBox {
 	/**
-	 * ¹®´Ü ¸®½ºÆ® Çì´õ
+	 * ë¬¸ë‹¨ ë¦¬ìŠ¤íŠ¸ í—¤ë”
 	 */
 	private ListHeaderForTextBox listHeader;
 	/**
-	 * ¹®´Ü ¸®½ºÆ®
+	 * ë¬¸ë‹¨ ë¦¬ìŠ¤íŠ¸
 	 */
 	private ParagraphList paragraphList;
 
 	/**
-	 * »ı¼ºÀÚ
+	 * ìƒì„±ì
 	 */
 	public TextBox() {
 		listHeader = new ListHeaderForTextBox();
@@ -26,18 +26,18 @@ public class TextBox {
 	}
 
 	/**
-	 * ¹®´Ü ¸®½ºÆ® Çì´õ °´Ã¼¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ë¬¸ë‹¨ ë¦¬ìŠ¤íŠ¸ í—¤ë” ê°ì²´ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ¹®´Ü ¸®½ºÆ® Çì´õ °´Ã¼
+	 * @return ë¬¸ë‹¨ ë¦¬ìŠ¤íŠ¸ í—¤ë” ê°ì²´
 	 */
 	public ListHeaderForTextBox getListHeader() {
 		return listHeader;
 	}
 
 	/**
-	 * ¹®´Ü ¸®½ºÆ® °´Ã¼¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ë¬¸ë‹¨ ë¦¬ìŠ¤íŠ¸ ê°ì²´ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ¹®´Ü ¸®½ºÆ® °´Ã¼
+	 * @return ë¬¸ë‹¨ ë¦¬ìŠ¤íŠ¸ ê°ì²´
 	 */
 	public ParagraphList getParagraphList() {
 		return paragraphList;

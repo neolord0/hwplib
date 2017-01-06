@@ -1,23 +1,23 @@
-package kr.dogfoot.hwplib.object.bodytext.control.ctrlheader;
+ï»¿package kr.dogfoot.hwplib.object.bodytext.control.ctrlheader;
 
 /**
- * ÄÁÆ®·Ñ idÀ» »ı¼ºÇÏ±â À§ÇÑ °´Ã¼
+ * ì»¨íŠ¸ë¡¤ idì„ ìƒì„±í•˜ê¸° ìœ„í•œ ê°ì²´
  * 
  * @author neolord
  */
 public class CtrlID {
 	/**
-	 * ÄÁÆ®·Ñ ¾ÆÀÌµğ¸¦ »ı¼ºÇÑ´Ù.
+	 * ì»¨íŠ¸ë¡¤ ì•„ì´ë””ë¥¼ ìƒì„±í•œë‹¤.
 	 * 
 	 * @param a
-	 *            24~31 bit°ª
+	 *            24~31 bitê°’
 	 * @param b
-	 *            16~23 bit°ª
+	 *            16~23 bitê°’
 	 * @param c
-	 *            8~15 bit°ª
+	 *            8~15 bitê°’
 	 * @param d
-	 *            0~7 bit°ª
-	 * @return ÄÁÆ®·Ñ ¾ÆÀÌµğ
+	 *            0~7 bitê°’
+	 * @return ì»¨íŠ¸ë¡¤ ì•„ì´ë””
 	 */
 	public static long make(char a, char b, char c, char d) {
 		return ((byte) a << 24) | ((byte) b << 16) | ((byte) c << 8) | (byte) d;

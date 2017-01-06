@@ -1,316 +1,316 @@
-package kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponent;
+ï»¿package kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponent;
 
 import kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponent.renderingnfo.RenderingInfo;
 
 /**
- * °´Ã¼ °øÅë ¼Ó¼º
+ * ê°ì²´ ê³µí†µ ì†ì„±
  * 
  * @author neolord
  */
 public class ShapeComponent {
 	/**
-	 * °³Ã¼ ÄÁÆ®·Ñ Id
+	 * ê°œì²´ ì»¨íŠ¸ë¡¤ Id
 	 */
 	private int gsoId;
 	/**
-	 * °³Ã¼°¡ ¼ÓÇÑ ±×·ì ³»¿¡¼­ÀÇ X offset
+	 * ê°œì²´ê°€ ì†í•œ ê·¸ë£¹ ë‚´ì—ì„œì˜ X offset
 	 */
 	private int offsetX;
 	/**
-	 * °³Ã¼°¡ ¼ÓÇÑ ±×·ì ³»¿¡¼­ÀÇ Y offset
+	 * ê°œì²´ê°€ ì†í•œ ê·¸ë£¹ ë‚´ì—ì„œì˜ Y offset
 	 */
 	private int offsetY;
 	/**
-	 * ±×·ìÇÎ È½¼ö
+	 * ê·¸ë£¹í•‘ íšŸìˆ˜
 	 */
 	private int groupingCount;
 	/**
-	 * °³Ã¼ ¿ä¼ÒÀÇ local file version
+	 * ê°œì²´ ìš”ì†Œì˜ local file version
 	 */
 	private int localFileVersion;
 	/**
-	 * »ı¼º½Ã Æø
+	 * ìƒì„±ì‹œ í­
 	 */
 	private long widthAtCreate;
 	/**
-	 * »ı¼º½Ã ³ôÀÌ
+	 * ìƒì„±ì‹œ ë†’ì´
 	 */
 	private long heightAtCreate;
 	/**
-	 * ÇöÀç Æø
+	 * í˜„ì¬ í­
 	 */
 	private long widthAtCurrent;
 	/**
-	 * ÇöÀç ³ôÀÌ
+	 * í˜„ì¬ ë†’ì´
 	 */
 	private long heightAtCurrent;
 	/**
-	 * ¼Ó¼º(Á¤º¸ ¾øÀ½)
+	 * ì†ì„±(ì •ë³´ ì—†ìŒ)
 	 */
 	private long property;
 	/**
-	 * È¸Àü°¢
+	 * íšŒì „ê°
 	 */
 	private int rotateAngle;
 	/**
-	 * È¸Àü Áß½ÉÀÇ x ÁÂÇ¥(°³Ã¼ ÁÂÇ¥°è)
+	 * íšŒì „ ì¤‘ì‹¬ì˜ x ì¢Œí‘œ(ê°œì²´ ì¢Œí‘œê³„)
 	 */
 	private int rotateXCenter;
 	/**
-	 * È¸Àü Áß½ÉÀÇ y ÁÂÇ¥(°³Ã¼ ÁÂÇ¥°è)
+	 * íšŒì „ ì¤‘ì‹¬ì˜ y ì¢Œí‘œ(ê°œì²´ ì¢Œí‘œê³„)
 	 */
 	private int rotateYCenter;
 	/**
-	 * Rendering Á¤º¸
+	 * Rendering ì •ë³´
 	 */
 	private RenderingInfo renderingInfo;
 
 	/**
-	 * »ı¼ºÀÚ
+	 * ìƒì„±ì
 	 */
 	protected ShapeComponent() {
 		renderingInfo = new RenderingInfo();
 	}
 
 	/**
-	 * °³Ã¼ ÄÁÆ®·Ñ Id¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ê°œì²´ ì»¨íŠ¸ë¡¤ Idë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return °³Ã¼ ÄÁÆ®·Ñ Id
+	 * @return ê°œì²´ ì»¨íŠ¸ë¡¤ Id
 	 */
 	public int getGsoId() {
 		return gsoId;
 	}
 
 	/**
-	 * °³Ã¼ ÄÁÆ®·Ñ Id¸¦ ¼³Á¤ÇÑ´Ù.
+	 * ê°œì²´ ì»¨íŠ¸ë¡¤ Idë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param gsoId
-	 *            °³Ã¼ ÄÁÆ®·Ñ Id
+	 *            ê°œì²´ ì»¨íŠ¸ë¡¤ Id
 	 */
 	public void setGsoId(int gsoId) {
 		this.gsoId = gsoId;
 	}
 
 	/**
-	 * °³Ã¼°¡ ¼ÓÇÑ ±×·ì ³»¿¡¼­ÀÇ X offsetÀ» ¹İÈ¯ÇÑ´Ù.
+	 * ê°œì²´ê°€ ì†í•œ ê·¸ë£¹ ë‚´ì—ì„œì˜ X offsetì„ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return °³Ã¼°¡ ¼ÓÇÑ ±×·ì ³»¿¡¼­ÀÇ X offset
+	 * @return ê°œì²´ê°€ ì†í•œ ê·¸ë£¹ ë‚´ì—ì„œì˜ X offset
 	 */
 	public int getOffsetX() {
 		return offsetX;
 	}
 
 	/**
-	 * °³Ã¼°¡ ¼ÓÇÑ ±×·ì ³»¿¡¼­ÀÇ X offset¸¦ ¼³Á¤ÇÑ´Ù.
+	 * ê°œì²´ê°€ ì†í•œ ê·¸ë£¹ ë‚´ì—ì„œì˜ X offsetë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param offsetX
-	 *            °³Ã¼°¡ ¼ÓÇÑ ±×·ì ³»¿¡¼­ÀÇ X offset
+	 *            ê°œì²´ê°€ ì†í•œ ê·¸ë£¹ ë‚´ì—ì„œì˜ X offset
 	 */
 	public void setOffsetX(int offsetX) {
 		this.offsetX = offsetX;
 	}
 
 	/**
-	 * °³Ã¼°¡ ¼ÓÇÑ ±×·ì ³»¿¡¼­ÀÇ Y offsetÀ» ¹İÈ¯ÇÑ´Ù.
+	 * ê°œì²´ê°€ ì†í•œ ê·¸ë£¹ ë‚´ì—ì„œì˜ Y offsetì„ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return °³Ã¼°¡ ¼ÓÇÑ ±×·ì ³»¿¡¼­ÀÇ Y offset
+	 * @return ê°œì²´ê°€ ì†í•œ ê·¸ë£¹ ë‚´ì—ì„œì˜ Y offset
 	 */
 	public int getyOffset() {
 		return offsetY;
 	}
 
 	/**
-	 * °³Ã¼°¡ ¼ÓÇÑ ±×·ì ³»¿¡¼­ÀÇ Y offset¸¦ ¼³Á¤ÇÑ´Ù.
+	 * ê°œì²´ê°€ ì†í•œ ê·¸ë£¹ ë‚´ì—ì„œì˜ Y offsetë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param offsetY
-	 *            °³Ã¼°¡ ¼ÓÇÑ ±×·ì ³»¿¡¼­ÀÇ Y offset
+	 *            ê°œì²´ê°€ ì†í•œ ê·¸ë£¹ ë‚´ì—ì„œì˜ Y offset
 	 */
 	public void setOffsetY(int offsetY) {
 		this.offsetY = offsetY;
 	}
 
 	/**
-	 * ±×·ìÇÎ È½¼ö¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ê·¸ë£¹í•‘ íšŸìˆ˜ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ±×·ìÇÎ È½¼ö
+	 * @return ê·¸ë£¹í•‘ íšŸìˆ˜
 	 */
 	public int getGroupingCount() {
 		return groupingCount;
 	}
 
 	/**
-	 * ±×·ìÇÎ È½¼ö¸¦ ¼³Á¤ÇÑ´Ù.
+	 * ê·¸ë£¹í•‘ íšŸìˆ˜ë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param groupingCount
-	 *            ±×·ìÇÎ È½¼ö
+	 *            ê·¸ë£¹í•‘ íšŸìˆ˜
 	 */
 	public void setGroupingCount(int groupingCount) {
 		this.groupingCount = groupingCount;
 	}
 
 	/**
-	 * °³Ã¼ ¿ä¼ÒÀÇ local file versionÀ» ¹İÈ¯ÇÑ´Ù.
+	 * ê°œì²´ ìš”ì†Œì˜ local file versionì„ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return °³Ã¼ ¿ä¼ÒÀÇ local file version
+	 * @return ê°œì²´ ìš”ì†Œì˜ local file version
 	 */
 	public int getLocalFileVersion() {
 		return localFileVersion;
 	}
 
 	/**
-	 * °³Ã¼ ¿ä¼ÒÀÇ local file versionÀ» ¼³Á¤ÇÑ´Ù.
+	 * ê°œì²´ ìš”ì†Œì˜ local file versionì„ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param localFileVersion
-	 *            °³Ã¼ ¿ä¼ÒÀÇ local file version
+	 *            ê°œì²´ ìš”ì†Œì˜ local file version
 	 */
 	public void setLocalFileVersion(int localFileVersion) {
 		this.localFileVersion = localFileVersion;
 	}
 
 	/**
-	 * »ı¼º½Ã ÆøÀ» ¹İÈ¯ÇÑ´Ù.
+	 * ìƒì„±ì‹œ í­ì„ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return »ı¼º½Ã Æø
+	 * @return ìƒì„±ì‹œ í­
 	 */
 	public long getWidthAtCreate() {
 		return widthAtCreate;
 	}
 
 	/**
-	 * »ı¼º½Ã ÆøÀ» ¼³Á¤ÇÑ´Ù.
+	 * ìƒì„±ì‹œ í­ì„ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param widthAtCreate
-	 *            »ı¼º½Ã Æø
+	 *            ìƒì„±ì‹œ í­
 	 */
 	public void setWidthAtCreate(long widthAtCreate) {
 		this.widthAtCreate = widthAtCreate;
 	}
 
 	/**
-	 * »ı¼º½Ã ³ôÀÌ¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ìƒì„±ì‹œ ë†’ì´ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return »ı¼º½Ã ³ôÀÌ
+	 * @return ìƒì„±ì‹œ ë†’ì´
 	 */
 	public long getHeightAtCreate() {
 		return heightAtCreate;
 	}
 
 	/**
-	 * »ı¼º½Ã ³ôÀÌ¸¦ ¼³Á¤ÇÑ´Ù.
+	 * ìƒì„±ì‹œ ë†’ì´ë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param heightAtCreate
-	 *            »ı¼º½Ã ³ôÀÌ
+	 *            ìƒì„±ì‹œ ë†’ì´
 	 */
 	public void setHeightAtCreate(long heightAtCreate) {
 		this.heightAtCreate = heightAtCreate;
 	}
 
 	/**
-	 * ÇöÀç ÆøÀ» ¹İÈ¯ÇÑ´Ù.
+	 * í˜„ì¬ í­ì„ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ÇöÀç Æø
+	 * @return í˜„ì¬ í­
 	 */
 	public long getWidthAtCurrent() {
 		return widthAtCurrent;
 	}
 
 	/**
-	 * ÇöÀç ÆøÀ» ¼³Á¤ÇÑ´Ù.
+	 * í˜„ì¬ í­ì„ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param widthAtCurrent
-	 *            ÇöÀç Æø
+	 *            í˜„ì¬ í­
 	 */
 	public void setWidthAtCurrent(long widthAtCurrent) {
 		this.widthAtCurrent = widthAtCurrent;
 	}
 
 	/**
-	 * ÇöÀç ³ôÀÌ¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * í˜„ì¬ ë†’ì´ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ÇöÀç ³ôÀÌ
+	 * @return í˜„ì¬ ë†’ì´
 	 */
 	public long getHeightAtCurrent() {
 		return heightAtCurrent;
 	}
 
 	/**
-	 * ÇöÀç ³ôÀÌ¸¦ ¼³Á¤ÇÑ´Ù.
+	 * í˜„ì¬ ë†’ì´ë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param heightAtCurrent
-	 *            ÇöÀç ³ôÀÌ
+	 *            í˜„ì¬ ë†’ì´
 	 */
 	public void setHeightAtCurrent(long heightAtCurrent) {
 		this.heightAtCurrent = heightAtCurrent;
 	}
 
 	/**
-	 * ¼Ó¼º°ªÀ» ¹İÈ¯ÇÑ´Ù.(Á¤º¸ ¾øÀ½)
+	 * ì†ì„±ê°’ì„ ë°˜í™˜í•œë‹¤.(ì •ë³´ ì—†ìŒ)
 	 * 
-	 * @return ¼Ó¼º°ª
+	 * @return ì†ì„±ê°’
 	 */
 	public long getProperty() {
 		return property;
 	}
 
 	/**
-	 * ¼Ó¼º°ªÀ» ¼³Á¤ÇÑ´Ù.
+	 * ì†ì„±ê°’ì„ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param property
-	 *            ¼Ó¼º°ª
+	 *            ì†ì„±ê°’
 	 */
 	public void setProperty(long property) {
 		this.property = property;
 	}
 
 	/**
-	 * È¸Àü°¢À» ¹İÈ¯ÇÑ´Ù.
+	 * íšŒì „ê°ì„ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return È¸Àü°¢
+	 * @return íšŒì „ê°
 	 */
 	public int getRotateAngle() {
 		return rotateAngle;
 	}
 
 	/**
-	 * È¸Àü°¢À» ¼³Á¤ÇÑ´Ù.
+	 * íšŒì „ê°ì„ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param rotateAngle
-	 *            È¸Àü°¢
+	 *            íšŒì „ê°
 	 */
 	public void setRotateAngle(int rotateAngle) {
 		this.rotateAngle = rotateAngle;
 	}
 
 	/**
-	 * È¸Àü Áß½ÉÀÇ x ÁÂÇ¥¸¦ ¹İÈ¯ÇÑ´Ù.(°³Ã¼ ÁÂÇ¥°è)
+	 * íšŒì „ ì¤‘ì‹¬ì˜ x ì¢Œí‘œë¥¼ ë°˜í™˜í•œë‹¤.(ê°œì²´ ì¢Œí‘œê³„)
 	 * 
-	 * @return È¸Àü Áß½ÉÀÇ x ÁÂÇ¥
+	 * @return íšŒì „ ì¤‘ì‹¬ì˜ x ì¢Œí‘œ
 	 */
 	public int getRotateXCenter() {
 		return rotateXCenter;
 	}
 
 	/**
-	 * È¸Àü Áß½ÉÀÇ x ÁÂÇ¥¸¦ ¼³Á¤ÇÑ´Ù. (°³Ã¼ ÁÂÇ¥°è)
+	 * íšŒì „ ì¤‘ì‹¬ì˜ x ì¢Œí‘œë¥¼ ì„¤ì •í•œë‹¤. (ê°œì²´ ì¢Œí‘œê³„)
 	 * 
 	 * @param rotateXCenter
-	 *            È¸Àü Áß½ÉÀÇ x ÁÂÇ¥
+	 *            íšŒì „ ì¤‘ì‹¬ì˜ x ì¢Œí‘œ
 	 */
 	public void setRotateXCenter(int rotateXCenter) {
 		this.rotateXCenter = rotateXCenter;
 	}
 
 	/**
-	 * È¸Àü Áß½ÉÀÇ y ÁÂÇ¥¸¦ ¹İÈ¯ÇÑ´Ù.(°³Ã¼ ÁÂÇ¥°è)
+	 * íšŒì „ ì¤‘ì‹¬ì˜ y ì¢Œí‘œë¥¼ ë°˜í™˜í•œë‹¤.(ê°œì²´ ì¢Œí‘œê³„)
 	 * 
-	 * @return È¸Àü Áß½ÉÀÇ y ÁÂÇ¥
+	 * @return íšŒì „ ì¤‘ì‹¬ì˜ y ì¢Œí‘œ
 	 */
 	public int getRotateYCenter() {
 		return rotateYCenter;
 	}
 
 	/**
-	 * È¸Àü Áß½ÉÀÇ y ÁÂÇ¥¸¦ ¼³Á¤ÇÑ´Ù.
+	 * íšŒì „ ì¤‘ì‹¬ì˜ y ì¢Œí‘œë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param rotateYCenter
 	 */
@@ -319,9 +319,9 @@ public class ShapeComponent {
 	}
 
 	/**
-	 * Rendering Á¤º¸ °´Ã¼¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * Rendering ì •ë³´ ê°ì²´ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return Rendering Á¤º¸ °´Ã¼
+	 * @return Rendering ì •ë³´ ê°ì²´
 	 */
 	public RenderingInfo getRenderingInfo() {
 		return renderingInfo;

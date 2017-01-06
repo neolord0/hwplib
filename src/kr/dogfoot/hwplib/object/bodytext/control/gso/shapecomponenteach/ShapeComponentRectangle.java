@@ -1,13 +1,13 @@
-package kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponenteach;
+ï»¿package kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponenteach;
 
 /**
- * »ç°¢Çü °³Ã¼ ¼Ó¼º ·¹ÄÚµå
+ * ì‚¬ê°í˜• ê°œì²´ ì†ì„± ë ˆì½”ë“œ
  * 
  * @author neolord
  */
 public class ShapeComponentRectangle {
 	/**
-	 * ¸ğ¼­¸® µÕ±Ù ºñÀ²
+	 * ëª¨ì„œë¦¬ ë‘¥ê·¼ ë¹„ìœ¨
 	 */
 	private byte roundRate;
 	/**
@@ -44,177 +44,177 @@ public class ShapeComponentRectangle {
 	private int y4;
 
 	/**
-	 * »ı¼ºÀÚ
+	 * ìƒì„±ì
 	 */
 	public ShapeComponentRectangle() {
 	}
 
 	/**
-	 * ¸ğ¼­¸® ŠP±Ù ºñÀ²À» ¹İÈ¯ÇÑ´Ù.
+	 * ëª¨ì„œë¦¬ ë‘—ê·¼ ë¹„ìœ¨ì„ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ¸ğ¼­¸® ŠP±Ù ºñÀ²
+	 * @return ëª¨ì„œë¦¬ ë‘—ê·¼ ë¹„ìœ¨
 	 */
 	public byte getRoundRate() {
 		return roundRate;
 	}
 
 	/**
-	 * ¸ğ¼­¸® ŠP±Ù ºñÀ²À» ¼³Á¤ÇÑ´Ù.
+	 * ëª¨ì„œë¦¬ ë‘—ê·¼ ë¹„ìœ¨ì„ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param roundRate
-	 *            ¸ğ¼­¸® ŠP±Ù ºñÀ²
+	 *            ëª¨ì„œë¦¬ ë‘—ê·¼ ë¹„ìœ¨
 	 */
 	public void setRoundRate(byte roundRate) {
 		this.roundRate = roundRate;
 	}
 
 	/**
-	 * x1 °ªÀ» ¹İÈ¯ÇÑ´Ù.
+	 * x1 ê°’ì„ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return x1 °ª
+	 * @return x1 ê°’
 	 */
 	public int getX1() {
 		return x1;
 	}
 
 	/**
-	 * x1 °ªÀ» ¼³Á¤ÇÑ´Ù.
+	 * x1 ê°’ì„ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param x1
-	 *            x1 °ª
+	 *            x1 ê°’
 	 */
 	public void setX1(int x1) {
 		this.x1 = x1;
 	}
 
 	/**
-	 * y1 °ªÀ» ¹İÈ¯ÇÑ´Ù.
+	 * y1 ê°’ì„ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return y1 °ª
+	 * @return y1 ê°’
 	 */
 	public int getY1() {
 		return y1;
 	}
 
 	/**
-	 * y1 °ªÀ» ¼³Á¤ÇÑ´Ù.
+	 * y1 ê°’ì„ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param y1
-	 *            y1 °ª
+	 *            y1 ê°’
 	 */
 	public void setY1(int y1) {
 		this.y1 = y1;
 	}
 
 	/**
-	 * x2 °ªÀ» ¹İÈ¯ÇÑ´Ù.
+	 * x2 ê°’ì„ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return x2 °ª
+	 * @return x2 ê°’
 	 */
 	public int getX2() {
 		return x2;
 	}
 
 	/**
-	 * x2 °ªÀ» ¼³Á¤ÇÑ´Ù.
+	 * x2 ê°’ì„ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param x2
-	 *            x2 °ª
+	 *            x2 ê°’
 	 */
 	public void setX2(int x2) {
 		this.x2 = x2;
 	}
 
 	/**
-	 * y2 °ªÀ» ¹İÈ¯ÇÑ´Ù.
+	 * y2 ê°’ì„ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return y2 °ª
+	 * @return y2 ê°’
 	 */
 	public int getY2() {
 		return y2;
 	}
 
 	/**
-	 * y2 °ªÀ» ¼³Á¤ÇÑ´Ù.
+	 * y2 ê°’ì„ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param y2
-	 *            y2 °ª
+	 *            y2 ê°’
 	 */
 	public void setY2(int y2) {
 		this.y2 = y2;
 	}
 
 	/**
-	 * x3 °ªÀ» ¹İÈ¯ÇÑ´Ù.
+	 * x3 ê°’ì„ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return x3 °ª
+	 * @return x3 ê°’
 	 */
 	public int getX3() {
 		return x3;
 	}
 
 	/**
-	 * x3 °ªÀ» ¼³Á¤ÇÑ´Ù.
+	 * x3 ê°’ì„ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param x3
-	 *            x3 °ª
+	 *            x3 ê°’
 	 */
 	public void setX3(int x3) {
 		this.x3 = x3;
 	}
 
 	/**
-	 * y3 °ªÀ» ¹İÈ¯ÇÑ´Ù.
+	 * y3 ê°’ì„ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return y3 °ª
+	 * @return y3 ê°’
 	 */
 	public int getY3() {
 		return y3;
 	}
 
 	/**
-	 * y3 °ªÀ» ¼³Á¤ÇÑ´Ù.
+	 * y3 ê°’ì„ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param y3
-	 *            y3 °ª
+	 *            y3 ê°’
 	 */
 	public void setY3(int y3) {
 		this.y3 = y3;
 	}
 
 	/**
-	 * x4 °ªÀ» ¹İÈ¯ÇÑ´Ù.
+	 * x4 ê°’ì„ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return x4 °ª
+	 * @return x4 ê°’
 	 */
 	public int getX4() {
 		return x4;
 	}
 
 	/**
-	 * x4 °ªÀ» ¼³Á¤ÇÑ´Ù.
+	 * x4 ê°’ì„ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param x4
-	 *            x4 °ª
+	 *            x4 ê°’
 	 */
 	public void setX4(int x4) {
 		this.x4 = x4;
 	}
 
 	/**
-	 * y4 °ªÀ» ¹İÈ¯ÇÑ´Ù.
+	 * y4 ê°’ì„ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return y4 °ª
+	 * @return y4 ê°’
 	 */
 	public int getY4() {
 		return y4;
 	}
 
 	/**
-	 * y4 °ªÀ» ¼³Á¤ÇÑ´Ù.
+	 * y4 ê°’ì„ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param y4
-	 *            y4 °ª
+	 *            y4 ê°’
 	 */
 	public void setY4(int y4) {
 		this.y4 = y4;

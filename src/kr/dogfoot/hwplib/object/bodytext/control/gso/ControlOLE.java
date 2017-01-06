@@ -1,31 +1,31 @@
-package kr.dogfoot.hwplib.object.bodytext.control.gso;
+ï»¿package kr.dogfoot.hwplib.object.bodytext.control.gso;
 
 import kr.dogfoot.hwplib.object.bodytext.control.ctrlheader.CtrlHeaderGso;
 import kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponenteach.ShapeComponentOLE;
 
 /**
- * OLE °³Ã¼ ÄÁÆ®·Ñ
+ * OLE ê°œì²´ ì»¨íŠ¸ë¡¤
  * 
  * @author neolord
  */
 public class ControlOLE extends GsoControl {
 	/**
-	 * OLE °³Ã¼ ¼Ó¼º
+	 * OLE ê°œì²´ ì†ì„±
 	 */
 	private ShapeComponentOLE shapeComponentOLE;
 
 	/**
-	 * »ı¼ºÀÚ
+	 * ìƒì„±ì
 	 */
 	public ControlOLE() {
 		this(new CtrlHeaderGso());
 	}
 
 	/**
-	 * »ı¼ºÀÚ
+	 * ìƒì„±ì
 	 * 
 	 * @param header
-	 *            ±×¸®±â °³Ã¼¸¦ À§ÇÑ ÄÁÆ®·Ñ Çì´õ
+	 *            ê·¸ë¦¬ê¸° ê°œì²´ë¥¼ ìœ„í•œ ì»¨íŠ¸ë¡¤ í—¤ë”
 	 */
 	public ControlOLE(CtrlHeaderGso header) {
 		super(header);
@@ -35,9 +35,9 @@ public class ControlOLE extends GsoControl {
 	}
 
 	/**
-	 * OLE °³Ã¼ÀÇ ¼Ó¼º °´Ã¼À» ¹İÈ¯ÇÑ´Ù.
+	 * OLE ê°œì²´ì˜ ì†ì„± ê°ì²´ì„ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return OLE °³Ã¼ÀÇ ¼Ó¼º °´Ã¼
+	 * @return OLE ê°œì²´ì˜ ì†ì„± ê°ì²´
 	 */
 	public ShapeComponentOLE getShapeComponentOLE() {
 		return shapeComponentOLE;

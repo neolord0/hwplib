@@ -1,31 +1,31 @@
-package kr.dogfoot.hwplib.object.bodytext.control.gso;
+ï»¿package kr.dogfoot.hwplib.object.bodytext.control.gso;
 
 import kr.dogfoot.hwplib.object.bodytext.control.ctrlheader.CtrlHeaderGso;
 import kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponenteach.ShapeComponentPicture;
 
 /**
- * ±×¸² °³Ã¼ ÄÁÆ®·Ñ
+ * ê·¸ë¦¼ ê°œì²´ ì»¨íŠ¸ë¡¤
  * 
  * @author neolord
  */
 public class ControlPicture extends GsoControl {
 	/**
-	 * ±×¸² °³Ã¼ ¼Ó¼º
+	 * ê·¸ë¦¼ ê°œì²´ ì†ì„±
 	 */
 	private ShapeComponentPicture shapeComponentPicture;
 
 	/**
-	 * »ı¼ºÀÚ
+	 * ìƒì„±ì
 	 */
 	public ControlPicture() {
 		this(new CtrlHeaderGso());
 	}
 
 	/**
-	 * »ı¼ºÀÚ
+	 * ìƒì„±ì
 	 * 
 	 * @param header
-	 *            ±×¸®±â °³Ã¼¸¦ À§ÇÑ ÄÁÆ®·Ñ Çì´õ
+	 *            ê·¸ë¦¬ê¸° ê°œì²´ë¥¼ ìœ„í•œ ì»¨íŠ¸ë¡¤ í—¤ë”
 	 */
 	public ControlPicture(CtrlHeaderGso header) {
 		super(header);
@@ -35,9 +35,9 @@ public class ControlPicture extends GsoControl {
 	}
 
 	/**
-	 * ±×¸² °³Ã¼ÀÇ ¼Ó¼º °´Ã¼¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ê·¸ë¦¼ ê°œì²´ì˜ ì†ì„± ê°ì²´ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ±×¸² °³Ã¼ÀÇ ¼Ó¼º °´Ã¼
+	 * @return ê·¸ë¦¼ ê°œì²´ì˜ ì†ì„± ê°ì²´
 	 */
 	public ShapeComponentPicture getShapeComponentPicture() {
 		return shapeComponentPicture;

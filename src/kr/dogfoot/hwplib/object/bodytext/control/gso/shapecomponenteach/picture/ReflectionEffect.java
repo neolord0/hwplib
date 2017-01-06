@@ -1,335 +1,335 @@
-package kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponenteach.picture;
+ï»¿package kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponenteach.picture;
 
 /**
- * ¹İ»ç È¿°ú ¼Ó¼º
+ * ë°˜ì‚¬ íš¨ê³¼ ì†ì„±
  * 
  * @author neolord
  */
 public class ReflectionEffect {
 	/**
-	 * ¹İ»ç ½ºÅ¸ÀÏ (Á¤º¸ ¾øÀ½)
+	 * ë°˜ì‚¬ ìŠ¤íƒ€ì¼ (ì •ë³´ ì—†ìŒ)
 	 */
 	private int style;
 	/**
-	 * ¹İ°æ
+	 * ë°˜ê²½
 	 */
 	private float radius;
 	/**
-	 * ¹æÇâ
+	 * ë°©í–¥
 	 */
 	private float direction;
 	/**
-	 * °Å¸®
+	 * ê±°ë¦¬
 	 */
 	private float distance;
 	/**
-	 * xÃà ±â¿ï±â °¢µµ
+	 * xì¶• ê¸°ìš¸ê¸° ê°ë„
 	 */
 	private float tiltAngleX;
 	/**
-	 * yÃà ±â¿ï±â °¢µµ
+	 * yì¶• ê¸°ìš¸ê¸° ê°ë„
 	 */
 	private float tiltAngleY;
 	/**
-	 * xÃà È®´ë ºñÀ²
+	 * xì¶• í™•ëŒ€ ë¹„ìœ¨
 	 */
 	private float zoomRateX;
 	/**
-	 * yÃà È®´ë ºñÀ²
+	 * yì¶• í™•ëŒ€ ë¹„ìœ¨
 	 */
 	private float zoomRateY;
 	/**
-	 * È¸Àü ½ºÅ¸ÀÏ (Á¤º¸ ¾øÀ½)
+	 * íšŒì „ ìŠ¤íƒ€ì¼ (ì •ë³´ ì—†ìŒ)
 	 */
 	private int rotationStyle;
 	/**
-	 * ½ÃÀÛ Åõ¸íµµ
+	 * ì‹œì‘ íˆ¬ëª…ë„
 	 */
 	private float startTransparency;
 	/**
-	 * ½ÃÀÛ À§Ä¡
+	 * ì‹œì‘ ìœ„ì¹˜
 	 */
 	private float startPosition;
 	/**
-	 * ³¡ Åõ¸íµµ
+	 * ë íˆ¬ëª…ë„
 	 */
 	private float endTransparency;
 	/**
-	 * ³¡ À§Ä¡
+	 * ë ìœ„ì¹˜
 	 */
 	private float endPosition;
 	/**
-	 * ¿ÀÇÁ¼Â ¹æÇâ
+	 * ì˜¤í”„ì…‹ ë°©í–¥
 	 */
 	private float offsetDirection;
 
 	/**
-	 * »ı¼ºÀÚ
+	 * ìƒì„±ì
 	 */
 	public ReflectionEffect() {
 	}
 
 	/**
-	 * ¹İ»ç ½ºÅ¸ÀÏÀ» ¹İÈ¯ÇÑ´Ù. (Á¤º¸ ¾øÀ½)
+	 * ë°˜ì‚¬ ìŠ¤íƒ€ì¼ì„ ë°˜í™˜í•œë‹¤. (ì •ë³´ ì—†ìŒ)
 	 * 
-	 * @return ¹İ»ç ½ºÅ¸ÀÏ
+	 * @return ë°˜ì‚¬ ìŠ¤íƒ€ì¼
 	 */
 	public int getStyle() {
 		return style;
 	}
 
 	/**
-	 * ¹İ»ç ½ºÅ¸ÀÏ¸¦ ¼³Á¤ÇÑ´Ù. (Á¤º¸ ¾øÀ½)
+	 * ë°˜ì‚¬ ìŠ¤íƒ€ì¼ë¥¼ ì„¤ì •í•œë‹¤. (ì •ë³´ ì—†ìŒ)
 	 * 
 	 * @param style
-	 *            ¹İ»ç ½ºÅ¸ÀÏ
+	 *            ë°˜ì‚¬ ìŠ¤íƒ€ì¼
 	 */
 	public void setStyle(int style) {
 		this.style = style;
 	}
 
 	/**
-	 * ¹İ°æÀ» ¹İÈ¯ÇÑ´Ù.
+	 * ë°˜ê²½ì„ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ¹İ°æ
+	 * @return ë°˜ê²½
 	 */
 	public float getRadius() {
 		return radius;
 	}
 
 	/**
-	 * ¹İ°æÀ» ¼³Á¤ÇÑ´Ù.
+	 * ë°˜ê²½ì„ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param radius
-	 *            ¹İ°æ
+	 *            ë°˜ê²½
 	 */
 	public void setRadius(float radius) {
 		this.radius = radius;
 	}
 
 	/**
-	 * ¹æÇâÀ» ¹İÈ¯ÇÑ´Ù.
+	 * ë°©í–¥ì„ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ¹æÇâ
+	 * @return ë°©í–¥
 	 */
 	public float getDirection() {
 		return direction;
 	}
 
 	/**
-	 * ¹æÇâÀ» ¼³Á¤ÇÑ´Ù.
+	 * ë°©í–¥ì„ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param direction
-	 *            ¹æÇâ
+	 *            ë°©í–¥
 	 */
 	public void setDirection(float direction) {
 		this.direction = direction;
 	}
 
 	/**
-	 * °Å¸®¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ê±°ë¦¬ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return °Å¸®
+	 * @return ê±°ë¦¬
 	 */
 	public float getDistance() {
 		return distance;
 	}
 
 	/**
-	 * °Å¸®¸¦ ¼³Á¤ÇÑ´Ù.
+	 * ê±°ë¦¬ë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param distance
-	 *            °Å¸®
+	 *            ê±°ë¦¬
 	 */
 	public void setDistance(float distance) {
 		this.distance = distance;
 	}
 
 	/**
-	 * xÃà ±â¿ï±â °¢µµ¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * xì¶• ê¸°ìš¸ê¸° ê°ë„ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return xÃà ±â¿ï±â °¢µµ
+	 * @return xì¶• ê¸°ìš¸ê¸° ê°ë„
 	 */
 	public float getTiltAngleX() {
 		return tiltAngleX;
 	}
 
 	/**
-	 * xÃà ±â¿ï±â °¢µµ¸¦ ¼³Á¤ÇÑ´Ù.
+	 * xì¶• ê¸°ìš¸ê¸° ê°ë„ë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param tiltAngleX
-	 *            xÃà ±â¿ï±â °¢µµ
+	 *            xì¶• ê¸°ìš¸ê¸° ê°ë„
 	 */
 	public void setTiltAngleX(float tiltAngleX) {
 		this.tiltAngleX = tiltAngleX;
 	}
 
 	/**
-	 * yÃà ±â¿ï±â °¢µµ¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * yì¶• ê¸°ìš¸ê¸° ê°ë„ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return yÃà ±â¿ï±â °¢µµ
+	 * @return yì¶• ê¸°ìš¸ê¸° ê°ë„
 	 */
 	public float getTiltAngleY() {
 		return tiltAngleY;
 	}
 
 	/**
-	 * yÃà ±â¿ï±â °¢µµ¸¦ ¼³Á¤ÇÑ´Ù.
+	 * yì¶• ê¸°ìš¸ê¸° ê°ë„ë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param tiltAngleY
-	 *            yÃà ±â¿ï±â °¢µµ
+	 *            yì¶• ê¸°ìš¸ê¸° ê°ë„
 	 */
 	public void setTiltAngleY(float tiltAngleY) {
 		this.tiltAngleY = tiltAngleY;
 	}
 
 	/**
-	 * xÃà È®´ë ºñÀ²À» ¹İÈ¯ÇÑ´Ù.
+	 * xì¶• í™•ëŒ€ ë¹„ìœ¨ì„ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return xÃà È®´ë ºñÀ²
+	 * @return xì¶• í™•ëŒ€ ë¹„ìœ¨
 	 */
 	public float getZoomRateX() {
 		return zoomRateX;
 	}
 
 	/**
-	 * xÃà È®´ë ºñÀ²À» ¼³Á¤ÇÑ´Ù.
+	 * xì¶• í™•ëŒ€ ë¹„ìœ¨ì„ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param zoomRateX
-	 *            xÃà È®´ë ºñÀ²
+	 *            xì¶• í™•ëŒ€ ë¹„ìœ¨
 	 */
 	public void setZoomRateX(float zoomRateX) {
 		this.zoomRateX = zoomRateX;
 	}
 
 	/**
-	 * yÃà È®´ë ºñÀ²À» ¹İÈ¯ÇÑ´Ù.
+	 * yì¶• í™•ëŒ€ ë¹„ìœ¨ì„ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return yÃà È®´ë ºñÀ²
+	 * @return yì¶• í™•ëŒ€ ë¹„ìœ¨
 	 */
 	public float getZoomRateY() {
 		return zoomRateY;
 	}
 
 	/**
-	 * yÃà È®´ë ºñÀ²À» ¼³Á¤ÇÑ´Ù.
+	 * yì¶• í™•ëŒ€ ë¹„ìœ¨ì„ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param zoomRateY
-	 *            yÃà È®´ë ºñÀ²
+	 *            yì¶• í™•ëŒ€ ë¹„ìœ¨
 	 */
 	public void setZoomRateY(float zoomRateY) {
 		this.zoomRateY = zoomRateY;
 	}
 
 	/**
-	 * È¸Àü ½ºÅ¸ÀÏÀ» ¹İÈ¯ÇÑ´Ù. (Á¤º¸ ¾øÀ½)
+	 * íšŒì „ ìŠ¤íƒ€ì¼ì„ ë°˜í™˜í•œë‹¤. (ì •ë³´ ì—†ìŒ)
 	 * 
-	 * @return È¸Àü ½ºÅ¸ÀÏ
+	 * @return íšŒì „ ìŠ¤íƒ€ì¼
 	 */
 	public int getRotationStyle() {
 		return rotationStyle;
 	}
 
 	/**
-	 * È¸Àü ½ºÅ¸ÀÏÀ» ¼³Á¤ÇÑ´Ù. (Á¤º¸ ¾øÀ½)
+	 * íšŒì „ ìŠ¤íƒ€ì¼ì„ ì„¤ì •í•œë‹¤. (ì •ë³´ ì—†ìŒ)
 	 * 
 	 * @param rotationStyle
-	 *            È¸Àü ½ºÅ¸ÀÏ
+	 *            íšŒì „ ìŠ¤íƒ€ì¼
 	 */
 	public void setRotationStyle(int rotationStyle) {
 		this.rotationStyle = rotationStyle;
 	}
 
 	/**
-	 * ½ÃÀÛ Åõ¸íµµ¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ì‹œì‘ íˆ¬ëª…ë„ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ½ÃÀÛ Åõ¸íµµ
+	 * @return ì‹œì‘ íˆ¬ëª…ë„
 	 */
 	public float getStartTransparency() {
 		return startTransparency;
 	}
 
 	/**
-	 * ½ÃÀÛ Åõ¸íµµ¸¦ ¼³Á¤ÇÑ´Ù.
+	 * ì‹œì‘ íˆ¬ëª…ë„ë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param startTransparency
-	 *            ½ÃÀÛ Åõ¸íµµ
+	 *            ì‹œì‘ íˆ¬ëª…ë„
 	 */
 	public void setStartTransparency(float startTransparency) {
 		this.startTransparency = startTransparency;
 	}
 
 	/**
-	 * ½ÃÀÛ À§Ä¡¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ì‹œì‘ ìœ„ì¹˜ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ½ÃÀÛ À§Ä¡
+	 * @return ì‹œì‘ ìœ„ì¹˜
 	 */
 	public float getStartPosition() {
 		return startPosition;
 	}
 
 	/**
-	 * ½ÃÀÛ À§Ä¡¸¦ ¼³Á¤ÇÑ´Ù.
+	 * ì‹œì‘ ìœ„ì¹˜ë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param startPosition
-	 *            ½ÃÀÛ À§Ä¡
+	 *            ì‹œì‘ ìœ„ì¹˜
 	 */
 	public void setStartPosition(float startPosition) {
 		this.startPosition = startPosition;
 	}
 
 	/**
-	 * ³¡ Åõ¸íµµ¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ë íˆ¬ëª…ë„ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ³¡ Åõ¸íµµ
+	 * @return ë íˆ¬ëª…ë„
 	 */
 	public float getEndTransparency() {
 		return endTransparency;
 	}
 
 	/**
-	 * ³¡ Åõ¸íµµ¸¦ ¼³Á¤ÇÑ´Ù.
+	 * ë íˆ¬ëª…ë„ë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param endTransparency
-	 *            ³¡ Åõ¸íµµ
+	 *            ë íˆ¬ëª…ë„
 	 */
 	public void setEndTransparency(float endTransparency) {
 		this.endTransparency = endTransparency;
 	}
 
 	/**
-	 * ³¡ À§Ä¡¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ë ìœ„ì¹˜ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ³¡ À§Ä¡
+	 * @return ë ìœ„ì¹˜
 	 */
 	public float getEndPosition() {
 		return endPosition;
 	}
 
 	/**
-	 * ³¡ À§Ä¡¸¦ ¼³Á¤ÇÑ´Ù.
+	 * ë ìœ„ì¹˜ë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param endPosition
-	 *            ³¡ À§Ä¡
+	 *            ë ìœ„ì¹˜
 	 */
 	public void setEndPosition(float endPosition) {
 		this.endPosition = endPosition;
 	}
 
 	/**
-	 * ¿ÀÇÁ¼Â ¹æÇâÀ» ¹İÈ¯ÇÑ´Ù.
+	 * ì˜¤í”„ì…‹ ë°©í–¥ì„ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ¿ÀÇÁ¼Â ¹æÇâ
+	 * @return ì˜¤í”„ì…‹ ë°©í–¥
 	 */
 	public float getOffsetDirection() {
 		return offsetDirection;
 	}
 
 	/**
-	 * ¿ÀÇÁ¼Â ¹æÇâÀ» ¼³Á¤ÇÑ´Ù.
+	 * ì˜¤í”„ì…‹ ë°©í–¥ì„ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param offsetDirection
-	 *            ¿ÀÇÁ¼Â ¹æÇâ
+	 *            ì˜¤í”„ì…‹ ë°©í–¥
 	 */
 	public void setOffsetDirection(float offsetDirection) {
 		this.offsetDirection = offsetDirection;

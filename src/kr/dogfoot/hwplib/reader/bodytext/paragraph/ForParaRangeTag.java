@@ -1,4 +1,4 @@
-package kr.dogfoot.hwplib.reader.bodytext.paragraph;
+ï»¿package kr.dogfoot.hwplib.reader.bodytext.paragraph;
 
 import java.io.IOException;
 
@@ -8,20 +8,20 @@ import kr.dogfoot.hwplib.object.bodytext.paragraph.rangetag.RangeTagItem;
 import kr.dogfoot.hwplib.util.compoundFile.StreamReader;
 
 /**
- * ¹®¼­ÀÇ ¿µ¿ª Å×±× ·¹ÄÚµå¸¦ ÀĞ±â À§ÇÑ °´Ã¼
+ * ë¬¸ì„œì˜ ì˜ì—­ í…Œê·¸ ë ˆì½”ë“œë¥¼ ì½ê¸° ìœ„í•œ ê°ì²´
  * 
  * @author neolord
  */
 public class ForParaRangeTag {
 	/**
-	 * ¹®¼­ÀÇ ¿µ¿ª ÅÂ±× ·¹ÄÚµå¸¦ ÀĞ´Â´Ù.
+	 * ë¬¸ì„œì˜ ì˜ì—­ íƒœê·¸ ë ˆì½”ë“œë¥¼ ì½ëŠ”ë‹¤.
 	 * 
 	 * @param p
-	 *            ¹®´Ü °´Ã¼
+	 *            ë¬¸ë‹¨ ê°ì²´
 	 * @param sr
-	 *            ½ºÆ®¸² ¸®´õ
+	 *            ìŠ¤íŠ¸ë¦¼ ë¦¬ë”
 	 * @param size
-	 *            ·¹ÄÚµå Å©±â
+	 *            ë ˆì½”ë“œ í¬ê¸°
 	 * @throws Exception
 	 */
 	public static void read(Paragraph p, StreamReader sr, short size)
@@ -39,12 +39,12 @@ public class ForParaRangeTag {
 	}
 
 	/**
-	 * ¿µ¿ª ÅÂ±× ¾ÆÀÌÅÛÀÇ ¿µ¿ª ºÎºĞÀ» ÀĞ´Â´Ù.
+	 * ì˜ì—­ íƒœê·¸ ì•„ì´í…œì˜ ì˜ì—­ ë¶€ë¶„ì„ ì½ëŠ”ë‹¤.
 	 * 
 	 * @param rti
-	 *            ¿µ¿ª ÅÂ±× ¾ÆÀÌÅÛ
+	 *            ì˜ì—­ íƒœê·¸ ì•„ì´í…œ
 	 * @param sr
-	 *            ½ºÆ®¸² ¸®´õ
+	 *            ìŠ¤íŠ¸ë¦¼ ë¦¬ë”
 	 * @throws IOException
 	 * @throws Exception
 	 */

@@ -1,4 +1,4 @@
-package kr.dogfoot.hwplib.test;
+ï»¿package kr.dogfoot.hwplib.test;
 
 import kr.dogfoot.hwplib.object.HWPFile;
 import kr.dogfoot.hwplib.reader.HWPReader;
@@ -8,28 +8,28 @@ public class TestReadingHWPFile {
 		test("sample_hwp\\test-blank.hwp");
 		test("sample_hwp\\test-etc.hwp");
 		test("sample_hwp\\test-ole.hwp");
-		test("sample_hwp\\test-°¢ÁÖ¹ÌÁÖ.hwp");
-		test("sample_hwp\\test-±×¸².hwp");
-		test("sample_hwp\\test-±Û»óÀÚ.hwp");
-		test("sample_hwp\\test-±Û»óÀÚ-¾ĞÃà.hwp");
-		test("sample_hwp\\test-±ÛÀÚ°ãÄ§.hwp");
-		test("sample_hwp\\test-µ¡¸».hwp");
-		test("sample_hwp\\test-¸Ó¸®±Û²¿¸®±Û.hwp");
-		test("sample_hwp\\test-¹­À½.hwp");
-		test("sample_hwp\\test-¹ÙÅÁÂÊ.hwp");
-		test("sample_hwp\\test-»õ¹øÈ£ÁöÁ¤.hwp");
-		test("sample_hwp\\test-¼±-»ç°¢Çü.hwp");
-		test("sample_hwp\\test-¼ö½Ä.hwp");
-		test("sample_hwp\\test-¼ûÀº¼³¸í.hwp");
-		test("sample_hwp\\test-ÀÌ¹ÌÁöÃß°¡.hwp");
-		test("sample_hwp\\test-Â÷Æ®.hwp");
-		test("sample_hwp\\test-Ã¥°¥ÇÇ.hwp");
-		test("sample_hwp\\test-ÆäÀÌÁö¼û±è.hwp");
-		test("sample_hwp\\test-ÇÊµå.hwp");
+		test("sample_hwp\\test-ê°ì£¼ë¯¸ì£¼.hwp");
+		test("sample_hwp\\test-ê·¸ë¦¼.hwp");
+		test("sample_hwp\\test-ê¸€ìƒì.hwp");
+		test("sample_hwp\\test-ê¸€ìƒì-ì••ì¶•.hwp");
+		test("sample_hwp\\test-ê¸€ìê²¹ì¹¨.hwp");
+		test("sample_hwp\\test-ë§ë§.hwp");
+		test("sample_hwp\\test-ë¨¸ë¦¬ê¸€ê¼¬ë¦¬ê¸€.hwp");
+		test("sample_hwp\\test-ë¬¶ìŒ.hwp");
+		test("sample_hwp\\test-ë°”íƒ•ìª½.hwp");
+		test("sample_hwp\\test-ìƒˆë²ˆí˜¸ì§€ì •.hwp");
+		test("sample_hwp\\test-ì„ -ì‚¬ê°í˜•.hwp");
+		test("sample_hwp\\test-ìˆ˜ì‹.hwp");
+		test("sample_hwp\\test-ìˆ¨ì€ì„¤ëª….hwp");
+		test("sample_hwp\\test-ì´ë¯¸ì§€ì¶”ê°€.hwp");
+		test("sample_hwp\\test-ì°¨íŠ¸.hwp");
+		test("sample_hwp\\test-ì±…ê°ˆí”¼.hwp");
+		test("sample_hwp\\test-í˜ì´ì§€ìˆ¨ê¹€.hwp");
+		test("sample_hwp\\test-í•„ë“œ.hwp");
 	}
 
 	private static void test(String filename) throws Exception {
 		HWPFile hwpfile = HWPReader.fromFile(filename);
-		System.out.println(filename + "  ÀĞ±â ¼º°ø !!");
+		System.out.println(filename + "  ì½ê¸° ì„±ê³µ !!");
 	}
 }

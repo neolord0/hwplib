@@ -1,105 +1,105 @@
-package kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponenteach.picture;
+ï»¿package kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponenteach.picture;
 
 /**
- * ¾ÈÂÊ ¿©¹é Á¤º¸
+ * ì•ˆìª½ ì—¬ë°± ì •ë³´
  * 
  * @author neolord
  */
 public class InnerMargin {
 	/**
-	 * ¿ŞÂÊ ¿©¹é
+	 * ì™¼ìª½ ì—¬ë°±
 	 */
 	private int left;
 	/**
-	 * ¿À¸¥ÂÊ ¿©¹é
+	 * ì˜¤ë¥¸ìª½ ì—¬ë°±
 	 */
 	private int right;
 	/**
-	 * À§ÂÊ ¿©¹é
+	 * ìœ„ìª½ ì—¬ë°±
 	 */
 	private int top;
 	/**
-	 * ¾Æ·¡ÂÊ ¿©¹é
+	 * ì•„ë˜ìª½ ì—¬ë°±
 	 */
 	private int bottom;
 
 	/**
-	 * »ı¼ºÀÚ
+	 * ìƒì„±ì
 	 */
 	public InnerMargin() {
 	}
 
 	/**
-	 * ¿ŞÂÊ ¿©¹éÀÇ Å©±â¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ì™¼ìª½ ì—¬ë°±ì˜ í¬ê¸°ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ¿ŞÂÊ ¿©¹éÀÇ Å©±â
+	 * @return ì™¼ìª½ ì—¬ë°±ì˜ í¬ê¸°
 	 */
 	public int getLeft() {
 		return left;
 	}
 
 	/**
-	 * ¿ŞÂÊ ¿©¹éÀÇ Å©±â¸¦ ¼³Á¤ÇÑ´Ù.
+	 * ì™¼ìª½ ì—¬ë°±ì˜ í¬ê¸°ë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param left
-	 *            ¿ŞÂÊ ¿©¹éÀÇ Å©±â
+	 *            ì™¼ìª½ ì—¬ë°±ì˜ í¬ê¸°
 	 */
 	public void setLeft(int left) {
 		this.left = left;
 	}
 
 	/**
-	 * ¿À¸¥ÂÊ ¿©¹éÀÇ Å©±â¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ì˜¤ë¥¸ìª½ ì—¬ë°±ì˜ í¬ê¸°ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ¿À¸¥ÂÊ ¿©¹éÀÇ Å©±â
+	 * @return ì˜¤ë¥¸ìª½ ì—¬ë°±ì˜ í¬ê¸°
 	 */
 	public int getRight() {
 		return right;
 	}
 
 	/**
-	 * ¿À¸¥ÂÊ ¿©¹éÀÇ Å©±â¸¦ ¼³Á¤ÇÑ´Ù.
+	 * ì˜¤ë¥¸ìª½ ì—¬ë°±ì˜ í¬ê¸°ë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param right
-	 *            ¿À¸¥ÂÊ ¿©¹éÀÇ Å©±â
+	 *            ì˜¤ë¥¸ìª½ ì—¬ë°±ì˜ í¬ê¸°
 	 */
 	public void setRight(int right) {
 		this.right = right;
 	}
 
 	/**
-	 * À§ÂÊ ¿©¹éÀÇ Å©±â¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ìœ„ìª½ ì—¬ë°±ì˜ í¬ê¸°ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return À§ÂÊ ¿©¹éÀÇ Å©±â
+	 * @return ìœ„ìª½ ì—¬ë°±ì˜ í¬ê¸°
 	 */
 	public int getTop() {
 		return top;
 	}
 
 	/**
-	 * À§ÂÊ ¿©¹éÀÇ Å©±â¸¦ ¼³Á¤ÇÑ´Ù.
+	 * ìœ„ìª½ ì—¬ë°±ì˜ í¬ê¸°ë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param top
-	 *            À§ÂÊ ¿©¹éÀÇ Å©±â
+	 *            ìœ„ìª½ ì—¬ë°±ì˜ í¬ê¸°
 	 */
 	public void setTop(int top) {
 		this.top = top;
 	}
 
 	/**
-	 * ¾Æ·¡ÂÊ ¿©¹éÀÇ Å©±â¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ì•„ë˜ìª½ ì—¬ë°±ì˜ í¬ê¸°ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ¾Æ·¡ÂÊ ¿©¹éÀÇ Å©±â
+	 * @return ì•„ë˜ìª½ ì—¬ë°±ì˜ í¬ê¸°
 	 */
 	public int getBottom() {
 		return bottom;
 	}
 
 	/**
-	 * ¾Æ·¡ÂÊ ¿©¹éÀÇ Å©±â¸¦ ¼³Á¤ÇÑ´Ù.
+	 * ì•„ë˜ìª½ ì—¬ë°±ì˜ í¬ê¸°ë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param bottom
-	 *            ¾Æ·¡ÂÊ ¿©¹éÀÇ Å©±â
+	 *            ì•„ë˜ìª½ ì—¬ë°±ì˜ í¬ê¸°
 	 */
 	public void setBottom(int bottom) {
 		this.bottom = bottom;

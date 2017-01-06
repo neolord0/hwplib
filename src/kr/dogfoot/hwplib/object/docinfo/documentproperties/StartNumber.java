@@ -1,151 +1,151 @@
-package kr.dogfoot.hwplib.object.docinfo.documentproperties;
+ï»¿package kr.dogfoot.hwplib.object.docinfo.documentproperties;
 
 /**
- * °¢Á¾ ½ÃÀÛ¹øÈ£¿¡ ´ëÇÑ Á¤º¸
+ * ê°ì¢… ì‹œì‘ë²ˆí˜¸ì— ëŒ€í•œ ì •ë³´
  * 
  * @author neolord
  */
 public class StartNumber {
 	/**
-	 * ÆäÀÌÁö ½ÃÀÛ ¹øÈ£
+	 * í˜ì´ì§€ ì‹œì‘ ë²ˆí˜¸
 	 */
 	private int page;
 	/**
-	 * °¢ÁÖ ½ÃÀÛ ¹øÈ£
+	 * ê°ì£¼ ì‹œì‘ ë²ˆí˜¸
 	 */
 	private int footnote;
 	/**
-	 * ¹ÌÁÖ ½ÃÀÛ ¹øÈ£
+	 * ë¯¸ì£¼ ì‹œì‘ ë²ˆí˜¸
 	 */
 	private int endnote;
 	/**
-	 * ±×¸² ½ÃÀÛ ¹øÈ£
+	 * ê·¸ë¦¼ ì‹œì‘ ë²ˆí˜¸
 	 */
 	private int picture;
 	/**
-	 * Ç¥ ½ÃÀÛ ¹øÈ£
+	 * í‘œ ì‹œì‘ ë²ˆí˜¸
 	 */
 	private int table;
 	/**
-	 * ¼ö½Ä ½ÃÀÛ ¹øÈ£
+	 * ìˆ˜ì‹ ì‹œì‘ ë²ˆí˜¸
 	 */
 	private int equation;
 
 	/**
-	 * »ı¼ºÀÚ
+	 * ìƒì„±ì
 	 */
 	public StartNumber() {
 	}
 
 	/**
-	 * ÆäÀÌÁö ½ÃÀÛ ¹øÈ£¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * í˜ì´ì§€ ì‹œì‘ ë²ˆí˜¸ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ÆäÀÌÁö ½ÃÀÛ ¹øÈ£
+	 * @return í˜ì´ì§€ ì‹œì‘ ë²ˆí˜¸
 	 */
 	public int getPage() {
 		return page;
 	}
 
 	/**
-	 * ÆäÀÌÁö ½ÃÀÛ ¹øÈ£¸¦ ¼³Á¤ÇÑ´Ù.
+	 * í˜ì´ì§€ ì‹œì‘ ë²ˆí˜¸ë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param page
-	 *            ÆäÀÌÁö ½ÃÀÛ ¹øÈ£
+	 *            í˜ì´ì§€ ì‹œì‘ ë²ˆí˜¸
 	 */
 	public void setPage(int page) {
 		this.page = page;
 	}
 
 	/**
-	 * °¢ÁÖ ½ÃÀÛ ¹øÈ£¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ê°ì£¼ ì‹œì‘ ë²ˆí˜¸ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return °¢ÁÖ ½ÃÀÛ ¹øÈ£
+	 * @return ê°ì£¼ ì‹œì‘ ë²ˆí˜¸
 	 */
 	public int getFootnote() {
 		return footnote;
 	}
 
 	/**
-	 * °¢ÁÖ ½ÃÀÛ ¹øÈ£¸¦ ¼³Á¤ÇÑ´Ù.
+	 * ê°ì£¼ ì‹œì‘ ë²ˆí˜¸ë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param footnote
-	 *            °¢ÁÖ ½ÃÀÛ ¹øÈ£
+	 *            ê°ì£¼ ì‹œì‘ ë²ˆí˜¸
 	 */
 	public void setFootnote(int footnote) {
 		this.footnote = footnote;
 	}
 
 	/**
-	 * ¹ÌÁÖ ½ÃÀÛ ¹øÈ£¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ë¯¸ì£¼ ì‹œì‘ ë²ˆí˜¸ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ¹ÌÁÖ ½ÃÀÛ ¹øÈ£
+	 * @return ë¯¸ì£¼ ì‹œì‘ ë²ˆí˜¸
 	 */
 	public int getEndnote() {
 		return endnote;
 	}
 
 	/**
-	 * ¹ÌÁÖ ½ÃÀÛ ¹øÈ£¸¦ ¼³Á¤ÇÑ´Ù.
+	 * ë¯¸ì£¼ ì‹œì‘ ë²ˆí˜¸ë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param endnote
-	 *            ¹ÌÁÖ ½ÃÀÛ ¹øÈ£
+	 *            ë¯¸ì£¼ ì‹œì‘ ë²ˆí˜¸
 	 */
 	public void setEndnote(int endnote) {
 		this.endnote = endnote;
 	}
 
 	/**
-	 * ±×¸² ½ÃÀÛ ¹øÈ£¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ê·¸ë¦¼ ì‹œì‘ ë²ˆí˜¸ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ±×¸² ½ÃÀÛ ¹øÈ£
+	 * @return ê·¸ë¦¼ ì‹œì‘ ë²ˆí˜¸
 	 */
 	public int getPicture() {
 		return picture;
 	}
 
 	/**
-	 * ±×¸² ½ÃÀÛ ¹øÈ£¸¦ ¼³Á¤ÇÑ´Ù.
+	 * ê·¸ë¦¼ ì‹œì‘ ë²ˆí˜¸ë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param picture
-	 *            ±×¸² ½ÃÀÛ ¹øÈ£
+	 *            ê·¸ë¦¼ ì‹œì‘ ë²ˆí˜¸
 	 */
 	public void setPicture(int picture) {
 		this.picture = picture;
 	}
 
 	/**
-	 * Ç¥ ½ÃÀÛ ¹øÈ£¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * í‘œ ì‹œì‘ ë²ˆí˜¸ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return Ç¥ ½ÃÀÛ ¹øÈ£
+	 * @return í‘œ ì‹œì‘ ë²ˆí˜¸
 	 */
 	public int getTable() {
 		return table;
 	}
 
 	/**
-	 * Ç¥ ½ÃÀÛ ¹øÈ£¸¦ ¼³Á¤ÇÑ´Ù.
+	 * í‘œ ì‹œì‘ ë²ˆí˜¸ë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param table
-	 *            Ç¥ ½ÃÀÛ ¹øÈ£
+	 *            í‘œ ì‹œì‘ ë²ˆí˜¸
 	 */
 	public void setTable(int table) {
 		this.table = table;
 	}
 
 	/**
-	 * ¼ö½Ä ½ÃÀÛ ¹øÈ£¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ìˆ˜ì‹ ì‹œì‘ ë²ˆí˜¸ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ¼ö½Ä ½ÃÀÛ ¹øÈ£
+	 * @return ìˆ˜ì‹ ì‹œì‘ ë²ˆí˜¸
 	 */
 	public int getEquation() {
 		return equation;
 	}
 
 	/**
-	 * ¼ö½Ä ½ÃÀÛ ¹øÈ£¸¦ ¼³Á¤ÇÑ´Ù.
+	 * ìˆ˜ì‹ ì‹œì‘ ë²ˆí˜¸ë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param equation
-	 *            ¼ö½Ä ½ÃÀÛ ¹øÈ£
+	 *            ìˆ˜ì‹ ì‹œì‘ ë²ˆí˜¸
 	 */
 	public void setEquation(int equation) {
 		this.equation = equation;

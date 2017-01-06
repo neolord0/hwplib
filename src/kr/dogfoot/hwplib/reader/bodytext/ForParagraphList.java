@@ -1,4 +1,4 @@
-package kr.dogfoot.hwplib.reader.bodytext;
+ï»¿package kr.dogfoot.hwplib.reader.bodytext;
 
 import kr.dogfoot.hwplib.object.bodytext.ParagraphListInterface;
 import kr.dogfoot.hwplib.object.bodytext.paragraph.Paragraph;
@@ -6,18 +6,18 @@ import kr.dogfoot.hwplib.reader.bodytext.paragraph.ForParagraph;
 import kr.dogfoot.hwplib.util.compoundFile.StreamReader;
 
 /**
- * ¹®´Ü ¸®½ºÆ®¸¦ ÀĞ´Â °´Ã¼
+ * ë¬¸ë‹¨ ë¦¬ìŠ¤íŠ¸ë¥¼ ì½ëŠ” ê°ì²´
  * 
  * @author neolord
  */
 public class ForParagraphList {
 	/**
-	 * ¹®´Ü ¸®½ºÆ®À» ÀĞ´Â´Ù.
+	 * ë¬¸ë‹¨ ë¦¬ìŠ¤íŠ¸ì„ ì½ëŠ”ë‹¤.
 	 * 
 	 * @param pli
-	 *            ¹®´Ü ¸®½ºÆ® °´Ã¼
+	 *            ë¬¸ë‹¨ ë¦¬ìŠ¤íŠ¸ ê°ì²´
 	 * @param sr
-	 *            ½ºÆ®¸² ¸®´õ
+	 *            ìŠ¤íŠ¸ë¦¼ ë¦¬ë”
 	 * @throws Exception
 	 */
 	public static void read(ParagraphListInterface pli, StreamReader sr)

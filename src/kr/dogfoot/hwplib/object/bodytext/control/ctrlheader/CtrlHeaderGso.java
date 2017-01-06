@@ -1,32 +1,32 @@
-package kr.dogfoot.hwplib.object.bodytext.control.ctrlheader;
+ï»¿package kr.dogfoot.hwplib.object.bodytext.control.ctrlheader;
 
 import kr.dogfoot.hwplib.object.bodytext.control.ControlType;
 import kr.dogfoot.hwplib.object.bodytext.control.ctrlheader.gso.GsoHeaderProperty;
 
 /**
- * ±×¸®±â °³Ã¼À» À§ÇÑ ÄÁÆ®·Ñ Çì´õ ·¹ÄÚµå
+ * ê·¸ë¦¬ê¸° ê°œì²´ì„ ìœ„í•œ ì»¨íŠ¸ë¡¤ í—¤ë” ë ˆì½”ë“œ
  * 
  * @author neolord
  */
 public class CtrlHeaderGso extends CtrlHeader {
 	/**
-	 * ¼Ó¼º
+	 * ì†ì„±
 	 */
 	private GsoHeaderProperty property;
 	/**
-	 * ¼¼·Î ¿ÀÇÁ¼Â °ª
+	 * ì„¸ë¡œ ì˜¤í”„ì…‹ ê°’
 	 */
 	private long yOffset;
 	/**
-	 * °¡·Î ¿ÀÇÁ¼Â °ª
+	 * ê°€ë¡œ ì˜¤í”„ì…‹ ê°’
 	 */
 	private long xOffset;
 	/**
-	 * ¿ÀºêÁ§Æ®ÀÇ Æø
+	 * ì˜¤ë¸Œì íŠ¸ì˜ í­
 	 */
 	private long width;
 	/**
-	 * ¿ÀºêÁ§Æ®ÀÇ ³ôÀÌ
+	 * ì˜¤ë¸Œì íŠ¸ì˜ ë†’ì´
 	 */
 	private long height;
 	/**
@@ -34,36 +34,36 @@ public class CtrlHeaderGso extends CtrlHeader {
 	 */
 	private int zOrder;
 	/**
-	 * ¿ÀºêÁ§Æ®ÀÇ ¹Ù±ù ¿Ş¦U ¿©¹é
+	 * ì˜¤ë¸Œì íŠ¸ì˜ ë°”ê¹¥ ì™¼ìª¾ ì—¬ë°±
 	 */
 	private int outterMarginLeft;
 	/**
-	 * ¿ÀºêÁ§Æ®ÀÇ ¹Ù±ù ¿À¸¥ÂÊ ¿©¹é
+	 * ì˜¤ë¸Œì íŠ¸ì˜ ë°”ê¹¥ ì˜¤ë¥¸ìª½ ì—¬ë°±
 	 */
 	private int outterMarginRight;
 	/**
-	 * ¿ÀºêÁ§Æ®ÀÇ ¹Ù±ù À§ÂÊ ¿©¹é
+	 * ì˜¤ë¸Œì íŠ¸ì˜ ë°”ê¹¥ ìœ„ìª½ ì—¬ë°±
 	 */
 	private int outterMarginTop;
 	/**
-	 * ¿ÀºêÁ§Æ®ÀÇ ¹Ù±ù ¾Æ·¡ÂÊ ¿©¹é
+	 * ì˜¤ë¸Œì íŠ¸ì˜ ë°”ê¹¥ ì•„ë˜ìª½ ì—¬ë°±
 	 */
 	private int OutterMarginBottom;
 	/**
-	 * ¹®¼­ ³» °¢ °³Ã¼¿¡ ´ëÇÑ °íÀ¯ ¾ÆÀÌµğ
+	 * ë¬¸ì„œ ë‚´ ê° ê°œì²´ì— ëŒ€í•œ ê³ ìœ  ì•„ì´ë””
 	 */
 	private long instanceId;
 	/**
-	 * ÂÊ³ª´® ¹æÁö on(1) / off(0)
+	 * ìª½ë‚˜ëˆ” ë°©ì§€ on(1) / off(0)
 	 */
 	private boolean preventPageDivide;
 	/**
-	 * °³Ã¼ ¼³¸í¹®
+	 * ê°œì²´ ì„¤ëª…ë¬¸
 	 */
 	private String explanation;
 
 	/**
-	 * »ı¼ºÀÚ
+	 * ìƒì„±ì
 	 */
 	public CtrlHeaderGso() {
 		super(ControlType.Gso.getCtrlId());
@@ -72,10 +72,10 @@ public class CtrlHeaderGso extends CtrlHeader {
 	}
 
 	/**
-	 * »ı¼ºÀÚ
+	 * ìƒì„±ì
 	 * 
 	 * @param controlType
-	 *            ÄÁÆ®·Ñ Å¸ÀÔ
+	 *            ì»¨íŠ¸ë¡¤ íƒ€ì…
 	 */
 	public CtrlHeaderGso(ControlType controlType) {
 		super(controlType.getCtrlId());
@@ -84,92 +84,92 @@ public class CtrlHeaderGso extends CtrlHeader {
 	}
 
 	/**
-	 * ±×¸®±â °´Ã¼ ÄÁÆ®·ÑÀÇ ¼Ó¼º °´Ã¼¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ê·¸ë¦¬ê¸° ê°ì²´ ì»¨íŠ¸ë¡¤ì˜ ì†ì„± ê°ì²´ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ±×¸®±â °´Ã¼ ÄÁÆ®·ÑÀÇ ¼Ó¼º °´Ã¼
+	 * @return ê·¸ë¦¬ê¸° ê°ì²´ ì»¨íŠ¸ë¡¤ì˜ ì†ì„± ê°ì²´
 	 */
 	public GsoHeaderProperty getProperty() {
 		return property;
 	}
 
 	/**
-	 * ¼¼·Î ¿ÀÇÁ¼Â °ªÀ» ¹İÈ¯ÇÑ´Ù.
+	 * ì„¸ë¡œ ì˜¤í”„ì…‹ ê°’ì„ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ¼¼·Î ¿ÀÇÁ¼Â °ª
+	 * @return ì„¸ë¡œ ì˜¤í”„ì…‹ ê°’
 	 */
 	public long getyOffset() {
 		return yOffset;
 	}
 
 	/**
-	 * ¼¼·Î ¿ÀÇÁ¼Â °ªÀ» ¼³Á¤ÇÑ´Ù.
+	 * ì„¸ë¡œ ì˜¤í”„ì…‹ ê°’ì„ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param yOffset
-	 *            ¼¼·Î ¿ÀÇÁ¼Â °ª
+	 *            ì„¸ë¡œ ì˜¤í”„ì…‹ ê°’
 	 */
 	public void setyOffset(long yOffset) {
 		this.yOffset = yOffset;
 	}
 
 	/**
-	 * °¡·Î ¿ÀÇÁ¼Â °ªÀ» ¹İÈ¯ÇÑ´Ù.
+	 * ê°€ë¡œ ì˜¤í”„ì…‹ ê°’ì„ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return °¡·Î ¿ÀÇÁ¼Â °ª
+	 * @return ê°€ë¡œ ì˜¤í”„ì…‹ ê°’
 	 */
 	public long getxOffset() {
 		return xOffset;
 	}
 
 	/**
-	 * °¡·Î ¿ÀÇÁ¼Â °ªÀ» ¼³Á¤ÇÑ´Ù.
+	 * ê°€ë¡œ ì˜¤í”„ì…‹ ê°’ì„ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param xOffset
-	 *            °¡·Î ¿ÀÇÁ¼Â °ª
+	 *            ê°€ë¡œ ì˜¤í”„ì…‹ ê°’
 	 */
 	public void setxOffset(long xOffset) {
 		this.xOffset = xOffset;
 	}
 
 	/**
-	 * ¿ÀºêÁ§Æ®ÀÇ ÆøÀ» ¹İÈ¯ÇÑ´Ù.
+	 * ì˜¤ë¸Œì íŠ¸ì˜ í­ì„ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ¿ÀºêÁ§Æ®ÀÇ Æø
+	 * @return ì˜¤ë¸Œì íŠ¸ì˜ í­
 	 */
 	public long getWidth() {
 		return width;
 	}
 
 	/**
-	 * ¿ÀºêÁ§Æ®ÀÇ Æø¸¦ ¼³Á¤ÇÑ´Ù.
+	 * ì˜¤ë¸Œì íŠ¸ì˜ í­ë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param width
-	 *            ¿ÀºêÁ§Æ®ÀÇ Æø
+	 *            ì˜¤ë¸Œì íŠ¸ì˜ í­
 	 */
 	public void setWidth(long width) {
 		this.width = width;
 	}
 
 	/**
-	 * ¿ÀºêÁ§Æ®ÀÇ ³ôÀÌ¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ì˜¤ë¸Œì íŠ¸ì˜ ë†’ì´ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ¿ÀºêÁ§Æ®ÀÇ ³ôÀÌ
+	 * @return ì˜¤ë¸Œì íŠ¸ì˜ ë†’ì´
 	 */
 	public long getHeight() {
 		return height;
 	}
 
 	/**
-	 * ¿ÀºêÁ§Æ®ÀÇ ³ôÀÌ¸¦ ¼³Á¤ÇÑ´Ù.
+	 * ì˜¤ë¸Œì íŠ¸ì˜ ë†’ì´ë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param height
-	 *            ¿ÀºêÁ§Æ®ÀÇ ³ôÀÌ
+	 *            ì˜¤ë¸Œì íŠ¸ì˜ ë†’ì´
 	 */
 	public void setHeight(long height) {
 		this.height = height;
 	}
 
 	/**
-	 * z-orderÀ» ¹İÈ¯ÇÑ´Ù.
+	 * z-orderì„ ë°˜í™˜í•œë‹¤.
 	 * 
 	 * @return z-order
 	 */
@@ -178,7 +178,7 @@ public class CtrlHeaderGso extends CtrlHeader {
 	}
 
 	/**
-	 * z-orderÀ» ¼³Á¤ÇÑ´Ù.
+	 * z-orderì„ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param zOrder
 	 *            z-order
@@ -188,133 +188,133 @@ public class CtrlHeaderGso extends CtrlHeader {
 	}
 
 	/**
-	 * ¿ÀºêÁ§Æ®ÀÇ ¹Ù±ù ¿Ş¦U ¿©¹éÀ» ¹İÈ¯ÇÑ´Ù.
+	 * ì˜¤ë¸Œì íŠ¸ì˜ ë°”ê¹¥ ì™¼ìª¾ ì—¬ë°±ì„ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ¿ÀºêÁ§Æ®ÀÇ ¹Ù±ù ¿Ş¦U ¿©¹é
+	 * @return ì˜¤ë¸Œì íŠ¸ì˜ ë°”ê¹¥ ì™¼ìª¾ ì—¬ë°±
 	 */
 	public int getOutterMarginLeft() {
 		return outterMarginLeft;
 	}
 
 	/**
-	 * ¿ÀºêÁ§Æ®ÀÇ ¹Ù±ù ¿Ş¦U ¿©¹éÀ» ¼³Á¤ÇÑ´Ù.
+	 * ì˜¤ë¸Œì íŠ¸ì˜ ë°”ê¹¥ ì™¼ìª¾ ì—¬ë°±ì„ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param outterMarginLeft
-	 *            ¿ÀºêÁ§Æ®ÀÇ ¹Ù±ù ¿Ş¦U ¿©¹é
+	 *            ì˜¤ë¸Œì íŠ¸ì˜ ë°”ê¹¥ ì™¼ìª¾ ì—¬ë°±
 	 */
 	public void setOutterMarginLeft(int outterMarginLeft) {
 		this.outterMarginLeft = outterMarginLeft;
 	}
 
 	/**
-	 * ¿ÀºêÁ§Æ®ÀÇ ¹Ù±ù ¿À¸¥ÂÊ ¿©¹éÀ» ¹İÈ¯ÇÑ´Ù.
+	 * ì˜¤ë¸Œì íŠ¸ì˜ ë°”ê¹¥ ì˜¤ë¥¸ìª½ ì—¬ë°±ì„ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ¿ÀºêÁ§Æ®ÀÇ ¹Ù±ù ¿À¸¥ÂÊ ¿©¹é
+	 * @return ì˜¤ë¸Œì íŠ¸ì˜ ë°”ê¹¥ ì˜¤ë¥¸ìª½ ì—¬ë°±
 	 */
 	public int getOutterMarginRight() {
 		return outterMarginRight;
 	}
 
 	/**
-	 * ¿ÀºêÁ§Æ®ÀÇ ¹Ù±ù ¿À¸¥ÂÊ ¿©¹éÀ» ¼³Á¤ÇÑ´Ù.
+	 * ì˜¤ë¸Œì íŠ¸ì˜ ë°”ê¹¥ ì˜¤ë¥¸ìª½ ì—¬ë°±ì„ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param outterMarginRight
-	 *            ¿ÀºêÁ§Æ®ÀÇ ¹Ù±ù ¿À¸¥ÂÊ ¿©¹é
+	 *            ì˜¤ë¸Œì íŠ¸ì˜ ë°”ê¹¥ ì˜¤ë¥¸ìª½ ì—¬ë°±
 	 */
 	public void setOutterMarginRight(int outterMarginRight) {
 		this.outterMarginRight = outterMarginRight;
 	}
 
 	/**
-	 * ¿ÀºêÁ§Æ®ÀÇ ¹Ù±ù À§ÂÊ ¿©¹éÀ» ¹İÈ¯ÇÑ´Ù.
+	 * ì˜¤ë¸Œì íŠ¸ì˜ ë°”ê¹¥ ìœ„ìª½ ì—¬ë°±ì„ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ¿ÀºêÁ§Æ®ÀÇ ¹Ù±ù À§ÂÊ ¿©¹é
+	 * @return ì˜¤ë¸Œì íŠ¸ì˜ ë°”ê¹¥ ìœ„ìª½ ì—¬ë°±
 	 */
 	public int getOutterMarginTop() {
 		return outterMarginTop;
 	}
 
 	/**
-	 * ¿ÀºêÁ§Æ®ÀÇ ¹Ù±ù À§ÂÊ ¿©¹éÀ» ¼³Á¤ÇÑ´Ù.
+	 * ì˜¤ë¸Œì íŠ¸ì˜ ë°”ê¹¥ ìœ„ìª½ ì—¬ë°±ì„ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param outterMarginTop
-	 *            ¿ÀºêÁ§Æ®ÀÇ ¹Ù±ù À§ÂÊ ¿©¹é
+	 *            ì˜¤ë¸Œì íŠ¸ì˜ ë°”ê¹¥ ìœ„ìª½ ì—¬ë°±
 	 */
 	public void setOutterMarginTop(int outterMarginTop) {
 		this.outterMarginTop = outterMarginTop;
 	}
 
 	/**
-	 * ¿ÀºêÁ§Æ®ÀÇ ¹Ù±ù ¾Æ·¡ÂÊ ¿©¹éÀ» ¹İÈ¯ÇÑ´Ù.
+	 * ì˜¤ë¸Œì íŠ¸ì˜ ë°”ê¹¥ ì•„ë˜ìª½ ì—¬ë°±ì„ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ¿ÀºêÁ§Æ®ÀÇ ¹Ù±ù ¾Æ·¡ÂÊ ¿©¹é
+	 * @return ì˜¤ë¸Œì íŠ¸ì˜ ë°”ê¹¥ ì•„ë˜ìª½ ì—¬ë°±
 	 */
 	public int getOutterMarginBottom() {
 		return OutterMarginBottom;
 	}
 
 	/**
-	 * ¿ÀºêÁ§Æ®ÀÇ ¹Ù±ù ¾Æ·¡ÂÊ ¿©¹éÀ» ¼³Á¤ÇÑ´Ù.
+	 * ì˜¤ë¸Œì íŠ¸ì˜ ë°”ê¹¥ ì•„ë˜ìª½ ì—¬ë°±ì„ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param outterMarginBottom
-	 *            ¿ÀºêÁ§Æ®ÀÇ ¹Ù±ù ¾Æ·¡ÂÊ ¿©¹é
+	 *            ì˜¤ë¸Œì íŠ¸ì˜ ë°”ê¹¥ ì•„ë˜ìª½ ì—¬ë°±
 	 */
 	public void setOutterMarginBottom(int outterMarginBottom) {
 		OutterMarginBottom = outterMarginBottom;
 	}
 
 	/**
-	 * ¹®¼­ ³» °¢ °³Ã¼¿¡ ´ëÇÑ °íÀ¯ ¾ÆÀÌµğ¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ë¬¸ì„œ ë‚´ ê° ê°œì²´ì— ëŒ€í•œ ê³ ìœ  ì•„ì´ë””ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ¹®¼­ ³» °¢ °³Ã¼¿¡ ´ëÇÑ °íÀ¯ ¾ÆÀÌµğ
+	 * @return ë¬¸ì„œ ë‚´ ê° ê°œì²´ì— ëŒ€í•œ ê³ ìœ  ì•„ì´ë””
 	 */
 	public long getInstanceId() {
 		return instanceId;
 	}
 
 	/**
-	 * ¹®¼­ ³» °¢ °³Ã¼¿¡ ´ëÇÑ °íÀ¯ ¾ÆÀÌµğ¸¦ ¼³Á¤ÇÑ´Ù.
+	 * ë¬¸ì„œ ë‚´ ê° ê°œì²´ì— ëŒ€í•œ ê³ ìœ  ì•„ì´ë””ë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param instanceId
-	 *            ¹®¼­ ³» °¢ °³Ã¼¿¡ ´ëÇÑ °íÀ¯ ¾ÆÀÌµğ
+	 *            ë¬¸ì„œ ë‚´ ê° ê°œì²´ì— ëŒ€í•œ ê³ ìœ  ì•„ì´ë””
 	 */
 	public void setInstanceId(long instanceId) {
 		this.instanceId = instanceId;
 	}
 
 	/**
-	 * ÂÊ³ª´® ¹æÁö¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ìª½ë‚˜ëˆ” ë°©ì§€ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ÂÊ³ª´® ¹æÁö
+	 * @return ìª½ë‚˜ëˆ” ë°©ì§€
 	 */
 	public boolean isPreventPageDivide() {
 		return preventPageDivide;
 	}
 
 	/**
-	 * ÂÊ³ª´® ¹æÁö¸¦ ¼³Á¤ÇÑ´Ù.
+	 * ìª½ë‚˜ëˆ” ë°©ì§€ë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param preventPageDivide
-	 *            ÂÊ³ª´® ¹æÁö
+	 *            ìª½ë‚˜ëˆ” ë°©ì§€
 	 */
 	public void setPreventPageDivide(boolean preventPageDivide) {
 		this.preventPageDivide = preventPageDivide;
 	}
 
 	/**
-	 * °³Ã¼ ¼³¸í¹®À» ¹İÈ¯ÇÑ´Ù.
+	 * ê°œì²´ ì„¤ëª…ë¬¸ì„ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return °³Ã¼ ¼³¸í¹®
+	 * @return ê°œì²´ ì„¤ëª…ë¬¸
 	 */
 	public String getExplanation() {
 		return explanation;
 	}
 
 	/**
-	 * °³Ã¼ ¼³¸í¹®À» ¼³Á¤ÇÑ´Ù.
+	 * ê°œì²´ ì„¤ëª…ë¬¸ì„ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param explanation
-	 *            °³Ã¼ ¼³¸í¹®
+	 *            ê°œì²´ ì„¤ëª…ë¬¸
 	 */
 	public void setExplanation(String explanation) {
 		this.explanation = explanation;

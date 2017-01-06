@@ -1,171 +1,171 @@
-package kr.dogfoot.hwplib.object.bodytext.control.ctrlheader.sectiondefine;
+ï»¿package kr.dogfoot.hwplib.object.bodytext.control.ctrlheader.sectiondefine;
 
 import kr.dogfoot.hwplib.util.binary.BitFlag;
 
 /**
- * ±¸¿ª Á¤ÀÇ ÄÁÆ®·ÑÀÇ ¼Ó¼º °´Ã¼
+ * êµ¬ì—­ ì •ì˜ ì»¨íŠ¸ë¡¤ì˜ ì†ì„± ê°ì²´
  * 
  * @author neoloed
  */
 public class SectionDefineHeaderProperty {
 	/**
-	 * ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª(unsigned 4 byte)
+	 * íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’(unsigned 4 byte)
 	 */
 	private long value;
 
 	/**
-	 * »ı¼ºÀÚ
+	 * ìƒì„±ì
 	 */
 	public SectionDefineHeaderProperty() {
 	}
 
 	/**
-	 * ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ªÀ» ¹İÈ¯ÇÑ´Ù.
+	 * íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’ì„ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª
+	 * @return íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’
 	 */
 	public long getValue() {
 		return value;
 	}
 
 	/**
-	 * ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ªÀ» ¼³Á¤ÇÑ´Ù.
+	 * íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’ì„ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param value
-	 *            ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª
+	 *            íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’
 	 */
 	public void setValue(long value) {
 		this.value = value;
 	}
 
 	/**
-	 * ¸Ó¸®¸»À» °¨ÃâÁö ¿©ºÎ¸¦ ¹İÈ¯ÇÑ´Ù. (0 bit)
+	 * ë¨¸ë¦¬ë§ì„ ê°ì¶œì§€ ì—¬ë¶€ë¥¼ ë°˜í™˜í•œë‹¤. (0 bit)
 	 * 
-	 * @return ¸Ó¸®¸»À» °¨ÃâÁö ¿©ºÎ
+	 * @return ë¨¸ë¦¬ë§ì„ ê°ì¶œì§€ ì—¬ë¶€
 	 */
 	public boolean isHideHeader() {
 		return BitFlag.get(value, 0);
 	}
 
 	/**
-	 * ¸Ó¸®¸»À» °¨ÃâÁö ¿©ºÎ¸¦ ¼³Á¤ÇÑ´Ù. (0 bit)
+	 * ë¨¸ë¦¬ë§ì„ ê°ì¶œì§€ ì—¬ë¶€ë¥¼ ì„¤ì •í•œë‹¤. (0 bit)
 	 * 
 	 * @param hideHeader
-	 *            ¸Ó¸®¸»À» °¨ÃâÁö ¿©ºÎ
+	 *            ë¨¸ë¦¬ë§ì„ ê°ì¶œì§€ ì—¬ë¶€
 	 */
 	public void setHideHeader(boolean hideHeader) {
 		value = BitFlag.set(value, 0, hideHeader);
 	}
 
 	/**
-	 * ²¿¸®¸»À» °¨ÃâÁö ¿©ºÎ¸¦ ¹İÈ¯ÇÑ´Ù. (1 bit)
+	 * ê¼¬ë¦¬ë§ì„ ê°ì¶œì§€ ì—¬ë¶€ë¥¼ ë°˜í™˜í•œë‹¤. (1 bit)
 	 * 
-	 * @return ²¿¸®¸»À» °¨ÃâÁö ¿©ºÎ
+	 * @return ê¼¬ë¦¬ë§ì„ ê°ì¶œì§€ ì—¬ë¶€
 	 */
 	public boolean isHideFooter() {
 		return BitFlag.get(value, 1);
 	}
 
 	/**
-	 * ²¿¸®¸»À» °¨ÃâÁö ¿©ºÎ¸¦ ¹İÈ¯ÇÑ´Ù. (1 bit)
+	 * ê¼¬ë¦¬ë§ì„ ê°ì¶œì§€ ì—¬ë¶€ë¥¼ ë°˜í™˜í•œë‹¤. (1 bit)
 	 * 
 	 * @param hideFooter
-	 *            ²¿¸®¸»À» °¨ÃâÁö ¿©ºÎ
+	 *            ê¼¬ë¦¬ë§ì„ ê°ì¶œì§€ ì—¬ë¶€
 	 */
 	public void setHideFooter(boolean hideFooter) {
 		value = BitFlag.set(value, 1, hideFooter);
 	}
 
 	/**
-	 * ¹ÙÅÁÂÊÀ» °¨ÃâÁö ¿©ºÎ¸¦ ¹İÈ¯ÇÑ´Ù. (2 bit)
+	 * ë°”íƒ•ìª½ì„ ê°ì¶œì§€ ì—¬ë¶€ë¥¼ ë°˜í™˜í•œë‹¤. (2 bit)
 	 * 
-	 * @return ¹ÙÅÁÂÊÀ» °¨ÃâÁö ¿©ºÎ
+	 * @return ë°”íƒ•ìª½ì„ ê°ì¶œì§€ ì—¬ë¶€
 	 */
 	public boolean isHideBatangPage() {
 		return BitFlag.get(value, 2);
 	}
 
 	/**
-	 * ¹ÙÅÁÂÊÀ» °¨ÃâÁö ¿©ºÎ¸¦ ¼³Á¤ÇÑ´Ù. (2 bit)
+	 * ë°”íƒ•ìª½ì„ ê°ì¶œì§€ ì—¬ë¶€ë¥¼ ì„¤ì •í•œë‹¤. (2 bit)
 	 * 
 	 * @param hideBatangPage
-	 *            ¹ÙÅÁÂÊÀ» °¨ÃâÁö ¿©ºÎ
+	 *            ë°”íƒ•ìª½ì„ ê°ì¶œì§€ ì—¬ë¶€
 	 */
 	public void setHideBatangPage(boolean hideBatangPage) {
 		value = BitFlag.set(value, 2, hideBatangPage);
 	}
 
 	/**
-	 * Å×µÎ¸®¸¦ °¨ÃâÁö ¿©ºÎ¸¦ ¹İÈ¯ÇÑ´Ù. (3 bit)
+	 * í…Œë‘ë¦¬ë¥¼ ê°ì¶œì§€ ì—¬ë¶€ë¥¼ ë°˜í™˜í•œë‹¤. (3 bit)
 	 * 
-	 * @return Å×µÎ¸®¸¦ °¨ÃâÁö ¿©ºÎ
+	 * @return í…Œë‘ë¦¬ë¥¼ ê°ì¶œì§€ ì—¬ë¶€
 	 */
 	public boolean isHideBorder() {
 		return BitFlag.get(value, 3);
 	}
 
 	/**
-	 * Å×µÎ¸®¸¦ °¨ÃâÁö ¿©ºÎ¸¦ ¼³Á¤ÇÑ´Ù. (3 bit)
+	 * í…Œë‘ë¦¬ë¥¼ ê°ì¶œì§€ ì—¬ë¶€ë¥¼ ì„¤ì •í•œë‹¤. (3 bit)
 	 * 
 	 * @param hideBorder
-	 *            Å×µÎ¸®¸¦ °¨ÃâÁö ¿©ºÎ
+	 *            í…Œë‘ë¦¬ë¥¼ ê°ì¶œì§€ ì—¬ë¶€
 	 */
 	public void setHideBorder(boolean hideBorder) {
 		value = BitFlag.set(value, 3, hideBorder);
 	}
 
 	/**
-	 * ¹è°æÀ» °¨ÃâÁö ¿©ºÎ¸¦ ¹İÈ¯ÇÑ´Ù. (4 bit)
+	 * ë°°ê²½ì„ ê°ì¶œì§€ ì—¬ë¶€ë¥¼ ë°˜í™˜í•œë‹¤. (4 bit)
 	 * 
-	 * @return ¹è°æÀ» °¨ÃâÁö ¿©ºÎ
+	 * @return ë°°ê²½ì„ ê°ì¶œì§€ ì—¬ë¶€
 	 */
 	public boolean isHideBackground() {
 		return BitFlag.get(value, 4);
 	}
 
 	/**
-	 * ¹è°æÀ» °¨ÃâÁö ¿©ºÎ¸¦ ¼³Á¤ÇÑ´Ù. (4 bit)
+	 * ë°°ê²½ì„ ê°ì¶œì§€ ì—¬ë¶€ë¥¼ ì„¤ì •í•œë‹¤. (4 bit)
 	 * 
 	 * @param hideBackground
-	 *            ¹è°æÀ» °¨ÃâÁö ¿©ºÎ
+	 *            ë°°ê²½ì„ ê°ì¶œì§€ ì—¬ë¶€
 	 */
 	public void setHideBackground(boolean hideBackground) {
 		value = BitFlag.set(value, 4, hideBackground);
 	}
 
 	/**
-	 * ÂÊ ¹øÈ£ À§Ä¡¸¦ °¨ÃâÁö ¿©ºÎ¸¦ ¹İÈ¯ÇÑ´Ù. (5 bit)
+	 * ìª½ ë²ˆí˜¸ ìœ„ì¹˜ë¥¼ ê°ì¶œì§€ ì—¬ë¶€ë¥¼ ë°˜í™˜í•œë‹¤. (5 bit)
 	 * 
-	 * @return ÂÊ ¹øÈ£ À§Ä¡¸¦ °¨ÃâÁö ¿©ºÎ
+	 * @return ìª½ ë²ˆí˜¸ ìœ„ì¹˜ë¥¼ ê°ì¶œì§€ ì—¬ë¶€
 	 */
 	public boolean isHidePageNumberPosition() {
 		return BitFlag.get(value, 5);
 	}
 
 	/**
-	 * ÂÊ ¹øÈ£ À§Ä¡¸¦ °¨ÃâÁö ¿©ºÎ¸¦ ¼³Á¤ÇÑ´Ù. (5 bit)
+	 * ìª½ ë²ˆí˜¸ ìœ„ì¹˜ë¥¼ ê°ì¶œì§€ ì—¬ë¶€ë¥¼ ì„¤ì •í•œë‹¤. (5 bit)
 	 * 
 	 * @param hidePageNumberPosition
-	 *            ÂÊ ¹øÈ£ À§Ä¡¸¦ °¨ÃâÁö ¿©ºÎ
+	 *            ìª½ ë²ˆí˜¸ ìœ„ì¹˜ë¥¼ ê°ì¶œì§€ ì—¬ë¶€
 	 */
 	public void setHidePageNumberPosition(boolean hidePageNumberPosition) {
 		value = BitFlag.set(value, 5, hidePageNumberPosition);
 	}
 
 	/**
-	 * ±¸¿ªÀÇ Ã¹ ÂÊ¿¡¸¸ Å×µÎ¸® Ç¥½Ã ¿©ºÎ¸¦ ¹İÈ¯ÇÑ´Ù. (8 bit)
+	 * êµ¬ì—­ì˜ ì²« ìª½ì—ë§Œ í…Œë‘ë¦¬ í‘œì‹œ ì—¬ë¶€ë¥¼ ë°˜í™˜í•œë‹¤. (8 bit)
 	 * 
-	 * @return ±¸¿ªÀÇ Ã¹ ÂÊ¿¡¸¸ Å×µÎ¸® Ç¥½Ã ¿©ºÎ
+	 * @return êµ¬ì—­ì˜ ì²« ìª½ì—ë§Œ í…Œë‘ë¦¬ í‘œì‹œ ì—¬ë¶€
 	 */
 	public boolean isDisplayBorderAtFirstPageOfSection() {
 		return BitFlag.get(value, 8);
 	}
 
 	/**
-	 * ±¸¿ªÀÇ Ã¹ ÂÊ¿¡¸¸ Å×µÎ¸® Ç¥½Ã ¿©ºÎ¸¦ ¼³Á¤ÇÑ´Ù. (8 bit)
+	 * êµ¬ì—­ì˜ ì²« ìª½ì—ë§Œ í…Œë‘ë¦¬ í‘œì‹œ ì—¬ë¶€ë¥¼ ì„¤ì •í•œë‹¤. (8 bit)
 	 * 
 	 * @param displayBorderAtFirstPageOfSection
-	 *            ±¸¿ªÀÇ Ã¹ ÂÊ¿¡¸¸ Å×µÎ¸® Ç¥½Ã ¿©ºÎ
+	 *            êµ¬ì—­ì˜ ì²« ìª½ì—ë§Œ í…Œë‘ë¦¬ í‘œì‹œ ì—¬ë¶€
 	 */
 	public void setDisplayBorderAtFirstPageOfSection(
 			boolean displayBorderAtFirstPageOfSection) {
@@ -173,19 +173,19 @@ public class SectionDefineHeaderProperty {
 	}
 
 	/**
-	 * ±¸¿ªÀÇ Ã¹ ÂÊ¿¡¸¸ ¹è°æ Ç¥½Ã ¿©ºÎ¸¦ ¹İÈ¯ÇÑ´Ù. (9 bit)
+	 * êµ¬ì—­ì˜ ì²« ìª½ì—ë§Œ ë°°ê²½ í‘œì‹œ ì—¬ë¶€ë¥¼ ë°˜í™˜í•œë‹¤. (9 bit)
 	 * 
-	 * @return ±¸¿ªÀÇ Ã¹ ÂÊ¿¡¸¸ ¹è°æ Ç¥½Ã ¿©ºÎ
+	 * @return êµ¬ì—­ì˜ ì²« ìª½ì—ë§Œ ë°°ê²½ í‘œì‹œ ì—¬ë¶€
 	 */
 	public boolean isDisplayBackgroundAtFirstPageOfSection() {
 		return BitFlag.get(value, 9);
 	}
 
 	/**
-	 * ±¸¿ªÀÇ Ã¹ ÂÊ¿¡¸¸ ¹è°æ Ç¥½Ã ¿©ºÎ¸¦ ¼³Á¤ÇÑ´Ù. (9 bit)
+	 * êµ¬ì—­ì˜ ì²« ìª½ì—ë§Œ ë°°ê²½ í‘œì‹œ ì—¬ë¶€ë¥¼ ì„¤ì •í•œë‹¤. (9 bit)
 	 * 
 	 * @param displayBackgroundAtFirstPageOfSection
-	 *            ±¸¿ªÀÇ Ã¹ ÂÊ¿¡¸¸ ¹è°æ Ç¥½Ã ¿©ºÎ
+	 *            êµ¬ì—­ì˜ ì²« ìª½ì—ë§Œ ë°°ê²½ í‘œì‹œ ì—¬ë¶€
 	 */
 	public void setDisplayBackgroundAtFirstPageOfSection(
 			boolean displayBackgroundAtFirstPageOfSection) {
@@ -193,57 +193,57 @@ public class SectionDefineHeaderProperty {
 	}
 
 	/**
-	 * ÅØ½ºÆ® ¹æÇâÀ» ¹İÈ¯ÇÑ´Ù. (16~18 bit)
+	 * í…ìŠ¤íŠ¸ ë°©í–¥ì„ ë°˜í™˜í•œë‹¤. (16~18 bit)
 	 * 
-	 * @return ÅØ½ºÆ® ¹æÇâ
+	 * @return í…ìŠ¤íŠ¸ ë°©í–¥
 	 */
 	public TextDirection getTextDirection() {
 		return TextDirection.valueOf((byte) BitFlag.get(value, 16, 18));
 	}
 
 	/**
-	 * ÅØ½ºÆ® ¹æÇâÀ» ¼³Á¤ÇÑ´Ù. (16~18 bit)
+	 * í…ìŠ¤íŠ¸ ë°©í–¥ì„ ì„¤ì •í•œë‹¤. (16~18 bit)
 	 * 
 	 * @param textDirection
-	 *            ÅØ½ºÆ® ¹æÇâ
+	 *            í…ìŠ¤íŠ¸ ë°©í–¥
 	 */
 	public void setTextDirection(TextDirection textDirection) {
 		value = BitFlag.set(value, 16, 18, textDirection.getValue());
 	}
 
 	/**
-	 * ºó ÁÙ °¨Ãã ¿©ºÎ¸¦ ¹İÈ¯ÇÑ´Ù. (19 bit)
+	 * ë¹ˆ ì¤„ ê°ì¶¤ ì—¬ë¶€ë¥¼ ë°˜í™˜í•œë‹¤. (19 bit)
 	 * 
-	 * @return ºó ÁÙ °¨Ãã ¿©ºÎ
+	 * @return ë¹ˆ ì¤„ ê°ì¶¤ ì—¬ë¶€
 	 */
 	public boolean isHideEmptyLine() {
 		return BitFlag.get(value, 19);
 	}
 
 	/**
-	 * ºó ÁÙ °¨Ãã ¿©ºÎ¸¦ ¼³Á¤ÇÑ´Ù. (19 bit)
+	 * ë¹ˆ ì¤„ ê°ì¶¤ ì—¬ë¶€ë¥¼ ì„¤ì •í•œë‹¤. (19 bit)
 	 * 
 	 * @param hideEmptyLine
-	 *            ºó ÁÙ °¨Ãã ¿©ºÎ
+	 *            ë¹ˆ ì¤„ ê°ì¶¤ ì—¬ë¶€
 	 */
 	public void setHideEmptyLine(boolean hideEmptyLine) {
 		value = BitFlag.set(value, 19, hideEmptyLine);
 	}
 
 	/**
-	 * ±¸¿ª ³ª´®À¸·Î »õ ÆäÀÌÁö°¡ »ı±æ ¶§ÀÇ ÆäÀÌÁö ¹øÈ£ Àû¿ëÇÒÁö ¿©ºÎ¸¦ ¹İÈ¯ÇÑ´Ù. (20~21 bit)
+	 * êµ¬ì—­ ë‚˜ëˆ”ìœ¼ë¡œ ìƒˆ í˜ì´ì§€ê°€ ìƒê¸¸ ë•Œì˜ í˜ì´ì§€ ë²ˆí˜¸ ì ìš©í• ì§€ ì—¬ë¶€ë¥¼ ë°˜í™˜í•œë‹¤. (20~21 bit)
 	 * 
-	 * @return ±¸¿ª ³ª´®À¸·Î »õ ÆäÀÌÁö°¡ »ı±æ ¶§ÀÇ ÆäÀÌÁö ¹øÈ£ Àû¿ëÇÒÁö ¿©ºÎ
+	 * @return êµ¬ì—­ ë‚˜ëˆ”ìœ¼ë¡œ ìƒˆ í˜ì´ì§€ê°€ ìƒê¸¸ ë•Œì˜ í˜ì´ì§€ ë²ˆí˜¸ ì ìš©í• ì§€ ì—¬ë¶€
 	 */
 	public boolean isApplyPageNumberByDivideSection() {
 		return BitFlag.get(value, 20) | BitFlag.get(value, 21);
 	}
 
 	/**
-	 * ±¸¿ª ³ª´®À¸·Î »õ ÆäÀÌÁö°¡ »ı±æ ¶§ÀÇ ÆäÀÌÁö ¹øÈ£ Àû¿ëÇÒÁö ¿©ºÎ¸¦ ¼³Á¤ÇÑ´Ù. (20~21 bit)
+	 * êµ¬ì—­ ë‚˜ëˆ”ìœ¼ë¡œ ìƒˆ í˜ì´ì§€ê°€ ìƒê¸¸ ë•Œì˜ í˜ì´ì§€ ë²ˆí˜¸ ì ìš©í• ì§€ ì—¬ë¶€ë¥¼ ì„¤ì •í•œë‹¤. (20~21 bit)
 	 * 
 	 * @param applyPageNumberByDivideSection
-	 *            ±¸¿ª ³ª´®À¸·Î »õ ÆäÀÌÁö°¡ »ı±æ ¶§ÀÇ ÆäÀÌÁö ¹øÈ£ Àû¿ëÇÒÁö ¿©ºÎ
+	 *            êµ¬ì—­ ë‚˜ëˆ”ìœ¼ë¡œ ìƒˆ í˜ì´ì§€ê°€ ìƒê¸¸ ë•Œì˜ í˜ì´ì§€ ë²ˆí˜¸ ì ìš©í• ì§€ ì—¬ë¶€
 	 */
 	public void setApplyPageNumberByDivideSection(
 			boolean applyPageNumberByDivideSection) {
@@ -252,19 +252,19 @@ public class SectionDefineHeaderProperty {
 	}
 
 	/**
-	 * ¿ø°íÁö Á¤¼­¹ı Àû¿ë ¿©ºÎ¸¦ ¹İÈ¯ÇÑ´Ù. (22 bit)
+	 * ì›ê³ ì§€ ì •ì„œë²• ì ìš© ì—¬ë¶€ë¥¼ ë°˜í™˜í•œë‹¤. (22 bit)
 	 * 
-	 * @return ¿ø°íÁö Á¤¼­¹ı Àû¿ë ¿©ºÎ
+	 * @return ì›ê³ ì§€ ì •ì„œë²• ì ìš© ì—¬ë¶€
 	 */
 	public boolean isApplyWongoji() {
 		return BitFlag.get(value, 22);
 	}
 
 	/**
-	 * ¿ø°íÁö Á¤¼­¹ı Àû¿ë ¿©ºÎ¸¦ ¼³Á¤ÇÑ´Ù. (22 bit)
+	 * ì›ê³ ì§€ ì •ì„œë²• ì ìš© ì—¬ë¶€ë¥¼ ì„¤ì •í•œë‹¤. (22 bit)
 	 * 
 	 * @param applyWongoji
-	 *            ¿ø°íÁö Á¤¼­¹ı Àû¿ë ¿©ºÎ
+	 *            ì›ê³ ì§€ ì •ì„œë²• ì ìš© ì—¬ë¶€
 	 */
 	public void setApplyWongoji(boolean applyWongoji) {
 		value = BitFlag.set(value, 22, applyWongoji);

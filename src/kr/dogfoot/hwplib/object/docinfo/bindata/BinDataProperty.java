@@ -1,95 +1,95 @@
-package kr.dogfoot.hwplib.object.docinfo.bindata;
+ï»¿package kr.dogfoot.hwplib.object.docinfo.bindata;
 
 import kr.dogfoot.hwplib.util.binary.BitFlag;
 
 /**
- * ¹ÙÀÌ³Ê¸® µ¥ÀÌÅÍÀÇ ¼Ó¼º
+ * ë°”ì´ë„ˆë¦¬ ë°ì´í„°ì˜ ì†ì„±
  * 
  * @author neolord
  */
 public class BinDataProperty {
 	/**
-	 * ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª(unsigned 2 byte)
+	 * íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’(unsigned 2 byte)
 	 */
 	private int value;
 
 	/**
-	 * »ı¼ºÀÚ
+	 * ìƒì„±ì
 	 */
 	public BinDataProperty() {
 	}
 
 	/**
-	 * ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ªÀ» ¹İÈ¯ÇÑ´Ù.
+	 * íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’ì„ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª
+	 * @return íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’
 	 */
 	public int getValue() {
 		return value;
 	}
 
 	/**
-	 * ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ªÀ» ¼³Á¤ÇÑ´Ù.
+	 * íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’ì„ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param value
-	 *            ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª
+	 *            íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’
 	 */
 	public void setValue(int value) {
 		this.value = value;
 	}
 
 	/**
-	 * ¹ÙÀÌ³Ê¸® µ¥ÀÌÅÍÀÇ Å¸ÀÔÀ» ¹İÈ¯ÇÑ´Ù. (0~3 BitFlag)
+	 * ë°”ì´ë„ˆë¦¬ ë°ì´í„°ì˜ íƒ€ì…ì„ ë°˜í™˜í•œë‹¤. (0~3 BitFlag)
 	 * 
-	 * @return ¹ÙÀÌ³Ê¸® µ¥ÀÌÅÍÀÇ Å¸ÀÔ
+	 * @return ë°”ì´ë„ˆë¦¬ ë°ì´í„°ì˜ íƒ€ì…
 	 */
 	public BinDataType getType() {
 		return BinDataType.valueOf((byte) BitFlag.get(value, 0, 3));
 	}
 
 	/**
-	 * ¹ÙÀÌ³Ê¸® µ¥ÀÌÅÍÀÇ Å¸ÀÔÀ» ¼³Á¤ÇÑ´Ù. (0~3 BitFlag)
+	 * ë°”ì´ë„ˆë¦¬ ë°ì´í„°ì˜ íƒ€ì…ì„ ì„¤ì •í•œë‹¤. (0~3 BitFlag)
 	 * 
 	 * @param type
-	 *            ¹ÙÀÌ³Ê¸® µ¥ÀÌÅÍÀÇ Å¸ÀÔ
+	 *            ë°”ì´ë„ˆë¦¬ ë°ì´í„°ì˜ íƒ€ì…
 	 */
 	public void setType(BinDataType type) {
 		value = BitFlag.set(value, 0, 3, type.getValue());
 	}
 
 	/**
-	 * ¹ÙÀÌ³Ê¸® µ¥ÀÌÅÍÀÇ ¾ĞÃà ¹æ¹ıÀ» ¹İÈ¯ÇÑ´Ù. (4~5 BitFlag)
+	 * ë°”ì´ë„ˆë¦¬ ë°ì´í„°ì˜ ì••ì¶• ë°©ë²•ì„ ë°˜í™˜í•œë‹¤. (4~5 BitFlag)
 	 * 
-	 * @return ¹ÙÀÌ³Ê¸® µ¥ÀÌÅÍÀÇ ¾ĞÃà ¹æ¹ı
+	 * @return ë°”ì´ë„ˆë¦¬ ë°ì´í„°ì˜ ì••ì¶• ë°©ë²•
 	 */
 	public BinDataCompress getCompress() {
 		return BinDataCompress.valueOf((byte) BitFlag.get(value, 4, 5));
 	}
 
 	/**
-	 * ¹ÙÀÌ³Ê¸® µ¥ÀÌÅÍÀÇ ¾ĞÃà ¹æ¹ıÀ» ¼³Á¤ÇÑ´Ù. (4~5 BitFlag)
+	 * ë°”ì´ë„ˆë¦¬ ë°ì´í„°ì˜ ì••ì¶• ë°©ë²•ì„ ì„¤ì •í•œë‹¤. (4~5 BitFlag)
 	 * 
 	 * @param compress
-	 *            ¹ÙÀÌ³Ê¸® µ¥ÀÌÅÍÀÇ ¾ĞÃà ¹æ¹ı
+	 *            ë°”ì´ë„ˆë¦¬ ë°ì´í„°ì˜ ì••ì¶• ë°©ë²•
 	 */
 	public void setCompress(BinDataCompress compress) {
 		value = BitFlag.set(value, 4, 5, compress.getValue());
 	}
 
 	/**
-	 * ¹ÙÀÌ³Ê¸® µ¥ÀÌÅÍÀÇ »óÅÂ¸¦ ¹İÈ¯ÇÑ´Ù. (8~9 BitFlag)
+	 * ë°”ì´ë„ˆë¦¬ ë°ì´í„°ì˜ ìƒíƒœë¥¼ ë°˜í™˜í•œë‹¤. (8~9 BitFlag)
 	 * 
-	 * @return ¹ÙÀÌ³Ê¸® µ¥ÀÌÅÍÀÇ »óÅÂ
+	 * @return ë°”ì´ë„ˆë¦¬ ë°ì´í„°ì˜ ìƒíƒœ
 	 */
 	public BinDataState getState() {
 		return BinDataState.valueOf((byte) BitFlag.get(value, 8, 9));
 	}
 
 	/**
-	 * ¹ÙÀÌ³Ê¸® µ¥ÀÌÅÍÀÇ »óÅÂ¸¦ ¼³Á¤ÇÑ´Ù. (8~9 BitFlag)
+	 * ë°”ì´ë„ˆë¦¬ ë°ì´í„°ì˜ ìƒíƒœë¥¼ ì„¤ì •í•œë‹¤. (8~9 BitFlag)
 	 * 
 	 * @param state
-	 *            ¹ÙÀÌ³Ê¸® µ¥ÀÌÅÍÀÇ »óÅÂ
+	 *            ë°”ì´ë„ˆë¦¬ ë°ì´í„°ì˜ ìƒíƒœ
 	 */
 	public void setState(BinDataState state) {
 		value = BitFlag.set(value, 8, 9, state.getValue());

@@ -1,4 +1,4 @@
-package kr.dogfoot.hwplib.reader.bodytext.paragraph.control.gso.part;
+ï»¿package kr.dogfoot.hwplib.reader.bodytext.paragraph.control.gso.part;
 
 import java.io.IOException;
 
@@ -19,18 +19,18 @@ import kr.dogfoot.hwplib.reader.docinfo.borderfill.ForFillInfo;
 import kr.dogfoot.hwplib.util.compoundFile.StreamReader;
 
 /**
- * ±×¸®±â °³Ã¼ÀÇ °´Ã¼ °øÅë ¼Ó¼º ·¹ÄÚµåÀ» ÀĞ±â À§ÇÑ °´Ã¼
+ * ê·¸ë¦¬ê¸° ê°œì²´ì˜ ê°ì²´ ê³µí†µ ì†ì„± ë ˆì½”ë“œì„ ì½ê¸° ìœ„í•œ ê°ì²´
  * 
  * @author neolord
  */
 public class ForShapeComponent {
 	/**
-	 * ±×¸®±â °³Ã¼ÀÇ °´Ã¼ °øÅë ¼Ó¼º ·¹ÄÚµå¸¦ ÀĞ´Â´Ù.
+	 * ê·¸ë¦¬ê¸° ê°œì²´ì˜ ê°ì²´ ê³µí†µ ì†ì„± ë ˆì½”ë“œë¥¼ ì½ëŠ”ë‹¤.
 	 * 
 	 * @param gsoControl
-	 *            ±×¸®±â °³Ã¼
+	 *            ê·¸ë¦¬ê¸° ê°œì²´
 	 * @param sr
-	 *            ½ºÆ®¸² ¸®´õ
+	 *            ìŠ¤íŠ¸ë¦¼ ë¦¬ë”
 	 * @throws IOException
 	 */
 	public static void read(GsoControl gsoControl, StreamReader sr)
@@ -43,12 +43,12 @@ public class ForShapeComponent {
 	}
 
 	/**
-	 * ÀÏ¹İ ÄÁÆ®·ÑÀ» À§ÇÑ °´Ã¼ °øÅë ¼Ó¼º ·¹ÄÚµåÀ» ÀĞ´Â´Ù.
+	 * ì¼ë°˜ ì»¨íŠ¸ë¡¤ì„ ìœ„í•œ ê°ì²´ ê³µí†µ ì†ì„± ë ˆì½”ë“œì„ ì½ëŠ”ë‹¤.
 	 * 
 	 * @param sc
-	 *            °´Ã¼ °øÅë ¼Ó¼º ·¹ÄÚµå
+	 *            ê°ì²´ ê³µí†µ ì†ì„± ë ˆì½”ë“œ
 	 * @param sr
-	 *            ½ºÆ®¸² ¸®´õ
+	 *            ìŠ¤íŠ¸ë¦¼ ë¦¬ë”
 	 * @throws IOException
 	 */
 	private static void shapeComponentForNormal(ShapeComponent sc,
@@ -70,12 +70,12 @@ public class ForShapeComponent {
 	}
 
 	/**
-	 * °´Ã¼ °øÅë ¼Ó¼º ·¹ÄÚµåÀÇ °øÅë ºÎºĞÀ» ÀĞ´Â´Ù.
+	 * ê°ì²´ ê³µí†µ ì†ì„± ë ˆì½”ë“œì˜ ê³µí†µ ë¶€ë¶„ì„ ì½ëŠ”ë‹¤.
 	 * 
 	 * @param sc
-	 *            °´Ã¼ °øÅë ¼Ó¼º ·¹ÄÚµå
+	 *            ê°ì²´ ê³µí†µ ì†ì„± ë ˆì½”ë“œ
 	 * @param sr
-	 *            ½ºÆ®¸² ¸®´õ
+	 *            ìŠ¤íŠ¸ë¦¼ ë¦¬ë”
 	 * @throws IOException
 	 */
 	private static void commonPart(ShapeComponent sc, StreamReader sr)
@@ -97,12 +97,12 @@ public class ForShapeComponent {
 	}
 
 	/**
-	 * °´Ã¼ °øÅë ¼Ó¼º ·¹ÄÚµåÀÇ rendering Á¤º¸¸¦ ÀĞ´Â´Ù.
+	 * ê°ì²´ ê³µí†µ ì†ì„± ë ˆì½”ë“œì˜ rendering ì •ë³´ë¥¼ ì½ëŠ”ë‹¤.
 	 * 
 	 * @param ri
-	 *            rendering Á¤º¸¸¦ ³ªÅ¸³»´Â °´Ã¼
+	 *            rendering ì •ë³´ë¥¼ ë‚˜íƒ€ë‚´ëŠ” ê°ì²´
 	 * @param sr
-	 *            ½ºÆ®¸² ¸®´õ
+	 *            ìŠ¤íŠ¸ë¦¼ ë¦¬ë”
 	 * @throws IOException
 	 */
 	private static void renderingInfo(RenderingInfo ri, StreamReader sr)
@@ -117,12 +117,12 @@ public class ForShapeComponent {
 	}
 
 	/**
-	 * º¯È¯ Çà·ÄÀ» ÀĞ´Â´Ù.
+	 * ë³€í™˜ í–‰ë ¬ì„ ì½ëŠ”ë‹¤.
 	 * 
 	 * @param m
-	 *            º¯È¯ Çà·Ä °´Ã¼
+	 *            ë³€í™˜ í–‰ë ¬ ê°ì²´
 	 * @param sr
-	 *            ½ºÆ®¸² ¸®´õ
+	 *            ìŠ¤íŠ¸ë¦¼ ë¦¬ë”
 	 * @throws IOException
 	 */
 	private static void matrix(Matrix m, StreamReader sr) throws IOException {
@@ -132,12 +132,12 @@ public class ForShapeComponent {
 	}
 
 	/**
-	 * ÀÏ¹İ ÄÁÆ®·ÑÀ» À§ÇÑ °´Ã¼ °øÅë ¼Ó¼º ·¹ÄÚµåÀÇ line Á¤º¸¸¦ ÀĞ´Â´Ù.
+	 * ì¼ë°˜ ì»¨íŠ¸ë¡¤ì„ ìœ„í•œ ê°ì²´ ê³µí†µ ì†ì„± ë ˆì½”ë“œì˜ line ì •ë³´ë¥¼ ì½ëŠ”ë‹¤.
 	 * 
 	 * @param scn
-	 *            ÀÏ¹İ ÄÁÆ®·ÑÀ» À§ÇÑ °´Ã¼ °øÅë ¼Ó¼º ·¹ÄÚµåÀÇ line Á¤º¸¸¦ ³ªÅ¸³»´Â °´Ã¼
+	 *            ì¼ë°˜ ì»¨íŠ¸ë¡¤ì„ ìœ„í•œ ê°ì²´ ê³µí†µ ì†ì„± ë ˆì½”ë“œì˜ line ì •ë³´ë¥¼ ë‚˜íƒ€ë‚´ëŠ” ê°ì²´
 	 * @param sr
-	 *            ½ºÆ®¸² ¸®´õ
+	 *            ìŠ¤íŠ¸ë¦¼ ë¦¬ë”
 	 * @throws IOException
 	 */
 	private static void lineInfo(ShapeComponentNormal scn, StreamReader sr)
@@ -151,12 +151,12 @@ public class ForShapeComponent {
 	}
 
 	/**
-	 * ÀÏ¹İ ÄÁÆ®·ÑÀ» À§ÇÑ °´Ã¼ °øÅë ¼Ó¼º ·¹ÄÚµåÀÇ ¹è°æ Á¤º¸¸¦ ÀĞ´Â´Ù.
+	 * ì¼ë°˜ ì»¨íŠ¸ë¡¤ì„ ìœ„í•œ ê°ì²´ ê³µí†µ ì†ì„± ë ˆì½”ë“œì˜ ë°°ê²½ ì •ë³´ë¥¼ ì½ëŠ”ë‹¤.
 	 * 
 	 * @param scn
-	 *            ÀÏ¹İ ÄÁÆ®·ÑÀ» À§ÇÑ  °´Ã¼ °øÅë ¼Ó¼º ·¹ÄÚµå
+	 *            ì¼ë°˜ ì»¨íŠ¸ë¡¤ì„ ìœ„í•œ  ê°ì²´ ê³µí†µ ì†ì„± ë ˆì½”ë“œ
 	 * @param sr
-	 *            ½ºÆ®¸² ¸®´õ
+	 *            ìŠ¤íŠ¸ë¦¼ ë¦¬ë”
 	 * @throws IOException
 	 */
 	private static void fillInfo(ShapeComponentNormal scn, StreamReader sr)
@@ -167,12 +167,12 @@ public class ForShapeComponent {
 	}
 
 	/**
-	 * ÀÏ¹İ ÄÁÆ®·ÑÀ» À§ÇÑ °´Ã¼ °øÅë ¼Ó¼º ·¹ÄÚµåÀÇ ±×¸²ÀÚ Á¤º¸¸¦ ÀĞ´Â´Ù.
+	 * ì¼ë°˜ ì»¨íŠ¸ë¡¤ì„ ìœ„í•œ ê°ì²´ ê³µí†µ ì†ì„± ë ˆì½”ë“œì˜ ê·¸ë¦¼ì ì •ë³´ë¥¼ ì½ëŠ”ë‹¤.
 	 * 
 	 * @param scn
-	 *            ÀÏ¹İ ÄÁÆ®·ÑÀ» À§ÇÑ °´Ã¼ °øÅë ¼Ó¼º ·¹ÄÚµå
+	 *            ì¼ë°˜ ì»¨íŠ¸ë¡¤ì„ ìœ„í•œ ê°ì²´ ê³µí†µ ì†ì„± ë ˆì½”ë“œ
 	 * @param sr
-	 *            ½ºÆ®¸² ¸®´õ
+	 *            ìŠ¤íŠ¸ë¦¼ ë¦¬ë”
 	 * @throws IOException
 	 */
 	private static void shadowInfo(ShapeComponentNormal scn, StreamReader sr)
@@ -188,12 +188,12 @@ public class ForShapeComponent {
 	}
 
 	/**
-	 * ¹­À½ ÄÁÆ®·ÑÀ» À§ÇÑ °´Ã¼ °øÅë ¼Ó¼º ·¹ÄÚµå¸¦ ÀĞ´Â´Ù.
+	 * ë¬¶ìŒ ì»¨íŠ¸ë¡¤ì„ ìœ„í•œ ê°ì²´ ê³µí†µ ì†ì„± ë ˆì½”ë“œë¥¼ ì½ëŠ”ë‹¤.
 	 *
 	 * @param sc
-	 *            °´Ã¼ °øÅë ¼Ó¼º ·¹ÄÚµå
+	 *            ê°ì²´ ê³µí†µ ì†ì„± ë ˆì½”ë“œ
 	 * @param sr
-	 *            ½ºÆ®¸² ¸®´õ
+	 *            ìŠ¤íŠ¸ë¦¼ ë¦¬ë”
 	 * @throws IOException
 	 */
 	private static void shapeComponentForContainer(ShapeComponent sc,
@@ -205,12 +205,12 @@ public class ForShapeComponent {
 	}
 
 	/**
-	 * Æ÷ÇÔÇÏ°í ÀÖ´Â ÄÁÆ®·Ñ¿¡ ´ëÇÑ Á¤º¸ ºÎºĞÀ» ÀĞ´Â´Ù.
+	 * í¬í•¨í•˜ê³  ìˆëŠ” ì»¨íŠ¸ë¡¤ì— ëŒ€í•œ ì •ë³´ ë¶€ë¶„ì„ ì½ëŠ”ë‹¤.
 	 * 
 	 * @param scc
-	 *            ¹­À½ ÄÁÆ®·ÑÀÇ °´Ã¼ °øÅë ¼Ó¼º ·¹ÄÚµå
+	 *            ë¬¶ìŒ ì»¨íŠ¸ë¡¤ì˜ ê°ì²´ ê³µí†µ ì†ì„± ë ˆì½”ë“œ
 	 * @param sr
-	 *            ½ºÆ®¸² ¸®´õ
+	 *            ìŠ¤íŠ¸ë¦¼ ë¦¬ë”
 	 * @throws IOException
 	 */
 	private static void childInfo(ShapeComponentContainer scc, StreamReader sr)
@@ -223,7 +223,7 @@ public class ForShapeComponent {
 	}
 
 	/**
-	 * ¾Ë·ÁÁöÁö ¾ÊÀº 4 ¹ÙÀÌÆ®¸¦ Ã³¸®ÇÑ´Ù.
+	 * ì•Œë ¤ì§€ì§€ ì•Šì€ 4 ë°”ì´íŠ¸ë¥¼ ì²˜ë¦¬í•œë‹¤.
 	 * 
 	 * @param sr
 	 * @throws IOException

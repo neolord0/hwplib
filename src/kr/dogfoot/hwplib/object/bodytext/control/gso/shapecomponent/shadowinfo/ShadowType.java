@@ -1,86 +1,86 @@
-package kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponent.shadowinfo;
+ï»¿package kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponent.shadowinfo;
 
 /**
- * ±×¸²ÀÚ Á¾·ù
+ * ê·¸ë¦¼ì ì¢…ë¥˜
  * 
  * @author neolord
  */
 public enum ShadowType {
 	/**
-	 * ¾øÀ½
+	 * ì—†ìŒ
 	 */
 	None((byte) 0),
 	/**
-	 * ¿ŞÂÊ À§
+	 * ì™¼ìª½ ìœ„
 	 */
 	LeftTop((byte) 1),
 	/**
-	 * ¿À¸¥ÂÊ À§
+	 * ì˜¤ë¥¸ìª½ ìœ„
 	 */
 	RightTop((byte) 2),
 	/**
-	 * ¿ŞÂÊ ¾Æ·¡
+	 * ì™¼ìª½ ì•„ë˜
 	 */
 	LeftBottom((byte) 3),
 	/**
-	 * ¿À¸¥ÂÊ ¾Æ·¡
+	 * ì˜¤ë¥¸ìª½ ì•„ë˜
 	 */
 	RightBottom((byte) 4),
 	/**
-	 * ¿ŞÂÊ µÚ
+	 * ì™¼ìª½ ë’¤
 	 */
 	LeftBack((byte) 5),
 	/**
-	 * ¿À¸¥ÂÊ µÚ
+	 * ì˜¤ë¥¸ìª½ ë’¤
 	 */
 	RightBack((byte) 6),
 	/**
-	 * ¿ŞÂÊ ¾Õ
+	 * ì™¼ìª½ ì•
 	 */
 	LeftFront((byte) 7),
 	/**
-	 * ¿À¸¥ÂÊ ¾Õ
+	 * ì˜¤ë¥¸ìª½ ì•
 	 */
 	RightFront((byte) 8),
 	/**
-	 * ÀÛ°Ô
+	 * ì‘ê²Œ
 	 */
 	Small((byte) 13),
 	/**
-	 * Å©°Ô
+	 * í¬ê²Œ
 	 */
 	Large((byte) 14);
 
 	/**
-	 * ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª
+	 * íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’
 	 */
 	private byte value;
 
 	/**
-	 * »ı¼ºÀÚ
+	 * ìƒì„±ì
 	 * 
 	 * @param value
-	 *            ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª
+	 *            íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’
 	 */
 	private ShadowType(byte value) {
 		this.value = value;
 	}
 
 	/**
-	 * ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ªÀ» ¹İÈ¯ÇÑ´Ù.
+	 * íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’ì„ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª
+	 * @return íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’
 	 */
 	public byte getValue() {
 		return value;
 	}
 
 	/**
-	 * ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª¿¡ ÇØ´çµÇ´Â enum °ªÀ» ¹İÈ¯ÇÑ´Ù.
+	 * íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’ì— í•´ë‹¹ë˜ëŠ” enum ê°’ì„ ë°˜í™˜í•œë‹¤.
 	 * 
 	 * @param value
-	 *            ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª
-	 * @return enum °ª
+	 *            íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’
+	 * @return enum ê°’
 	 */
 	public static ShadowType valueOf(byte value) {
 		for (ShadowType st : values()) {

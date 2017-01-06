@@ -1,4 +1,4 @@
-package kr.dogfoot.hwplib.reader.bodytext;
+ï»¿package kr.dogfoot.hwplib.reader.bodytext;
 
 import kr.dogfoot.hwplib.object.bodytext.Section;
 import kr.dogfoot.hwplib.object.bodytext.control.sectiondefine.BatangPageInfo;
@@ -6,19 +6,19 @@ import kr.dogfoot.hwplib.reader.bodytext.paragraph.control.secd.ForBatangPageInf
 import kr.dogfoot.hwplib.util.compoundFile.StreamReader;
 
 /**
- * ±¸¿ª ½ºÆ®¸²À» ÀĞ±â À§ÇÑ °´Ã¼
+ * êµ¬ì—­ ìŠ¤íŠ¸ë¦¼ì„ ì½ê¸° ìœ„í•œ ê°ì²´
  * 
- * @author ¹Ú¼º±Õ
+ * @author ë°•ì„±ê· 
  * 
  */
 public class ForSection {
 	/**
-	 * ±¸¿ª ½ºÆ®¸²À» ÀĞ´Â´Ù.
+	 * êµ¬ì—­ ìŠ¤íŠ¸ë¦¼ì„ ì½ëŠ”ë‹¤.
 	 * 
 	 * @param s
-	 *            ±¸¿ª °´Ã¼
+	 *            êµ¬ì—­ ê°ì²´
 	 * @param sr
-	 *            ½ºÆ®¸² ¸®´õ
+	 *            ìŠ¤íŠ¸ë¦¼ ë¦¬ë”
 	 * @throws Exception
 	 */
 	public static void read(Section s, StreamReader sr) throws Exception {
@@ -29,10 +29,10 @@ public class ForSection {
 	}
 
 	/**
-	 * ¸¶Áö¸· ¹ÙÅÁÂÊÀ» ÀĞ´Â´Ù.
+	 * ë§ˆì§€ë§‰ ë°”íƒ•ìª½ì„ ì½ëŠ”ë‹¤.
 	 * 
-	 * @param lastBatangPageInfo ¸¶Áö¸· ¹ÙÅÁÂÊ °´Ã¼
-	 * @param sr ½ºÆ®¸² ¸®´õ
+	 * @param lastBatangPageInfo ë§ˆì§€ë§‰ ë°”íƒ•ìª½ ê°ì²´
+	 * @param sr ìŠ¤íŠ¸ë¦¼ ë¦¬ë”
 	 * @throws Exception 
 	 */
 	private static void lastBatangPageInfo(BatangPageInfo lastBatangPageInfo,

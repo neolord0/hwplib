@@ -1,4 +1,4 @@
-package kr.dogfoot.hwplib.object.docinfo;
+ï»¿package kr.dogfoot.hwplib.object.docinfo;
 
 import java.util.ArrayList;
 
@@ -6,118 +6,118 @@ import kr.dogfoot.hwplib.object.etc.UnknownRecord;
 import kr.dogfoot.hwplib.reader.RecordHeader;
 
 /**
- * ¹®¼­ Á¤º¸¸¦ ³ªÅ¸³»´Â °´Ã¼. HWPÆÄÀÏ ³»ÀÇ "DocInfo" stream¿¡ ÀúÀåµÈ´Ù.
+ * ë¬¸ì„œ ì •ë³´ë¥¼ ë‚˜íƒ€ë‚´ëŠ” ê°ì²´. HWPíŒŒì¼ ë‚´ì˜ "DocInfo" streamì— ì €ì¥ëœë‹¤.
  * 
  * @author neolord
  */
 public class DocInfo {
 	/**
-	 * ¹®¼­ ¼Ó¼º
+	 * ë¬¸ì„œ ì†ì„±
 	 */
 	private DocumentPropeties documentProperties;
 	/**
-	 * ¾ÆÀÌµğ ¸ÅÇÎ Çì´õ
+	 * ì•„ì´ë”” ë§¤í•‘ í—¤ë”
 	 */
 	private IDMappings idMappings;
 	/**
-	 * ¹ÙÀÌ³Ê¸® µ¥ÀÌÅÍ ¸®½ºÆ®
+	 * ë°”ì´ë„ˆë¦¬ ë°ì´í„° ë¦¬ìŠ¤íŠ¸
 	 */
 	private ArrayList<BinData> binDataList;
 	/**
-	 * ÇÑ±Û ±Û²Ã ¸®½ºÆ®
+	 * í•œê¸€ ê¸€ê¼´ ë¦¬ìŠ¤íŠ¸
 	 */
 	private ArrayList<FaceName> hangulFaceNameList;
 	/**
-	 * ¿µ¾î ±Û²Ã ¸®½ºÆ®
+	 * ì˜ì–´ ê¸€ê¼´ ë¦¬ìŠ¤íŠ¸
 	 */
 	private ArrayList<FaceName> englishFaceNameList;
 	/**
-	 * ÇÑÀÚ ±à²Ã ¸®½ºÆ®
+	 * í•œì ê¸ê¼´ ë¦¬ìŠ¤íŠ¸
 	 */
 	private ArrayList<FaceName> hanjaFaceNameList;
 	/**
-	 * ÀÏ¾î ±Û²Ã ¸®½ºÆ®
+	 * ì¼ì–´ ê¸€ê¼´ ë¦¬ìŠ¤íŠ¸
 	 */
 	private ArrayList<FaceName> japaneseFaceNameList;
 	/**
-	 * ±âÅ¸ ±Û²Ã ¸®½ºÆ®
+	 * ê¸°íƒ€ ê¸€ê¼´ ë¦¬ìŠ¤íŠ¸
 	 */
 	private ArrayList<FaceName> etcFaceNameList;
 	/**
-	 * ±âÈ£ ±Û²Ã ¸®½ºÆ®
+	 * ê¸°í˜¸ ê¸€ê¼´ ë¦¬ìŠ¤íŠ¸
 	 */
 	private ArrayList<FaceName> symbolFaceNameList;
 	/**
-	 * »ç¿ëÀÚ ±Û²Ã ¸®½ºÆ®
+	 * ì‚¬ìš©ì ê¸€ê¼´ ë¦¬ìŠ¤íŠ¸
 	 */
 	private ArrayList<FaceName> userFaceNameList;
 	/**
-	 * Å×µÎ¸®/¹è°æ ¸®½ºÆ®
+	 * í…Œë‘ë¦¬/ë°°ê²½ ë¦¬ìŠ¤íŠ¸
 	 */
 	private ArrayList<BorderFill> borderFillList;
 	/**
-	 * ±ÛÀÚ ¸ğ¾ç ¸®½ºÆ®
+	 * ê¸€ì ëª¨ì–‘ ë¦¬ìŠ¤íŠ¸
 	 */
 	private ArrayList<CharShape> charShapeList;
 	/**
-	 * ÅÇ Á¤ÀÇ ¸®½ºÆ®
+	 * íƒ­ ì •ì˜ ë¦¬ìŠ¤íŠ¸
 	 */
 	private ArrayList<TabDef> tabDefList;
 	/**
-	 * ¹®´Ü ¹øÈ£ ¸®½ºÆ®
+	 * ë¬¸ë‹¨ ë²ˆí˜¸ ë¦¬ìŠ¤íŠ¸
 	 */
 	private ArrayList<Numbering> numberingList;
 	/**
-	 * ±Û¸Ó¸®Ç¥ ¸®½ºÆ®
+	 * ê¸€ë¨¸ë¦¬í‘œ ë¦¬ìŠ¤íŠ¸
 	 */
 	private ArrayList<Bullet> bulletList;
 	/**
-	 * ¹®´Ü ¸ğ¾ç ¸®½ºÆ®
+	 * ë¬¸ë‹¨ ëª¨ì–‘ ë¦¬ìŠ¤íŠ¸
 	 */
 	private ArrayList<ParaShape> paraShapeList;
 	/**
-	 * ½ºÅ¸ÀÏ ¸®½ºÆ®
+	 * ìŠ¤íƒ€ì¼ ë¦¬ìŠ¤íŠ¸
 	 */
 	private ArrayList<Style> styleList;
 	/**
-	 * ¹®¼­ ÀÓÀÇÀÇ µ¥ÀÌÅÍ
+	 * ë¬¸ì„œ ì„ì˜ì˜ ë°ì´í„°
 	 */
 	private UnknownRecord docData;
 	/**
-	 * ¹èÆ÷¿ë ¹®¼­ µ¥ÀÌÅÍ
+	 * ë°°í¬ìš© ë¬¸ì„œ ë°ì´í„°
 	 */
 	private UnknownRecord distributeDocData;
 	/**
-	 * È£È¯ ¹®¼­
+	 * í˜¸í™˜ ë¬¸ì„œ
 	 */
 	private CompatibleDocument compatibleDocument;
 	/**
-	 * ·¹ÀÌ¾Æ¿ô È£È¯¼º
+	 * ë ˆì´ì•„ì›ƒ í˜¸í™˜ì„±
 	 */
 	private LayoutCompatibility layoutCompatibility;
 	/**
-	 * º¯°æ ÃßÀû Á¤º¸
+	 * ë³€ê²½ ì¶”ì  ì •ë³´
 	 */
 	private UnknownRecord trackChange;
 	/**
-	 * ¸Ş¸ğ ¸ğ¾ç ¸®½ºÆ®
+	 * ë©”ëª¨ ëª¨ì–‘ ë¦¬ìŠ¤íŠ¸
 	 */
 	private ArrayList<UnknownRecord> memoShapeList;
 	/**
-	 * ±İÄ¢Ã³¸® ¹®ÀÚ
+	 * ê¸ˆì¹™ì²˜ë¦¬ ë¬¸ì
 	 */
 	private UnknownRecord forbiddenChar;
 	/**
-	 * º¯°æ ÃßÀû ³»¿ë ¹× ¸ğ¾ç
+	 * ë³€ê²½ ì¶”ì  ë‚´ìš© ë° ëª¨ì–‘
 	 */
 	private ArrayList<UnknownRecord> trackChange2List;
 	/**
-	 * º¯°æ ÃßÀû ÀÛ¼ºÀÚ
+	 * ë³€ê²½ ì¶”ì  ì‘ì„±ì
 	 */
 	private ArrayList<UnknownRecord> trackChangeAuthorList;
 
 	/**
-	 * »ı¼ºÀÚ
+	 * ìƒì„±ì
 	 */
 	public DocInfo() {
 		documentProperties = new DocumentPropeties();
@@ -149,27 +149,27 @@ public class DocInfo {
 	}
 
 	/**
-	 * ¹®¼­ ¼Ó¼º °´Ã¼¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ë¬¸ì„œ ì†ì„± ê°ì²´ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ¹®¼­ ¼Ó¼º °´Ã¼
+	 * @return ë¬¸ì„œ ì†ì„± ê°ì²´
 	 */
 	public DocumentPropeties getDocumentProperties() {
 		return documentProperties;
 	}
 
 	/**
-	 * ¾ÆÀÌµğ ¸ÅÇÎ Çì´õ °´Ã¼¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ì•„ì´ë”” ë§¤í•‘ í—¤ë” ê°ì²´ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ¾ÆÀÌµğ ¸ÅÇÎ Çì´õ °´Ã¼
+	 * @return ì•„ì´ë”” ë§¤í•‘ í—¤ë” ê°ì²´
 	 */
 	public IDMappings getIDMappings() {
 		return idMappings;
 	}
 
 	/**
-	 * »õ·Î¿î ¹ÙÀÌ³Ê¸® µ¥ÀÌÅÍ °´Ã¼¸¦ »ı¼ºÇÏ°í ¸®½ºÆ®¿¡ Ãß°¡ÇÑ´Ù.
+	 * ìƒˆë¡œìš´ ë°”ì´ë„ˆë¦¬ ë°ì´í„° ê°ì²´ë¥¼ ìƒì„±í•˜ê³  ë¦¬ìŠ¤íŠ¸ì— ì¶”ê°€í•œë‹¤.
 	 * 
-	 * @return »õ·Î »ı¼ºµÈ ¹ÙÀÌ³Ê¸® µ¥ÀÌÅÍ °´Ã¼
+	 * @return ìƒˆë¡œ ìƒì„±ëœ ë°”ì´ë„ˆë¦¬ ë°ì´í„° ê°ì²´
 	 */
 	public BinData addNewBinData() {
 		BinData bd = new BinData();
@@ -178,18 +178,18 @@ public class DocInfo {
 	}
 
 	/**
-	 * ¹ÙÀÌ³Ê¸® µ¥ÀÌÅÍ °´Ã¼ ¸®½ºÆ®¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ë°”ì´ë„ˆë¦¬ ë°ì´í„° ê°ì²´ ë¦¬ìŠ¤íŠ¸ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ¹ÙÀÌ³Ê¸® µ¥ÀÌÅÍ °´Ã¼ ¸®½ºÆ®
+	 * @return ë°”ì´ë„ˆë¦¬ ë°ì´í„° ê°ì²´ ë¦¬ìŠ¤íŠ¸
 	 */
 	public ArrayList<BinData> getBinDataList() {
 		return binDataList;
 	}
 
 	/**
-	 * »õ·Î¿î ÇÑ±Û ±Û²Ã °´Ã¼¸¦ »ı¼ºÇÏ°í ¸®½ºÆ®¿¡ Ãß°¡ÇÑ´Ù.
+	 * ìƒˆë¡œìš´ í•œê¸€ ê¸€ê¼´ ê°ì²´ë¥¼ ìƒì„±í•˜ê³  ë¦¬ìŠ¤íŠ¸ì— ì¶”ê°€í•œë‹¤.
 	 * 
-	 * @return »õ·Î »ı¼ºµÈ ÇÑ±Û ±Û²Ã °´Ã¼
+	 * @return ìƒˆë¡œ ìƒì„±ëœ í•œê¸€ ê¸€ê¼´ ê°ì²´
 	 */
 	public FaceName addNewHangulFaceName() {
 		FaceName fn = new FaceName();
@@ -198,18 +198,18 @@ public class DocInfo {
 	}
 
 	/**
-	 * ÇÑ±Û ±Û²Ã °´Ã¼ ¸®½ºÆ®¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * í•œê¸€ ê¸€ê¼´ ê°ì²´ ë¦¬ìŠ¤íŠ¸ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ÇÑ±Û ±Û²Ã °´Ã¼ ¸®½ºÆ®
+	 * @return í•œê¸€ ê¸€ê¼´ ê°ì²´ ë¦¬ìŠ¤íŠ¸
 	 */
 	public ArrayList<FaceName> getHangulFaceNameList() {
 		return hangulFaceNameList;
 	}
 
 	/**
-	 * »õ·Î¿î ¿µ¾î ±Û²Ã °´Ã¼¸¦ »ı¼ºÇÏ°í ¸®½ºÆ®¿¡ Ãß°¡ÇÑ´Ù.
+	 * ìƒˆë¡œìš´ ì˜ì–´ ê¸€ê¼´ ê°ì²´ë¥¼ ìƒì„±í•˜ê³  ë¦¬ìŠ¤íŠ¸ì— ì¶”ê°€í•œë‹¤.
 	 * 
-	 * @return »õ·Î »ı¼ºµÈ ¿µ¾î ±Û²Ã °´Ã¼
+	 * @return ìƒˆë¡œ ìƒì„±ëœ ì˜ì–´ ê¸€ê¼´ ê°ì²´
 	 */
 	public FaceName addNewEnglishFaceName() {
 		FaceName fn = new FaceName();
@@ -218,18 +218,18 @@ public class DocInfo {
 	}
 
 	/**
-	 * ¿µ¾î ±Û²Ã °´Ã¼ ¸®½ºÆ®¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ì˜ì–´ ê¸€ê¼´ ê°ì²´ ë¦¬ìŠ¤íŠ¸ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ¿µ¾î ±Û²Ã °´Ã¼ ¸®½ºÆ®
+	 * @return ì˜ì–´ ê¸€ê¼´ ê°ì²´ ë¦¬ìŠ¤íŠ¸
 	 */
 	public ArrayList<FaceName> getEnglishFaceNameList() {
 		return englishFaceNameList;
 	}
 
 	/**
-	 * »õ·Î¿î ÇÑÀÚ ±Û²Ã °´Ã¼¸¦ »ı¼ºÇÏ°í ¸®½ºÆ®¿¡ Ãß°¡ÇÑ´Ù.
+	 * ìƒˆë¡œìš´ í•œì ê¸€ê¼´ ê°ì²´ë¥¼ ìƒì„±í•˜ê³  ë¦¬ìŠ¤íŠ¸ì— ì¶”ê°€í•œë‹¤.
 	 * 
-	 * @return »õ·Î »ı¼ºµÈ ÇÑÀÚ ±Û²Ã °´Ã¼
+	 * @return ìƒˆë¡œ ìƒì„±ëœ í•œì ê¸€ê¼´ ê°ì²´
 	 */
 	public FaceName addNewHanjaFaceName() {
 		FaceName fn = new FaceName();
@@ -238,18 +238,18 @@ public class DocInfo {
 	}
 
 	/**
-	 * ÇÑÀÚ ±Û²Ã °´Ã¼ ¸®½ºÆ®¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * í•œì ê¸€ê¼´ ê°ì²´ ë¦¬ìŠ¤íŠ¸ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ÇÑÀÚ ±Û²Ã °´Ã¼ ¸®½ºÆ®
+	 * @return í•œì ê¸€ê¼´ ê°ì²´ ë¦¬ìŠ¤íŠ¸
 	 */
 	public ArrayList<FaceName> getHanjaFaceNameList() {
 		return hanjaFaceNameList;
 	}
 
 	/**
-	 * »õ·Î¿î ÀÏº»¾î ±Û²Ã °´Ã¼¸¦ »ı¼ºÇÏ°í ¸®½ºÆ®¿¡ Ãß°¡ÇÑ´Ù.
+	 * ìƒˆë¡œìš´ ì¼ë³¸ì–´ ê¸€ê¼´ ê°ì²´ë¥¼ ìƒì„±í•˜ê³  ë¦¬ìŠ¤íŠ¸ì— ì¶”ê°€í•œë‹¤.
 	 * 
-	 * @return »õ·Î »ı¼ºµÈ ÀÏ¾î ±Û²Ã °´Ã¼
+	 * @return ìƒˆë¡œ ìƒì„±ëœ ì¼ì–´ ê¸€ê¼´ ê°ì²´
 	 */
 	public FaceName addNewJapaneseFaceName() {
 		FaceName fn = new FaceName();
@@ -258,18 +258,18 @@ public class DocInfo {
 	}
 
 	/**
-	 * ÀÏº»¾î ±Û²Ã °´Ã¼ ¸®½ºÆ®¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ì¼ë³¸ì–´ ê¸€ê¼´ ê°ì²´ ë¦¬ìŠ¤íŠ¸ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ÀÏº»¾î ±Û²Ã °´Ã¼ ¸®½ºÆ®
+	 * @return ì¼ë³¸ì–´ ê¸€ê¼´ ê°ì²´ ë¦¬ìŠ¤íŠ¸
 	 */
 	public ArrayList<FaceName> getJapaneseFaceNameList() {
 		return japaneseFaceNameList;
 	}
 
 	/**
-	 * »õ·Î¿î ±âÅ¸ ±Û²Ã °´Ã¼¸¦ »ı¼ºÇÏ°í ¸®½ºÆ®¿¡ Ãß°¡ÇÑ´Ù.
+	 * ìƒˆë¡œìš´ ê¸°íƒ€ ê¸€ê¼´ ê°ì²´ë¥¼ ìƒì„±í•˜ê³  ë¦¬ìŠ¤íŠ¸ì— ì¶”ê°€í•œë‹¤.
 	 * 
-	 * @return »õ·Î »ı¼ºµÈ ±âÅ¸ ±Û²Ã °´Ã¼
+	 * @return ìƒˆë¡œ ìƒì„±ëœ ê¸°íƒ€ ê¸€ê¼´ ê°ì²´
 	 */
 	public FaceName addNewEtcFaceName() {
 		FaceName fn = new FaceName();
@@ -278,18 +278,18 @@ public class DocInfo {
 	}
 
 	/**
-	 * ±âÅ¸ ±Û²Ã °´Ã¼ ¸®½ºÆ®¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ê¸°íƒ€ ê¸€ê¼´ ê°ì²´ ë¦¬ìŠ¤íŠ¸ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ±âÅ¸ ±Û²Ã °´Ã¼ ¸®½ºÆ®
+	 * @return ê¸°íƒ€ ê¸€ê¼´ ê°ì²´ ë¦¬ìŠ¤íŠ¸
 	 */
 	public ArrayList<FaceName> getEtcFaceNameList() {
 		return etcFaceNameList;
 	}
 
 	/**
-	 * »õ·Î¿î ±âÈ£ ±Û²Ã °´Ã¼¸¦ »ı¼ºÇÏ°í ¸®½ºÆ®¿¡ Ãß°¡ÇÑ´Ù.
+	 * ìƒˆë¡œìš´ ê¸°í˜¸ ê¸€ê¼´ ê°ì²´ë¥¼ ìƒì„±í•˜ê³  ë¦¬ìŠ¤íŠ¸ì— ì¶”ê°€í•œë‹¤.
 	 * 
-	 * @return »õ·Î »ı¼ºµÈ ±âÈ£ ±Û²Ã °´Ã¼
+	 * @return ìƒˆë¡œ ìƒì„±ëœ ê¸°í˜¸ ê¸€ê¼´ ê°ì²´
 	 */
 	public FaceName addNewSymbolFaceName() {
 		FaceName fn = new FaceName();
@@ -298,18 +298,18 @@ public class DocInfo {
 	}
 
 	/**
-	 * ±âÈ£ ±Û²Ã °´Ã¼ ¸®½ºÆ®¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ê¸°í˜¸ ê¸€ê¼´ ê°ì²´ ë¦¬ìŠ¤íŠ¸ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ±âÈ£ ±Û²Ã °´Ã¼ ¸®½ºÆ®
+	 * @return ê¸°í˜¸ ê¸€ê¼´ ê°ì²´ ë¦¬ìŠ¤íŠ¸
 	 */
 	public ArrayList<FaceName> getSymbolFaceNameList() {
 		return symbolFaceNameList;
 	}
 
 	/**
-	 * »õ·Î¿î »ç¿ëÀÚ ±Û²Ã °´Ã¼¸¦ »ı¼ºÇÏ°í ¸®½ºÆ®¿¡ Ãß°¡ÇÑ´Ù.
+	 * ìƒˆë¡œìš´ ì‚¬ìš©ì ê¸€ê¼´ ê°ì²´ë¥¼ ìƒì„±í•˜ê³  ë¦¬ìŠ¤íŠ¸ì— ì¶”ê°€í•œë‹¤.
 	 * 
-	 * @return »õ·Î »ı¼²µÈ »ç¿ëÀÚ ±Û²Ã °´Ã¼
+	 * @return ìƒˆë¡œ ìƒì„£ëœ ì‚¬ìš©ì ê¸€ê¼´ ê°ì²´
 	 */
 	public FaceName addNewUserFaceName() {
 		FaceName fn = new FaceName();
@@ -318,18 +318,18 @@ public class DocInfo {
 	}
 
 	/**
-	 * »ç¿ëÀÚ ±Û²Ã °´Ã¼ ¸®½ºÆ®¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ì‚¬ìš©ì ê¸€ê¼´ ê°ì²´ ë¦¬ìŠ¤íŠ¸ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return »ç¿ëÀÚ ±Û²Ã °´Ã¼ ¸®½ºÆ®
+	 * @return ì‚¬ìš©ì ê¸€ê¼´ ê°ì²´ ë¦¬ìŠ¤íŠ¸
 	 */
 	public ArrayList<FaceName> getUserFaceNameList() {
 		return userFaceNameList;
 	}
 
 	/**
-	 * »õ·Î¿î Å×µÎ¸®/¹è°æ °´Ã¼¸¦ »ı¼ºÇÏ°í ¸®½ºÆ®Ã¼¿¡ Ãß°¡ÇÑ´Ù.
+	 * ìƒˆë¡œìš´ í…Œë‘ë¦¬/ë°°ê²½ ê°ì²´ë¥¼ ìƒì„±í•˜ê³  ë¦¬ìŠ¤íŠ¸ì²´ì— ì¶”ê°€í•œë‹¤.
 	 * 
-	 * @return »õ·Î »ı¼ºµÈ Å×µÎ¸®/¹è°æ °´Ã¼
+	 * @return ìƒˆë¡œ ìƒì„±ëœ í…Œë‘ë¦¬/ë°°ê²½ ê°ì²´
 	 */
 	public BorderFill addNewBorderFill() {
 		BorderFill bf = new BorderFill();
@@ -338,18 +338,18 @@ public class DocInfo {
 	}
 
 	/**
-	 * Å×µÎ¸®/¹è°æ °´Ã¼ ¸®½ºÆ®¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * í…Œë‘ë¦¬/ë°°ê²½ ê°ì²´ ë¦¬ìŠ¤íŠ¸ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return Å×µÎ¸®/¹è°æ °´Ã¼ ¸®½ºÆ®
+	 * @return í…Œë‘ë¦¬/ë°°ê²½ ê°ì²´ ë¦¬ìŠ¤íŠ¸
 	 */
 	public ArrayList<BorderFill> getBorderFillList() {
 		return borderFillList;
 	}
 
 	/**
-	 * »õ·Î¿î ±ÛÀÚ ¸ğ¾ç °´Ã¼¸¦ »ı¼ºÇÏ°í ¸®½ºÆ®¿¡ Ãß°¡ÇÑ´Ù.
+	 * ìƒˆë¡œìš´ ê¸€ì ëª¨ì–‘ ê°ì²´ë¥¼ ìƒì„±í•˜ê³  ë¦¬ìŠ¤íŠ¸ì— ì¶”ê°€í•œë‹¤.
 	 * 
-	 * @return »õ·Î »ı¼ºµÈ ±ÛÀÚ ¸ğ¾ç °´Ã¼
+	 * @return ìƒˆë¡œ ìƒì„±ëœ ê¸€ì ëª¨ì–‘ ê°ì²´
 	 */
 	public CharShape addNewCharShape() {
 		CharShape cs = new CharShape();
@@ -358,18 +358,18 @@ public class DocInfo {
 	}
 
 	/**
-	 * ±ÛÀÚ ¸ğ¾ç °´Ã¼ ¸®½ºÆ®¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ê¸€ì ëª¨ì–‘ ê°ì²´ ë¦¬ìŠ¤íŠ¸ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ±ÛÀÚ ¸ğ¾ç °´Ã¼ ¸®½ºÆ®
+	 * @return ê¸€ì ëª¨ì–‘ ê°ì²´ ë¦¬ìŠ¤íŠ¸
 	 */
 	public ArrayList<CharShape> getCharShapeList() {
 		return charShapeList;
 	}
 
 	/**
-	 * »õ·Î¿î ÅÇ Á¤ÀÇ °´Ã¼¸¦ »ı¼ºÇÏ°í ¸®½ºÆ®¿¡ Ãß°¡ÇÑ´Ù.
+	 * ìƒˆë¡œìš´ íƒ­ ì •ì˜ ê°ì²´ë¥¼ ìƒì„±í•˜ê³  ë¦¬ìŠ¤íŠ¸ì— ì¶”ê°€í•œë‹¤.
 	 * 
-	 * @return »õ·Î »ı¼ºµÈ ÅÇ Á¤ÀÇ °´Ã¼
+	 * @return ìƒˆë¡œ ìƒì„±ëœ íƒ­ ì •ì˜ ê°ì²´
 	 */
 	public TabDef addNewTabDef() {
 		TabDef td = new TabDef();
@@ -378,18 +378,18 @@ public class DocInfo {
 	}
 
 	/**
-	 * ÅÇ Á¤ÀÇ °´Ã¼ ¸®½ºÆ®¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * íƒ­ ì •ì˜ ê°ì²´ ë¦¬ìŠ¤íŠ¸ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ÅÇ Á¤ÀÇ °´Ã¼ ¸®½ºÆ®
+	 * @return íƒ­ ì •ì˜ ê°ì²´ ë¦¬ìŠ¤íŠ¸
 	 */
 	public ArrayList<TabDef> getTabDefList() {
 		return tabDefList;
 	}
 
 	/**
-	 * »õ·Î¿î ¹®´Ü ¹øÈ£ °´Ã¼¸¦ »ı¼ºÇÏ°í ¸®½ºÆ®¿¡ Ãß°¡ÇÑ´Ù.
+	 * ìƒˆë¡œìš´ ë¬¸ë‹¨ ë²ˆí˜¸ ê°ì²´ë¥¼ ìƒì„±í•˜ê³  ë¦¬ìŠ¤íŠ¸ì— ì¶”ê°€í•œë‹¤.
 	 * 
-	 * @return »õ·Î »ı¼ºµÈ ¹®´Ü ¹øÈ£ °´Ã¼
+	 * @return ìƒˆë¡œ ìƒì„±ëœ ë¬¸ë‹¨ ë²ˆí˜¸ ê°ì²´
 	 */
 	public Numbering addNewNumbering() {
 		Numbering n = new Numbering();
@@ -398,18 +398,18 @@ public class DocInfo {
 	}
 
 	/**
-	 * ¹®´Ü ¹øÈ£ °´Ã¼ ¸®½ºÆ®¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ë¬¸ë‹¨ ë²ˆí˜¸ ê°ì²´ ë¦¬ìŠ¤íŠ¸ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ¹®´Ü ¹øÈ£ °´Ã¼ ¸®½ºÆ®
+	 * @return ë¬¸ë‹¨ ë²ˆí˜¸ ê°ì²´ ë¦¬ìŠ¤íŠ¸
 	 */
 	public ArrayList<Numbering> getNumberingList() {
 		return numberingList;
 	}
 
 	/**
-	 * »õ·Î¿î ±Û¸Ó¸®Ç¥ °´Ã¼¸¦ »ı¼ºÇÏ°í ¸®½ºÆ®¿¡ Ãß°¡ÇÑ´Ù.
+	 * ìƒˆë¡œìš´ ê¸€ë¨¸ë¦¬í‘œ ê°ì²´ë¥¼ ìƒì„±í•˜ê³  ë¦¬ìŠ¤íŠ¸ì— ì¶”ê°€í•œë‹¤.
 	 * 
-	 * @return »õ·Î »ı¼ºµÈ ±Û¸Ó¸®Ç¥ °´Ã¼
+	 * @return ìƒˆë¡œ ìƒì„±ëœ ê¸€ë¨¸ë¦¬í‘œ ê°ì²´
 	 */
 	public Bullet addNewBullet() {
 		Bullet b = new Bullet();
@@ -418,18 +418,18 @@ public class DocInfo {
 	}
 
 	/**
-	 * ±Û¸Ó¸®Ç¥ °´Ã¼ ¸®½ºÆ®¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ê¸€ë¨¸ë¦¬í‘œ ê°ì²´ ë¦¬ìŠ¤íŠ¸ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ±Û¸Ó¸®Ç¥ °´Ã¼ ¸®½ºÆ®
+	 * @return ê¸€ë¨¸ë¦¬í‘œ ê°ì²´ ë¦¬ìŠ¤íŠ¸
 	 */
 	public ArrayList<Bullet> getBulletList() {
 		return bulletList;
 	}
 
 	/**
-	 * »õ·Î¿î ¹®´Ü ¸ğ¾ç °´Ã¼¸¦ »ı¼ºÇÏ°í ¸®½ºÆ®¿¡ Ãß°¡ÇÑ´Ù.
+	 * ìƒˆë¡œìš´ ë¬¸ë‹¨ ëª¨ì–‘ ê°ì²´ë¥¼ ìƒì„±í•˜ê³  ë¦¬ìŠ¤íŠ¸ì— ì¶”ê°€í•œë‹¤.
 	 * 
-	 * @return »õ·Î »ı¼ºµÈ ¹®´Ü ¸ğ¾ç °´Ã¼
+	 * @return ìƒˆë¡œ ìƒì„±ëœ ë¬¸ë‹¨ ëª¨ì–‘ ê°ì²´
 	 */
 	public ParaShape addNewParaShape() {
 		ParaShape ps = new ParaShape();
@@ -438,18 +438,18 @@ public class DocInfo {
 	}
 
 	/**
-	 * ¹®´Ü ¸ğ¾ç °´Ã¼ ¸®½ºÆ®¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ë¬¸ë‹¨ ëª¨ì–‘ ê°ì²´ ë¦¬ìŠ¤íŠ¸ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ¹®´Ü ¸ğ¾ç °´Ã¼ ¸®½ºÆ®
+	 * @return ë¬¸ë‹¨ ëª¨ì–‘ ê°ì²´ ë¦¬ìŠ¤íŠ¸
 	 */
 	public ArrayList<ParaShape> getParaShapeList() {
 		return paraShapeList;
 	}
 
 	/**
-	 * »õ·Î¿î ½ºÅ¸ÀÏ °´Ã¼¸¦ »ı¼ºÇÏ°í ¸®½ºÆ®¿¡ Ãß°¡ÇÑ´Ù.
+	 * ìƒˆë¡œìš´ ìŠ¤íƒ€ì¼ ê°ì²´ë¥¼ ìƒì„±í•˜ê³  ë¦¬ìŠ¤íŠ¸ì— ì¶”ê°€í•œë‹¤.
 	 * 
-	 * @return »õ·Î »ı¼ºµÈ ½ºÅ¸ÀÏ °´Ã¼
+	 * @return ìƒˆë¡œ ìƒì„±ëœ ìŠ¤íƒ€ì¼ ê°ì²´
 	 */
 	public Style addNewStyle() {
 		Style s = new Style();
@@ -458,144 +458,144 @@ public class DocInfo {
 	}
 
 	/**
-	 * ½ºÅ¸ÀÏ °´Ã¼ ¸®½ºÆ®¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ìŠ¤íƒ€ì¼ ê°ì²´ ë¦¬ìŠ¤íŠ¸ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ½ºÅ¸ÀÏ °´Ã¼ ¸®½ºÆ®
+	 * @return ìŠ¤íƒ€ì¼ ê°ì²´ ë¦¬ìŠ¤íŠ¸
 	 */
 	public ArrayList<Style> getStyleList() {
 		return styleList;
 	}
 
 	/**
-	 * ¹®¼­ ÀÓÀÇÀÇ µ¥ÀÌÅÍ °´Ã¼¸¦ »ı¼ºÇÑ´Ù.
+	 * ë¬¸ì„œ ì„ì˜ì˜ ë°ì´í„° ê°ì²´ë¥¼ ìƒì„±í•œë‹¤.
 	 * 
 	 * @param rh
-	 *            ·¹ÄÚµå Çì´õ
+	 *            ë ˆì½”ë“œ í—¤ë”
 	 */
 	public void createDocData(RecordHeader rh) {
 		docData = new UnknownRecord(rh);
 	}
 
 	/**
-	 * ¹®¼­ ÀÓÀÇÀÇ µ¥ÀÌÅÍ °´Ã¼¸¦ »èÁ¦ÇÑ´Ù.
+	 * ë¬¸ì„œ ì„ì˜ì˜ ë°ì´í„° ê°ì²´ë¥¼ ì‚­ì œí•œë‹¤.
 	 */
 	public void deleteDocData() {
 		docData = null;
 	}
 
 	/**
-	 * ¹®¼­ ÀÓÀÇÀÇ µ¥ÀÌÅÍ °´Ã¼¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ë¬¸ì„œ ì„ì˜ì˜ ë°ì´í„° ê°ì²´ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ¹®¼­ ÀÓÀÇÀÇ µ¥ÀÌÅÍ °´Ã¼
+	 * @return ë¬¸ì„œ ì„ì˜ì˜ ë°ì´í„° ê°ì²´
 	 */
 	public UnknownRecord getDocData() {
 		return docData;
 	}
 
 	/**
-	 * ¹èÆ÷¿ë ¹®¼­ µ¥ÀÌÅÍ °´Ã¼¸¦ »ı¼ºÇÑ´Ù.
+	 * ë°°í¬ìš© ë¬¸ì„œ ë°ì´í„° ê°ì²´ë¥¼ ìƒì„±í•œë‹¤.
 	 * 
 	 * @param rh
-	 *            ·¹ÄÚµå Çì´õ
+	 *            ë ˆì½”ë“œ í—¤ë”
 	 */
 	public void createDistributeDocData(RecordHeader rh) {
 		distributeDocData = new UnknownRecord(rh);
 	}
 
 	/**
-	 * ¹èÆ÷¿ë ¹®¼­ µ¥ÀÌÅÍ °´Ã¼¸¦ »èÁ¦ÇÑ´Ù.
+	 * ë°°í¬ìš© ë¬¸ì„œ ë°ì´í„° ê°ì²´ë¥¼ ì‚­ì œí•œë‹¤.
 	 */
 	public void deleteDistributeDocData() {
 		distributeDocData = null;
 	}
 
 	/**
-	 * ¹èÆ÷¿ë ¹®¼­ µ¥ÀÌÅÍ °´Ã¼¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ë°°í¬ìš© ë¬¸ì„œ ë°ì´í„° ê°ì²´ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ¹èÆ÷¿ë ¹®¼­ µ¥ÀÌÅÍ °´Ã¼
+	 * @return ë°°í¬ìš© ë¬¸ì„œ ë°ì´í„° ê°ì²´
 	 */
 	public UnknownRecord getDistributeDocData() {
 		return distributeDocData;
 	}
 
 	/**
-	 * È£È¯ ¹®¼­ °´Ã¼¸¦ »ı¼ºÇÑ´Ù.
+	 * í˜¸í™˜ ë¬¸ì„œ ê°ì²´ë¥¼ ìƒì„±í•œë‹¤.
 	 */
 	public void createCompatibleDocument() {
 		compatibleDocument = new CompatibleDocument();
 	}
 
 	/**
-	 * È£È¯ ¹®¼­ °´Ã¼¸¦ »èÁ¦ÇÑ´Ù.
+	 * í˜¸í™˜ ë¬¸ì„œ ê°ì²´ë¥¼ ì‚­ì œí•œë‹¤.
 	 */
 	public void deleteCompatibleDocument() {
 		compatibleDocument = null;
 	}
 
 	/**
-	 * È£È¯ ¹®¼­ °´Ã¼¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * í˜¸í™˜ ë¬¸ì„œ ê°ì²´ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return È£È¯ ¹®¼­ °´Ã¼
+	 * @return í˜¸í™˜ ë¬¸ì„œ ê°ì²´
 	 */
 	public CompatibleDocument getCompatibleDocument() {
 		return compatibleDocument;
 	}
 
 	/**
-	 * ·¹ÀÌ¾Æ¿ô È£È¯¼º °´Ã¼¸¦ »ı¼ºÇÑ´Ù.
+	 * ë ˆì´ì•„ì›ƒ í˜¸í™˜ì„± ê°ì²´ë¥¼ ìƒì„±í•œë‹¤.
 	 */
 	public void createLayoutCompatibility() {
 		layoutCompatibility = new LayoutCompatibility();
 	}
 
 	/**
-	 * ·¹ÀÌ¾Æ¿ô È£È¯¼º °´Ã¼¸¦ »èÁ¦ÇÑ´Ù.
+	 * ë ˆì´ì•„ì›ƒ í˜¸í™˜ì„± ê°ì²´ë¥¼ ì‚­ì œí•œë‹¤.
 	 */
 	public void deleteLayoutCompatibility() {
 		layoutCompatibility = null;
 	}
 
 	/**
-	 * ·¹ÀÌ¾Æ¿ô È£È¯¼º °´Ã¼¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ë ˆì´ì•„ì›ƒ í˜¸í™˜ì„± ê°ì²´ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ·¹ÀÌ¾Æ¿ô È£È¯¼º °´Ã¼
+	 * @return ë ˆì´ì•„ì›ƒ í˜¸í™˜ì„± ê°ì²´
 	 */
 	public LayoutCompatibility getLayoutCompatibility() {
 		return layoutCompatibility;
 	}
 
 	/**
-	 * º¯°æ ÃßÀû Á¤º¸ °´Ã¼¸¦ »ı¼ºÇÑ´Ù.
+	 * ë³€ê²½ ì¶”ì  ì •ë³´ ê°ì²´ë¥¼ ìƒì„±í•œë‹¤.
 	 * 
 	 * @param rh
-	 *            ·¹ÄÚµå Çì´õ
+	 *            ë ˆì½”ë“œ í—¤ë”
 	 */
 	public void createTrackChange(RecordHeader rh) {
 		trackChange = new UnknownRecord(rh);
 	}
 
 	/**
-	 * º¯°æ ÃßÀû Á¤º¸ °´Ã¼¸¦ »èÁ¦ÇÑ´Ù.
+	 * ë³€ê²½ ì¶”ì  ì •ë³´ ê°ì²´ë¥¼ ì‚­ì œí•œë‹¤.
 	 */
 	public void deleteTrackChange() {
 		trackChange = null;
 	}
 
 	/**
-	 * º¯°æ ÃßÀû Á¤º¸ °´Ã¼¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ë³€ê²½ ì¶”ì  ì •ë³´ ê°ì²´ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return º¯°æ ÃßÀû Á¤º¸ °´Ã¼
+	 * @return ë³€ê²½ ì¶”ì  ì •ë³´ ê°ì²´
 	 */
 	public UnknownRecord getTrackChange() {
 		return trackChange;
 	}
 
 	/**
-	 * »õ·Î¿î ¸Ş¸ğ ¸ğ¾ç °´Ã¼¸¦ »ı¼ºÇÏ°í ¸®½ºÆ®¿¡ Ãß°¡ÇÑ´Ù.
+	 * ìƒˆë¡œìš´ ë©”ëª¨ ëª¨ì–‘ ê°ì²´ë¥¼ ìƒì„±í•˜ê³  ë¦¬ìŠ¤íŠ¸ì— ì¶”ê°€í•œë‹¤.
 	 * 
 	 * @param rh
-	 *            ·¹ÄÚµå Çì´õ
-	 * @return »õ·Î »ı¼ºµÈ ¸Ş¸ğ ¸ğ¾ç °´Ã¼
+	 *            ë ˆì½”ë“œ í—¤ë”
+	 * @return ìƒˆë¡œ ìƒì„±ëœ ë©”ëª¨ ëª¨ì–‘ ê°ì²´
 	 */
 	public UnknownRecord addNewMemoShape(RecordHeader rh) {
 		UnknownRecord ur = new UnknownRecord(rh);
@@ -604,46 +604,46 @@ public class DocInfo {
 	}
 
 	/**
-	 * ¸Ş¸ğ ¸ğ¾ç °´Ã¼ ¸®½ºÆ®¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ë©”ëª¨ ëª¨ì–‘ ê°ì²´ ë¦¬ìŠ¤íŠ¸ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ¸Ş¸ğ ¸ğ¾ç °´Ã¼ ¸®½ºÆ®
+	 * @return ë©”ëª¨ ëª¨ì–‘ ê°ì²´ ë¦¬ìŠ¤íŠ¸
 	 */
 	public ArrayList<UnknownRecord> getMemoShapeList() {
 		return memoShapeList;
 	}
 
 	/**
-	 * ±İÄ¢Ã³¸® ¹®ÀÚ °´Ã¼¸¦ »ı¼ºÇÑ´Ù.
+	 * ê¸ˆì¹™ì²˜ë¦¬ ë¬¸ì ê°ì²´ë¥¼ ìƒì„±í•œë‹¤.
 	 * 
 	 * @param rh
-	 *            ·¹ÄÚµå Çì´õ
+	 *            ë ˆì½”ë“œ í—¤ë”
 	 */
 	public void createForbiddenChar(RecordHeader rh) {
 		forbiddenChar = new UnknownRecord(rh);
 	}
 
 	/**
-	 * ±İÄ¢Ã³¸® ¹®ÀÚ °´Ã¼¸¦ »èÁ¦ÇÑ´Ù.
+	 * ê¸ˆì¹™ì²˜ë¦¬ ë¬¸ì ê°ì²´ë¥¼ ì‚­ì œí•œë‹¤.
 	 */
 	public void deleteForbiddenChar() {
 		forbiddenChar = null;
 	}
 
 	/**
-	 * ±İÄ¢Ã³¸® ¹®ÀÚ °´Ã¼¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ê¸ˆì¹™ì²˜ë¦¬ ë¬¸ì ê°ì²´ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ±İÄ¢Ã³¸® ¹®ÀÚ °´Ã¼
+	 * @return ê¸ˆì¹™ì²˜ë¦¬ ë¬¸ì ê°ì²´
 	 */
 	public UnknownRecord getForbiddenChar() {
 		return forbiddenChar;
 	}
 
 	/**
-	 * »õ·Î¿î [º¯°æ ÃßÀû ³»¿ë ¹× ¸ğ¾ç] °´Ã¼¸¦ »ı¼ºÇÏ°í ¸®½ºÆ®¿¡ Ãß°¡ÇÑ´Ù.
+	 * ìƒˆë¡œìš´ [ë³€ê²½ ì¶”ì  ë‚´ìš© ë° ëª¨ì–‘] ê°ì²´ë¥¼ ìƒì„±í•˜ê³  ë¦¬ìŠ¤íŠ¸ì— ì¶”ê°€í•œë‹¤.
 	 * 
 	 * @param rh
-	 *            ·¹ÄÚµå Çì´õ
-	 * @return »õ·Î »ı¼ºµÈ [º¯°æ ÃßÀû ³»¿ë ¹× ¸ğ¾ç] °´Ã¼
+	 *            ë ˆì½”ë“œ í—¤ë”
+	 * @return ìƒˆë¡œ ìƒì„±ëœ [ë³€ê²½ ì¶”ì  ë‚´ìš© ë° ëª¨ì–‘] ê°ì²´
 	 */
 	public UnknownRecord addNewTrackChange2(RecordHeader rh) {
 		UnknownRecord ur = new UnknownRecord(rh);
@@ -652,20 +652,20 @@ public class DocInfo {
 	}
 
 	/**
-	 * [º¯°æ ÃßÀû ³»¿ë ¹× ¸ğ¾ç] °´Ã¼ ¸®½ºÆ®¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * [ë³€ê²½ ì¶”ì  ë‚´ìš© ë° ëª¨ì–‘] ê°ì²´ ë¦¬ìŠ¤íŠ¸ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return [º¯°æ ÃßÀû ³»¿ë ¹× ¸ğ¾ç] °´Ã¼ ¸®½ºÆ®
+	 * @return [ë³€ê²½ ì¶”ì  ë‚´ìš© ë° ëª¨ì–‘] ê°ì²´ ë¦¬ìŠ¤íŠ¸
 	 */
 	public ArrayList<UnknownRecord> getTrackChange2List() {
 		return trackChange2List;
 	}
 
 	/**
-	 * »õ·Î¿î [º¯°æ ÃßÀû ÀÛ¼ºÀÚ] °´Ã¼¸¦ »ı¼ºÇÏ°í ¸®½ºÆ®¿¡ Ãß°¡ÇÑ´Ù.
+	 * ìƒˆë¡œìš´ [ë³€ê²½ ì¶”ì  ì‘ì„±ì] ê°ì²´ë¥¼ ìƒì„±í•˜ê³  ë¦¬ìŠ¤íŠ¸ì— ì¶”ê°€í•œë‹¤.
 	 * 
 	 * @param rh
-	 *            ·¹ÄÚµå Çì´õ
-	 * @return »õ·Î »ı¼ºµÈ [º¯°æ ÃßÀû ÀÛ¼ºÀÚ] °´Ã¼
+	 *            ë ˆì½”ë“œ í—¤ë”
+	 * @return ìƒˆë¡œ ìƒì„±ëœ [ë³€ê²½ ì¶”ì  ì‘ì„±ì] ê°ì²´
 	 */
 	public UnknownRecord addNewTrackChangeAuthor(RecordHeader rh) {
 		UnknownRecord ur = new UnknownRecord(rh);
@@ -674,9 +674,9 @@ public class DocInfo {
 	}
 
 	/**
-	 * [º¯°æ ÃßÀû ÀÛ¼ºÀÚ] °´Ã¼ ¸®½ºÆ®¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * [ë³€ê²½ ì¶”ì  ì‘ì„±ì] ê°ì²´ ë¦¬ìŠ¤íŠ¸ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return [º¯°æ ÃßÀû ÀÛ¼ºÀÚ] °´Ã¼ ¸®½ºÆ®
+	 * @return [ë³€ê²½ ì¶”ì  ì‘ì„±ì] ê°ì²´ ë¦¬ìŠ¤íŠ¸
 	 */
 	public ArrayList<UnknownRecord> getTrackChangeAuthorList() {
 		return trackChangeAuthorList;

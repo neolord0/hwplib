@@ -1,52 +1,52 @@
-package kr.dogfoot.hwplib.object.docinfo;
+ï»¿package kr.dogfoot.hwplib.object.docinfo;
 
 import kr.dogfoot.hwplib.object.docinfo.numbering.ParagraphHeadInfo;
 
 /**
- * ±Û¸Ó¸®Ç¥¿¡ ´ëÇÑ ·¹ÄÚµå
+ * ê¸€ë¨¸ë¦¬í‘œì— ëŒ€í•œ ë ˆì½”ë“œ
  * 
  * @author neolord
  */
 public class Bullet {
 	/**
-	 * ¹®´Ü ¸Ó¸®ÀÇ Á¤º¸
+	 * ë¬¸ë‹¨ ë¨¸ë¦¬ì˜ ì •ë³´
 	 */
 	private ParagraphHeadInfo paragraphHeadInfo;
 	/**
-	 * ±Û¸Ó¸®Ç¥ ¹®ÀÚ
+	 * ê¸€ë¨¸ë¦¬í‘œ ë¬¸ì
 	 */
 	private String bulletChar;
 
 	/**
-	 * »ı¼ºÀÚ
+	 * ìƒì„±ì
 	 */
 	public Bullet() {
 		paragraphHeadInfo = new ParagraphHeadInfo();
 	}
 
 	/**
-	 * ¹®´Ü ¸Ó¸®ÀÇ Á¤º¸¿¡ ´ëÇÑ °´Ã¼¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ë¬¸ë‹¨ ë¨¸ë¦¬ì˜ ì •ë³´ì— ëŒ€í•œ ê°ì²´ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ¹®´Ü ¸Ó¸®ÀÇ Á¤º¸¿¡ ´ëÇÑ °´Ã¼
+	 * @return ë¬¸ë‹¨ ë¨¸ë¦¬ì˜ ì •ë³´ì— ëŒ€í•œ ê°ì²´
 	 */
 	public ParagraphHeadInfo getParagraphHeadInfo() {
 		return paragraphHeadInfo;
 	}
 
 	/**
-	 * ±Û¸Ó¸®Ç¥ ¹®ÀÚ¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ê¸€ë¨¸ë¦¬í‘œ ë¬¸ìë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ±Û¸Ó¸®Ç¥ ¹®ÀÚ
+	 * @return ê¸€ë¨¸ë¦¬í‘œ ë¬¸ì
 	 */
 	public String getBulletChar() {
 		return bulletChar;
 	}
 
 	/**
-	 * ±Û¸Ó¸®Ç¥ ¹®ÀÚ¸¦ ¼³Á¤ÇÑ´Ù.
+	 * ê¸€ë¨¸ë¦¬í‘œ ë¬¸ìë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param bulletChar
-	 *            ±Û¸Ó¸®Ç¥ ¹®ÀÚ
+	 *            ê¸€ë¨¸ë¦¬í‘œ ë¬¸ì
 	 */
 	public void setBulletChar(String bulletChar) {
 		this.bulletChar = bulletChar;

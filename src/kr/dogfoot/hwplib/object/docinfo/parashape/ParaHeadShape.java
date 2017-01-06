@@ -1,58 +1,58 @@
-package kr.dogfoot.hwplib.object.docinfo.parashape;
+ï»¿package kr.dogfoot.hwplib.object.docinfo.parashape;
 
 /**
- * ¹®´Ü ¸Ó¸® ¸ğ¾çÀÇ Á¾·ù
+ * ë¬¸ë‹¨ ë¨¸ë¦¬ ëª¨ì–‘ì˜ ì¢…ë¥˜
  * 
  * @author neolord
  */
 public enum ParaHeadShape {
 	/**
-	 * ¾øÀ½
+	 * ì—†ìŒ
 	 */
 	None((byte) 0),
 	/**
-	 * °³¿ä
+	 * ê°œìš”
 	 */
 	Outline((byte) 1),
 	/**
-	 * ¹øÈ£
+	 * ë²ˆí˜¸
 	 */
 	Numbering((byte) 2),
 	/**
-	 * ±Û¸Ó¸®Ç¥(bullet)
+	 * ê¸€ë¨¸ë¦¬í‘œ(bullet)
 	 */
 	Bullet((byte) 3);
 
 	/**
-	 * ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª
+	 * íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’
 	 */
 	private byte value;
 
 	/**
-	 * »ı¼ºÀÚ
+	 * ìƒì„±ì
 	 * 
 	 * @param value
-	 *            ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª
+	 *            íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’
 	 */
 	private ParaHeadShape(byte value) {
 		this.value = value;
 	}
 
 	/**
-	 * ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ªÀ» ¹İÈ¯ÇÑ´Ù.
+	 * íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’ì„ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª
+	 * @return íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’
 	 */
 	public byte getValue() {
 		return value;
 	}
 
 	/**
-	 * ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª¿¡ ÇØ´çµÇ´Â enum °ªÀ» ¹İÈ¯ÇÑ´Ù.
+	 * íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’ì— í•´ë‹¹ë˜ëŠ” enum ê°’ì„ ë°˜í™˜í•œë‹¤.
 	 * 
 	 * @param value
-	 *            ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª
-	 * @return enum °ª
+	 *            íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’
+	 * @return enum ê°’
 	 */
 	public static ParaHeadShape valueOf(byte value) {
 		for (ParaHeadShape phs : values()) {

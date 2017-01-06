@@ -1,4 +1,4 @@
-package kr.dogfoot.hwplib.reader.bodytext.paragraph.control;
+ï»¿package kr.dogfoot.hwplib.reader.bodytext.paragraph.control;
 
 import java.io.IOException;
 
@@ -11,33 +11,33 @@ import kr.dogfoot.hwplib.reader.bodytext.ForParagraphList;
 import kr.dogfoot.hwplib.util.compoundFile.StreamReader;
 
 /**
- * ²¿¸®¸» ÄÁÆ®·ÑÀ» ÀĞ±â À§ÇÑ °´Ã¼
+ * ê¼¬ë¦¬ë§ ì»¨íŠ¸ë¡¤ì„ ì½ê¸° ìœ„í•œ ê°ì²´
  * 
  * @author neolord
  */
 public class ForControlFooter {
 	/**
-	 * ²¿¸®¸» ÄÁÆ®·Ñ
+	 * ê¼¬ë¦¬ë§ ì»¨íŠ¸ë¡¤
 	 */
 	private ControlFooter foot;
 	/**
-	 * ½ºÆ®¸² ¸®´õ
+	 * ìŠ¤íŠ¸ë¦¼ ë¦¬ë”
 	 */
 	private StreamReader sr;
 
 	/**
-	 * »ı¼ºÀÚ
+	 * ìƒì„±ì
 	 */
 	public ForControlFooter() {
 	}
 
 	/**
-	 * ²¿¸®¸» ÄÁÆ®·ÑÀ» ÀĞ´Â´Ù.
+	 * ê¼¬ë¦¬ë§ ì»¨íŠ¸ë¡¤ì„ ì½ëŠ”ë‹¤.
 	 * 
 	 * @param foot
-	 *            ²¿¸®¸» ÄÁÆ®·Ñ
+	 *            ê¼¬ë¦¬ë§ ì»¨íŠ¸ë¡¤
 	 * @param sr
-	 *            ½ºÆ®¸² ¸®´õ
+	 *            ìŠ¤íŠ¸ë¦¼ ë¦¬ë”
 	 * @throws Exception
 	 */
 	public void read(ControlFooter foot, StreamReader sr) throws Exception {
@@ -50,7 +50,7 @@ public class ForControlFooter {
 	}
 
 	/**
-	 * ²¿¸®¸» ÄÁÆ®·ÑÀÇ ÄÁÆ®·Ñ Çì´õ ·¹ÄÚµå¸¦ ÀĞ´Â´Ù.
+	 * ê¼¬ë¦¬ë§ ì»¨íŠ¸ë¡¤ì˜ ì»¨íŠ¸ë¡¤ í—¤ë” ë ˆì½”ë“œë¥¼ ì½ëŠ”ë‹¤.
 	 * 
 	 * @throws IOException
 	 */
@@ -61,7 +61,7 @@ public class ForControlFooter {
 	}
 
 	/**
-	 * ²¿¸®¸» ÄÁÆ®·ÑÀÇ ¹®´Ü ¸®½ºÆ® Çì´õ ·¹ÄÚµå¸¦ ÀĞ´Â´Ù.
+	 * ê¼¬ë¦¬ë§ ì»¨íŠ¸ë¡¤ì˜ ë¬¸ë‹¨ ë¦¬ìŠ¤íŠ¸ í—¤ë” ë ˆì½”ë“œë¥¼ ì½ëŠ”ë‹¤.
 	 * 
 	 * @throws Exception
 	 */
@@ -80,7 +80,7 @@ public class ForControlFooter {
 	}
 
 	/**
-	 * ¹®´Ü ¸®½ºÆ®¸¦ ÀĞ´Â´Ù.
+	 * ë¬¸ë‹¨ ë¦¬ìŠ¤íŠ¸ë¥¼ ì½ëŠ”ë‹¤.
 	 * 
 	 * @throws Exception
 	 */

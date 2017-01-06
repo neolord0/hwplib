@@ -1,21 +1,21 @@
-package kr.dogfoot.hwplib.object.bodytext.control;
+ï»¿package kr.dogfoot.hwplib.object.bodytext.control;
 
 import kr.dogfoot.hwplib.object.bodytext.control.bookmark.CtrlData;
 import kr.dogfoot.hwplib.object.bodytext.control.ctrlheader.CtrlHeaderBookmark;
 
 /**
- * Ã¥°¥ÇÇ ÄÁÆ®·Ñ¿¡ ´ëÇÑ °´Ã¼
+ * ì±…ê°ˆí”¼ ì»¨íŠ¸ë¡¤ì— ëŒ€í•œ ê°ì²´
  * 
  * @author neolord
  */
 public class ControlBookmark extends Control {
 	/**
-	 * ÀÓÀÇ µ¥ÀÌÅÍ °´Ã¼
+	 * ì„ì˜ ë°ì´í„° ê°ì²´
 	 */
 	private CtrlData ctrlData;
 
 	/**
-	 * »ı¼ºÀÚ
+	 * ìƒì„±ì
 	 */
 	public ControlBookmark() {
 		super(new CtrlHeaderBookmark());
@@ -24,18 +24,18 @@ public class ControlBookmark extends Control {
 	}
 
 	/**
-	 * Ã¥°¥ÇÇ¿ë ÄÁÆ®·Ñ Çì´õ¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ì±…ê°ˆí”¼ìš© ì»¨íŠ¸ë¡¤ í—¤ë”ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return Ã¥°¥ÇÇ¿ë ÄÁÆ®·Ñ Çì´õ
+	 * @return ì±…ê°ˆí”¼ìš© ì»¨íŠ¸ë¡¤ í—¤ë”
 	 */
 	public CtrlHeaderBookmark getHeader() {
 		return (CtrlHeaderBookmark) header;
 	}
 
 	/**
-	 * ÀÓÀÇ µ¥ÀÌÅÍ °´Ã¼¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ì„ì˜ ë°ì´í„° ê°ì²´ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ÀÓÀÇ µ¥ÀÌÅÍ °´Ã¼
+	 * @return ì„ì˜ ë°ì´í„° ê°ì²´
 	 */
 	public CtrlData getCtrlData() {
 		return ctrlData;

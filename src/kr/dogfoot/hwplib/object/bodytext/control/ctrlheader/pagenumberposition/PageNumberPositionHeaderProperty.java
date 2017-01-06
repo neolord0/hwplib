@@ -1,77 +1,77 @@
-package kr.dogfoot.hwplib.object.bodytext.control.ctrlheader.pagenumberposition;
+ï»¿package kr.dogfoot.hwplib.object.bodytext.control.ctrlheader.pagenumberposition;
 
 import kr.dogfoot.hwplib.object.bodytext.control.sectiondefine.NumberShape;
 import kr.dogfoot.hwplib.util.binary.BitFlag;
 
 /**
- * ÂÊ ¹øÈ£ À§Ä¡ ÄÁÆ®·ÑÀÇ ¼Ó¼ºÀ» ³ªÅ¸³»´Â °´Ã¼
+ * ìª½ ë²ˆí˜¸ ìœ„ì¹˜ ì»¨íŠ¸ë¡¤ì˜ ì†ì„±ì„ ë‚˜íƒ€ë‚´ëŠ” ê°ì²´
  * 
  * @author neolord
  */
 public class PageNumberPositionHeaderProperty {
 	/**
-	 * ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª(unsigned 4 byte)
+	 * íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’(unsigned 4 byte)
 	 */
 	private long value;
 
 	/**
-	 * »ı¼ºÀÚ
+	 * ìƒì„±ì
 	 */
 	public PageNumberPositionHeaderProperty() {
 	}
 
 	/**
-	 * ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ªÀ» ¹İÈ¯ÇÑ´Ù.
+	 * íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’ì„ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª
+	 * @return íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’
 	 */
 	public long getValue() {
 		return value;
 	}
 
 	/**
-	 * ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ªÀ» ¼³Á¤ÇÑ´Ù.
+	 * íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’ì„ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param value
-	 *            ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª
+	 *            íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’
 	 */
 	public void setValue(long value) {
 		this.value = value;
 	}
 
 	/**
-	 * ¹øÈ£ ¸ğ¾çÀ» ¹İÈ¯ÇÑ´Ù. (0~7 bit)
+	 * ë²ˆí˜¸ ëª¨ì–‘ì„ ë°˜í™˜í•œë‹¤. (0~7 bit)
 	 * 
-	 * @return ¹øÈ£ ¸ğ¾ç
+	 * @return ë²ˆí˜¸ ëª¨ì–‘
 	 */
 	public NumberShape getNumberShape() {
 		return NumberShape.valueOf((short) BitFlag.get(value, 0, 7));
 	}
 
 	/**
-	 * ¹øÈ£ ¸ğ¾çÀ» ¼³Á¤ÇÑ´Ù. (0~7 bit)
+	 * ë²ˆí˜¸ ëª¨ì–‘ì„ ì„¤ì •í•œë‹¤. (0~7 bit)
 	 * 
 	 * @param numberShape
-	 *            ¹øÈ£ ¸ğ¾ç
+	 *            ë²ˆí˜¸ ëª¨ì–‘
 	 */
 	public void setNumberShape(NumberShape numberShape) {
 		value = BitFlag.set(value, 0, 7, numberShape.getValue());
 	}
 
 	/**
-	 * ¹øÈ£ÀÇ Ç¥½Ã À§Ä¡¸¦ ¹İÈ¯ÇÑ´Ù. (8~11 bit)
+	 * ë²ˆí˜¸ì˜ í‘œì‹œ ìœ„ì¹˜ë¥¼ ë°˜í™˜í•œë‹¤. (8~11 bit)
 	 * 
-	 * @return ¹øÈ£ÀÇ Ç¥½Ã À§Ä¡
+	 * @return ë²ˆí˜¸ì˜ í‘œì‹œ ìœ„ì¹˜
 	 */
 	public NumberPosition getNumberPosition() {
 		return NumberPosition.valueOf((byte) BitFlag.get(value, 8, 11));
 	}
 
 	/**
-	 * ¹øÈ£ÀÇ Ç¥½Ã À§Ä¡¸¦ ¼³Á¤ÇÑ´Ù. (8~11 bit)
+	 * ë²ˆí˜¸ì˜ í‘œì‹œ ìœ„ì¹˜ë¥¼ ì„¤ì •í•œë‹¤. (8~11 bit)
 	 * 
 	 * @param numberPosition
-	 *            ¹øÈ£ÀÇ Ç¥½Ã À§Ä¡
+	 *            ë²ˆí˜¸ì˜ í‘œì‹œ ìœ„ì¹˜
 	 */
 	public void setNumberPosition(NumberPosition numberPosition) {
 		value = BitFlag.set(value, 8, 11, numberPosition.getValue());

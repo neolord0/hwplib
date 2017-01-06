@@ -1,243 +1,243 @@
-package kr.dogfoot.hwplib.object.docinfo.facename;
+ï»¿package kr.dogfoot.hwplib.object.docinfo.facename;
 
 /**
- * ±Û²Ã À¯Çü Á¤º¸¿¡ ´ëÇÑ °´Ã¼
+ * ê¸€ê¼´ ìœ í˜• ì •ë³´ì— ëŒ€í•œ ê°ì²´
  * 
  * @author neolord
  */
 public class FontTypeInfo {
 	/**
-	 * ±Û²Ã °è¿­
+	 * ê¸€ê¼´ ê³„ì—´
 	 */
 	private short fontType;
 	/**
-	 * ¼¼¸®ÇÁ À¯Çü
+	 * ì„¸ë¦¬í”„ ìœ í˜•
 	 */
 	private short serifType;
 	/**
-	 * ±½±â
+	 * êµµê¸°
 	 */
 	private short thickness;
 	/**
-	 * ºñ·Ê
+	 * ë¹„ë¡€
 	 */
 	private short ratio;
 	/**
-	 * ´ëÁ¶
+	 * ëŒ€ì¡°
 	 */
 	private short contrast;
 	/**
-	 * ½ºÆ®·ÎÅ© ÆíÂ÷
+	 * ìŠ¤íŠ¸ë¡œí¬ í¸ì°¨
 	 */
 	private short strokeDeviation;
 	/**
-	 * ÀÚÈ¹ À¯Çü
+	 * ìíš ìœ í˜•
 	 */
 	private short characterStrokeType;
 	/**
-	 * ±ÛÀÚÇü
+	 * ê¸€ìí˜•
 	 */
 	private short characterShape;
 	/**
-	 * Áß°£¼±
+	 * ì¤‘ê°„ì„ 
 	 */
 	private short middleLine;
 	/**
-	 * X-³ôÀÌ
+	 * X-ë†’ì´
 	 */
 	private short xHeight;
 
 	/**
-	 * »ı¼ºÀÚ
+	 * ìƒì„±ì
 	 */
 	public FontTypeInfo() {
 	}
 
 	/**
-	 * ±Û²Ã °è¿­ °ªÀ» ¹İÈ¯ÇÑ´Ù.
+	 * ê¸€ê¼´ ê³„ì—´ ê°’ì„ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ±Û²Ã °è¿­ °ª
+	 * @return ê¸€ê¼´ ê³„ì—´ ê°’
 	 */
 	public short getFontType() {
 		return fontType;
 	}
 
 	/**
-	 * ±Û²Ã °è¿­ °ªÀ» ¼³Á¤ÇÑ´Ù.
+	 * ê¸€ê¼´ ê³„ì—´ ê°’ì„ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param fontType
-	 *            ±Û²Ã °è¿­ °ª
+	 *            ê¸€ê¼´ ê³„ì—´ ê°’
 	 */
 	public void setFontType(short fontType) {
 		this.fontType = fontType;
 	}
 
 	/**
-	 * ¼¼¸®ÇÁ À¯Çü °ªÀ» ¹İÈ¯ÇÑ´Ù.
+	 * ì„¸ë¦¬í”„ ìœ í˜• ê°’ì„ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ¼¼¸®ÇÁ À¯Çü °ª
+	 * @return ì„¸ë¦¬í”„ ìœ í˜• ê°’
 	 */
 	public short getSerifType() {
 		return serifType;
 	}
 
 	/**
-	 * ¼¼¸®ÇÁ À¯Çü °ªÀ» ¼³Á¤ÇÑ´Ù.
+	 * ì„¸ë¦¬í”„ ìœ í˜• ê°’ì„ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param serifType
-	 *            ¼¼¸®ÇÁ À¯Çü °ª
+	 *            ì„¸ë¦¬í”„ ìœ í˜• ê°’
 	 */
 	public void setSerifType(short serifType) {
 		this.serifType = serifType;
 	}
 
 	/**
-	 * ±½±â °ªÀ» ¹İÈ¯ÇÑ´Ù.
+	 * êµµê¸° ê°’ì„ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ±½±â °ª
+	 * @return êµµê¸° ê°’
 	 */
 	public short getThickness() {
 		return thickness;
 	}
 
 	/**
-	 * ±½±â °ªÀ» ¼³Á¤ÇÑ´Ù.
+	 * êµµê¸° ê°’ì„ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param thickness
-	 *            ±½±â °ª
+	 *            êµµê¸° ê°’
 	 */
 	public void setThickness(short thickness) {
 		this.thickness = thickness;
 	}
 
 	/**
-	 * ºñ·Ê °ªÀ» ¹İÈ¯ÇÑ´Ù.
+	 * ë¹„ë¡€ ê°’ì„ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ºñ·Ê °ª
+	 * @return ë¹„ë¡€ ê°’
 	 */
 	public short getRatio() {
 		return ratio;
 	}
 
 	/**
-	 * ºñ·Ê °ªÀ» ¼³Á¤ÇÑ´Ù.
+	 * ë¹„ë¡€ ê°’ì„ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param ratio
-	 *            ºñ·Ê °ª
+	 *            ë¹„ë¡€ ê°’
 	 */
 	public void setRatio(short ratio) {
 		this.ratio = ratio;
 	}
 
 	/**
-	 * ´ëÁ¶ °ªÀ» ¹İÈ¯ÇÑ´Ù.
+	 * ëŒ€ì¡° ê°’ì„ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ´ëÁ¶ °ª
+	 * @return ëŒ€ì¡° ê°’
 	 */
 	public short getContrast() {
 		return contrast;
 	}
 
 	/**
-	 * ´ëÁ¶ °ªÀ» ¼³Á¤ÇÑ´Ù.
+	 * ëŒ€ì¡° ê°’ì„ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param contrast
-	 *            ´ëÁ¶ °ª
+	 *            ëŒ€ì¡° ê°’
 	 */
 	public void setContrast(short contrast) {
 		this.contrast = contrast;
 	}
 
 	/**
-	 * ½ºÆ®·ÎÅ© ÆíÂ÷ °ªÀ» ¹İÈ¯ÇÑ´Ù.
+	 * ìŠ¤íŠ¸ë¡œí¬ í¸ì°¨ ê°’ì„ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ½ºÆ®·ÎÅ© ÆíÂ÷ °ª
+	 * @return ìŠ¤íŠ¸ë¡œí¬ í¸ì°¨ ê°’
 	 */
 	public short getStrokeDeviation() {
 		return strokeDeviation;
 	}
 
 	/**
-	 * ½ºÆ®·ÎÅ© ÆíÂ÷ °ªÀ» ¼³Á¤ÇÑ´Ù.
+	 * ìŠ¤íŠ¸ë¡œí¬ í¸ì°¨ ê°’ì„ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param strokeDeviation
-	 *            ½ºÆ®·ÎÅ© ÆíÂ÷ °ª
+	 *            ìŠ¤íŠ¸ë¡œí¬ í¸ì°¨ ê°’
 	 */
 	public void setStrokeDeviation(short strokeDeviation) {
 		this.strokeDeviation = strokeDeviation;
 	}
 
 	/**
-	 * ÀÚÈ¹ À¯Çü °ªÀ» ¹İÈ¯ÇÑ´Ù.
+	 * ìíš ìœ í˜• ê°’ì„ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ÀÚÈ¹ À¯Çü °ª
+	 * @return ìíš ìœ í˜• ê°’
 	 */
 	public short getCharacterStrokeType() {
 		return characterStrokeType;
 	}
 
 	/**
-	 * ÀÚÈ¹ À¯Çü °ªÀ» ¼³Á¤ÇÑ´Ù.
+	 * ìíš ìœ í˜• ê°’ì„ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param characterStrokeType
-	 *            ÀÚÈ¹ À¯Çü °ª
+	 *            ìíš ìœ í˜• ê°’
 	 */
 	public void setCharacterStrokeType(short characterStrokeType) {
 		this.characterStrokeType = characterStrokeType;
 	}
 
 	/**
-	 * ±ÛÀÚÇü °ªÀ» ¹İÈ¯ÇÑ´Ù.
+	 * ê¸€ìí˜• ê°’ì„ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ±ÛÀÚÇü °ª
+	 * @return ê¸€ìí˜• ê°’
 	 */
 	public short getCharacterShape() {
 		return characterShape;
 	}
 
 	/**
-	 * ±ÛÀÚÇü °ªÀ» ¼³Á¤ÇÑ´Ù.
+	 * ê¸€ìí˜• ê°’ì„ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param characterShape
-	 *            ±ÛÀÚÇü °ª
+	 *            ê¸€ìí˜• ê°’
 	 */
 	public void setCharacterShape(short characterShape) {
 		this.characterShape = characterShape;
 	}
 
 	/**
-	 * Áß°£¼± °ªÀ» ¹İÈ¯ÇÑ´Ù.
+	 * ì¤‘ê°„ì„  ê°’ì„ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return Áß°£¼± °ª
+	 * @return ì¤‘ê°„ì„  ê°’
 	 */
 	public short getMiddleLine() {
 		return middleLine;
 	}
 
 	/**
-	 * Áß°£¼± °ªÀ» ¼³Á¤ÇÑ´Ù.
+	 * ì¤‘ê°„ì„  ê°’ì„ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param middleLine
-	 *            Áß°£¼± °ª
+	 *            ì¤‘ê°„ì„  ê°’
 	 */
 	public void setMiddleLine(short middleLine) {
 		this.middleLine = middleLine;
 	}
 
 	/**
-	 * X-³ôÀÌ¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * X-ë†’ì´ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return X-³ôÀÌ
+	 * @return X-ë†’ì´
 	 */
 	public short getxHeight() {
 		return xHeight;
 	}
 
 	/**
-	 * X-³ôÀÌ¸¦ ¼³Á¤ÇÑ´Ù.
+	 * X-ë†’ì´ë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param xHeight
-	 *            X-³ôÀÌ
+	 *            X-ë†’ì´
 	 */
 	public void setxHeight(short xHeight) {
 		this.xHeight = xHeight;

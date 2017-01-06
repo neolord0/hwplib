@@ -1,4 +1,4 @@
-package kr.dogfoot.hwplib.reader.docinfo;
+ï»¿package kr.dogfoot.hwplib.reader.docinfo;
 
 import java.io.IOException;
 
@@ -6,18 +6,18 @@ import kr.dogfoot.hwplib.object.docinfo.Style;
 import kr.dogfoot.hwplib.util.compoundFile.StreamReader;
 
 /**
- * ½ºÅ¸ÀÏ ·¹ÄÚµå¸¦ ÀĞ±â À§ÇÑ °´Ã¼
+ * ìŠ¤íƒ€ì¼ ë ˆì½”ë“œë¥¼ ì½ê¸° ìœ„í•œ ê°ì²´
  * 
  * @author neolord
  */
 public class ForStyle {
 	/**
-	 * ½ºÅ¸ÀÏ ·¹ÄÚµå¸¦ ÀĞ´Â´Ù.
+	 * ìŠ¤íƒ€ì¼ ë ˆì½”ë“œë¥¼ ì½ëŠ”ë‹¤.
 	 * 
 	 * @param s
-	 *            ½ºÅ¸ÀÏ ·¹ÄÚµå
+	 *            ìŠ¤íƒ€ì¼ ë ˆì½”ë“œ
 	 * @param sr
-	 *            ½ºÆ®¸² ¸®´õ
+	 *            ìŠ¤íŠ¸ë¦¼ ë¦¬ë”
 	 * @throws IOException
 	 */
 	public static void read(Style s, StreamReader sr) throws IOException {
@@ -32,10 +32,10 @@ public class ForStyle {
 	}
 
 	/**
-	 * ¾Ë·ÁÁöÁö ¾ÊÀº 2 ¹ÙÀÌÆ®¸¦ Ã³¸®ÇÑ´Ù.
+	 * ì•Œë ¤ì§€ì§€ ì•Šì€ 2 ë°”ì´íŠ¸ë¥¼ ì²˜ë¦¬í•œë‹¤.
 	 * 
 	 * @param sr
-	 *            ½ºÆ®¸² ¸®´õ
+	 *            ìŠ¤íŠ¸ë¦¼ ë¦¬ë”
 	 * @throws IOException
 	 */
 	private static void unknown2Bytes(StreamReader sr) throws IOException {

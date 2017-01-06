@@ -1,4 +1,4 @@
-package kr.dogfoot.hwplib.reader.docinfo;
+ï»¿package kr.dogfoot.hwplib.reader.docinfo;
 
 import java.io.IOException;
 
@@ -7,18 +7,18 @@ import kr.dogfoot.hwplib.object.docinfo.compatibledocument.CompatibleDocumentSor
 import kr.dogfoot.hwplib.util.compoundFile.StreamReader;
 
 /**
- * È£È¯ ¹®¼­ ·¹ÄÚµå¸¦  ÀĞ±â À§ÇÑ °´Ã¼
+ * í˜¸í™˜ ë¬¸ì„œ ë ˆì½”ë“œë¥¼  ì½ê¸° ìœ„í•œ ê°ì²´
  * 
  * @author neolord
  */
 public class ForCompatibleDocument {
 	/**
-	 * È£È¯ ¹®¼­ Á¤º¸¸¦ ÀĞ´Â´Ù.
+	 * í˜¸í™˜ ë¬¸ì„œ ì •ë³´ë¥¼ ì½ëŠ”ë‹¤.
 	 * 
 	 * @param cd
-	 *            È£È¯ ¹®¼­ ·¹ÄÚµå
+	 *            í˜¸í™˜ ë¬¸ì„œ ë ˆì½”ë“œ
 	 * @param sr
-	 *            ½ºÆ®¸² ¸®´õ
+	 *            ìŠ¤íŠ¸ë¦¼ ë¦¬ë”
 	 * @throws IOException
 	 */
 	public static void read(CompatibleDocument cd,

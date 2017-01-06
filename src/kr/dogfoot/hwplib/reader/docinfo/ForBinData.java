@@ -1,4 +1,4 @@
-package kr.dogfoot.hwplib.reader.docinfo;
+ï»¿package kr.dogfoot.hwplib.reader.docinfo;
 
 import java.io.IOException;
 
@@ -7,18 +7,18 @@ import kr.dogfoot.hwplib.object.docinfo.bindata.BinDataType;
 import kr.dogfoot.hwplib.util.compoundFile.StreamReader;
 
 /**
- * ¹ÙÀÌ³Ê¸® µ¥ÀÌÅ¸ ·¹ÄÚµå¸¦ ÀĞ±â À§ÇÑ °´Ã¼
+ * ë°”ì´ë„ˆë¦¬ ë°ì´íƒ€ ë ˆì½”ë“œë¥¼ ì½ê¸° ìœ„í•œ ê°ì²´
  * 
  * @author neolord
  */
 public class ForBinData {
 	/**
-	 * ¹ÙÀÌ³Ê¸® µ¥ÀÌÅ¸ ·¹ÄÚµå¸¦ ÀĞ´Â´Ù.
+	 * ë°”ì´ë„ˆë¦¬ ë°ì´íƒ€ ë ˆì½”ë“œë¥¼ ì½ëŠ”ë‹¤.
 	 * 
 	 * @param bd
-	 *            ¹ÙÀÌ³Ê¸® µ¥ÀÌÅ¸ ·¹ÄÚµå
+	 *            ë°”ì´ë„ˆë¦¬ ë°ì´íƒ€ ë ˆì½”ë“œ
 	 * @param sr
-	 *            ½ºÆ®¸² ¸®´õ
+	 *            ìŠ¤íŠ¸ë¦¼ ë¦¬ë”
 	 * @throws IOException
 	 */
 	public static void read(BinData bd, StreamReader sr)

@@ -1,4 +1,4 @@
-package kr.dogfoot.hwplib.reader.docinfo;
+ï»¿package kr.dogfoot.hwplib.reader.docinfo;
 
 import java.io.IOException;
 
@@ -6,18 +6,18 @@ import kr.dogfoot.hwplib.object.docinfo.LayoutCompatibility;
 import kr.dogfoot.hwplib.util.compoundFile.StreamReader;
 
 /**
- * ·¹ÀÌ¾Æ¿ô È£È¯ ·¹ÄÚµå¸¦ ÀĞ±â À§ÇÑ °´Ã¼
+ * ë ˆì´ì•„ì›ƒ í˜¸í™˜ ë ˆì½”ë“œë¥¼ ì½ê¸° ìœ„í•œ ê°ì²´
  * 
  * @author neolord
  */
 public class ForLayoutCompatibility {
 	/**
-	 * È£È¯ ¹®¼­ ·¹ÄÚµå¸¦ ÀĞ´Â´Ù.
+	 * í˜¸í™˜ ë¬¸ì„œ ë ˆì½”ë“œë¥¼ ì½ëŠ”ë‹¤.
 	 * 
 	 * @param lc
-	 *            ·¹ÀÌ¾Æ¿ô È£È¯ ·¹ÄÚµå
+	 *            ë ˆì´ì•„ì›ƒ í˜¸í™˜ ë ˆì½”ë“œ
 	 * @param sr
-	 *            ½ºÆ®¸² ¸®´õ
+	 *            ìŠ¤íŠ¸ë¦¼ ë¦¬ë”
 	 * @throws IOException
 	 */
 	public static void read(LayoutCompatibility lc, StreamReader sr)

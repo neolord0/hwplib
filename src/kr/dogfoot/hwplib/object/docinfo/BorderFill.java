@@ -1,4 +1,4 @@
-package kr.dogfoot.hwplib.object.docinfo;
+ï»¿package kr.dogfoot.hwplib.object.docinfo;
 
 import kr.dogfoot.hwplib.object.docinfo.borderfill.BorderFillProperty;
 import kr.dogfoot.hwplib.object.docinfo.borderfill.BorderThickness;
@@ -8,50 +8,50 @@ import kr.dogfoot.hwplib.object.docinfo.borderfill.fillinfo.FillInfo;
 import kr.dogfoot.hwplib.object.etc.Color4Byte;
 
 /**
- * Å×µÎ¸®/¹è°æÀÇ ¸ğ¾çÀ» ³ªÅ¸³»´Â ·¹ÄÚµå
+ * í…Œë‘ë¦¬/ë°°ê²½ì˜ ëª¨ì–‘ì„ ë‚˜íƒ€ë‚´ëŠ” ë ˆì½”ë“œ
  * 
  * @author neolord
  */
 public class BorderFill {
 	/**
-	 * ¼Ó¼º
+	 * ì†ì„±
 	 */
 	private BorderFillProperty property;
 	/**
-	 * ¿ŞÂÊ ¼±ÀÇ ¼Ó¼º
+	 * ì™¼ìª½ ì„ ì˜ ì†ì„±
 	 */
 	private EachBorder leftBorder;
 	/**
-	 * ¿À¸¥ÂÊ ¼±ÀÇ ¼Ó¼º
+	 * ì˜¤ë¥¸ìª½ ì„ ì˜ ì†ì„±
 	 */
 	private EachBorder rightBorder;
 	/**
-	 * À§ÂÊ ¼±ÀÇ ¼Ó¼º
+	 * ìœ„ìª½ ì„ ì˜ ì†ì„±
 	 */
 	private EachBorder topBorder;
 	/**
-	 * ¾Æ·¡ÂÊ ¼±ÀÇ ¼Ó¼º
+	 * ì•„ë˜ìª½ ì„ ì˜ ì†ì„±
 	 */
 	private EachBorder bottomBorder;
 	/**
-	 * ´ë°¢¼± Á¾·ù
+	 * ëŒ€ê°ì„  ì¢…ë¥˜
 	 */
 	private DiagonalSort diagonalSort;
 	/**
-	 * ´ë°¢¼± ±½±â
+	 * ëŒ€ê°ì„  êµµê¸°
 	 */
 	private BorderThickness diagonalThickness;
 	/**
-	 * ´ë°¢¼± »ö»ó
+	 * ëŒ€ê°ì„  ìƒ‰ìƒ
 	 */
 	private Color4Byte diagonalColor;
 	/**
-	 * Ã¤¿ì±â Á¤º¸
+	 * ì±„ìš°ê¸° ì •ë³´
 	 */
 	private FillInfo fillInfo;
 
 	/**
-	 * »ı¼ºÀÚ
+	 * ìƒì„±ì
 	 */
 	public BorderFill() {
 		property = new BorderFillProperty();
@@ -64,101 +64,101 @@ public class BorderFill {
 	}
 
 	/**
-	 * Å×µÎ¸®/¹è°æÀÇ ¼Ó¼º °´Ã¼¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * í…Œë‘ë¦¬/ë°°ê²½ì˜ ì†ì„± ê°ì²´ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return Å×µÎ¸®/¹è°æÀÇ ¼Ó¼º °´Ã¼
+	 * @return í…Œë‘ë¦¬/ë°°ê²½ì˜ ì†ì„± ê°ì²´
 	 */
 	public BorderFillProperty getProperty() {
 		return property;
 	}
 
 	/**
-	 * ¿ŞÂÊ ¼±ÀÇ ¼Ó¼º °´Ã¼¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ì™¼ìª½ ì„ ì˜ ì†ì„± ê°ì²´ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ¿ŞÂÊ ¼±ÀÇ ¼Ó¼º °´Ã¼
+	 * @return ì™¼ìª½ ì„ ì˜ ì†ì„± ê°ì²´
 	 */
 	public EachBorder getLeftBorder() {
 		return leftBorder;
 	}
 
 	/**
-	 * ¿À¸¥ÂÊ ¼±ÀÇ ¼Ó¼º °´Ã¼¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ì˜¤ë¥¸ìª½ ì„ ì˜ ì†ì„± ê°ì²´ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ¿À¸¥ÂÊ ¼±ÀÇ ¼Ó¼º °´Ã¼
+	 * @return ì˜¤ë¥¸ìª½ ì„ ì˜ ì†ì„± ê°ì²´
 	 */
 	public EachBorder getRightBorder() {
 		return rightBorder;
 	}
 
 	/**
-	 * À§ÂÊ ¼±ÀÇ ¼Ó¼º °´Ã¼¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ìœ„ìª½ ì„ ì˜ ì†ì„± ê°ì²´ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return À§ÂÊ ¼±ÀÇ ¼Ó¼º °´Ã¼
+	 * @return ìœ„ìª½ ì„ ì˜ ì†ì„± ê°ì²´
 	 */
 	public EachBorder getTopBorder() {
 		return topBorder;
 	}
 
 	/**
-	 * ¾Æ·¡ÂÊ ¼±ÀÇ ¼Ó¼º °´Ã¼¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ì•„ë˜ìª½ ì„ ì˜ ì†ì„± ê°ì²´ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ¾Æ·¡ÂÊ ¼±ÀÇ ¼Ó¼º °´Ã¼
+	 * @return ì•„ë˜ìª½ ì„ ì˜ ì†ì„± ê°ì²´
 	 */
 	public EachBorder getBottomBorder() {
 		return bottomBorder;
 	}
 
 	/**
-	 * ´ë°¢¼±ÀÇ Á¾·ù¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ëŒ€ê°ì„ ì˜ ì¢…ë¥˜ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ´ë°¢¼±ÀÇ Á¾·ù
+	 * @return ëŒ€ê°ì„ ì˜ ì¢…ë¥˜
 	 */
 	public DiagonalSort getDiagonalSort() {
 		return diagonalSort;
 	}
 
 	/**
-	 * ´ë°¢¼±ÀÇ Á¾·ù¸¦ ¼³Á¤ÇÑ´Ù.
+	 * ëŒ€ê°ì„ ì˜ ì¢…ë¥˜ë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param diagonalSort
-	 *            ´ë°¢¼±ÀÇ Á¾·ù
+	 *            ëŒ€ê°ì„ ì˜ ì¢…ë¥˜
 	 */
 	public void setDiagonalSort(DiagonalSort diagonalSort) {
 		this.diagonalSort = diagonalSort;
 	}
 
 	/**
-	 * ´ë°¢¼±ÀÇ µÎ²²¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ëŒ€ê°ì„ ì˜ ë‘ê»˜ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ´ë°¢¼±ÀÇ µÎ²²
+	 * @return ëŒ€ê°ì„ ì˜ ë‘ê»˜
 	 */
 	public BorderThickness getDiagonalThickness() {
 		return diagonalThickness;
 	}
 
 	/**
-	 * ´ë°¢¼±ÀÇ µÎ²²¸¦ ¼³Á¤ÇÑ´Ù.
+	 * ëŒ€ê°ì„ ì˜ ë‘ê»˜ë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param diagonalThickness
-	 *            ´ë°¢¼±ÀÇ µÎ²²
+	 *            ëŒ€ê°ì„ ì˜ ë‘ê»˜
 	 */
 	public void setDiagonalThickness(BorderThickness diagonalThickness) {
 		this.diagonalThickness = diagonalThickness;
 	}
 
 	/**
-	 * ´ë°¢¼±ÀÇ »ö»ó °´Ã¼¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ëŒ€ê°ì„ ì˜ ìƒ‰ìƒ ê°ì²´ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ´ë°¢¼±ÀÇ »ö»ó °´Ã¼
+	 * @return ëŒ€ê°ì„ ì˜ ìƒ‰ìƒ ê°ì²´
 	 */
 	public Color4Byte getDiagonalColor() {
 		return diagonalColor;
 	}
 
 	/**
-	 * Ã¤¿ì±â Á¤º¸ °´Ã¼¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ì±„ìš°ê¸° ì •ë³´ ê°ì²´ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return Ã¤¿ì±â Á¤º¸ °´Ã¼
+	 * @return ì±„ìš°ê¸° ì •ë³´ ê°ì²´
 	 */
 	public FillInfo getFillInfo() {
 		return fillInfo;

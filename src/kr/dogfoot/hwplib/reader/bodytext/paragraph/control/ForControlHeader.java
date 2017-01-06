@@ -1,4 +1,4 @@
-package kr.dogfoot.hwplib.reader.bodytext.paragraph.control;
+ï»¿package kr.dogfoot.hwplib.reader.bodytext.paragraph.control;
 
 import java.io.IOException;
 
@@ -11,33 +11,33 @@ import kr.dogfoot.hwplib.reader.bodytext.ForParagraphList;
 import kr.dogfoot.hwplib.util.compoundFile.StreamReader;
 
 /**
- * ¸Ó¸®¸» ÄÁÆ®·ÑÀ» ÀĞ±â À§ÇÑ °´Ã¼
+ * ë¨¸ë¦¬ë§ ì»¨íŠ¸ë¡¤ì„ ì½ê¸° ìœ„í•œ ê°ì²´
  * 
  * @author neolord
  */
 public class ForControlHeader {
 	/**
-	 * ¸Ó¸®¸» ÄÁÆ®·Ñ
+	 * ë¨¸ë¦¬ë§ ì»¨íŠ¸ë¡¤
 	 */
 	private ControlHeader head;
 	/**
-	 * ½ºÆ®¸² ¸®´õ
+	 * ìŠ¤íŠ¸ë¦¼ ë¦¬ë”
 	 */
 	private StreamReader sr;
 
 	/**
-	 * »ı¼ºÀÚ
+	 * ìƒì„±ì
 	 */
 	public ForControlHeader() {
 	}
 
 	/**
-	 * ¸Ó¸®¸» ÄÁÆ®·ÑÀ» ÀĞ´Â´Ù.
+	 * ë¨¸ë¦¬ë§ ì»¨íŠ¸ë¡¤ì„ ì½ëŠ”ë‹¤.
 	 * 
 	 * @param head
-	 *            ¸Ó¸®¸» ÄÁÆ®·Ñ
+	 *            ë¨¸ë¦¬ë§ ì»¨íŠ¸ë¡¤
 	 * @param sr
-	 *            ½ºÆ®¸² ¸®´õ
+	 *            ìŠ¤íŠ¸ë¦¼ ë¦¬ë”
 	 * @throws Exception
 	 */
 	public void read(ControlHeader head, StreamReader sr) throws Exception {
@@ -50,7 +50,7 @@ public class ForControlHeader {
 	}
 
 	/**
-	 * ¸Ó¸®¸» ÄÁÆ®·ÑÀÇ ÄÁÆ®·Ñ Çì´õ ·¹ÄÚµå¸¦ ÀĞ´Â´Ù.
+	 * ë¨¸ë¦¬ë§ ì»¨íŠ¸ë¡¤ì˜ ì»¨íŠ¸ë¡¤ í—¤ë” ë ˆì½”ë“œë¥¼ ì½ëŠ”ë‹¤.
 	 * 
 	 * @throws IOException
 	 */
@@ -61,7 +61,7 @@ public class ForControlHeader {
 	}
 
 	/**
-	 * ¸Ó¸®¸» ÄÁÆ®·ÑÀÇ ¹®´Ü ¸®½ºÆ® Çì´õ ·¹ÄÚµå¸¦ ÀĞ´Â´Ù.
+	 * ë¨¸ë¦¬ë§ ì»¨íŠ¸ë¡¤ì˜ ë¬¸ë‹¨ ë¦¬ìŠ¤íŠ¸ í—¤ë” ë ˆì½”ë“œë¥¼ ì½ëŠ”ë‹¤.
 	 * 
 	 * @throws Exception
 	 */
@@ -80,7 +80,7 @@ public class ForControlHeader {
 	}
 
 	/**
-	 * ¹®´Ü ¸®½ºÆ®¸¦ ÀĞ´Â´Ù.
+	 * ë¬¸ë‹¨ ë¦¬ìŠ¤íŠ¸ë¥¼ ì½ëŠ”ë‹¤.
 	 * 
 	 * @throws Exception
 	 */

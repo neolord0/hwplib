@@ -1,121 +1,121 @@
-package kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponent.shadowinfo;
+ï»¿package kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponent.shadowinfo;
 
 import kr.dogfoot.hwplib.object.etc.Color4Byte;
 
 /**
- * ±×¸²ÀÚ Á¤º¸
+ * ê·¸ë¦¼ì ì •ë³´
  * 
  * @author neolord
  */
 public class ShadowInfo {
 	/**
-	 * ±×¸²ÀÚ Á¾·ù
+	 * ê·¸ë¦¼ì ì¢…ë¥˜
 	 */
 	private ShadowType type;
 	/**
-	 * ±×¸²ÀÚ »ö
+	 * ê·¸ë¦¼ì ìƒ‰
 	 */
 	private Color4Byte color;
 	/**
-	 * °¡·Î ¹æÇâ ÀÌµ¿ °Å¸®
+	 * ê°€ë¡œ ë°©í–¥ ì´ë™ ê±°ë¦¬
 	 */
 	private int offsetX;
 	/**
-	 * ¼¼·Î ¹æÇâ ÀÌµ¿ °Å¸®
+	 * ì„¸ë¡œ ë°©í–¥ ì´ë™ ê±°ë¦¬
 	 */
 	private int offsetY;
 	/**
-	 * Åõ¸íµµ
+	 * íˆ¬ëª…ë„
 	 */
 	private short transparnet;
 
 	/**
-	 * »ı¼ºÀÚ
+	 * ìƒì„±ì
 	 */
 	public ShadowInfo() {
 		color = new Color4Byte();
 	}
 
 	/**
-	 * ±×¸²ÀÚ Á¾·ù¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ê·¸ë¦¼ì ì¢…ë¥˜ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ±×¸²ÀÚ Á¾·ù
+	 * @return ê·¸ë¦¼ì ì¢…ë¥˜
 	 */
 	public ShadowType getType() {
 		return type;
 	}
 
 	/**
-	 * ±×¸²ÀÚ Á¾·ù¸¦ ™EÁ¤ÇÑ´Ù.
+	 * ê·¸ë¦¼ì ì¢…ë¥˜ë¥¼ ì„·ì •í•œë‹¤.
 	 * 
 	 * @param type
-	 *            ±×¸²ÀÚ Á¾·ù
+	 *            ê·¸ë¦¼ì ì¢…ë¥˜
 	 */
 	public void setType(ShadowType type) {
 		this.type = type;
 	}
 
 	/**
-	 * ±×¸²ÀÚ »ö»ó °´Ã¼¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ê·¸ë¦¼ì ìƒ‰ìƒ ê°ì²´ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ±×¸²ÀÚ »ö»ó °´Ã¼
+	 * @return ê·¸ë¦¼ì ìƒ‰ìƒ ê°ì²´
 	 */
 	public Color4Byte getColor() {
 		return color;
 	}
 
 	/**
-	 * °¡·Î ¹æÇâ ÀÌµ¿ °Å¸®¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ê°€ë¡œ ë°©í–¥ ì´ë™ ê±°ë¦¬ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return °¡·Î ¹æÇâ ÀÌµ¿ °Å¸®
+	 * @return ê°€ë¡œ ë°©í–¥ ì´ë™ ê±°ë¦¬
 	 */
 	public int getOffsetX() {
 		return offsetX;
 	}
 
 	/**
-	 * °¡·Î ¹æÇâ ÀÌµ¿ °Å¸®¸¦ ¼³Á¤ÇÑ´Ù.
+	 * ê°€ë¡œ ë°©í–¥ ì´ë™ ê±°ë¦¬ë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param offsetX
-	 *            °¡·Î ¹æÇâ ÀÌµ¿ °Å¸®
+	 *            ê°€ë¡œ ë°©í–¥ ì´ë™ ê±°ë¦¬
 	 */
 	public void setOffsetX(int offsetX) {
 		this.offsetX = offsetX;
 	}
 
 	/**
-	 * ¼¼·Î ¹æÇâ ÀÌµ¿ °Å¸®¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ì„¸ë¡œ ë°©í–¥ ì´ë™ ê±°ë¦¬ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ¼¼·Î ¹æÇâ ÀÌµ¿ °Å¸®
+	 * @return ì„¸ë¡œ ë°©í–¥ ì´ë™ ê±°ë¦¬
 	 */
 	public int getOffsetY() {
 		return offsetY;
 	}
 
 	/**
-	 * ¼¼·Î ¹æÇâ ÀÌµ¿ °Å¸®¸¦ ¼³Á¤ÇÑ´Ù.
+	 * ì„¸ë¡œ ë°©í–¥ ì´ë™ ê±°ë¦¬ë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param offsetY
-	 *            ¼¼·Î ¹æÇâ ÀÌµ¿ °Å¸®
+	 *            ì„¸ë¡œ ë°©í–¥ ì´ë™ ê±°ë¦¬
 	 */
 	public void setOffsetY(int offsetY) {
 		this.offsetY = offsetY;
 	}
 
 	/**
-	 * Åõ¸íµµ¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * íˆ¬ëª…ë„ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return Åõ¸íµµ
+	 * @return íˆ¬ëª…ë„
 	 */
 	public short getTransparnet() {
 		return transparnet;
 	}
 
 	/**
-	 * Åõ¸íµµ¸¦ ¼³Á¤ÇÑ´Ù.
+	 * íˆ¬ëª…ë„ë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param transparnet
-	 *            Åõ¸íµµ
+	 *            íˆ¬ëª…ë„
 	 */
 	public void setTransparnet(short transparnet) {
 		this.transparnet = transparnet;

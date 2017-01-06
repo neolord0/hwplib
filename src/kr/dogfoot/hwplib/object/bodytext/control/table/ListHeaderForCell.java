@@ -1,349 +1,349 @@
-package kr.dogfoot.hwplib.object.bodytext.control.table;
+ï»¿package kr.dogfoot.hwplib.object.bodytext.control.table;
 
 /**
- * ¼¿ÀÇ ¹®´Ü ¸®½ºÆ® Çì´õ ·¹ÄÚµå
+ * ì…€ì˜ ë¬¸ë‹¨ ë¦¬ìŠ¤íŠ¸ í—¤ë” ë ˆì½”ë“œ
  * 
  * @author neolord
  */
 public class ListHeaderForCell {
 	/**
-	 * ¹®´Ü °³¼ö
+	 * ë¬¸ë‹¨ ê°œìˆ˜
 	 */
 	private int paraCount;
 	/**
-	 * ¼Ó¼º
+	 * ì†ì„±
 	 */
 	private ListHeaderPropertyForCell property;
 	/**
-	 * ¼¿ ÁÖ¼Ò(Column)
+	 * ì…€ ì£¼ì†Œ(Column)
 	 */
 	private int colIndex;
 	/**
-	 * ¼¿ ÁÖ¼Ò(Row)
+	 * ì…€ ì£¼ì†Œ(Row)
 	 */
 	private int rowIndex;
 	/**
-	 * ¿­ÀÇ º´ÇÕ °³¼ö
+	 * ì—´ì˜ ë³‘í•© ê°œìˆ˜
 	 */
 	private int colSpan;
 	/**
-	 * ÇàÀÇ º´ÇÕ °³¼ö
+	 * í–‰ì˜ ë³‘í•© ê°œìˆ˜
 	 */
 	private int rowSpan;
 	/**
-	 * ¼¿ÀÇ Æø
+	 * ì…€ì˜ í­
 	 */
 	private long width;
 	/**
-	 * ¼¿ÀÇ ³ôÀÌ
+	 * ì…€ì˜ ë†’ì´
 	 */
 	private long height;
 	/**
-	 * ¿ŞÂÊ ¿©¹é
+	 * ì™¼ìª½ ì—¬ë°±
 	 */
 	private int leftMargin;
 	/**
-	 * ¿À¸¥ÂÊ ¿©¹é
+	 * ì˜¤ë¥¸ìª½ ì—¬ë°±
 	 */
 	private int rightMargin;
 	/**
-	 * À§ÂÊ ¿©¹é
+	 * ìœ„ìª½ ì—¬ë°±
 	 */
 	private int topMargin;
 	/**
-	 * ¾Æ·¡ÂÊ ¿©¹é
+	 * ì•„ë˜ìª½ ì—¬ë°±
 	 */
 	private int bottomMargin;
 	/**
-	 * ÂüÁ¶µÈ Å×µÎ¸®/¹è°æ id
+	 * ì°¸ì¡°ëœ í…Œë‘ë¦¬/ë°°ê²½ id
 	 */
 	private int borderFillId;
 	/**
-	 * ÅØ½ºÆ® Æø
+	 * í…ìŠ¤íŠ¸ í­
 	 */
 	private long textWidth;
 	/**
-	 * ÇÊµå ÀÌ¸§
+	 * í•„ë“œ ì´ë¦„
 	 */
 	private String fieldName;
 
 	/**
-	 * »ı¼ºÀÚ
+	 * ìƒì„±ì
 	 */
 	public ListHeaderForCell() {
 		property = new ListHeaderPropertyForCell();
 	}
 
 	/**
-	 * ¹®´Ü °³¼ö¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ë¬¸ë‹¨ ê°œìˆ˜ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ¹®´Ü °³¼ö
+	 * @return ë¬¸ë‹¨ ê°œìˆ˜
 	 */
 	public int getParaCount() {
 		return paraCount;
 	}
 
 	/**
-	 * ¹®´Ü °³¼ö¸¦ ¼³Á¤ÇÑ´Ù.
+	 * ë¬¸ë‹¨ ê°œìˆ˜ë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param paraCount
-	 *            ¹®´Ü °³¼ö
+	 *            ë¬¸ë‹¨ ê°œìˆ˜
 	 */
 	public void setParaCount(int paraCount) {
 		this.paraCount = paraCount;
 	}
 
 	/**
-	 * ¼Ó¼º °´Ã¼¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ì†ì„± ê°ì²´ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ¼Ó¼º °´Ã¼
+	 * @return ì†ì„± ê°ì²´
 	 */
 	public ListHeaderPropertyForCell getProperty() {
 		return property;
 	}
 
 	/**
-	 * ¼¿ ÁÖ¼Ò(Column)À» ¹İÈ¯ÇÑ´Ù.
+	 * ì…€ ì£¼ì†Œ(Column)ì„ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ¼¿ ÁÖ¼Ò(Column)
+	 * @return ì…€ ì£¼ì†Œ(Column)
 	 */
 	public int getColIndex() {
 		return colIndex;
 	}
 
 	/**
-	 * ¼¿ ÁÖ¼Ò(Column)¸¦ ¼³Á¤ÇÑ´Ù.
+	 * ì…€ ì£¼ì†Œ(Column)ë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param colIndex
-	 *            ¼¿ ÁÖ¼Ò(Column)
+	 *            ì…€ ì£¼ì†Œ(Column)
 	 */
 	public void setColIndex(int colIndex) {
 		this.colIndex = colIndex;
 	}
 
 	/**
-	 * ¼¿ ÁÖ¼Ò(Row)¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ì…€ ì£¼ì†Œ(Row)ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ¼¿ ÁÖ¼Ò(Row)
+	 * @return ì…€ ì£¼ì†Œ(Row)
 	 */
 	public int getRowIndex() {
 		return rowIndex;
 	}
 
 	/**
-	 * ¼¿ ÁÖ¼Ò(Row)¸¦ ¼³Á¤ÇÑ´Ù.
+	 * ì…€ ì£¼ì†Œ(Row)ë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param rowIndex
-	 *            ¼¿ ÁÖ¼Ò(Row)
+	 *            ì…€ ì£¼ì†Œ(Row)
 	 */
 	public void setRowIndex(int rowIndex) {
 		this.rowIndex = rowIndex;
 	}
 
 	/**
-	 * ¿­ÀÇ º´ÇÕ °³¼ö¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ì—´ì˜ ë³‘í•© ê°œìˆ˜ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ¿­ÀÇ º´ÇÕ °³¼ö
+	 * @return ì—´ì˜ ë³‘í•© ê°œìˆ˜
 	 */
 	public int getColSpan() {
 		return colSpan;
 	}
 
 	/**
-	 * ¿­ÀÇ º´ÇÕ °³¼ö¸¦ ¼³Á¤ÇÑ´Ù.
+	 * ì—´ì˜ ë³‘í•© ê°œìˆ˜ë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param colSpan
-	 *            ¿­ÀÇ º´ÇÕ °³¼ö
+	 *            ì—´ì˜ ë³‘í•© ê°œìˆ˜
 	 */
 	public void setColSpan(int colSpan) {
 		this.colSpan = colSpan;
 	}
 
 	/**
-	 * ÇàÀÇ º´ÇÕ °³¼ö¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * í–‰ì˜ ë³‘í•© ê°œìˆ˜ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ÇàÀÇ º´ÇÕ °³¼ö
+	 * @return í–‰ì˜ ë³‘í•© ê°œìˆ˜
 	 */
 	public int getRowSpan() {
 		return rowSpan;
 	}
 
 	/**
-	 * ÇàÀÇ º´ÇÕ °³¼ö¸¦ ¼³Á¤ÇÑ´Ù.
+	 * í–‰ì˜ ë³‘í•© ê°œìˆ˜ë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param rowSpan
-	 *            ÇàÀÇ º´ÇÕ °³¼ö
+	 *            í–‰ì˜ ë³‘í•© ê°œìˆ˜
 	 */
 	public void setRowSpan(int rowSpan) {
 		this.rowSpan = rowSpan;
 	}
 
 	/**
-	 * ¼¿ÀÇ ÆøÀ» ¹İÈ¯ÇÑ´Ù.
+	 * ì…€ì˜ í­ì„ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ¼¿ÀÇ Æø
+	 * @return ì…€ì˜ í­
 	 */
 	public long getWidth() {
 		return width;
 	}
 
 	/**
-	 * ¼¿ÀÇ ÆøÀ» ¼³Á¤ÇÑ´Ù.
+	 * ì…€ì˜ í­ì„ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param width
-	 *            ¼¿ÀÇ Æø
+	 *            ì…€ì˜ í­
 	 */
 	public void setWidth(long width) {
 		this.width = width;
 	}
 
 	/**
-	 * ¼¿ÀÇ ³ôÀÌ¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ì…€ì˜ ë†’ì´ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ¼¿ÀÇ ³ôÀÌ
+	 * @return ì…€ì˜ ë†’ì´
 	 */
 	public long getHeight() {
 		return height;
 	}
 
 	/**
-	 * ¼¿ÀÇ ³ôÀÌÀ» ¼³Á¤ÇÑ´Ù.
+	 * ì…€ì˜ ë†’ì´ì„ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param height
-	 *            ¼¿ÀÇ ³ôÀÌ
+	 *            ì…€ì˜ ë†’ì´
 	 */
 	public void setHeight(long height) {
 		this.height = height;
 	}
 
 	/**
-	 * ¿ŞÂÊ ¿©¹éÀÇ Å©±â¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ì™¼ìª½ ì—¬ë°±ì˜ í¬ê¸°ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ¿ŞÂÊ ¿©¹éÀÇ Å©±â
+	 * @return ì™¼ìª½ ì—¬ë°±ì˜ í¬ê¸°
 	 */
 	public int getLeftMargin() {
 		return leftMargin;
 	}
 
 	/**
-	 * ¿ŞÂÊ ¿©¹éÀÇ Å©±â¸¦ ¼³Á¤ÇÑ´Ù.
+	 * ì™¼ìª½ ì—¬ë°±ì˜ í¬ê¸°ë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param leftMargin
-	 *            ¿ŞÂÊ ¿©¹éÀÇ Å©±â
+	 *            ì™¼ìª½ ì—¬ë°±ì˜ í¬ê¸°
 	 */
 	public void setLeftMargin(int leftMargin) {
 		this.leftMargin = leftMargin;
 	}
 
 	/**
-	 * ¿À¸¥ÂÊ ¿©¹éÀÇ Å©±â¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ì˜¤ë¥¸ìª½ ì—¬ë°±ì˜ í¬ê¸°ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ¿À¸¥ÂÊ ¿©¹éÀÇ Å©±â
+	 * @return ì˜¤ë¥¸ìª½ ì—¬ë°±ì˜ í¬ê¸°
 	 */
 	public int getRightMargin() {
 		return rightMargin;
 	}
 
 	/**
-	 * ¿À¸¥ÂÊ ¿©¹éÀÇ Å©±â¸¦ ¼³Á¤ÇÑ´Ù.
+	 * ì˜¤ë¥¸ìª½ ì—¬ë°±ì˜ í¬ê¸°ë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param rightMargin
-	 *            ¿À¸¥ÂÊ ¿©¹éÀÇ Å©±â
+	 *            ì˜¤ë¥¸ìª½ ì—¬ë°±ì˜ í¬ê¸°
 	 */
 	public void setRightMargin(int rightMargin) {
 		this.rightMargin = rightMargin;
 	}
 
 	/**
-	 * À§ÂÊ ¿©¹éÀÇ Å©±â¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ìœ„ìª½ ì—¬ë°±ì˜ í¬ê¸°ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return À§ÂÊ ¿©¹éÀÇ Å©±â
+	 * @return ìœ„ìª½ ì—¬ë°±ì˜ í¬ê¸°
 	 */
 	public int getTopMargin() {
 		return topMargin;
 	}
 
 	/**
-	 * À§ÂÊ ¿©¹éÀÇ Å©±â¸¦ ¼³Á¤ÇÑ´Ù.
+	 * ìœ„ìª½ ì—¬ë°±ì˜ í¬ê¸°ë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param topMargin
-	 *            À§ÂÊ ¿©¹éÀÇ Å©±â
+	 *            ìœ„ìª½ ì—¬ë°±ì˜ í¬ê¸°
 	 */
 	public void setTopMargin(int topMargin) {
 		this.topMargin = topMargin;
 	}
 
 	/**
-	 * ¾Æ·¡ÂÊ ¿©¹éÀÇ Å©±â¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ì•„ë˜ìª½ ì—¬ë°±ì˜ í¬ê¸°ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ¾Æ·¡ÂÊ ¿©¹éÀÇ Å©±â
+	 * @return ì•„ë˜ìª½ ì—¬ë°±ì˜ í¬ê¸°
 	 */
 	public int getBottomMargin() {
 		return bottomMargin;
 	}
 
 	/**
-	 * ¾Æ·¡ÂÊ ¿©¹éÀÇ Å©±â¸¦ ¼³Á¤ÇÑ´Ù.
+	 * ì•„ë˜ìª½ ì—¬ë°±ì˜ í¬ê¸°ë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param bottomMargin
-	 *            ¾Æ·¡ÂÊ ¿©¹éÀÇ Å©±â
+	 *            ì•„ë˜ìª½ ì—¬ë°±ì˜ í¬ê¸°
 	 */
 	public void setBottomMargin(int bottomMargin) {
 		this.bottomMargin = bottomMargin;
 	}
 
 	/**
-	 * ÂüÁ¶µÈ Å×µÎ¸®/¹è°æ id¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ì°¸ì¡°ëœ í…Œë‘ë¦¬/ë°°ê²½ idë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ÂüÁ¶µÈ Å×µÎ¸®/¹è°æ id
+	 * @return ì°¸ì¡°ëœ í…Œë‘ë¦¬/ë°°ê²½ id
 	 */
 	public int getBorderFillId() {
 		return borderFillId;
 	}
 
 	/**
-	 * ÂüÁ¶µÈ Å×µÎ¸®/¹è°æ id¸¦ ¼³Á¤ÇÑ´Ù.
+	 * ì°¸ì¡°ëœ í…Œë‘ë¦¬/ë°°ê²½ idë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param borderFillId
-	 *            ÂüÁ¶µÈ Å×µÎ¸®/¹è°æ id
+	 *            ì°¸ì¡°ëœ í…Œë‘ë¦¬/ë°°ê²½ id
 	 */
 	public void setBorderFillId(int borderFillId) {
 		this.borderFillId = borderFillId;
 	}
 
 	/**
-	 * ÅØ½ºÆ® ÆøÀ» ¹İÈ¯ÇÑ´Ù.
+	 * í…ìŠ¤íŠ¸ í­ì„ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ÅØ½ºÆ® Æø
+	 * @return í…ìŠ¤íŠ¸ í­
 	 */
 	public long getTextWidth() {
 		return textWidth;
 	}
 
 	/**
-	 * ÅØ½ºÆ® ÆøÀ» ¼³Á¤ÇÑ´Ù.
+	 * í…ìŠ¤íŠ¸ í­ì„ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param textWidth
-	 *            ÅØ½ºÆ® Æø
+	 *            í…ìŠ¤íŠ¸ í­
 	 */
 	public void setTextWidth(long textWidth) {
 		this.textWidth = textWidth;
 	}
 
 	/**
-	 * ÇÊµå ÀÌ¸§À» ¹İÈ¯ÇÑ´Ù.
+	 * í•„ë“œ ì´ë¦„ì„ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ÇÊµå ÀÌ¸§
+	 * @return í•„ë“œ ì´ë¦„
 	 */
 	public String getFieldName() {
 		return fieldName;
 	}
 
 	/**
-	 * ÇÊµå ÀÌ¸§À» ¼³Á¤ÇÑ´Ù.
+	 * í•„ë“œ ì´ë¦„ì„ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param fieldName
-	 *            ÇÊµå ÀÌ¸§
+	 *            í•„ë“œ ì´ë¦„
 	 */
 	public void setFieldName(String fieldName) {
 		this.fieldName = fieldName;

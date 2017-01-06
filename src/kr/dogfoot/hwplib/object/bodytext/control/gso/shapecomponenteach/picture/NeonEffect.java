@@ -1,73 +1,73 @@
-package kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponenteach.picture;
+ï»¿package kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponenteach.picture;
 
 /**
- * ³×¿Â È¿°ú ¼Ó¼º
+ * ë„¤ì˜¨ íš¨ê³¼ ì†ì„±
  * 
  * @author neolord
  */
 public class NeonEffect {
 	/**
-	 * ³×¿Â Åõ¸íµµ
+	 * ë„¤ì˜¨ íˆ¬ëª…ë„
 	 */
 	private float transparency;
 	/**
-	 * ³×¿Â ¹İ°æ
+	 * ë„¤ì˜¨ ë°˜ê²½
 	 */
 	private float radius;
 	/**
-	 * ³×¿Â »ö»ó
+	 * ë„¤ì˜¨ ìƒ‰ìƒ
 	 */
 	private ColorWithEffect color;
 
 	/**
-	 * »ı¼ºÀÚ
+	 * ìƒì„±ì
 	 */
 	public NeonEffect() {
 		color = new ColorWithEffect();
 	}
 
 	/**
-	 * ³×¿Â Åõ¸íµµ¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ë„¤ì˜¨ íˆ¬ëª…ë„ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ³×¿Â Åõ¸íµµ
+	 * @return ë„¤ì˜¨ íˆ¬ëª…ë„
 	 */
 	public float getTransparency() {
 		return transparency;
 	}
 
 	/**
-	 * ³×¿Â Åõ¸íµµ¸¦ ¼³Á¤ÇÑ´Ù.
+	 * ë„¤ì˜¨ íˆ¬ëª…ë„ë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param transparency
-	 *            ³×¿Â Åõ¸íµµ
+	 *            ë„¤ì˜¨ íˆ¬ëª…ë„
 	 */
 	public void setTransparency(float transparency) {
 		this.transparency = transparency;
 	}
 
 	/**
-	 * ³×¿Â ¹İ°æÀ» ¹İÈ¯ÇÑ´Ù.
+	 * ë„¤ì˜¨ ë°˜ê²½ì„ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ³×¿Â ¹İ°æ
+	 * @return ë„¤ì˜¨ ë°˜ê²½
 	 */
 	public float getRadius() {
 		return radius;
 	}
 
 	/**
-	 * ³×¿Â ¹İ°æÀ» ¼³Á¤ÇÑ´Ù.
+	 * ë„¤ì˜¨ ë°˜ê²½ì„ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param radius
-	 *            ³×¿Â ¹İ°æ
+	 *            ë„¤ì˜¨ ë°˜ê²½
 	 */
 	public void setRadius(float radius) {
 		this.radius = radius;
 	}
 
 	/**
-	 * ³×¿Â »ö»ó °´Ã¼¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ë„¤ì˜¨ ìƒ‰ìƒ ê°ì²´ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ³×¿Â »ö»ó °´Ã¼
+	 * @return ë„¤ì˜¨ ìƒ‰ìƒ ê°ì²´
 	 */
 	public ColorWithEffect getColor() {
 		return color;

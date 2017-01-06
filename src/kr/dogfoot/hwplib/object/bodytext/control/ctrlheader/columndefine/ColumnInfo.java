@@ -1,59 +1,59 @@
-package kr.dogfoot.hwplib.object.bodytext.control.ctrlheader.columndefine;
+ï»¿package kr.dogfoot.hwplib.object.bodytext.control.ctrlheader.columndefine;
 
 /**
- * ÇÏ³ªÀÇ ´Ü¿¡ ´ëÇÑ Á¤º¸¸¦ ³ªÅÂ³»´Â °´Ã¼
+ * í•˜ë‚˜ì˜ ë‹¨ì— ëŒ€í•œ ì •ë³´ë¥¼ ë‚˜íƒœë‚´ëŠ” ê°ì²´
  * 
  * @author neolord
  */
 public class ColumnInfo {
 	/**
-	 * ´Ù´ÜÀÇ Æø
+	 * ë‹¤ë‹¨ì˜ í­
 	 */
 	private int width;
 	/**
-	 * ´ÙÀ½ ´Ü°úÀÇ °£°İ
+	 * ë‹¤ìŒ ë‹¨ê³¼ì˜ ê°„ê²©
 	 */
 	private int gap;
 
 	/**
-	 * »ı¼ºÀÚ
+	 * ìƒì„±ì
 	 */
 	public ColumnInfo() {
 	}
 
 	/**
-	 * ´Ù´ÜÀÇ ÆøÀ» ¹İÈ¯ÇÑ´Ù.
+	 * ë‹¤ë‹¨ì˜ í­ì„ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ´Ù´ÜÀÇ Æø
+	 * @return ë‹¤ë‹¨ì˜ í­
 	 */
 	public int getWidth() {
 		return width;
 	}
 
 	/**
-	 * ´Ù´ÜÀÇ ÆøÀ» ¼³Á¤ÇÑ´Ù.
+	 * ë‹¤ë‹¨ì˜ í­ì„ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param width
-	 *            ´Ù´ÜÀÇ Æø
+	 *            ë‹¤ë‹¨ì˜ í­
 	 */
 	public void setWidth(int width) {
 		this.width = width;
 	}
 
 	/**
-	 * ´ÙÀ½ ´Ü°úÀÇ °£°İÀ» ¹İÈ¯ÇÑ´Ù.
+	 * ë‹¤ìŒ ë‹¨ê³¼ì˜ ê°„ê²©ì„ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ´ÙÀ½ ´Ü°úÀÇ °£°İ
+	 * @return ë‹¤ìŒ ë‹¨ê³¼ì˜ ê°„ê²©
 	 */
 	public int getGap() {
 		return gap;
 	}
 
 	/**
-	 * ´ÙÀ½ ´Ü°úÀÇ °£°İÀ» ¼³Á¤ÇÑ´Ù.
+	 * ë‹¤ìŒ ë‹¨ê³¼ì˜ ê°„ê²©ì„ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param gap
-	 *            ´ÙÀ½ ´Ü°úÀÇ °£°İ
+	 *            ë‹¤ìŒ ë‹¨ê³¼ì˜ ê°„ê²©
 	 */
 	public void setGap(int gap) {
 		this.gap = gap;

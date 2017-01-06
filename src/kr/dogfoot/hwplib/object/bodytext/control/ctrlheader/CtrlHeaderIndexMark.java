@@ -1,62 +1,62 @@
-package kr.dogfoot.hwplib.object.bodytext.control.ctrlheader;
+ï»¿package kr.dogfoot.hwplib.object.bodytext.control.ctrlheader;
 
 import kr.dogfoot.hwplib.object.bodytext.control.ControlType;
 
 /**
- * Ã£¾Æº¸±â Ç¥½Ä ÄÁÆ®·ÑÀ» À§ÇÑ ÄÁÆ®·Ñ Çì´õ ·¹ÄÚµå
+ * ì°¾ì•„ë³´ê¸° í‘œì‹ ì»¨íŠ¸ë¡¤ì„ ìœ„í•œ ì»¨íŠ¸ë¡¤ í—¤ë” ë ˆì½”ë“œ
  * 
  * @author neolord
  */
 public class CtrlHeaderIndexMark extends CtrlHeader {
 	/**
-	 * Å°¿öµå 1
+	 * í‚¤ì›Œë“œ 1
 	 */
 	private String keyword1;
 	/**
-	 * Å°¿öµå 2
+	 * í‚¤ì›Œë“œ 2
 	 */
 	private String keyword2;
 
 	/**
-	 * »ı¼ºÀÚ
+	 * ìƒì„±ì
 	 */
 	public CtrlHeaderIndexMark() {
 		super(ControlType.IndexMark.getCtrlId());
 	}
 
 	/**
-	 * Å°¿öµå 1À» ¹İÈ¯ÇÑ´Ù.
+	 * í‚¤ì›Œë“œ 1ì„ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return Å°¿öµå 1
+	 * @return í‚¤ì›Œë“œ 1
 	 */
 	public String getKeyword1() {
 		return keyword1;
 	}
 
 	/**
-	 * Å°¿öµå 1¸¦ ¼³Á¤ÇÑ´Ù.
+	 * í‚¤ì›Œë“œ 1ë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param keyword1
-	 *            Å°¿öµå 1
+	 *            í‚¤ì›Œë“œ 1
 	 */
 	public void setKeyword1(String keyword1) {
 		this.keyword1 = keyword1;
 	}
 
 	/**
-	 * Å°¿öµå 2À» ¹İÈ¯ÇÑ´Ù.
+	 * í‚¤ì›Œë“œ 2ì„ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return Å°¿öµå 2
+	 * @return í‚¤ì›Œë“œ 2
 	 */
 	public String getKeyword2() {
 		return keyword2;
 	}
 
 	/**
-	 * Å°¿öµå 2À» ¼³Á¤ÇÑ´Ù.
+	 * í‚¤ì›Œë“œ 2ì„ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param keyword2
-	 *            Å°¿öµå 2
+	 *            í‚¤ì›Œë“œ 2
 	 */
 	public void setKeyword2(String keyword2) {
 		this.keyword2 = keyword2;

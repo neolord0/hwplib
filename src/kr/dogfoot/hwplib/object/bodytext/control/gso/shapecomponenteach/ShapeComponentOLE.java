@@ -1,46 +1,46 @@
-package kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponenteach;
+ï»¿package kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponenteach;
 
 import kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponent.lineinfo.LineInfoProperty;
 import kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponenteach.ole.ShapeComponentOLEProperty;
 import kr.dogfoot.hwplib.object.etc.Color4Byte;
 
 /**
- * OLE °³Ã¼ ¼Ó¼º ·¹ÄÚµå
+ * OLE ê°œì²´ ì†ì„± ë ˆì½”ë“œ
  * 
  * @author neolord
  */
 public class ShapeComponentOLE {
 	/**
-	 * ¼Ó¼º
+	 * ì†ì„±
 	 */
 	private ShapeComponentOLEProperty property;
 	/**
-	 * ¿ÀºêÁ§Æ® ÀÚÃ¼ÀÇ extent xÅ©±â
+	 * ì˜¤ë¸Œì íŠ¸ ìì²´ì˜ extent xí¬ê¸°
 	 */
 	private int extentWidth;
 	/**
-	 * ¿ÀºêÁ§Æ® ÀÚÃ¼ÀÇ extent yÅ©±â
+	 * ì˜¤ë¸Œì íŠ¸ ìì²´ì˜ extent yí¬ê¸°
 	 */
 	private int extentHeight;
 	/**
-	 * ¿ÀºêÁ§Æ®°¡ »ç¿ëÇÏ´Â ½ºÅä¸®ÁöÀÇ BinData ID
+	 * ì˜¤ë¸Œì íŠ¸ê°€ ì‚¬ìš©í•˜ëŠ” ìŠ¤í† ë¦¬ì§€ì˜ BinData ID
 	 */
 	private int binDataId;
 	/**
-	 * Å×µÎ¸® »ö
+	 * í…Œë‘ë¦¬ ìƒ‰
 	 */
 	private Color4Byte borderColor;
 	/**
-	 * Å×µÎ¸® µÎ²¾
+	 * í…Œë‘ë¦¬ ë‘ê¼
 	 */
 	private int borderThickness;
 	/**
-	 * Å×µÎ¸® ¼Ó¼º
+	 * í…Œë‘ë¦¬ ì†ì„±
 	 */
 	private LineInfoProperty borderProperty;
 
 	/**
-	 * »ı¼ºÀÚ
+	 * ìƒì„±ì
 	 */
 	public ShapeComponentOLE() {
 		property = new ShapeComponentOLEProperty();
@@ -49,103 +49,103 @@ public class ShapeComponentOLE {
 	}
 
 	/**
-	 * ¼Ó¼º °´Ã¼¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ì†ì„± ê°ì²´ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ¼Ó¼º °´Ã¼
+	 * @return ì†ì„± ê°ì²´
 	 */
 	public ShapeComponentOLEProperty getProperty() {
 		return property;
 	}
 
 	/**
-	 * ¿ÀºêÁ§Æ® ÀÚÃ¼ÀÇ extent xÅ©±â¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ì˜¤ë¸Œì íŠ¸ ìì²´ì˜ extent xí¬ê¸°ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ¿ÀºêÁ§Æ® ÀÚÃ¼ÀÇ extent xÅ©±â
+	 * @return ì˜¤ë¸Œì íŠ¸ ìì²´ì˜ extent xí¬ê¸°
 	 */
 	public int getExtentWidth() {
 		return extentWidth;
 	}
 
 	/**
-	 * ¿ÀºêÁ§Æ® ÀÚÃ¼ÀÇ extent xÅ©±â¸¦ ¼³Á¤ÇÑ´Ù.
+	 * ì˜¤ë¸Œì íŠ¸ ìì²´ì˜ extent xí¬ê¸°ë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param extentWidth
-	 *            ¿ÀºêÁ§Æ® ÀÚÃ¼ÀÇ extent xÅ©±â
+	 *            ì˜¤ë¸Œì íŠ¸ ìì²´ì˜ extent xí¬ê¸°
 	 */
 	public void setExtentWidth(int extentWidth) {
 		this.extentWidth = extentWidth;
 	}
 
 	/**
-	 * ¿ÀºêÁ§Æ® ÀÚÃ¼ÀÇ extent yÅ©±â¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ì˜¤ë¸Œì íŠ¸ ìì²´ì˜ extent yí¬ê¸°ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ¿ÀºêÁ§Æ® ÀÚÃ¼ÀÇ extent yÅ©±â
+	 * @return ì˜¤ë¸Œì íŠ¸ ìì²´ì˜ extent yí¬ê¸°
 	 */
 	public int getExtentHeight() {
 		return extentHeight;
 	}
 
 	/**
-	 * ¿ÀºêÁ§Æ® ÀÚÃ¼ÀÇ extent yÅ©±â¸¦ ¼³Á¤ÇÑ´Ù.
+	 * ì˜¤ë¸Œì íŠ¸ ìì²´ì˜ extent yí¬ê¸°ë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param extentHeight
-	 *            ¿ÀºêÁ§Æ® ÀÚÃ¼ÀÇ extent yÅ©±â
+	 *            ì˜¤ë¸Œì íŠ¸ ìì²´ì˜ extent yí¬ê¸°
 	 */
 	public void setExtentHeight(int extentHeight) {
 		this.extentHeight = extentHeight;
 	}
 
 	/**
-	 * ¿ÀºêÁ§Æ®°¡ »ç¿ëÇÏ´Â ½ºÅä¸®ÁöÀÇ BinData ID¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ì˜¤ë¸Œì íŠ¸ê°€ ì‚¬ìš©í•˜ëŠ” ìŠ¤í† ë¦¬ì§€ì˜ BinData IDë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ¿ÀºêÁ§Æ®°¡ »ç¿ëÇÏ´Â ½ºÅä¸®ÁöÀÇ BinData ID
+	 * @return ì˜¤ë¸Œì íŠ¸ê°€ ì‚¬ìš©í•˜ëŠ” ìŠ¤í† ë¦¬ì§€ì˜ BinData ID
 	 */
 	public int getBinDataId() {
 		return binDataId;
 	}
 
 	/**
-	 * ¿ÀºêÁ§Æ®°¡ »ç¿ëÇÏ´Â ½ºÅä¸®ÁöÀÇ BinData ID¸¦ ¼³Á¤ÇÑ´Ù.
+	 * ì˜¤ë¸Œì íŠ¸ê°€ ì‚¬ìš©í•˜ëŠ” ìŠ¤í† ë¦¬ì§€ì˜ BinData IDë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param binDataId
-	 *            ¿ÀºêÁ§Æ®°¡ »ç¿ëÇÏ´Â ½ºÅä¸®ÁöÀÇ BinData ID
+	 *            ì˜¤ë¸Œì íŠ¸ê°€ ì‚¬ìš©í•˜ëŠ” ìŠ¤í† ë¦¬ì§€ì˜ BinData ID
 	 */
 	public void setBinDataId(int binDataId) {
 		this.binDataId = binDataId;
 	}
 
 	/**
-	 * Å×µÎ¸® »ö»ó °´Ã¼¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * í…Œë‘ë¦¬ ìƒ‰ìƒ ê°ì²´ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return Å×µÎ¸® »ö»ó °´Ã¼
+	 * @return í…Œë‘ë¦¬ ìƒ‰ìƒ ê°ì²´
 	 */
 	public Color4Byte getBorderColor() {
 		return borderColor;
 	}
 
 	/**
-	 * Å×µÎ¸® µÎ²¾¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * í…Œë‘ë¦¬ ë‘ê¼ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return Å×µÎ¸® µÎ²¾
+	 * @return í…Œë‘ë¦¬ ë‘ê¼
 	 */
 	public int getBorderThickness() {
 		return borderThickness;
 	}
 
 	/**
-	 * Å×µÎ¸® µÎ²¾¸¦ ¼³Á¤ÇÑ´Ù.
+	 * í…Œë‘ë¦¬ ë‘ê¼ë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param borderThickness
-	 *            Å×µÎ¸® µÎ²¾
+	 *            í…Œë‘ë¦¬ ë‘ê¼
 	 */
 	public void setBorderThickness(int borderThickness) {
 		this.borderThickness = borderThickness;
 	}
 
 	/**
-	 * Å×µÎ¸® ¼Ó¼º °´Ã¼¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * í…Œë‘ë¦¬ ì†ì„± ê°ì²´ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return Å×µÎ¸® ¼Ó¼º °´Ã¼
+	 * @return í…Œë‘ë¦¬ ì†ì„± ê°ì²´
 	 */
 	public LineInfoProperty getBorderProperty() {
 		return borderProperty;

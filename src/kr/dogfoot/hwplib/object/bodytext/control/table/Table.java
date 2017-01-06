@@ -1,60 +1,60 @@
-package kr.dogfoot.hwplib.object.bodytext.control.table;
+ï»¿package kr.dogfoot.hwplib.object.bodytext.control.table;
 
 import java.util.ArrayList;
 
 /**
- * Å×ÀÌºí Á¤º¸¸¦ Æ÷ÇÔÇÏ´Â ·¹ÄÚµå
+ * í…Œì´ë¸” ì •ë³´ë¥¼ í¬í•¨í•˜ëŠ” ë ˆì½”ë“œ
  * 
  * @author neolord
  */
 public class Table {
 	/**
-	 * ¼Ó¼º
+	 * ì†ì„±
 	 */
 	private TableProperty property;
 	/**
-	 * ÇàÀÇ °³¼ö
+	 * í–‰ì˜ ê°œìˆ˜
 	 */
 	private int rowCount;
 	/**
-	 * ¿­ÀÇ °³¼ö
+	 * ì—´ì˜ ê°œìˆ˜
 	 */
 	private int columnCount;
 	/**
-	 * ¼¿ »çÀÌÀÇ °ø°£
+	 * ì…€ ì‚¬ì´ì˜ ê³µê°„
 	 */
 	private int cellSpacing;
 	/**
-	 * ¿ŞÂÊ ¾ÈÂÊ ¿©¹é
+	 * ì™¼ìª½ ì•ˆìª½ ì—¬ë°±
 	 */
 	private int leftInnerMargin;
 	/**
-	 * ¿À¸¥ÂÊ ¾ÈÂÊ ¿©¹é
+	 * ì˜¤ë¥¸ìª½ ì•ˆìª½ ì—¬ë°±
 	 */
 	private int rightInnerMargin;
 	/**
-	 * À§ÂÊ ¾ÈÂÊ ¿©¹é
+	 * ìœ„ìª½ ì•ˆìª½ ì—¬ë°±
 	 */
 	private int topInnerMargin;
 	/**
-	 * ¾Æ·¡ÂÊ ¾ÈÂÊ ¿©¹é
+	 * ì•„ë˜ìª½ ì•ˆìª½ ì—¬ë°±
 	 */
 	private int bottomInnerMargin;
 	/**
-	 * °¢ ÇàÀÇ ¼¿ÀÇ °³¼ö¸¦ ÀúÀåÇÏ´Â ¸®½ºÆ®
+	 * ê° í–‰ì˜ ì…€ì˜ ê°œìˆ˜ë¥¼ ì €ì¥í•˜ëŠ” ë¦¬ìŠ¤íŠ¸
 	 */
 	private ArrayList<Integer> cellCountOfRowList;
 	/**
-	 * ÂüÁ¶µÈ Å×µÎ¸®/¹è°æ id
+	 * ì°¸ì¡°ëœ í…Œë‘ë¦¬/ë°°ê²½ id
 	 */
 	private int borderFillId;
 	/**
-	 * ¿µ¿ª ¼Ó¼º ¸®½ºÆ® (5.0.1.0 ÀÌ»ó)
+	 * ì˜ì—­ ì†ì„± ë¦¬ìŠ¤íŠ¸ (5.0.1.0 ì´ìƒ)
 	 */
 	private ArrayList<ZoneInfo> zoneInfoList;
 
 	/**
-	 * »ı¼ºÀÚ
+	 * ìƒì„±ì
 	 */
 	public Table() {
 		property = new TableProperty();
@@ -63,189 +63,189 @@ public class Table {
 	}
 
 	/**
-	 * ¼Ó¼º °´Ã¼¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ì†ì„± ê°ì²´ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ¼Ó¼º °´Ã¼
+	 * @return ì†ì„± ê°ì²´
 	 */
 	public TableProperty getProperty() {
 		return property;
 	}
 
 	/**
-	 * ÇàÀÇ °³¼ö¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * í–‰ì˜ ê°œìˆ˜ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ÇàÀÇ °³¼ö
+	 * @return í–‰ì˜ ê°œìˆ˜
 	 */
 	public int getRowCount() {
 		return rowCount;
 	}
 
 	/**
-	 * ÇàÀÇ °³¼ö¸¦ ¼³Á¤ÇÑ´Ù.
+	 * í–‰ì˜ ê°œìˆ˜ë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param rowCount
-	 *            ÇàÀÇ °³¼ö
+	 *            í–‰ì˜ ê°œìˆ˜
 	 */
 	public void setRowCount(int rowCount) {
 		this.rowCount = rowCount;
 	}
 
 	/**
-	 * ¿­ÀÇ °³¼ö¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ì—´ì˜ ê°œìˆ˜ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ¿­ÀÇ °³¼ö
+	 * @return ì—´ì˜ ê°œìˆ˜
 	 */
 	public int getColumnCount() {
 		return columnCount;
 	}
 
 	/**
-	 * ¿­ÀÇ °³¼ö¸¦ ¼³Á¤ÇÑ´Ù.
+	 * ì—´ì˜ ê°œìˆ˜ë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param columnCount
-	 *            ¿­ÀÇ °³¼ö
+	 *            ì—´ì˜ ê°œìˆ˜
 	 */
 	public void setColumnCount(int columnCount) {
 		this.columnCount = columnCount;
 	}
 
 	/**
-	 * ¼¿ »çÀÌÀÇ °ø°£ÀÇ Å©±â¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ì…€ ì‚¬ì´ì˜ ê³µê°„ì˜ í¬ê¸°ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ¼¿ »çÀÌÀÇ °ø°£ÀÇ Å©±â
+	 * @return ì…€ ì‚¬ì´ì˜ ê³µê°„ì˜ í¬ê¸°
 	 */
 	public int getCellSpacing() {
 		return cellSpacing;
 	}
 
 	/**
-	 * ¼¿ »çÀÌÀÇ °ø°£ÀÇ Å©±â¸¦ ¼³Á¤ÇÑ´Ù.
+	 * ì…€ ì‚¬ì´ì˜ ê³µê°„ì˜ í¬ê¸°ë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param cellSpacing
-	 *            ¼¿ »çÀÌÀÇ °ø°£ÀÇ Å©±â
+	 *            ì…€ ì‚¬ì´ì˜ ê³µê°„ì˜ í¬ê¸°
 	 */
 	public void setCellSpacing(int cellSpacing) {
 		this.cellSpacing = cellSpacing;
 	}
 
 	/**
-	 * ¿ŞÂÊ ¾ÈÂÊ ¿©¹éÀÇ Å©±â¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ì™¼ìª½ ì•ˆìª½ ì—¬ë°±ì˜ í¬ê¸°ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ¿ŞÂÊ ¾ÈÂÊ ¿©¹éÀÇ Å©±â
+	 * @return ì™¼ìª½ ì•ˆìª½ ì—¬ë°±ì˜ í¬ê¸°
 	 */
 	public int getLeftInnerMargin() {
 		return leftInnerMargin;
 	}
 
 	/**
-	 * ¿ŞÂÊ ¾ÈÂÊ ¿©¹éÀÇ Å©±â¸¦ ¼³Á¤ÇÑ´Ù.
+	 * ì™¼ìª½ ì•ˆìª½ ì—¬ë°±ì˜ í¬ê¸°ë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param leftInnerMargin
-	 *            ¿ŞÂÊ ¾ÈÂÊ ¿©¹éÀÇ Å©±â
+	 *            ì™¼ìª½ ì•ˆìª½ ì—¬ë°±ì˜ í¬ê¸°
 	 */
 	public void setLeftInnerMargin(int leftInnerMargin) {
 		this.leftInnerMargin = leftInnerMargin;
 	}
 
 	/**
-	 * ¿À¸¥ÂÊ ¾ÈÂÊ ¿©¹éÀÇ Å©±â¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ì˜¤ë¥¸ìª½ ì•ˆìª½ ì—¬ë°±ì˜ í¬ê¸°ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ¿À¸¥ÂÊ ¾ÈÂÊ ¿©¹éÀÇ Å©±â
+	 * @return ì˜¤ë¥¸ìª½ ì•ˆìª½ ì—¬ë°±ì˜ í¬ê¸°
 	 */
 	public int getRightInnerMargin() {
 		return rightInnerMargin;
 	}
 
 	/**
-	 * ¿À¸¥ÂÊ ¾ÈÂÊ ¿©¹éÀÇ Å©±â¸¦ ¼³Á¤ÇÑ´Ù.
+	 * ì˜¤ë¥¸ìª½ ì•ˆìª½ ì—¬ë°±ì˜ í¬ê¸°ë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param rightInnerMargin
-	 *            ¿À¸¥ÂÊ ¾ÈÂÊ ¿©¹éÀÇ Å©±â
+	 *            ì˜¤ë¥¸ìª½ ì•ˆìª½ ì—¬ë°±ì˜ í¬ê¸°
 	 */
 	public void setRightInnerMargin(int rightInnerMargin) {
 		this.rightInnerMargin = rightInnerMargin;
 	}
 
 	/**
-	 * À§ÂÊ ¾ÈÂÊ ¿©¹éÀÇ Å©±â¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ìœ„ìª½ ì•ˆìª½ ì—¬ë°±ì˜ í¬ê¸°ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return À§ÂÊ ¾ÈÂÊ ¿©¹éÀÇ Å©±â
+	 * @return ìœ„ìª½ ì•ˆìª½ ì—¬ë°±ì˜ í¬ê¸°
 	 */
 	public int getTopInnerMargin() {
 		return topInnerMargin;
 	}
 
 	/**
-	 * À§ÂÊ ¾ÈÂÊ ¿©¹éÀÇ Å©±â¸¦ ¼³Á¤ÇÑ´Ù.
+	 * ìœ„ìª½ ì•ˆìª½ ì—¬ë°±ì˜ í¬ê¸°ë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param topInnerMargin
-	 *            À§ÂÊ ¾ÈÂÊ ¿©¹éÀÇ Å©±â
+	 *            ìœ„ìª½ ì•ˆìª½ ì—¬ë°±ì˜ í¬ê¸°
 	 */
 	public void setTopInnerMargin(int topInnerMargin) {
 		this.topInnerMargin = topInnerMargin;
 	}
 
 	/**
-	 * ¾Æ·¡ÂÊ ¾ÈÂÊ ¿©¹éÀÇ Å©±â¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ì•„ë˜ìª½ ì•ˆìª½ ì—¬ë°±ì˜ í¬ê¸°ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ¾Æ·¡ÂÊ ¾ÈÂÊ ¿©¹éÀÇ Å©±â
+	 * @return ì•„ë˜ìª½ ì•ˆìª½ ì—¬ë°±ì˜ í¬ê¸°
 	 */
 	public int getBottomInnerMargin() {
 		return bottomInnerMargin;
 	}
 
 	/**
-	 * ¾Æ·¡ÂÊ ¾ÈÂÊ ¿©¹éÀÇ Å©±â¸¦ ¼³Á¤ÇÑ´Ù.
+	 * ì•„ë˜ìª½ ì•ˆìª½ ì—¬ë°±ì˜ í¬ê¸°ë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param bottomInnerMargin
-	 *            ¾Æ·¡ÂÊ ¾ÈÂÊ ¿©¹éÀÇ Å©±â
+	 *            ì•„ë˜ìª½ ì•ˆìª½ ì—¬ë°±ì˜ í¬ê¸°
 	 */
 	public void setBottomInnerMargin(int bottomInnerMargin) {
 		this.bottomInnerMargin = bottomInnerMargin;
 	}
 
 	/**
-	 * ÇàÀÇ ¼¿ °³¼ö¸¦ Ãß°¡ÇÑ´Ù.
+	 * í–‰ì˜ ì…€ ê°œìˆ˜ë¥¼ ì¶”ê°€í•œë‹¤.
 	 * 
 	 * @param cellCountOfRow
-	 *            Æ¯Á¤ ÇàÀÇ ¼¿ °³¼ö
+	 *            íŠ¹ì • í–‰ì˜ ì…€ ê°œìˆ˜
 	 */
 	public void addCellCountOfRow(int cellCountOfRow) {
 		cellCountOfRowList.add(cellCountOfRow);
 	}
 
 	/**
-	 * °¢ ÇàÀÇ ¼¿ÀÇ °³¼ö¸¦ ÀúÀåÇÏ´Â ¸®½ºÆ®¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ê° í–‰ì˜ ì…€ì˜ ê°œìˆ˜ë¥¼ ì €ì¥í•˜ëŠ” ë¦¬ìŠ¤íŠ¸ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return °¢ ÇàÀÇ ¼¿ÀÇ °³¼ö¸¦ ÀúÀåÇÏ´Â ¸®½ºÆ® 
+	 * @return ê° í–‰ì˜ ì…€ì˜ ê°œìˆ˜ë¥¼ ì €ì¥í•˜ëŠ” ë¦¬ìŠ¤íŠ¸ 
 	 */
 	public ArrayList<Integer> getCellCountOfRowList() {
 		return cellCountOfRowList;
 	}
 
 	/**
-	 * ÂüÁ¶µÈ Å×µÎ¸®/¹è°æ id¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ì°¸ì¡°ëœ í…Œë‘ë¦¬/ë°°ê²½ idë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ÂüÁ¶µÈ Å×µÎ¸®/¹è°æ id
+	 * @return ì°¸ì¡°ëœ í…Œë‘ë¦¬/ë°°ê²½ id
 	 */
 	public int getBorderFillId() {
 		return borderFillId;
 	}
 
 	/**
-	 * ÂüÁ¶µÈ Å×µÎ¸®/¹è°æ id¸¦ ¼³Á¤ÇÑ´Ù.
+	 * ì°¸ì¡°ëœ í…Œë‘ë¦¬/ë°°ê²½ idë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param borderFillId
-	 *            ÂüÁ¶µÈ Å×µÎ¸®/¹è°æ id
+	 *            ì°¸ì¡°ëœ í…Œë‘ë¦¬/ë°°ê²½ id
 	 */
 	public void setBorderFillId(int borderFillId) {
 		this.borderFillId = borderFillId;
 	}
 
 	/**
-	 * »õ·Î¿î ¿µ¿ª ¼Ó¼º °´Ã¼¸¦ »ı¼ºÇÏ°í ¸®½ºÆ®¿¡ Ãß°¡ÇÑ´Ù. (5.0.1.0 ÀÌ»ó)
+	 * ìƒˆë¡œìš´ ì˜ì—­ ì†ì„± ê°ì²´ë¥¼ ìƒì„±í•˜ê³  ë¦¬ìŠ¤íŠ¸ì— ì¶”ê°€í•œë‹¤. (5.0.1.0 ì´ìƒ)
 	 * 
-	 * @return »õ·Î »ı¼ºµÈ ¿µ¿ª ¼Ó¼º °´Ã¼
+	 * @return ìƒˆë¡œ ìƒì„±ëœ ì˜ì—­ ì†ì„± ê°ì²´
 	 */
 	public ZoneInfo addNewZoneInfo() {
 		ZoneInfo zi = new ZoneInfo();
@@ -254,9 +254,9 @@ public class Table {
 	}
 
 	/**
-	 * ¿µ¿ª ¼Ó¼º ¸®½ºÆ®¸¦ ¹İÈ¯ÇÑ´Ù. (5.0.1.0 ÀÌ»ó)
+	 * ì˜ì—­ ì†ì„± ë¦¬ìŠ¤íŠ¸ë¥¼ ë°˜í™˜í•œë‹¤. (5.0.1.0 ì´ìƒ)
 	 * 
-	 * @return ¿µ¿ª ¼Ó¼º ¸®½ºÆ®
+	 * @return ì˜ì—­ ì†ì„± ë¦¬ìŠ¤íŠ¸
 	 */
 	public ArrayList<ZoneInfo> getZoneInfoList() {
 		return zoneInfoList;

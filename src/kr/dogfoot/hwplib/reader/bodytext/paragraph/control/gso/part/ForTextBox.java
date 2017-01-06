@@ -1,4 +1,4 @@
-package kr.dogfoot.hwplib.reader.bodytext.paragraph.control.gso.part;
+ï»¿package kr.dogfoot.hwplib.reader.bodytext.paragraph.control.gso.part;
 
 import java.io.IOException;
 
@@ -9,18 +9,18 @@ import kr.dogfoot.hwplib.reader.bodytext.ForParagraphList;
 import kr.dogfoot.hwplib.util.compoundFile.StreamReader;
 
 /**
- * ±Û»óÀÚ¸¦ ÀĞ´Â´Ù.
+ * ê¸€ìƒìë¥¼ ì½ëŠ”ë‹¤.
  * 
  * @author neolord
  */
 public class ForTextBox {
 	/**
-	 * ±Û»óÀÚ¸¦ ÀĞ´Â´Ù.
+	 * ê¸€ìƒìë¥¼ ì½ëŠ”ë‹¤.
 	 * 
 	 * @param textBox
-	 *            ±Û»óÀÚ
+	 *            ê¸€ìƒì
 	 * @param sr
-	 *            ½ºÆ®¸² ¸®´õ
+	 *            ìŠ¤íŠ¸ë¦¼ ë¦¬ë”
 	 * @throws Exception
 	 */
 	public static void read(TextBox textBox, StreamReader sr) throws Exception {
@@ -29,12 +29,12 @@ public class ForTextBox {
 	}
 
 	/**
-	 * ±Û»óÀÚÀÇ ¹®´Ü ¸®½ºÆ® Çì´õ ·¹ÄÚµå¸¦ ÀĞ´Â´Ù.
+	 * ê¸€ìƒìì˜ ë¬¸ë‹¨ ë¦¬ìŠ¤íŠ¸ í—¤ë” ë ˆì½”ë“œë¥¼ ì½ëŠ”ë‹¤.
 	 * 
 	 * @param lh
-	 *            ±Û»óÀÚÀÇ ¹®´Ü ¸®½ºÆ® Çì´õ ·¹ÄÚµå
+	 *            ê¸€ìƒìì˜ ë¬¸ë‹¨ ë¦¬ìŠ¤íŠ¸ í—¤ë” ë ˆì½”ë“œ
 	 * @param sr
-	 *            ½ºÆ®¸² ¸®´õ
+	 *            ìŠ¤íŠ¸ë¦¼ ë¦¬ë”
 	 * @throws IOException
 	 */
 	private static void listHeader(ListHeaderForTextBox lh, StreamReader sr)
@@ -61,12 +61,12 @@ public class ForTextBox {
 	}
 
 	/**
-	 * ¾Ë·ÁÁöÁö ¾ÊÀº n ¹ÙÀÌÆ®Æ² Ã³¸®ÇÑ´Ù.
+	 * ì•Œë ¤ì§€ì§€ ì•Šì€ n ë°”ì´íŠ¸í‹€ ì²˜ë¦¬í•œë‹¤.
 	 * 
 	 * @param n
-	 *            ¾Ë·ÁÁöÁö ¾ÊÀº ¹ÙÀÌÆ® °³¼ö
+	 *            ì•Œë ¤ì§€ì§€ ì•Šì€ ë°”ì´íŠ¸ ê°œìˆ˜
 	 * @param sr
-	 *            ½ºÆ®¸² ¸®´õ
+	 *            ìŠ¤íŠ¸ë¦¼ ë¦¬ë”
 	 * @throws IOException
 	 */
 	private static void unknownBytes(int n, StreamReader sr) throws IOException {
@@ -74,12 +74,12 @@ public class ForTextBox {
 	}
 
 	/**
-	 * ¹®´Ü ¸®½ºÆ®¸¦ ÀĞ´Â´Ù.
+	 * ë¬¸ë‹¨ ë¦¬ìŠ¤íŠ¸ë¥¼ ì½ëŠ”ë‹¤.
 	 * 
 	 * @param paragraphList
-	 *            ¹®´Ü ¸®½ºÆ®
+	 *            ë¬¸ë‹¨ ë¦¬ìŠ¤íŠ¸
 	 * @param sr
-	 *            ½ºÆ®¸² ¸®´õ
+	 *            ìŠ¤íŠ¸ë¦¼ ë¦¬ë”
 	 * @throws Exception
 	 */
 	private static void paragraphList(ParagraphList paragraphList,

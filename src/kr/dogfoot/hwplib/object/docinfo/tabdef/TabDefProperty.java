@@ -1,76 +1,76 @@
-package kr.dogfoot.hwplib.object.docinfo.tabdef;
+ï»¿package kr.dogfoot.hwplib.object.docinfo.tabdef;
 
 import kr.dogfoot.hwplib.util.binary.BitFlag;
 
 /**
- * ÅÇ Á¤ÀÇÀÇ ¼Ó¼º °´Ã¼
+ * íƒ­ ì •ì˜ì˜ ì†ì„± ê°ì²´
  * 
  * @author neolord
  */
 public class TabDefProperty {
 	/**
-	 * ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª(unsigned 4 byte)
+	 * íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’(unsigned 4 byte)
 	 */
 	private long value;
 
 	/**
-	 * »ı¼ºÀÚ
+	 * ìƒì„±ì
 	 */
 	public TabDefProperty() {
 	}
 
 	/**
-	 * ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ªÀ» ¹İÈ¯ÇÑ´Ù.
+	 * íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’ì„ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª
+	 * @return íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’
 	 */
 	public long getValue() {
 		return value;
 	}
 
 	/**
-	 * ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ªÀ» ¼³Á¤ÇÑ´Ù.
+	 * íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’ì„ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param value
-	 *            ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª
+	 *            íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’
 	 */
 	public void setValue(long value) {
 		this.value = value;
 	}
 
 	/**
-	 * ¹®´Ü ¿ŞÂÊ ³¡ ÀÚµ¿ ÅÇ(³»¾î ¾²±â¿ë ÀÚµ¿ ÅÇ) À¯¹«¸¦ ¹İÈ¯ÇÑ´Ù. (0 bit)
+	 * ë¬¸ë‹¨ ì™¼ìª½ ë ìë™ íƒ­(ë‚´ì–´ ì“°ê¸°ìš© ìë™ íƒ­) ìœ ë¬´ë¥¼ ë°˜í™˜í•œë‹¤. (0 bit)
 	 * 
-	 * @return ¹®´Ü ¿ŞÂÊ ³¡ ÀÚµ¿ ÅÇ(³»¾î ¾²±â¿ë ÀÚµ¿ ÅÇ) À¯¹«
+	 * @return ë¬¸ë‹¨ ì™¼ìª½ ë ìë™ íƒ­(ë‚´ì–´ ì“°ê¸°ìš© ìë™ íƒ­) ìœ ë¬´
 	 */
 	public boolean isAutoTabAtParagraphLeftEnd() {
 		return BitFlag.get(value, 0);
 	}
 
 	/**
-	 * ¹®´Ü ¿ŞÂÊ ³¡ ÀÚµ¿ ÅÇ(³»¾î ¾²±â¿ë ÀÚµ¿ ÅÇ) À¯¹«¸¦ ¼³Á¤ÇÑ´Ù. (0 bit)
+	 * ë¬¸ë‹¨ ì™¼ìª½ ë ìë™ íƒ­(ë‚´ì–´ ì“°ê¸°ìš© ìë™ íƒ­) ìœ ë¬´ë¥¼ ì„¤ì •í•œë‹¤. (0 bit)
 	 * 
 	 * @param autoTabAtParagraphLeftEnd
-	 *            ¹®´Ü ¿ŞÂÊ ³¡ ÀÚµ¿ ÅÇ(³»¾î ¾²±â¿ë ÀÚµ¿ ÅÇ) À¯¹«
+	 *            ë¬¸ë‹¨ ì™¼ìª½ ë ìë™ íƒ­(ë‚´ì–´ ì“°ê¸°ìš© ìë™ íƒ­) ìœ ë¬´
 	 */
 	public void setAutoTabAtParagraphLeftEnd(boolean autoTabAtParagraphLeftEnd) {
 		value = BitFlag.set(value, 0, autoTabAtParagraphLeftEnd);
 	}
 
 	/**
-	 * ¹®´Ü ¿À¸¥ÂÊ ³¡ ÀÚµ¿ ÅÇ À¯¹«¸¦ ¹İÈ¯ÇÑ´Ù. (1 bit)
+	 * ë¬¸ë‹¨ ì˜¤ë¥¸ìª½ ë ìë™ íƒ­ ìœ ë¬´ë¥¼ ë°˜í™˜í•œë‹¤. (1 bit)
 	 * 
-	 * @return ¹®´Ü ¿À¸¥ÂÊ ³¡ ÀÚµ¿ ÅÇ À¯¹«
+	 * @return ë¬¸ë‹¨ ì˜¤ë¥¸ìª½ ë ìë™ íƒ­ ìœ ë¬´
 	 */
 	public boolean isAutoTabAtParagraphRightEnd() {
 		return BitFlag.get(value, 1);
 	}
 
 	/**
-	 * ¹®´Ü ¿À¸¥ÂÊ ³¡ ÀÚµ¿ ÅÇ À¯¹«¸¦ ¼³Á¤ÇÑ´Ù. (1 bit)
+	 * ë¬¸ë‹¨ ì˜¤ë¥¸ìª½ ë ìë™ íƒ­ ìœ ë¬´ë¥¼ ì„¤ì •í•œë‹¤. (1 bit)
 	 * 
 	 * @param autoTabAtParagraphRightEnd
-	 *            ¹®´Ü ¿À¸¥ÂÊ ³¡ ÀÚµ¿ ÅÇ À¯¹«
+	 *            ë¬¸ë‹¨ ì˜¤ë¥¸ìª½ ë ìë™ íƒ­ ìœ ë¬´
 	 */
 	public void setAutoTabAtParagraphRightEnd(boolean autoTabAtParagraphRightEnd) {
 		value = BitFlag.set(value, 1, autoTabAtParagraphRightEnd);

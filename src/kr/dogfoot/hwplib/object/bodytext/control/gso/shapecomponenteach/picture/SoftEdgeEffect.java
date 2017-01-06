@@ -1,36 +1,36 @@
-package kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponenteach.picture;
+ï»¿package kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponenteach.picture;
 
 /**
- * ºÎµå·¯¿î °¡ÀåÀÚ¸® È¿°ú ¼Ó¼º
+ * ë¶€ë“œëŸ¬ìš´ ê°€ì¥ìë¦¬ íš¨ê³¼ ì†ì„±
  * 
  * @author neolord
  */
 public class SoftEdgeEffect {
 	/**
-	 * º¯°æ
+	 * ë³€ê²½
 	 */
 	private float radius;
 
 	/**
-	 * »ı¼º
+	 * ìƒì„±
 	 */
 	public SoftEdgeEffect() {
 	}
 
 	/**
-	 * ºÎµå·¯¿î °¡ÀåÀÚ¸® ¹İ°æÀ» ¹İÈ¯ÇÑ´Ù.
+	 * ë¶€ë“œëŸ¬ìš´ ê°€ì¥ìë¦¬ ë°˜ê²½ì„ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ºÎµå·¯¿î °¡ÀåÀÚ¸® ¹İ°æ
+	 * @return ë¶€ë“œëŸ¬ìš´ ê°€ì¥ìë¦¬ ë°˜ê²½
 	 */
 	public float getRadius() {
 		return radius;
 	}
 
 	/**
-	 * ºÎµå·¯¿î °¡ÀåÀÚ¸® ¹İ°æÀ» ¼³Á¤ÇÑ´Ù.
+	 * ë¶€ë“œëŸ¬ìš´ ê°€ì¥ìë¦¬ ë°˜ê²½ì„ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param radius
-	 *            ºÎµå·¯¿î °¡ÀåÀÚ¸® ¹İ°æ
+	 *            ë¶€ë“œëŸ¬ìš´ ê°€ì¥ìë¦¬ ë°˜ê²½
 	 */
 	public void setRadius(float radius) {
 		this.radius = radius;

@@ -1,78 +1,78 @@
-package kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponent.lineinfo;
+ï»¿package kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponent.lineinfo;
 
 /**
- * È­»ìÇ¥ Å©±â (°¡·ÎÅ©±â-¼¼·ÎÅ©±â)
+ * í™”ì‚´í‘œ í¬ê¸° (ê°€ë¡œí¬ê¸°-ì„¸ë¡œí¬ê¸°)
  * 
  * @author neolord
  */
 public enum LineArrowSize {
 	/**
-	 * ÀÛÀº-ÀÛÀº
+	 * ì‘ì€-ì‘ì€
 	 */
 	SmallSmall((byte) 0),
 	/**
-	 * ÀÛÀº-Áß°£
+	 * ì‘ì€-ì¤‘ê°„
 	 */
 	SmallMiddle((byte) 1),
 	/**
-	 * ÀÛÀº-Å«
+	 * ì‘ì€-í°
 	 */
 	SmallBig((byte) 2),
 	/**
-	 * Áß°£-ÀÛÀº
+	 * ì¤‘ê°„-ì‘ì€
 	 */
 	MiddleSmall((byte) 3),
 	/**
-	 * Áß°£-Áß°£
+	 * ì¤‘ê°„-ì¤‘ê°„
 	 */
 	MiddleMiddle((byte) 4),
 	/**
-	 * Áß°£-Å«
+	 * ì¤‘ê°„-í°
 	 */
 	MiddleBig((byte) 5),
 	/**
-	 * Å«-ÀÛÀº
+	 * í°-ì‘ì€
 	 */
 	BigSmall((byte) 6),
 	/**
-	 * Å«-Áß°£
+	 * í°-ì¤‘ê°„
 	 */
 	BigMiddle((byte) 7),
 	/**
-	 * Å«-Å«
+	 * í°-í°
 	 */
 	BigBig((byte) 8);
 
 	/**
-	 * ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª
+	 * íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’
 	 */
 	private byte value;
 
 	/**
-	 * »ı¼ºÀÚ
+	 * ìƒì„±ì
 	 * 
 	 * @param value
-	 *            ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª
+	 *            íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’
 	 */
 	private LineArrowSize(byte value) {
 		this.value = value;
 	}
 
 	/**
-	 * ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ªÀ» ¹İÈ¯ÇÑ´Ù.
+	 * íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’ì„ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª
+	 * @return íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’
 	 */
 	public byte getValue() {
 		return value;
 	}
 
 	/**
-	 * ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª¿¡ ÇØ´çµÇ´Â enum °ªÀ» ¹İÈ¯ÇÑ´Ù.
+	 * íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’ì— í•´ë‹¹ë˜ëŠ” enum ê°’ì„ ë°˜í™˜í•œë‹¤.
 	 * 
 	 * @param value
-	 *            ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª
-	 * @return enum °ª
+	 *            íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’
+	 * @return enum ê°’
 	 */
 	public static LineArrowSize valueOf(byte value) {
 		for (LineArrowSize las : values()) {

@@ -1,4 +1,4 @@
-package kr.dogfoot.hwplib.reader.bodytext.paragraph.control;
+ï»¿package kr.dogfoot.hwplib.reader.bodytext.paragraph.control;
 
 import java.io.IOException;
 
@@ -7,18 +7,18 @@ import kr.dogfoot.hwplib.object.bodytext.control.ctrlheader.CtrlHeaderNewNumber;
 import kr.dogfoot.hwplib.util.compoundFile.StreamReader;
 
 /**
- * »õ ¹øÈ£ ÁöÁ¤ ÄÁÆ®·ÑÀ» ÀĞ±â À§ÇÑ °´Ã¼
+ * ìƒˆ ë²ˆí˜¸ ì§€ì • ì»¨íŠ¸ë¡¤ì„ ì½ê¸° ìœ„í•œ ê°ì²´
  * 
  * @author neolord
  */
 public class ForControlNewNumber {
 	/**
-	 * »õ ¹øÈ£ ÁöÁ¤ ÄÁÆ®·ÑÀ» ÀĞ´Â´Ù.
+	 * ìƒˆ ë²ˆí˜¸ ì§€ì • ì»¨íŠ¸ë¡¤ì„ ì½ëŠ”ë‹¤.
 	 * 
 	 * @param nwno
-	 *            »õ ¹øÈ£ ÁöÁ¤ ÄÁÆ®·Ñ
+	 *            ìƒˆ ë²ˆí˜¸ ì§€ì • ì»¨íŠ¸ë¡¤
 	 * @param sr
-	 *            ½ºÆ®¸² ¸®´õ
+	 *            ìŠ¤íŠ¸ë¦¼ ë¦¬ë”
 	 * @throws IOException
 	 */
 	public static void read(ControlNewNumber nwno, StreamReader sr)
@@ -27,12 +27,12 @@ public class ForControlNewNumber {
 	}
 
 	/**
-	 * »õ ¹øÈ£ ÁöÁ¤ ÄÁÆ®·ÑÀÇ ÄÁÆ®·Ñ Çì´õ ·¹ÄÚµå¸¦ ÀĞ´Â´Ù.
+	 * ìƒˆ ë²ˆí˜¸ ì§€ì • ì»¨íŠ¸ë¡¤ì˜ ì»¨íŠ¸ë¡¤ í—¤ë” ë ˆì½”ë“œë¥¼ ì½ëŠ”ë‹¤.
 	 * 
 	 * @param header
-	 *            »õ ¹øÈ£ ÁöÁ¤ ÄÁÆ®·ÑÀÇ ÄÁÆ®·Ñ Çì´õ ·¹ÄÚµå
+	 *            ìƒˆ ë²ˆí˜¸ ì§€ì • ì»¨íŠ¸ë¡¤ì˜ ì»¨íŠ¸ë¡¤ í—¤ë” ë ˆì½”ë“œ
 	 * @param sr
-	 *            ½ºÆ®¸² ¸®´õ
+	 *            ìŠ¤íŠ¸ë¦¼ ë¦¬ë”
 	 * @throws IOException
 	 */
 	private static void ctrlHeader(CtrlHeaderNewNumber header, StreamReader sr)

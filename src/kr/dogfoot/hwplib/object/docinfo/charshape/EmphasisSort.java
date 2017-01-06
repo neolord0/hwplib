@@ -1,21 +1,21 @@
-package kr.dogfoot.hwplib.object.docinfo.charshape;
+ï»¿package kr.dogfoot.hwplib.object.docinfo.charshape;
 
 /**
- * °­Á¶Á¡ Á¾·ù
+ * ê°•ì¡°ì  ì¢…ë¥˜
  * 
  * @author neolord
  */
 public enum EmphasisSort {
 	/**
-	 * ¾øÀ½
+	 * ì—†ìŒ
 	 */
 	None((byte) 0),
 	/**
-	 * °ËÁ¤ µ¿±×¶ó¹Ì °­Á¶Á¡
+	 * ê²€ì • ë™ê·¸ë¼ë¯¸ ê°•ì¡°ì 
 	 */
 	Circle((byte) 1),
 	/**
-	 * ¼Ó ºó µ¿±×¶ó¹Ì °­Á¶Á¡
+	 * ì† ë¹ˆ ë™ê·¸ë¼ë¯¸ ê°•ì¡°ì 
 	 */
 	EmptyCircle((byte) 2),
 	/**
@@ -36,35 +36,35 @@ public enum EmphasisSort {
 	Type6((byte) 6);
 
 	/**
-	 * ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª
+	 * íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’
 	 */
 	private byte value;
 
 	/**
-	 * »ı¼ºÀÚ
+	 * ìƒì„±ì
 	 * 
 	 * @param value
-	 *            ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª
+	 *            íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’
 	 */
 	private EmphasisSort(byte value) {
 		this.value = value;
 	}
 
 	/**
-	 * ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ªÀ» ¹İÈ¯ÇÑ´Ù.
+	 * íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’ì„ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª
+	 * @return íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’
 	 */
 	public byte getValue() {
 		return value;
 	}
 
 	/**
-	 * ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª¿¡ ÇØ´çµÇ´Â enum °ªÀ» ¹İÈ¯ÇÑ´Ù.
+	 * íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’ì— í•´ë‹¹ë˜ëŠ” enum ê°’ì„ ë°˜í™˜í•œë‹¤.
 	 * 
 	 * @param value
-	 *            ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª
-	 * @return enum °ª
+	 *            íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’
+	 * @return enum ê°’
 	 */
 	public static EmphasisSort valueOf(byte value) {
 		for (EmphasisSort es : values()) {

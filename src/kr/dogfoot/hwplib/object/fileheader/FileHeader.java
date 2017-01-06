@@ -1,75 +1,75 @@
-package kr.dogfoot.hwplib.object.fileheader;
+ï»¿package kr.dogfoot.hwplib.object.fileheader;
 
 /**
- * ÆÄÀÏ ÀÎ½Ä Á¤º¸¸¦ ³ªÅ¸³»´Â °´Ã¼. HWP ÆÄÀÏ³»ÀÇ "FileHeader" stream¿¡ ÀúÀåµÈ´Ù.
+ * íŒŒì¼ ì¸ì‹ ì •ë³´ë¥¼ ë‚˜íƒ€ë‚´ëŠ” ê°ì²´. HWP íŒŒì¼ë‚´ì˜ "FileHeader" streamì— ì €ì¥ëœë‹¤.
  * 
  * @author neolord
  */
 public class FileHeader {
 	/**
-	 * ÆÄÀÏ ¹öÀü
+	 * íŒŒì¼ ë²„ì „
 	 */
 	private FileVersion version;
 	/**
-	 * ¾ĞÃà ¿©ºÎ
+	 * ì••ì¶• ì—¬ë¶€
 	 */
 	private boolean compressed;
 	/**
-	 * ¾ÏÈ£ ¼³Á¤ ¿©ºÎ
+	 * ì•”í˜¸ ì„¤ì • ì—¬ë¶€
 	 */
 	private boolean hasPassword;
 	/**
-	 * ¹èÆ÷¿ë ¹®¼­ ¿©ºÎ
+	 * ë°°í¬ìš© ë¬¸ì„œ ì—¬ë¶€
 	 */
 	private boolean isDeploymentDocument;
 	/**
-	 * ½ºÅ©¸³Æ® ÀúÀå ¿©ºÎ
+	 * ìŠ¤í¬ë¦½íŠ¸ ì €ì¥ ì—¬ë¶€
 	 */
 	private boolean saveScript;
 	/**
-	 * DRM º¸¾È ¹®¼­ ¿©ºÎ
+	 * DRM ë³´ì•ˆ ë¬¸ì„œ ì—¬ë¶€
 	 */
 	private boolean isDRMDocument;
 	/**
-	 * XMLTemplate ½ºÅä¸®Áö Á¸Àç ¿©ºÎ
+	 * XMLTemplate ìŠ¤í† ë¦¬ì§€ ì¡´ì¬ ì—¬ë¶€
 	 */
 	private boolean hasXMLTemplate;
 	/**
-	 * ¹®¼­ ÀÌ·Â °ü¸® Á¸Àç ¿©ºÎ
+	 * ë¬¸ì„œ ì´ë ¥ ê´€ë¦¬ ì¡´ì¬ ì—¬ë¶€
 	 */
 	private boolean hasDocumentHistory;
 	/**
-	 * ÀüÀÚ ¼­¸í Á¤º¸ Á¸Àç ¿©ºÎ
+	 * ì „ì ì„œëª… ì •ë³´ ì¡´ì¬ ì—¬ë¶€
 	 */
 	private boolean hasSignature;
 	/**
-	 * °øÀÎ ÀÎÁõ¼­ ¾ÏÈ£È­ ¿©ºÎ
+	 * ê³µì¸ ì¸ì¦ì„œ ì•”í˜¸í™” ì—¬ë¶€
 	 */
 	private boolean encryptPublicCertification;
 	/**
-	 * ÀüÀÚ ¼­¸í ¿¹ºñ ÀúÀå ¿©ºÎ
+	 * ì „ì ì„œëª… ì˜ˆë¹„ ì €ì¥ ì—¬ë¶€
 	 */
 	private boolean savePrepareSignature;
 	/**
-	 * °øÀÎ ÀÎÁõ¼­ DRM º¸¾È ¹®¼­ ¿©ºÎ
+	 * ê³µì¸ ì¸ì¦ì„œ DRM ë³´ì•ˆ ë¬¸ì„œ ì—¬ë¶€
 	 */
 	private boolean isPublicCertificationDRMDocument;
 	/**
-	 * CCL ¹®¼­ ¿©ºÎ
+	 * CCL ë¬¸ì„œ ì—¬ë¶€
 	 */
 	private boolean isCCLDocument;
 
 	/**
-	 * »ı¼ºÀÚ
+	 * ìƒì„±ì
 	 */
 	public FileHeader() {
 		version = new FileVersion();
 	}
 
 	/**
-	 * HWP ÆÄÀÏÀÇ signature¸¦ ¹İÈ¯ÇÑ´Ù. signatureÀº ÆÄÀÏÀÌ HWPÆÄÀÏÀÎÁö ¿©ºÎ¸¦ Ã¼Å©ÇÏ´Âµ¥ »ç¿ëµÊ.
+	 * HWP íŒŒì¼ì˜ signatureë¥¼ ë°˜í™˜í•œë‹¤. signatureì€ íŒŒì¼ì´ HWPíŒŒì¼ì¸ì§€ ì—¬ë¶€ë¥¼ ì²´í¬í•˜ëŠ”ë° ì‚¬ìš©ë¨.
 	 * 
-	 * @return HWP ÆÄÀÏÀÇ signature
+	 * @return HWP íŒŒì¼ì˜ signature
 	 */
 	public static byte[] getFileSignature() {
 		byte[] array = { 0x48, 0x57, 0x50, 0x20, 0x44, 0x6f, 0x63, 0x75, 0x6d,
@@ -80,218 +80,218 @@ public class FileHeader {
 	}
 
 	/**
-	 * ¹öÀü Á¤º¸ °´Ã¼¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ë²„ì „ ì •ë³´ ê°ì²´ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ¹öÀü Á¤º¸ °´Ã¼
+	 * @return ë²„ì „ ì •ë³´ ê°ì²´
 	 */
 	public FileVersion getVersion() {
 		return version;
 	}
 
 	/**
-	 * ¾ĞÃà ¿©ºÎ¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ì••ì¶• ì—¬ë¶€ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ¾ĞÃà ¿©ºÎ
+	 * @return ì••ì¶• ì—¬ë¶€
 	 */
 	public boolean isCompressed() {
 		return compressed;
 	}
 
 	/**
-	 * ¾ĞÃà ¿©ºÎ¸¦ ¼³Á¤ÇÑ´Ù.
+	 * ì••ì¶• ì—¬ë¶€ë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param compressed
-	 *            ¾ĞÃà ¿©ºÎ
+	 *            ì••ì¶• ì—¬ë¶€
 	 */
 	public void setCompressed(boolean compressed) {
 		this.compressed = compressed;
 	}
 
 	/**
-	 * ¾ÏÈ£ ¼³Á¤ ¿©ºÎ¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ì•”í˜¸ ì„¤ì • ì—¬ë¶€ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ¾ÏÈ£ ¼³Á¤ ¿©ºÎ
+	 * @return ì•”í˜¸ ì„¤ì • ì—¬ë¶€
 	 */
 	public boolean hasPassword() {
 		return hasPassword;
 	}
 
 	/**
-	 * ¾ÏÈ£ ¼³Á¤ ¿©ºÎ¸¦ ¼³Á¤ÇÑ´Ù.
+	 * ì•”í˜¸ ì„¤ì • ì—¬ë¶€ë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param hasPassword
-	 *            ¾ÏÈ£ ¼³Á¤ ¿©ºÎ
+	 *            ì•”í˜¸ ì„¤ì • ì—¬ë¶€
 	 */
 	public void setHasPassword(boolean hasPassword) {
 		this.hasPassword = hasPassword;
 	}
 
 	/**
-	 * ¹èÆ÷¿ë ¹®¼­ ¿©ºÎ¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ë°°í¬ìš© ë¬¸ì„œ ì—¬ë¶€ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ¹èÆ÷¿ë ¹®¼­ ¿©ºÎ
+	 * @return ë°°í¬ìš© ë¬¸ì„œ ì—¬ë¶€
 	 */
 	public boolean isDeploymentDocument() {
 		return isDeploymentDocument;
 	}
 
 	/**
-	 * ¹èÆ÷¿ë ¹®¼­ ¿©ºÎ¸¦ ¼³Á¤ÇÑ´Ù.
+	 * ë°°í¬ìš© ë¬¸ì„œ ì—¬ë¶€ë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param isDeploymentDocument
-	 *            ¹èÆ÷¿ë ¹®¼­ ¿©ºÎ
+	 *            ë°°í¬ìš© ë¬¸ì„œ ì—¬ë¶€
 	 */
 	public void setDeploymentDocument(boolean isDeploymentDocument) {
 		this.isDeploymentDocument = isDeploymentDocument;
 	}
 
 	/**
-	 * ½ºÅ©¸³Æ® ÀúÀå ¿©ºÎ¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ìŠ¤í¬ë¦½íŠ¸ ì €ì¥ ì—¬ë¶€ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ½ºÅ©¸³Æ® ÀúÀå ¿©ºÎ
+	 * @return ìŠ¤í¬ë¦½íŠ¸ ì €ì¥ ì—¬ë¶€
 	 */
 	public boolean isSaveScript() {
 		return saveScript;
 	}
 
 	/**
-	 * ½ºÅ©¸³Æ® ÀúÀå ¿©ºÎ¸¦ ¼³Á¤ÇÑ´Ù.
+	 * ìŠ¤í¬ë¦½íŠ¸ ì €ì¥ ì—¬ë¶€ë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param saveScript
-	 *            ½ºÅ©¸³Æ® ÀúÀå ¿©ºÎ
+	 *            ìŠ¤í¬ë¦½íŠ¸ ì €ì¥ ì—¬ë¶€
 	 */
 	public void setSaveScript(boolean saveScript) {
 		this.saveScript = saveScript;
 	}
 
 	/**
-	 * DRM º¸¾È ¹®¼­ ¿©ºÎ¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * DRM ë³´ì•ˆ ë¬¸ì„œ ì—¬ë¶€ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return DRM º¸¾È ¹®¼­ ¿©ºÎ
+	 * @return DRM ë³´ì•ˆ ë¬¸ì„œ ì—¬ë¶€
 	 */
 	public boolean isDRMDocument() {
 		return isDRMDocument;
 	}
 
 	/**
-	 * DRM º¸¾È ¹®¼­ ¿©ºÎ¸¦ ¼³Á¤ÇÑ´Ù.
+	 * DRM ë³´ì•ˆ ë¬¸ì„œ ì—¬ë¶€ë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param isDRMDocument
-	 *            DRM º¸¾È ¹®¼­ ¿©ºÎ
+	 *            DRM ë³´ì•ˆ ë¬¸ì„œ ì—¬ë¶€
 	 */
 	public void setDRMDocument(boolean isDRMDocument) {
 		this.isDRMDocument = isDRMDocument;
 	}
 
 	/**
-	 * XMLTemplate ½ºÅä¸®Áö Á¸Àç ¿©ºÎ¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * XMLTemplate ìŠ¤í† ë¦¬ì§€ ì¡´ì¬ ì—¬ë¶€ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return XMLTemplate ½ºÅä¸®Áö Á¸Àç ¿©ºÎ
+	 * @return XMLTemplate ìŠ¤í† ë¦¬ì§€ ì¡´ì¬ ì—¬ë¶€
 	 */
 	public boolean hasXMLTemplate() {
 		return hasXMLTemplate;
 	}
 
 	/**
-	 * XMLTemplate ½ºÅä¸®Áö Á¸Àç ¿©ºÎ¸¦ ¼³Á¤ÇÑ´Ù.
+	 * XMLTemplate ìŠ¤í† ë¦¬ì§€ ì¡´ì¬ ì—¬ë¶€ë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param hasXMLTemplate
-	 *            XMLTemplate ½ºÅä¸®Áö Á¸Àç ¿©ºÎ
+	 *            XMLTemplate ìŠ¤í† ë¦¬ì§€ ì¡´ì¬ ì—¬ë¶€
 	 */
 	public void setHasXMLTemplate(boolean hasXMLTemplate) {
 		this.hasXMLTemplate = hasXMLTemplate;
 	}
 
 	/**
-	 * ¹®¼­ ÀÌ·Â °ü¸® Á¸Àç ¿©ºÎ¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ë¬¸ì„œ ì´ë ¥ ê´€ë¦¬ ì¡´ì¬ ì—¬ë¶€ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ¹®¼­ ÀÌ·Â °ü¸® Á¸Àç ¿©ºÎ
+	 * @return ë¬¸ì„œ ì´ë ¥ ê´€ë¦¬ ì¡´ì¬ ì—¬ë¶€
 	 */
 	public boolean hasDocumentHistory() {
 		return hasDocumentHistory;
 	}
 
 	/**
-	 * ¹®¼­ ÀÌ·Â °ü¸® Á¸Àç ¿©ºÎ¸¦ ¼³Á¤ÇÑ´Ù.
+	 * ë¬¸ì„œ ì´ë ¥ ê´€ë¦¬ ì¡´ì¬ ì—¬ë¶€ë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param hasDocumentHistory
-	 *            ¹®¼­ ÀÌ·Â °ü¸® Á¸Àç ¿©ºÎ
+	 *            ë¬¸ì„œ ì´ë ¥ ê´€ë¦¬ ì¡´ì¬ ì—¬ë¶€
 	 */
 	public void setHasDocumentHistory(boolean hasDocumentHistory) {
 		this.hasDocumentHistory = hasDocumentHistory;
 	}
 
 	/**
-	 * ÀüÀÚ ¼­¸í Á¤º¸ Á¸Àç ¿©ºÎ¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ì „ì ì„œëª… ì •ë³´ ì¡´ì¬ ì—¬ë¶€ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ÀüÀÚ ¼­¸í Á¤º¸ Á¸Àç ¿©ºÎ
+	 * @return ì „ì ì„œëª… ì •ë³´ ì¡´ì¬ ì—¬ë¶€
 	 */
 	public boolean hasSignature() {
 		return hasSignature;
 	}
 
 	/**
-	 * ÀüÀÚ ¼­¸í Á¤º¸ Á¸Àç ¿©ºÎ¸¦ ¼³Á¤ÇÑ´Ù.
+	 * ì „ì ì„œëª… ì •ë³´ ì¡´ì¬ ì—¬ë¶€ë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param hasSignature
-	 *            ÀüÀÚ ¼­¸í Á¤º¸ Á¸Àç ¿©ºÎ
+	 *            ì „ì ì„œëª… ì •ë³´ ì¡´ì¬ ì—¬ë¶€
 	 */
 	public void setHasSignature(boolean hasSignature) {
 		this.hasSignature = hasSignature;
 	}
 
 	/**
-	 * °øÀÎ ÀÎÁõ¼­ ¾ÏÈ£È­ ¿©ºÎ¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ê³µì¸ ì¸ì¦ì„œ ì•”í˜¸í™” ì—¬ë¶€ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return °øÀÎ ÀÎÁõ¼­ ¾ÏÈ£È­ ¿©ºÎ
+	 * @return ê³µì¸ ì¸ì¦ì„œ ì•”í˜¸í™” ì—¬ë¶€
 	 */
 	public boolean isEncryptPublicCertification() {
 		return encryptPublicCertification;
 	}
 
 	/**
-	 * °øÀÎ ÀÎÁõ¼­ ¾ÏÈ£È­ ¿©ºÎ¸¦ ¼³Á¤ÇÑ´Ù.
+	 * ê³µì¸ ì¸ì¦ì„œ ì•”í˜¸í™” ì—¬ë¶€ë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param encryptPublicCertification
-	 *            °øÀÎ ÀÎÁõ¼­ ¾ÏÈ£È­ ¿©ºÎ
+	 *            ê³µì¸ ì¸ì¦ì„œ ì•”í˜¸í™” ì—¬ë¶€
 	 */
 	public void setEncryptPublicCertification(boolean encryptPublicCertification) {
 		this.encryptPublicCertification = encryptPublicCertification;
 	}
 
 	/**
-	 * ÀüÀÚ ¼­¸í ¿¹ºñ ÀúÀå ¿©ºÎ¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ì „ì ì„œëª… ì˜ˆë¹„ ì €ì¥ ì—¬ë¶€ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ÀüÀÚ ¼­¸í ¿¹ºñ ÀúÀå ¿©ºÎ
+	 * @return ì „ì ì„œëª… ì˜ˆë¹„ ì €ì¥ ì—¬ë¶€
 	 */
 	public boolean isSavePrepareSignature() {
 		return savePrepareSignature;
 	}
 
 	/**
-	 * ÀüÀÚ ¼­¸í ¿¹ºñ ÀúÀå ¿©ºÎ¸¦ ¼³Á¤ÇÑ´Ù.
+	 * ì „ì ì„œëª… ì˜ˆë¹„ ì €ì¥ ì—¬ë¶€ë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param savePrepareSignature
-	 *            ÀüÀÚ ¼­¸í ¿¹ºñ ÀúÀå ¿©ºÎ
+	 *            ì „ì ì„œëª… ì˜ˆë¹„ ì €ì¥ ì—¬ë¶€
 	 */
 	public void setSavePrepareSignature(boolean savePrepareSignature) {
 		this.savePrepareSignature = savePrepareSignature;
 	}
 
 	/**
-	 * °øÀÎ ÀÎÁõ¼­ DRM º¸¾È ¹®¼­ ¿©ºÎ¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ê³µì¸ ì¸ì¦ì„œ DRM ë³´ì•ˆ ë¬¸ì„œ ì—¬ë¶€ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return °øÀÎ ÀÎÁõ¼­ DRM º¸¾È ¹®¼­ ¿©ºÎ
+	 * @return ê³µì¸ ì¸ì¦ì„œ DRM ë³´ì•ˆ ë¬¸ì„œ ì—¬ë¶€
 	 */
 	public boolean isPublicCertificationDRMDocument() {
 		return isPublicCertificationDRMDocument;
 	}
 
 	/**
-	 * °øÀÎ ÀÎÁõ¼­ DRM º¸¾È ¹®¼­ ¿©ºÎ¸¦ ¼³Á¤ÇÑ´Ù.
+	 * ê³µì¸ ì¸ì¦ì„œ DRM ë³´ì•ˆ ë¬¸ì„œ ì—¬ë¶€ë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param isPublicCertificationDRMDocument
-	 *            °øÀÎ ÀÎÁõ¼­ DRM º¸¾È ¹®¼­ ¿©ºÎ
+	 *            ê³µì¸ ì¸ì¦ì„œ DRM ë³´ì•ˆ ë¬¸ì„œ ì—¬ë¶€
 	 */
 	public void setPublicCertificationDRMDocument(
 			boolean isPublicCertificationDRMDocument) {
@@ -299,19 +299,19 @@ public class FileHeader {
 	}
 
 	/**
-	 * CCL ¹®¼­ ¿©ºÎ¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * CCL ë¬¸ì„œ ì—¬ë¶€ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return CCL ¹®¼­ ¿©ºÎ
+	 * @return CCL ë¬¸ì„œ ì—¬ë¶€
 	 */
 	public boolean isCCLDocument() {
 		return isCCLDocument;
 	}
 
 	/**
-	 * CCL ¹®¼­ ¿©ºÎ¸¦ ¼³Á¤ÇÑ´Ù.
+	 * CCL ë¬¸ì„œ ì—¬ë¶€ë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param isCCLDocument
-	 *            CCL ¹®¼­ ¿©ºÎ
+	 *            CCL ë¬¸ì„œ ì—¬ë¶€
 	 */
 	public void setCCLDocument(boolean isCCLDocument) {
 		this.isCCLDocument = isCCLDocument;

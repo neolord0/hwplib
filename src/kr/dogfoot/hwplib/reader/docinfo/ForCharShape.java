@@ -1,4 +1,4 @@
-package kr.dogfoot.hwplib.reader.docinfo;
+ï»¿package kr.dogfoot.hwplib.reader.docinfo;
 
 import kr.dogfoot.hwplib.object.docinfo.CharShape;
 import kr.dogfoot.hwplib.object.docinfo.charshape.CharOffsets;
@@ -9,18 +9,18 @@ import kr.dogfoot.hwplib.object.docinfo.charshape.RelativeSizes;
 import kr.dogfoot.hwplib.util.compoundFile.StreamReader;
 
 /**
- * ±ÛÀÚ ¸ğ¾ç ·¹ÄÚµå¸¦ ÀĞ±â À§ÇÑ °´Ã¼
+ * ê¸€ì ëª¨ì–‘ ë ˆì½”ë“œë¥¼ ì½ê¸° ìœ„í•œ ê°ì²´
  * 
  * @author neolord
  */
 public class ForCharShape {
 	/**
-	 * ±ÛÀÚ ¸ğ¾çÀ» ÀĞ´Â´Ù.
+	 * ê¸€ì ëª¨ì–‘ì„ ì½ëŠ”ë‹¤.
 	 * 
 	 * @param cs
-	 *            ±ÛÀÚ ¸ğ¾ç ·¹ÄÚµå
+	 *            ê¸€ì ëª¨ì–‘ ë ˆì½”ë“œ
 	 * @param sr
-	 *            ½ºÆ®¸² ¸®´õ
+	 *            ìŠ¤íŠ¸ë¦¼ ë¦¬ë”
 	 * @throws Exception
 	 */
 	public static void read(CharShape cs, StreamReader sr) throws Exception {
@@ -48,12 +48,12 @@ public class ForCharShape {
 	}
 
 	/**
-	 * ¾ğ¾îº° ±Û²ÃID ºÎºĞÀ» ÀĞ´Â´Ù.
+	 * ì–¸ì–´ë³„ ê¸€ê¼´ID ë¶€ë¶„ì„ ì½ëŠ”ë‹¤.
 	 * 
 	 * @param fnis
-	 *            ¾ğ¾îº° ±Û²ÃID ºÎºĞÀ» ³ªÅ¸³»´Â °´Ã¼
+	 *            ì–¸ì–´ë³„ ê¸€ê¼´ID ë¶€ë¶„ì„ ë‚˜íƒ€ë‚´ëŠ” ê°ì²´
 	 * @param sr
-	 *            ½ºÆ®¸² ¸®´õ
+	 *            ìŠ¤íŠ¸ë¦¼ ë¦¬ë”
 	 * @throws Exception
 	 */
 	private static void faceNameIds(FaceNameIds fnis, StreamReader sr)
@@ -66,12 +66,12 @@ public class ForCharShape {
 	}
 
 	/**
-	 * ¾ğ¾îº° ÀåÆò ºÎºĞÀ» ÀĞ´Â´Ù.
+	 * ì–¸ì–´ë³„ ì¥í‰ ë¶€ë¶„ì„ ì½ëŠ”ë‹¤.
 	 * 
 	 * @param rs
-	 *            ¾ğ¾îº° ÀåÆò ºÎºĞÀ» ³ªÅ¸³»´Â °´Ã¼
+	 *            ì–¸ì–´ë³„ ì¥í‰ ë¶€ë¶„ì„ ë‚˜íƒ€ë‚´ëŠ” ê°ì²´
 	 * @param sr
-	 *            ½ºÆ®¸² ¸®´õ
+	 *            ìŠ¤íŠ¸ë¦¼ ë¦¬ë”
 	 * @throws Exception
 	 */
 	private static void ratios(Ratios rs, StreamReader sr) throws Exception {
@@ -83,12 +83,12 @@ public class ForCharShape {
 	}
 
 	/**
-	 * ¾ğ¾îº° ÀÚ°£ ºÎºĞÀ» ÀĞ´Â´Ù.
+	 * ì–¸ì–´ë³„ ìê°„ ë¶€ë¶„ì„ ì½ëŠ”ë‹¤.
 	 * 
 	 * @param css
-	 *            ¾ğ¾îº° ÀÚ°£ ºÎºĞÀ» ³ªÅ¸³»´Â °´Ã¼
+	 *            ì–¸ì–´ë³„ ìê°„ ë¶€ë¶„ì„ ë‚˜íƒ€ë‚´ëŠ” ê°ì²´
 	 * @param sr
-	 *            ½ºÆ®¸² ¸®´õ
+	 *            ìŠ¤íŠ¸ë¦¼ ë¦¬ë”
 	 * @throws Exception
 	 */
 	private static void charSpaces(CharSpaces css, StreamReader sr)
@@ -101,12 +101,12 @@ public class ForCharShape {
 	}
 
 	/**
-	 * ¾ğ¾îº° »ó´ë Å©±â ºÎºĞÀ» ÀĞ´Â´Ù.
+	 * ì–¸ì–´ë³„ ìƒëŒ€ í¬ê¸° ë¶€ë¶„ì„ ì½ëŠ”ë‹¤.
 	 * 
 	 * @param rss
-	 *            ¾ğ¾îº° »ó´ë Å©±âÀ» ³ªÅ¸³»´Â °´Ã¼
+	 *            ì–¸ì–´ë³„ ìƒëŒ€ í¬ê¸°ì„ ë‚˜íƒ€ë‚´ëŠ” ê°ì²´
 	 * @param sr
-	 *            ½ºÆ®¸² ¸®´õ
+	 *            ìŠ¤íŠ¸ë¦¼ ë¦¬ë”
 	 * @throws Exception
 	 */
 	private static void relativeSizes(RelativeSizes rss, StreamReader sr)
@@ -119,12 +119,12 @@ public class ForCharShape {
 	}
 
 	/**
-	 * ¾ğ¾îº° ±ÛÀÚ À§Ä¡ ºÎºĞÀ» ÀĞ´Â´Ù.
+	 * ì–¸ì–´ë³„ ê¸€ì ìœ„ì¹˜ ë¶€ë¶„ì„ ì½ëŠ”ë‹¤.
 	 * 
 	 * @param cos
-	 *            ¾ğ¾îº° ±ÛÀÚ À§Ä¡À» ³ªÅ¸³»´Â °´Ã¼
+	 *            ì–¸ì–´ë³„ ê¸€ì ìœ„ì¹˜ì„ ë‚˜íƒ€ë‚´ëŠ” ê°ì²´
 	 * @param sr
-	 *            ½ºÆ®¸² ¸®´õ
+	 *            ìŠ¤íŠ¸ë¦¼ ë¦¬ë”
 	 * @throws Exception
 	 */
 	private static void charPositions(CharOffsets cos, StreamReader sr)

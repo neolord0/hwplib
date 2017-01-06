@@ -1,42 +1,42 @@
-package kr.dogfoot.hwplib.object.docinfo;
+ï»¿package kr.dogfoot.hwplib.object.docinfo;
 
 import kr.dogfoot.hwplib.object.docinfo.facename.FaceNameProperty;
 import kr.dogfoot.hwplib.object.docinfo.facename.FontType;
 import kr.dogfoot.hwplib.object.docinfo.facename.FontTypeInfo;
 
 /**
- * ±Û²Ã ·¹ÄÚµå
+ * ê¸€ê¼´ ë ˆì½”ë“œ
  * 
  * @author neolord
  */
 public class FaceName {
 	/**
-	 * ¼Ó¼º
+	 * ì†ì„±
 	 */
 	private FaceNameProperty property;
 	/**
-	 * ±Û²Ã ÀÌ¸§
+	 * ê¸€ê¼´ ì´ë¦„
 	 */
 	private String name;
 	/**
-	 * ´ëÃ¼ ±Û²Ã À¯Çü
+	 * ëŒ€ì²´ ê¸€ê¼´ ìœ í˜•
 	 */
 	private FontType substituteFontType;
 	/**
-	 * ´ëÃ¼ ±Û²Ã ÀÌ¸§
+	 * ëŒ€ì²´ ê¸€ê¼´ ì´ë¦„
 	 */
 	private String substituteFontName;
 	/**
-	 * ±Û²Ã À¯Çü Á¤º¸
+	 * ê¸€ê¼´ ìœ í˜• ì •ë³´
 	 */
 	private FontTypeInfo fontTypeInfo;
 	/**
-	 * ±âº» ±Û²Ã ÀÌ¸§
+	 * ê¸°ë³¸ ê¸€ê¼´ ì´ë¦„
 	 */
 	private String baseFontName;
 
 	/**
-	 * »ı¼ºÀÚ
+	 * ìƒì„±ì
 	 */
 	public FaceName() {
 		property = new FaceNameProperty();
@@ -44,94 +44,94 @@ public class FaceName {
 	}
 
 	/**
-	 * ±Û²Ã ¼Ó¼º¿¡ ´ëÇÑ °´Ã¼¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ê¸€ê¼´ ì†ì„±ì— ëŒ€í•œ ê°ì²´ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ±Û²Ã ¼Ó¼º¿¡ ´ëÇÑ °´Ã¼
+	 * @return ê¸€ê¼´ ì†ì„±ì— ëŒ€í•œ ê°ì²´
 	 */
 	public FaceNameProperty getProperty() {
 		return property;
 	}
 
 	/**
-	 * ±Û²Ã ÀÌ¸§À» ¹İÈ¯ÇÑ´Ù.
+	 * ê¸€ê¼´ ì´ë¦„ì„ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ±Û²Ã ÀÌ¸§
+	 * @return ê¸€ê¼´ ì´ë¦„
 	 */
 	public String getName() {
 		return name;
 	}
 
 	/**
-	 * ±Û²Ã ÀÌ¸§À» ¼³Á¤ÇÑ´Ù.
+	 * ê¸€ê¼´ ì´ë¦„ì„ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param name
-	 *            ±Û²Ã ÀÌ¸§
+	 *            ê¸€ê¼´ ì´ë¦„
 	 */
 	public void setName(String name) {
 		this.name = name;
 	}
 
 	/**
-	 * ´ëÃ¼ ±Û²Ã À¯ÇüÀ» ¹İÈ¯ÇÑ´Ù.
+	 * ëŒ€ì²´ ê¸€ê¼´ ìœ í˜•ì„ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ´ëÃ¼ ±Û²Ã À¯Çü
+	 * @return ëŒ€ì²´ ê¸€ê¼´ ìœ í˜•
 	 */
 	public FontType getSubstituteFontType() {
 		return substituteFontType;
 	}
 
 	/**
-	 * ´ëÃ¼ ±Û²Ã À¯ÇüÀ» ¼³Á¤ÇÑ´Ù.
+	 * ëŒ€ì²´ ê¸€ê¼´ ìœ í˜•ì„ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param substituteFontType
-	 *            ´ëÃ¼ ±Û²Ã À¯Çü
+	 *            ëŒ€ì²´ ê¸€ê¼´ ìœ í˜•
 	 */
 	public void setSubstituteFontType(FontType substituteFontType) {
 		this.substituteFontType = substituteFontType;
 	}
 
 	/**
-	 * ´ëÃ¼ ±Û²Ã ÀÌ¸§À» ¹İÈ¯ÇÑ´Ù.
+	 * ëŒ€ì²´ ê¸€ê¼´ ì´ë¦„ì„ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ´ëÃ¼ ±Û²Ã ÀÌ¸§
+	 * @return ëŒ€ì²´ ê¸€ê¼´ ì´ë¦„
 	 */
 	public String getSubstituteFontName() {
 		return substituteFontName;
 	}
 
 	/**
-	 * ´ëÃ¼ ±Û²Ã ÀÌ¸§À» ¼³Á¤ÇÑ´Ù.
+	 * ëŒ€ì²´ ê¸€ê¼´ ì´ë¦„ì„ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param substituteFontName
-	 *            ´ëÃ¼ ±Û²Ã ÀÌ¸§
+	 *            ëŒ€ì²´ ê¸€ê¼´ ì´ë¦„
 	 */
 	public void setSubstituteFontName(String substituteFontName) {
 		this.substituteFontName = substituteFontName;
 	}
 
 	/**
-	 * ±Û²Ã À¯Çü Á¤º¸ °´Ã¼¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ê¸€ê¼´ ìœ í˜• ì •ë³´ ê°ì²´ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ±Û²Ã À¯Çü Á¤º¸ °´Ã¼
+	 * @return ê¸€ê¼´ ìœ í˜• ì •ë³´ ê°ì²´
 	 */
 	public FontTypeInfo getFontTypeInfo() {
 		return fontTypeInfo;
 	}
 
 	/**
-	 * ±âº» ±Û²Ã ÀÌ¸§À» ¹İÈ¯ÇÑ´Ù.
+	 * ê¸°ë³¸ ê¸€ê¼´ ì´ë¦„ì„ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ±âº» ±Û²Ã ÀÌ¸§
+	 * @return ê¸°ë³¸ ê¸€ê¼´ ì´ë¦„
 	 */
 	public String getBaseFontName() {
 		return baseFontName;
 	}
 
 	/**
-	 * ±âº» ±Û²Ã ÀÌ¸§À» ¼³Á¤ÇÑ´Ù.
+	 * ê¸°ë³¸ ê¸€ê¼´ ì´ë¦„ì„ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param baseFontName
-	 *            ±âº» ±Û²Ã ÀÌ¸§
+	 *            ê¸°ë³¸ ê¸€ê¼´ ì´ë¦„
 	 */
 	public void setBaseFontName(String baseFontName) {
 		this.baseFontName = baseFontName;

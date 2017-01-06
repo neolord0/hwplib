@@ -1,114 +1,114 @@
-package kr.dogfoot.hwplib.object.bodytext.control.ctrlheader.columndefine;
+ï»¿package kr.dogfoot.hwplib.object.bodytext.control.ctrlheader.columndefine;
 
 import kr.dogfoot.hwplib.util.binary.BitFlag;
 
 /**
- * ´Ü Á¤ÀÇ ÄÁÆ®·ÑÀÇ ¼Ó¼º °´Ã¼
+ * ë‹¨ ì •ì˜ ì»¨íŠ¸ë¡¤ì˜ ì†ì„± ê°ì²´
  * 
  * @author neolord
  */
 public class ColumnDefineHeaderProperty {
 	/**
-	 * ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª(unsigned 2 byte)
+	 * íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’(unsigned 2 byte)
 	 */
 	private int value;
 
 	/**
-	 * »ı¼ºÀÚ
+	 * ìƒì„±ì
 	 */
 	public ColumnDefineHeaderProperty() {
 	}
 
 	/**
-	 * ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ªÀ» ¹İÈ¯ÇÑ´Ù.
+	 * íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’ì„ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª
+	 * @return íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’
 	 */
 	public int getValue() {
 		return value;
 	}
 
 	/**
-	 * ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ªÀ» ¼³Á¤ÇÑ´Ù.
+	 * íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’ì„ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param value
-	 *            ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª
+	 *            íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’
 	 */
 	public void setValue(int value) {
 		this.value = value;
 	}
 
 	/**
-	 * ´Ü Á¾·ù¸¦ ¹İÈ¯ÇÑ´Ù. (0~1 bit)
+	 * ë‹¨ ì¢…ë¥˜ë¥¼ ë°˜í™˜í•œë‹¤. (0~1 bit)
 	 * 
-	 * @return ´Ü Á¾·ù
+	 * @return ë‹¨ ì¢…ë¥˜
 	 */
 	public ColumnSort getColumnSort() {
 		return ColumnSort.valueOf((byte) BitFlag.get(value, 0, 1));
 	}
 
 	/**
-	 * ´Ü Á¾·ù¸¦ ¼³Á¤ÇÑ´Ù. (0~1 bit)
+	 * ë‹¨ ì¢…ë¥˜ë¥¼ ì„¤ì •í•œë‹¤. (0~1 bit)
 	 * 
 	 * @param columnSort
-	 *            ´Ü Á¾·ù
+	 *            ë‹¨ ì¢…ë¥˜
 	 */
 	public void setColumnSort(ColumnSort columnSort) {
 		value = BitFlag.set(value, 0, 1, columnSort.getValue());
 	}
 
 	/**
-	 * ´Ü °³¼ö¸¦ ¹İÈ¯ÇÑ´Ù. (2~9 bit)
+	 * ë‹¨ ê°œìˆ˜ë¥¼ ë°˜í™˜í•œë‹¤. (2~9 bit)
 	 * 
-	 * @return ´Ü °³¼ö
+	 * @return ë‹¨ ê°œìˆ˜
 	 */
 	public short getColumnCount() {
 		return (short) BitFlag.get(value, 2, 9);
 	}
 
 	/**
-	 * ´Ü °³¼ö¸¦ ¼³Á¤ÇÑ´Ù. (2~9 bit)
+	 * ë‹¨ ê°œìˆ˜ë¥¼ ì„¤ì •í•œë‹¤. (2~9 bit)
 	 * 
 	 * @param columnCount
-	 *            ´Ü °³¼ö
+	 *            ë‹¨ ê°œìˆ˜
 	 */
 	public void setColumnCount(short columnCount) {
 		value = BitFlag.set(value, 2, 9, columnCount);
 	}
 
 	/**
-	 * ´Ü ¹æÇâÀ» ¹İÈ¯ÇÑ´Ù. (10~11 bit)
+	 * ë‹¨ ë°©í–¥ì„ ë°˜í™˜í•œë‹¤. (10~11 bit)
 	 * 
-	 * @return ´Ü ¹æÇâ
+	 * @return ë‹¨ ë°©í–¥
 	 */
 	public ColumnDirection getColumnDirection() {
 		return ColumnDirection.valueOf((byte) BitFlag.get(value, 10, 11));
 	}
 
 	/**
-	 * ´Ü ¹æÇâÀ» ¼³Á¤ÇÑ´Ù. (10~11 bit)
+	 * ë‹¨ ë°©í–¥ì„ ì„¤ì •í•œë‹¤. (10~11 bit)
 	 * 
 	 * @param columnDirection
-	 *            ´Ü ¹æÇâ
+	 *            ë‹¨ ë°©í–¥
 	 */
 	public void setColumnDirection(ColumnDirection columnDirection) {
 		value = BitFlag.set(value, 10, 11, columnDirection.getValue());
 	}
 
 	/**
-	 * ´Ü ³Êºñ µ¿ÀÏÇÏ°Ô ¿©ºÎ¸¦ ¹İÈ¯ÇÑ´Ù. (12 bit)
+	 * ë‹¨ ë„ˆë¹„ ë™ì¼í•˜ê²Œ ì—¬ë¶€ë¥¼ ë°˜í™˜í•œë‹¤. (12 bit)
 	 * 
-	 * @return ´Ü ³Êºñ µ¿ÀÏÇÏ°Ô ¿©ºÎ
+	 * @return ë‹¨ ë„ˆë¹„ ë™ì¼í•˜ê²Œ ì—¬ë¶€
 	 */
 	public boolean isSameWidth() {
 		return BitFlag.get(value, 12);
 	}
 
 	/**
-	 * ´Ü ³Êºñ µ¿ÀÏÇÏ°Ô ¿©ºÎ¸¦ ¼³Á¤ÇÑ´Ù. (12 bit)
+	 * ë‹¨ ë„ˆë¹„ ë™ì¼í•˜ê²Œ ì—¬ë¶€ë¥¼ ì„¤ì •í•œë‹¤. (12 bit)
 	 * 
 	 * @param sameWidth
-	 *            ´Ü ³Êºñ µ¿ÀÏÇÏ°Ô ¿©ºÎ
+	 *            ë‹¨ ë„ˆë¹„ ë™ì¼í•˜ê²Œ ì—¬ë¶€
 	 */
 	public void setSameWidth(boolean sameWidth) {
 		value = BitFlag.set(value, 12, sameWidth);

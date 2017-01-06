@@ -1,20 +1,20 @@
-package kr.dogfoot.hwplib.object.bodytext.control.ctrlheader;
+ï»¿package kr.dogfoot.hwplib.object.bodytext.control.ctrlheader;
 
 import kr.dogfoot.hwplib.object.bodytext.control.ControlType;
 import kr.dogfoot.hwplib.object.bodytext.control.ctrlheader.field.FieldHeaderProperty;
 
 /**
- * ÇÊµå ÄÁÆ®·Ñ¸¦ À§ÇÑ ÄÁÆ®·Ñ Çì´õ ·¹ÄÚµå
+ * í•„ë“œ ì»¨íŠ¸ë¡¤ë¥¼ ìœ„í•œ ì»¨íŠ¸ë¡¤ í—¤ë” ë ˆì½”ë“œ
  * 
  * @author neolord
  */
 public class CtrlHeaderField extends CtrlHeader {
 	/**
-	 * ¼Ó¼º
+	 * ì†ì„±
 	 */
 	private FieldHeaderProperty property;
 	/**
-	 * ±âÅ¸ ¼Ó¼º
+	 * ê¸°íƒ€ ì†ì„±
 	 */
 	private short etcProperty;
 	/**
@@ -22,22 +22,22 @@ public class CtrlHeaderField extends CtrlHeader {
 	 */
 	private String command;
 	/**
-	 * id(¹®¼­ ³» °íÀ¯ ¾ÆÀÌµğ)
+	 * id(ë¬¸ì„œ ë‚´ ê³ ìœ  ì•„ì´ë””)
 	 */
 	private long instanceId;
 
 	/**
-	 * »ı¼ºÀÚ
+	 * ìƒì„±ì
 	 */
 	public CtrlHeaderField() {
 		this(ControlType.FIELD_UNKNOWN.getCtrlId());
 	}
 
 	/**
-	 * »ı¼ºÀÚ
+	 * ìƒì„±ì
 	 * 
 	 * @param ctrlId
-	 *            ÄÁÆ®·Ñ ¾ÆÀÌµğ(ÇÊµå ¾ÆÀÌµğ)
+	 *            ì»¨íŠ¸ë¡¤ ì•„ì´ë””(í•„ë“œ ì•„ì´ë””)
 	 */
 	public CtrlHeaderField(long ctrlId) {
 		super(ctrlId);
@@ -46,76 +46,76 @@ public class CtrlHeaderField extends CtrlHeader {
 	}
 
 	/**
-	 * ÄÁÆ®·Ñ ¾ÆÀÌµğ(ÇÊµå ¾ÆÀÌµğ)¸¦ ¼³Á¤ÇÑ´Ù.
+	 * ì»¨íŠ¸ë¡¤ ì•„ì´ë””(í•„ë“œ ì•„ì´ë””)ë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param ctrlId
-	 *            ÄÁÆ®·Ñ ¾ÆÀÌµğ
+	 *            ì»¨íŠ¸ë¡¤ ì•„ì´ë””
 	 */
 	public void setCtrlId(long ctrlId) {
 		this.ctrlId = ctrlId;
 	}
 
 	/**
-	 * ÇÊµå ÄÁÆ®·ÑÀÇ ¼Ó¼º °´Ã¼¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * í•„ë“œ ì»¨íŠ¸ë¡¤ì˜ ì†ì„± ê°ì²´ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ÇÊµå ÄÁÆ®·ÑÀÇ ¼Ó¼º °´Ã¼
+	 * @return í•„ë“œ ì»¨íŠ¸ë¡¤ì˜ ì†ì„± ê°ì²´
 	 */
 	public FieldHeaderProperty getProperty() {
 		return property;
 	}
 
 	/**
-	 * ±âÅ¸ ¼Ó¼ºÀ» ¹İÈ¯ÇÑ´Ù.
+	 * ê¸°íƒ€ ì†ì„±ì„ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ±âÅ¸ ¼Ó¼º
+	 * @return ê¸°íƒ€ ì†ì„±
 	 */
 	public short getEtcProperty() {
 		return etcProperty;
 	}
 
 	/**
-	 * ±âÅ¸ ¼Ó¼ºÀ» ¼³Á¤ÇÑ´Ù.
+	 * ê¸°íƒ€ ì†ì„±ì„ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param etcProperty
-	 *            ±âÅ¸ ¼Ó¼º
+	 *            ê¸°íƒ€ ì†ì„±
 	 */
 	public void setEtcProperty(short etcProperty) {
 		this.etcProperty = etcProperty;
 	}
 
 	/**
-	 * ÇÊµå command¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * í•„ë“œ commandë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ÇÊµå command
+	 * @return í•„ë“œ command
 	 */
 	public String getCommand() {
 		return command;
 	}
 
 	/**
-	 * ÇÊµå command¸¦ ¼³Á¤ÇÑ´Ù.
+	 * í•„ë“œ commandë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param command
-	 *            ÇÊµå command
+	 *            í•„ë“œ command
 	 */
 	public void setCommand(String command) {
 		this.command = command;
 	}
 
 	/**
-	 * ¹®¼­ ³» °íÀ¯ ¾ÆÀÌµğ¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ë¬¸ì„œ ë‚´ ê³ ìœ  ì•„ì´ë””ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ¹®¼­ ³» °íÀ¯ ¾ÆÀÌµğ
+	 * @return ë¬¸ì„œ ë‚´ ê³ ìœ  ì•„ì´ë””
 	 */
 	public long getInstanceId() {
 		return instanceId;
 	}
 
 	/**
-	 * ¹®¼­ ³» °íÀ¯ ¾ÆÀÌµğ¸¦ ¼³Á¤ÇÑ´Ù.
+	 * ë¬¸ì„œ ë‚´ ê³ ìœ  ì•„ì´ë””ë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param instanceId
-	 *            ¹®¼­ ³» °íÀ¯ ¾ÆÀÌµğ
+	 *            ë¬¸ì„œ ë‚´ ê³ ìœ  ì•„ì´ë””
 	 */
 	public void setInstanceId(long instanceId) {
 		this.instanceId = instanceId;

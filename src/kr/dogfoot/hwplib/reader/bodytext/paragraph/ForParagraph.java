@@ -1,4 +1,4 @@
-package kr.dogfoot.hwplib.reader.bodytext.paragraph;
+ï»¿package kr.dogfoot.hwplib.reader.bodytext.paragraph;
 
 import java.io.IOException;
 
@@ -11,39 +11,39 @@ import kr.dogfoot.hwplib.reader.bodytext.paragraph.control.gso.ForControlGso;
 import kr.dogfoot.hwplib.util.compoundFile.StreamReader;
 
 /**
- * ÇÏ³ªÀÇ ¹®´ÜÀ» ÀÐ±â À§ÇÑ °´Ã¼
+ * í•˜ë‚˜ì˜ ë¬¸ë‹¨ì„ ì½ê¸° ìœ„í•œ ê°ì²´
  * 
  * @author neolord
  */
 public class ForParagraph {
 	/**
-	 * ½ºÆ®¸² ¸®´õ
+	 * ìŠ¤íŠ¸ë¦¼ ë¦¬ë”
 	 */
 	private StreamReader sr;
 
 	/**
-	 * ¹®´Ü Çì´õÀÇ level
+	 * ë¬¸ë‹¨ í—¤ë”ì˜ level
 	 */
 	private short paraHeaderLevel;
 
 	/**
-	 * ¹®´Ü °´Ã¼
+	 * ë¬¸ë‹¨ ê°ì²´
 	 */
 	private Paragraph paragraph;
 
 	/**
-	 * »ý¼ºÀÚ
+	 * ìƒì„±ìž
 	 */
 	public ForParagraph() {
 	}
 
 	/**
-	 * ÇÏ³ªÀÇ ¹®´ÜÀ» ÀÐ´Â´Ù.
+	 * í•˜ë‚˜ì˜ ë¬¸ë‹¨ì„ ì½ëŠ”ë‹¤.
 	 * 
 	 * @param paragraph
-	 *            ¹®´Ü °´Ã¼
+	 *            ë¬¸ë‹¨ ê°ì²´
 	 * @param sr
-	 *            ½ºÆ®¸² ¸®´õ
+	 *            ìŠ¤íŠ¸ë¦¼ ë¦¬ë”
 	 * @throws Exception
 	 */
 	public void read(Paragraph paragraph, StreamReader sr) throws Exception {
@@ -68,7 +68,7 @@ public class ForParagraph {
 		}
 	}
 	/**
-	 * ¹®´Ü Çì´õ ·¹ÄÚµå¸¦ ÀÐ´Â´Ù.
+	 * ë¬¸ë‹¨ í—¤ë” ë ˆì½”ë“œë¥¼ ì½ëŠ”ë‹¤.
 	 * 
 	 * @throws Exception
 	 */
@@ -77,21 +77,21 @@ public class ForParagraph {
 	}
 
 	/**
-	 * ÀÐÀº ·¹ÄÚµå Çì´õ°¡ ¹®´Ü ¹Ù±ùÂÊÀÎÁö ¿©ºÎ¸¦ ¹ÝÈ¯ÇÑ´Ù.
+	 * ì½ì€ ë ˆì½”ë“œ í—¤ë”ê°€ ë¬¸ë‹¨ ë°”ê¹¥ìª½ì¸ì§€ ì—¬ë¶€ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @param sr ½ºÆ®¸² ¸®´õ
-	 * @return ÀÐÀº ·¹ÄÚµå Çì´õ°¡ ¹®´Ü ¹Ù±ùÂÊÀÎÁö ¿©ºÎ
+	 * @param sr ìŠ¤íŠ¸ë¦¼ ë¦¬ë”
+	 * @return ì½ì€ ë ˆì½”ë“œ í—¤ë”ê°€ ë¬¸ë‹¨ ë°”ê¹¥ìª½ì¸ì§€ ì—¬ë¶€
 	 */
 	private boolean isOutOfParagraph(StreamReader sr) {
 		return this.paraHeaderLevel >= sr.getCurrentRecordHeader().getLevel();
 	}
 
 	/**
-	 * ¸¶Áö¸· ¹ÙÅÁÂÊ Á¤º¸°¡ µÚ¿¡ ºÙ¾î ÀÖ´ÂÁö ¿©ºÎ¸¦ ¹ÝÈ¯ÇÑ´Ù.
+	 * ë§ˆì§€ë§‰ ë°”íƒ•ìª½ ì •ë³´ê°€ ë’¤ì— ë¶™ì–´ ìžˆëŠ”ì§€ ì—¬ë¶€ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
 	 * @param sr
-	 *            ½ºÆ®¸² ¸®´õ
-	 * @return ¸¶Áö¸· ¹ÙÅÁÂÊ Á¤º¸°¡ µÚ¿¡ ºÙ¾î ÀÖ´ÂÁö ¿©ºÎ
+	 *            ìŠ¤íŠ¸ë¦¼ ë¦¬ë”
+	 * @return ë§ˆì§€ë§‰ ë°”íƒ•ìª½ ì •ë³´ê°€ ë’¤ì— ë¶™ì–´ ìžˆëŠ”ì§€ ì—¬ë¶€
 	 */
 	private boolean isFollowLastBatangPageInfo(StreamReader sr) {
 		return this.paraHeaderLevel == 0
@@ -101,7 +101,7 @@ public class ForParagraph {
 
 
 	/**
-	 * ÀÌ¹Ì ÀÐÀº ·¹ÄÚµå Çì´õ¿¡ µû¸¥ ·¹ÄÚµå ³»¿ëÀ» ÀÐ´Â´Ù.
+	 * ì´ë¯¸ ì½ì€ ë ˆì½”ë“œ í—¤ë”ì— ë”°ë¥¸ ë ˆì½”ë“œ ë‚´ìš©ì„ ì½ëŠ”ë‹¤.
 	 * 
 	 * @throws Exception
 	 */
@@ -126,7 +126,7 @@ public class ForParagraph {
 	}
 
 	/**
-	 * ¹®´ÜÀÇ ÅØ½ºÆ® ·¹ÄÚµåÀ» ÀÐ´Â´Ù.
+	 * ë¬¸ë‹¨ì˜ í…ìŠ¤íŠ¸ ë ˆì½”ë“œì„ ì½ëŠ”ë‹¤.
 	 * 
 	 * @throws Exception
 	 */
@@ -135,7 +135,7 @@ public class ForParagraph {
 	}
 
 	/**
-	 * ¹®´ÜÀÇ ¹®ÀÚ ¸ð¾ç ·¹ÄÚµå¸¦ ÀÐ´Â´Ù.
+	 * ë¬¸ë‹¨ì˜ ë¬¸ìž ëª¨ì–‘ ë ˆì½”ë“œë¥¼ ì½ëŠ”ë‹¤.
 	 * 
 	 * @throws IOException
 	 */
@@ -144,7 +144,7 @@ public class ForParagraph {
 	}
 
 	/**
-	 * ¹®´ÜÀÇ ·¹ÀÌ¾Æ¿ô ·¹ÄÚµå¸¦ ÀÐ´Â´Ù.
+	 * ë¬¸ë‹¨ì˜ ë ˆì´ì•„ì›ƒ ë ˆì½”ë“œë¥¼ ì½ëŠ”ë‹¤.
 	 * 
 	 * @throws IOException
 	 */
@@ -153,7 +153,7 @@ public class ForParagraph {
 	}
 
 	/**
-	 * ¹®´ÜÀÇ ¿µ¿ª ÅÂ±× ·¹ÄÚµå¸¦ ÀÐ´Â´Ù.
+	 * ë¬¸ë‹¨ì˜ ì˜ì—­ íƒœê·¸ ë ˆì½”ë“œë¥¼ ì½ëŠ”ë‹¤.
 	 * 
 	 * @throws Exception
 	 */
@@ -163,7 +163,7 @@ public class ForParagraph {
 	}
 
 	/**
-	 * ¹®´Ü¿¡ Æ÷ÇÔµÈ ÄÁÆ®·ÑÀ» ÀÐ´Â´Ù.
+	 * ë¬¸ë‹¨ì— í¬í•¨ëœ ì»¨íŠ¸ë¡¤ì„ ì½ëŠ”ë‹¤.
 	 * 
 	 * @throws Exception
 	 */

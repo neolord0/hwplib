@@ -1,4 +1,4 @@
-package kr.dogfoot.hwplib.reader.bodytext.paragraph.control;
+ï»¿package kr.dogfoot.hwplib.reader.bodytext.paragraph.control;
 
 import java.io.IOException;
 
@@ -10,37 +10,37 @@ import kr.dogfoot.hwplib.reader.bodytext.paragraph.control.gso.part.ForCtrlHeade
 import kr.dogfoot.hwplib.util.compoundFile.StreamReader;
 
 /**
- * ¼ö½Ä ÄÁÆ®·ÑÀ» ÀĞ±â À§ÇÑ °´Ã¼
+ * ìˆ˜ì‹ ì»¨íŠ¸ë¡¤ì„ ì½ê¸° ìœ„í•œ ê°ì²´
  * 
  * @author neolord
  */
 public class ForControlEquation {
 	/**
-	 * ¼ö½Ä ÄÁÆ®·Ñ
+	 * ìˆ˜ì‹ ì»¨íŠ¸ë¡¤
 	 */
 	private ControlEquation eqed;
 	/**
-	 * ½ºÆ®¸² ¸®´õ
+	 * ìŠ¤íŠ¸ë¦¼ ë¦¬ë”
 	 */
 	private StreamReader sr;
 	/**
-	 * ÄÁÆ®·Ñ Çì´õ ·¹ÄÚµåÀÇ ·¹º§
+	 * ì»¨íŠ¸ë¡¤ í—¤ë” ë ˆì½”ë“œì˜ ë ˆë²¨
 	 */
 	private int ctrlHeaderLevel;
 
 	/**
-	 * »ı¼ºÀÚ
+	 * ìƒì„±ì
 	 */
 	public ForControlEquation() {
 	}
 
 	/**
-	 * ¼ö½Ä ÄÁÆ®·ÑÀ» ÀĞ´Â´Ù.
+	 * ìˆ˜ì‹ ì»¨íŠ¸ë¡¤ì„ ì½ëŠ”ë‹¤.
 	 * 
 	 * @param eqed
-	 *            ¼ö½Ä ÄÁÆ®·Ñ
+	 *            ìˆ˜ì‹ ì»¨íŠ¸ë¡¤
 	 * @param sr
-	 *            ½ºÆ®¸² ¸®´õ
+	 *            ìŠ¤íŠ¸ë¦¼ ë¦¬ë”
 	 * @throws Exception
 	 */
 	public void read(ControlEquation eqed, StreamReader sr) throws Exception {
@@ -64,7 +64,7 @@ public class ForControlEquation {
 	}
 
 	/**
-	 * ¼ö½Ä ÄÁÆ®·ÑÀÇ ÄÁÆ®·Ñ Çì´õ ·¹ÄÚµå¸¦ ÀĞ´Â´Ù.
+	 * ìˆ˜ì‹ ì»¨íŠ¸ë¡¤ì˜ ì»¨íŠ¸ë¡¤ í—¤ë” ë ˆì½”ë“œë¥¼ ì½ëŠ”ë‹¤.
 	 * 
 	 * @throws IOException
 	 */
@@ -73,7 +73,7 @@ public class ForControlEquation {
 	}
 
 	/**
-	 * Ä¸¼Ç Á¤º¸¸¦ ÀĞ´Â´Ù.
+	 * ìº¡ì…˜ ì •ë³´ë¥¼ ì½ëŠ”ë‹¤.
 	 * 
 	 * @throws Exception
 	 */
@@ -86,7 +86,7 @@ public class ForControlEquation {
 	}
 
 	/**
-	 * ÀÌ¹Ì ÀĞÀº ·¹ÄÚµå Çì´õ¿¡ µû¸¥ ·¹ÄÚµå ³»¿ëÀ» ÀĞ´Â´Ù.
+	 * ì´ë¯¸ ì½ì€ ë ˆì½”ë“œ í—¤ë”ì— ë”°ë¥¸ ë ˆì½”ë“œ ë‚´ìš©ì„ ì½ëŠ”ë‹¤.
 	 * 
 	 * @throws IOException
 	 */
@@ -99,7 +99,7 @@ public class ForControlEquation {
 	}
 
 	/**
-	 * ¼ö½Ä Á¤º¸ ·¹ÄÚµå¸¦ ÀĞ´Â´Ù.
+	 * ìˆ˜ì‹ ì •ë³´ ë ˆì½”ë“œë¥¼ ì½ëŠ”ë‹¤.
 	 * 
 	 * @throws IOException
 	 */

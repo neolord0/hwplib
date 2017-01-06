@@ -1,84 +1,84 @@
-package kr.dogfoot.hwplib.object.docinfo.tabdef;
+ï»¿package kr.dogfoot.hwplib.object.docinfo.tabdef;
 
 import kr.dogfoot.hwplib.object.docinfo.borderfill.BorderType;
 
 /**
- * ÅÇ Á¤º¸¿¡ ´ëÇÑ °´Ã¼
+ * íƒ­ ì •ë³´ì— ëŒ€í•œ ê°ì²´
  * 
  * @author neolord
  */
 public class TabInfo {
 	/**
-	 * ÅÇÀÇ À§Ä¡
+	 * íƒ­ì˜ ìœ„ì¹˜
 	 */
 	private long position;
 	/**
-	 * ÅÇÀÇ Á¾·ù
+	 * íƒ­ì˜ ì¢…ë¥˜
 	 */
 	private TabSort tabSort;
 	/**
-	 * Ã¤¿ò Á¾·ù
+	 * ì±„ì›€ ì¢…ë¥˜
 	 */
 	private BorderType fillSort;
 
 	/**
-	 * »ı¼ºÀÚ
+	 * ìƒì„±ì
 	 */
 	public TabInfo() {
 	}
 
 	/**
-	 * ÅÇÀÇ À§Ä¡¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * íƒ­ì˜ ìœ„ì¹˜ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ÅÇÀÇ À§Ä¡
+	 * @return íƒ­ì˜ ìœ„ì¹˜
 	 */
 	public long getPosition() {
 		return position;
 	}
 
 	/**
-	 * ÅÇÀÇ À§Ä¡¸¦ ¼³Á¤ÇÑ´Ù.
+	 * íƒ­ì˜ ìœ„ì¹˜ë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param position
-	 *            ÅÇÀÇ À§Ä¡
+	 *            íƒ­ì˜ ìœ„ì¹˜
 	 */
 	public void setPosition(long position) {
 		this.position = position;
 	}
 
 	/**
-	 * ÅÇÀÇ Á¾·ù¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * íƒ­ì˜ ì¢…ë¥˜ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ÅÇÀÇ Á¾·ù
+	 * @return íƒ­ì˜ ì¢…ë¥˜
 	 */
 	public TabSort getTabSort() {
 		return tabSort;
 	}
 
 	/**
-	 * ÅÇÀÇ Á¾·ù¸¦ ¼³Á¤ÇÑ´Ù.
+	 * íƒ­ì˜ ì¢…ë¥˜ë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param tabSort
-	 *            ÅÇÀÇ Á¾·ù
+	 *            íƒ­ì˜ ì¢…ë¥˜
 	 */
 	public void setTabSort(TabSort tabSort) {
 		this.tabSort = tabSort;
 	}
 
 	/**
-	 * Ã¤¿ò Á¾·ù¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ì±„ì›€ ì¢…ë¥˜ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return Ã¤¿ò Á¾·ù
+	 * @return ì±„ì›€ ì¢…ë¥˜
 	 */
 	public BorderType getFillSort() {
 		return fillSort;
 	}
 
 	/**
-	 * Ã¤¿ò Á¾·ù¸¦ ¼³Á¤ÇÑ´Ù.
+	 * ì±„ì›€ ì¢…ë¥˜ë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param fillSort
-	 *            Ã¤¿ò Á¾·ù
+	 *            ì±„ì›€ ì¢…ë¥˜
 	 */
 	public void setFillSort(BorderType fillSort) {
 		this.fillSort = fillSort;

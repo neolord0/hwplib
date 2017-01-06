@@ -1,4 +1,4 @@
-package kr.dogfoot.hwplib.reader.bodytext.paragraph;
+ï»¿package kr.dogfoot.hwplib.reader.bodytext.paragraph;
 
 import java.io.IOException;
 
@@ -6,18 +6,18 @@ import kr.dogfoot.hwplib.object.bodytext.paragraph.header.ParaHeader;
 import kr.dogfoot.hwplib.util.compoundFile.StreamReader;
 
 /**
- * ¹®´Ü Çì´õ ·¹ÄÚµå¸¦ ÀĞ´Â °´Ã¼
+ * ë¬¸ë‹¨ í—¤ë” ë ˆì½”ë“œë¥¼ ì½ëŠ” ê°ì²´
  * 
  * @author neolord
  */
 public class ForParaHeader {
 	/**
-	 * ¹®´Ü Çì´õ ·¹ÄÚµå¸¦ ÀĞ´Â´Ù.
+	 * ë¬¸ë‹¨ í—¤ë” ë ˆì½”ë“œë¥¼ ì½ëŠ”ë‹¤.
 	 * 
 	 * @param ph
-	 *            ¹®´Ü Çì´õ ·¹ÄÚµå
+	 *            ë¬¸ë‹¨ í—¤ë” ë ˆì½”ë“œ
 	 * @param sr
-	 *            ½ºÆ®¸² ¸®´õ
+	 *            ìŠ¤íŠ¸ë¦¼ ë¦¬ë”
 	 * @throws IOException
 	 */
 	public static void read(ParaHeader ph, StreamReader sr) throws IOException {
@@ -36,12 +36,12 @@ public class ForParaHeader {
 	}
 
 	/**
-	 * ¹®´Ü ¸®½ºÆ®¿¡¼­ ¸¶Áö¸· ¹®´ÜÀÎÁö ¿©ºÎ¿Í ¹®´ÜÀÇ ±ÛÀÚ °³¼ö¸¦ ÀĞ´Â´Ù.
+	 * ë¬¸ë‹¨ ë¦¬ìŠ¤íŠ¸ì—ì„œ ë§ˆì§€ë§‰ ë¬¸ë‹¨ì¸ì§€ ì—¬ë¶€ì™€ ë¬¸ë‹¨ì˜ ê¸€ì ê°œìˆ˜ë¥¼ ì½ëŠ”ë‹¤.
 	 * 
 	 * @param ph
-	 *            ¹®´Ü Çì´õ ·¹ÄÚµå °´Ã¼
+	 *            ë¬¸ë‹¨ í—¤ë” ë ˆì½”ë“œ ê°ì²´
 	 * @param sr
-	 *            ½ºÆ®¸² ¸®´õ
+	 *            ìŠ¤íŠ¸ë¦¼ ë¦¬ë”
 	 * @throws IOException
 	 */
 	private static void LastInList_TextCount(ParaHeader ph, StreamReader sr)

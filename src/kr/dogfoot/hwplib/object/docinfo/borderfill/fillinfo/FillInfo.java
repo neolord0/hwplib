@@ -1,108 +1,108 @@
-package kr.dogfoot.hwplib.object.docinfo.borderfill.fillinfo;
+ï»¿package kr.dogfoot.hwplib.object.docinfo.borderfill.fillinfo;
 
 /**
- * Ã¤¿ì±â Á¤º¸¸¦ ³ªÅÂ³»´Â °´Ã¼
+ * ì±„ìš°ê¸° ì •ë³´ë¥¼ ë‚˜íƒœë‚´ëŠ” ê°ì²´
  * 
  * @author neolord
  */
 public class FillInfo {
 	/**
-	 * Ã¤¿ì±â Á¾·ù
+	 * ì±„ìš°ê¸° ì¢…ë¥˜
 	 */
 	private FillType type;
 	/**
-	 * ´Ü»ö Ã¤¿ì±â
+	 * ë‹¨ìƒ‰ ì±„ìš°ê¸°
 	 */
 	private PatternFill patternFill;
 	/**
-	 * ±×·¯µ¥ÀÌ¼Ç Ã¤¿ì±â
+	 * ê·¸ëŸ¬ë°ì´ì…˜ ì±„ìš°ê¸°
 	 */
 	private GradientFill gradientFill;
 	/**
-	 * ÀÌ¹ÌÁö Ã¤¿ì±â
+	 * ì´ë¯¸ì§€ ì±„ìš°ê¸°
 	 */
 	private ImageFill imageFill;
 
 	/**
-	 * »ı¼ºÀÚ
+	 * ìƒì„±ì
 	 */
 	public FillInfo() {
 		type = new FillType();
 	}
 
 	/**
-	 * Ã¤¿ì±â Á¾·ù °´Ã¼¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ì±„ìš°ê¸° ì¢…ë¥˜ ê°ì²´ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return Ã¤¿ì±â Á¾·ù °´Ã¼
+	 * @return ì±„ìš°ê¸° ì¢…ë¥˜ ê°ì²´
 	 */
 	public FillType getType() {
 		return type;
 	}
 
 	/**
-	 * ´Ü»ö Ã¤¿ì±â °´Ã¼¸¦ »ı¼ºÇÑ´Ù.
+	 * ë‹¨ìƒ‰ ì±„ìš°ê¸° ê°ì²´ë¥¼ ìƒì„±í•œë‹¤.
 	 */
 	public void createPatternFill() {
 		patternFill = new PatternFill();
 	}
 
 	/**
-	 * ´Ü»ö Ã¤¿ì±â °´Ã¼¸¦ »èÁ¦ÇÑ´Ù.
+	 * ë‹¨ìƒ‰ ì±„ìš°ê¸° ê°ì²´ë¥¼ ì‚­ì œí•œë‹¤.
 	 */
 	public void deletePatternFill() {
 		patternFill = null;
 	}
 
 	/**
-	 * ´Ü»ö Ã¤¿ì±â °´Ã¼¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ë‹¨ìƒ‰ ì±„ìš°ê¸° ê°ì²´ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ´Ü»ö Ã¤¿ì±â °´Ã¼
+	 * @return ë‹¨ìƒ‰ ì±„ìš°ê¸° ê°ì²´
 	 */
 	public PatternFill getPatternFill() {
 		return patternFill;
 	}
 
 	/**
-	 * ±×·¯µ¥ÀÌ¼Ç Ã¤¿ì±â °´Ã¼¸¦ »ı¼ºÇÑ´Ù.
+	 * ê·¸ëŸ¬ë°ì´ì…˜ ì±„ìš°ê¸° ê°ì²´ë¥¼ ìƒì„±í•œë‹¤.
 	 */
 	public void createGradientFill() {
 		gradientFill = new GradientFill();
 	}
 
 	/**
-	 * ±×·¯µ¥ÀÌ¼Ç Ã¤¿ì±â °´Ã¼¸¦ »èÁ¦ÇÑ´Ù.
+	 * ê·¸ëŸ¬ë°ì´ì…˜ ì±„ìš°ê¸° ê°ì²´ë¥¼ ì‚­ì œí•œë‹¤.
 	 */
 	public void deleteGradientFill() {
 		gradientFill = null;
 	}
 
 	/**
-	 * ±×·¯µ¥ÀÌ¼Ç Ã¤¿ì±â °´Ã¼¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ê·¸ëŸ¬ë°ì´ì…˜ ì±„ìš°ê¸° ê°ì²´ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ±×·¯µ¥ÀÌ¼Ç Ã¤¿ì±â °´Ã¼
+	 * @return ê·¸ëŸ¬ë°ì´ì…˜ ì±„ìš°ê¸° ê°ì²´
 	 */
 	public GradientFill getGradientFill() {
 		return gradientFill;
 	}
 
 	/**
-	 * ÀÌ¹ÌÁö Ã¤¿ì±â °´Ã¼¸¦ »ı¼ºÇÑ´Ù.
+	 * ì´ë¯¸ì§€ ì±„ìš°ê¸° ê°ì²´ë¥¼ ìƒì„±í•œë‹¤.
 	 */
 	public void createImageFill() {
 		imageFill = new ImageFill();
 	}
 
 	/**
-	 * ÀÌ¹ÌÁö Ã¤¿ì±â °´Ã¼¸¦ »èÁ¦ÇÑ´Ù.
+	 * ì´ë¯¸ì§€ ì±„ìš°ê¸° ê°ì²´ë¥¼ ì‚­ì œí•œë‹¤.
 	 */
 	public void deleteImageFill() {
 		imageFill = null;
 	}
 
 	/**
-	 * ÀÌ¹ÌÁö Ã¤¿ì±â °´Ã¼¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ì´ë¯¸ì§€ ì±„ìš°ê¸° ê°ì²´ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ÀÌ¹ÌÁö Ã¤¿ì±â °´Ã¼
+	 * @return ì´ë¯¸ì§€ ì±„ìš°ê¸° ê°ì²´
 	 */
 	public ImageFill getImageFill() {
 		return imageFill;

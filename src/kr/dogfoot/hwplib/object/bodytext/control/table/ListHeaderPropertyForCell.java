@@ -1,4 +1,4 @@
-package kr.dogfoot.hwplib.object.bodytext.control.table;
+ï»¿package kr.dogfoot.hwplib.object.bodytext.control.table;
 
 import kr.dogfoot.hwplib.object.bodytext.control.ctrlheader.sectiondefine.TextDirection;
 import kr.dogfoot.hwplib.object.bodytext.control.gso.textbox.LineChange;
@@ -6,93 +6,93 @@ import kr.dogfoot.hwplib.object.bodytext.control.gso.textbox.TextVerticalAlignme
 import kr.dogfoot.hwplib.util.binary.BitFlag;
 
 /**
- * ¼¿ÀÇ ¹®´Ü ¸®½ºÆ® Çì´õÀÇ ¼Ó¼ºÀ» ³ªÅ¸³»´Â °´Ã¼
+ * ì…€ì˜ ë¬¸ë‹¨ ë¦¬ìŠ¤íŠ¸ í—¤ë”ì˜ ì†ì„±ì„ ë‚˜íƒ€ë‚´ëŠ” ê°ì²´
  * 
  * @author neolord
  */
 public class ListHeaderPropertyForCell {
 	/**
-	 * ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª(unsigned 4 byte)
+	 * íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’(unsigned 4 byte)
 	 */
 	private long value;
 
 	/**
-	 * »ı¼ºÀÚ
+	 * ìƒì„±ì
 	 */
 	public ListHeaderPropertyForCell() {
 	}
 
 	/**
-	 * ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ªÀ» ¼³Á¤ÇÑ´Ù.
+	 * íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’ì„ ì„¤ì •í•œë‹¤.
 	 * 
-	 * @return ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª
+	 * @return íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’
 	 */
 	public long getValue() {
 		return value;
 	}
 
 	/**
-	 * ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ªÀ» ¼³Á¤ÇÑ´Ù.
+	 * íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’ì„ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param value
-	 *            ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª
+	 *            íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’
 	 */
 	public void setValue(long value) {
 		this.value = value;
 	}
 
 	/**
-	 * ÅØ½ºÆ® ¹æÇâÀ» ¹İÈ¯ÇÑ´Ù. (0~2 bit)
+	 * í…ìŠ¤íŠ¸ ë°©í–¥ì„ ë°˜í™˜í•œë‹¤. (0~2 bit)
 	 * 
-	 * @return ÅØ½ºÆ® ¹æÇâ
+	 * @return í…ìŠ¤íŠ¸ ë°©í–¥
 	 */
 	public TextDirection getTextDirection() {
 		return TextDirection.valueOf((byte) BitFlag.get(value, 0, 2));
 	}
 
 	/**
-	 * ÅØ½ºÆ® ¹æÇâÀ» ¼³Á¤ÇÑ´Ù. (0~2 bit)
+	 * í…ìŠ¤íŠ¸ ë°©í–¥ì„ ì„¤ì •í•œë‹¤. (0~2 bit)
 	 * 
 	 * @param textDirection
-	 *            ÅØ½ºÆ® ¹æÇâ
+	 *            í…ìŠ¤íŠ¸ ë°©í–¥
 	 */
 	public void setTextDirection(TextDirection textDirection) {
 		value = BitFlag.set(value, 0, 2, textDirection.getValue());
 	}
 
 	/**
-	 * ¹®´ÜÀÇ ÁÙ¹Ù²ŞÀ» ¹İÈ¯ÇÑ´Ù. (3~4 bit)
+	 * ë¬¸ë‹¨ì˜ ì¤„ë°”ê¿ˆì„ ë°˜í™˜í•œë‹¤. (3~4 bit)
 	 * 
-	 * @return ¹®´ÜÀÇ ÁÙ¹Ù²Ş ¹æ¹ı
+	 * @return ë¬¸ë‹¨ì˜ ì¤„ë°”ê¿ˆ ë°©ë²•
 	 */
 	public LineChange getLineChange() {
 		return LineChange.valueOf((byte) BitFlag.get(value, 3, 4));
 	}
 
 	/**
-	 * ¹®´ÜÀÇ ÁÙ¹Ù²ŞÀ» ¼³Á¤ÇÑ´Ù. (3~4 bit)
+	 * ë¬¸ë‹¨ì˜ ì¤„ë°”ê¿ˆì„ ì„¤ì •í•œë‹¤. (3~4 bit)
 	 * 
 	 * @param lineChange
-	 *            ¹®´ÜÀÇ ÁÙ¹Ù²Ş ¹æ¹ı
+	 *            ë¬¸ë‹¨ì˜ ì¤„ë°”ê¿ˆ ë°©ë²•
 	 */
 	public void setLineChange(LineChange lineChange) {
 		value = BitFlag.set(value, 3, 4, lineChange.getValue());
 	}
 
 	/**
-	 * ¼¼·Î Á¤·ÄÀ» ¹İÈ¯ÇÑ´Ù. (5~6 bit)
+	 * ì„¸ë¡œ ì •ë ¬ì„ ë°˜í™˜í•œë‹¤. (5~6 bit)
 	 * 
-	 * @return ¼¼·Î Á¤·Ä
+	 * @return ì„¸ë¡œ ì •ë ¬
 	 */
 	public TextVerticalAlignment getTextVerticalAlignment() {
 		return TextVerticalAlignment.valueOf((byte) BitFlag.get(value, 5, 6));
 	}
 
 	/**
-	 * ¼¼·Î Á¤·ÄÀ» ¼³Á¤ÇÑ´Ù. (5~6 bit)
+	 * ì„¸ë¡œ ì •ë ¬ì„ ì„¤ì •í•œë‹¤. (5~6 bit)
 	 * 
 	 * @param textVerticalAlignment
-	 *            ¼¼·Î Á¤·Ä
+	 *            ì„¸ë¡œ ì •ë ¬
 	 */
 	public void setTextVerticalAlignment(
 			TextVerticalAlignment textVerticalAlignment) {
@@ -100,19 +100,19 @@ public class ListHeaderPropertyForCell {
 	}
 
 	/**
-	 * ¾ç½Ä ¸ğµå¿¡¼­ ÆíÁı °¡´É ¿©ºÎ¸¦ ¹İÈ¯ÇÑ´Ù. (19 bit)
+	 * ì–‘ì‹ ëª¨ë“œì—ì„œ í¸ì§‘ ê°€ëŠ¥ ì—¬ë¶€ë¥¼ ë°˜í™˜í•œë‹¤. (19 bit)
 	 * 
-	 * @return ¾ç½Ä ¸ğµå¿¡¼­ ÆíÁı °¡´É ¿©ºÎ
+	 * @return ì–‘ì‹ ëª¨ë“œì—ì„œ í¸ì§‘ ê°€ëŠ¥ ì—¬ë¶€
 	 */
 	public boolean isEditableAtFormMode() {
 		return BitFlag.get(value, 19);
 	}
 
 	/**
-	 * ¾ç½Ä ¸ğµå¿¡¼­ ÆíÁı °¡´É ¿©ºÎ¸¦ ¼³Á¤ÇÑ´Ù. (19 bit)
+	 * ì–‘ì‹ ëª¨ë“œì—ì„œ í¸ì§‘ ê°€ëŠ¥ ì—¬ë¶€ë¥¼ ì„¤ì •í•œë‹¤. (19 bit)
 	 * 
 	 * @param editableAtFormMode
-	 *            ¾ç½Ä ¸ğµå¿¡¼­ ÆíÁı °¡´É ¿©ºÎ
+	 *            ì–‘ì‹ ëª¨ë“œì—ì„œ í¸ì§‘ ê°€ëŠ¥ ì—¬ë¶€
 	 */
 	public void setEditableAtFormMode(boolean editableAtFormMode) {
 		value = BitFlag.set(value, 19, editableAtFormMode);

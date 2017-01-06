@@ -1,28 +1,28 @@
-package kr.dogfoot.hwplib.object.docinfo.borderfill.fillinfo;
+ï»¿package kr.dogfoot.hwplib.object.docinfo.borderfill.fillinfo;
 
 import kr.dogfoot.hwplib.object.etc.Color4Byte;
 
 /**
- * ´Ü»ö Ã¤¿ì±â °´Ã¼
+ * ë‹¨ìƒ‰ ì±„ìš°ê¸° ê°ì²´
  * 
  * @author neolord
  */
 public class PatternFill {
 	/**
-	 * ¹è°æ»ö
+	 * ë°°ê²½ìƒ‰
 	 */
 	private Color4Byte backColor;
 	/**
-	 * ¹«´Ì»ö
+	 * ë¬´ëŠ¬ìƒ‰
 	 */
 	private Color4Byte patternColor;
 	/**
-	 * ¹«´Ì Á¾·ù
+	 * ë¬´ëŠ¬ ì¢…ë¥˜
 	 */
 	private PatternType patternType;
 
 	/**
-	 * »ı¼ºÀÚ
+	 * ìƒì„±ì
 	 */
 	public PatternFill() {
 		backColor = new Color4Byte();
@@ -30,37 +30,37 @@ public class PatternFill {
 	}
 
 	/**
-	 * ¹è°æ»ö °´Ã¼¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ë°°ê²½ìƒ‰ ê°ì²´ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ¹è°æ»ö °´Ã¼
+	 * @return ë°°ê²½ìƒ‰ ê°ì²´
 	 */
 	public Color4Byte getBackColor() {
 		return backColor;
 	}
 
 	/**
-	 * ¹«´Ì»ö °´Ã¼¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ë¬´ëŠ¬ìƒ‰ ê°ì²´ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ¹«´Ì»ö °´Ã¼
+	 * @return ë¬´ëŠ¬ìƒ‰ ê°ì²´
 	 */
 	public Color4Byte getPatternColor() {
 		return patternColor;
 	}
 
 	/**
-	 * ¹«´Ì Á¾·ù¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ë¬´ëŠ¬ ì¢…ë¥˜ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ¹«´Ì Á¾·ù
+	 * @return ë¬´ëŠ¬ ì¢…ë¥˜
 	 */
 	public PatternType getPatternType() {
 		return patternType;
 	}
 
 	/**
-	 * ¹«´Ì Á¾·ù¸¦ ¼³Á¤ÇÑ´Ù.
+	 * ë¬´ëŠ¬ ì¢…ë¥˜ë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param patternType
-	 *            ¹«´Ì Á¾·ù
+	 *            ë¬´ëŠ¬ ì¢…ë¥˜
 	 */
 	public void setPatternType(PatternType patternType) {
 		this.patternType = patternType;

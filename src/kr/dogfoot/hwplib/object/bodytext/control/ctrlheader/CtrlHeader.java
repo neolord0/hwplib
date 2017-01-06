@@ -1,30 +1,30 @@
-package kr.dogfoot.hwplib.object.bodytext.control.ctrlheader;
+ï»¿package kr.dogfoot.hwplib.object.bodytext.control.ctrlheader;
 
 /**
- * ÄÁÆ®·Ñ Çì´õ °´Ã¼µéÀ» À§ÇÑ ºÎ¸ğ Å¬·¡½º
+ * ì»¨íŠ¸ë¡¤ í—¤ë” ê°ì²´ë“¤ì„ ìœ„í•œ ë¶€ëª¨ í´ë˜ìŠ¤
  * 
  * @author neolord
  */
 public class CtrlHeader {
 	/**
-	 * ÄÁÆ®·Ñ ¾ÆÀÌµğ
+	 * ì»¨íŠ¸ë¡¤ ì•„ì´ë””
 	 */
 	protected long ctrlId;
 
 	/**
-	 * »ı¼ºÀÚ
+	 * ìƒì„±ì
 	 * 
 	 * @param ctrlId
-	 *            ÄÁÆ®·Ñ ¾ÆÀÌµğ
+	 *            ì»¨íŠ¸ë¡¤ ì•„ì´ë””
 	 */
 	public CtrlHeader(long ctrlId) {
 		this.ctrlId = ctrlId;
 	}
 
 	/**
-	 * ÄÁÆ®·Ñ ¾ÆÀÌµğ¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ì»¨íŠ¸ë¡¤ ì•„ì´ë””ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ÄÁÆ®·Ñ ¾ÆÀÌµğ
+	 * @return ì»¨íŠ¸ë¡¤ ì•„ì´ë””
 	 */
 	public long getCtrlId() {
 		return ctrlId;

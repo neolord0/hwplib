@@ -1,39 +1,39 @@
-package kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponenteach;
+ï»¿package kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponenteach;
 
 import kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponenteach.ellipse.ShapeComponentEllipseProperty;
 
 /**
- * Å¸¿ø °³Ã¼ ¼Ó¼º ·¹ÄÚµå
+ * íƒ€ì› ê°œì²´ ì†ì„± ë ˆì½”ë“œ
  * 
  * @author neolord
  */
 public class ShapeComponentEllipse {
 	/**
-	 * ¼Ó¼º
+	 * ì†ì„±
 	 */
 	private ShapeComponentEllipseProperty property;
 	/**
-	 * Áß½É ÁÂÇ¥ÀÇ X°ª
+	 * ì¤‘ì‹¬ ì¢Œí‘œì˜ Xê°’
 	 */
 	private int centerX;
 	/**
-	 * Áß½É ÁÂÇ¥ÀÇ Y°ª
+	 * ì¤‘ì‹¬ ì¢Œí‘œì˜ Yê°’
 	 */
 	private int centerY;
 	/**
-	 * Á¦1Ãà XÁÂÇ¥ °ª
+	 * ì œ1ì¶• Xì¢Œí‘œ ê°’
 	 */
 	private int axis1X;
 	/**
-	 * Á¦1Ãà YÁÂÇ¥ °ª
+	 * ì œ1ì¶• Yì¢Œí‘œ ê°’
 	 */
 	private int axis1Y;
 	/**
-	 * Á¦2Ãà XÁÂÇ¥ °ª
+	 * ì œ2ì¶• Xì¢Œí‘œ ê°’
 	 */
 	private int axis2X;
 	/**
-	 * Á¦2Ãà YÁÂÇ¥ °ª
+	 * ì œ2ì¶• Yì¢Œí‘œ ê°’
 	 */
 	private int axis2Y;
 	/**
@@ -70,146 +70,146 @@ public class ShapeComponentEllipse {
 	private int endY2;
 
 	/**
-	 * »ı¼ºÀÚ
+	 * ìƒì„±ì
 	 */
 	public ShapeComponentEllipse() {
 		property = new ShapeComponentEllipseProperty();
 	}
 
 	/**
-	 * ¼Ó¼º °´Ã¼¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ì†ì„± ê°ì²´ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ¼Ó¼º °´Ã¼
+	 * @return ì†ì„± ê°ì²´
 	 */
 	public ShapeComponentEllipseProperty getProperty() {
 		return property;
 	}
 
 	/**
-	 * Áß½É ÁÂÇ¥ÀÇ X°ªÀ» ¹İÈ¯ÇÑ´Ù.
+	 * ì¤‘ì‹¬ ì¢Œí‘œì˜ Xê°’ì„ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return Áß½É ÁÂÇ¥ÀÇ X°ª
+	 * @return ì¤‘ì‹¬ ì¢Œí‘œì˜ Xê°’
 	 */
 	public int getCenterX() {
 		return centerX;
 	}
 
 	/**
-	 * Áß½É ÁÂÇ¥ÀÇ X°ªÀ» ¼³Á¤ÇÑ´Ù.
+	 * ì¤‘ì‹¬ ì¢Œí‘œì˜ Xê°’ì„ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param centerX
-	 *            Áß½É ÁÂÇ¥ÀÇ X°ª
+	 *            ì¤‘ì‹¬ ì¢Œí‘œì˜ Xê°’
 	 */
 	public void setCenterX(int centerX) {
 		this.centerX = centerX;
 	}
 
 	/**
-	 * Áß½É ÁÂÇ¥ÀÇ Y°ªÀ» ¹İÈ¯ÇÑ´Ù.
+	 * ì¤‘ì‹¬ ì¢Œí‘œì˜ Yê°’ì„ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return Áß½É ÁÂÇ¥ÀÇ Y°ª
+	 * @return ì¤‘ì‹¬ ì¢Œí‘œì˜ Yê°’
 	 */
 	public int getCenterY() {
 		return centerY;
 	}
 
 	/**
-	 * Áß½É ÁÂÇ¥ÀÇ Y°ªÀ» ¼³Á¤ÇÑ´Ù.
+	 * ì¤‘ì‹¬ ì¢Œí‘œì˜ Yê°’ì„ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param centerY
-	 *            Áß½É ÁÂÇ¥ÀÇ Y°ª
+	 *            ì¤‘ì‹¬ ì¢Œí‘œì˜ Yê°’
 	 */
 	public void setCenterY(int centerY) {
 		this.centerY = centerY;
 	}
 
 	/**
-	 * Á¦1Ãà XÁÂÇ¥ °ªÀ» ¹İÈ¯ÇÑ´Ù.
+	 * ì œ1ì¶• Xì¢Œí‘œ ê°’ì„ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return Á¦1Ãà XÁÂÇ¥ °ª
+	 * @return ì œ1ì¶• Xì¢Œí‘œ ê°’
 	 */
 	public int getAxis1X() {
 		return axis1X;
 	}
 
 	/**
-	 * Á¦1Ãà XÁÂÇ¥ °ªÀ» ¼³Á¤ÇÑ´Ù.
+	 * ì œ1ì¶• Xì¢Œí‘œ ê°’ì„ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param axis1X
-	 *            Á¦1Ãà XÁÂÇ¥ °ª
+	 *            ì œ1ì¶• Xì¢Œí‘œ ê°’
 	 */
 	public void setAxis1X(int axis1X) {
 		this.axis1X = axis1X;
 	}
 
 	/**
-	 * Á¦1Ãà YÁÂÇ¥ °ªÀ» ¹İÈ¯ÇÑ´Ù.
+	 * ì œ1ì¶• Yì¢Œí‘œ ê°’ì„ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return Á¦1Ãà YÁÂÇ¥ °ª
+	 * @return ì œ1ì¶• Yì¢Œí‘œ ê°’
 	 */
 	public int getAxis1Y() {
 		return axis1Y;
 	}
 
 	/**
-	 * Á¦1Ãà YÁÂÇ¥ °ªÀ» ¼³Á¤ÇÑ´Ù.
+	 * ì œ1ì¶• Yì¢Œí‘œ ê°’ì„ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param axis1Y
-	 *            Á¦1Ãà YÁÂÇ¥ °ª
+	 *            ì œ1ì¶• Yì¢Œí‘œ ê°’
 	 */
 	public void setAxis1Y(int axis1Y) {
 		this.axis1Y = axis1Y;
 	}
 
 	/**
-	 * Á¦2Ãà XÁÂÇ¥ °ªÀ» ¹İÈ¯ÇÑ´Ù.
+	 * ì œ2ì¶• Xì¢Œí‘œ ê°’ì„ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return Á¦2Ãà XÁÂÇ¥ °ª
+	 * @return ì œ2ì¶• Xì¢Œí‘œ ê°’
 	 */
 	public int getAxis2X() {
 		return axis2X;
 	}
 
 	/**
-	 * Á¦2Ãà XÁÂÇ¥ °ªÀ» ¼³Á¤ÇÑ´Ù.
+	 * ì œ2ì¶• Xì¢Œí‘œ ê°’ì„ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param axis2X
-	 *            Á¦2Ãà XÁÂÇ¥ °ª
+	 *            ì œ2ì¶• Xì¢Œí‘œ ê°’
 	 */
 	public void setAxis2X(int axis2X) {
 		this.axis2X = axis2X;
 	}
 
 	/**
-	 * Á¦2Ãà YÁÂÇ¥ °ªÀ» ¹İÈ¯ÇÑ´Ù.
+	 * ì œ2ì¶• Yì¢Œí‘œ ê°’ì„ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return Á¦2Ãà YÁÂÇ¥ °ª
+	 * @return ì œ2ì¶• Yì¢Œí‘œ ê°’
 	 */
 	public int getAxis2Y() {
 		return axis2Y;
 	}
 
 	/**
-	 * Á¦2Ãà YÁÂÇ¥ °ªÀ» ¼³Á¤ÇÑ´Ù.
+	 * ì œ2ì¶• Yì¢Œí‘œ ê°’ì„ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param axis2Y
-	 *            Á¦2Ãà YÁÂÇ¥ °ª
+	 *            ì œ2ì¶• Yì¢Œí‘œ ê°’
 	 */
 	public void setAxis2Y(int axis2Y) {
 		this.axis2Y = axis2Y;
 	}
 
 	/**
-	 * start pos x°ªÀ» ¹İÈ¯ÇÑ´Ù.
+	 * start pos xê°’ì„ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return start pos x°ª
+	 * @return start pos xê°’
 	 */
 	public int getStartX() {
 		return startX;
 	}
 
 	/**
-	 * start pos x°ªÀ» ¼³Á¤ÇÑ´Ù.
+	 * start pos xê°’ì„ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param startX
 	 *            start pos x
@@ -219,73 +219,73 @@ public class ShapeComponentEllipse {
 	}
 
 	/**
-	 * start pos y°ªÀ» ¹İÈ¯ÇÑ´Ù.
+	 * start pos yê°’ì„ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return start pos y°ª
+	 * @return start pos yê°’
 	 */
 	public int getStartY() {
 		return startY;
 	}
 
 	/**
-	 * start pos y°ªÀ» ¼³Á¤ÇÑ´Ù.
+	 * start pos yê°’ì„ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param startY
-	 *            start pos y°ª
+	 *            start pos yê°’
 	 */
 	public void setStartY(int startY) {
 		this.startY = startY;
 	}
 
 	/**
-	 * end pos x°ªÀ» ¹İÈ¯ÇÑ´Ù.
+	 * end pos xê°’ì„ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return end pos x°ª
+	 * @return end pos xê°’
 	 */
 	public int getEndX() {
 		return endX;
 	}
 
 	/**
-	 * end pos x°ªÀ» ¼³Á¤ÇÑ´Ù.
+	 * end pos xê°’ì„ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param endX
-	 *            end pos x°ª
+	 *            end pos xê°’
 	 */
 	public void setEndX(int endX) {
 		this.endX = endX;
 	}
 
 	/**
-	 * end pos y°ªÀ» ¹İÈ¯ÇÑ´Ù.
+	 * end pos yê°’ì„ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return end pos y°ª
+	 * @return end pos yê°’
 	 */
 	public int getEndY() {
 		return endY;
 	}
 
 	/**
-	 * end pos y°ªÀ» ¼³Á¤ÇÑ´Ù.
+	 * end pos yê°’ì„ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param endY
-	 *            end pos y°ª
+	 *            end pos yê°’
 	 */
 	public void setEndY(int endY) {
 		this.endY = endY;
 	}
 
 	/**
-	 * start pos x2°ªÀ» ¹İÈ¯ÇÑ´Ù.
+	 * start pos x2ê°’ì„ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return start pos x2°ª
+	 * @return start pos x2ê°’
 	 */
 	public int getStartX2() {
 		return startX2;
 	}
 
 	/**
-	 * start pos x2°ªÀ» ¼³Á¤ÇÑ´Ù.
+	 * start pos x2ê°’ì„ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param startX2
 	 *            start pos x2
@@ -295,16 +295,16 @@ public class ShapeComponentEllipse {
 	}
 
 	/**
-	 * start pos y2°ªÀ» ¹İÈ¯ÇÑ´Ù.
+	 * start pos y2ê°’ì„ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return start pos y2°ª
+	 * @return start pos y2ê°’
 	 */
 	public int getStartY2() {
 		return startY2;
 	}
 
 	/**
-	 * start pos y2°ªÀ» ¼³Á¤ÇÑ´Ù.
+	 * start pos y2ê°’ì„ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param startY2
 	 *            start pos y2
@@ -314,38 +314,38 @@ public class ShapeComponentEllipse {
 	}
 
 	/**
-	 * end pos x2°ªÀ» ¹İÈ¯ÇÑ´Ù.
+	 * end pos x2ê°’ì„ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return end pos x2°ª
+	 * @return end pos x2ê°’
 	 */
 	public int getEndX2() {
 		return endX2;
 	}
 
 	/**
-	 * end pos x2°ªÀ» ¼³Á¤ÇÑ´Ù.
+	 * end pos x2ê°’ì„ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param endX2
-	 *            end pos x2°ª
+	 *            end pos x2ê°’
 	 */
 	public void setEndX2(int endX2) {
 		this.endX2 = endX2;
 	}
 
 	/**
-	 * end pos y2°ªÀ» ¹İÈ¯ÇÑ´Ù.
+	 * end pos y2ê°’ì„ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return end pos y2°ª
+	 * @return end pos y2ê°’
 	 */
 	public int getEndY2() {
 		return endY2;
 	}
 
 	/**
-	 * end pos y2°ªÀ» ¼³Á¤ÇÑ´Ù.
+	 * end pos y2ê°’ì„ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param endY2
-	 *            end pos y2°ª
+	 *            end pos y2ê°’
 	 */
 	public void setEndY2(int endY2) {
 		this.endY2 = endY2;

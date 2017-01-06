@@ -1,88 +1,88 @@
-package kr.dogfoot.hwplib.object.bodytext.control;
+ï»¿package kr.dogfoot.hwplib.object.bodytext.control;
 
 import kr.dogfoot.hwplib.object.bodytext.control.ctrlheader.CtrlID;
 
 /**
- * ÄÁÆ®·Ñ Å¸ÀÔ
+ * ì»¨íŠ¸ë¡¤ íƒ€ì…
  * 
  * @author neolord
  */
 public enum ControlType {
 	/**
-	 * Ç¥
+	 * í‘œ
 	 */
 	Table(CtrlID.make('t', 'b', 'l', ' ')),
 	/**
-	 * ±×¸®±â °´Ã¼(??)
+	 * ê·¸ë¦¬ê¸° ê°ì²´(??)
 	 */
 	Gso(CtrlID.make('g', 's', 'o', ' ')),
 	/**
-	 * ÇÑ±Û ¼ö½Ä °´Ã¼
+	 * í•œê¸€ ìˆ˜ì‹ ê°ì²´
 	 */
 	Equation(CtrlID.make('e', 'q', 'e', 'd')),
 
 	/**
-	 * ±¸¿ª Á¤ÀÇ
+	 * êµ¬ì—­ ì •ì˜
 	 */
 	SectionDefine(CtrlID.make('s', 'e', 'c', 'd')),
 	/**
-	 * ´Ü Á¤ÀÇ
+	 * ë‹¨ ì •ì˜
 	 */
 	ColumnDefine(CtrlID.make('c', 'o', 'l', 'd')),
 	/**
-	 * ¸Ó¸®¸»
+	 * ë¨¸ë¦¬ë§
 	 */
 	Header(CtrlID.make('h', 'e', 'a', 'd')),
 	/**
-	 * ²¿¸®¸»
+	 * ê¼¬ë¦¬ë§
 	 */
 	Footer(CtrlID.make('f', 'o', 'o', 't')),
 	/**
-	 * °¢ÁÖ
+	 * ê°ì£¼
 	 */
 	Footnote(CtrlID.make('f', 'n', ' ', ' ')),
 	/**
-	 * ¹ÌÁÖ
+	 * ë¯¸ì£¼
 	 */
 	Endnote(CtrlID.make('e', 'n', ' ', ' ')),
 	/**
-	 * ÀÚµ¿¹øÈ£
+	 * ìë™ë²ˆí˜¸
 	 */
 	AutoNumber(CtrlID.make('a', 't', 'n', 'o')),
 	/**
-	 * »õ ¹øÈ£ ÁöÁ¤
+	 * ìƒˆ ë²ˆí˜¸ ì§€ì •
 	 */
 	NewNumber(CtrlID.make('n', 'w', 'n', 'o')),
 	/**
-	 * °¨Ãß±â
+	 * ê°ì¶”ê¸°
 	 */
 	PageHide(CtrlID.make('p', 'g', 'h', 'd')),
 	/**
-	 * È¦/Â¦¼ö Á¶Á¤
+	 * í™€/ì§ìˆ˜ ì¡°ì •
 	 */
 	PageOddEvenAdjust(CtrlID.make('p', 'g', 'c', 't')),
 	/**
-	 * ÂÊ ¹øÈ£ À§Ä¡
+	 * ìª½ ë²ˆí˜¸ ìœ„ì¹˜
 	 */
 	PageNumberPositon(CtrlID.make('p', 'g', 'n', 'p')),
 	/**
-	 * Ã£¾Æº¸±â Ç¥½Ä
+	 * ì°¾ì•„ë³´ê¸° í‘œì‹
 	 */
 	IndexMark(CtrlID.make('i', 'd', 'x', 'm')),
 	/**
-	 * Ã¥°¥ÇÇ
+	 * ì±…ê°ˆí”¼
 	 */
 	Bookmark(CtrlID.make('b', 'o', 'k', 'm')),
 	/**
-	 * ±ÛÀÚ °ãÄ§
+	 * ê¸€ì ê²¹ì¹¨
 	 */
 	OverlappingLetter(CtrlID.make('t', 'c', 'p', 's')),
 	/**
-	 * µ¡¸»
+	 * ë§ë§
 	 */
 	AdditionalText(CtrlID.make('t', 'd', 'u', 't')),
 	/**
-	 * ¼ûÀº ¼³¸í
+	 * ìˆ¨ì€ ì„¤ëª…
 	 */
 	HiddenComment(CtrlID.make('t', 'c', 'm', 't')),
 
@@ -120,35 +120,35 @@ public enum ControlType {
 	FIELD_PRIVATE_INFO_SECURITY(CtrlID.make('%', 'c', 'p', 'r'));
 
 	/**
-	 * ÄÁÆ®·Ñ id
+	 * ì»¨íŠ¸ë¡¤ id
 	 */
 	private long ctrlId;
 
 	/**
-	 * »ı¼ºÀÚ
+	 * ìƒì„±ì
 	 * 
 	 * @param ctrlId
-	 *            ÄÁÆ®·Ñ id
+	 *            ì»¨íŠ¸ë¡¤ id
 	 */
 	private ControlType(long ctrlId) {
 		this.ctrlId = ctrlId;
 	}
 
 	/**
-	 * ÄÁÆ®·Ñ id¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ì»¨íŠ¸ë¡¤ idë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ÄÁÆ®·Ñ id
+	 * @return ì»¨íŠ¸ë¡¤ id
 	 */
 	public long getCtrlId() {
 		return ctrlId;
 	}
 
 	/**
-	 * ÄÁÆ®·Ñ id¿¡ ÇØ´çµÇ´Â ControlTypeÀ» ¹İÈ¯ÇÑ´Ù.
+	 * ì»¨íŠ¸ë¡¤ idì— í•´ë‹¹ë˜ëŠ” ControlTypeì„ ë°˜í™˜í•œë‹¤.
 	 * 
 	 * @param ctrlId
-	 *            ÄÁÆ®·Ñ id
-	 * @return ÄÁÆ®·Ñ Å¸ÀÔ
+	 *            ì»¨íŠ¸ë¡¤ id
+	 * @return ì»¨íŠ¸ë¡¤ íƒ€ì…
 	 */
 	public static ControlType ctrlIdOf(long ctrlId) {
 		for (ControlType ct : values()) {
@@ -160,11 +160,11 @@ public enum ControlType {
 	}
 
 	/**
-	 * ÄÁÆ®·Ñ id°¡ ÇÊµåÀÎÁö ¾Æ´ÑÁö ¿©ºÎ¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ì»¨íŠ¸ë¡¤ idê°€ í•„ë“œì¸ì§€ ì•„ë‹Œì§€ ì—¬ë¶€ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
 	 * @param ctrlId
-	 *            ÄÁÆ®·Ñ id
-	 * @return ÄÁÆ®·Ñ id°¡ ÇÊµåÀÎÁö ¾Æ´ÑÁö ¿©ºÎ
+	 *            ì»¨íŠ¸ë¡¤ id
+	 * @return ì»¨íŠ¸ë¡¤ idê°€ í•„ë“œì¸ì§€ ì•„ë‹Œì§€ ì—¬ë¶€
 	 */
 	public static boolean isField(long ctrlId) {
 		if (ctrlId == FIELD_UNKNOWN.ctrlId || ctrlId == FIELD_DATE.ctrlId

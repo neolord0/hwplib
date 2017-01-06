@@ -1,24 +1,24 @@
-package kr.dogfoot.hwplib.object.bodytext.control;
+ï»¿package kr.dogfoot.hwplib.object.bodytext.control;
 
 import kr.dogfoot.hwplib.object.bodytext.control.ctrlheader.CtrlHeaderNewNumber;
 
 /**
- * »õ ¹øÈ£ ÁöÁ¤ ÄÁÆ®·Ñ
+ * ìƒˆ ë²ˆí˜¸ ì§€ì • ì»¨íŠ¸ë¡¤
  * 
  * @author neolord
  */
 public class ControlNewNumber extends Control {
 	/**
-	 * »ı¼ºÀÚ
+	 * ìƒì„±ì
 	 */
 	public ControlNewNumber() {
 		super(new CtrlHeaderNewNumber());
 	}
 
 	/**
-	 * »õ ¹øÈ£ ÁöÁ¤¿ë ÄÁÆ®·Ñ Çì´õ¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ìƒˆ ë²ˆí˜¸ ì§€ì •ìš© ì»¨íŠ¸ë¡¤ í—¤ë”ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return »õ ¹øÈ£ ÁöÁ¤¿ë ÄÁÆ®·Ñ Çì´õ
+	 * @return ìƒˆ ë²ˆí˜¸ ì§€ì •ìš© ì»¨íŠ¸ë¡¤ í—¤ë”
 	 */
 	public CtrlHeaderNewNumber getHeader() {
 		return (CtrlHeaderNewNumber) header;

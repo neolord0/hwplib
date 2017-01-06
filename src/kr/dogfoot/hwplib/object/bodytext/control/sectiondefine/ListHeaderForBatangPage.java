@@ -1,98 +1,98 @@
-package kr.dogfoot.hwplib.object.bodytext.control.sectiondefine;
+ï»¿package kr.dogfoot.hwplib.object.bodytext.control.sectiondefine;
 
 import kr.dogfoot.hwplib.object.bodytext.control.gso.textbox.ListHeaderProperty;
 
 /**
- * ¹ÙÅÁÂÊÀ» À§ÇÑ ¹®´Ü ¸®½ºÆ® Çì´õ ·¹ÄÚµå
+ * ë°”íƒ•ìª½ì„ ìœ„í•œ ë¬¸ë‹¨ ë¦¬ìŠ¤íŠ¸ í—¤ë” ë ˆì½”ë“œ
  * 
  * @author neolord
  */
 public class ListHeaderForBatangPage {
 	/**
-	 * ¹®´Ü °³¼ö
+	 * ë¬¸ë‹¨ ê°œìˆ˜
 	 */
 	private int paraCount;
 	/**
-	 * ¼Ó¼º
+	 * ì†ì„±
 	 */
 	private ListHeaderProperty property;
 	/**
-	 * ÅØ½ºÆ® ¿µ¿ªÀÇ Æø
+	 * í…ìŠ¤íŠ¸ ì˜ì—­ì˜ í­
 	 */
 	private long textWidth;
 	/**
-	 * ÅØ½ºÆ® ¿µ¿ªÀÇ ³ôÀÌ
+	 * í…ìŠ¤íŠ¸ ì˜ì—­ì˜ ë†’ì´
 	 */
 	private long textHeight;
 
 	/**
-	 * »ı¼ºÀÚ
+	 * ìƒì„±ì
 	 */
 	public ListHeaderForBatangPage() {
 		property = new ListHeaderProperty();
 	}
 
 	/**
-	 * ¹®´Ü °³¼ö¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ë¬¸ë‹¨ ê°œìˆ˜ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ¹®´Ü °³¼ö
+	 * @return ë¬¸ë‹¨ ê°œìˆ˜
 	 */
 	public int getParaCount() {
 		return paraCount;
 	}
 
 	/**
-	 * ¹®´Ü °³¼ö¸¦ ¼³Á¤ÇÑ´Ù.
+	 * ë¬¸ë‹¨ ê°œìˆ˜ë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param paraCount
-	 *            ¹®´Ü °³¼ö
+	 *            ë¬¸ë‹¨ ê°œìˆ˜
 	 */
 	public void setParaCount(int paraCount) {
 		this.paraCount = paraCount;
 	}
 
 	/**
-	 * ¼Ó¼º °´Ã¼¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ì†ì„± ê°ì²´ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ¼Ó¼º °´Ã¼
+	 * @return ì†ì„± ê°ì²´
 	 */
 	public ListHeaderProperty getProperty() {
 		return property;
 	}
 
 	/**
-	 * ÅØ½ºÆ® ¿µ¿ªÀÇ ÆøÀ» ¹İÈ¯ÇÑ´Ù.
+	 * í…ìŠ¤íŠ¸ ì˜ì—­ì˜ í­ì„ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ÅØ½ºÆ® ¿µ¿ªÀÇ Æø
+	 * @return í…ìŠ¤íŠ¸ ì˜ì—­ì˜ í­
 	 */
 	public long getTextWidth() {
 		return textWidth;
 	}
 
 	/**
-	 * ÅØ½ºÆ® ¿µ¿ªÀÇ ÆøÀ» ¼³Á¤ÇÑ´Ù.
+	 * í…ìŠ¤íŠ¸ ì˜ì—­ì˜ í­ì„ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param textWidth
-	 *            ÅØ½ºÆ® ¿µ¿ªÀÇ Æø
+	 *            í…ìŠ¤íŠ¸ ì˜ì—­ì˜ í­
 	 */
 	public void setTextWidth(long textWidth) {
 		this.textWidth = textWidth;
 	}
 
 	/**
-	 * ÅØ½ºÆ® ¿µ¿ªÀÇ ³ôÀÌ¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * í…ìŠ¤íŠ¸ ì˜ì—­ì˜ ë†’ì´ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ÅØ½ºÆ® ¿µ¿ªÀÇ ³ôÀÌ
+	 * @return í…ìŠ¤íŠ¸ ì˜ì—­ì˜ ë†’ì´
 	 */
 	public long getTextHeight() {
 		return textHeight;
 	}
 
 	/**
-	 * ÅØ½ºÆ® ¿µ¿ªÀÇ ³ôÀÌ¸¦ ¼³Á¤ÇÑ´Ù.
+	 * í…ìŠ¤íŠ¸ ì˜ì—­ì˜ ë†’ì´ë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param textHeight
-	 *            ÅØ½ºÆ® ¿µ¿ªÀÇ ³ôÀÌ
+	 *            í…ìŠ¤íŠ¸ ì˜ì—­ì˜ ë†’ì´
 	 */
 	public void setTextHeight(long textHeight) {
 		this.textHeight = textHeight;

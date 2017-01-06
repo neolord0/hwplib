@@ -1,4 +1,4 @@
-package kr.dogfoot.hwplib.reader.docinfo.borderfill;
+ï»¿package kr.dogfoot.hwplib.reader.docinfo.borderfill;
 
 import java.io.IOException;
 
@@ -14,18 +14,18 @@ import kr.dogfoot.hwplib.object.docinfo.borderfill.fillinfo.PictureInfo;
 import kr.dogfoot.hwplib.util.compoundFile.StreamReader;
 
 /**
- * Å×µÎ¸®/¹è°æ ·¹ÄÚµåÀÇ Ã¤¿ì±â Á¤º¸¸¦ ÀÐ±â À§ÇÑ °´Ã¼
+ * í…Œë‘ë¦¬/ë°°ê²½ ë ˆì½”ë“œì˜ ì±„ìš°ê¸° ì •ë³´ë¥¼ ì½ê¸° ìœ„í•œ ê°ì²´
  * 
  * @author neolord
  */
 public class ForFillInfo {
 	/**
-	 * Å×µÎ¸®/¹è°æ ·¹ÄÚµåÀÇ Ã¤¿ì±â Á¤º¸¸¦ ÀÐ´Â´Ù.
+	 * í…Œë‘ë¦¬/ë°°ê²½ ë ˆì½”ë“œì˜ ì±„ìš°ê¸° ì •ë³´ë¥¼ ì½ëŠ”ë‹¤.
 	 * 
 	 * @param fi
-	 *            Å×µÎ¸®/¹è°æ ·¹ÄÚµåÀÇ Ã¤¿ì±â Á¤º¸
+	 *            í…Œë‘ë¦¬/ë°°ê²½ ë ˆì½”ë“œì˜ ì±„ìš°ê¸° ì •ë³´
 	 * @param sr
-	 *            ½ºÆ®¸² ¸®´õ
+	 *            ìŠ¤íŠ¸ë¦¼ ë¦¬ë”
 	 * @throws IOException
 	 */
 	public static void read(FillInfo fi, StreamReader sr) throws IOException {
@@ -53,12 +53,12 @@ public class ForFillInfo {
 	}
 
 	/**
-	 * ÆÐÅÏ Ã¤¿ò Á¤º¸¸¦ ÀÐ´Â´Ù.
+	 * íŒ¨í„´ ì±„ì›€ ì •ë³´ë¥¼ ì½ëŠ”ë‹¤.
 	 * 
 	 * @param pf
-	 *            ÆÐÅÏ Ã¤¿ò Á¤º¸
+	 *            íŒ¨í„´ ì±„ì›€ ì •ë³´
 	 * @param sr
-	 *            ½ºÆ®¸² ¸®´õ
+	 *            ìŠ¤íŠ¸ë¦¼ ë¦¬ë”
 	 * @throws IOException
 	 */
 	private static void patternFill(PatternFill pf, StreamReader sr)
@@ -69,24 +69,24 @@ public class ForFillInfo {
 	}
 
 	/**
-	 * ±×¶óµ¥ÀÌ¼Ç Ã¤¿ò Á¤º¸¸¦ ÀÐ´Â´Ù.
+	 * ê·¸ë¼ë°ì´ì…˜ ì±„ì›€ ì •ë³´ë¥¼ ì½ëŠ”ë‹¤.
 	 * 
 	 * @param gf
-	 *            ±×¶óµ¥ÀÌ¼Ç Á¤º¸
+	 *            ê·¸ë¼ë°ì´ì…˜ ì •ë³´
 	 * @param sr
-	 *            ½ºÆ®¸² ¸®´õ
+	 *            ìŠ¤íŠ¸ë¦¼ ë¦¬ë”
 	 * @throws IOException
 	 */
 	private static void gradientFill(GradientFill gf, StreamReader sr)
 			throws IOException {
-		gf.setGradientType(GradientType.valueOf(sr.readSInt1())); // ¹®¼­¿À·ù 2byte
+		gf.setGradientType(GradientType.valueOf(sr.readSInt1())); // ë¬¸ì„œì˜¤ë¥˜ 2byte
 																	// -> 1 byte
-		gf.setStartAngle(sr.readUInt4()); // ¹®¼­¿À·ù 2byte -> 4 byte
-		gf.setCenterX(sr.readUInt4()); // ¹®¼­¿À·ù 2byte -> 4 byte
-		gf.setCenterY(sr.readUInt4()); // ¹®¼­¿À·ù 2byte -> 4 byte
-		gf.setBlurringDegree(sr.readUInt4()); // ¹®¼­¿À·ù 2byte -> 4 byte
+		gf.setStartAngle(sr.readUInt4()); // ë¬¸ì„œì˜¤ë¥˜ 2byte -> 4 byte
+		gf.setCenterX(sr.readUInt4()); // ë¬¸ì„œì˜¤ë¥˜ 2byte -> 4 byte
+		gf.setCenterY(sr.readUInt4()); // ë¬¸ì„œì˜¤ë¥˜ 2byte -> 4 byte
+		gf.setBlurringDegree(sr.readUInt4()); // ë¬¸ì„œì˜¤ë¥˜ 2byte -> 4 byte
 
-		long colorCount = sr.readUInt4(); // ¹®¼­¿À·ù 2byte -> 4 byte
+		long colorCount = sr.readUInt4(); // ë¬¸ì„œì˜¤ë¥˜ 2byte -> 4 byte
 		if (colorCount > 2) {
 			for (int i = 0; i < colorCount; i++) {
 				gf.addChangePoint(sr.readSInt4());
@@ -98,12 +98,12 @@ public class ForFillInfo {
 	}
 
 	/**
-	 * ÀÌ¹ÌÁö Ã¤¿ò Á¤º¸À» ÀÐ´Â´Ù.
+	 * ì´ë¯¸ì§€ ì±„ì›€ ì •ë³´ì„ ì½ëŠ”ë‹¤.
 	 * 
 	 * @param imf
-	 *            ÀÌ¹ÌÁö Ã¤¿ò Á¤º¸
+	 *            ì´ë¯¸ì§€ ì±„ì›€ ì •ë³´
 	 * @param sr
-	 *            ½ºÆ®¸² ·¯´õ
+	 *            ìŠ¤íŠ¸ë¦¼ ëŸ¬ë”
 	 * @throws IOException
 	 */
 	private static void imageFill(ImageFill imf, StreamReader sr)
@@ -113,12 +113,12 @@ public class ForFillInfo {
 	}
 
 	/**
-	 * ±×¸² Á¤º¸À» ÀÐ´Â´Ù.
+	 * ê·¸ë¦¼ ì •ë³´ì„ ì½ëŠ”ë‹¤.
 	 * 
 	 * @param pi
-	 *            ±×¸² Á¤º¸
+	 *            ê·¸ë¦¼ ì •ë³´
 	 * @param sr
-	 *            ½ºÆ®¸² ¸®´õ
+	 *            ìŠ¤íŠ¸ë¦¼ ë¦¬ë”
 	 * @throws IOException
 	 */
 	public static void pictureInfo(PictureInfo pi, StreamReader sr)
@@ -130,12 +130,12 @@ public class ForFillInfo {
 	}
 
 	/**
-	 * Ãß°¡ÀûÀÎ ¼Ó¼ºÀ» ÀÐ´Â´Ù.
+	 * ì¶”ê°€ì ì¸ ì†ì„±ì„ ì½ëŠ”ë‹¤.
 	 * 
 	 * @param fi
-	 *            Ã¤¿ì±â Á¤º¸
+	 *            ì±„ìš°ê¸° ì •ë³´
 	 * @param sr
-	 *            ½ºÆ®¸² ·¯´õ
+	 *            ìŠ¤íŠ¸ë¦¼ ëŸ¬ë”
 	 * @throws IOException
 	 */
 	private static void additionalProperty(FillInfo fi, StreamReader sr)
@@ -151,12 +151,12 @@ public class ForFillInfo {
 	}
 
 	/**
-	 * ¾Ë·ÁÁöÁö ¾ÊÀº ¹ÙÀÌÆ®¸¦ ÀÐ´Â¾Æ.
+	 * ì•Œë ¤ì§€ì§€ ì•Šì€ ë°”ì´íŠ¸ë¥¼ ì½ëŠ”ì•„.
 	 * 
 	 * @param fi
-	 *            Ã¤¿ì±â Á¤º¸
+	 *            ì±„ìš°ê¸° ì •ë³´
 	 * @param sr
-	 *            ½ºÆ®¸² ·¯´õ
+	 *            ìŠ¤íŠ¸ë¦¼ ëŸ¬ë”
 	 * @throws IOException
 	 */
 	private static void unknownBytes(FillInfo fi, StreamReader sr)

@@ -1,75 +1,75 @@
-package kr.dogfoot.hwplib.object.docinfo.borderfill;
+ï»¿package kr.dogfoot.hwplib.object.docinfo.borderfill;
 
 import kr.dogfoot.hwplib.object.etc.Color4Byte;
 
 /**
- * Å×µÎ¸®/¹è°æ °´Ã¼¿¡¼­ 4¹æÇâÀÇ °¢°¢ÀÇ ¼±À» ³ªÅ¸³»´Â °´Ã¼
+ * í…Œë‘ë¦¬/ë°°ê²½ ê°ì²´ì—ì„œ 4ë°©í–¥ì˜ ê°ê°ì˜ ì„ ì„ ë‚˜íƒ€ë‚´ëŠ” ê°ì²´
  * 
  * @author neolord
  */
 public class EachBorder {
 	/**
-	 * ¼± Á¾·ù
+	 * ì„  ì¢…ë¥˜
 	 */
 	private BorderType type;
 	/**
-	 * µÎ²²
+	 * ë‘ê»˜
 	 */
 	private BorderThickness thickness;
 	/**
-	 * »ö»ó
+	 * ìƒ‰ìƒ
 	 */
 	private Color4Byte color;
 
 	/**
-	 * »ı¼ºÀÚ
+	 * ìƒì„±ì
 	 */
 	public EachBorder() {
 		color = new Color4Byte();
 	}
 
 	/**
-	 * ¼±ÀÇ Á¾·ù¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ì„ ì˜ ì¢…ë¥˜ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ¼±ÀÇ Á¾·ù
+	 * @return ì„ ì˜ ì¢…ë¥˜
 	 */
 	public BorderType getType() {
 		return type;
 	}
 
 	/**
-	 * ¼±ÀÇ Á¾·ù¸¦ ¼³Á¤ÇÑ´Ù.
+	 * ì„ ì˜ ì¢…ë¥˜ë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param type
-	 *            ¼±ÀÇ Á¾·ù
+	 *            ì„ ì˜ ì¢…ë¥˜
 	 */
 	public void setType(BorderType type) {
 		this.type = type;
 	}
 
 	/**
-	 * ¼±ÀÇ µÎ²²¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ì„ ì˜ ë‘ê»˜ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ¼±ÀÇ µÎ²²
+	 * @return ì„ ì˜ ë‘ê»˜
 	 */
 	public BorderThickness getThickness() {
 		return thickness;
 	}
 
 	/**
-	 * ¼±ÀÇ µÎ²²¸¦ ¼³Á¤ÇÑ´Ù.
+	 * ì„ ì˜ ë‘ê»˜ë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param thickness
-	 *            ¼±ÀÇ µÎ²²
+	 *            ì„ ì˜ ë‘ê»˜
 	 */
 	public void setThickness(BorderThickness thickness) {
 		this.thickness = thickness;
 	}
 
 	/**
-	 * ¼±ÀÇ »ö»ó °´Ã¼À» ¹İÈ¯ÇÑ´Ù.
+	 * ì„ ì˜ ìƒ‰ìƒ ê°ì²´ì„ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ¼±ÀÇ »ö»ó °´Ã¼
+	 * @return ì„ ì˜ ìƒ‰ìƒ ê°ì²´
 	 */
 	public Color4Byte getColor() {
 		return color;

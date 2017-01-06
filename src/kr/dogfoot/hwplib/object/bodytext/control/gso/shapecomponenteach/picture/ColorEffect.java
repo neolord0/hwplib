@@ -1,59 +1,59 @@
-package kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponenteach.picture;
+ï»¿package kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponenteach.picture;
 
 /**
- * »ö»ó È¿°ú ¼Ó¼º
+ * ìƒ‰ìƒ íš¨ê³¼ ì†ì„±
  * 
  * @author neolord
  */
 public class ColorEffect {
 	/**
-	 * »ö»ó È¿°ú Á¾·ù (Á¤º¸ ¾øÀ½)
+	 * ìƒ‰ìƒ íš¨ê³¼ ì¢…ë¥˜ (ì •ë³´ ì—†ìŒ)
 	 */
 	private int sort;
 	/**
-	 * »ö»ó È¿°ú °ª
+	 * ìƒ‰ìƒ íš¨ê³¼ ê°’
 	 */
 	private float value;
 
 	/**
-	 * »ı¼ºÀÚ
+	 * ìƒì„±ì
 	 */
 	public ColorEffect() {
 	}
 
 	/**
-	 * »ö»ó È¿°ú Á¾·ù¸¦ ¹İÈ¯ÇÑ´Ù. (Á¤º¸ ¾øÀ½)
+	 * ìƒ‰ìƒ íš¨ê³¼ ì¢…ë¥˜ë¥¼ ë°˜í™˜í•œë‹¤. (ì •ë³´ ì—†ìŒ)
 	 * 
-	 * @return »ö»ó È¿°ú Á¾·ù
+	 * @return ìƒ‰ìƒ íš¨ê³¼ ì¢…ë¥˜
 	 */
 	public int getSort() {
 		return sort;
 	}
 
 	/**
-	 * »ö»ó È¿°ú Á¾·ù¸¦ ¼³Á¤ÇÑ´Ù. (Á¤º¸ ¾øÀ½)
+	 * ìƒ‰ìƒ íš¨ê³¼ ì¢…ë¥˜ë¥¼ ì„¤ì •í•œë‹¤. (ì •ë³´ ì—†ìŒ)
 	 * 
 	 * @param sort
-	 *            »ö»ó È¿°ú Á¾·ù
+	 *            ìƒ‰ìƒ íš¨ê³¼ ì¢…ë¥˜
 	 */
 	public void setSort(int sort) {
 		this.sort = sort;
 	}
 
 	/**
-	 * »ö»ó È¿°ú °ªÀ» ¹İÈ¯ÇÑ´Ù.
+	 * ìƒ‰ìƒ íš¨ê³¼ ê°’ì„ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return »ö»ó È¿°ú °ª
+	 * @return ìƒ‰ìƒ íš¨ê³¼ ê°’
 	 */
 	public float getValue() {
 		return value;
 	}
 
 	/**
-	 * »ö»ó È¿°ú °ª¸¦ ¼³Á¤ÇÑ´Ù.
+	 * ìƒ‰ìƒ íš¨ê³¼ ê°’ë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param value
-	 *            »ö»ó È¿°ú °ª
+	 *            ìƒ‰ìƒ íš¨ê³¼ ê°’
 	 */
 	public void setValue(float value) {
 		this.value = value;

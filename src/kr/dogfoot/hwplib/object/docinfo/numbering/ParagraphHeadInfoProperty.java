@@ -1,104 +1,104 @@
-package kr.dogfoot.hwplib.object.docinfo.numbering;
+ï»¿package kr.dogfoot.hwplib.object.docinfo.numbering;
 
 import kr.dogfoot.hwplib.util.binary.BitFlag;
 
 /**
- * ¹®´Ü ¸Ó¸® Á¤º¸ÀÇ ¼Ó¼º °´Ã¼
+ * ë¬¸ë‹¨ ë¨¸ë¦¬ ì •ë³´ì˜ ì†ì„± ê°ì²´
  * 
  * @author neolord
  */
 public class ParagraphHeadInfoProperty {
 	/**
-	 * ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª(unsigned 4 byte)
+	 * íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’(unsigned 4 byte)
 	 */
 	private long value;
 
 	/**
-	 * »ı¼ºÀÚ
+	 * ìƒì„±ì
 	 */
 	public ParagraphHeadInfoProperty() {
 	}
 
 	/**
-	 * ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ªÀ» ¹İÈ¯ÇÑ´Ù.
+	 * íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’ì„ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª
+	 * @return íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’
 	 */
 	public long getValue() {
 		return value;
 	}
 
 	/**
-	 * ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ªÀ» ¼³Á¤ÇÑ´Ù.
+	 * íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’ì„ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param value
-	 *            ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª
+	 *            íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’
 	 */
 	public void setValue(long value) {
 		this.value = value;
 	}
 
 	/**
-	 * ¹®´ÜÀÇ Á¤·Ä Á¾·ù¸¦ ¹İÈ¯ÇÑ´Ù. (0~1 bit)
+	 * ë¬¸ë‹¨ì˜ ì •ë ¬ ì¢…ë¥˜ë¥¼ ë°˜í™˜í•œë‹¤. (0~1 bit)
 	 * 
-	 * @return ¹®´ÜÀÇ Á¤·Ä Á¾·ù
+	 * @return ë¬¸ë‹¨ì˜ ì •ë ¬ ì¢…ë¥˜
 	 */
 	public ParagraphAlignment getParagraphAlignment() {
 		return ParagraphAlignment.valueOf((byte) BitFlag.get(value, 0, 1));
 	}
 
 	/**
-	 * ¹®´ÜÀÇ Á¤·Ä Á¾·ù¸¦ ¼³Á¤ÇÑ´Ù. (0~1 bit)
+	 * ë¬¸ë‹¨ì˜ ì •ë ¬ ì¢…ë¥˜ë¥¼ ì„¤ì •í•œë‹¤. (0~1 bit)
 	 * 
 	 * @param paragraphAlignment
-	 *            ¹®´ÜÀÇ Á¤·Ä Á¾·ù
+	 *            ë¬¸ë‹¨ì˜ ì •ë ¬ ì¢…ë¥˜
 	 */
 	public void setParagraphAlignment(ParagraphAlignment paragraphAlignment) {
 		value = BitFlag.set(value, 0, 1, paragraphAlignment.getValue());
 	}
 
 	/**
-	 * ¹øÈ£ ³Êºñ¸¦ ½ÇÁ¦ ÀÎ½ºÅÏ½º ¹®ÀÚ¿­ÀÇ ³Êºñ¿¡ µû¸¦Áö ¿©ºÎ¸¦ ¹İÈ¯ÇÑ´Ù. (2 bit)
+	 * ë²ˆí˜¸ ë„ˆë¹„ë¥¼ ì‹¤ì œ ì¸ìŠ¤í„´ìŠ¤ ë¬¸ìì—´ì˜ ë„ˆë¹„ì— ë”°ë¥¼ì§€ ì—¬ë¶€ë¥¼ ë°˜í™˜í•œë‹¤. (2 bit)
 	 * 
-	 * @return ¹øÈ£ ³Êºñ¸¦ ½ÇÁ¦ ÀÎ½ºÅÏ½º ¹®ÀÚ¿­ÀÇ ³Êºñ¿¡ µû¸¦Áö ¿©ºÎ
+	 * @return ë²ˆí˜¸ ë„ˆë¹„ë¥¼ ì‹¤ì œ ì¸ìŠ¤í„´ìŠ¤ ë¬¸ìì—´ì˜ ë„ˆë¹„ì— ë”°ë¥¼ì§€ ì—¬ë¶€
 	 */
 	public boolean isFollowStringWidth() {
 		return BitFlag.get(value, 2);
 	}
 
 	/**
-	 * ¹øÈ£ ³Êºñ¸¦ ½ÇÁ¦ ÀÎ½ºÅÏ½º ¹®ÀÚ¿­ÀÇ ³Êºñ¿¡ µû¸¦Áö ¿©ºÎ¸¦ ¼³Á¤ÇÑ´Ù. (2 bit)
+	 * ë²ˆí˜¸ ë„ˆë¹„ë¥¼ ì‹¤ì œ ì¸ìŠ¤í„´ìŠ¤ ë¬¸ìì—´ì˜ ë„ˆë¹„ì— ë”°ë¥¼ì§€ ì—¬ë¶€ë¥¼ ì„¤ì •í•œë‹¤. (2 bit)
 	 * 
 	 * @param followStringWidth
-	 *            ¹øÈ£ ³Êºñ¸¦ ½ÇÁ¦ ÀÎ½ºÅÏ½º ¹®ÀÚ¿­ÀÇ ³Êºñ¿¡ µû¸¦Áö ¿©ºÎ
+	 *            ë²ˆí˜¸ ë„ˆë¹„ë¥¼ ì‹¤ì œ ì¸ìŠ¤í„´ìŠ¤ ë¬¸ìì—´ì˜ ë„ˆë¹„ì— ë”°ë¥¼ì§€ ì—¬ë¶€
 	 */
 	public void setFollowStringWidth(boolean followStringWidth) {
 		value = BitFlag.set(value, 2, followStringWidth);
 	}
 
 	/**
-	 * ÀÚµ¿ ³»¾î ¾²±â ¿©ºÎ¸¦ ¹İÈ¯ÇÑ´Ù. (3 bit)
+	 * ìë™ ë‚´ì–´ ì“°ê¸° ì—¬ë¶€ë¥¼ ë°˜í™˜í•œë‹¤. (3 bit)
 	 * 
-	 * @return ÀÚµ¿ ³»¾î ¾²±â ¿©ºÎ
+	 * @return ìë™ ë‚´ì–´ ì“°ê¸° ì—¬ë¶€
 	 */
 	public boolean isAutoIndent() {
 		return BitFlag.get(value, 3);
 	}
 
 	/**
-	 * ÀÚµ¿ ³»¾î ¾²±â ¿©ºÎ¸¦ ¼³Á¤ÇÑ´Ù. (3 bit)
+	 * ìë™ ë‚´ì–´ ì“°ê¸° ì—¬ë¶€ë¥¼ ì„¤ì •í•œë‹¤. (3 bit)
 	 * 
 	 * @param autoIndent
-	 *            ÀÚµ¿ ³»¾î ¾²±â ¿©ºÎ
+	 *            ìë™ ë‚´ì–´ ì“°ê¸° ì—¬ë¶€
 	 */
 	public void setAutoIndent(boolean autoIndent) {
 		value = BitFlag.set(value, 3, autoIndent);
 	}
 
 	/**
-	 * ¼öÁØº° º»¹®°úÀÇ °Å¸® Á¾·ù¸¦ ¹İÈ¯ÇÑ´Ù. (4 bit)
+	 * ìˆ˜ì¤€ë³„ ë³¸ë¬¸ê³¼ì˜ ê±°ë¦¬ ì¢…ë¥˜ë¥¼ ë°˜í™˜í•œë‹¤. (4 bit)
 	 * 
-	 * @return ¼öÁØº° º»¹®°úÀÇ °Å¸® Á¾·ù
+	 * @return ìˆ˜ì¤€ë³„ ë³¸ë¬¸ê³¼ì˜ ê±°ë¦¬ ì¢…ë¥˜
 	 */
 	public ValueType getValueTypeForDistanceFromBody() {
 		if (BitFlag.get(value, 4) == false) {
@@ -109,10 +109,10 @@ public class ParagraphHeadInfoProperty {
 	}
 
 	/**
-	 * ¼öÁØº° º»¹®°úÀÇ °Å¸® Á¾·ù¸¦ ¼³Á¤ÇÑ´Ù. (4 bit)
+	 * ìˆ˜ì¤€ë³„ ë³¸ë¬¸ê³¼ì˜ ê±°ë¦¬ ì¢…ë¥˜ë¥¼ ì„¤ì •í•œë‹¤. (4 bit)
 	 * 
 	 * @param valueType
-	 *            ¼öÁØº° º»¹®°úÀÇ °Å¸® Á¾·ù
+	 *            ìˆ˜ì¤€ë³„ ë³¸ë¬¸ê³¼ì˜ ê±°ë¦¬ ì¢…ë¥˜
 	 */
 	public void setValueTypeForDistanceFromBody(ValueType valueType) {
 		if (valueType == ValueType.RatioForLetter) {

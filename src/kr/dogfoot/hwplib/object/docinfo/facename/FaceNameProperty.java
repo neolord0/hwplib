@@ -1,95 +1,95 @@
-package kr.dogfoot.hwplib.object.docinfo.facename;
+ï»¿package kr.dogfoot.hwplib.object.docinfo.facename;
 
 import kr.dogfoot.hwplib.util.binary.BitFlag;
 
 /**
- * ±Û²Ã¿¡ ´ëÇÑ ¼Ó¼º °´Ã¼
+ * ê¸€ê¼´ì— ëŒ€í•œ ì†ì„± ê°ì²´
  * 
  * @author neolord
  */
 public class FaceNameProperty {
 	/**
-	 * ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª(unsigned 1 byte)
+	 * íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’(unsigned 1 byte)
 	 */
 	private short value;
 
 	/**
-	 * »ı¼ºÀÚ
+	 * ìƒì„±ì
 	 */
 	public FaceNameProperty() {
 	}
 
 	/**
-	 * ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ªÀ» ¹İÈ¯ÇÑ´Ù.
+	 * íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’ì„ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª
+	 * @return íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’
 	 */
 	public short getValue() {
 		return value;
 	}
 
 	/**
-	 * ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ªÀ» ¼³Á¤ÇÑ´Ù.
+	 * íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’ì„ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param value
-	 *            ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª
+	 *            íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’
 	 */
 	public void setValue(short value) {
 		this.value = value;
 	}
 
 	/**
-	 * ´ëÃ¼ ±Û²Ã Á¸Àç ¿©ºÎ¸¦ ¹İÈ¯ÇÑ´Ù. (0x80)
+	 * ëŒ€ì²´ ê¸€ê¼´ ì¡´ì¬ ì—¬ë¶€ë¥¼ ë°˜í™˜í•œë‹¤. (0x80)
 	 * 
-	 * @return ´ëÃ¼ ±Û²Ã Á¸Àç ¿©ºÎ
+	 * @return ëŒ€ì²´ ê¸€ê¼´ ì¡´ì¬ ì—¬ë¶€
 	 */
 	public boolean hasSubstituteFont() {
 		return BitFlag.get(value, 7);
 	}
 
 	/**
-	 * ´ëÃ¼ ±Û²Ã Á¸Àç ¿©ºÎÀ» ¼³Á¤ÇÑ´Ù. (0x80)
+	 * ëŒ€ì²´ ê¸€ê¼´ ì¡´ì¬ ì—¬ë¶€ì„ ì„¤ì •í•œë‹¤. (0x80)
 	 * 
 	 * @param hasSubstituteFontInfo
-	 *            ´ëÃ¼ ±Û²Ã Á¸Àç ¿©ºÎ
+	 *            ëŒ€ì²´ ê¸€ê¼´ ì¡´ì¬ ì—¬ë¶€
 	 */
 	public void setHasSubstituteFont(boolean hasSubstituteFontInfo) {
 		value = BitFlag.set(value, 7, hasSubstituteFontInfo);
 	}
 
 	/**
-	 * ±Û²Ã À¯Çü Á¤º¸ Á¸Àç ¿©ºÎ¸¦ ¹İÈ¯ÇÑ´Ù. (0x40)
+	 * ê¸€ê¼´ ìœ í˜• ì •ë³´ ì¡´ì¬ ì—¬ë¶€ë¥¼ ë°˜í™˜í•œë‹¤. (0x40)
 	 * 
-	 * @return ±Û²Ã À¯Çü Á¤º¸ Á¸Àç ¿©ºÎ
+	 * @return ê¸€ê¼´ ìœ í˜• ì •ë³´ ì¡´ì¬ ì—¬ë¶€
 	 */
 	public boolean hasFontInfo() {
 		return BitFlag.get(value, 6);
 	}
 
 	/**
-	 * ±Û²Ã À¯Çü Á¤º¸ Á¸Àç ¿©ºÎ¸¦ ¼³Á¤ÇÑ´Ù. (0x40)
+	 * ê¸€ê¼´ ìœ í˜• ì •ë³´ ì¡´ì¬ ì—¬ë¶€ë¥¼ ì„¤ì •í•œë‹¤. (0x40)
 	 * 
 	 * @param hasFontInfo
-	 *            ±Û²Ã À¯Çü Á¤º¸ Á¸Àç ¿©ºÎ
+	 *            ê¸€ê¼´ ìœ í˜• ì •ë³´ ì¡´ì¬ ì—¬ë¶€
 	 */
 	public void setHasFontInfo(boolean hasFontInfo) {
 		value = BitFlag.set(value, 6, hasFontInfo);
 	}
 
 	/**
-	 * ±âº» ±Û²Ã Á¸Àç ¿©ºÎ¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ê¸°ë³¸ ê¸€ê¼´ ì¡´ì¬ ì—¬ë¶€ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ±âº» ±Û²Ã Á¸Àç ¿©ºÎ
+	 * @return ê¸°ë³¸ ê¸€ê¼´ ì¡´ì¬ ì—¬ë¶€
 	 */
 	public boolean hasBaseFont() {
 		return BitFlag.get(value, 5);
 	}
 
 	/**
-	 * ±âº» ±Û²Ã Á¸Àç ¿©ºÎ¸¦ ¼³Á¤ÇÑ´Ù.
+	 * ê¸°ë³¸ ê¸€ê¼´ ì¡´ì¬ ì—¬ë¶€ë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param hasBaseFont
-	 *            ±âº» ±Û²Ã Á¸Àç ¿©ºÎ
+	 *            ê¸°ë³¸ ê¸€ê¼´ ì¡´ì¬ ì—¬ë¶€
 	 */
 	public void setHasBaseFont(boolean hasBaseFont) {
 		value = BitFlag.set(value, 5, hasBaseFont);

@@ -1,58 +1,58 @@
-package kr.dogfoot.hwplib.object.bodytext.control.ctrlheader.gso;
+ï»¿package kr.dogfoot.hwplib.object.bodytext.control.ctrlheader.gso;
 
 /**
- * ¿ÀºêÁ§Æ®ÀÇ ÁÂ/¿ì ¾î´À ÂÊ¿¡ ±ÛÀ» ¹èÄ¡ÇÒÁö ÁöÁ¤ÇÏ´Â ¿É¼Ç
+ * ì˜¤ë¸Œì íŠ¸ì˜ ì¢Œ/ìš° ì–´ëŠ ìª½ì— ê¸€ì„ ë°°ì¹˜í• ì§€ ì§€ì •í•˜ëŠ” ì˜µì…˜
  * 
  * @author neolord
  */
 public enum TextHorzArrange {
 	/**
-	 * ¾çÂÊ
+	 * ì–‘ìª½
 	 */
 	BothSides((byte) 0),
 	/**
-	 * ¿ŞÂÊ
+	 * ì™¼ìª½
 	 */
 	LeftOnly((byte) 1),
 	/**
-	 * ¿À¸¥ÂÊ
+	 * ì˜¤ë¥¸ìª½
 	 */
 	RightOnly((byte) 2),
 	/**
-	 * Å« ÂÊ
+	 * í° ìª½
 	 */
 	LargestOnly((byte) 3);
 
 	/**
-	 * ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª
+	 * íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’
 	 */
 	private byte value;
 
 	/**
-	 * »ı¼ºÀÚ
+	 * ìƒì„±ì
 	 * 
 	 * @param value
-	 *            ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª
+	 *            íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’
 	 */
 	private TextHorzArrange(byte value) {
 		this.value = value;
 	}
 
 	/**
-	 * ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ªÀ» ¹İÈ¯ÇÑ´Ù.
+	 * íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’ì„ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª
+	 * @return íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’
 	 */
 	public byte getValue() {
 		return value;
 	}
 
 	/**
-	 * ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª¿¡ ÇØ´çµÇ´Â enum °ªÀ» ¹İÈ¯ÇÑ´Ù.
+	 * íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’ì— í•´ë‹¹ë˜ëŠ” enum ê°’ì„ ë°˜í™˜í•œë‹¤.
 	 * 
 	 * @param value
-	 *            ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª
-	 * @return enum °ª
+	 *            íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’
+	 * @return enum ê°’
 	 */
 	public static TextHorzArrange valueOf(byte value) {
 		for (TextHorzArrange tha : values()) {

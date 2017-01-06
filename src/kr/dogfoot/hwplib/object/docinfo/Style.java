@@ -1,126 +1,126 @@
-package kr.dogfoot.hwplib.object.docinfo;
+ï»¿package kr.dogfoot.hwplib.object.docinfo;
 
 import kr.dogfoot.hwplib.object.docinfo.style.StyleProperty;
 
 /**
- * ½ºÅ¸ÀÏ¿¡ ´ëÇÑ  ·¹ÄÚµå
+ * ìŠ¤íƒ€ì¼ì— ëŒ€í•œ  ë ˆì½”ë“œ
  * 
  * @author neolord
  */
 public class Style {
 	/**
-	 * ÇÑ±Û ÀÌ¸§
+	 * í•œê¸€ ì´ë¦„
 	 */
 	private String hangulName;
 	/**
-	 * ¿µ¹® ÀÌ¸§
+	 * ì˜ë¬¸ ì´ë¦„
 	 */
 	private String englishName;
 	/**
-	 * ¼Ó¼º
+	 * ì†ì„±
 	 */
 	private StyleProperty proeprty;
 	/**
-	 * ´ÙÀ½ ½ºÅ¸ÀÏ ¾ÆÀÌµğ
+	 * ë‹¤ìŒ ìŠ¤íƒ€ì¼ ì•„ì´ë””
 	 */
 	private short nextStyleId;
 	/**
-	 * ¾ğ¾î ¾ÆÀÌµğ
+	 * ì–¸ì–´ ì•„ì´ë””
 	 */
 	private short languageId;
 	/**
-	 * ÂüÁ¶µÈ ¹®´Ü ¸ğ¾ç ¾ÆÀÌµğ
+	 * ì°¸ì¡°ëœ ë¬¸ë‹¨ ëª¨ì–‘ ì•„ì´ë””
 	 */
 	private int paraShapeId;
 	/**
-	 * ÂüÁ¶µÈ ±ÛÀÚ ¸ğ¾ç ¾ÆÀÌµğ
+	 * ì°¸ì¡°ëœ ê¸€ì ëª¨ì–‘ ì•„ì´ë””
 	 */
 	private int charShapeId;
 
 	/**
-	 * »ı¼ºÀÚ
+	 * ìƒì„±ì
 	 */
 	public Style() {
 		proeprty = new StyleProperty();
 	}
 
 	/**
-	 * ÇÑ±Û ÀÌ¸§À» ¹İÈ¯ÇÑ´Ù.
+	 * í•œê¸€ ì´ë¦„ì„ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ÇÑ±Û ÀÌ¸§
+	 * @return í•œê¸€ ì´ë¦„
 	 */
 	public String getHangulName() {
 		return hangulName;
 	}
 
 	/**
-	 * ÇÑ±Û ÀÌ¸§À» ¼³Á¤ÇÑ´Ù.
+	 * í•œê¸€ ì´ë¦„ì„ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param hangulName
-	 *            ÇÑ±Û ÀÌ¸§
+	 *            í•œê¸€ ì´ë¦„
 	 */
 	public void setHangulName(String hangulName) {
 		this.hangulName = hangulName;
 	}
 
 	/**
-	 * ¿µ¹® ÀÌ¸§À» ¹İÈ¯ÇÑ´Ù.
+	 * ì˜ë¬¸ ì´ë¦„ì„ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ¿µ¹® ÀÌ¸§
+	 * @return ì˜ë¬¸ ì´ë¦„
 	 */
 	public String getEnglishName() {
 		return englishName;
 	}
 
 	/**
-	 * ¿µ¹® ÀÌ¸§À» ¼³Á¤ÇÑ´Ù.
+	 * ì˜ë¬¸ ì´ë¦„ì„ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param englishName
-	 *            ¿µ¹® ÀÌ¸§
+	 *            ì˜ë¬¸ ì´ë¦„
 	 */
 	public void setEnglishName(String englishName) {
 		this.englishName = englishName;
 	}
 
 	/**
-	 * ½ºÅ¸ÀÏÀÇ ¼Ó¼º °´Ã¼¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ìŠ¤íƒ€ì¼ì˜ ì†ì„± ê°ì²´ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ½ºÅ¸ÀÏÀÇ ¼Ó¼º °´Ã¼
+	 * @return ìŠ¤íƒ€ì¼ì˜ ì†ì„± ê°ì²´
 	 */
 	public StyleProperty getProeprty() {
 		return proeprty;
 	}
 
 	/**
-	 * ´ÙÀ½ ½ºÅ¸ÀÏ ¾ÆÀÌµğ¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ë‹¤ìŒ ìŠ¤íƒ€ì¼ ì•„ì´ë””ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ´ÙÀ½ ½ºÅ¸ÀÏ ¾ÆÀÌµğ
+	 * @return ë‹¤ìŒ ìŠ¤íƒ€ì¼ ì•„ì´ë””
 	 */
 	public short getNextStyleId() {
 		return nextStyleId;
 	}
 
 	/**
-	 * ´ÙÀ½ ½ºÅ¸ÀÏ ¾ÆÀÌµğ¸¦ ¼³Á¤ÇÑ´Ù.
+	 * ë‹¤ìŒ ìŠ¤íƒ€ì¼ ì•„ì´ë””ë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param nextStyleId
-	 *            ´ÙÀ½ ½ºÅ¸ÀÏ ¾ÆÀÌµğ
+	 *            ë‹¤ìŒ ìŠ¤íƒ€ì¼ ì•„ì´ë””
 	 */
 	public void setNextStyleId(short nextStyleId) {
 		this.nextStyleId = nextStyleId;
 	}
 
 	/**
-	 * ¾ğ¾î ¾ÆÀÌµğ¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ì–¸ì–´ ì•„ì´ë””ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ¾ğ¾î ¾ÆÀÌµğ
+	 * @return ì–¸ì–´ ì•„ì´ë””
 	 */
 	public short getLanguageId() {
 		return languageId;
 	}
 
 	/**
-	 * ¾ğ¾î ¾ÆÀÌµğ¸¦ ¼³Á¤ÇÑ´Ù.
+	 * ì–¸ì–´ ì•„ì´ë””ë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param languageId
 	 */
@@ -129,38 +129,38 @@ public class Style {
 	}
 
 	/**
-	 * ÂüÁ¶µÈ ¹®´Ü ¸ğ¾ç ¾ÆÀÌµğ¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ì°¸ì¡°ëœ ë¬¸ë‹¨ ëª¨ì–‘ ì•„ì´ë””ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ÂüÁ¶µÈ ¹®´Ü ¸ğ¾ç ¾ÆÀÌµğ
+	 * @return ì°¸ì¡°ëœ ë¬¸ë‹¨ ëª¨ì–‘ ì•„ì´ë””
 	 */
 	public int getParaShapeId() {
 		return paraShapeId;
 	}
 
 	/**
-	 * ÂüÁ¶µÈ ¹®´Ü ¸ğ¾ç ¾ÆÀÌµğ¸¦ ¼³Á¤ÇÑ´Ù.
+	 * ì°¸ì¡°ëœ ë¬¸ë‹¨ ëª¨ì–‘ ì•„ì´ë””ë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param paraShapeId
-	 *            ÂüÁ¶µÈ ¹®´Ü ¸ğ¾ç ¾ÆÀÌµğ
+	 *            ì°¸ì¡°ëœ ë¬¸ë‹¨ ëª¨ì–‘ ì•„ì´ë””
 	 */
 	public void setParaShapeId(int paraShapeId) {
 		this.paraShapeId = paraShapeId;
 	}
 
 	/**
-	 * ÂüÁ¶µÈ ±ÛÀÚ ¸ğ¾ç ¾ÆÀÌµğ¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ì°¸ì¡°ëœ ê¸€ì ëª¨ì–‘ ì•„ì´ë””ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ÂüÁ¶µÈ ±ÛÀÚ ¸ğ¾ç ¾ÆÀÌµğ
+	 * @return ì°¸ì¡°ëœ ê¸€ì ëª¨ì–‘ ì•„ì´ë””
 	 */
 	public int getCharShapeId() {
 		return charShapeId;
 	}
 
 	/**
-	 * ÂüÁ¶µÈ ±ÛÀÚ ¸ğ¾ç ¾ÆÀÌµğ¸¦ ¼³Á¤ÇÑ´Ù.
+	 * ì°¸ì¡°ëœ ê¸€ì ëª¨ì–‘ ì•„ì´ë””ë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param charShapeId
-	 *            ÂüÁ¶µÈ ±ÛÀÚ ¸ğ¾ç ¾ÆÀÌµğ
+	 *            ì°¸ì¡°ëœ ê¸€ì ëª¨ì–‘ ì•„ì´ë””
 	 */
 	public void setCharShapeId(int charShapeId) {
 		this.charShapeId = charShapeId;

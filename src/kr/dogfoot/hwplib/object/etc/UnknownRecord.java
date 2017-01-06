@@ -1,71 +1,71 @@
-package kr.dogfoot.hwplib.object.etc;
+ï»¿package kr.dogfoot.hwplib.object.etc;
 
 import kr.dogfoot.hwplib.reader.RecordHeader;
 
 /**
- * ¾Ë·ÁÁöÁö ¾ÊÀº ·¹ÄÚµå
+ * ì•Œë ¤ì§€ì§€ ì•Šì€ ë ˆì½”ë“œ
  * 
  * @author neolord
  */
 public class UnknownRecord {
 	/**
-	 * ·¹ÄÚµå Çì´õ
+	 * ë ˆì½”ë“œ í—¤ë”
 	 */
 	private RecordHeader header;
 	/**
-	 * ·¹ÄÚµå µ¥ÀÌÅÍ
+	 * ë ˆì½”ë“œ ë°ì´í„°
 	 */
 	private byte[] body;
 
 	/**
-	 * »ı¼ºÀÚ
+	 * ìƒì„±ì
 	 */
 	public UnknownRecord() {
 	}
 
 	/**
-	 * »ı¼ºÀÚ
+	 * ìƒì„±ì
 	 * 
 	 * @param header
-	 *            ·¹ÄÚµå Çì´õ
+	 *            ë ˆì½”ë“œ í—¤ë”
 	 */
 	public UnknownRecord(RecordHeader header) {
 		this.header = header.copy();
 	}
 
 	/**
-	 * ·¹ÄÚµå Çì´õ¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ë ˆì½”ë“œ í—¤ë”ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ·¹ÄÚµå Çì´õ
+	 * @return ë ˆì½”ë“œ í—¤ë”
 	 */
 	public RecordHeader getHeader() {
 		return header;
 	}
 	
 	/**
-	 * ·¹ÄÚµå Çì´õ¸¦ ¼³Á¤ÇÑ´Ù.
+	 * ë ˆì½”ë“œ í—¤ë”ë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param header
-	 *            ·¹ÄÚµå Çì´õ
+	 *            ë ˆì½”ë“œ í—¤ë”
 	 */
 	public void setHeader(RecordHeader header) {
 		this.header = header.copy();
 	}
 
 	/**
-	 * ·¹ÄÚµå µ¥ÀÌÅÍ¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ë ˆì½”ë“œ ë°ì´í„°ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ·¹ÄÚµå µ¥ÀÌÅÍ
+	 * @return ë ˆì½”ë“œ ë°ì´í„°
 	 */
 	public byte[] getBody() {
 		return body;
 	}
 
 	/**
-	 * ·¹ÄÚµå µ¥ÀÌÅÍ¸¦ ¼³Á¤ÇÑ´Ù.
+	 * ë ˆì½”ë“œ ë°ì´í„°ë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param body
-	 *            ·¹ÄÚµå µ¥ÀÌÅÍ
+	 *            ë ˆì½”ë“œ ë°ì´í„°
 	 */
 	public void setBody(byte[] body) {
 		this.body = body;

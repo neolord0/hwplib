@@ -1,39 +1,39 @@
-package kr.dogfoot.hwplib.object.bodytext.control.gso;
+ï»¿package kr.dogfoot.hwplib.object.bodytext.control.gso;
 
 import kr.dogfoot.hwplib.object.bodytext.control.ctrlheader.CtrlID;
 
 /**
- * ±×¸®±â °³Ã¼ Å¸ÀÔ
+ * ê·¸ë¦¬ê¸° ê°œì²´ íƒ€ì…
  * 
  * @author neolord
  */
 public enum GsoControlType {
 	/**
-	 * ¼±
+	 * ì„ 
 	 */
 	Line(CtrlID.make('$', 'l', 'i', 'n')),
 	/**
-	 * »ç°¢Çü
+	 * ì‚¬ê°í˜•
 	 */
 	Rectangle(CtrlID.make('$', 'r', 'e', 'c')),
 	/**
-	 * Å¸¿ø
+	 * íƒ€ì›
 	 */
 	Ellipse(CtrlID.make('$', 'e', 'l', 'l')),
 	/**
-	 * È£
+	 * í˜¸
 	 */
 	Arc(CtrlID.make('$', 'a', 'r', 'c')),
 	/**
-	 * ´Ù°¢Çü
+	 * ë‹¤ê°í˜•
 	 */
 	Polygon(CtrlID.make('$', 'p', 'o', 'l')),
 	/**
-	 * °î¼±
+	 * ê³¡ì„ 
 	 */
 	Curve(CtrlID.make('$', 'c', 'u', 'r')),
 	/**
-	 * ±×¸²
+	 * ê·¸ë¦¼
 	 */
 	Picture(CtrlID.make('$', 'p', 'i', 'c')),
 	/**
@@ -41,40 +41,40 @@ public enum GsoControlType {
 	 */
 	OLE(CtrlID.make('$', 'o', 'l', 'e')),
 	/**
-	 * ¹­À½ °´Ã¼
+	 * ë¬¶ìŒ ê°ì²´
 	 */
 	Container(CtrlID.make('$', 'c', 'o', 'n'));
 
 	/**
-	 * ¾Æ¾Æµğ
+	 * ì•„ì•„ë””
 	 */
 	private long id;
 
 	/**
-	 * »ı¼ºÀÚ
+	 * ìƒì„±ì
 	 * 
 	 * @param id
-	 *            ¾ÆÀÌµğ
+	 *            ì•„ì´ë””
 	 */
 	private GsoControlType(long id) {
 		this.id = id;
 	}
 
 	/**
-	 * ¾ÆÀÌµğ¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ì•„ì´ë””ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ¾ÆÀÌµğ
+	 * @return ì•„ì´ë””
 	 */
 	public long getId() {
 		return id;
 	}
 
 	/**
-	 * ¾ÆÀÌµğ¿¡ ÇØ´çÇÏ´Â ±×¸®±â °³Ã¼ Å¸ÀÔ¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ì•„ì´ë””ì— í•´ë‹¹í•˜ëŠ” ê·¸ë¦¬ê¸° ê°œì²´ íƒ€ì…ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
 	 * @param id
-	 *            ¾ÆÀÌµğ
-	 * @return ±×¸®±â °³Ã¼ Å¸ÀÔ
+	 *            ì•„ì´ë””
+	 * @return ê·¸ë¦¬ê¸° ê°œì²´ íƒ€ì…
 	 */
 	public static GsoControlType idOf(long id) {
 		for (GsoControlType gct : values()) {

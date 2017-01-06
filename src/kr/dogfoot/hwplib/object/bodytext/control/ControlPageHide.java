@@ -1,24 +1,24 @@
-package kr.dogfoot.hwplib.object.bodytext.control;
+ï»¿package kr.dogfoot.hwplib.object.bodytext.control;
 
 import kr.dogfoot.hwplib.object.bodytext.control.ctrlheader.CtrlHeaderPageHide;
 
 /**
- * °¨Ãß±â ÄÁÆ®·Ñ
+ * ê°ì¶”ê¸° ì»¨íŠ¸ë¡¤
  * 
  * @author neolord
  */
 public class ControlPageHide extends Control {
 	/**
-	 * »ı¼ºÀÚ
+	 * ìƒì„±ì
 	 */
 	public ControlPageHide() {
 		super(new CtrlHeaderPageHide());
 	}
 
 	/**
-	 * °¨Ãß±â ÄÁÆ®·Ñ ¿ë ÄÁÆ®·Ñ Çì´õ¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ê°ì¶”ê¸° ì»¨íŠ¸ë¡¤ ìš© ì»¨íŠ¸ë¡¤ í—¤ë”ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return °¨Ãß±â ÄÁÆ®·Ñ ¿ë ÄÁÆ®·Ñ Çì´õ
+	 * @return ê°ì¶”ê¸° ì»¨íŠ¸ë¡¤ ìš© ì»¨íŠ¸ë¡¤ í—¤ë”
 	 */
 	public CtrlHeaderPageHide getHeader() {
 		return (CtrlHeaderPageHide) header;

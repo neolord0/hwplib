@@ -1,4 +1,4 @@
-package kr.dogfoot.hwplib.reader.bodytext.paragraph.control.secd;
+ï»¿package kr.dogfoot.hwplib.reader.bodytext.paragraph.control.secd;
 
 import kr.dogfoot.hwplib.object.bodytext.control.sectiondefine.BatangPageInfo;
 import kr.dogfoot.hwplib.object.bodytext.control.sectiondefine.ListHeaderForBatangPage;
@@ -7,18 +7,18 @@ import kr.dogfoot.hwplib.reader.bodytext.ForParagraphList;
 import kr.dogfoot.hwplib.util.compoundFile.StreamReader;
 
 /**
- * ¹ÙÅÁÂÊ Á¤º¸À» ÀĞ±â À§ÇÑ °´Ã¼
+ * ë°”íƒ•ìª½ ì •ë³´ì„ ì½ê¸° ìœ„í•œ ê°ì²´
  * 
  * @author neolord
  */
 public class ForBatangPageInfo {
 	/**
-	 * ¹ÙÅÁÂÊ Á¤º¸¸¦ ÀĞ´Â´Ù.
+	 * ë°”íƒ•ìª½ ì •ë³´ë¥¼ ì½ëŠ”ë‹¤.
 	 * 
 	 * @param bpi
-	 *            ¹ÙÅÁÂÊ Á¤º¸
+	 *            ë°”íƒ•ìª½ ì •ë³´
 	 * @param sr
-	 *            ½ºÆ®¸² ¸®´õ
+	 *            ìŠ¤íŠ¸ë¦¼ ë¦¬ë”
 	 * @throws Exception
 	 */
 	public static void read(BatangPageInfo bpi, StreamReader sr)
@@ -28,12 +28,12 @@ public class ForBatangPageInfo {
 	}
 
 	/**
-	 * ¹ÙÅÁÂÊÀÇ ¹®´Ü ¸®½ºÆ® Çì´õ ·¹ÄÚµå¸¦ ÀĞ´Â´Ù.
+	 * ë°”íƒ•ìª½ì˜ ë¬¸ë‹¨ ë¦¬ìŠ¤íŠ¸ í—¤ë” ë ˆì½”ë“œë¥¼ ì½ëŠ”ë‹¤.
 	 * 
 	 * @param lh
-	 *            ¹ÙÅÁÂÊÀÇ ¹®´Ü ¸®½ºÆ® Çì´õ ·¹ÄÚµå
+	 *            ë°”íƒ•ìª½ì˜ ë¬¸ë‹¨ ë¦¬ìŠ¤íŠ¸ í—¤ë” ë ˆì½”ë“œ
 	 * @param sr
-	 *            ½ºÆ®¸² ¸®´õ
+	 *            ìŠ¤íŠ¸ë¦¼ ë¦¬ë”
 	 * @throws Exception
 	 */
 	private static void listHeader(ListHeaderForBatangPage lh, StreamReader sr)
@@ -46,12 +46,12 @@ public class ForBatangPageInfo {
 	}
 
 	/**
-	 * ¹®´Ü ¸®½ºÆ®¸¦ ÀĞ´Â´Ù.
+	 * ë¬¸ë‹¨ ë¦¬ìŠ¤íŠ¸ë¥¼ ì½ëŠ”ë‹¤.
 	 * 
 	 * @param paragraphList
-	 *            ¹®´Ü ¸®½ºÆ®
+	 *            ë¬¸ë‹¨ ë¦¬ìŠ¤íŠ¸
 	 * @param sr
-	 *            ½ºÆ®¸² ¸®´õ
+	 *            ìŠ¤íŠ¸ë¦¼ ë¦¬ë”
 	 * @throws Exception
 	 */
 	private static void paragraphList(ParagraphList paragraphList,

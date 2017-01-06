@@ -1,4 +1,4 @@
-package kr.dogfoot.hwplib.util.compoundFile;
+ï»¿package kr.dogfoot.hwplib.util.compoundFile;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -13,27 +13,27 @@ import org.apache.poi.poifs.filesystem.Entry;
 import org.apache.poi.poifs.filesystem.POIFSFileSystem;
 
 /**
- * MS Compound FileÀ» ÀĞ±â À§ÇÑ °´Ã¼. Apache POI ¶óÀÌºê·¯¸®¸¦ »ç¿ëÇÔ
+ * MS Compound Fileì„ ì½ê¸° ìœ„í•œ ê°ì²´. Apache POI ë¼ì´ë¸ŒëŸ¬ë¦¬ë¥¼ ì‚¬ìš©í•¨
  * 
  * @author neolord
  */
 public class CompoundFileReader {
 	/**
-	 * ÆÄÀÏ ½Ã½ºÅÛ(Apache POI ¶óÀÌºê·¯¸®)
+	 * íŒŒì¼ ì‹œìŠ¤í…œ(Apache POI ë¼ì´ë¸ŒëŸ¬ë¦¬)
 	 */
 	private POIFSFileSystem fs;
 	/**
-	 * ÇöÀç ½ºÅä¸®Áö(µğ·ºÅä¸®)
+	 * í˜„ì¬ ìŠ¤í† ë¦¬ì§€(ë””ë ‰í† ë¦¬)
 	 */
 	private DirectoryEntry currentStorage;
 
 	/**
-	 * »ı¼ºÀÚ. MS Compound ÆÄÀÏÀ» ¿­°í, ÇöÀç ½ºÅä¸®Áö¸¦ ÆÄÀÏÀÇ root ½ºÅä¸®Áö·Î ¼³Á¤ÇÑ´Ù.
+	 * ìƒì„±ì. MS Compound íŒŒì¼ì„ ì—´ê³ , í˜„ì¬ ìŠ¤í† ë¦¬ì§€ë¥¼ íŒŒì¼ì˜ root ìŠ¤í† ë¦¬ì§€ë¡œ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param file
-	 *            ÀĞÀ» ÆÄÀÏ
+	 *            ì½ì„ íŒŒì¼
 	 * @throws IOException
-	 *             ÆÄÀÏ ¿¡·¯
+	 *             íŒŒì¼ ì—ëŸ¬
 	 */
 	public CompoundFileReader(File file) throws IOException {
 		fs = new POIFSFileSystem(file);
@@ -41,20 +41,20 @@ public class CompoundFileReader {
 	}
 
 	/**
-	 * ÇöÀç ½ºÅä¸®Áö(µğ·ºÅä¸®)¿¡ Æ÷ÇÔµÈ Ç×¸ñ(½ºÅä¸®Áö¿Í ½ºÆ®¸²)µéÀÇ ÀÌ¸§À» ¹İÈ¯ÇÑ´Ù.
+	 * í˜„ì¬ ìŠ¤í† ë¦¬ì§€(ë””ë ‰í† ë¦¬)ì— í¬í•¨ëœ í•­ëª©(ìŠ¤í† ë¦¬ì§€ì™€ ìŠ¤íŠ¸ë¦¼)ë“¤ì˜ ì´ë¦„ì„ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ÇöÁ¦ ½ºÅä¸®Áö(µğ·ºÅä¸®)¿¡ Æ÷ÇÔµÈ Ç×¸ñ(½ºÅä¸®Áö¿Í ½ºÆ®¸²)µéÀÇ ÀÌ¸§ÀÇ ¸®½ºÆ®
+	 * @return í˜„ì œ ìŠ¤í† ë¦¬ì§€(ë””ë ‰í† ë¦¬)ì— í¬í•¨ëœ í•­ëª©(ìŠ¤í† ë¦¬ì§€ì™€ ìŠ¤íŠ¸ë¦¼)ë“¤ì˜ ì´ë¦„ì˜ ë¦¬ìŠ¤íŠ¸
 	 */
 	public Set<String> listChildNames() {
 		return currentStorage.getEntryNames();
 	}
 
 	/**
-	 * ÇöÀç ½ºÅä¸®Áö(µğ·ºÅä¸®)¿¡ ÀÌ¸§ÀÌ nameÀÎ ½ºÅä¸®Áö(µğ·ºÅä¸®)°¡ ÀÖ´ÂÁö ¿©ºÎ¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * í˜„ì¬ ìŠ¤í† ë¦¬ì§€(ë””ë ‰í† ë¦¬)ì— ì´ë¦„ì´ nameì¸ ìŠ¤í† ë¦¬ì§€(ë””ë ‰í† ë¦¬)ê°€ ìˆëŠ”ì§€ ì—¬ë¶€ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
 	 * @param name
-	 *            Ã£´Â ½ºÅä¸®Áö ÀÌ¸§
-	 * @return ÇöÀç ½ºÅä¸®Áö(µğ·ºÅä¸®)¿¡ ÀÌ¸§ÀÌ nameÀÎ ½ºÅä¸®Áö°¡ ÀÖ´ÂÁö ¿©ºÎ
+	 *            ì°¾ëŠ” ìŠ¤í† ë¦¬ì§€ ì´ë¦„
+	 * @return í˜„ì¬ ìŠ¤í† ë¦¬ì§€(ë””ë ‰í† ë¦¬)ì— ì´ë¦„ì´ nameì¸ ìŠ¤í† ë¦¬ì§€ê°€ ìˆëŠ”ì§€ ì—¬ë¶€
 	 * @throws FileNotFoundException
 	 */
 	public boolean isChildStorage(String name) throws FileNotFoundException {
@@ -63,11 +63,11 @@ public class CompoundFileReader {
 	}
 
 	/**
-	 * ÇöÀç ½ºÅä¸®Áö(µğ·ºÅä¸®)¿¡ ÀÌ¸§ÀÌ nameÀÎ ½ºÆ®¸²(ÆÄÀÏ)ÀÌ ÀÖ´ÂÁö ¿©ºÎ¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * í˜„ì¬ ìŠ¤í† ë¦¬ì§€(ë””ë ‰í† ë¦¬)ì— ì´ë¦„ì´ nameì¸ ìŠ¤íŠ¸ë¦¼(íŒŒì¼)ì´ ìˆëŠ”ì§€ ì—¬ë¶€ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
 	 * @param name
-	 *            Ã£´Â ½ºÆ®¸² ÀÌ¸§
-	 * @return ÇöÀç ½ºÅä¸®Áö(µğ·ºÅä¸®)¿¡ ÀÌ¸§ÀÌ nameÀÎ ½ºÆ®¸²(ÆÄÀÏ)ÀÌ ÀÖ´ÂÁö ¿©ºÎ
+	 *            ì°¾ëŠ” ìŠ¤íŠ¸ë¦¼ ì´ë¦„
+	 * @return í˜„ì¬ ìŠ¤í† ë¦¬ì§€(ë””ë ‰í† ë¦¬)ì— ì´ë¦„ì´ nameì¸ ìŠ¤íŠ¸ë¦¼(íŒŒì¼)ì´ ìˆëŠ”ì§€ ì—¬ë¶€
 	 * @throws FileNotFoundException
 	 */
 	public boolean isChildStream(String name) throws FileNotFoundException {
@@ -76,10 +76,10 @@ public class CompoundFileReader {
 	}
 
 	/**
-	 * ÀÌ¸§ÀÌ nameÀÎ ½ºÅä¸®Áö(µğ·ºÅä¸®)·Î ÀÌµ¿ÇÑ´Ù.
+	 * ì´ë¦„ì´ nameì¸ ìŠ¤í† ë¦¬ì§€(ë””ë ‰í† ë¦¬)ë¡œ ì´ë™í•œë‹¤.
 	 * 
 	 * @param name
-	 *            ÀÌµ¿ÇÒ ½ºÅä¸®Áö ÀÌ¸§
+	 *            ì´ë™í•  ìŠ¤í† ë¦¬ì§€ ì´ë¦„
 	 * @throws Exception
 	 */
 	public void moveChildStorage(String name) throws Exception {
@@ -92,7 +92,7 @@ public class CompoundFileReader {
 	}
 
 	/**
-	 * ºÎ¸ğ ½ºÅä¸®Áö(µğ·ºÅä¸®)·Î ÀÌµ¿ÇÑ´Ù.
+	 * ë¶€ëª¨ ìŠ¤í† ë¦¬ì§€(ë””ë ‰í† ë¦¬)ë¡œ ì´ë™í•œë‹¤.
 	 */
 	public void moveParentStorage() {
 		if (currentStorage != fs.getRoot()) {
@@ -101,15 +101,15 @@ public class CompoundFileReader {
 	}
 
 	/**
-	 * ÀÌ¸§ÀÌ nameÀÎ ½ºÆ®¸²À» ÀĞÀ» ¼ö ÀÖ´Â ½ºÆ®¸² ¸®´õ °´Ã¼¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ì´ë¦„ì´ nameì¸ ìŠ¤íŠ¸ë¦¼ì„ ì½ì„ ìˆ˜ ìˆëŠ” ìŠ¤íŠ¸ë¦¼ ë¦¬ë” ê°ì²´ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
 	 * @param name
-	 *            Ã£´Â ½ºÆ®¸² ÀÌ¸§
+	 *            ì°¾ëŠ” ìŠ¤íŠ¸ë¦¼ ì´ë¦„
 	 * @param compress
-	 *            ¾ĞÃà ¿©ºÎ(ÇÑ±Û¿¡¼­ Áö¿ø)
+	 *            ì••ì¶• ì—¬ë¶€(í•œê¸€ì—ì„œ ì§€ì›)
 	 * @param fileVersion
-	 *            ÆÄÀÏ ¹öÀü
-	 * @return ÀÌ¸§ÀÌ nameÀÎ ½ºÆ®¸²À» ÀĞÀ» ¼ö ÀÖ´Â ½ºÆ®¸² ¸®´õ °´Ã¼
+	 *            íŒŒì¼ ë²„ì „
+	 * @return ì´ë¦„ì´ nameì¸ ìŠ¤íŠ¸ë¦¼ì„ ì½ì„ ìˆ˜ ìˆëŠ” ìŠ¤íŠ¸ë¦¼ ë¦¬ë” ê°ì²´
 	 * @throws Exception
 	 */
 	public StreamReader getChildStreamReader(String name, boolean compress,
@@ -128,7 +128,7 @@ public class CompoundFileReader {
 	}
 
 	/**
-	 * ÇöÀç ¿­·ÁÁø MS Compound ÆÄÀÏÀ» ´İ´Â´Ù.
+	 * í˜„ì¬ ì—´ë ¤ì§„ MS Compound íŒŒì¼ì„ ë‹«ëŠ”ë‹¤.
 	 * 
 	 * @throws IOException
 	 */

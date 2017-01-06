@@ -1,21 +1,21 @@
-package kr.dogfoot.hwplib.object.docinfo.borderfill.fillinfo;
+ï»¿package kr.dogfoot.hwplib.object.docinfo.borderfill.fillinfo;
 
 /**
- * ±×¸² È¿°ú
+ * ê·¸ë¦¼ íš¨ê³¼
  * 
  * @author neolord
  */
 public enum PictureEffect {
 	/**
-	 * ½ÇÁ¦ÀÌ¹ÌÁö(REAL_PIC)
+	 * ì‹¤ì œì´ë¯¸ì§€(REAL_PIC)
 	 */
 	RealPicture((byte) 0),
 	/**
-	 * È¸»öÅæ (GRAY_SCALE)
+	 * íšŒìƒ‰í†¤ (GRAY_SCALE)
 	 */
 	GrayScale((byte) 1),
 	/**
-	 * Èæ¹é (BLACK_WHITE)
+	 * í‘ë°± (BLACK_WHITE)
 	 */
 	BlackWhite((byte) 2),
 	/**
@@ -24,35 +24,35 @@ public enum PictureEffect {
 	Pattern8x8((byte) 3);
 
 	/**
-	 * ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª
+	 * íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’
 	 */
 	private byte value;
 
 	/**
-	 * »ı¼ºÀÚ
+	 * ìƒì„±ì
 	 * 
 	 * @param value
-	 *            ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª
+	 *            íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’
 	 */
 	private PictureEffect(byte value) {
 		this.value = value;
 	}
 
 	/**
-	 * ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ªÀ» ¹İÈ¯ÇÑ´Ù.
+	 * íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’ì„ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª
+	 * @return íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’
 	 */
 	public byte getValue() {
 		return value;
 	}
 
 	/**
-	 * ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª¿¡ ÇØ´çµÇ´Â enum °ªÀ» ¹İÈ¯ÇÑ´Ù.
+	 * íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’ì— í•´ë‹¹ë˜ëŠ” enum ê°’ì„ ë°˜í™˜í•œë‹¤.
 	 * 
 	 * @param value
-	 *            ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª
-	 * @return enum °ª
+	 *            íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’
+	 * @return enum ê°’
 	 */
 	public static PictureEffect valueOf(byte value) {
 		for (PictureEffect pe : values()) {

@@ -1,54 +1,54 @@
-package kr.dogfoot.hwplib.object.docinfo.bindata;
+ï»¿package kr.dogfoot.hwplib.object.docinfo.bindata;
 
 /**
- * ¹ÙÀÌ³Ê¸® µ¥ÀÌÅÍÀÇ ¾ĞÃà ¹æ¹ı
+ * ë°”ì´ë„ˆë¦¬ ë°ì´í„°ì˜ ì••ì¶• ë°©ë²•
  * 
  * @author neolord
  */
 public enum BinDataCompress {
 	/**
-	 * ½ºÅä¸®ÁöÀÇ µğÆúÆ® ¸ğµå µû¶ó°¨
+	 * ìŠ¤í† ë¦¬ì§€ì˜ ë””í´íŠ¸ ëª¨ë“œ ë”°ë¼ê°
 	 */
 	ByStroageDefault((byte) 0),
 	/**
-	 * ¹«Á¶°Ç ¾ĞÃà
+	 * ë¬´ì¡°ê±´ ì••ì¶•
 	 */
 	Compress((byte) 1),
 	/**
-	 * ¹«Á¶°Ç ¾ĞÃàÇÏÁö ¾ÊÀ½
+	 * ë¬´ì¡°ê±´ ì••ì¶•í•˜ì§€ ì•ŠìŒ
 	 */
 	NoCompress((byte) 2);
 
 	/**
-	 * ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª
+	 * íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’
 	 */
 	private byte value;
 
 	/**
-	 * »ı¼ºÀÚ
+	 * ìƒì„±ì
 	 * 
 	 * @param value
-	 *            ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª
+	 *            íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’
 	 */
 	private BinDataCompress(byte value) {
 		this.value = value;
 	}
 
 	/**
-	 * ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ªÀ» ¹İÈ¯ÇÑ´Ù.
+	 * íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’ì„ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª
+	 * @return íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’
 	 */
 	public byte getValue() {
 		return value;
 	}
 
 	/**
-	 * ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª¿¡ ÇØ´çµÇ´Â enum °ªÀ» ¹İÈ¯ÇÑ´Ù.
+	 * íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’ì— í•´ë‹¹ë˜ëŠ” enum ê°’ì„ ë°˜í™˜í•œë‹¤.
 	 * 
 	 * @param value
-	 *            ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª
-	 * @return enum °ª
+	 *            íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’
+	 * @return enum ê°’
 	 */
 	public static BinDataCompress valueOf(byte value) {
 		for (BinDataCompress bdc : values()) {

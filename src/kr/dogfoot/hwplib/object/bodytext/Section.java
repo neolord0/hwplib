@@ -1,4 +1,4 @@
-package kr.dogfoot.hwplib.object.bodytext;
+ï»¿package kr.dogfoot.hwplib.object.bodytext;
 
 import java.util.ArrayList;
 
@@ -6,23 +6,23 @@ import kr.dogfoot.hwplib.object.bodytext.control.sectiondefine.BatangPageInfo;
 import kr.dogfoot.hwplib.object.bodytext.paragraph.Paragraph;
 
 /**
- * ¹®´Ü ±¸¿ª(¼½¼Ç)¸¦ ³ªÅ¸³»´Â °´Ã¼. HWP ÆÄÀÏ³»ÀÇ "BodyText" storage ¾È¿¡ "Section[¹øÈ£]" stream¿¡
- * ÀúÀåµÈ´Ù.
+ * ë¬¸ë‹¨ êµ¬ì—­(ì„¹ì…˜)ë¥¼ ë‚˜íƒ€ë‚´ëŠ” ê°ì²´. HWP íŒŒì¼ë‚´ì˜ "BodyText" storage ì•ˆì— "Section[ë²ˆí˜¸]" streamì—
+ * ì €ì¥ëœë‹¤.
  * 
  * @author neolord
  */
 public class Section implements ParagraphListInterface {
 	/**
-	 * ¹®´Ü ¸®½ºÆ®
+	 * ë¬¸ë‹¨ ë¦¬ìŠ¤íŠ¸
 	 */
 	private ArrayList<Paragraph> paragraphList;
 	/**
-	 * ¸¶Áö¸· ¹ÙÅÁÂÊ Á¤º¸
+	 * ë§ˆì§€ë§‰ ë°”íƒ•ìª½ ì •ë³´
 	 */
 	private BatangPageInfo lastBatangPageInfo;
 
 	/**
-	 * »ı¼ºÀÚ
+	 * ìƒì„±ì
 	 */
 	public Section() {
 		paragraphList = new ArrayList<Paragraph>();
@@ -30,9 +30,9 @@ public class Section implements ParagraphListInterface {
 	}
 
 	/**
-	 * »õ·Î¿î ¹®´Ü¸¦ »ı¼ºÇÏ°í ¸®½ºÆ®¿¡ Ãß°¡ÇÑ´Ù.
+	 * ìƒˆë¡œìš´ ë¬¸ë‹¨ë¥¼ ìƒì„±í•˜ê³  ë¦¬ìŠ¤íŠ¸ì— ì¶”ê°€í•œë‹¤.
 	 * 
-	 * @return »õ·Î »ı¼ºµÈ ¹®´Ü
+	 * @return ìƒˆë¡œ ìƒì„±ëœ ë¬¸ë‹¨
 	 */
 	@Override
 	public Paragraph addNewParagraph() {
@@ -42,9 +42,9 @@ public class Section implements ParagraphListInterface {
 	}
 
 	/**
-	 * ¹®´Ü ¸®½ºÆ®¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ë¬¸ë‹¨ ë¦¬ìŠ¤íŠ¸ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ¹®´Ü ¸®½ºÆ®
+	 * @return ë¬¸ë‹¨ ë¦¬ìŠ¤íŠ¸
 	 */
 	@Override
 	public ArrayList<Paragraph> getParagraphList() {
@@ -52,9 +52,9 @@ public class Section implements ParagraphListInterface {
 	}
 
 	/**
-	 * ¸¶Áö¸· ¹ÙÅÁÂÊ Á¤º¸¸¦ ¸®ÅÏÇÑ´Ù.
+	 * ë§ˆì§€ë§‰ ë°”íƒ•ìª½ ì •ë³´ë¥¼ ë¦¬í„´í•œë‹¤.
 	 * 
-	 * @return ¸¶Áö¸· ¹ÙÅÁÂÊ Á¤º¸
+	 * @return ë§ˆì§€ë§‰ ë°”íƒ•ìª½ ì •ë³´
 	 */
 	public BatangPageInfo getLastBatangPageInfo() {
 		return lastBatangPageInfo;

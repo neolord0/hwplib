@@ -1,70 +1,70 @@
-package kr.dogfoot.hwplib.object.docinfo.borderfill.fillinfo;
+ï»¿package kr.dogfoot.hwplib.object.docinfo.borderfill.fillinfo;
 
 /**
- * Ã¤¿ì±â ¹«´Ì Á¾·ù
+ * ì±„ìš°ê¸° ë¬´ëŠ¬ ì¢…ë¥˜
  * 
  * @author neolord
  */
 public enum PatternType {
 	/**
-	 * ´Ü»ö (solid)
+	 * ë‹¨ìƒ‰ (solid)
 	 */
 	None((byte) -1),
 	/**
-	 * ¼öÆò¼± (- - - -)
+	 * ìˆ˜í‰ì„  (- - - -)
 	 */
 	HorizontalLine((byte) 0),
 	/**
-	 * ¼öÁ÷¼± (|||||)
+	 * ìˆ˜ì§ì„  (|||||)
 	 */
 	VerticalLine((byte) 1),
 	/**
-	 * ÇÏÇâ ´ë°¢¼± (\\\\\)
+	 * í•˜í–¥ ëŒ€ê°ì„  (\\\\\)
 	 */
 	BackDiagonalLine((byte) 2),
 	/**
-	 * »óÇâ ´ë°¢¼± (/////)
+	 * ìƒí–¥ ëŒ€ê°ì„  (/////)
 	 */
 	FrontDiagonalLine((byte) 3),
 	/**
-	 * ½ÉÀÚ¼± (+++++)
+	 * ì‹¬ìì„  (+++++)
 	 */
 	CrossLine((byte) 4),
 	/**
-	 * Ã¼Å© (xxxxx)
+	 * ì²´í¬ (xxxxx)
 	 */
 	CrossDiagonalLine((byte) 5);
 
 	/**
-	 * ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª
+	 * íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’
 	 */
 	private byte value;
 
 	/**
-	 * »ı¼ºÀÚ
+	 * ìƒì„±ì
 	 * 
 	 * @param value
-	 *            ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª
+	 *            íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’
 	 */
 	private PatternType(byte value) {
 		this.value = value;
 	}
 
 	/**
-	 * ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ªÀ» ¹İÈ¯ÇÑ´Ù.
+	 * íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’ì„ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª
+	 * @return íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’
 	 */
 	public byte getValue() {
 		return value;
 	}
 
 	/**
-	 * ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª¿¡ ÇØ´çµÇ´Â enum °ªÀ» ¹İÈ¯ÇÑ´Ù.
+	 * íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’ì— í•´ë‹¹ë˜ëŠ” enum ê°’ì„ ë°˜í™˜í•œë‹¤.
 	 * 
 	 * @param value
-	 *            ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª
-	 * @return enum °ª
+	 *            íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’
+	 * @return enum ê°’
 	 */
 	public static PatternType valueOf(byte value) {
 		for (PatternType pt : values()) {

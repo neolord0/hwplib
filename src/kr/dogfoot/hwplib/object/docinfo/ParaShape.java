@@ -1,86 +1,86 @@
-package kr.dogfoot.hwplib.object.docinfo;
+ï»¿package kr.dogfoot.hwplib.object.docinfo;
 
 import kr.dogfoot.hwplib.object.docinfo.parashape.ParaShapeProperty1;
 import kr.dogfoot.hwplib.object.docinfo.parashape.ParaShapeProperty2;
 import kr.dogfoot.hwplib.object.docinfo.parashape.ParaShapeProperty3;
 
 /**
- * ¹®´Ü ¸ğ¾ç¿¡ ´ëÇÑ  ·¹ÄÚµå
+ * ë¬¸ë‹¨ ëª¨ì–‘ì— ëŒ€í•œ  ë ˆì½”ë“œ
  * 
  * @author neolord
  */
 public class ParaShape {
 	/**
-	 * ¼Ó¼º 1
+	 * ì†ì„± 1
 	 */
 	private ParaShapeProperty1 property1;
 	/**
-	 * ¿ŞÂÊ ¿©¹é
+	 * ì™¼ìª½ ì—¬ë°±
 	 */
 	private int leftMargin;
 	/**
-	 * ¿À¸¥ÂÊ ¿©¹é
+	 * ì˜¤ë¥¸ìª½ ì—¬ë°±
 	 */
 	private int rightMargin;
 	/**
-	 * µé¿© ¾²±â/³»¾î ¾²±â
+	 * ë“¤ì—¬ ì“°ê¸°/ë‚´ì–´ ì“°ê¸°
 	 */
 	private int indent;
 	/**
-	 * ¹®´Ü À§ °£°İ
+	 * ë¬¸ë‹¨ ìœ„ ê°„ê²©
 	 */
 	private int topParaSpace;
 	/**
-	 * ¹®´Ü ¾Æ·¡ °£°İ
+	 * ë¬¸ë‹¨ ì•„ë˜ ê°„ê²©
 	 */
 	private int bottomParaSpace;
 	/**
-	 * ÁÙ °£°İ. ÇÑ±Û 2007 ÀÌÇÏ ¹öÀü(5.0.2.5 ¹öÀü ¹Ì¸¸)¿¡¼­ »ç¿ë
+	 * ì¤„ ê°„ê²©. í•œê¸€ 2007 ì´í•˜ ë²„ì „(5.0.2.5 ë²„ì „ ë¯¸ë§Œ)ì—ì„œ ì‚¬ìš©
 	 */
 	private int lineSpace;
 	/**
-	 * ÂüÁ¶µÈ ÅÇ Á¤ÀÇ ¾ÆÀÌµğ
+	 * ì°¸ì¡°ëœ íƒ­ ì •ì˜ ì•„ì´ë””
 	 */
 	private int tabDefId;
 	/**
-	 * ÂüÁ¶µÈ ¹®´Ü ¹øÈ£ ¾ÆÀÌµğ ³ª ÂüÁ¶µÈ ±Û¸Ó¸®Ç¥ ¾ÆÀÌµğ
+	 * ì°¸ì¡°ëœ ë¬¸ë‹¨ ë²ˆí˜¸ ì•„ì´ë”” ë‚˜ ì°¸ì¡°ëœ ê¸€ë¨¸ë¦¬í‘œ ì•„ì´ë””
 	 */
 	private int paraHeadId;
 	/**
-	 * ÂüÁ¶µÈ Å×µÎ¸®/¹è°æ ¸ğ¾ç ¾ÆÀÌµğ
+	 * ì°¸ì¡°ëœ í…Œë‘ë¦¬/ë°°ê²½ ëª¨ì–‘ ì•„ì´ë””
 	 */
 	private int borderFillId;
 	/**
-	 * ¹®´Ü Å×µÎ¸® ¿ŞÂÊ °£°İ
+	 * ë¬¸ë‹¨ í…Œë‘ë¦¬ ì™¼ìª½ ê°„ê²©
 	 */
 	private short leftBorderSpace;
 	/**
-	 * ¹®´Ü Å×µÎ¸® ¿À¸¥ÂÊ °£°İ
+	 * ë¬¸ë‹¨ í…Œë‘ë¦¬ ì˜¤ë¥¸ìª½ ê°„ê²©
 	 */
 	private short rightBorderSpace;
 	/**
-	 * ¹®´Ü Å×µÎ¸® À§ÂÊ °£°İ
+	 * ë¬¸ë‹¨ í…Œë‘ë¦¬ ìœ„ìª½ ê°„ê²©
 	 */
 	private short topBorderSpace;
 	/**
-	 * ¹®´Ü Å×µÎ¸® ¾Æ·¡ÂÊ °£°İ
+	 * ë¬¸ë‹¨ í…Œë‘ë¦¬ ì•„ë˜ìª½ ê°„ê²©
 	 */
 	private short bottomBorderSpace;
 	/**
-	 * ¼Ó¼º 2 (5.0.1.7 ¹öÀü ÀÌ»ó)
+	 * ì†ì„± 2 (5.0.1.7 ë²„ì „ ì´ìƒ)
 	 */
 	private ParaShapeProperty2 property2;
 	/**
-	 * ¼Ó¼º 3 (5.0.2.5 ¹öÀü ÀÌ»ó)
+	 * ì†ì„± 3 (5.0.2.5 ë²„ì „ ì´ìƒ)
 	 */
 	private ParaShapeProperty3 property3;
 	/**
-	 * ÁÙ °£°İ(5.0.2.5 ¹öÀü ÀÌ»ó)
+	 * ì¤„ ê°„ê²©(5.0.2.5 ë²„ì „ ì´ìƒ)
 	 */
 	private long lineSpace2;
 
 	/**
-	 * »ı¼ºÀÚ
+	 * ìƒì„±ì
 	 */
 	public ParaShape() {
 		property1 = new ParaShapeProperty1();
@@ -89,293 +89,293 @@ public class ParaShape {
 	}
 
 	/**
-	 * ¹®´Ü ¸ğ¾çÀÇ ¼Ó¼º1 °´Ã¼¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ë¬¸ë‹¨ ëª¨ì–‘ì˜ ì†ì„±1 ê°ì²´ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ¹®´Ü ¸ğ¾çÀÇ ¼Ó¼º1 °´Ã¼
+	 * @return ë¬¸ë‹¨ ëª¨ì–‘ì˜ ì†ì„±1 ê°ì²´
 	 */
 	public ParaShapeProperty1 getProperty1() {
 		return property1;
 	}
 
 	/**
-	 * ¿ŞÂÊ ¿©¹éÀ» ¹İÈ¯ÇÑ´Ù.
+	 * ì™¼ìª½ ì—¬ë°±ì„ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ¿ŞÂÊ ¿©¹é
+	 * @return ì™¼ìª½ ì—¬ë°±
 	 */
 	public int getLeftMargin() {
 		return leftMargin;
 	}
 
 	/**
-	 * ¿ŞÂÊ ¿©¹éÀ» ¼³Á¤ÇÑ´Ù.
+	 * ì™¼ìª½ ì—¬ë°±ì„ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param leftMargin
-	 *            ¿ŞÂÊ ¿©¹é
+	 *            ì™¼ìª½ ì—¬ë°±
 	 */
 	public void setLeftMargin(int leftMargin) {
 		this.leftMargin = leftMargin;
 	}
 
 	/**
-	 * ¿À¸¥ÂÊ ¿©¹éÀ» ¹İÈ¯ÇÑ´Ù.
+	 * ì˜¤ë¥¸ìª½ ì—¬ë°±ì„ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ¿À¸¥ÂÊ ¿©¹é
+	 * @return ì˜¤ë¥¸ìª½ ì—¬ë°±
 	 */
 	public int getRightMargin() {
 		return rightMargin;
 	}
 
 	/**
-	 * ¿À¸¥ÂÊ ¿©¹éÀ» ¼³Á¤ÇÑ´Ù.
+	 * ì˜¤ë¥¸ìª½ ì—¬ë°±ì„ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param rightMargin
-	 *            ¿À¸¥ÂÊ ¿©¹é
+	 *            ì˜¤ë¥¸ìª½ ì—¬ë°±
 	 */
 	public void setRightMargin(int rightMargin) {
 		this.rightMargin = rightMargin;
 	}
 
 	/**
-	 * µé¿© ¾²±â/³»¾î ¾²±â¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ë“¤ì—¬ ì“°ê¸°/ë‚´ì–´ ì“°ê¸°ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return µé¿© ¾²±â/³»¾î ¾²±â
+	 * @return ë“¤ì—¬ ì“°ê¸°/ë‚´ì–´ ì“°ê¸°
 	 */
 	public int getIndent() {
 		return indent;
 	}
 
 	/**
-	 * µé¿© ¾²±â/³»¾î ¾²±â¸¦ ¼³Á¤ÇÑ´Ù.
+	 * ë“¤ì—¬ ì“°ê¸°/ë‚´ì–´ ì“°ê¸°ë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param indent
-	 *            µé¿© ¾²±â/³»¾î ¾²±â
+	 *            ë“¤ì—¬ ì“°ê¸°/ë‚´ì–´ ì“°ê¸°
 	 */
 	public void setIndent(int indent) {
 		this.indent = indent;
 	}
 
 	/**
-	 * ¹®´Ü À§ °£°İÀ» ¹İÈ¯ÇÑ´Ù.
+	 * ë¬¸ë‹¨ ìœ„ ê°„ê²©ì„ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ¹®´Ü À§ °£°İ
+	 * @return ë¬¸ë‹¨ ìœ„ ê°„ê²©
 	 */
 	public int getTopParaSpace() {
 		return topParaSpace;
 	}
 
 	/**
-	 * ¹®´Ü À§ °£°İÀ» ¼³Á¤ÇÑ´Ù.
+	 * ë¬¸ë‹¨ ìœ„ ê°„ê²©ì„ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param topParaSpace
-	 *            ¹®´Ü À§ °£°İ
+	 *            ë¬¸ë‹¨ ìœ„ ê°„ê²©
 	 */
 	public void setTopParaSpace(int topParaSpace) {
 		this.topParaSpace = topParaSpace;
 	}
 
 	/**
-	 * ¹®´Ü ¾Æ·¡ °£°İÀ» ¹İÈ¯ÇÑ´Ù.
+	 * ë¬¸ë‹¨ ì•„ë˜ ê°„ê²©ì„ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ¹®´Ü ¾Æ·¡ °£°İ
+	 * @return ë¬¸ë‹¨ ì•„ë˜ ê°„ê²©
 	 */
 	public int getBottomParaSpace() {
 		return bottomParaSpace;
 	}
 
 	/**
-	 * ¹®´Ü ¾Æ·¡ °£°İÀ» ¼³Á¤ÇÑ´Ù.
+	 * ë¬¸ë‹¨ ì•„ë˜ ê°„ê²©ì„ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param bottomParaSpace
-	 *            ¹®´Ü ¾Æ·¡ °£°İ
+	 *            ë¬¸ë‹¨ ì•„ë˜ ê°„ê²©
 	 */
 	public void setBottomParaSpace(int bottomParaSpace) {
 		this.bottomParaSpace = bottomParaSpace;
 	}
 
 	/**
-	 * ÁÙ °£°İÀ» ¹İÈ¯ÇÑ´Ù. ÇÑ±Û 2007 ÀÌÇÏ ¹öÀü(5.0.2.5 ¹öÀü ¹Ì¸¸)¿¡¼­ »ç¿ë
+	 * ì¤„ ê°„ê²©ì„ ë°˜í™˜í•œë‹¤. í•œê¸€ 2007 ì´í•˜ ë²„ì „(5.0.2.5 ë²„ì „ ë¯¸ë§Œ)ì—ì„œ ì‚¬ìš©
 	 * 
-	 * @return ÁÙ °£°İ
+	 * @return ì¤„ ê°„ê²©
 	 */
 	public int getLineSpace() {
 		return lineSpace;
 	}
 
 	/**
-	 * ÁÙ °£°İÀ» ¼³Á¤ÇÑ´Ù. ÇÑ±Û 2007 ÀÌÇÏ ¹öÀü(5.0.2.5 ¹öÀü ¹Ì¸¸)¿¡¼­ »ç¿ë
+	 * ì¤„ ê°„ê²©ì„ ì„¤ì •í•œë‹¤. í•œê¸€ 2007 ì´í•˜ ë²„ì „(5.0.2.5 ë²„ì „ ë¯¸ë§Œ)ì—ì„œ ì‚¬ìš©
 	 * 
 	 * @param lineSpace
-	 *            ÁÙ °£°İ
+	 *            ì¤„ ê°„ê²©
 	 */
 	public void setLineSpace(int lineSpace) {
 		this.lineSpace = lineSpace;
 	}
 
 	/**
-	 * ÂüÁ¶µÈ ÅÇ Á¤ÀÇ ¾ÆÀÌµğ¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ì°¸ì¡°ëœ íƒ­ ì •ì˜ ì•„ì´ë””ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ÂüÁ¶µÈ ÅÇ Á¤ÀÇ ¾ÆÀÌµğ
+	 * @return ì°¸ì¡°ëœ íƒ­ ì •ì˜ ì•„ì´ë””
 	 */
 	public int getTabDefId() {
 		return tabDefId;
 	}
 
 	/**
-	 * ÂüÁ¶µÈ ÅÇ Á¤ÀÇ ¾ÆÀÌµğ¸¦ ¼³Á¤ÇÑ´Ù.
+	 * ì°¸ì¡°ëœ íƒ­ ì •ì˜ ì•„ì´ë””ë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param tabDefId
-	 *            ÂüÁ¶µÈ ÅÇ Á¤ÀÇ ¾ÆÀÌµğ
+	 *            ì°¸ì¡°ëœ íƒ­ ì •ì˜ ì•„ì´ë””
 	 */
 	public void setTabDefId(int tabDefId) {
 		this.tabDefId = tabDefId;
 	}
 
 	/**
-	 * ÂüÁ¶µÈ ¹®´Ü ¹øÈ£ ¾ÆÀÌµğ ³ª ÂüÁ¶µÈ ±Û¸Ó¸®Ç¥ ¾ÆÀÌµğ¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ì°¸ì¡°ëœ ë¬¸ë‹¨ ë²ˆí˜¸ ì•„ì´ë”” ë‚˜ ì°¸ì¡°ëœ ê¸€ë¨¸ë¦¬í‘œ ì•„ì´ë””ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ÂüÁ¶µÈ ¹®´Ü ¹øÈ£ ¾ÆÀÌµğ ³ª ÂüÁ¶µÈ ±Û¸Ó¸®Ç¥ ¾ÆÀÌµğ
+	 * @return ì°¸ì¡°ëœ ë¬¸ë‹¨ ë²ˆí˜¸ ì•„ì´ë”” ë‚˜ ì°¸ì¡°ëœ ê¸€ë¨¸ë¦¬í‘œ ì•„ì´ë””
 	 */
 	public int getParaHeadId() {
 		return paraHeadId;
 	}
 
 	/**
-	 * ÂüÁ¶µÈ ¹®´Ü ¹øÈ£ ¾ÆÀÌµğ ³ª ÂüÁ¶µÈ ±Û¸Ó¸®Ç¥ ¾ÆÀÌµğe ¼³Á¤ÇÑ´Ù.
+	 * ì°¸ì¡°ëœ ë¬¸ë‹¨ ë²ˆí˜¸ ì•„ì´ë”” ë‚˜ ì°¸ì¡°ëœ ê¸€ë¨¸ë¦¬í‘œ ì•„ì´ë””ë¦‚ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param paraHeadId
-	 *            ÂüÁ¶µÈ ¹®´Ü ¹øÈ£ ¾ÆÀÌµğ ³ª ÂüÁ¶µÈ ±Û¸Ó¸®Ç¥ ¾ÆÀÌµğ
+	 *            ì°¸ì¡°ëœ ë¬¸ë‹¨ ë²ˆí˜¸ ì•„ì´ë”” ë‚˜ ì°¸ì¡°ëœ ê¸€ë¨¸ë¦¬í‘œ ì•„ì´ë””
 	 */
 	public void setParaHeadId(int paraHeadId) {
 		this.paraHeadId = paraHeadId;
 	}
 
 	/**
-	 * ÂüÁ¶µÈ Å×µÎ¸®/¹è°æ ¸ğ¾ç ¾ÆÀÌµğ¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ì°¸ì¡°ëœ í…Œë‘ë¦¬/ë°°ê²½ ëª¨ì–‘ ì•„ì´ë””ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ÂüÁ¶µÈ Å×µÎ¸®/¹è°æ ¸ğ¾ç ¾ÆÀÌµğ
+	 * @return ì°¸ì¡°ëœ í…Œë‘ë¦¬/ë°°ê²½ ëª¨ì–‘ ì•„ì´ë””
 	 */
 	public int getBorderFillId() {
 		return borderFillId;
 	}
 
 	/**
-	 * ÂüÁ¶µÈ Å×µÎ¸®/¹è°æ ¸ğ¾ç ¾ÆÀÌµğ¸¦ ¼³Á¤ÇÑ´Ù.
+	 * ì°¸ì¡°ëœ í…Œë‘ë¦¬/ë°°ê²½ ëª¨ì–‘ ì•„ì´ë””ë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param borderFillId
-	 *            ÂüÁ¶µÈ Å×µÎ¸®/¹è°æ ¸ğ¾ç ¾ÆÀÌµğ
+	 *            ì°¸ì¡°ëœ í…Œë‘ë¦¬/ë°°ê²½ ëª¨ì–‘ ì•„ì´ë””
 	 */
 	public void setBorderFillId(int borderFillId) {
 		this.borderFillId = borderFillId;
 	}
 
 	/**
-	 * ¹®´Ü Å×µÎ¸® ¿ŞÂÊ °£°İÀ» ¹İÈ¯ÇÑ´Ù.
+	 * ë¬¸ë‹¨ í…Œë‘ë¦¬ ì™¼ìª½ ê°„ê²©ì„ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ¹®´Ü Å×µÎ¸® ¿ŞÂÊ °£°İ
+	 * @return ë¬¸ë‹¨ í…Œë‘ë¦¬ ì™¼ìª½ ê°„ê²©
 	 */
 	public short getLeftBorderSpace() {
 		return leftBorderSpace;
 	}
 
 	/**
-	 * ¹®´Ü Å×µÎ¸® ¿ŞÂÊ °£°İÀ» ¼³Á¤ÇÑ´Ù.
+	 * ë¬¸ë‹¨ í…Œë‘ë¦¬ ì™¼ìª½ ê°„ê²©ì„ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param leftBorderSpace
-	 *            ¹®´Ü Å×µÎ¸® ¿ŞÂÊ °£°İ
+	 *            ë¬¸ë‹¨ í…Œë‘ë¦¬ ì™¼ìª½ ê°„ê²©
 	 */
 	public void setLeftBorderSpace(short leftBorderSpace) {
 		this.leftBorderSpace = leftBorderSpace;
 	}
 
 	/**
-	 * ¹®´Ü Å×µÎ¸® ¿À¸¥ÂÊ °£°İÀ» ¹İÈ¯ÇÑ´Ù.
+	 * ë¬¸ë‹¨ í…Œë‘ë¦¬ ì˜¤ë¥¸ìª½ ê°„ê²©ì„ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ¹®´Ü Å×µÎ¸® ¿À¸¥ÂÊ °£°İ
+	 * @return ë¬¸ë‹¨ í…Œë‘ë¦¬ ì˜¤ë¥¸ìª½ ê°„ê²©
 	 */
 	public short getRightBorderSpace() {
 		return rightBorderSpace;
 	}
 
 	/**
-	 * ¹®´Ü Å×µÎ¸® ¿À¸¥ÂÊ °£°İÀ» ¼³Á¤ÇÑ´Ù.
+	 * ë¬¸ë‹¨ í…Œë‘ë¦¬ ì˜¤ë¥¸ìª½ ê°„ê²©ì„ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param rightBorderSpace
-	 *            ¹®´Ü Å×µÎ¸® ¿À¸¥ÂÊ °£°İ
+	 *            ë¬¸ë‹¨ í…Œë‘ë¦¬ ì˜¤ë¥¸ìª½ ê°„ê²©
 	 */
 	public void setRightBorderSpace(short rightBorderSpace) {
 		this.rightBorderSpace = rightBorderSpace;
 	}
 
 	/**
-	 * ¹®´Ü Å×µÎ¸® À§ÂÊ °£°İÀ» ¹İÈ¯ÇÑ´Ù.
+	 * ë¬¸ë‹¨ í…Œë‘ë¦¬ ìœ„ìª½ ê°„ê²©ì„ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ¹®´Ü Å×µÎ¸® À§ÂÊ °£°İ
+	 * @return ë¬¸ë‹¨ í…Œë‘ë¦¬ ìœ„ìª½ ê°„ê²©
 	 */
 	public short getTopBorderSpace() {
 		return topBorderSpace;
 	}
 
 	/**
-	 * ¹®´Ü Å×µÎ¸® À§ÂÊ °£°İÀ» ¼³Á¤ÇÑ´Ù.
+	 * ë¬¸ë‹¨ í…Œë‘ë¦¬ ìœ„ìª½ ê°„ê²©ì„ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param topBorderSpace
-	 *            ¹®´Ü Å×µÎ¸® À§ÂÊ °£°İ
+	 *            ë¬¸ë‹¨ í…Œë‘ë¦¬ ìœ„ìª½ ê°„ê²©
 	 */
 	public void setTopBorderSpace(short topBorderSpace) {
 		this.topBorderSpace = topBorderSpace;
 	}
 
 	/**
-	 * ¹®´Ü Å×µÎ¸® ¾Æ·¡ÂÊ °£°İÀ» ¹İÈ¯ÇÑ´Ù.
+	 * ë¬¸ë‹¨ í…Œë‘ë¦¬ ì•„ë˜ìª½ ê°„ê²©ì„ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ¹®´Ü Å×µÎ¸® ¾Æ·¡ÂÊ °£°İ
+	 * @return ë¬¸ë‹¨ í…Œë‘ë¦¬ ì•„ë˜ìª½ ê°„ê²©
 	 */
 	public short getBottomBorderSpace() {
 		return bottomBorderSpace;
 	}
 
 	/**
-	 * ¹®´Ü Å×µÎ¸® ¾Æ·¡ÂÊ °£°İÀ» ¼³Á¤ÇÑ´Ù.
+	 * ë¬¸ë‹¨ í…Œë‘ë¦¬ ì•„ë˜ìª½ ê°„ê²©ì„ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param bottomBorderSpace
-	 *            ¹®´Ü Å×µÎ¸® ¾Æ·¡ÂÊ °£°İ
+	 *            ë¬¸ë‹¨ í…Œë‘ë¦¬ ì•„ë˜ìª½ ê°„ê²©
 	 */
 	public void setBottomBorderSpace(short bottomBorderSpace) {
 		this.bottomBorderSpace = bottomBorderSpace;
 	}
 
 	/**
-	 * ¹È´Ü ¸ğ¾çÀÇ ¼Ó¼º 2 °´Ã¼¸¦ ¹İÈ¯ÇÑ´Ù. (5.0.1.7 ¹öÀü ÀÌ»ó)
+	 * ë¯„ë‹¨ ëª¨ì–‘ì˜ ì†ì„± 2 ê°ì²´ë¥¼ ë°˜í™˜í•œë‹¤. (5.0.1.7 ë²„ì „ ì´ìƒ)
 	 * 
-	 * @return ¹È´Ü ¸ğ¾çÀÇ ¼Ó¼º 2 °´Ã¼
+	 * @return ë¯„ë‹¨ ëª¨ì–‘ì˜ ì†ì„± 2 ê°ì²´
 	 */
 	public ParaShapeProperty2 getProperty2() {
 		return property2;
 	}
 
 	/**
-	 * ¹®´Ü ¸ğ¾çÀÇ ¼Ó¼º 3 °´Ã¼¸¦ ¹İÈ¯ÇÑ´Ù. (5.0.2.5 ¹öÀü ÀÌ»ó)
+	 * ë¬¸ë‹¨ ëª¨ì–‘ì˜ ì†ì„± 3 ê°ì²´ë¥¼ ë°˜í™˜í•œë‹¤. (5.0.2.5 ë²„ì „ ì´ìƒ)
 	 * 
-	 * @return ¹®´Ü ¸ğ¾çÀÇ ¼Ó¼º 3 °´Ã¼
+	 * @return ë¬¸ë‹¨ ëª¨ì–‘ì˜ ì†ì„± 3 ê°ì²´
 	 */
 	public ParaShapeProperty3 getProperty3() {
 		return property3;
 	}
 
 	/**
-	 * ÁÙ °£°İÀ» ¹İÈ¯ÇÑ´Ù. (5.0.2.5 ¹öÀü ÀÌ»ó)
+	 * ì¤„ ê°„ê²©ì„ ë°˜í™˜í•œë‹¤. (5.0.2.5 ë²„ì „ ì´ìƒ)
 	 * 
-	 * @return ÁÙ °£°İ
+	 * @return ì¤„ ê°„ê²©
 	 */
 	public long getLineSpace2() {
 		return lineSpace2;
 	}
 
 	/**
-	 * ÁÙ °£°İÀ» ¼³Á¤ÇÑ´Ù. (5.0.2.5 ¹öÀü ÀÌ»ó)
+	 * ì¤„ ê°„ê²©ì„ ì„¤ì •í•œë‹¤. (5.0.2.5 ë²„ì „ ì´ìƒ)
 	 * 
 	 * @param lineSpace2
-	 *            ÁÙ °£°İ
+	 *            ì¤„ ê°„ê²©
 	 */
 	public void setLineSpace2(long lineSpace2) {
 		this.lineSpace2 = lineSpace2;

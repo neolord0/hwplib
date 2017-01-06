@@ -1,4 +1,4 @@
-package kr.dogfoot.hwplib.object.bodytext.control.ctrlheader;
+ï»¿package kr.dogfoot.hwplib.object.bodytext.control.ctrlheader;
 
 import java.util.ArrayList;
 
@@ -10,42 +10,42 @@ import kr.dogfoot.hwplib.object.docinfo.borderfill.BorderType;
 import kr.dogfoot.hwplib.object.etc.Color4Byte;
 
 /**
- * ´Ü Á¤ÀÇ ÄÁÆ®·ÑÀ» À§ÇÑ ÄÁÆ®·Ñ Çì´õ ·¹ÄÚµå
+ * ë‹¨ ì •ì˜ ì»¨íŠ¸ë¡¤ì„ ìœ„í•œ ì»¨íŠ¸ë¡¤ í—¤ë” ë ˆì½”ë“œ
  * 
  * @author neolord
  */
 public class CtrlHeaderColumnDefine extends CtrlHeader {
 	/**
-	 * ¼Ó¼º
+	 * ì†ì„±
 	 */
 	private ColumnDefineHeaderProperty property;
 	/**
-	 * ´Ü »çÀÌ °£°İ
+	 * ë‹¨ ì‚¬ì´ ê°„ê²©
 	 */
 	private int gapBetweenColumn;
 	/**
-	 * ¼Ó¼º2(Á¤º¸ ¾øÀ½)
+	 * ì†ì„±2(ì •ë³´ ì—†ìŒ)
 	 */
 	private int property2;
 	/**
-	 * ´Ü Á¤º¸ ¸®½ºÆ®
+	 * ë‹¨ ì •ë³´ ë¦¬ìŠ¤íŠ¸
 	 */
 	private ArrayList<ColumnInfo> columnInfoList;
 	/**
-	 * ´Ü ±¸ºĞ¼± Á¾·ù
+	 * ë‹¨ êµ¬ë¶„ì„  ì¢…ë¥˜
 	 */
 	private BorderType divideLineSort;
 	/**
-	 * ´Ü ±¸ºĞ¼± ±½±â
+	 * ë‹¨ êµ¬ë¶„ì„  êµµê¸°
 	 */
 	private BorderThickness divideLineThickness;
 	/**
-	 * ´Ü ±¸ºĞ¼± »ö»ó
+	 * ë‹¨ êµ¬ë¶„ì„  ìƒ‰ìƒ
 	 */
 	private Color4Byte divideLineColor;
 
 	/**
-	 * »ı¼ºÀÚ
+	 * ìƒì„±ì
 	 */
 	public CtrlHeaderColumnDefine() {
 		super(ControlType.ColumnDefine.getCtrlId());
@@ -56,56 +56,56 @@ public class CtrlHeaderColumnDefine extends CtrlHeader {
 	}
 
 	/**
-	 * ´Ü Á¤ÀÇ ÄÁÆ®·ÑÀÇ ¼Ó¼º °´Ã¼¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ë‹¨ ì •ì˜ ì»¨íŠ¸ë¡¤ì˜ ì†ì„± ê°ì²´ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ´Ü Á¤ÀÇ ÄÁÆ®·ÑÀÇ ¼Ó¼º °´Ã¼
+	 * @return ë‹¨ ì •ì˜ ì»¨íŠ¸ë¡¤ì˜ ì†ì„± ê°ì²´
 	 */
 	public ColumnDefineHeaderProperty getProperty() {
 		return property;
 	}
 
 	/**
-	 * ´Ü »çÀÌ °£°İÀ» ¹İÈ¯ÇÑ´Ù.
+	 * ë‹¨ ì‚¬ì´ ê°„ê²©ì„ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ´Ü »çÀÌ °£°İ
+	 * @return ë‹¨ ì‚¬ì´ ê°„ê²©
 	 */
 	public int getGapBetweenColumn() {
 		return gapBetweenColumn;
 	}
 
 	/**
-	 * ´Ü »çÀÌ °£°İ¸¦ ¼³Á¤ÇÑ´Ù.
+	 * ë‹¨ ì‚¬ì´ ê°„ê²©ë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param gapBetweenColumn
-	 *            ´Ü »çÀÌ °£°İ
+	 *            ë‹¨ ì‚¬ì´ ê°„ê²©
 	 */
 	public void setGapBetweenColumn(int gapBetweenColumn) {
 		this.gapBetweenColumn = gapBetweenColumn;
 	}
 
 	/**
-	 * ¼Ó¼º2¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ì†ì„±2ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ¼Ó¼º2
+	 * @return ì†ì„±2
 	 */
 	public int getProperty2() {
 		return property2;
 	}
 
 	/**
-	 * ¼Ó¼º2¸¦ ¼³Á¤ÇÑ´Ù.
+	 * ì†ì„±2ë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param property2
-	 *            ¼Ó¼º2
+	 *            ì†ì„±2
 	 */
 	public void setProperty2(int property2) {
 		this.property2 = property2;
 	}
 
 	/**
-	 * »õ·Î¿î ´Ü Á¤º¸ °´Ã¼¸¦ »ı¼ºÇÏ°í ¸®½ºÆ®¿¡ Ãß°¡ÇÑ´Ù.
+	 * ìƒˆë¡œìš´ ë‹¨ ì •ë³´ ê°ì²´ë¥¼ ìƒì„±í•˜ê³  ë¦¬ìŠ¤íŠ¸ì— ì¶”ê°€í•œë‹¤.
 	 * 
-	 * @return »õ·Î »ı¼ºµÈ ´Ü Á¤º¸ °´Ã¼
+	 * @return ìƒˆë¡œ ìƒì„±ëœ ë‹¨ ì •ë³´ ê°ì²´
 	 */
 	public ColumnInfo addNewColumnInfo() {
 		ColumnInfo ci = new ColumnInfo();
@@ -114,56 +114,56 @@ public class CtrlHeaderColumnDefine extends CtrlHeader {
 	}
 
 	/**
-	 * ´Ü Á¤º¸ ¸®½ºÆ®¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ë‹¨ ì •ë³´ ë¦¬ìŠ¤íŠ¸ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ´Ü Á¤º¸ ¸®½ºÆ®
+	 * @return ë‹¨ ì •ë³´ ë¦¬ìŠ¤íŠ¸
 	 */
 	public ArrayList<ColumnInfo> getColumnInfoList() {
 		return columnInfoList;
 	}
 
 	/**
-	 * ´Ü ±¸ºĞ¼± Á¾·ù¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ë‹¨ êµ¬ë¶„ì„  ì¢…ë¥˜ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ´Ü ±¸ºĞ¼± Á¾·ù
+	 * @return ë‹¨ êµ¬ë¶„ì„  ì¢…ë¥˜
 	 */
 	public BorderType getDivideLineSort() {
 		return divideLineSort;
 	}
 
 	/**
-	 * ´Ü ±¸ºĞ¼± Á¾·ù¸¦ ¼³Á¤ÇÑ´Ù.
+	 * ë‹¨ êµ¬ë¶„ì„  ì¢…ë¥˜ë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param divideLineSort
-	 *            ´Ü ±¸ºĞ¼± Á¾·ù
+	 *            ë‹¨ êµ¬ë¶„ì„  ì¢…ë¥˜
 	 */
 	public void setDivideLineSort(BorderType divideLineSort) {
 		this.divideLineSort = divideLineSort;
 	}
 
 	/**
-	 * ´Ü ±¸ºĞ¼± ±½±â¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ë‹¨ êµ¬ë¶„ì„  êµµê¸°ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ´Ü ±¸ºĞ¼± ±½±â
+	 * @return ë‹¨ êµ¬ë¶„ì„  êµµê¸°
 	 */
 	public BorderThickness getDivideLineThickness() {
 		return divideLineThickness;
 	}
 
 	/**
-	 * ´Ü ±¸ºĞ¼± ±½±â¸¦ ¼³Á¤ÇÑ´Ù.
+	 * ë‹¨ êµ¬ë¶„ì„  êµµê¸°ë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param divideLineThickness
-	 *            ´Ü ±¸ºĞ¼± ±½±â
+	 *            ë‹¨ êµ¬ë¶„ì„  êµµê¸°
 	 */
 	public void setDivideLineThickness(BorderThickness divideLineThickness) {
 		this.divideLineThickness = divideLineThickness;
 	}
 
 	/**
-	 * ´Ü ±¸ºĞ¼± »ö»ó¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ë‹¨ êµ¬ë¶„ì„  ìƒ‰ìƒë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ´Ü ±¸ºĞ¼± »ö»ó
+	 * @return ë‹¨ êµ¬ë¶„ì„  ìƒ‰ìƒ
 	 */
 	public Color4Byte getDivideLineColor() {
 		return divideLineColor;

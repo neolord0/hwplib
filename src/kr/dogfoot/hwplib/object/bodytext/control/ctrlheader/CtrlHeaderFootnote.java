@@ -1,39 +1,39 @@
-package kr.dogfoot.hwplib.object.bodytext.control.ctrlheader;
+ï»¿package kr.dogfoot.hwplib.object.bodytext.control.ctrlheader;
 
 import kr.dogfoot.hwplib.object.bodytext.control.ControlType;
 
 /**
- * °¢ÁÖ(Foot Note) ÄÁÆ®·ÑÀ» À§ÇÑ ÄÁÆ®·Ñ Çì´õ ·¹ÄÚµå
+ * ê°ì£¼(Foot Note) ì»¨íŠ¸ë¡¤ì„ ìœ„í•œ ì»¨íŠ¸ë¡¤ í—¤ë” ë ˆì½”ë“œ
  * 
  * @author neolord
  */
 public class CtrlHeaderFootnote extends CtrlHeader {
 	/**
-	 * °¢ÁÖ ¹øÈ£
+	 * ê°ì£¼ ë²ˆí˜¸
 	 */
 	private long number;
 
 	/**
-	 * »ı¼ºÀÚ
+	 * ìƒì„±ì
 	 */
 	public CtrlHeaderFootnote() {
 		super(ControlType.Footnote.getCtrlId());
 	}
 
 	/**
-	 * °¢ÁÖ ¹øÈ£¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ê°ì£¼ ë²ˆí˜¸ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return °¢ÁÖ ¹øÈ£
+	 * @return ê°ì£¼ ë²ˆí˜¸
 	 */
 	public long getNumber() {
 		return number;
 	}
 
 	/**
-	 * °¢ÁÖ ¹øÈ£¸¦ ¼³Á¤ÇÑ´Ù.
+	 * ê°ì£¼ ë²ˆí˜¸ë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param number
-	 *            °¢ÁÖ ¹øÈ£
+	 *            ê°ì£¼ ë²ˆí˜¸
 	 */
 	public void setNumber(long number) {
 		this.number = number;

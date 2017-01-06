@@ -1,54 +1,54 @@
-package kr.dogfoot.hwplib.object.docinfo.bindata;
+ï»¿package kr.dogfoot.hwplib.object.docinfo.bindata;
 
 /**
- * ¹ÙÀÌ³Ê¸® µ¥ÀÌÅÍÀÇ Å¸ÀÔ
+ * ë°”ì´ë„ˆë¦¬ ë°ì´í„°ì˜ íƒ€ì…
  * 
  * @author neolord
  */
 public enum BinDataType {
 	/**
-	 * LINK. ±×¸² ¿ÜºÎ ÆÄÀÏ ÂüÁ¶
+	 * LINK. ê·¸ë¦¼ ì™¸ë¶€ íŒŒì¼ ì°¸ì¡°
 	 */
 	Link((byte) 0),
 	/**
-	 * EMBEDDING. ±×¸² ÆÄÀÏ Æ÷ÇÔ
+	 * EMBEDDING. ê·¸ë¦¼ íŒŒì¼ í¬í•¨
 	 */
 	Embedding((byte) 1),
 	/**
-	 * STORAGE. OLE Æ÷ÇÔ
+	 * STORAGE. OLE í¬í•¨
 	 */
 	Storage((byte) 2);
 
 	/**
-	 * ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª
+	 * íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’
 	 */
 	private byte value;
 
 	/**
-	 * »ı¼ºÀÚ
+	 * ìƒì„±ì
 	 * 
 	 * @param value
-	 *            ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª
+	 *            íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’
 	 */
 	private BinDataType(byte value) {
 		this.value = value;
 	}
 
 	/**
-	 * ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ªÀ» ¹İÈ¯ÇÑ´Ù.
+	 * íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’ì„ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª
+	 * @return íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’
 	 */
 	public byte getValue() {
 		return value;
 	}
 
 	/**
-	 * ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª¿¡ ÇØ´çµÇ´Â enum °ªÀ» ¹İÈ¯ÇÑ´Ù.
+	 * íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’ì— í•´ë‹¹ë˜ëŠ” enum ê°’ì„ ë°˜í™˜í•œë‹¤.
 	 * 
 	 * @param value
-	 *            ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª
-	 * @return enum °ª
+	 *            íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’
+	 * @return enum ê°’
 	 */
 	public static BinDataType valueOf(byte value) {
 		for (BinDataType bdt : values()) {

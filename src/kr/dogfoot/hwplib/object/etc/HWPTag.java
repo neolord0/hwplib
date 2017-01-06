@@ -1,23 +1,23 @@
-package kr.dogfoot.hwplib.object.etc;
+ï»¿package kr.dogfoot.hwplib.object.etc;
 
 /**
- * RecordÀÇ Å×±× ¸®½ºÆ®
+ * Recordì˜ í…Œê·¸ ë¦¬ìŠ¤íŠ¸
  * 
  * @author neolord
  */
 public class HWPTag {
 	/**
-	 * tag ½ÃÀÛ °ª
+	 * tag ì‹œì‘ ê°’
 	 */
 	private final static short BEGIN = 0x10;
 
 	// for "DocInfo" stream
 	/**
-	 * ¹®¼­ ¼Ó¼º tag
+	 * ë¬¸ì„œ ì†ì„± tag
 	 */
 	public final static short DOCUMENT_PROPERTIES = BEGIN;
 	/**
-	 * ¾ÆÀÌµğ ¸ÅÇÎ Çì´õ tag
+	 * ì•„ì´ë”” ë§¤í•‘ í—¤ë” tag
 	 */
 	public final static short ID_MAPPINGS = BEGIN + 1;
 	/**
@@ -29,181 +29,181 @@ public class HWPTag {
 	 */
 	public final static short FACE_NAME = BEGIN + 3;
 	/**
-	 * Å×µÎ¸®/¹è°æ tag
+	 * í…Œë‘ë¦¬/ë°°ê²½ tag
 	 */
 	public final static short BORDER_FILL = BEGIN + 4;
 	/**
-	 * ±ÛÀÚ ¸ğ¾ç tag
+	 * ê¸€ì ëª¨ì–‘ tag
 	 */
 	public final static short CHAR_SHAPE = BEGIN + 5;
 	/**
-	 * ÅÇ Á¤ÀÇ tag
+	 * íƒ­ ì •ì˜ tag
 	 */
 	public final static short TAB_DEF = BEGIN + 6;
 	/**
-	 * ¹øÈ£ Á¤ÀÇ tag
+	 * ë²ˆí˜¸ ì •ì˜ tag
 	 */
 	public final static short NUMBERING = BEGIN + 7;
 	/**
-	 * ±Û¸Ó¸®Ç¥ tag
+	 * ê¸€ë¨¸ë¦¬í‘œ tag
 	 */
 	public final static short BULLET = BEGIN + 8;
 	/**
-	 * ¹®´Ü ¸ğ¾ç tag
+	 * ë¬¸ë‹¨ ëª¨ì–‘ tag
 	 */
 	public final static short PARA_SHAPE = BEGIN + 9;
 	/**
-	 * ½ºÅ¸ÀÏ tag
+	 * ìŠ¤íƒ€ì¼ tag
 	 */
 	public final static short STYLE = BEGIN + 10;
 	/**
-	 * ¹®¼­ÀÇ ÀÓÀÇÀÇ µ¥ÀÌÅÍ tag
+	 * ë¬¸ì„œì˜ ì„ì˜ì˜ ë°ì´í„° tag
 	 */
 	public final static short DOC_DATA = BEGIN + 11;
 	/**
-	 * ¹èÆ÷¿ë ¹®¼­ µ¥ÀÌÅÍ tag
+	 * ë°°í¬ìš© ë¬¸ì„œ ë°ì´í„° tag
 	 */
 	public final static short DISTRIBUTE_DOC_DATA = BEGIN + 12;
 	/**
-	 * È£È¯ ¹®¼­ tag
+	 * í˜¸í™˜ ë¬¸ì„œ tag
 	 */
 	public final static short COMPATIBLE_DOCUMENT = BEGIN + 14;
 	/**
-	 * ·¹ÀÌ¾Æ¿ô È£È¯¼º tag
+	 * ë ˆì´ì•„ì›ƒ í˜¸í™˜ì„± tag
 	 */
 	public final static short LAYOUT_COMPATIBILITY = BEGIN + 15;
 	/**
-	 * º¯°æ ÃßÀû Á¤º¸ tag
+	 * ë³€ê²½ ì¶”ì  ì •ë³´ tag
 	 */
 	public final static short TRACKCHANGE = BEGIN + 16;
 	/**
-	 * ¸Ş¸ğ ¸ğ¾ç tag
+	 * ë©”ëª¨ ëª¨ì–‘ tag
 	 */
 	public final static short MEMO_SHAPE = BEGIN + 76;
 	/**
-	 * ±İÄ¢Ã³¸® ¹®ÀÚ tag
+	 * ê¸ˆì¹™ì²˜ë¦¬ ë¬¸ì tag
 	 */
 	public final static short FORBIDDEN_CHAR = BEGIN + 78;
 	/**
-	 * º¯°æ ÃßÀû ³»¿ë ¹× ¸ğ¾ç tag
+	 * ë³€ê²½ ì¶”ì  ë‚´ìš© ë° ëª¨ì–‘ tag
 	 */
 	public final static short TRACK_CHANGE = BEGIN + 80;
 	/**
-	 * º¯°æ ÃßÀû ÀÛ¼ºÀÚ tag
+	 * ë³€ê²½ ì¶”ì  ì‘ì„±ì tag
 	 */
 	public final static short TRACK_CHANGE_AUTHOR = BEGIN + 81;
 
 	// for "BodyText" storages
 	/**
-	 * ¹®´Ü Çì´õ tag
+	 * ë¬¸ë‹¨ í—¤ë” tag
 	 */
 	public final static short PARA_HEADER = BEGIN + 50;
 	/**
-	 * ¹®´ÜÀÇ ÅØ½ºÆ® tag
+	 * ë¬¸ë‹¨ì˜ í…ìŠ¤íŠ¸ tag
 	 */
 	public final static short PARA_TEXT = BEGIN + 51;
 	/**
-	 * ¹®´ÜÀÇ ±ÛÀÚ ¸ğ¾ç tag
+	 * ë¬¸ë‹¨ì˜ ê¸€ì ëª¨ì–‘ tag
 	 */
 	public final static short PARA_CHAR_SHAPE = BEGIN + 52;
 	/**
-	 * ¹®´ÜÀÇ ·¹ÀÌ¾Æ¿ô tag
+	 * ë¬¸ë‹¨ì˜ ë ˆì´ì•„ì›ƒ tag
 	 */
 	public final static short PARA_LINE_SEG = BEGIN + 53;
 	/**
-	 * ¹®´ÜÀÇ ¿µ¿ª ÅÂ±× tag
+	 * ë¬¸ë‹¨ì˜ ì˜ì—­ íƒœê·¸ tag
 	 */
 	public final static short PARA_RANGE_TAG = BEGIN + 54;
 	/**
-	 * ÄÁÆ®·Ñ Çì´õ tag
+	 * ì»¨íŠ¸ë¡¤ í—¤ë” tag
 	 */
 	public final static short CTRL_HEADER = BEGIN + 55;
 	/**
-	 * ¹®´Ü ¸®½ºÆ® Çì´õ tag
+	 * ë¬¸ë‹¨ ë¦¬ìŠ¤íŠ¸ í—¤ë” tag
 	 */
 	public final static short LIST_HEADER = BEGIN + 56;
 	/**
-	 * ¿ëÁö ¼³Á¤ tag
+	 * ìš©ì§€ ì„¤ì • tag
 	 */
 	public final static short PAGE_DEF = BEGIN + 57;
 	/**
-	 * °¢ÁÖ/¹ÌÁÖ ¸ğ¾ç tag
+	 * ê°ì£¼/ë¯¸ì£¼ ëª¨ì–‘ tag
 	 */
 	public final static short FOOTNOTE_SHAPE = BEGIN + 58;
 	/**
-	 * ÂÊ Å×µÎ¸®/¹è°æ tag
+	 * ìª½ í…Œë‘ë¦¬/ë°°ê²½ tag
 	 */
 	public final static short PAGE_BORDER_FILL = BEGIN + 59;
 	/**
-	 * °³Ã¼ tag
+	 * ê°œì²´ tag
 	 */
 	public final static short SHAPE_COMPONENT = BEGIN + 60;
 	/**
-	 * Ç¥ °³Ã¼ tag
+	 * í‘œ ê°œì²´ tag
 	 */
 	public final static short TABLE = BEGIN + 61;
 	/**
-	 * Á÷¼± °³Ã¼ tag
+	 * ì§ì„  ê°œì²´ tag
 	 */
 	public final static short SHAPE_COMPONENT_LINE = BEGIN + 62;
 	/**
-	 * »ç°¢Çü °³Ã¼ tag
+	 * ì‚¬ê°í˜• ê°œì²´ tag
 	 */
 	public final static short SHAPE_COMPONENT_RECTANGLE = BEGIN + 63;
 	/**
-	 * Å¸¿ø °³Ã¼ tag
+	 * íƒ€ì› ê°œì²´ tag
 	 */
 	public final static short SHAPE_COMPONENT_ELLIPSE = BEGIN + 64;
 	/**
-	 * È£ °³Ã¼ tag
+	 * í˜¸ ê°œì²´ tag
 	 */
 	public final static short SHAPE_COMPONENT_ARC = BEGIN + 65;
 	/**
-	 * ´Ù°¢Çü °³Ã¼ tag
+	 * ë‹¤ê°í˜• ê°œì²´ tag
 	 */
 	public final static short SHAPE_COMPONENT_POLYGON = BEGIN + 66;
 	/**
-	 * °î¼± °³Ã¼ tag
+	 * ê³¡ì„  ê°œì²´ tag
 	 */
 	public final static short SHAPE_COMPONENT_CURVE = BEGIN + 67;
 	/**
-	 * OLE °³Ã¼ tag
+	 * OLE ê°œì²´ tag
 	 */
 	public final static short SHAPE_COMPONENT_OLE = BEGIN + 68;
 	/**
-	 * ±×¸² °³Ã¼ tag
+	 * ê·¸ë¦¼ ê°œì²´ tag
 	 */
 	public final static short SHAPE_COMPONENT_PICTURE = BEGIN + 69;
 	/**
-	 * ÄÁÅ×ÀÌ³Ê °³Ã¼ tag
+	 * ì»¨í…Œì´ë„ˆ ê°œì²´ tag
 	 */
 	public final static short SHAPE_COMPONENT_CONTAINER = BEGIN + 70;
 	/**
-	 * ÄÁÆ®·Ñ ÀÓÀÇÀÇ µ¥ÀÌÅÍ tag
+	 * ì»¨íŠ¸ë¡¤ ì„ì˜ì˜ ë°ì´í„° tag
 	 */
 	public final static short CTRL_DATA = BEGIN + 71;
 	/**
-	 * ¼ö½Ä °³Ã¼ tag
+	 * ìˆ˜ì‹ ê°œì²´ tag
 	 */
 	public final static short EQEDIT = BEGIN + 72;
 	/**
-	 * ±Û¸Ê½Ã tag
+	 * ê¸€ë§µì‹œ tag
 	 */
 	public final static short SHAPE_COMPONENT_TEXTART = BEGIN + 74;
 	/**
-	 * ¾ç½Ä °³Ã¼ tag
+	 * ì–‘ì‹ ê°œì²´ tag
 	 */
 	public final static short FORM_OBJECT = BEGIN + 75;
 	/**
-	 * ¸Ş¸ğ ¸®½ºÆ® Çì´õ tag
+	 * ë©”ëª¨ ë¦¬ìŠ¤íŠ¸ í—¤ë” tag
 	 */
 	public final static short MEMO_LIST = BEGIN + 77;
 	/**
-	 * Â÷Æ® µ¥ÀÌÅÍ tag
+	 * ì°¨íŠ¸ ë°ì´í„° tag
 	 */
 	public final static short CHART_DATA = BEGIN + 79;
 	/**
-	 * ºñµğ¿À µ¥ÀÌÅÍ tag
+	 * ë¹„ë””ì˜¤ ë°ì´í„° tag
 	 */
 	public final static short VIDEO_DATA = BEGIN + 82;
 	/**

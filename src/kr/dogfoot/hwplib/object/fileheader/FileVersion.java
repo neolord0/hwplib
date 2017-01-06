@@ -1,39 +1,39 @@
-package kr.dogfoot.hwplib.object.fileheader;
+ï»¿package kr.dogfoot.hwplib.object.fileheader;
 
 /**
- * ÆÄÀÏ ¹öÀü¸¦ ³ªÅ¸³»´Â °´Ã¼
+ * íŒŒì¼ ë²„ì „ë¥¼ ë‚˜íƒ€ë‚´ëŠ” ê°ì²´
  * 
  * @author neolord
  */
 public class FileVersion {
 	/**
-	 * ÆÄÀÏ ¹öÀü - MM
+	 * íŒŒì¼ ë²„ì „ - MM
 	 */
 	private short mm;
 	/**
-	 * ÆÄÀÏ ¹øÀü - nn
+	 * íŒŒì¼ ë²ˆì „ - nn
 	 */
 	private short nn;
 	/**
-	 * ÆÄÀÏ ¹öÀü - PP
+	 * íŒŒì¼ ë²„ì „ - PP
 	 */
 	private short pp;
 	/**
-	 * ÆÄÀÏ ¹öÀü - rr
+	 * íŒŒì¼ ë²„ì „ - rr
 	 */
 	private short rr;
 
 	/**
-	 * »ı¼ºÀÚ
+	 * ìƒì„±ì
 	 */
 	public FileVersion() {
 	}
 
 	/**
-	 * ¹öÀüÀ» ¼³Á¤ÇÑ´Ù.
+	 * ë²„ì „ì„ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param version
-	 *            ¹öÀü(unsigned 4 bytes)
+	 *            ë²„ì „(unsigned 4 bytes)
 	 */
 	public void setVersion(long version) {
 		mm = (short) ((version & 0xff000000) >> 24);
@@ -43,53 +43,53 @@ public class FileVersion {
 	}
 
 	/**
-	 * ÆÄÀÏ ¹öÀü - MM¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * íŒŒì¼ ë²„ì „ - MMë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ÆÄÀÏ ¹öÀü - MM(0~255)
+	 * @return íŒŒì¼ ë²„ì „ - MM(0~255)
 	 */
 	public short getMM() {
 		return mm;
 	}
 
 	/**
-	 * ÆÄÀÏ ¹öÀü - nn¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * íŒŒì¼ ë²„ì „ - nnë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ÆÄÀÏ ¹öÀü - nn(0~255)
+	 * @return íŒŒì¼ ë²„ì „ - nn(0~255)
 	 */
 	public short getNN() {
 		return nn;
 	}
 
 	/**
-	 * ÆÄÀÏ ¹öÀü - PP¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * íŒŒì¼ ë²„ì „ - PPë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ÆÄÀÏ ¹öÀü - PP(0~255)
+	 * @return íŒŒì¼ ë²„ì „ - PP(0~255)
 	 */
 	public short getPP() {
 		return pp;
 	}
 
 	/**
-	 * ÆÄÀÏ ¹öÀü - rr¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * íŒŒì¼ ë²„ì „ - rrë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ÆÄÀÏ ¹öÀü - rr(0~255)
+	 * @return íŒŒì¼ ë²„ì „ - rr(0~255)
 	 */
 	public short getRR() {
 		return rr;
 	}
 
 	/**
-	 * ÇöÀç ¹öÀüÀÌ ºñ±³ ¹öÀü(mm2,nn2,pp2,rr2)º¸´Ù »óÀ§ ¹öÀüÀÎÁö ¿©ºÎ¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * í˜„ì¬ ë²„ì „ì´ ë¹„êµ ë²„ì „(mm2,nn2,pp2,rr2)ë³´ë‹¤ ìƒìœ„ ë²„ì „ì¸ì§€ ì—¬ë¶€ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
 	 * @param mm2
-	 *            ºñ±³ ¹öÀü - MM
+	 *            ë¹„êµ ë²„ì „ - MM
 	 * @param nn2
-	 *            ºñ±³ ¹öÀü - nn
+	 *            ë¹„êµ ë²„ì „ - nn
 	 * @param pp2
-	 *            ºñ±³ ¹öÀü - PP
+	 *            ë¹„êµ ë²„ì „ - PP
 	 * @param rr2
-	 *            ºñ±³ ¹öÀü - rr
-	 * @return ÇöÀç ¹öÀüÀÌ ºñ±³ ¹öÀü(mm2,nn2,pp2,rr2)º¸´Ù »óÀ§ ¹öÀüÀÎÁö ¿©ºÎ
+	 *            ë¹„êµ ë²„ì „ - rr
+	 * @return í˜„ì¬ ë²„ì „ì´ ë¹„êµ ë²„ì „(mm2,nn2,pp2,rr2)ë³´ë‹¤ ìƒìœ„ ë²„ì „ì¸ì§€ ì—¬ë¶€
 	 */
 	public boolean isOver(int mm2, int nn2, int pp2, int rr2) {
 		if ((mm > mm2) || (mm == mm2 && nn > nn2)

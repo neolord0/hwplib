@@ -1,114 +1,114 @@
-package kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponenteach.picture;
+ï»¿package kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponenteach.picture;
 
 import kr.dogfoot.hwplib.util.binary.BitFlag;
 
 /**
- * ±×¸² È¿°úÀÇ ¼Ó¼ºÀ» ³ªÅÂ³»´Â °´Ã¼
+ * ê·¸ë¦¼ íš¨ê³¼ì˜ ì†ì„±ì„ ë‚˜íƒœë‚´ëŠ” ê°ì²´
  * 
  * @author neolord
  */
 public class PictureEffectProperty {
 	/**
-	 * ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª(unsigned 4 byte)
+	 * íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’(unsigned 4 byte)
 	 */
 	private long value;
 
 	/**
-	 * »ı¼ºÀÚ
+	 * ìƒì„±ì
 	 */
 	public PictureEffectProperty() {
 	}
 
 	/**
-	 * ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ªÀ» ¹İÈ¯ÇÑ´Ù.
+	 * íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’ì„ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª
+	 * @return íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’
 	 */
 	public long getValue() {
 		return value;
 	}
 
 	/**
-	 * ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ªÀ» ¼³Á¤ÇÑ´Ù.
+	 * íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’ì„ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param value
-	 *            ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª
+	 *            íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’
 	 */
 	public void setValue(long value) {
 		this.value = value;
 	}
 
 	/**
-	 * ±×¸²ÀÚ È¿°ú À¯¹«¸¦ ¹İÈ¯ÇÑ´Ù. (0 bit)
+	 * ê·¸ë¦¼ì íš¨ê³¼ ìœ ë¬´ë¥¼ ë°˜í™˜í•œë‹¤. (0 bit)
 	 * 
-	 * @return ±×¸²ÀÚ È¿°ú À¯¹«
+	 * @return ê·¸ë¦¼ì íš¨ê³¼ ìœ ë¬´
 	 */
 	public boolean hasShadowEffect() {
 		return BitFlag.get(value, 0);
 	}
 
 	/**
-	 * ±×¸²ÀÚ È¿°ú À¯¹«¸¦ ¼³Á¤ÇÑ´Ù. (0 bit)
+	 * ê·¸ë¦¼ì íš¨ê³¼ ìœ ë¬´ë¥¼ ì„¤ì •í•œë‹¤. (0 bit)
 	 * 
 	 * @param hasShadowEffect
-	 *            ±×¸²ÀÚ È¿°ú À¯¹«
+	 *            ê·¸ë¦¼ì íš¨ê³¼ ìœ ë¬´
 	 */
 	public void setHasShadowEffect(boolean hasShadowEffect) {
 		value = BitFlag.set(value, 0, hasShadowEffect);
 	}
 
 	/**
-	 * ³×¿Â È¿°ú À¯¹«¸¦ ¹İÈ¯ÇÑ´Ù. (1 bit)
+	 * ë„¤ì˜¨ íš¨ê³¼ ìœ ë¬´ë¥¼ ë°˜í™˜í•œë‹¤. (1 bit)
 	 * 
-	 * @return ³×¿Â È¿°ú À¯¹«
+	 * @return ë„¤ì˜¨ íš¨ê³¼ ìœ ë¬´
 	 */
 	public boolean hasNeonEffect() {
 		return BitFlag.get(value, 1);
 	}
 
 	/**
-	 * ³×¿Â È¿°ú À¯¹«¸¦ ¼³Á¤ÇÑ´Ù. (1 bit)
+	 * ë„¤ì˜¨ íš¨ê³¼ ìœ ë¬´ë¥¼ ì„¤ì •í•œë‹¤. (1 bit)
 	 * 
 	 * @param hasNeonEffect
-	 *            ³×¿Â È¿°ú À¯¹«
+	 *            ë„¤ì˜¨ íš¨ê³¼ ìœ ë¬´
 	 */
 	public void setHasNeonEffect(boolean hasNeonEffect) {
 		value = BitFlag.set(value, 1, hasNeonEffect);
 	}
 
 	/**
-	 * ºÎµå·¯¿î °¡ÀåÀÚ¸® È¿°ú À¯¹«¸¦ ¹İÈ¯ÇÑ´Ù. (2 bit)
+	 * ë¶€ë“œëŸ¬ìš´ ê°€ì¥ìë¦¬ íš¨ê³¼ ìœ ë¬´ë¥¼ ë°˜í™˜í•œë‹¤. (2 bit)
 	 * 
-	 * @return ºÎµå·¯¿î °¡ÀåÀÚ¸® È¿°ú À¯¹«
+	 * @return ë¶€ë“œëŸ¬ìš´ ê°€ì¥ìë¦¬ íš¨ê³¼ ìœ ë¬´
 	 */
 	public boolean hasSoftBorderEffect() {
 		return BitFlag.get(value, 2);
 	}
 
 	/**
-	 * ºÎµå·¯¿î °¡ÀåÀÚ¸® È¿°ú À¯¹«¸¦ ¼³Á¤ÇÑ´Ù. (2 bit)
+	 * ë¶€ë“œëŸ¬ìš´ ê°€ì¥ìë¦¬ íš¨ê³¼ ìœ ë¬´ë¥¼ ì„¤ì •í•œë‹¤. (2 bit)
 	 * 
 	 * @param hasSoftBorderEffect
-	 *            ºÎµå·¯¿î °¡ÀåÀÚ¸® È¿°ú À¯¹«
+	 *            ë¶€ë“œëŸ¬ìš´ ê°€ì¥ìë¦¬ íš¨ê³¼ ìœ ë¬´
 	 */
 	public void setHasSoftBorderEffect(boolean hasSoftBorderEffect) {
 		value = BitFlag.set(value, 2, hasSoftBorderEffect);
 	}
 
 	/**
-	 * ¹İ»ç È¿°ú À¯¹«¸¦ ¹İÈ¯ÇÑ´Ù. (3 bit)
+	 * ë°˜ì‚¬ íš¨ê³¼ ìœ ë¬´ë¥¼ ë°˜í™˜í•œë‹¤. (3 bit)
 	 * 
-	 * @return ¹İ»ç È¿°ú À¯¹«
+	 * @return ë°˜ì‚¬ íš¨ê³¼ ìœ ë¬´
 	 */
 	public boolean hasReflectionEffect() {
 		return BitFlag.get(value, 3);
 	}
 
 	/**
-	 * ¹İ»ç È¿°ú À¯¹«¸¦ ¼³Á¤ÇÑ´Ù. (3 bit)
+	 * ë°˜ì‚¬ íš¨ê³¼ ìœ ë¬´ë¥¼ ì„¤ì •í•œë‹¤. (3 bit)
 	 * 
 	 * @param hasReflectionEffect
-	 *            ¹İ»ç È¿°ú À¯¹«
+	 *            ë°˜ì‚¬ íš¨ê³¼ ìœ ë¬´
 	 */
 	public void setHasReflectionEffect(boolean hasReflectionEffect) {
 		value = BitFlag.set(value, 3, hasReflectionEffect);

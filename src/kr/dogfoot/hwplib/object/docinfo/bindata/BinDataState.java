@@ -1,58 +1,58 @@
-package kr.dogfoot.hwplib.object.docinfo.bindata;
+ï»¿package kr.dogfoot.hwplib.object.docinfo.bindata;
 
 /**
- * ¹ÙÀÌ³Ê¸® µ¥ÀÌÅÍÀÇ »óÅÂ
+ * ë°”ì´ë„ˆë¦¬ ë°ì´í„°ì˜ ìƒíƒœ
  * 
  * @author neolord
  */
 public enum BinDataState {
 	/**
-	 * ¾ÆÁ÷ access µÈ ÀûÀÌ ¾ø´Â »óÅÂ
+	 * ì•„ì§ access ëœ ì ì´ ì—†ëŠ” ìƒíƒœ
 	 */
 	NotAcceess((byte) 0),
 	/**
-	 * access¿¡ ¼º°øÇÏ¿© ÆÄÀÏÀ» Ã£Àº »óÅÂ
+	 * accessì— ì„±ê³µí•˜ì—¬ íŒŒì¼ì„ ì°¾ì€ ìƒíƒœ
 	 */
 	SuccessAccess((byte) 1),
 	/**
-	 * access°¡ ½ÇÆĞÇÑ ¿¡·¯ »óÅÂ
+	 * accessê°€ ì‹¤íŒ¨í•œ ì—ëŸ¬ ìƒíƒœ
 	 */
 	FailAccess((byte) 2),
 	/**
-	 * ¸µÅ© access°¡ ½ÇÆĞÇßÀ¸³ª ¹«½ÃµÈ »óÅÂ
+	 * ë§í¬ accessê°€ ì‹¤íŒ¨í–ˆìœ¼ë‚˜ ë¬´ì‹œëœ ìƒíƒœ
 	 */
 	FailAccessButIgnore((byte) 3);
 
 	/**
-	 * ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª
+	 * íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’
 	 */
 	private byte value;
 
 	/**
-	 * »ı¼ºÀÚ
+	 * ìƒì„±ì
 	 * 
 	 * @param value
-	 *            ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª
+	 *            íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’
 	 */
 	private BinDataState(byte value) {
 		this.value = value;
 	}
 
 	/**
-	 * ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ªÀ» ¹İÈ¯ÇÑ´Ù.
+	 * íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’ì„ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª
+	 * @return íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’
 	 */
 	public byte getValue() {
 		return value;
 	}
 
 	/**
-	 * ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª¿¡ ÇØ´çµÇ´Â enum °ªÀ» ¹İÈ¯ÇÑ´Ù.
+	 * íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’ì— í•´ë‹¹ë˜ëŠ” enum ê°’ì„ ë°˜í™˜í•œë‹¤.
 	 * 
 	 * @param value
-	 *            ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª
-	 * @return enum °ª
+	 *            íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’
+	 * @return enum ê°’
 	 */
 	public static BinDataState valueOf(byte value) {
 		for (BinDataState bds : values()) {

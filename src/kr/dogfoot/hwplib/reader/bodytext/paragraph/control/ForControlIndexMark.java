@@ -1,4 +1,4 @@
-package kr.dogfoot.hwplib.reader.bodytext.paragraph.control;
+ï»¿package kr.dogfoot.hwplib.reader.bodytext.paragraph.control;
 
 import java.io.IOException;
 
@@ -7,18 +7,18 @@ import kr.dogfoot.hwplib.object.bodytext.control.ctrlheader.CtrlHeaderIndexMark;
 import kr.dogfoot.hwplib.util.compoundFile.StreamReader;
 
 /**
- * Ã£¾Æº¸±â Ç¥½Ä ÄÁÆ®·ÑÀ» ÀĞ±â À§ÇÑ °´Ã¼
+ * ì°¾ì•„ë³´ê¸° í‘œì‹ ì»¨íŠ¸ë¡¤ì„ ì½ê¸° ìœ„í•œ ê°ì²´
  * 
  * @author neolord
  */
 public class ForControlIndexMark {
 	/**
-	 * Ã£¾Æº¸±â Ç¥½Ä ÄÁÆ®·ÑÀ» ÀĞ´Â´Ù.
+	 * ì°¾ì•„ë³´ê¸° í‘œì‹ ì»¨íŠ¸ë¡¤ì„ ì½ëŠ”ë‹¤.
 	 * 
 	 * @param idxm
-	 *            Ã£¾Æº¸±â Ç¥½Ä ÄÁÆ®·Ñ
+	 *            ì°¾ì•„ë³´ê¸° í‘œì‹ ì»¨íŠ¸ë¡¤
 	 * @param sr
-	 *            ½ºÆ®¸² ¸®´õ
+	 *            ìŠ¤íŠ¸ë¦¼ ë¦¬ë”
 	 * @throws IOException
 	 */
 	public static void read(ControlIndexMark idxm, StreamReader sr)
@@ -27,12 +27,12 @@ public class ForControlIndexMark {
 	}
 
 	/**
-	 * Ã£¾Æº¸±â Ç¥½Ã ÄÁÆ®·ÑÀÇ ÄÁÆ®·Ñ Çì´õ ·¹ÄÚµå¸¦ ÀĞ´Â´Ù.
+	 * ì°¾ì•„ë³´ê¸° í‘œì‹œ ì»¨íŠ¸ë¡¤ì˜ ì»¨íŠ¸ë¡¤ í—¤ë” ë ˆì½”ë“œë¥¼ ì½ëŠ”ë‹¤.
 	 * 
 	 * @param header
-	 *            Ã£¾Æº¸±â Ç¥½Ã ÄÁÆ®·ÑÀÇ ÄÁÆ®·Ñ Çì´õ ·¹ÄÚµå
+	 *            ì°¾ì•„ë³´ê¸° í‘œì‹œ ì»¨íŠ¸ë¡¤ì˜ ì»¨íŠ¸ë¡¤ í—¤ë” ë ˆì½”ë“œ
 	 * @param sr
-	 *            ½ºÆ®¸² ¸®´õ
+	 *            ìŠ¤íŠ¸ë¦¼ ë¦¬ë”
 	 * @throws IOException
 	 */
 	private static void ctrlHeader(CtrlHeaderIndexMark header, StreamReader sr)

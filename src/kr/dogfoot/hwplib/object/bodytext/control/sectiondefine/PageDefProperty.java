@@ -1,47 +1,47 @@
-package kr.dogfoot.hwplib.object.bodytext.control.sectiondefine;
+ï»¿package kr.dogfoot.hwplib.object.bodytext.control.sectiondefine;
 
 import kr.dogfoot.hwplib.util.binary.BitFlag;
 
 /**
- * ¿ëÁö ¼³Á¤ÀÇ ¼Ó¼º¿¡ ´ëÇÑ °´Ã¼
+ * ìš©ì§€ ì„¤ì •ì˜ ì†ì„±ì— ëŒ€í•œ ê°ì²´
  * 
  * @author neolord
  */
 public class PageDefProperty {
 	/**
-	 * ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª(unsigned 4 byte)
+	 * íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’(unsigned 4 byte)
 	 */
 	private long value;
 
 	/**
-	 * »ı¼ºÀÚ
+	 * ìƒì„±ì
 	 */
 	public PageDefProperty() {
 	}
 
 	/**
-	 * ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ªÀ» ¹İÈ¯ÇÑ´Ù.
+	 * íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’ì„ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª
+	 * @return íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’
 	 */
 	public long getValue() {
 		return value;
 	}
 
 	/**
-	 * ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ªÀ» ¼³Á¤ÇÑ´Ù.
+	 * íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’ì„ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param value
-	 *            ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª
+	 *            íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’
 	 */
 	public void setValue(long value) {
 		this.value = value;
 	}
 
 	/**
-	 * ¿ëÁö ¹æÇâÀ» ¹İÈ¯ÇÑ´Ù. (0 bit)
+	 * ìš©ì§€ ë°©í–¥ì„ ë°˜í™˜í•œë‹¤. (0 bit)
 	 * 
-	 * @return ¿ëÁö ¹æÇâ
+	 * @return ìš©ì§€ ë°©í–¥
 	 */
 	public PaperDirection getPaperDirection() {
 		if (BitFlag.get(value, 0) == false) {
@@ -52,10 +52,10 @@ public class PageDefProperty {
 	}
 
 	/**
-	 * ¿ëÁö ¹æÇâÀ» ¼³Á¤ÇÑ´Ù. (0 bit)
+	 * ìš©ì§€ ë°©í–¥ì„ ì„¤ì •í•œë‹¤. (0 bit)
 	 * 
 	 * @param paperDirection
-	 *            ¿ëÁö ¹æÇâ
+	 *            ìš©ì§€ ë°©í–¥
 	 */
 	public void setPaperDirection(PaperDirection paperDirection) {
 		if (paperDirection == PaperDirection.Potrait) {
@@ -66,16 +66,16 @@ public class PageDefProperty {
 	}
 
 	/**
-	 * Á¦Ã¥ ¹æ¹ıÀ» ¹İÈ¯ÇÑ´Ù. (1~2 bit)
+	 * ì œì±… ë°©ë²•ì„ ë°˜í™˜í•œë‹¤. (1~2 bit)
 	 * 
-	 * @return Á¦Ã¥ ¹æ¹ı
+	 * @return ì œì±… ë°©ë²•
 	 */
 	public MakingBookMethod getMakingBookMethod() {
 		return MakingBookMethod.valueOf((byte) BitFlag.get(value, 1, 2));
 	}
 
 	/**
-	 * Á¦Ã¥ ¹æ¹ıÀ» ¼³Á¤ÇÑ´Ù. (1~2 bit)
+	 * ì œì±… ë°©ë²•ì„ ì„¤ì •í•œë‹¤. (1~2 bit)
 	 * 
 	 * @param makingBookMethod
 	 */

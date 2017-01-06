@@ -1,4 +1,4 @@
-package kr.dogfoot.hwplib.object;
+ï»¿package kr.dogfoot.hwplib.object;
 
 import kr.dogfoot.hwplib.object.bindata.BinData;
 import kr.dogfoot.hwplib.object.bodytext.BodyText;
@@ -6,30 +6,30 @@ import kr.dogfoot.hwplib.object.docinfo.DocInfo;
 import kr.dogfoot.hwplib.object.fileheader.FileHeader;
 
 /**
- * HWP File¸¦ ³ªÅ¸³»´Â °´Ã¼
+ * HWP Fileë¥¼ ë‚˜íƒ€ë‚´ëŠ” ê°ì²´
  * 
  * @author neolord
  */
 public class HWPFile {
 	/**
-	 * ÆÄÀÏ ÀÎ½Ä Á¤º¸¸¦ ³ªÅ¸³»´Â °´Ã¼. "FileHeader" stream¿¡ ÀúÀåµÈ´Ù.
+	 * íŒŒì¼ ì¸ì‹ ì •ë³´ë¥¼ ë‚˜íƒ€ë‚´ëŠ” ê°ì²´. "FileHeader" streamì— ì €ì¥ëœë‹¤.
 	 */
 	private FileHeader fileHeader;
 	/**
-	 * ¹®¼­ Á¤º¸¸¦ ³ªÅ¸³»´Â °´Ã¼. "DocInfo" stream¿¡ ÀúÀåµÈ´Ù.
+	 * ë¬¸ì„œ ì •ë³´ë¥¼ ë‚˜íƒ€ë‚´ëŠ” ê°ì²´. "DocInfo" streamì— ì €ì¥ëœë‹¤.
 	 */
 	private DocInfo docInfo;
 	/**
-	 * º»¹®À» ³ªÅ¸³»´Â °´Ã¼. "BodyText" storage¿¡ ÀúÀåµÈ´Ù.
+	 * ë³¸ë¬¸ì„ ë‚˜íƒ€ë‚´ëŠ” ê°ì²´. "BodyText" storageì— ì €ì¥ëœë‹¤.
 	 */
 	private BodyText bodyText;
 	/**
-	 * ¹ÙÀÌ³Ê¸® µ¥ÀÌÅÍ¸¦ ³ªÅ¸³»´Â °´Ã¼. "BinData" storage¿¡ ÀúÀåµÈ´Ù.
+	 * ë°”ì´ë„ˆë¦¬ ë°ì´í„°ë¥¼ ë‚˜íƒ€ë‚´ëŠ” ê°ì²´. "BinData" storageì— ì €ì¥ëœë‹¤.
 	 */
 	private BinData binData;
 
 	/**
-	 * »ı¼ºÀÚ
+	 * ìƒì„±ì
 	 */
 	public HWPFile() {
 		fileHeader = new FileHeader();
@@ -39,36 +39,36 @@ public class HWPFile {
 	}
 
 	/**
-	 * ÆÄÀÏ ÀÎ½Ä Á¤º¸¸¦ ³ªÅ¸³»´Â °´Ã¼¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * íŒŒì¼ ì¸ì‹ ì •ë³´ë¥¼ ë‚˜íƒ€ë‚´ëŠ” ê°ì²´ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ÆÄÀÏ ÀÎ½Ä Á¤º¸¸¦ ³ªÅ¸³»´Â °´Ã¼
+	 * @return íŒŒì¼ ì¸ì‹ ì •ë³´ë¥¼ ë‚˜íƒ€ë‚´ëŠ” ê°ì²´
 	 */
 	public FileHeader getFileHeader() {
 		return fileHeader;
 	}
 
 	/**
-	 * ¹®¼­ Á¤º¸¸¦ ³ªÅ¸³»´Â °´Ã¼¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ë¬¸ì„œ ì •ë³´ë¥¼ ë‚˜íƒ€ë‚´ëŠ” ê°ì²´ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ¹®¼­ Á¤º¸¸¦ ³ªÅ¸³»´Â °´Ã¼
+	 * @return ë¬¸ì„œ ì •ë³´ë¥¼ ë‚˜íƒ€ë‚´ëŠ” ê°ì²´
 	 */
 	public DocInfo getDocInfo() {
 		return docInfo;
 	}
 
 	/**
-	 * º»¹®À» ³ªÅ¸³»´Â °´Ã¼¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ë³¸ë¬¸ì„ ë‚˜íƒ€ë‚´ëŠ” ê°ì²´ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return º»¹®À» ³ªÅ¸³»´Â °´Ã¼
+	 * @return ë³¸ë¬¸ì„ ë‚˜íƒ€ë‚´ëŠ” ê°ì²´
 	 */
 	public BodyText getBodyText() {
 		return bodyText;
 	}
 
 	/**
-	 * ¹ÙÀÌ³Ê¸® µ¥ÀÌÅÍ¸¦ ³ªÅ¸³»´Â °´Ã¼¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ë°”ì´ë„ˆë¦¬ ë°ì´í„°ë¥¼ ë‚˜íƒ€ë‚´ëŠ” ê°ì²´ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ¹ÙÀÌ³Ê¸® µ¥ÀÌÅÍ¸¦ ³ªÅ¸³»´Â °´Ã¼
+	 * @return ë°”ì´ë„ˆë¦¬ ë°ì´í„°ë¥¼ ë‚˜íƒ€ë‚´ëŠ” ê°ì²´
 	 */
 	public BinData getBinData() {
 		return binData;

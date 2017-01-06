@@ -1,66 +1,66 @@
-package kr.dogfoot.hwplib.object.bodytext.control.sectiondefine;
+ï»¿package kr.dogfoot.hwplib.object.bodytext.control.sectiondefine;
 
 import kr.dogfoot.hwplib.object.docinfo.borderfill.BorderThickness;
 import kr.dogfoot.hwplib.object.docinfo.borderfill.BorderType;
 import kr.dogfoot.hwplib.object.etc.Color4Byte;
 
 /**
- * ¹ÌÁÖ/°¢ÁÖ ¸ğ¾ç Á¤º¸¿¡ ´ëÇÑ ·¹ÄÚµå
+ * ë¯¸ì£¼/ê°ì£¼ ëª¨ì–‘ ì •ë³´ì— ëŒ€í•œ ë ˆì½”ë“œ
  * 
  * @author neolord
  */
 public class FootEndNoteShape {
 	/**
-	 * ¼Ó¼º
+	 * ì†ì„±
 	 */
 	private FootNoteShapeProperty property;
 	/**
-	 * »ç¿ëÀÚ ±âÈ£
+	 * ì‚¬ìš©ì ê¸°í˜¸
 	 */
 	private String userSymbol;
 	/**
-	 * ¾Õ Àå½Ä ¹®ÀÚ
+	 * ì• ì¥ì‹ ë¬¸ì
 	 */
 	private String beforeDecorativeLetter;
 	/**
-	 * µÚ Àå½Ä ¹®ÀÚ
+	 * ë’¤ ì¥ì‹ ë¬¸ì
 	 */
 	private String afterDecorativeLetter;
 	/**
-	 * ½ÃÀÛ ¹øÈ£
+	 * ì‹œì‘ ë²ˆí˜¸
 	 */
 	private int startNumber;
 	/**
-	 * ±¸ºĞ¼± ±æÀÌ
+	 * êµ¬ë¶„ì„  ê¸¸ì´
 	 */
 	private long divideLineLength;
 	/**
-	 * ±¸ºĞ¼± À§ ¿©¹é
+	 * êµ¬ë¶„ì„  ìœ„ ì—¬ë°±
 	 */
 	private int divideLineTopMargin;
 	/**
-	 * ±¸ºĞ¼± ¾Æ·¡ ¿©¹é
+	 * êµ¬ë¶„ì„  ì•„ë˜ ì—¬ë°±
 	 */
 	private int divideLineBottomMargin;
 	/**
-	 * ÁÖ¼® »çÀÌ ¿©¹é
+	 * ì£¼ì„ ì‚¬ì´ ì—¬ë°±
 	 */
 	private int betweenNotesMargin;
 	/**
-	 * ±¸ºĞ¼± Á¾·ù
+	 * êµ¬ë¶„ì„  ì¢…ë¥˜
 	 */
 	private BorderType divideLineSort;
 	/**
-	 * ±¸ºĞ¼± ±½±â
+	 * êµ¬ë¶„ì„  êµµê¸°
 	 */
 	private BorderThickness divideLineThickness;
 	/**
-	 * ±¸ºĞ¼± »ö»ó
+	 * êµ¬ë¶„ì„  ìƒ‰ìƒ
 	 */
 	private Color4Byte divideLineColor;
 
 	/**
-	 * »ı¼ºÀÚ
+	 * ìƒì„±ì
 	 */
 	public FootEndNoteShape() {
 		property = new FootNoteShapeProperty();
@@ -68,208 +68,208 @@ public class FootEndNoteShape {
 	}
 
 	/**
-	 * ¼Ó¼º °´Ã¼¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ì†ì„± ê°ì²´ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ¼Ó¼º °´Ã¼
+	 * @return ì†ì„± ê°ì²´
 	 */
 	public FootNoteShapeProperty getProperty() {
 		return property;
 	}
 
 	/**
-	 * »ç¿ëÀÚ ±âÈ£¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ì‚¬ìš©ì ê¸°í˜¸ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return »ç¿ëÀÚ ±âÈ£
+	 * @return ì‚¬ìš©ì ê¸°í˜¸
 	 */
 	public String getUserSymbol() {
 		return userSymbol;
 	}
 
 	/**
-	 * »ç¿ëÀÚ ±âÈ£¸¦ ¼³Á¤ÇÑ´Ù.
+	 * ì‚¬ìš©ì ê¸°í˜¸ë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param userSymbol
-	 *            »ç¿ëÀÚ ±âÈ£
+	 *            ì‚¬ìš©ì ê¸°í˜¸
 	 */
 	public void setUserSymbol(String userSymbol) {
 		this.userSymbol = userSymbol;
 	}
 
 	/**
-	 * ¾Õ Àå½Ä ¹®ÀÚ¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ì• ì¥ì‹ ë¬¸ìë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ¾Õ Àå½Ä ¹®ÀÚ
+	 * @return ì• ì¥ì‹ ë¬¸ì
 	 */
 	public String getBeforeDecorativeLetter() {
 		return beforeDecorativeLetter;
 	}
 
 	/**
-	 * ¾Õ Àå½Ä ¹®ÀÚ¸¦ ¼³Á¤ÇÑ´Ù.
+	 * ì• ì¥ì‹ ë¬¸ìë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param beforeDecorativeLetter
-	 *            ¾Õ Àå½Ä ¹®ÀÚ
+	 *            ì• ì¥ì‹ ë¬¸ì
 	 */
 	public void setBeforeDecorativeLetter(String beforeDecorativeLetter) {
 		this.beforeDecorativeLetter = beforeDecorativeLetter;
 	}
 
 	/**
-	 * µÚ Àå½Ä ¹®ÀÚ¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ë’¤ ì¥ì‹ ë¬¸ìë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return µÚ Àå½Ä ¹®ÀÚ
+	 * @return ë’¤ ì¥ì‹ ë¬¸ì
 	 */
 	public String getAfterDecorativeLetter() {
 		return afterDecorativeLetter;
 	}
 
 	/**
-	 * µÚ Àå½Ä ¹®ÀÚ¸¦ ¼³Á¤ÇÑ´Ù.
+	 * ë’¤ ì¥ì‹ ë¬¸ìë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param afterDecorativeLetter
-	 *            µÚ Àå½Ä ¹®ÀÚ
+	 *            ë’¤ ì¥ì‹ ë¬¸ì
 	 */
 	public void setAfterDecorativeLetter(String afterDecorativeLetter) {
 		this.afterDecorativeLetter = afterDecorativeLetter;
 	}
 
 	/**
-	 * ½ÃÀÛ ¹øÈ£¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ì‹œì‘ ë²ˆí˜¸ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ½ÃÀÛ ¹øÈ£
+	 * @return ì‹œì‘ ë²ˆí˜¸
 	 */
 	public int getStartNumber() {
 		return startNumber;
 	}
 
 	/**
-	 * ½ÃÀÛ ¹øÈ£¸¦ ¼³Á¤ÇÑ´Ù.
+	 * ì‹œì‘ ë²ˆí˜¸ë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param startNumber
-	 *            ½ÃÀÛ ¹øÈ£
+	 *            ì‹œì‘ ë²ˆí˜¸
 	 */
 	public void setStartNumber(int startNumber) {
 		this.startNumber = startNumber;
 	}
 
 	/**
-	 * ±¸ºĞ¼± ±æÀÌ¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * êµ¬ë¶„ì„  ê¸¸ì´ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ±¸ºĞ¼± ±æÀÌ
+	 * @return êµ¬ë¶„ì„  ê¸¸ì´
 	 */
 	public long getDivideLineLength() {
 		return divideLineLength;
 	}
 
 	/**
-	 * ±¸ºĞ¼± ±æÀÌ¸¦ ¼³Á¤ÇÑ´Ù.
+	 * êµ¬ë¶„ì„  ê¸¸ì´ë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param divideLineLength
-	 *            ±¸ºĞ¼± ±æÀÌ
+	 *            êµ¬ë¶„ì„  ê¸¸ì´
 	 */
 	public void setDivideLineLength(long divideLineLength) {
 		this.divideLineLength = divideLineLength;
 	}
 
 	/**
-	 * ±¸ºĞ¼± À§ ¿©¹éÀÇ Å©±â¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * êµ¬ë¶„ì„  ìœ„ ì—¬ë°±ì˜ í¬ê¸°ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ±¸ºĞ¼± À§ ¿©¹éÀÇ Å©±â
+	 * @return êµ¬ë¶„ì„  ìœ„ ì—¬ë°±ì˜ í¬ê¸°
 	 */
 	public int getDivideLineTopMargin() {
 		return divideLineTopMargin;
 	}
 
 	/**
-	 * ±¸ºĞ¼± À§ ¿©¹éÀÇ Å©±â¸¦ ¼³Á¤ÇÑ´Ù.
+	 * êµ¬ë¶„ì„  ìœ„ ì—¬ë°±ì˜ í¬ê¸°ë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param divideLineTopMargin
-	 *            ±¸ºĞ¼± À§ ¿©¹éÀÇ Å©±â
+	 *            êµ¬ë¶„ì„  ìœ„ ì—¬ë°±ì˜ í¬ê¸°
 	 */
 	public void setDivideLineTopMargin(int divideLineTopMargin) {
 		this.divideLineTopMargin = divideLineTopMargin;
 	}
 
 	/**
-	 * ±¸ºĞ¼± ¾Æ·¡ ¿©¹éÀÇ Å©±â¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * êµ¬ë¶„ì„  ì•„ë˜ ì—¬ë°±ì˜ í¬ê¸°ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ±¸ºĞ¼± ¾Æ·¡ ¿©¹éÀÇ Å©±â
+	 * @return êµ¬ë¶„ì„  ì•„ë˜ ì—¬ë°±ì˜ í¬ê¸°
 	 */
 	public int getDivideLineBottomMargin() {
 		return divideLineBottomMargin;
 	}
 
 	/**
-	 * ±¸ºĞ¼± ¾Æ·¡ ¿©¹éÀÇ Å©±â¸¦ ¼³Á¤ÇÑ´Ù.
+	 * êµ¬ë¶„ì„  ì•„ë˜ ì—¬ë°±ì˜ í¬ê¸°ë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param divideLineBottomMargin
-	 *            ±¸ºĞ¼± ¾Æ·¡ ¿©¹éÀÇ Å©±â
+	 *            êµ¬ë¶„ì„  ì•„ë˜ ì—¬ë°±ì˜ í¬ê¸°
 	 */
 	public void setDivideLineBottomMargin(int divideLineBottomMargin) {
 		this.divideLineBottomMargin = divideLineBottomMargin;
 	}
 
 	/**
-	 * ÁÖ¼® »çÀÌ ¿©¹éÀÇ Å©±â¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ì£¼ì„ ì‚¬ì´ ì—¬ë°±ì˜ í¬ê¸°ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ÁÖ¼® »çÀÌ ¿©¹éÀÇ Å©±â
+	 * @return ì£¼ì„ ì‚¬ì´ ì—¬ë°±ì˜ í¬ê¸°
 	 */
 	public int getBetweenNotesMargin() {
 		return betweenNotesMargin;
 	}
 
 	/**
-	 * ÁÖ¼® »çÀÌ ¿©¹éÀÇ Å©±â¸¦ ¼³Á¤ÇÑ´Ù.
+	 * ì£¼ì„ ì‚¬ì´ ì—¬ë°±ì˜ í¬ê¸°ë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param betweenNotesMargin
-	 *            ÁÖ¼® »çÀÌ ¿©¹éÀÇ Å©±â
+	 *            ì£¼ì„ ì‚¬ì´ ì—¬ë°±ì˜ í¬ê¸°
 	 */
 	public void setBetweenNotesMargin(int betweenNotesMargin) {
 		this.betweenNotesMargin = betweenNotesMargin;
 	}
 
 	/**
-	 * ±¸ºĞ¼± Á¾·ù¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * êµ¬ë¶„ì„  ì¢…ë¥˜ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ±¸ºĞ¼± Á¾·ù
+	 * @return êµ¬ë¶„ì„  ì¢…ë¥˜
 	 */
 	public BorderType getDivideLineSort() {
 		return divideLineSort;
 	}
 
 	/**
-	 * ±¸ºĞ¼± Á¾·ù¸¦ ¼³Á¤ÇÑ´Ù.
+	 * êµ¬ë¶„ì„  ì¢…ë¥˜ë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param divideLineSort
-	 *            ±¸ºĞ¼± Á¾·ù
+	 *            êµ¬ë¶„ì„  ì¢…ë¥˜
 	 */
 	public void setDivideLineSort(BorderType divideLineSort) {
 		this.divideLineSort = divideLineSort;
 	}
 
 	/**
-	 * ±¸ºĞ¼± ±½±â¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * êµ¬ë¶„ì„  êµµê¸°ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ±¸ºĞ¼± ±½±â
+	 * @return êµ¬ë¶„ì„  êµµê¸°
 	 */
 	public BorderThickness getDivideLineThickness() {
 		return divideLineThickness;
 	}
 
 	/**
-	 * ±¸ºĞ¼± ±½±â¸¦ ¼³Á¤ÇÑ´Ù.
+	 * êµ¬ë¶„ì„  êµµê¸°ë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param divideLineThickness
-	 *            ±¸ºĞ¼± ±½±â
+	 *            êµ¬ë¶„ì„  êµµê¸°
 	 */
 	public void setDivideLineThickness(BorderThickness divideLineThickness) {
 		this.divideLineThickness = divideLineThickness;
 	}
 
 	/**
-	 * ±¸ºĞ¼± »ö»ó °´Ã¼¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * êµ¬ë¶„ì„  ìƒ‰ìƒ ê°ì²´ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ±¸ºĞ¼± »ö»ó °´Ã¼
+	 * @return êµ¬ë¶„ì„  ìƒ‰ìƒ ê°ì²´
 	 */
 	public Color4Byte getDivideLineColor() {
 		return divideLineColor;

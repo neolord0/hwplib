@@ -1,18 +1,18 @@
-package kr.dogfoot.hwplib.object.bodytext.paragraph.text;
+ï»¿package kr.dogfoot.hwplib.object.bodytext.paragraph.text;
 
 /**
- * ÀÏ¹İ Character
+ * ì¼ë°˜ Character
  * 
  * @author neolord
  */
 public class HWPCharNormal extends HWPChar {
 	/**
-	 * ±ÛÀÚ
+	 * ê¸€ì
 	 */
 	private String ch;
 
 	/**
-	 * »ı¼ºÀÚ
+	 * ìƒì„±ì
 	 */
 	public HWPCharNormal() {
 	}
@@ -23,21 +23,21 @@ public class HWPCharNormal extends HWPChar {
 	}
 
 	/**
-	 * ±ÛÀÚ¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ê¸€ìë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ±ÛÀÚ
+	 * @return ê¸€ì
 	 */
 	public String getCh() {
 		return ch;
 	}
 
 	/**
-	 * ±ÛÀÚ¸¦ ¼³Á¤ÇÑ´Ù.
+	 * ê¸€ìë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param ch
-	 *            ±ÛÀÚ
+	 *            ê¸€ì
 	 * @throws Exception
-	 *             chÀÇ ±æÀÌ°¡ 1ÀÌ ¾Æ´Ò ¶§ ¹ß»ı
+	 *             chì˜ ê¸¸ì´ê°€ 1ì´ ì•„ë‹ ë•Œ ë°œìƒ
 	 */
 	public void setCh(String ch) throws Exception {
 		if (ch.length() != 1) {

@@ -1,91 +1,91 @@
-package kr.dogfoot.hwplib.reader;
+ï»¿package kr.dogfoot.hwplib.reader;
 
 /**
- * ·¹ÄÚµå Çì´õ
+ * ë ˆì½”ë“œ í—¤ë”
  * 
  * @author neolord
  */
 public class RecordHeader {
 	/**
-	 * Å×±× ¾ÆÀÌµğ - ·¹ÄÚµåÀÇ Á¾·ù
+	 * í…Œê·¸ ì•„ì´ë”” - ë ˆì½”ë“œì˜ ì¢…ë¥˜
 	 */
 	private short tagID;
 	/**
-	 * ·¹º§ - Æ®¸®±¸Á¶¿¡¼­ Ç×¸ñÀÇ ·¹º§
+	 * ë ˆë²¨ - íŠ¸ë¦¬êµ¬ì¡°ì—ì„œ í•­ëª©ì˜ ë ˆë²¨
 	 */
 	private short level;
 	/**
-	 * Å©±â
+	 * í¬ê¸°
 	 */
 	private short size;
 
 	/**
-	 * »ı¼ºÀÚ
+	 * ìƒì„±ì
 	 */
 	public RecordHeader() {
 	}
 
 	/**
-	 * Å×±× ¾ÆÀÌµğ¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * í…Œê·¸ ì•„ì´ë””ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return Å×±× ¾ÆÀÌµğ
+	 * @return í…Œê·¸ ì•„ì´ë””
 	 */
 	public short getTagID() {
 		return tagID;
 	}
 
 	/**
-	 * Å×±× ¾ÆÀÌµğ¸¦ ¼³Á¤ÇÑ´Ù.
+	 * í…Œê·¸ ì•„ì´ë””ë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param tagID
-	 *            Å×±× ¾ÆÀÌµğ
+	 *            í…Œê·¸ ì•„ì´ë””
 	 */
 	public void setTagID(short tagID) {
 		this.tagID = tagID;
 	}
 
 	/**
-	 * ·¹º§À» ¹İÈ¯ÇÑ´Ù.
+	 * ë ˆë²¨ì„ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ·¹º§
+	 * @return ë ˆë²¨
 	 */
 	public short getLevel() {
 		return level;
 	}
 
 	/**
-	 * ·¹º§¸¦ ¼³Á¤ÇÑ´Ù.
+	 * ë ˆë²¨ë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param level
-	 *            ·¹º§
+	 *            ë ˆë²¨
 	 */
 	public void setLevel(short level) {
 		this.level = level;
 	}
 
 	/**
-	 * Å©±â¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * í¬ê¸°ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return Å©±â
+	 * @return í¬ê¸°
 	 */
 	public short getSize() {
 		return size;
 	}
 
 	/**
-	 * Å©±â¸¦ ¼³Á¤ÇÑ´Ù.
+	 * í¬ê¸°ë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param size
-	 *            Å©±â
+	 *            í¬ê¸°
 	 */
 	public void setSize(short size) {
 		this.size = size;
 	}
 
 	/**
-	 * »õ·Î¿î ·¹ÄÚµå Çì´õ °´Ã¼¸¦ »ı¼ºÇÏ°í °ªÀ» º¹»çÇÑ´Ù.
+	 * ìƒˆë¡œìš´ ë ˆì½”ë“œ í—¤ë” ê°ì²´ë¥¼ ìƒì„±í•˜ê³  ê°’ì„ ë³µì‚¬í•œë‹¤.
 	 * 
-	 * @return »õ·Î »ı¼ºµÈ ·¹ÄÚµå Çì´õ °´Ã¼
+	 * @return ìƒˆë¡œ ìƒì„±ëœ ë ˆì½”ë“œ í—¤ë” ê°ì²´
 	 */
 	public RecordHeader copy() {
 		RecordHeader rh = new RecordHeader();

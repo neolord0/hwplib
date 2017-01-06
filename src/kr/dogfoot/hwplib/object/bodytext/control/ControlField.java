@@ -1,34 +1,34 @@
-package kr.dogfoot.hwplib.object.bodytext.control;
+ï»¿package kr.dogfoot.hwplib.object.bodytext.control;
 
 import kr.dogfoot.hwplib.object.bodytext.control.ctrlheader.CtrlHeaderField;
 
 /**
- * ÇÊµå ÄÁÆ®·Ñ
+ * í•„ë“œ ì»¨íŠ¸ë¡¤
  * 
  * @author neolord
  */
 public class ControlField extends Control {
 	/**
-	 * »ı¼ºÀÚ
+	 * ìƒì„±ì
 	 */
 	public ControlField() {
 		super(new CtrlHeaderField());
 	}
 
 	/**
-	 * »ı¼ºÀÚ
+	 * ìƒì„±ì
 	 * 
 	 * @param ctrlId
-	 *            : ctrl headerÀÇ ctrl-id.
+	 *            : ctrl headerì˜ ctrl-id.
 	 */
 	public ControlField(long ctrlId) {
 		super(new CtrlHeaderField(ctrlId));
 	}
 
 	/**
-	 * ÇÊµå¿ë ÄÁÆ®·Ñ Çì´õ¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * í•„ë“œìš© ì»¨íŠ¸ë¡¤ í—¤ë”ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ÇÊµå¿ë ÄÁÆ®·Ñ Çì´õ
+	 * @return í•„ë“œìš© ì»¨íŠ¸ë¡¤ í—¤ë”
 	 */
 	public CtrlHeaderField getHeader() {
 		return (CtrlHeaderField) header;

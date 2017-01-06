@@ -1,209 +1,209 @@
-package kr.dogfoot.hwplib.object.bodytext.paragraph.lineseg;
+ï»¿package kr.dogfoot.hwplib.object.bodytext.paragraph.lineseg;
 
 import kr.dogfoot.hwplib.util.binary.BitFlag;
 
 /**
- * °¢ ÁßÀÇ align Á¤º¸ÀÇ ÅÂ±× Á¤º¸¿¡ ´ëÇÑ °´Ã¼
+ * ê° ì¤‘ì˜ align ì •ë³´ì˜ íƒœê·¸ ì •ë³´ì— ëŒ€í•œ ê°ì²´
  * 
  * @author neolord
  */
 public class LineSegItemTag {
 	/**
-	 * ÆÄÀÏ¿¡ ÀúÀåµÇ´Â °ª (unsigned 4 byte)
+	 * íŒŒì¼ì— ì €ì¥ë˜ëŠ” ê°’ (unsigned 4 byte)
 	 */
 	private long value;
 
 	/**
-	 * »ı¼ºÀÚ
+	 * ìƒì„±ì
 	 */
 	public LineSegItemTag() {
 	}
 
 	/**
-	 * ÆÄÀÏ¿¡ ÀúÀåµÇ´Â °ªÀ» ¹İÈ¯ÇÑ´Ù.
+	 * íŒŒì¼ì— ì €ì¥ë˜ëŠ” ê°’ì„ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ÆÄÀÏ¿¡ ÀúÀåµÇ´Â °ª
+	 * @return íŒŒì¼ì— ì €ì¥ë˜ëŠ” ê°’
 	 */
 	public long getValue() {
 		return value;
 	}
 
 	/**
-	 * ÆÄÀÏ¿¡ ÀúÀåµÇ´Â °ªÀ» ¼³Á¤ÇÑ´Ù.
+	 * íŒŒì¼ì— ì €ì¥ë˜ëŠ” ê°’ì„ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param value
-	 *            ÆÄÀÏ¿¡ ÀúÀåµÇ´Â °ª
+	 *            íŒŒì¼ì— ì €ì¥ë˜ëŠ” ê°’
 	 */
 	public void setValue(long value) {
 		this.value = value;
 	}
 
 	/**
-	 * ÆäÀÌÁöÀÇ Ã¹ ÁÙÀÎÁö ¿©ºÎ¸¦ ¹İÈ¯ÇÑ´Ù. (0 bit)
+	 * í˜ì´ì§€ì˜ ì²« ì¤„ì¸ì§€ ì—¬ë¶€ë¥¼ ë°˜í™˜í•œë‹¤. (0 bit)
 	 * 
-	 * @return ÆäÀÌÁöÀÇ Ã¹ ÁÙÀÎÁö ¿©ºÎ
+	 * @return í˜ì´ì§€ì˜ ì²« ì¤„ì¸ì§€ ì—¬ë¶€
 	 */
 	public boolean isFirstLineAtPage() {
 		return BitFlag.get(value, 0);
 	}
 
 	/**
-	 * ÆäÀÌÁöÀÇ Ã¹ ÁÙÀÎÁö ¿©ºÎ¸¦ ¼³Á¤ÇÑ´Ù. (0 bit)
+	 * í˜ì´ì§€ì˜ ì²« ì¤„ì¸ì§€ ì—¬ë¶€ë¥¼ ì„¤ì •í•œë‹¤. (0 bit)
 	 * 
 	 * @param firstLineAtPage
-	 *            ÆäÀÌÁöÀÇ Ã¹ ÁÙÀÎÁö ¿©ºÎ
+	 *            í˜ì´ì§€ì˜ ì²« ì¤„ì¸ì§€ ì—¬ë¶€
 	 */
 	public void setFirstLineAtPage(boolean firstLineAtPage) {
 		value = BitFlag.set(value, 0, firstLineAtPage);
 	}
 
 	/**
-	 * ÄÃ·³ÀÇ Ã¹ ÁÙÀÎÁö ¿©ºÎ¸¦ ¹İÈ¯ÇÑ´Ù. (1 bit)
+	 * ì»¬ëŸ¼ì˜ ì²« ì¤„ì¸ì§€ ì—¬ë¶€ë¥¼ ë°˜í™˜í•œë‹¤. (1 bit)
 	 * 
-	 * @return ÄÃ·³ÀÇ Ã¹ ÁÙÀÎÁö ¿©ºÎ
+	 * @return ì»¬ëŸ¼ì˜ ì²« ì¤„ì¸ì§€ ì—¬ë¶€
 	 */
 	public boolean isFirstLineAtColumn() {
 		return BitFlag.get(value, 1);
 	}
 
 	/**
-	 * ÄÃ·³ÀÇ Ã¹ ÁÙÀÎÁö ¿©ºÎ¸¦ ¼³Á¤ÇÑ´Ù. (1 bit)
+	 * ì»¬ëŸ¼ì˜ ì²« ì¤„ì¸ì§€ ì—¬ë¶€ë¥¼ ì„¤ì •í•œë‹¤. (1 bit)
 	 * 
 	 * @param firstLineAtColumn
-	 *            ÄÃ·³ÀÇ Ã¹ ÁÙÀÎÁö ¿©ºÎ
+	 *            ì»¬ëŸ¼ì˜ ì²« ì¤„ì¸ì§€ ì—¬ë¶€
 	 */
 	public void setFirstLineAtColumn(boolean firstLineAtColumn) {
 		value = BitFlag.set(value, 1, firstLineAtColumn);
 	}
 
 	/**
-	 * ÅØ½ºÆ®°¡ ¹è¿­µÇÁö ¾ÊÀº ºó ¼¼±×¸ÕÆ®ÀÎÁö ¿©ºÎ¸¦ ¹İÈ¯ÇÑ´Ù. (16 bit)
+	 * í…ìŠ¤íŠ¸ê°€ ë°°ì—´ë˜ì§€ ì•Šì€ ë¹ˆ ì„¸ê·¸ë¨¼íŠ¸ì¸ì§€ ì—¬ë¶€ë¥¼ ë°˜í™˜í•œë‹¤. (16 bit)
 	 * 
-	 * @return ÅØ½ºÆ®°¡ ¹è¿­µÇÁö ¾ÊÀº ºó ¼¼±×¸ÕÆ®ÀÎÁö ¿©ºÎ
+	 * @return í…ìŠ¤íŠ¸ê°€ ë°°ì—´ë˜ì§€ ì•Šì€ ë¹ˆ ì„¸ê·¸ë¨¼íŠ¸ì¸ì§€ ì—¬ë¶€
 	 */
 	public boolean isEmptySegment() {
 		return BitFlag.get(value, 16);
 	}
 
 	/**
-	 * ÅØ½ºÆ®°¡ ¹è¿­µÇÁö ¾ÊÀº ºó ¼¼±×¸ÕÆ®ÀÎÁö ¿©ºÎ¸¦ ¼³Á¤ÇÑ´Ù. (16 bit)
+	 * í…ìŠ¤íŠ¸ê°€ ë°°ì—´ë˜ì§€ ì•Šì€ ë¹ˆ ì„¸ê·¸ë¨¼íŠ¸ì¸ì§€ ì—¬ë¶€ë¥¼ ì„¤ì •í•œë‹¤. (16 bit)
 	 * 
 	 * @param emptySegment
-	 *            ÅØ½ºÆ®°¡ ¹è¿­µÇÁö ¾ÊÀº ºó ¼¼±×¸ÕÆ®ÀÎÁö ¿©ºÎ
+	 *            í…ìŠ¤íŠ¸ê°€ ë°°ì—´ë˜ì§€ ì•Šì€ ë¹ˆ ì„¸ê·¸ë¨¼íŠ¸ì¸ì§€ ì—¬ë¶€
 	 */
 	public void setEmptySegment(boolean emptySegment) {
 		value = BitFlag.set(value, 16, emptySegment);
 	}
 
 	/**
-	 * ÁÙÀÇ Ã¹ ¼¼±×¸ÕÆ®ÀÎÁö ¿©ºÎ¸¦ ¹İÈ¯ÇÑ´Ù. (17 bit)
+	 * ì¤„ì˜ ì²« ì„¸ê·¸ë¨¼íŠ¸ì¸ì§€ ì—¬ë¶€ë¥¼ ë°˜í™˜í•œë‹¤. (17 bit)
 	 * 
-	 * @return ÁÙÀÇ Ã¹ ¼¼±×¸ÕÆ®ÀÎÁö ¿©ºÎ
+	 * @return ì¤„ì˜ ì²« ì„¸ê·¸ë¨¼íŠ¸ì¸ì§€ ì—¬ë¶€
 	 */
 	public boolean getFirstSegmentAtLine() {
 		return BitFlag.get(value, 17);
 	}
 
 	/**
-	 * ÁÙÀÇ Ã¹ ¼¼±×¸ÕÆ®ÀÎÁö ¿©ºÎ¸¦ ¼³Á¤ÇÑ´Ù. (17 bit)
+	 * ì¤„ì˜ ì²« ì„¸ê·¸ë¨¼íŠ¸ì¸ì§€ ì—¬ë¶€ë¥¼ ì„¤ì •í•œë‹¤. (17 bit)
 	 * 
 	 * @param firstSegmentAtLine
-	 *            ÁÙÀÇ Ã¹ ¼¼±×¸ÕÆ®ÀÎÁö ¿©ºÎ
+	 *            ì¤„ì˜ ì²« ì„¸ê·¸ë¨¼íŠ¸ì¸ì§€ ì—¬ë¶€
 	 */
 	public void setFirstSegmentAtLine(boolean firstSegmentAtLine) {
 		value = BitFlag.set(value, 17, firstSegmentAtLine);
 	}
 
 	/**
-	 * ÁÙÀÇ ¸¶Áö¸· ¼¼±×¸ÕÆ®ÀÎÁö ¿©ºÎ¸¦ ¹İÈ¯ÇÑ´Ù. (18 bit)
+	 * ì¤„ì˜ ë§ˆì§€ë§‰ ì„¸ê·¸ë¨¼íŠ¸ì¸ì§€ ì—¬ë¶€ë¥¼ ë°˜í™˜í•œë‹¤. (18 bit)
 	 * 
-	 * @return ÁÙÀÇ ¸¶Áö¸· ¼¼±×¸ÕÆ®ÀÎÁö ¿©ºÎ
+	 * @return ì¤„ì˜ ë§ˆì§€ë§‰ ì„¸ê·¸ë¨¼íŠ¸ì¸ì§€ ì—¬ë¶€
 	 */
 	public boolean getLastSegmentAtLine() {
 		return BitFlag.get(value, 18);
 	}
 
 	/**
-	 * ÁÙÀÇ ¸¶Áö¸· ¼¼±×¸ÕÆ®ÀÎÁö ¿©ºÎ¸¦ ¼³Á¤ÇÑ´Ù. (18 bit)
+	 * ì¤„ì˜ ë§ˆì§€ë§‰ ì„¸ê·¸ë¨¼íŠ¸ì¸ì§€ ì—¬ë¶€ë¥¼ ì„¤ì •í•œë‹¤. (18 bit)
 	 * 
 	 * @param lastSegmentAtLine
-	 *            ÁÙÀÇ ¸¶Áö¸· ¼¼±×¸ÕÆ®ÀÎÁö ¿©ºÎ
+	 *            ì¤„ì˜ ë§ˆì§€ë§‰ ì„¸ê·¸ë¨¼íŠ¸ì¸ì§€ ì—¬ë¶€
 	 */
 	public void setLastSegmentAtLine(boolean lastSegmentAtLine) {
 		value = BitFlag.set(value, 18, lastSegmentAtLine);
 	}
 
 	/**
-	 * ÁÙÀÇ ¸¶Áö¸·¿¡ auto-hyphenationÀÌ ¼öÇàµÇ¾ú´ÂÁö ¿©ºÎ¸¦ ¹İÈ¯ÇÑ´Ù. (19 bit)
+	 * ì¤„ì˜ ë§ˆì§€ë§‰ì— auto-hyphenationì´ ìˆ˜í–‰ë˜ì—ˆëŠ”ì§€ ì—¬ë¶€ë¥¼ ë°˜í™˜í•œë‹¤. (19 bit)
 	 * 
-	 * @return ÁÙÀÇ ¸¶Áö¸·¿¡ auto-hyphenationÀÌ ¼öÇàµÇ¾ú´ÂÁö ¿©ºÎ
+	 * @return ì¤„ì˜ ë§ˆì§€ë§‰ì— auto-hyphenationì´ ìˆ˜í–‰ë˜ì—ˆëŠ”ì§€ ì—¬ë¶€
 	 */
 	public boolean isAutoHyphenation() {
 		return BitFlag.get(value, 19);
 	}
 
 	/**
-	 * ÁÙÀÇ ¸¶Áö¸·¿¡ auto-hyphenationÀÌ ¼öÇàµÇ¾ú´ÂÁö ¿©ºÎ¸¦ ¼³Á¤ÇÑ´Ù. (19 bit)
+	 * ì¤„ì˜ ë§ˆì§€ë§‰ì— auto-hyphenationì´ ìˆ˜í–‰ë˜ì—ˆëŠ”ì§€ ì—¬ë¶€ë¥¼ ì„¤ì •í•œë‹¤. (19 bit)
 	 * 
 	 * @param autoHyphenation
-	 *            ÁÙÀÇ ¸¶Áö¸·¿¡ auto-hyphenationÀÌ ¼öÇàµÇ¾ú´ÂÁö ¿©ºÎ
+	 *            ì¤„ì˜ ë§ˆì§€ë§‰ì— auto-hyphenationì´ ìˆ˜í–‰ë˜ì—ˆëŠ”ì§€ ì—¬ë¶€
 	 */
 	public void setAutoHyphenation(boolean autoHyphenation) {
 		value = BitFlag.set(value, 19, autoHyphenation);
 	}
 
 	/**
-	 * indentation Àû¿ë ¿©ºÎ¸¦ ¹İÈ¯ÇÑ´Ù. (20 bit)
+	 * indentation ì ìš© ì—¬ë¶€ë¥¼ ë°˜í™˜í•œë‹¤. (20 bit)
 	 * 
-	 * @return indentation Àû¿ë ¿©ºÎ
+	 * @return indentation ì ìš© ì—¬ë¶€
 	 */
 	public boolean isAdjustIndentation() {
 		return BitFlag.get(value, 20);
 	}
 
 	/**
-	 * indentation Àû¿ë ¿©ºÎ¸¦ ¼³Á¤ÇÑ´Ù. (20 bit)
+	 * indentation ì ìš© ì—¬ë¶€ë¥¼ ì„¤ì •í•œë‹¤. (20 bit)
 	 * 
 	 * @param adjustIndentation
-	 *            indentation Àû¿ë ¿©ºÎ
+	 *            indentation ì ìš© ì—¬ë¶€
 	 */
 	public void setAdjustIndentation(boolean adjustIndentation) {
 		value = BitFlag.set(value, 20, adjustIndentation);
 	}
 
 	/**
-	 * ¹®´Ü ¸Ó¸® ¸ğ¾ç Àû¿ë ¿©ºÎ¸¦ ¹İÈ¯ÇÑ´Ù. (21 bit)
+	 * ë¬¸ë‹¨ ë¨¸ë¦¬ ëª¨ì–‘ ì ìš© ì—¬ë¶€ë¥¼ ë°˜í™˜í•œë‹¤. (21 bit)
 	 * 
-	 * @return ¹®´Ü ¸Ó¸® ¸ğ¾ç Àû¿ë ¿©ºÎ
+	 * @return ë¬¸ë‹¨ ë¨¸ë¦¬ ëª¨ì–‘ ì ìš© ì—¬ë¶€
 	 */
 	public boolean isAdjustBullet() {
 		return BitFlag.get(value, 21);
 	}
 
 	/**
-	 * ¹®´Ü ¸Ó¸® ¸ğ¾ç Àû¿ë ¿©ºÎ¸¦ ¼³Á¤ÇÑ´Ù. (21 bit)
+	 * ë¬¸ë‹¨ ë¨¸ë¦¬ ëª¨ì–‘ ì ìš© ì—¬ë¶€ë¥¼ ì„¤ì •í•œë‹¤. (21 bit)
 	 * 
 	 * @param adjustBullet
-	 *            ¹®´Ü ¸Ó¸® ¸ğ¾ç Àû¿ë ¿©ºÎ
+	 *            ë¬¸ë‹¨ ë¨¸ë¦¬ ëª¨ì–‘ ì ìš© ì—¬ë¶€
 	 */
 	public void setAdjustBullet(boolean adjustBullet) {
 		value = BitFlag.set(value, 21, adjustBullet);
 	}
 
 	/**
-	 * ±¸Çö»óÀÇ ÆíÀÇ¸¦ À§ÇÑ property¸¦ ¹İÈ¯ÇÑ´Ù. (31 bit)
+	 * êµ¬í˜„ìƒì˜ í¸ì˜ë¥¼ ìœ„í•œ propertyë¥¼ ë°˜í™˜í•œë‹¤. (31 bit)
 	 * 
-	 * @return ±¸Çö»óÀÇ ÆíÀÇ¸¦ À§ÇÑ property
+	 * @return êµ¬í˜„ìƒì˜ í¸ì˜ë¥¼ ìœ„í•œ property
 	 */
 	public boolean getBit31() {
 		return BitFlag.get(value, 31);
 	}
 
 	/**
-	 * ±¸Çö»óÀÇ ÆíÀÇ¸¦ À§ÇÑ property¸¦ ¼³Á¤ÇÑ´Ù. (bit 31)
+	 * êµ¬í˜„ìƒì˜ í¸ì˜ë¥¼ ìœ„í•œ propertyë¥¼ ì„¤ì •í•œë‹¤. (bit 31)
 	 * 
 	 * @param bit31
-	 *            ±¸Çö»óÀÇ ÆíÀÇ¸¦ À§ÇÑ property
+	 *            êµ¬í˜„ìƒì˜ í¸ì˜ë¥¼ ìœ„í•œ property
 	 */
 	public void setBit31(boolean bit31) {
 		value = BitFlag.set(value, 31, bit31);

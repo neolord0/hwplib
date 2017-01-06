@@ -1,4 +1,4 @@
-package kr.dogfoot.hwplib.reader.bodytext.paragraph.control.gso;
+ï»¿package kr.dogfoot.hwplib.reader.bodytext.paragraph.control.gso;
 
 import java.io.IOException;
 
@@ -12,18 +12,18 @@ import kr.dogfoot.hwplib.reader.bodytext.paragraph.control.gso.part.ForTextBox;
 import kr.dogfoot.hwplib.util.compoundFile.StreamReader;
 
 /**
- * °î¼± ÄÁÆ®·ÑÀ» ÀĞ±â À§ÇÑ °´Ã¼
+ * ê³¡ì„  ì»¨íŠ¸ë¡¤ì„ ì½ê¸° ìœ„í•œ ê°ì²´
  * 
  * @author neolord
  */
 public class ForControlCurve {
 	/**
-	 * °î¼± ÄÁÆ®·ÑÀ» ÀĞ´Â´Ù.
+	 * ê³¡ì„  ì»¨íŠ¸ë¡¤ì„ ì½ëŠ”ë‹¤.
 	 * 
 	 * @param curve
-	 *            °î¼± ÄÁÆ®·Ñ
+	 *            ê³¡ì„  ì»¨íŠ¸ë¡¤
 	 * @param sr
-	 *            ½ºÆ®¸² ¸®´õ
+	 *            ìŠ¤íŠ¸ë¦¼ ë¦¬ë”
 	 * @throws Exception
 	 */
 	public static void read(ControlCurve curve, StreamReader sr)
@@ -42,12 +42,12 @@ public class ForControlCurve {
 	}
 
 	/**
-	 * °î¼± °³Ã¼ ¼Ó¼º ·¹ÄÚµå¸¦ ÀĞ´Â´Ù.
+	 * ê³¡ì„  ê°œì²´ ì†ì„± ë ˆì½”ë“œë¥¼ ì½ëŠ”ë‹¤.
 	 * 
 	 * @param scc
-	 *            °î¼± °³Ã¼ ¼Ó¼º ·¹ÄÚµå
+	 *            ê³¡ì„  ê°œì²´ ì†ì„± ë ˆì½”ë“œ
 	 * @param sr
-	 *            ½ºÆ®¸² ¸®´õ
+	 *            ìŠ¤íŠ¸ë¦¼ ë¦¬ë”
 	 * @throws IOException
 	 */
 	private static void shapeComponentCurve(ShapeComponentCurve scc,

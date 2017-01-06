@@ -1,96 +1,96 @@
-package kr.dogfoot.hwplib.object.bodytext.control.ctrlheader.autonumber;
+ï»¿package kr.dogfoot.hwplib.object.bodytext.control.ctrlheader.autonumber;
 
 import kr.dogfoot.hwplib.object.bodytext.control.sectiondefine.NumberShape;
 import kr.dogfoot.hwplib.util.binary.BitFlag;
 
 /**
- * ÀÚµ¿¹øÈ£ ÄÁÆ®·ÑÀÇ ¼Ó¼º °´Ã¼
+ * ìë™ë²ˆí˜¸ ì»¨íŠ¸ë¡¤ì˜ ì†ì„± ê°ì²´
  * 
  * @author neolord
  */
 public class AutoNumberHeaderProperty {
 	/**
-	 * ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª(unsigned 4 byte)
+	 * íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’(unsigned 4 byte)
 	 */
 	private long value;
 
 	/**
-	 * »ı¼ºÀÚ
+	 * ìƒì„±ì
 	 */
 	public AutoNumberHeaderProperty() {
 	}
 
 	/**
-	 * ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ªÀ» ¹İÈ¯ÇÑ´Ù.
+	 * íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’ì„ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª
+	 * @return íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’
 	 */
 	public long getValue() {
 		return value;
 	}
 
 	/**
-	 * ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ªÀ» ¼³Á¤ÇÑ´Ù.
+	 * íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’ì„ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param value
-	 *            ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª
+	 *            íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’
 	 */
 	public void setValue(long value) {
 		this.value = value;
 	}
 
 	/**
-	 * ¹øÈ£ Á¾·ù¸¦ ¹İÈ¯ÇÑ´Ù. (0~3 bit)
+	 * ë²ˆí˜¸ ì¢…ë¥˜ë¥¼ ë°˜í™˜í•œë‹¤. (0~3 bit)
 	 * 
-	 * @return ¹øÈ£ Á¾·ù
+	 * @return ë²ˆí˜¸ ì¢…ë¥˜
 	 */
 	public NumberSort getNumberSort() {
 		return NumberSort.valueOf((byte) BitFlag.get(value, 0, 3));
 	}
 
 	/**
-	 * ¹øÈ£ Á¾·ù¸¦ ¼³Á¤ÇÑ´Ù. (0~3 bit)
+	 * ë²ˆí˜¸ ì¢…ë¥˜ë¥¼ ì„¤ì •í•œë‹¤. (0~3 bit)
 	 * 
 	 * @param numberSort
-	 *            ¹øÈ£ Á¾·ù
+	 *            ë²ˆí˜¸ ì¢…ë¥˜
 	 */
 	public void setNumberSort(NumberSort numberSort) {
 		value = BitFlag.set(value, 0, 3, numberSort.getValue());
 	}
 
 	/**
-	 * ¹øÈ£ ¸ğ¾çÀ» ¹İÈ¯ÇÑ´Ù. (4~11 bit)
+	 * ë²ˆí˜¸ ëª¨ì–‘ì„ ë°˜í™˜í•œë‹¤. (4~11 bit)
 	 * 
-	 * @return ¹øÈ£ ¸ğ¾ç
+	 * @return ë²ˆí˜¸ ëª¨ì–‘
 	 */
 	public NumberShape getNumberShape() {
 		return NumberShape.valueOf((short) BitFlag.get(value, 4, 11));
 	}
 
 	/**
-	 * ¹øÈ£ ¸ğ¾çÀ» ¼³Á¤ÇÑ´Ù. (4~11 bit)
+	 * ë²ˆí˜¸ ëª¨ì–‘ì„ ì„¤ì •í•œë‹¤. (4~11 bit)
 	 * 
 	 * @param numberShape
-	 *            ¹øÈ£ ¸ğ¾ç
+	 *            ë²ˆí˜¸ ëª¨ì–‘
 	 */
 	public void setNumberShape(NumberShape numberShape) {
 		value = BitFlag.set(value, 4, 11, numberShape.getValue());
 	}
 
 	/**
-	 * °¢ÁÖ ³»¿ë Áß ¹øÈ£ ÄÚµåÀÇ ¸ğ¾çÀ» À­ Ã·ÀÚ Çü½ÄÀ¸·Î ÇÒÁö ¿©ºÎÀ» ¹İÈ¯ÇÑ´Ù. (12 bit)
+	 * ê°ì£¼ ë‚´ìš© ì¤‘ ë²ˆí˜¸ ì½”ë“œì˜ ëª¨ì–‘ì„ ìœ— ì²¨ì í˜•ì‹ìœ¼ë¡œ í• ì§€ ì—¬ë¶€ì„ ë°˜í™˜í•œë‹¤. (12 bit)
 	 * 
-	 * @return °¢ÁÖ ³»¿ë Áß ¹øÈ£ ÄÚµåÀÇ ¸ğ¾çÀ» À­ Ã·ÀÚ Çü½ÄÀ¸·Î ÇÒÁö ¿©ºÎ
+	 * @return ê°ì£¼ ë‚´ìš© ì¤‘ ë²ˆí˜¸ ì½”ë“œì˜ ëª¨ì–‘ì„ ìœ— ì²¨ì í˜•ì‹ìœ¼ë¡œ í• ì§€ ì—¬ë¶€
 	 */
 	public boolean isSuperScript() {
 		return BitFlag.get(value, 12);
 	}
 
 	/**
-	 * °¢ÁÖ ³»¿ë Áß ¹øÈ£ ÄÚµåÀÇ ¸ğ¾çÀ» À­ Ã·ÀÚ Çü½ÄÀ¸·Î ÇÒÁö ¿©ºÎ¸¦ ¼³Á¤ÇÑ´Ù. (12 bit)
+	 * ê°ì£¼ ë‚´ìš© ì¤‘ ë²ˆí˜¸ ì½”ë“œì˜ ëª¨ì–‘ì„ ìœ— ì²¨ì í˜•ì‹ìœ¼ë¡œ í• ì§€ ì—¬ë¶€ë¥¼ ì„¤ì •í•œë‹¤. (12 bit)
 	 * 
 	 * @param superScript
-	 *            °¢ÁÖ ³»¿ë Áß ¹øÈ£ ÄÚµåÀÇ ¸ğ¾çÀ» À­ Ã·ÀÚ Çü½ÄÀ¸·Î ÇÒÁö ¿©ºÎ
+	 *            ê°ì£¼ ë‚´ìš© ì¤‘ ë²ˆí˜¸ ì½”ë“œì˜ ëª¨ì–‘ì„ ìœ— ì²¨ì í˜•ì‹ìœ¼ë¡œ í• ì§€ ì—¬ë¶€
 	 */
 	public void setSuperScript(boolean superScript) {
 		value = BitFlag.set(value, 12, superScript);

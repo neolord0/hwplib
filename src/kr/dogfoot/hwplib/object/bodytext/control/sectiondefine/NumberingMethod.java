@@ -1,54 +1,54 @@
-package kr.dogfoot.hwplib.object.bodytext.control.sectiondefine;
+ï»¿package kr.dogfoot.hwplib.object.bodytext.control.sectiondefine;
 
 /**
- * ¹øÈ£¸Å±è ¹æ¹ı
+ * ë²ˆí˜¸ë§¤ê¹€ ë°©ë²•
  * 
  * @author neolord
  */
 public enum NumberingMethod {
 	/**
-	 * ¾Õ ±¸¿ª¿¡ ÀÌ¾î¼­
+	 * ì• êµ¬ì—­ì— ì´ì–´ì„œ
 	 */
 	Continue((byte) 0),
 	/**
-	 * ÇöÀç ±¸¿ªºÎÅÍ »õ·Î ½ÃÀÛ
+	 * í˜„ì¬ êµ¬ì—­ë¶€í„° ìƒˆë¡œ ì‹œì‘
 	 */
 	Restart((byte) 1),
 	/**
-	 * ÂÊ¸¶´Ù »õ·Î ½ÃÀÛ(°¢ÁÖ Àü¿ë)
+	 * ìª½ë§ˆë‹¤ ìƒˆë¡œ ì‹œì‘(ê°ì£¼ ì „ìš©)
 	 */
 	RestartAtEachPage((byte) 2);
 
 	/**
-	 * ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª
+	 * íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’
 	 */
 	private byte value;
 
 	/**
-	 * »ı¼ºÀÚ
+	 * ìƒì„±ì
 	 * 
 	 * @param value
-	 *            ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª
+	 *            íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’
 	 */
 	private NumberingMethod(byte value) {
 		this.value = value;
 	}
 
 	/**
-	 * ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ªÀ» ¹İÈ¯ÇÑ´Ù.
+	 * íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’ì„ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª
+	 * @return íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’
 	 */
 	public byte getValue() {
 		return value;
 	}
 
 	/**
-	 * ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª¿¡ ÇØ´çµÇ´Â enum °ªÀ» ¹İÈ¯ÇÑ´Ù.
+	 * íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’ì— í•´ë‹¹ë˜ëŠ” enum ê°’ì„ ë°˜í™˜í•œë‹¤.
 	 * 
 	 * @param value
-	 *            ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª
-	 * @return enum °ª
+	 *            íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’
+	 * @return enum ê°’
 	 */
 	public static NumberingMethod valueOf(byte value) {
 		for (NumberingMethod nm : values()) {

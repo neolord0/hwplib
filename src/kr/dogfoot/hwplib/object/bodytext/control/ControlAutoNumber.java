@@ -1,24 +1,24 @@
-package kr.dogfoot.hwplib.object.bodytext.control;
+ï»¿package kr.dogfoot.hwplib.object.bodytext.control;
 
 import kr.dogfoot.hwplib.object.bodytext.control.ctrlheader.CtrlHeaderAutoNumber;
 
 /**
- * ÀÚµ¿¹øÈ£ ÄÁÆ®·Ñ¿¡ ´ëÇÑ °´Ã¼
+ * ìë™ë²ˆí˜¸ ì»¨íŠ¸ë¡¤ì— ëŒ€í•œ ê°ì²´
  * 
  * @author neolord
  */
 public class ControlAutoNumber extends Control {
 	/**
-	 * »ı¼ºÀÚ
+	 * ìƒì„±ì
 	 */
 	public ControlAutoNumber() {
 		super(new CtrlHeaderAutoNumber());
 	}
 
 	/**
-	 * ÀÚµ¿¹øÈ£ ÄÁÆ®·Ñ¿ë ÄÁÆ®·Ñ Çì´õ¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ìë™ë²ˆí˜¸ ì»¨íŠ¸ë¡¤ìš© ì»¨íŠ¸ë¡¤ í—¤ë”ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ÀÚµ¿¹øÈ£ ÄÁÆ®·Ñ¿ë ÄÁÆ®·Ñ Çì´õ
+	 * @return ìë™ë²ˆí˜¸ ì»¨íŠ¸ë¡¤ìš© ì»¨íŠ¸ë¡¤ í—¤ë”
 	 */
 	public CtrlHeaderAutoNumber getHeader() {
 		return (CtrlHeaderAutoNumber) header;

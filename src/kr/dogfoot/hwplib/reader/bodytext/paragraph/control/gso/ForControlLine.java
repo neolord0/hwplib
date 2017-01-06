@@ -1,4 +1,4 @@
-package kr.dogfoot.hwplib.reader.bodytext.paragraph.control.gso;
+ï»¿package kr.dogfoot.hwplib.reader.bodytext.paragraph.control.gso;
 
 import java.io.IOException;
 
@@ -9,18 +9,18 @@ import kr.dogfoot.hwplib.reader.RecordHeader;
 import kr.dogfoot.hwplib.util.compoundFile.StreamReader;
 
 /**
- * ¼± ÄÁÆ®·ÑÀ» ÀĞ±â À§ÇÑ °´Ã¼
+ * ì„  ì»¨íŠ¸ë¡¤ì„ ì½ê¸° ìœ„í•œ ê°ì²´
  * 
  * @author neolord
  */
 public class ForControlLine {
 	/**
-	 * ¼± ÄÁÆ®·ÑÀ» ÀĞ´Â´Ù.
+	 * ì„  ì»¨íŠ¸ë¡¤ì„ ì½ëŠ”ë‹¤.
 	 * 
 	 * @param line
-	 *            ¼± ÄÁÆ®·Ñ
+	 *            ì„  ì»¨íŠ¸ë¡¤
 	 * @param sr
-	 *            ½ºÆ®¸² ¸®´õ
+	 *            ìŠ¤íŠ¸ë¦¼ ë¦¬ë”
 	 * @throws IOException
 	 */
 	public static void read(ControlLine line, StreamReader sr)
@@ -32,12 +32,12 @@ public class ForControlLine {
 	}
 
 	/**
-	 * ¼± °³Ã¼ ¼Ó¼º ·¹ÄÚµå¸¦ ÀĞ´Â´Ù.
+	 * ì„  ê°œì²´ ì†ì„± ë ˆì½”ë“œë¥¼ ì½ëŠ”ë‹¤.
 	 * 
 	 * @param scl
-	 *            ¼± °³Ã¼ ¼Ó¼º ·¹ÄÚµå
+	 *            ì„  ê°œì²´ ì†ì„± ë ˆì½”ë“œ
 	 * @param sr
-	 *            ½ºÆ®¸² ¸®´õ
+	 *            ìŠ¤íŠ¸ë¦¼ ë¦¬ë”
 	 * @throws IOException
 	 */
 	private static void shapeComponentLine(ShapeComponentLine scl,

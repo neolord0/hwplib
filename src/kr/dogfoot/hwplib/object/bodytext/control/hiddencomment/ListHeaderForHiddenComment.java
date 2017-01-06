@@ -1,48 +1,48 @@
-package kr.dogfoot.hwplib.object.bodytext.control.hiddencomment;
+ï»¿package kr.dogfoot.hwplib.object.bodytext.control.hiddencomment;
 
 import kr.dogfoot.hwplib.object.bodytext.control.gso.textbox.ListHeaderProperty;
 
 /**
- * ¼ûÀº ¼³¸íÀ» À§ÇÑ ¹®´Ü ¸®½ºÆ® Çì´õ
+ * ìˆ¨ì€ ì„¤ëª…ì„ ìœ„í•œ ë¬¸ë‹¨ ë¦¬ìŠ¤íŠ¸ í—¤ë”
  * 
  * @author neolord
  */
 public class ListHeaderForHiddenComment {
 	/**
-	 * ¹®´Ü °³¼ö
+	 * ë¬¸ë‹¨ ê°œìˆ˜
 	 */
 	private int paraCount;
 	/**
-	 * ¼Ó¼º
+	 * ì†ì„±
 	 */
 	private ListHeaderProperty property;
 	
 	/**
-	 * »ı¼ºÀÚ
+	 * ìƒì„±ì
 	 */
 	public ListHeaderForHiddenComment() {
 		property = new ListHeaderProperty();
 	}
 	
 	/**
-	 * ¹®´Ü °³¼ö¸¦ ¹İÈ¯ÇÑ´Ù.
-	 * @return ¹®´Ü °³¼ö
+	 * ë¬¸ë‹¨ ê°œìˆ˜ë¥¼ ë°˜í™˜í•œë‹¤.
+	 * @return ë¬¸ë‹¨ ê°œìˆ˜
 	 */
 	public int getParaCount() {
 		return paraCount;
 	}
 	
 	/**
-	 * ¹®´Ü °³¼ö¸¦ ¼³Á¤ÇÑ´Ù.
-	 * @param paraCount ¹®´Ü °³¼ö
+	 * ë¬¸ë‹¨ ê°œìˆ˜ë¥¼ ì„¤ì •í•œë‹¤.
+	 * @param paraCount ë¬¸ë‹¨ ê°œìˆ˜
 	 */
 	public void setParaCount(int paraCount) {
 		this.paraCount = paraCount;
 	}
 
 	/**
-	 * ¼Ó¼º °´Ã¼¸¦ ¹İÈ¯ÇÑ´Ù.
-	 * @return ¼Ó¼º °´Ã¼
+	 * ì†ì„± ê°ì²´ë¥¼ ë°˜í™˜í•œë‹¤.
+	 * @return ì†ì„± ê°ì²´
  	 */
 	public ListHeaderProperty getProperty() {
 		return property;

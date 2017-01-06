@@ -1,69 +1,69 @@
-package kr.dogfoot.hwplib.object.docinfo.borderfill.fillinfo;
+ï»¿package kr.dogfoot.hwplib.object.docinfo.borderfill.fillinfo;
 
 /**
- * ÀÌ¹ÌÁö Ã¤¿ì±â À¯Çü
+ * ì´ë¯¸ì§€ ì±„ìš°ê¸° ìœ í˜•
  * 
  * @author neolord
  */
 public enum ImageFillType {
 	/**
-	 * ¹ÙµÏÆÇ½ÄÀ¸·Î-¸ğµÎ
+	 * ë°”ë‘‘íŒì‹ìœ¼ë¡œ-ëª¨ë‘
 	 */
 	TileAll((byte) 0),
 	/**
-	 * ¹ÙµÏÆÇ½ÄÀ¸·Î-°¡·Î/À§
+	 * ë°”ë‘‘íŒì‹ìœ¼ë¡œ-ê°€ë¡œ/ìœ„
 	 */
 	TileHorizonalTop((byte) 1),
 	/**
-	 * ¹ÙµÏÆÇ½ÄÀ¸·Î-°¡·Î/¾Æ·¡
+	 * ë°”ë‘‘íŒì‹ìœ¼ë¡œ-ê°€ë¡œ/ì•„ë˜
 	 */
 	TileHorizonalBottom((byte) 2),
 	/**
-	 * ¹ÙµÏÆÇ½ÄÀ¸·Î-¼¼·Î/¿ŞÂÊ
+	 * ë°”ë‘‘íŒì‹ìœ¼ë¡œ-ì„¸ë¡œ/ì™¼ìª½
 	 */
 	TileVerticalLeft((byte) 3),
 	/**
-	 * ¹ÙµÏÆÇ½ÄÀ¸·Î-¼¼·Î/¿À¸¥ÂÊ
+	 * ë°”ë‘‘íŒì‹ìœ¼ë¡œ-ì„¸ë¡œ/ì˜¤ë¥¸ìª½
 	 */
 	TileVerticalRight((byte) 4),
 	/**
-	 * Å©±â¿¡ ¸ÂÃß¾î
+	 * í¬ê¸°ì— ë§ì¶”ì–´
 	 */
 	FitSize((byte) 5),
 	/**
-	 * °¡¿îµ¥·Î
+	 * ê°€ìš´ë°ë¡œ
 	 */
 	Center((byte) 6),
 	/**
-	 * °¡¿îµ¥ À§·Î
+	 * ê°€ìš´ë° ìœ„ë¡œ
 	 */
 	CenterTop((byte) 7),
 	/**
-	 * °¡¿îµ¥ ¾Æ·¡·Î
+	 * ê°€ìš´ë° ì•„ë˜ë¡œ
 	 */
 	CenterBottom((byte) 8),
 	/**
-	 * ¿ŞÂÊ °¡¿îµ¥·Î
+	 * ì™¼ìª½ ê°€ìš´ë°ë¡œ
 	 */
 	LeftCenter((byte) 9),
 	/**
-	 * ¿ŞÂÊ À§·Î
+	 * ì™¼ìª½ ìœ„ë¡œ
 	 */
 	LeftTop((byte) 10),
 	/**
-	 * ¿ŞÂÊ ¾Æ·¡·Î
+	 * ì™¼ìª½ ì•„ë˜ë¡œ
 	 */
 	LeftBottom((byte) 11),
 	/**
-	 * ¿À¸¥ÂÊ °¡¿îµ¥·Î
+	 * ì˜¤ë¥¸ìª½ ê°€ìš´ë°ë¡œ
 	 */
 	RightCenter((byte) 12),
 	/**
-	 * ¿À¸¥ÂÊ À§·Î
+	 * ì˜¤ë¥¸ìª½ ìœ„ë¡œ
 	 */
 	RightTop((byte) 13),
 	/**
-	 * ¿À¸¥ÂÊ ¾Æ·¡·Î
+	 * ì˜¤ë¥¸ìª½ ì•„ë˜ë¡œ
 	 */
 	RightBottom((byte) 14),
 	/**
@@ -72,35 +72,35 @@ public enum ImageFillType {
 	None((byte) 15);
 
 	/**
-	 * ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª
+	 * íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’
 	 */
 	private byte value;
 
 	/**
-	 * »ı¼ºÀÚ
+	 * ìƒì„±ì
 	 * 
 	 * @param value
-	 *            ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª
+	 *            íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’
 	 */
 	private ImageFillType(byte value) {
 		this.value = value;
 	}
 
 	/**
-	 * ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ªÀ» ¹İÈ¯ÇÑ´Ù.
+	 * íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’ì„ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª
+	 * @return íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’
 	 */
 	public byte getValue() {
 		return value;
 	}
 
 	/**
-	 * ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª¿¡ ÇØ´çµÇ´Â enum °ªÀ» ¹İÈ¯ÇÑ´Ù.
+	 * íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’ì— í•´ë‹¹ë˜ëŠ” enum ê°’ì„ ë°˜í™˜í•œë‹¤.
 	 * 
 	 * @param value
-	 *            ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª
-	 * @return enum °ª
+	 *            íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’
+	 * @return enum ê°’
 	 */
 	public static ImageFillType valueOf(byte value) {
 		for (ImageFillType ift : values()) {

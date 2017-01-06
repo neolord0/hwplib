@@ -1,36 +1,36 @@
-package kr.dogfoot.hwplib.object.bodytext.control.bookmark;
+ï»¿package kr.dogfoot.hwplib.object.bodytext.control.bookmark;
 
 /**
- * ºÏ¸¶Å©ÀÇ ÀÓÀÇ µ¥ÀÌÅÍ ·¹ÄÚµå
+ * ë¶ë§ˆí¬ì˜ ì„ì˜ ë°ì´í„° ë ˆì½”ë“œ
  * 
  * @author neolord
  */
 public class CtrlData {
 	/**
-	 * ÀÓÀÇ µ¥ÀÌÅ¸
+	 * ì„ì˜ ë°ì´íƒ€
 	 */
 	private byte[] data;
 
 	/**
-	 * »ı¼ºÀÚ
+	 * ìƒì„±ì
 	 */
 	public CtrlData() {
 	}
 
 	/**
-	 * ÀÓÀÇ µ¥ÀÌÅÍ¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ì„ì˜ ë°ì´í„°ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ÀÓÀÇ µ¥ÀÌÅÍ
+	 * @return ì„ì˜ ë°ì´í„°
 	 */
 	public byte[] getData() {
 		return data;
 	}
 
 	/**
-	 * ÀÓÀÇ µ¥ÀÌÅÍ¸¦ ¼³Á¤ÇÑ´Ù.
+	 * ì„ì˜ ë°ì´í„°ë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param data
-	 *            ÀÓÀÇ µ¥ÀÌÅÍ
+	 *            ì„ì˜ ë°ì´í„°
 	 */
 	public void setData(byte[] data) {
 		this.data = data;

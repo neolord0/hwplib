@@ -1,59 +1,59 @@
-package kr.dogfoot.hwplib.object.bindata;
+ï»¿package kr.dogfoot.hwplib.object.bindata;
 
 /**
- * HWP ÆÄÀÏ³»¿¡¼­ »ç¿ëÇÏ´Â ÀÌ¹ÌÁöµîÀÇ ¹ÙÀÌ³Ê¸® µ¥ÀÌÅÍ¸¦ ÀúÀåÇÏ´Â °´Ã¼
+ * HWP íŒŒì¼ë‚´ì—ì„œ ì‚¬ìš©í•˜ëŠ” ì´ë¯¸ì§€ë“±ì˜ ë°”ì´ë„ˆë¦¬ ë°ì´í„°ë¥¼ ì €ì¥í•˜ëŠ” ê°ì²´
  * 
  * @author neolord
  */
 public class EmbeddedBinaryData {
 	/**
-	 * ¹ÙÀÌ³Ê¸® µ¥ÀÌÅÍÀÇ ÀÌ¸§
+	 * ë°”ì´ë„ˆë¦¬ ë°ì´í„°ì˜ ì´ë¦„
 	 */
 	private String name;
 	/**
-	 * ½ÇÁ¦ µ¥ÀÌÅÍ
+	 * ì‹¤ì œ ë°ì´í„°
 	 */
 	private byte[] data;
 
 	/**
-	 * »ı¼ºÀÚ
+	 * ìƒì„±ì
 	 */
 	public EmbeddedBinaryData() {
 	}
 
 	/**
-	 * ¹ÙÀÌ³Ê¸® µ¥ÀÌÅÍÀÇ ÀÌ¸§À» ¹İÈ¯ÇÑ´Ù.
+	 * ë°”ì´ë„ˆë¦¬ ë°ì´í„°ì˜ ì´ë¦„ì„ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ¹ÙÀÌ³Ê¸® µ¥ÀÌÅÍÀÇ ÀÌ¸§
+	 * @return ë°”ì´ë„ˆë¦¬ ë°ì´í„°ì˜ ì´ë¦„
 	 */
 	public String getName() {
 		return name;
 	}
 
 	/**
-	 * ¹ÙÀÌ³Ê¸® µ¥ÀÌÅÍÀÇ ÀÌ¸§À» ¼³Á¤ÇÑ´Ù.
+	 * ë°”ì´ë„ˆë¦¬ ë°ì´í„°ì˜ ì´ë¦„ì„ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param name
-	 *            ¹ÙÀÌ³Ê¸® µ¥ÀÌÅÍÀÇ ÀÌ¸§
+	 *            ë°”ì´ë„ˆë¦¬ ë°ì´í„°ì˜ ì´ë¦„
 	 */
 	public void setName(String name) {
 		this.name = name;
 	}
 
 	/**
-	 * ½ÇÁ¦ µ¥ÀÌÅÍ¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ì‹¤ì œ ë°ì´í„°ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ½ÇÁ¦ µ¥ÀÌÅÍ
+	 * @return ì‹¤ì œ ë°ì´í„°
 	 */
 	public byte[] getData() {
 		return data;
 	}
 
 	/**
-	 * ½ÇÁ¦ µ¥ÀÌÅÍ¸¦ ¼³Á¤ÇÑ´Ù.
+	 * ì‹¤ì œ ë°ì´í„°ë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param data
-	 *            ½ÇÁ¦ µ¥ÀÌÅÍ
+	 *            ì‹¤ì œ ë°ì´í„°
 	 */
 	public void setData(byte[] data) {
 		this.data = data;

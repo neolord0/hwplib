@@ -1,54 +1,54 @@
-package kr.dogfoot.hwplib.object.bodytext.control.gso.textbox;
+ï»¿package kr.dogfoot.hwplib.object.bodytext.control.gso.textbox;
 
 /**
- * ¹®´ÜÀÇ ÁÙ¹Ù²Ş ¹æ¹ı
+ * ë¬¸ë‹¨ì˜ ì¤„ë°”ê¿ˆ ë°©ë²•
  * 
  * @author neolord
  */
 public enum LineChange {
 	/**
-	 * ÀÏ¹İÀûÀÎ ÁÙ¹Ù²Ş
+	 * ì¼ë°˜ì ì¸ ì¤„ë°”ê¿ˆ
 	 */
 	Normal((byte) 0),
 	/**
-	 * ÀÚ°£À» Á¶Á¾ÇÏ¿© ÇÑ ÁÙÀ» À¯Áö
+	 * ìê°„ì„ ì¡°ì¢…í•˜ì—¬ í•œ ì¤„ì„ ìœ ì§€
 	 */
 	KeepOneLineByAdjustWordSpace((byte) 1),
 	/**
-	 * ³»¿ë¿¡ µû¶ó ÆøÀÌ ´Ã¾î³²
+	 * ë‚´ìš©ì— ë”°ë¼ í­ì´ ëŠ˜ì–´ë‚¨
 	 */
 	IncreaseWidthByContent((byte) 2);
 
 	/**
-	 * ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª
+	 * íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’
 	 */
 	private byte value;
 
 	/**
-	 * »ı¼ºÀÚ
+	 * ìƒì„±ì
 	 * 
 	 * @param value
-	 *            ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª
+	 *            íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’
 	 */
 	private LineChange(byte value) {
 		this.value = value;
 	}
 
 	/**
-	 * ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ªÀ» ¹İÈ¯ÇÑ´Ù.
+	 * íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’ì„ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª
+	 * @return íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’
 	 */
 	public byte getValue() {
 		return value;
 	}
 
 	/**
-	 * ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª¿¡ ÇØ´çµÇ´Â enum °ªÀ» ¹İÈ¯ÇÑ´Ù.
+	 * íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’ì— í•´ë‹¹ë˜ëŠ” enum ê°’ì„ ë°˜í™˜í•œë‹¤.
 	 * 
 	 * @param value
-	 *            ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª
-	 * @return enum °ª
+	 *            íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’
+	 * @return enum ê°’
 	 */
 	public static LineChange valueOf(byte value) {
 		for (LineChange lc : values()) {

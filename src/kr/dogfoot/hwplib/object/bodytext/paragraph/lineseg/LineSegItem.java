@@ -1,145 +1,145 @@
-package kr.dogfoot.hwplib.object.bodytext.paragraph.lineseg;
+ï»¿package kr.dogfoot.hwplib.object.bodytext.paragraph.lineseg;
 
 /**
- * °¢ ÁßÀÇ align Á¤º¸¿¡ ´ëÇÑ °´Ã¼
+ * ê° ì¤‘ì˜ align ì •ë³´ì— ëŒ€í•œ ê°ì²´
  * 
  * @author neolord
  */
 public class LineSegItem {
 	/**
-	 * ÅØ½ºÆ® ½ÃÀÛ À§Ä¡
+	 * í…ìŠ¤íŠ¸ ì‹œì‘ ìœ„ì¹˜
 	 */
 	private long textStartPositon;
 	/**
-	 * ÁÙÀÇ ¼¼·Î À§Ä¡
+	 * ì¤„ì˜ ì„¸ë¡œ ìœ„ì¹˜
 	 */
 	private int lineVerticalPosition;
 	/**
-	 * ÁÙÀÇ ³ôÀÌ
+	 * ì¤„ì˜ ë†’ì´
 	 */
 	private int lineHeight;
 	/**
-	 * ÅØ½ºÆ® ºÎºĞÀÇ ³ôÀÌ
+	 * í…ìŠ¤íŠ¸ ë¶€ë¶„ì˜ ë†’ì´
 	 */
 	private int textPartHeight;
 	/**
-	 * ÁÙÀÇ ¼¼·Î À§Ä¡¿¡¼­ º£ÀÌ½º¶óÀÎ±îÁö °Å¸®
+	 * ì¤„ì˜ ì„¸ë¡œ ìœ„ì¹˜ì—ì„œ ë² ì´ìŠ¤ë¼ì¸ê¹Œì§€ ê±°ë¦¬
 	 */
 	private int distanceBaseLineToLineVerticalPosition;
 	/**
-	 * ÁÙ°£°İ
+	 * ì¤„ê°„ê²©
 	 */
 	private int lineSpace;
 	/**
-	 * ÄÃ·³¿¡¼­ÀÇ ½ÃÀÛ À§Ä¡
+	 * ì»¬ëŸ¼ì—ì„œì˜ ì‹œì‘ ìœ„ì¹˜
 	 */
 	private int startPositionFromColumn;
 	/**
-	 * ¼¼±×¸ÕÆ®ÀÇ Æø
+	 * ì„¸ê·¸ë¨¼íŠ¸ì˜ í­
 	 */
 	private int segmentWidth;
 	/**
-	 * tag Á¤º¸
+	 * tag ì •ë³´
 	 */
 	private LineSegItemTag tag;
 
 	/**
-	 * »ı¼ºÀÚ
+	 * ìƒì„±ì
 	 */
 	public LineSegItem() {
 		tag = new LineSegItemTag();
 	}
 
 	/**
-	 * ÅØ½ºÆ® ½ÃÀÛ À§Ä¡¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * í…ìŠ¤íŠ¸ ì‹œì‘ ìœ„ì¹˜ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ÅØ½ºÆ® ½ÃÀÛ À§Ä¡
+	 * @return í…ìŠ¤íŠ¸ ì‹œì‘ ìœ„ì¹˜
 	 */
 	public long getTextStartPositon() {
 		return textStartPositon;
 	}
 
 	/**
-	 * ÅØ½ºÆ® ½ÃÀÛ À§Ä¡¸¦ ¼³Á¤ÇÑ´Ù.
+	 * í…ìŠ¤íŠ¸ ì‹œì‘ ìœ„ì¹˜ë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param textStartPositon
-	 *            ÅØ½ºÆ® ½ÃÀÛ À§Ä¡
+	 *            í…ìŠ¤íŠ¸ ì‹œì‘ ìœ„ì¹˜
 	 */
 	public void setTextStartPositon(long textStartPositon) {
 		this.textStartPositon = textStartPositon;
 	}
 
 	/**
-	 * ÁÙÀÇ ¼¼·Î À§Ä¡¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ì¤„ì˜ ì„¸ë¡œ ìœ„ì¹˜ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ÁÙÀÇ ¼¼·Î À§Ä¡
+	 * @return ì¤„ì˜ ì„¸ë¡œ ìœ„ì¹˜
 	 */
 	public int getLineVerticalPosition() {
 		return lineVerticalPosition;
 	}
 
 	/**
-	 * ÁÙÀÇ ¼¼·Î À§Ä¡¸¦ ¼³Á¤ÇÑ´Ù.
+	 * ì¤„ì˜ ì„¸ë¡œ ìœ„ì¹˜ë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param lineVerticalPosition
-	 *            ÁÙÀÇ ¼¼·Î À§Ä¡
+	 *            ì¤„ì˜ ì„¸ë¡œ ìœ„ì¹˜
 	 */
 	public void setLineVerticalPosition(int lineVerticalPosition) {
 		this.lineVerticalPosition = lineVerticalPosition;
 	}
 
 	/**
-	 * ÁÙÀÇ ³ôÀÌ¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ì¤„ì˜ ë†’ì´ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ÁÙÀÇ ³ôÀÌ
+	 * @return ì¤„ì˜ ë†’ì´
 	 */
 	public int getLineHeight() {
 		return lineHeight;
 	}
 
 	/**
-	 * ÁÙÀÇ ³ôÀÌ¸¦ ¼³Á¤ÇÑ´Ù.
+	 * ì¤„ì˜ ë†’ì´ë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param lineHeight
-	 *            ÁÙÀÇ ³ôÀÌ
+	 *            ì¤„ì˜ ë†’ì´
 	 */
 	public void setLineHeight(int lineHeight) {
 		this.lineHeight = lineHeight;
 	}
 
 	/**
-	 * ÅØ½ºÆ® ºÎºĞÀÇ ³ôÀÌ¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * í…ìŠ¤íŠ¸ ë¶€ë¶„ì˜ ë†’ì´ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ÅØ½ºÆ® ºÎºĞÀÇ ³ôÀÌ
+	 * @return í…ìŠ¤íŠ¸ ë¶€ë¶„ì˜ ë†’ì´
 	 */
 	public int getTextPartHeight() {
 		return textPartHeight;
 	}
 
 	/**
-	 * ÅØ½ºÆ® ºÎºĞÀÇ ³ôÀÌ¸¦ ¼³Á¤ÇÑ´Ù.
+	 * í…ìŠ¤íŠ¸ ë¶€ë¶„ì˜ ë†’ì´ë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param textPartHeight
-	 *            ÅØ½ºÆ® ºÎºĞÀÇ ³ôÀÌ
+	 *            í…ìŠ¤íŠ¸ ë¶€ë¶„ì˜ ë†’ì´
 	 */
 	public void setTextPartHeight(int textPartHeight) {
 		this.textPartHeight = textPartHeight;
 	}
 
 	/**
-	 * ÁÙÀÇ ¼¼·Î À§Ä¡¿¡¼­ º£ÀÌ½º¶óÀÎ±îÁö °Å¸®¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ì¤„ì˜ ì„¸ë¡œ ìœ„ì¹˜ì—ì„œ ë² ì´ìŠ¤ë¼ì¸ê¹Œì§€ ê±°ë¦¬ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ÁÙÀÇ ¼¼·Î À§Ä¡¿¡¼­ º£ÀÌ½º¶óÀÎ±îÁö °Å¸®
+	 * @return ì¤„ì˜ ì„¸ë¡œ ìœ„ì¹˜ì—ì„œ ë² ì´ìŠ¤ë¼ì¸ê¹Œì§€ ê±°ë¦¬
 	 */
 	public int getDistanceBaseLineToLineVerticalPosition() {
 		return distanceBaseLineToLineVerticalPosition;
 	}
 
 	/**
-	 * ÁÙÀÇ ¼¼·Î À§Ä¡¿¡¼­ º£ÀÌ½º¶óÀÎ±îÁö °Å¸®¸¦ ¼³Á¤ÇÑ´Ù.
+	 * ì¤„ì˜ ì„¸ë¡œ ìœ„ì¹˜ì—ì„œ ë² ì´ìŠ¤ë¼ì¸ê¹Œì§€ ê±°ë¦¬ë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param distanceBaseLineToLineVerticalPosition
-	 *            ÁÙÀÇ ¼¼·Î À§Ä¡¿¡¼­ º£ÀÌ½º¶óÀÎ±îÁö °Å¸®
+	 *            ì¤„ì˜ ì„¸ë¡œ ìœ„ì¹˜ì—ì„œ ë² ì´ìŠ¤ë¼ì¸ê¹Œì§€ ê±°ë¦¬
 	 */
 	public void setDistanceBaseLineToLineVerticalPosition(
 			int distanceBaseLineToLineVerticalPosition) {
@@ -147,66 +147,66 @@ public class LineSegItem {
 	}
 
 	/**
-	 * ÁÙ°£°İÀ» ¹İÈ¯ÇÑ´Ù.
+	 * ì¤„ê°„ê²©ì„ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ÁÙ°£°İ
+	 * @return ì¤„ê°„ê²©
 	 */
 	public int getLineSpace() {
 		return lineSpace;
 	}
 
 	/**
-	 * ÁÙ°£°İÀ» ¼³Á¤ÇÑ´Ù.
+	 * ì¤„ê°„ê²©ì„ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param lineSpace
-	 *            ÁÙ°£°İ
+	 *            ì¤„ê°„ê²©
 	 */
 	public void setLineSpace(int lineSpace) {
 		this.lineSpace = lineSpace;
 	}
 
 	/**
-	 * ÄÃ·³¿¡¼­ÀÇ ½ÃÀÛ À§Ä¡¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ì»¬ëŸ¼ì—ì„œì˜ ì‹œì‘ ìœ„ì¹˜ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ÄÃ·³¿¡¼­ÀÇ ½ÃÀÛ À§Ä¡
+	 * @return ì»¬ëŸ¼ì—ì„œì˜ ì‹œì‘ ìœ„ì¹˜
 	 */
 	public int getStartPositionFromColumn() {
 		return startPositionFromColumn;
 	}
 
 	/**
-	 * ÄÃ·³¿¡¼­ÀÇ ½ÃÀÛ À§Ä¡¸¦ ¼³Á¤ÇÑ´Ù.
+	 * ì»¬ëŸ¼ì—ì„œì˜ ì‹œì‘ ìœ„ì¹˜ë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param startPositionFromColumn
-	 *            ÄÃ·³¿¡¼­ÀÇ ½ÃÀÛ À§Ä¡
+	 *            ì»¬ëŸ¼ì—ì„œì˜ ì‹œì‘ ìœ„ì¹˜
 	 */
 	public void setStartPositionFromColumn(int startPositionFromColumn) {
 		this.startPositionFromColumn = startPositionFromColumn;
 	}
 
 	/**
-	 * ¼¼±×¸ÕÆ®ÀÇ ÆøÀ» ¹İÈ¯ÇÑ´Ù.
+	 * ì„¸ê·¸ë¨¼íŠ¸ì˜ í­ì„ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ¼¼±×¸ÕÆ®ÀÇ Æø
+	 * @return ì„¸ê·¸ë¨¼íŠ¸ì˜ í­
 	 */
 	public int getSegmentWidth() {
 		return segmentWidth;
 	}
 
 	/**
-	 * ¼¼±×¸ÕÆ®ÀÇ ÆøÀ» ¼³Á¤ÇÑ´Ù.
+	 * ì„¸ê·¸ë¨¼íŠ¸ì˜ í­ì„ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param segmentWidth
-	 *            ¼¼±×¸ÕÆ®ÀÇ Æø
+	 *            ì„¸ê·¸ë¨¼íŠ¸ì˜ í­
 	 */
 	public void setSegmentWidth(int segmentWidth) {
 		this.segmentWidth = segmentWidth;
 	}
 
 	/**
-	 * tag Á¤º¸¿¡ ´ëÇÑ °´Ã¼¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * tag ì •ë³´ì— ëŒ€í•œ ê°ì²´ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return tag Á¤º¸¿¡ ´ëÇÑ °´Ã¼
+	 * @return tag ì •ë³´ì— ëŒ€í•œ ê°ì²´
 	 */
 	public LineSegItemTag getTag() {
 		return tag;

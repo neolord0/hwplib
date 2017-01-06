@@ -1,4 +1,4 @@
-package kr.dogfoot.hwplib.reader.bodytext.paragraph;
+ï»¿package kr.dogfoot.hwplib.reader.bodytext.paragraph;
 
 import java.io.IOException;
 
@@ -8,18 +8,18 @@ import kr.dogfoot.hwplib.object.bodytext.paragraph.lineseg.LineSegItem;
 import kr.dogfoot.hwplib.util.compoundFile.StreamReader;
 
 /**
- * ¹®´ÜÀÇ ·¹ÀÌ¾Æ¿ô ·¹ÄÚµå¸¦ ÀĞ±â À§ÇÑ °´Ã¼
+ * ë¬¸ë‹¨ì˜ ë ˆì´ì•„ì›ƒ ë ˆì½”ë“œë¥¼ ì½ê¸° ìœ„í•œ ê°ì²´
  * 
  * @author neolord
  */
 public class ForParaLineSeq {
 	/**
-	 * ¹®´ÜÀÇ ·¹ÀÌ¾Æ¿ô ·¹ÄÚµå¸¦ ÀĞ´Â´Ù.
+	 * ë¬¸ë‹¨ì˜ ë ˆì´ì•„ì›ƒ ë ˆì½”ë“œë¥¼ ì½ëŠ”ë‹¤.
 	 * 
 	 * @param p
-	 *            ¹®´Ü °´Ã¼
+	 *            ë¬¸ë‹¨ ê°ì²´
 	 * @param sr
-	 *            ½ºÆ®¸² ¸®´õ
+	 *            ìŠ¤íŠ¸ë¦¼ ë¦¬ë”
 	 * @throws IOException
 	 */
 	public static void read(Paragraph p, StreamReader sr) throws IOException {
@@ -32,12 +32,12 @@ public class ForParaLineSeq {
 	}
 
 	/**
-	 * ÇÑ ¶óÀÎÀÇ ·¹ÀÌ¾Æ¿ô Á¤º¸¸¦ ÀĞ´Â´Ù.
+	 * í•œ ë¼ì¸ì˜ ë ˆì´ì•„ì›ƒ ì •ë³´ë¥¼ ì½ëŠ”ë‹¤.
 	 * 
 	 * @param plsi
-	 *            ÇÑ ¶óÀÎÀÇ ·¹ÀÌ¾Æ¿ô Á¤º¸
+	 *            í•œ ë¼ì¸ì˜ ë ˆì´ì•„ì›ƒ ì •ë³´
 	 * @param sr
-	 *            ½ºÆ®¸² ¸®´õ
+	 *            ìŠ¤íŠ¸ë¦¼ ë¦¬ë”
 	 * @throws IOException
 	 */
 	private static void paraLineSeqItem(LineSegItem plsi, StreamReader sr)

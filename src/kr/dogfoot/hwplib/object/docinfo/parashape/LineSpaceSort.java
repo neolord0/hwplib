@@ -1,58 +1,58 @@
-package kr.dogfoot.hwplib.object.docinfo.parashape;
+ï»¿package kr.dogfoot.hwplib.object.docinfo.parashape;
 
 /**
- * ÁÙ °£°İ Á¾·ù(ÇÑ±Û 2007ÀÌÇÏ ¹öÀü¿¡¸¸ »ç¿ë)
+ * ì¤„ ê°„ê²© ì¢…ë¥˜(í•œê¸€ 2007ì´í•˜ ë²„ì „ì—ë§Œ ì‚¬ìš©)
  * 
  * @author neolord
  */
 public enum LineSpaceSort {
 	/**
-	 * ±ÛÀÚ¿¡ µû¶ó(%)
+	 * ê¸€ìì— ë”°ë¼(%)
 	 */
 	RatioForLetter((byte) 0),
 	/**
-	 * °íÁ¤°ª
+	 * ê³ ì •ê°’
 	 */
 	FixedValue((byte) 1),
 	/**
-	 * ¿©¹é¸¸ ÁöÁ¤
+	 * ì—¬ë°±ë§Œ ì§€ì •
 	 */
 	OnlyMargin((byte) 2),
 	/**
-	 * ÃÖ¼Ò
+	 * ìµœì†Œ
 	 */
 	Minimum((byte) 3);
 
 	/**
-	 * ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª
+	 * íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’
 	 */
 	private byte value;
 
 	/**
-	 * »ı¼ºÀÚ
+	 * ìƒì„±ì
 	 * 
 	 * @param value
-	 *            ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª
+	 *            íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’
 	 */
 	private LineSpaceSort(byte value) {
 		this.value = value;
 	}
 
 	/**
-	 * ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ªÀ» ¹İÈ¯ÇÑ´Ù.
+	 * íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’ì„ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª
+	 * @return íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’
 	 */
 	public byte getValue() {
 		return value;
 	}
 
 	/**
-	 * ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª¿¡ ÇØ´çµÇ´Â enum °ªÀ» ¹İÈ¯ÇÑ´Ù.
+	 * íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’ì— í•´ë‹¹ë˜ëŠ” enum ê°’ì„ ë°˜í™˜í•œë‹¤.
 	 * 
 	 * @param value
-	 *            ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª
-	 * @return enum °ª
+	 *            íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’
+	 * @return enum ê°’
 	 */
 	public static LineSpaceSort valueOf(byte value) {
 		for (LineSpaceSort lss : values()) {

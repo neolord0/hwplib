@@ -1,4 +1,4 @@
-package kr.dogfoot.hwplib.reader.docinfo;
+ï»¿package kr.dogfoot.hwplib.reader.docinfo;
 
 import java.io.IOException;
 
@@ -8,18 +8,18 @@ import kr.dogfoot.hwplib.object.docinfo.numbering.ParagraphHeadInfo;
 import kr.dogfoot.hwplib.util.compoundFile.StreamReader;
 
 /**
- * ¹®´Ü ¹øÈ£ ·¹ÄÚµå¸¦ ÀĞ±â À§ÇÑ °´Ã¼
+ * ë¬¸ë‹¨ ë²ˆí˜¸ ë ˆì½”ë“œë¥¼ ì½ê¸° ìœ„í•œ ê°ì²´
  * 
  * @author neolord
  */
 public class ForNumbering {
 	/**
-	 * ¹®´Ü ¹øÈ£ ·¹ÄÚµå¸¦ ÀĞ´Â´Ù.
+	 * ë¬¸ë‹¨ ë²ˆí˜¸ ë ˆì½”ë“œë¥¼ ì½ëŠ”ë‹¤.
 	 * 
 	 * @param n
-	 *            ¹®´Ü ¹øÈ£ ·¹ÄÚµå
+	 *            ë¬¸ë‹¨ ë²ˆí˜¸ ë ˆì½”ë“œ
 	 * @param sr
-	 *            ½ºÆ®¸² ¸®´õ
+	 *            ìŠ¤íŠ¸ë¦¼ ë¦¬ë”
 	 * @throws Exception
 	 */
 	public static void read(Numbering n, StreamReader sr) throws Exception {
@@ -31,12 +31,12 @@ public class ForNumbering {
 	}
 
 	/**
-	 * ¸ğµç ¼öÁØ(1¢¦7)¿¡ ÇØ´çÇÏ´Â ¹®´Ü ¹øÈ£ Á¤º¸ ºÎºĞÀ» ÀĞ´Â´Ù.
+	 * ëª¨ë“  ìˆ˜ì¤€(1ï½7)ì— í•´ë‹¹í•˜ëŠ” ë¬¸ë‹¨ ë²ˆí˜¸ ì •ë³´ ë¶€ë¶„ì„ ì½ëŠ”ë‹¤.
 	 * 
 	 * @param n
-	 *            ¹®´Ü ¹øÈ£ ·¹ÄÚµå
+	 *            ë¬¸ë‹¨ ë²ˆí˜¸ ë ˆì½”ë“œ
 	 * @param sr
-	 *            ½ºÆ®¸² ¸®´õ
+	 *            ìŠ¤íŠ¸ë¦¼ ë¦¬ë”
 	 * @throws Exception
 	 */
 	private static void levelNumberings(Numbering n, StreamReader sr)
@@ -47,12 +47,12 @@ public class ForNumbering {
 	}
 
 	/**
-	 * ÇÏ³ªÀÇ ·¹º§¿¡ ÇØ´çÇÏ´Â ¹®´Ü ¹øÈ£ Á¤º¸À» ÀĞ´Â´Ù.
+	 * í•˜ë‚˜ì˜ ë ˆë²¨ì— í•´ë‹¹í•˜ëŠ” ë¬¸ë‹¨ ë²ˆí˜¸ ì •ë³´ì„ ì½ëŠ”ë‹¤.
 	 * 
 	 * @param ln
-	 *            ÇÏ³ªÀÇ ·¹º§¿¡ ÇØ´çÇÏ´Â ¹®´Ü ¹øÈ£ Á¤º¸
+	 *            í•˜ë‚˜ì˜ ë ˆë²¨ì— í•´ë‹¹í•˜ëŠ” ë¬¸ë‹¨ ë²ˆí˜¸ ì •ë³´
 	 * @param sr
-	 *            ½ºÆ®¸² ¸®´õ
+	 *            ìŠ¤íŠ¸ë¦¼ ë¦¬ë”
 	 * @throws IOException
 	 */
 	private static void levelNumbering(LevelNumbering ln, StreamReader sr)
@@ -62,12 +62,12 @@ public class ForNumbering {
 	}
 
 	/**
-	 * ¹®´Ü ¸Ó¸® Á¤º¸ ºÎºĞÀ» ÀĞ´Â´Ù.
+	 * ë¬¸ë‹¨ ë¨¸ë¦¬ ì •ë³´ ë¶€ë¶„ì„ ì½ëŠ”ë‹¤.
 	 * 
 	 * @param phi
-	 *            ¹®´Ü ¸Ó¸® Á¤º¸ ºÎºĞÀ» ³ªÅ¸³»´Â °´Ã¼
+	 *            ë¬¸ë‹¨ ë¨¸ë¦¬ ì •ë³´ ë¶€ë¶„ì„ ë‚˜íƒ€ë‚´ëŠ” ê°ì²´
 	 * @param sr
-	 *            ½ºÆ®¸² ¸®´õ
+	 *            ìŠ¤íŠ¸ë¦¼ ë¦¬ë”
 	 * @throws IOException
 	 */
 	public static void paragraphHeadInfo(ParagraphHeadInfo phi, StreamReader sr)
@@ -79,12 +79,12 @@ public class ForNumbering {
 	}
 
 	/**
-	 * ¼öÁØº° ½ÃÀÛ¹øÈ£ ºÎºĞÀ» ÀĞ´Â´Ù.
+	 * ìˆ˜ì¤€ë³„ ì‹œì‘ë²ˆí˜¸ ë¶€ë¶„ì„ ì½ëŠ”ë‹¤.
 	 * 
 	 * @param n
-	 *            ¹®´Ü ¹øÈ£ ·¹ÄÚµå
+	 *            ë¬¸ë‹¨ ë²ˆí˜¸ ë ˆì½”ë“œ
 	 * @param sr
-	 *            ½ºÆ®¸² ¸®´õ
+	 *            ìŠ¤íŠ¸ë¦¼ ë¦¬ë”
 	 * @throws Exception
 	 */
 	private static void startNumberForLevels(Numbering n, StreamReader sr)

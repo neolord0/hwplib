@@ -1,24 +1,24 @@
-package kr.dogfoot.hwplib.object.bodytext.control;
+ï»¿package kr.dogfoot.hwplib.object.bodytext.control;
 
 import kr.dogfoot.hwplib.object.bodytext.control.ctrlheader.CtrlHeaderOverlappingLetter;
 
 /**
- * ±ÛÀÚ °ãÄ§ ÄÁÆ®·Ñ
+ * ê¸€ì ê²¹ì¹¨ ì»¨íŠ¸ë¡¤
  * 
  * @author neolord
  */
 public class ControlOverlappingLetter extends Control {
 	/**
-	 * »ı¼ºÀÚ
+	 * ìƒì„±ì
 	 */
 	public ControlOverlappingLetter() {
 		super(new CtrlHeaderOverlappingLetter());
 	}
 
 	/**
-	 * ±ÛÀÚ °ãÄ§ ¿ë ÄÁÆ®·Ñ Çì´õ¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ê¸€ì ê²¹ì¹¨ ìš© ì»¨íŠ¸ë¡¤ í—¤ë”ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ±ÛÀÚ °ãÄ§ ¿ë ÄÁÆ®·Ñ Çì´õ
+	 * @return ê¸€ì ê²¹ì¹¨ ìš© ì»¨íŠ¸ë¡¤ í—¤ë”
 	 */
 	public CtrlHeaderOverlappingLetter getHeader() {
 		return (CtrlHeaderOverlappingLetter) header;

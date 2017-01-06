@@ -1,116 +1,116 @@
-package kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponenteach.ole;
+ï»¿package kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponenteach.ole;
 
 import kr.dogfoot.hwplib.util.binary.BitFlag;
 
 /**
- * OLE °³Ã¼ÀÇ ¼Ó¼º¿¡ ´ëÇÑ °´Ã¼
+ * OLE ê°œì²´ì˜ ì†ì„±ì— ëŒ€í•œ ê°ì²´
  * 
  * @author neolord
  */
 public class ShapeComponentOLEProperty {
 	/**
-	 * ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª(unsigned 4 byte)
+	 * íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’(unsigned 4 byte)
 	 */
 	private long value;
 
 	/**
-	 * »ı¼ºÀÚ
+	 * ìƒì„±ì
 	 */
 	public ShapeComponentOLEProperty() {
 	}
 
 	/**
-	 * ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ªÀ» ¹İÈ¯ÇÑ´Ù.
+	 * íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’ì„ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª
+	 * @return íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’
 	 */
 	public long getValue() {
 		return value;
 	}
 
 	/**
-	 * ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ªÀ» ¼³Á¤ÇÑ´Ù.
+	 * íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’ì„ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param value
-	 *            ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª
+	 *            íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’
 	 */
 	public void setValue(long value) {
 		this.value = value;
 	}
 
 	/**
-	 * DVASPECT°ªÀ» ¹İÈ¯ÇÑ´Ù.
+	 * DVASPECTê°’ì„ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return DVASPECT°ª
+	 * @return DVASPECTê°’
 	 */
 	public DVASPECT getDVASPECT() {
 		return DVASPECT.valueOf((byte) BitFlag.get(value, 0, 7));
 	}
 
 	/**
-	 * DVASPECT°ª¸¦ ¼³Á¤ÇÑ´Ù.
+	 * DVASPECTê°’ë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param dvaspect
-	 *            DVASPECT°ª
+	 *            DVASPECTê°’
 	 */
 	public void setDVASPECT(DVASPECT dvaspect) {
 		value = BitFlag.set(value, 0, 7, dvaspect.getValue());
 	}
 
 	/**
-	 * moniker°¡ ÁöÁ¤µÇ¾ú´ÂÁö ¿©ºÎ¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * monikerê°€ ì§€ì •ë˜ì—ˆëŠ”ì§€ ì—¬ë¶€ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return moniker°¡ ÁöÁ¤µÇ¾ú´ÂÁö ¿©ºÎ
+	 * @return monikerê°€ ì§€ì •ë˜ì—ˆëŠ”ì§€ ì—¬ë¶€
 	 */
 	public boolean isMoniker() {
 		return BitFlag.get(value, 8);
 	}
 
 	/**
-	 * moniker°¡ ÁöÁ¤µÇ¾ú´ÂÁö ¿©ºÎ¸¦ ¼³Á¤ÇÑ´Ù.
+	 * monikerê°€ ì§€ì •ë˜ì—ˆëŠ”ì§€ ì—¬ë¶€ë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param moniker
-	 *            moniker°¡ ÁöÁ¤µÇ¾ú´ÂÁö ¿©ºÎ
+	 *            monikerê°€ ì§€ì •ë˜ì—ˆëŠ”ì§€ ì—¬ë¶€
 	 */
 	public void setMoniker(boolean moniker) {
 		value = BitFlag.set(value, 8, moniker);
 	}
 
 	/**
-	 * º£ÀÌ½º¶óÀÎ °ªÀ» ¹İÈ¯ÇÑ´Ù. 0Àº µğÆúÆ®(85%)¸¦ ¶æÇÏ°í, 1¢¦101ÀÌ 0¢¦100%¸¦ ³ªÅ¸³½´Ù. ÇöÀç´Â ¼ö½Ä¸¸ÀÌ º£ÀÌ½º¶óÀÎÀ» º°µµ·Î
-	 * °¡Áø´Ù.
+	 * ë² ì´ìŠ¤ë¼ì¸ ê°’ì„ ë°˜í™˜í•œë‹¤. 0ì€ ë””í´íŠ¸(85%)ë¥¼ ëœ»í•˜ê³ , 1ï½101ì´ 0ï½100%ë¥¼ ë‚˜íƒ€ë‚¸ë‹¤. í˜„ì¬ëŠ” ìˆ˜ì‹ë§Œì´ ë² ì´ìŠ¤ë¼ì¸ì„ ë³„ë„ë¡œ
+	 * ê°€ì§„ë‹¤.
 	 * 
-	 * @return º£ÀÌ½º¶óÀÎ °ª
+	 * @return ë² ì´ìŠ¤ë¼ì¸ ê°’
 	 */
 	public byte getBaseLine() {
 		return (byte) BitFlag.get(value, 9, 15);
 	}
 
 	/**
-	 * º£ÀÌ½º¶óÀÎ °ªÀ» ¼³Á¤ÇÑ´Ù. 0Àº µğÆúÆ®(85%)¸¦ ¶æÇÏ°í, 1¢¦101ÀÌ 0¢¦100%¸¦ ³ªÅ¸³½´Ù. ÇöÀç´Â ¼ö½Ä¸¸ÀÌ º£ÀÌ½º¶óÀÎÀ» º°µµ·Î
-	 * °¡Áø´Ù.
+	 * ë² ì´ìŠ¤ë¼ì¸ ê°’ì„ ì„¤ì •í•œë‹¤. 0ì€ ë””í´íŠ¸(85%)ë¥¼ ëœ»í•˜ê³ , 1ï½101ì´ 0ï½100%ë¥¼ ë‚˜íƒ€ë‚¸ë‹¤. í˜„ì¬ëŠ” ìˆ˜ì‹ë§Œì´ ë² ì´ìŠ¤ë¼ì¸ì„ ë³„ë„ë¡œ
+	 * ê°€ì§„ë‹¤.
 	 * 
 	 * @param baseLine
-	 *            º£ÀÌ½º¶óÀÎ °ª
+	 *            ë² ì´ìŠ¤ë¼ì¸ ê°’
 	 */
 	public void setBaseLine(byte baseLine) {
 		value = BitFlag.set(value, 9, 15, baseLine);
 	}
 
 	/**
-	 * °³Ã¼ Á¾·ù¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ê°œì²´ ì¢…ë¥˜ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return °³Ã¼ Á¾·ù
+	 * @return ê°œì²´ ì¢…ë¥˜
 	 */
 	public ObjectSort getObjectSort() {
 		return ObjectSort.valueOf((byte) BitFlag.get(value, 16, 21));
 	}
 
 	/**
-	 * °³Ã¼ Á¾·ù¸¦ ¼³Á¤ÇÑ´Ù.
+	 * ê°œì²´ ì¢…ë¥˜ë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param objectSort
-	 *            °³Ã¼ Á¾·ù
+	 *            ê°œì²´ ì¢…ë¥˜
 	 */
 	public void setObjectSort(ObjectSort objectSort) {
 		value = BitFlag.set(value, 16, 21, objectSort.getValue());

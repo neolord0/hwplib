@@ -1,133 +1,133 @@
-package kr.dogfoot.hwplib.object.bodytext.control.ctrlheader.pagehide;
+ï»¿package kr.dogfoot.hwplib.object.bodytext.control.ctrlheader.pagehide;
 
 import kr.dogfoot.hwplib.util.binary.BitFlag;
 
 /**
- * °¨Ãß±â ÄÁÆ®·ÑÀÇ ¼Ó¼ºÀ» ³ªÅ¸³»´Â °´Ã¼
+ * ê°ì¶”ê¸° ì»¨íŠ¸ë¡¤ì˜ ì†ì„±ì„ ë‚˜íƒ€ë‚´ëŠ” ê°ì²´
  * 
  * @author neolord
  */
 public class PagehideHeaderProperty {
 	/**
-	 * ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª(unsigned 4 byte)
+	 * íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’(unsigned 4 byte)
 	 */
 	private long value;
 
 	/**
-	 * »ı¼ºÀÚ
+	 * ìƒì„±ì
 	 */
 	public PagehideHeaderProperty() {
 	}
 
 	/**
-	 * ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ªÀ» ¹İÈ¯ÇÑ´Ù.
+	 * íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’ì„ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª
+	 * @return íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’
 	 */
 	public long getValue() {
 		return value;
 	}
 
 	/**
-	 * ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ªÀ» ¼³Á¤ÇÑ´Ù.
+	 * íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’ì„ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param value
-	 *            ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª
+	 *            íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’
 	 */
 	public void setValue(long value) {
 		this.value = value;
 	}
 
 	/**
-	 * ¸Ó¸®¸» ¼û±è ¿©ºÎ¸¦ ¹İÈ¯ÇÑ´Ù. (0 bit)
+	 * ë¨¸ë¦¬ë§ ìˆ¨ê¹€ ì—¬ë¶€ë¥¼ ë°˜í™˜í•œë‹¤. (0 bit)
 	 * 
-	 * @return ¸Ó¸®¸» ¼û±è ¿©ºÎ
+	 * @return ë¨¸ë¦¬ë§ ìˆ¨ê¹€ ì—¬ë¶€
 	 */
 	public boolean isHideHeader() {
 		return BitFlag.get(value, 0);
 	}
 
 	/**
-	 * ¸Ó¸®¸» ¼û±è ¿©ºÎ¸¦ ¼³Á¤ÇÑ´Ù. (0 bit)
+	 * ë¨¸ë¦¬ë§ ìˆ¨ê¹€ ì—¬ë¶€ë¥¼ ì„¤ì •í•œë‹¤. (0 bit)
 	 * 
 	 * @param hideHeader
-	 *            ¸Ó¸®¸» ¼û±è ¿©ºÎ
+	 *            ë¨¸ë¦¬ë§ ìˆ¨ê¹€ ì—¬ë¶€
 	 */
 	public void setHideHeader(boolean hideHeader) {
 		value = BitFlag.set(value, 0, hideHeader);
 	}
 
 	/**
-	 * ²¿¸®¸» ¼û±è ¿©ºÎ¸¦ ¹İÈ¯ÇÑ´Ù. (1 bit)
+	 * ê¼¬ë¦¬ë§ ìˆ¨ê¹€ ì—¬ë¶€ë¥¼ ë°˜í™˜í•œë‹¤. (1 bit)
 	 * 
-	 * @return ²¿¸®¸» ¼û±è ¿©ºÎ
+	 * @return ê¼¬ë¦¬ë§ ìˆ¨ê¹€ ì—¬ë¶€
 	 */
 	public boolean isHideFooter() {
 		return BitFlag.get(value, 1);
 	}
 
 	/**
-	 * ²¿¸®¸» ¼û±è ¿©ºÎ¸¦ ¼³Á¤ÇÑ´Ù. (1 bit)
+	 * ê¼¬ë¦¬ë§ ìˆ¨ê¹€ ì—¬ë¶€ë¥¼ ì„¤ì •í•œë‹¤. (1 bit)
 	 * 
 	 * @param hideFooter
-	 *            ²¿¸®¸» ¼û±è ¿©ºÎ
+	 *            ê¼¬ë¦¬ë§ ìˆ¨ê¹€ ì—¬ë¶€
 	 */
 	public void setHideFooter(boolean hideFooter) {
 		value = BitFlag.set(value, 1, hideFooter);
 	}
 
 	/**
-	 * ¹ÙÅÁ ÂÊ ¼û±è ¿©ºÎ¸¦ ¹İÈ¯ÇÑ´Ù. (2 bit)
+	 * ë°”íƒ• ìª½ ìˆ¨ê¹€ ì—¬ë¶€ë¥¼ ë°˜í™˜í•œë‹¤. (2 bit)
 	 * 
-	 * @return ¹ÙÅÁ ÂÊ ¼û±è ¿©ºÎ
+	 * @return ë°”íƒ• ìª½ ìˆ¨ê¹€ ì—¬ë¶€
 	 */
 	public boolean isHideBatangPage() {
 		return BitFlag.get(value, 2);
 	}
 
 	/**
-	 * ¹ÙÅÁ ÂÊ ¼û±è ¿©ºÎ¸¦ ¼³Á¤ÇÑ´Ù. (2 bit)
+	 * ë°”íƒ• ìª½ ìˆ¨ê¹€ ì—¬ë¶€ë¥¼ ì„¤ì •í•œë‹¤. (2 bit)
 	 * 
 	 * @param hideBatangPage
-	 *            ¹ÙÅÁ ÂÊ ¼û±è ¿©ºÎ
+	 *            ë°”íƒ• ìª½ ìˆ¨ê¹€ ì—¬ë¶€
 	 */
 	public void setHideBatangPage(boolean hideBatangPage) {
 		value = BitFlag.set(value, 2, hideBatangPage);
 	}
 
 	/**
-	 * Å×µÎ¸® ¼û±è ¿©ºÎ¸¦ ¹İÈ¯ÇÏ´Ù. (3 bit)
+	 * í…Œë‘ë¦¬ ìˆ¨ê¹€ ì—¬ë¶€ë¥¼ ë°˜í™˜í•˜ë‹¤. (3 bit)
 	 * 
-	 * @return Å×µÎ¸® ¼û±è ¿©ºÎ
+	 * @return í…Œë‘ë¦¬ ìˆ¨ê¹€ ì—¬ë¶€
 	 */
 	public boolean isHideBorder() {
 		return BitFlag.get(value, 3);
 	}
 
 	/**
-	 * Å×µÎ¸® ¼û±è ¿©ºÎ¸¦ ¼³Á¤ÇÑ´Ù. (3 bit)
+	 * í…Œë‘ë¦¬ ìˆ¨ê¹€ ì—¬ë¶€ë¥¼ ì„¤ì •í•œë‹¤. (3 bit)
 	 * 
 	 * @param hideBorder
-	 *            Å×µÎ¸® ¼û±è ¿©ºÎ
+	 *            í…Œë‘ë¦¬ ìˆ¨ê¹€ ì—¬ë¶€
 	 */
 	public void setHideBorder(boolean hideBorder) {
 		value = BitFlag.set(value, 3, hideBorder);
 	}
 
 	/**
-	 * ÆäÀÌÁö ¹øÈ£ ¼û±è ¿©ºÎ¸¦ ¹İÈ¯ÇÑ´Ù. (4 bit)
+	 * í˜ì´ì§€ ë²ˆí˜¸ ìˆ¨ê¹€ ì—¬ë¶€ë¥¼ ë°˜í™˜í•œë‹¤. (4 bit)
 	 * 
-	 * @return ÆäÀÌÁö ¹øÈ£ ¼û±è ¿©ºÎ
+	 * @return í˜ì´ì§€ ë²ˆí˜¸ ìˆ¨ê¹€ ì—¬ë¶€
 	 */
 	public boolean isHidePageNumber() {
 		return BitFlag.get(value, 4);
 	}
 
 	/**
-	 * ÆäÀÌÁö ¹øÈ£ ¼û±è ¿©ºÎ¸¦ ¼³Á¤ÇÑ´Ù. (4 bit)
+	 * í˜ì´ì§€ ë²ˆí˜¸ ìˆ¨ê¹€ ì—¬ë¶€ë¥¼ ì„¤ì •í•œë‹¤. (4 bit)
 	 * 
 	 * @param hidePageNumber
-	 *            ÆäÀÌÁö ¹øÈ£ ¼û±è ¿©ºÎ
+	 *            í˜ì´ì§€ ë²ˆí˜¸ ìˆ¨ê¹€ ì—¬ë¶€
 	 */
 	public void setHidePageNumber(boolean hidePageNumber) {
 		value = BitFlag.set(value, 4, hidePageNumber);

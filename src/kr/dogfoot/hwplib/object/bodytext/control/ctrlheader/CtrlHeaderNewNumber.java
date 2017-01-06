@@ -1,25 +1,25 @@
-package kr.dogfoot.hwplib.object.bodytext.control.ctrlheader;
+ï»¿package kr.dogfoot.hwplib.object.bodytext.control.ctrlheader;
 
 import kr.dogfoot.hwplib.object.bodytext.control.ControlType;
 import kr.dogfoot.hwplib.object.bodytext.control.ctrlheader.newnumber.NewNumberHeaderProperty;
 
 /**
- * »õ ¹øÈ£ ÁöÁ¤ ÄÁÆ®·ÑÀ» À§ÇÑ ÄÁÆ®·Ñ Çì´õ ·¹ÄÚµå
+ * ìƒˆ ë²ˆí˜¸ ì§€ì • ì»¨íŠ¸ë¡¤ì„ ìœ„í•œ ì»¨íŠ¸ë¡¤ í—¤ë” ë ˆì½”ë“œ
  * 
  * @author neolord
  */
 public class CtrlHeaderNewNumber extends CtrlHeader {
 	/**
-	 * ¼Ó¼º
+	 * ì†ì„±
 	 */
 	private NewNumberHeaderProperty property;
 	/**
-	 * ¹øÈ£
+	 * ë²ˆí˜¸
 	 */
 	private int number;
 
 	/**
-	 * »ı¼ºÀÚ
+	 * ìƒì„±ì
 	 */
 	public CtrlHeaderNewNumber() {
 		super(ControlType.NewNumber.getCtrlId());
@@ -28,28 +28,28 @@ public class CtrlHeaderNewNumber extends CtrlHeader {
 	}
 
 	/**
-	 * »õ ¹øÈ£ ÁöÁ¤ ÄÁÆ®·ÑÀÇ ¼Ó¼º °´Ã¼¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ìƒˆ ë²ˆí˜¸ ì§€ì • ì»¨íŠ¸ë¡¤ì˜ ì†ì„± ê°ì²´ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return »õ ¹øÈ£ ÁöÁ¤ ÄÁÆ®·ÑÀÇ ¼Ó¼º °´Ã¼
+	 * @return ìƒˆ ë²ˆí˜¸ ì§€ì • ì»¨íŠ¸ë¡¤ì˜ ì†ì„± ê°ì²´
 	 */
 	public NewNumberHeaderProperty getProperty() {
 		return property;
 	}
 
 	/**
-	 * ¹øÈ£¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ë²ˆí˜¸ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ¹øÈ£
+	 * @return ë²ˆí˜¸
 	 */
 	public int getNumber() {
 		return number;
 	}
 
 	/**
-	 * ¹øÈ£¸¦ ¼³Á¤ÇÑ´Ù.
+	 * ë²ˆí˜¸ë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param number
-	 *            ¹øÈ£
+	 *            ë²ˆí˜¸
 	 */
 	public void setNumber(int number) {
 		this.number = number;

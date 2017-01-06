@@ -1,131 +1,131 @@
-package kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponenteach;
+ï»¿package kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponenteach;
 
 /**
- * ¼± °³Ã¼ ¼Ó¼º ·¹ÄÚµå
+ * ì„  ê°œì²´ ì†ì„± ë ˆì½”ë“œ
  * 
  * @author neolord
  */
 public class ShapeComponentLine {
 	/**
-	 * ½ÃÀÛÁ¡ x ÁÂÇ¥
+	 * ì‹œì‘ì  x ì¢Œí‘œ
 	 */
 	private int startX;
 	/**
-	 * ½ÃÀÛÁ¡ y ÁÂÇ¥
+	 * ì‹œì‘ì  y ì¢Œí‘œ
 	 */
 	private int startY;
 	/**
-	 * ³¡Á¡ x ÁÂÇ¥
+	 * ëì  x ì¢Œí‘œ
 	 */
 	private int endX;
 	/**
-	 * ³¡Á¡ y ÁÂÇ¥
+	 * ëì  y ì¢Œí‘œ
 	 */
 	private int endY;
 	/**
-	 * ¼±ÀÌ ¿À¸¥ÂÊÀÌ³ª ¾Æ·¡ÂÊ ºÎÅÍ ½ÃÀÛµÇ¾ú´ÂÁö ¿©ºÎ
+	 * ì„ ì´ ì˜¤ë¥¸ìª½ì´ë‚˜ ì•„ë˜ìª½ ë¶€í„° ì‹œì‘ë˜ì—ˆëŠ”ì§€ ì—¬ë¶€
 	 * 
-	 * ¼Ó¼º. Ã³À½ »ı¼º ½Ã ¼öÁ÷ ¶Ç´Â ¼öÆò¼±ÀÏ ¶§, ¼±ÀÇ ¹æÇâÀÌ ¾ğÁ¦³ª ¿À¸¥ÂÊ(À§ÂÊ)À¸·Î ÀâÈûÀ¸·Î ÀÎÇÑ Çö»ó ¶§¹®¿¡, ¹æÇâÀ» ¹Ù·Î
-	 * Àâ¾ÆÁÖ±â À§ÇÑ ÇÃ·¡±×.
+	 * ì†ì„±. ì²˜ìŒ ìƒì„± ì‹œ ìˆ˜ì§ ë˜ëŠ” ìˆ˜í‰ì„ ì¼ ë•Œ, ì„ ì˜ ë°©í–¥ì´ ì–¸ì œë‚˜ ì˜¤ë¥¸ìª½(ìœ„ìª½)ìœ¼ë¡œ ì¡í˜ìœ¼ë¡œ ì¸í•œ í˜„ìƒ ë•Œë¬¸ì—, ë°©í–¥ì„ ë°”ë¡œ
+	 * ì¡ì•„ì£¼ê¸° ìœ„í•œ í”Œë˜ê·¸.
 	 */
 	private boolean startedRightOrBottom;
 
 	/**
-	 * »ı¼ºÀÚ
+	 * ìƒì„±ì
 	 */
 	public ShapeComponentLine() {
 	}
 
 	/**
-	 * ½ÃÀÛÁ¡ x ÁÂÇ¥¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ì‹œì‘ì  x ì¢Œí‘œë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ½ÃÀÛÁ¡ x ÁÂÇ¥
+	 * @return ì‹œì‘ì  x ì¢Œí‘œ
 	 */
 	public int getStartX() {
 		return startX;
 	}
 
 	/**
-	 * ½ÃÀÛÁ¡ x ÁÂÇ¥¸¦ ¼³Á¤ÇÑ´Ù.
+	 * ì‹œì‘ì  x ì¢Œí‘œë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param startX
-	 *            ½ÃÀÛÁ¡ x ÁÂÇ¥
+	 *            ì‹œì‘ì  x ì¢Œí‘œ
 	 */
 	public void setStartX(int startX) {
 		this.startX = startX;
 	}
 
 	/**
-	 * ½ÃÀÛÁ¡ y ÁÂÇ¥¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ì‹œì‘ì  y ì¢Œí‘œë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ½ÃÀÛÁ¡ y ÁÂÇ¥
+	 * @return ì‹œì‘ì  y ì¢Œí‘œ
 	 */
 	public int getStartY() {
 		return startY;
 	}
 
 	/**
-	 * ½ÃÀÛÁ¡ y ÁÂÇ¥¸¦ ¼³Á¤ÇÑ´Ù.
+	 * ì‹œì‘ì  y ì¢Œí‘œë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param startY
-	 *            ½ÃÀÛÁ¡ y ÁÂÇ¥
+	 *            ì‹œì‘ì  y ì¢Œí‘œ
 	 */
 	public void setStartY(int startY) {
 		this.startY = startY;
 	}
 
 	/**
-	 * ³¡Á¡ x ÁÂÇ¥¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ëì  x ì¢Œí‘œë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ³¡Á¡ x ÁÂÇ¥
+	 * @return ëì  x ì¢Œí‘œ
 	 */
 	public int getEndX() {
 		return endX;
 	}
 
 	/**
-	 * ³¡Á¡ x ÁÂÇ¥¸¦ ¼³Á¤ÇÑ´Ù.
+	 * ëì  x ì¢Œí‘œë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param endX
-	 *            ³¡Á¡ x ÁÂÇ¥
+	 *            ëì  x ì¢Œí‘œ
 	 */
 	public void setEndX(int endX) {
 		this.endX = endX;
 	}
 
 	/**
-	 * ³¡Á¡ y ÁÂÇ¥¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ëì  y ì¢Œí‘œë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ³¡Á¡ y ÁÂÇ¥
+	 * @return ëì  y ì¢Œí‘œ
 	 */
 	public int getEndY() {
 		return endY;
 	}
 
 	/**
-	 * ³¡Á¡ y ÁÂÇ¥¸¦ ¼³Á¤ÇÑ´Ù.
+	 * ëì  y ì¢Œí‘œë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param endY
-	 *            ³¡Á¡ y ÁÂÇ¥
+	 *            ëì  y ì¢Œí‘œ
 	 */
 	public void setEndY(int endY) {
 		this.endY = endY;
 	}
 
 	/**
-	 * ¼±ÀÌ ¿À¸¥ÂÊÀÌ³ª ¾Æ·¡ÂÊ ºÎÅÍ ½ÃÀÛµÇ¾ú´ÂÁö ¿©ºÎ¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ì„ ì´ ì˜¤ë¥¸ìª½ì´ë‚˜ ì•„ë˜ìª½ ë¶€í„° ì‹œì‘ë˜ì—ˆëŠ”ì§€ ì—¬ë¶€ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ¼±ÀÌ ¿À¸¥ÂÊÀÌ³ª ¾Æ·¡ÂÊ ºÎÅÍ ½ÃÀÛµÇ¾ú´ÂÁö ¿©ºÎ
+	 * @return ì„ ì´ ì˜¤ë¥¸ìª½ì´ë‚˜ ì•„ë˜ìª½ ë¶€í„° ì‹œì‘ë˜ì—ˆëŠ”ì§€ ì—¬ë¶€
 	 */
 	public boolean isStartedRightOrBottom() {
 		return startedRightOrBottom;
 	}
 
 	/**
-	 * ¼±ÀÌ ¿À¸¥ÂÊÀÌ³ª ¾Æ·¡ÂÊ ºÎÅÍ ½ÃÀÛµÇ¾ú´ÂÁö ¿©ºÎ¸¦ ¼³Á¤ÇÑ´Ù.
+	 * ì„ ì´ ì˜¤ë¥¸ìª½ì´ë‚˜ ì•„ë˜ìª½ ë¶€í„° ì‹œì‘ë˜ì—ˆëŠ”ì§€ ì—¬ë¶€ë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param startedRightOrBottom
-	 *            ¼±ÀÌ ¿À¸¥ÂÊÀÌ³ª ¾Æ·¡ÂÊ ºÎÅÍ ½ÃÀÛµÇ¾ú´ÂÁö ¿©ºÎ
+	 *            ì„ ì´ ì˜¤ë¥¸ìª½ì´ë‚˜ ì•„ë˜ìª½ ë¶€í„° ì‹œì‘ë˜ì—ˆëŠ”ì§€ ì—¬ë¶€
 	 */
 	public void setStartedRightOrBottom(boolean startedRightOrBottom) {
 		this.startedRightOrBottom = startedRightOrBottom;

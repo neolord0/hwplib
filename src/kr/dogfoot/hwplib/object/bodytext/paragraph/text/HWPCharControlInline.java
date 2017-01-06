@@ -1,22 +1,22 @@
-package kr.dogfoot.hwplib.object.bodytext.paragraph.text;
+ï»¿package kr.dogfoot.hwplib.object.bodytext.paragraph.text;
 
 /**
- * ÀÎ¶óÀÎ ÄÁÆ®·Ñ character
+ * ì¸ë¼ì¸ ì»¨íŠ¸ë¡¤ character
  * 
  * @author neolord
  */
 public class HWPCharControlInline extends HWPChar {
 	/**
-	 * ¹ÈÁö ÄÚµå
+	 * ë¯„ì§€ ì½”ë“œ
 	 */
 	private int code;
 	/**
-	 * Ãß°¡ Á¤º¸
+	 * ì¶”ê°€ ì •ë³´
 	 */
 	private byte[] addition;
 
 	/**
-	 * »ı¼ºÀÚ
+	 * ìƒì„±ì
 	 */
 	public HWPCharControlInline() {
 	}
@@ -27,38 +27,38 @@ public class HWPCharControlInline extends HWPChar {
 	}
 
 	/**
-	 * ¹ÈÁö ÄÚµå¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ë¯„ì§€ ì½”ë“œë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ¹ÈÁö ÄÚµå
+	 * @return ë¯„ì§€ ì½”ë“œ
 	 */
 	public int getCode() {
 		return code;
 	}
 
 	/**
-	 * ¹ÈÁö ÄÚµå¸¦ ¼³Á¤ÇÑ´Ù.
+	 * ë¯„ì§€ ì½”ë“œë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param code
-	 *            ¹ÈÁö ÄÚµå
+	 *            ë¯„ì§€ ì½”ë“œ
 	 */
 	public void setCode(int code) {
 		this.code = code;
 	}
 
 	/**
-	 * Ãß°¡ Á¤º¸¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ì¶”ê°€ ì •ë³´ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return Ãß°¡ Á¤º¸
+	 * @return ì¶”ê°€ ì •ë³´
 	 */
 	public byte[] getAddition() {
 		return addition;
 	}
 
 	/**
-	 * Ãß°¡ Á¤º¸¸¦ ¼³Á¤ÇÑ´Ù.
+	 * ì¶”ê°€ ì •ë³´ë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param addition
-	 *            Ãß°¡ Á¤º¸
+	 *            ì¶”ê°€ ì •ë³´
 	 */
 	public void setAddition(byte[] addition) {
 		this.addition = addition;

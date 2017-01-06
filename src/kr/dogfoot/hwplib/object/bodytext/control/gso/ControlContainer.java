@@ -1,4 +1,4 @@
-package kr.dogfoot.hwplib.object.bodytext.control.gso;
+ï»¿package kr.dogfoot.hwplib.object.bodytext.control.gso;
 
 import java.util.ArrayList;
 
@@ -6,28 +6,28 @@ import kr.dogfoot.hwplib.object.bodytext.control.ctrlheader.CtrlHeaderGso;
 import kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponent.ShapeComponentContainer;
 
 /**
- * ¹­À½ °³Ã¼ ÄÁÆ®·Ñ
+ * ë¬¶ìŒ ê°œì²´ ì»¨íŠ¸ë¡¤
  * 
  * @author neolord
  */
 public class ControlContainer extends GsoControl {
 	/**
-	 * Â÷ÀÏµå ÄÁÆ®·Ñ ¸®½ºÆ®
+	 * ì°¨ì¼ë“œ ì»¨íŠ¸ë¡¤ ë¦¬ìŠ¤íŠ¸
 	 */
 	private ArrayList<GsoControl> childControlList;
 
 	/**
-	 * »ı¼ºÀÚ
+	 * ìƒì„±ì
 	 */
 	public ControlContainer() {
 		this(new CtrlHeaderGso());
 	}
 
 	/**
-	 * »ı¼ºÀÚ
+	 * ìƒì„±ì
 	 * 
 	 * @param header
-	 *            ±×¸®±â °³Ã¼¸¦ À§ÇÑ ÄÁÆ®·Ñ Çì´õ
+	 *            ê·¸ë¦¬ê¸° ê°œì²´ë¥¼ ìœ„í•œ ì»¨íŠ¸ë¡¤ í—¤ë”
 	 */
 	public ControlContainer(CtrlHeaderGso header) {
 		super(header);
@@ -38,19 +38,19 @@ public class ControlContainer extends GsoControl {
 	}
 
 	/**
-	 * Â÷ÀÏµå ÄÁÆ®·ÑÀ» ¸®½ºÆ®¿¡ Ãß°¡ÇÑ´Ù.
+	 * ì°¨ì¼ë“œ ì»¨íŠ¸ë¡¤ì„ ë¦¬ìŠ¤íŠ¸ì— ì¶”ê°€í•œë‹¤.
 	 * 
 	 * @param childControl
-	 *            Â÷ÀÏµå ÄÁÆ®·Ñ
+	 *            ì°¨ì¼ë“œ ì»¨íŠ¸ë¡¤
 	 */
 	public void addChildControl(GsoControl childControl) {
 		childControlList.add(childControl);
 	}
 
 	/**
-	 * Â÷ÀÏµå ÄÁÆ®·ÑÀÇ ¸®½ºÆ®¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ì°¨ì¼ë“œ ì»¨íŠ¸ë¡¤ì˜ ë¦¬ìŠ¤íŠ¸ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return Â÷ÀÏµå ÄÁÆ®·ÑÀÇ ¸®½ºÆ®
+	 * @return ì°¨ì¼ë“œ ì»¨íŠ¸ë¡¤ì˜ ë¦¬ìŠ¤íŠ¸
 	 */
 	public ArrayList<GsoControl> getChildControlList() {
 		return childControlList;

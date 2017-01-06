@@ -1,4 +1,4 @@
-package kr.dogfoot.hwplib.reader.docinfo;
+ï»¿package kr.dogfoot.hwplib.reader.docinfo;
 
 import java.io.IOException;
 
@@ -9,18 +9,18 @@ import kr.dogfoot.hwplib.object.docinfo.tabdef.TabSort;
 import kr.dogfoot.hwplib.util.compoundFile.StreamReader;
 
 /**
- * ÅÇ Á¤ÀÇ ·¹ÄÚµå¸¦ ÀĞ´Â´Ù.
+ * íƒ­ ì •ì˜ ë ˆì½”ë“œë¥¼ ì½ëŠ”ë‹¤.
  * 
  * @author neolord
  */
 public class ForTabDef {
 	/**
-	 * ÅÇ Á¤ÀÇ ·¹ÄÚµå¸¦ ÀĞ´Â´Ù.
+	 * íƒ­ ì •ì˜ ë ˆì½”ë“œë¥¼ ì½ëŠ”ë‹¤.
 	 * 
 	 * @param td
-	 *            ÅÇ Á¤ÀÇ ·¹ÄÚµå
+	 *            íƒ­ ì •ì˜ ë ˆì½”ë“œ
 	 * @param sr
-	 *            ½ºÆ®¸² ¸®´õ
+	 *            ìŠ¤íŠ¸ë¦¼ ë¦¬ë”
 	 * @throws IOException
 	 */
 	public static void read(TabDef td, StreamReader sr) throws IOException {
@@ -32,14 +32,14 @@ public class ForTabDef {
 	}
 
 	/**
-	 * ÅÇ Á¤º¸ ºÎºĞÀ» ÀĞ´Â´Ù.
+	 * íƒ­ ì •ë³´ ë¶€ë¶„ì„ ì½ëŠ”ë‹¤.
 	 * 
 	 * @param td
-	 *            ÅÇ Á¤ÀÇ ·¹ÄÚµå
+	 *            íƒ­ ì •ì˜ ë ˆì½”ë“œ
 	 * @param sr
-	 *            ½ºÆ®¸² ¸®´õ
+	 *            ìŠ¤íŠ¸ë¦¼ ë¦¬ë”
 	 * @param tabInfoCount
-	 *            ÅÇ Á¤ÀÇÀÇ °³¼ö
+	 *            íƒ­ ì •ì˜ì˜ ê°œìˆ˜
 	 * @throws IOException
 	 */
 	private static void tabInfos(TabDef td, StreamReader sr, long tabInfoCount)

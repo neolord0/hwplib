@@ -1,38 +1,38 @@
-package kr.dogfoot.hwplib.object.bodytext.control.ctrlheader;
+ï»¿package kr.dogfoot.hwplib.object.bodytext.control.ctrlheader;
 
 import java.util.ArrayList;
 
 import kr.dogfoot.hwplib.object.bodytext.control.ControlType;
 
 /**
- * ±ÛÀÚ °âÄ§ ÄÁÆ®·ÑÀ» À§ÇÑ ÄÁÆ®·Ñ Çì´õ ·¹ÄÚµå
+ * ê¸€ì ê²¸ì¹¨ ì»¨íŠ¸ë¡¤ì„ ìœ„í•œ ì»¨íŠ¸ë¡¤ í—¤ë” ë ˆì½”ë“œ
  * 
  * @author neolord
  */
 public class CtrlHeaderOverlappingLetter extends CtrlHeader {
 	/**
-	 * °ãÄ§ ±ÛÀÚ ¸®½ºÆ®
+	 * ê²¹ì¹¨ ê¸€ì ë¦¬ìŠ¤íŠ¸
 	 */
 	private ArrayList<String> overlappingLetterList;
 	/**
-	 * Å×µÎ¸® Å¸ÀÔ
+	 * í…Œë‘ë¦¬ íƒ€ì…
 	 */
 	private short borderType;
 	/**
-	 * ³»ºÎ ±ÛÀÚ Å©±â
+	 * ë‚´ë¶€ ê¸€ì í¬ê¸°
 	 */
 	private byte internalFontSize;
 	/**
-	 * Å×µÎ¸® ³»ºÎ ±ÛÀÚ ÆîÄ§
+	 * í…Œë‘ë¦¬ ë‚´ë¶€ ê¸€ì í¼ì¹¨
 	 */
 	private short expendInsideLetter;
 	/**
-	 * Å×µÎ¸® ³»ºÎ ±ÛÀÚÀÇ ±ÛÀÚ¸ğ¾ç id ¸®½ºÆ®
+	 * í…Œë‘ë¦¬ ë‚´ë¶€ ê¸€ìì˜ ê¸€ìëª¨ì–‘ id ë¦¬ìŠ¤íŠ¸
 	 */
 	private ArrayList<Long> charShapeIdList;
 
 	/**
-	 * »ı¼ºÀÚ
+	 * ìƒì„±ì
 	 */
 	public CtrlHeaderOverlappingLetter() {
 		super(ControlType.OverlappingLetter.getCtrlId());
@@ -42,95 +42,95 @@ public class CtrlHeaderOverlappingLetter extends CtrlHeader {
 	}
 
 	/**
-	 * °ãÃÄÁö´Â ±ÛÀÚ¸¦ ¸®½ºÆ®¿¡ Ãß°¡ÇÑ´Ù.
+	 * ê²¹ì³ì§€ëŠ” ê¸€ìë¥¼ ë¦¬ìŠ¤íŠ¸ì— ì¶”ê°€í•œë‹¤.
 	 * 
 	 * @param overlappingLetter
-	 *            °ãÃÄÁö´Â ±ÛÀÚ
+	 *            ê²¹ì³ì§€ëŠ” ê¸€ì
 	 */
 	public void addOverlappingLetter(String overlappingLetter) {
 		overlappingLetterList.add(overlappingLetter);
 	}
 
 	/**
-	 * °ãÄ§ ±ÛÀÚ ¸®½ºÆ®¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ê²¹ì¹¨ ê¸€ì ë¦¬ìŠ¤íŠ¸ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return °ãÄ§ ±ÛÀÚ ¸®½ºÆ®
+	 * @return ê²¹ì¹¨ ê¸€ì ë¦¬ìŠ¤íŠ¸
 	 */
 	public ArrayList<String> getOverlappingLetterList() {
 		return overlappingLetterList;
 	}
 
 	/**
-	 * Å×µÎ¸® Å¸ÀÔÀ» ¹İÈ¯ÇÑ´Ù.
+	 * í…Œë‘ë¦¬ íƒ€ì…ì„ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return Å×µÎ¸® Å¸ÀÔ
+	 * @return í…Œë‘ë¦¬ íƒ€ì…
 	 */
 	public short getBorderType() {
 		return borderType;
 	}
 
 	/**
-	 * Å×µÎ¸® Å¸ÀÔ¸¦ ¼³Á¤ÇÑ´Ù.
+	 * í…Œë‘ë¦¬ íƒ€ì…ë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param borderType
-	 *            Å×µÎ¸® Å¸ÀÔ
+	 *            í…Œë‘ë¦¬ íƒ€ì…
 	 */
 	public void setBorderType(short borderType) {
 		this.borderType = borderType;
 	}
 
 	/**
-	 * ³»ºÎ ±ÛÀÚ Å©±â¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ë‚´ë¶€ ê¸€ì í¬ê¸°ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ³»ºÎ ±ÛÀÚ Å©±â
+	 * @return ë‚´ë¶€ ê¸€ì í¬ê¸°
 	 */
 	public byte getInternalFontSize() {
 		return internalFontSize;
 	}
 
 	/**
-	 * ³»ºÎ ±ÛÀÚ Å©±â¸¦ ¼³Á¤ÇÑ´Ù.
+	 * ë‚´ë¶€ ê¸€ì í¬ê¸°ë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param internalFontSize
-	 *            ³»ºÎ ±ÛÀÚ Å©±â
+	 *            ë‚´ë¶€ ê¸€ì í¬ê¸°
 	 */
 	public void setInternalFontSize(byte internalFontSize) {
 		this.internalFontSize = internalFontSize;
 	}
 
 	/**
-	 * Å×µÎ¸® ³»ºÎ ±ÛÀÚ ÆîÄ§À» ¹İÈ¯ÇÑ´Ù.
+	 * í…Œë‘ë¦¬ ë‚´ë¶€ ê¸€ì í¼ì¹¨ì„ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return Å×µÎ¸® ³»ºÎ ±ÛÀÚ ÆîÄ§
+	 * @return í…Œë‘ë¦¬ ë‚´ë¶€ ê¸€ì í¼ì¹¨
 	 */
 	public short getExpendInsideLetter() {
 		return expendInsideLetter;
 	}
 
 	/**
-	 * Å×µÎ¸® ³»ºÎ ±ÛÀÚ ÆîÄ§À» ¼³Á¤ÇÑ´Ù.
+	 * í…Œë‘ë¦¬ ë‚´ë¶€ ê¸€ì í¼ì¹¨ì„ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param expendInsideLetter
-	 *            Å×µÎ¸® ³»ºÎ ±ÛÀÚ ÆîÄ§
+	 *            í…Œë‘ë¦¬ ë‚´ë¶€ ê¸€ì í¼ì¹¨
 	 */
 	public void setExpendInsideLetter(short expendInsideLetter) {
 		this.expendInsideLetter = expendInsideLetter;
 	}
 
 	/**
-	 * Å×µÎ¸® ³»ºÎ ±ÛÀÚÀÇ ±ÛÀÚ¸ğ¾ç id¸¦ ¸®½ºÆ®¿¡ Ãß°¡ÇÑ´Ù.
+	 * í…Œë‘ë¦¬ ë‚´ë¶€ ê¸€ìì˜ ê¸€ìëª¨ì–‘ idë¥¼ ë¦¬ìŠ¤íŠ¸ì— ì¶”ê°€í•œë‹¤.
 	 * 
 	 * @param charShapeId
-	 *            Å×µÎ¸® ³»ºÎ ±ÛÀÚÀÇ ±ÛÀÚ¸ğ¾ç id
+	 *            í…Œë‘ë¦¬ ë‚´ë¶€ ê¸€ìì˜ ê¸€ìëª¨ì–‘ id
 	 */
 	public void addCharShapeId(long charShapeId) {
 		charShapeIdList.add(charShapeId);
 	}
 
 	/**
-	 * Å×µÎ¸® ³»ºÎ ±ÛÀÚÀÇ ±ÛÀÚ¸ğ¾ç id ¸®½ºÆ®¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * í…Œë‘ë¦¬ ë‚´ë¶€ ê¸€ìì˜ ê¸€ìëª¨ì–‘ id ë¦¬ìŠ¤íŠ¸ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return Å×µÎ¸® ³»ºÎ ±ÛÀÚÀÇ ±ÛÀÚ¸ğ¾ç id ¸®½ºÆ®
+	 * @return í…Œë‘ë¦¬ ë‚´ë¶€ ê¸€ìì˜ ê¸€ìëª¨ì–‘ id ë¦¬ìŠ¤íŠ¸
 	 */
 	public ArrayList<Long> getCharShapeIdList() {
 		return charShapeIdList;

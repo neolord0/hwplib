@@ -1,78 +1,78 @@
-package kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponent.lineinfo;
+ï»¿package kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponent.lineinfo;
 
 /**
- * ¼± ³¡¿¡ È­»ìÇ¥ ¸ğ¾ç
+ * ì„  ëì— í™”ì‚´í‘œ ëª¨ì–‘
  * 
  * @author neolord
  */
 public enum LineArrowShape {
 	/**
-	 * ¸ğ¾ç ¾øÀ½
+	 * ëª¨ì–‘ ì—†ìŒ
 	 */
 	None((byte) 0),
 	/**
-	 * È­»ìÇ¥
+	 * í™”ì‚´í‘œ
 	 */
 	Arrow((byte) 1),
 	/**
-	 * ¿À¸ñÇÑ È­»ìÇ¥
+	 * ì˜¤ëª©í•œ í™”ì‚´í‘œ
 	 */
 	ConcaveArrow((byte) 2),
 	/**
-	 * ¼ÓÀÌ ºó ´ÙÀÌ¾Æ¸óµå ¸ğ¾ç
+	 * ì†ì´ ë¹ˆ ë‹¤ì´ì•„ëª¬ë“œ ëª¨ì–‘
 	 */
 	EmptyDiamond((byte) 3),
 	/**
-	 * ¼ÓÀÌ ºó ¿ø ¸ğ¾ç
+	 * ì†ì´ ë¹ˆ ì› ëª¨ì–‘
 	 */
 	EmptyCircle((byte) 4),
 	/**
-	 * ¼ÓÀÌ ºó »ç°¢Çü ¸ğ¾ç
+	 * ì†ì´ ë¹ˆ ì‚¬ê°í˜• ëª¨ì–‘
 	 */
 	EmptyRectangle((byte) 5),
 	/**
-	 * ¼ÓÀÌ Ã¤¿öÁø ´ÙÀÌ¾Æ¸óµå ¸ğ¾ç
+	 * ì†ì´ ì±„ì›Œì§„ ë‹¤ì´ì•„ëª¬ë“œ ëª¨ì–‘
 	 */
 	Diamond((byte) 6),
 	/**
-	 * ¼ÓÀÌ Ã¤¿öÁø ¿ø ¸ğ¾ç
+	 * ì†ì´ ì±„ì›Œì§„ ì› ëª¨ì–‘
 	 */
 	Circle((byte) 7),
 	/**
-	 * ¼ÓÀÌ Ã¤¿öÁø »ç°¢Çü ¸ğ¾ç
+	 * ì†ì´ ì±„ì›Œì§„ ì‚¬ê°í˜• ëª¨ì–‘
 	 */
 	Rectangle((byte) 8);
 
 	/**
-	 * ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª
+	 * íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’
 	 */
 	private byte value;
 
 	/**
-	 * »ı¼ºÀÚ
+	 * ìƒì„±ì
 	 * 
 	 * @param value
-	 *            ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª
+	 *            íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’
 	 */
 	private LineArrowShape(byte value) {
 		this.value = value;
 	}
 
 	/**
-	 * ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ªÀ» ¹İÈ¯ÇÑ´Ù.
+	 * íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’ì„ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª
+	 * @return íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’
 	 */
 	public byte getValue() {
 		return value;
 	}
 
 	/**
-	 * ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª¿¡ ÇØ´çµÇ´Â enum °ªÀ» ¹İÈ¯ÇÑ´Ù.
+	 * íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’ì— í•´ë‹¹ë˜ëŠ” enum ê°’ì„ ë°˜í™˜í•œë‹¤.
 	 * 
 	 * @param value
-	 *            ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª
-	 * @return enum °ª
+	 *            íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’
+	 * @return enum ê°’
 	 */
 	public static LineArrowShape valueOf(byte value) {
 		for (LineArrowShape las : values()) {

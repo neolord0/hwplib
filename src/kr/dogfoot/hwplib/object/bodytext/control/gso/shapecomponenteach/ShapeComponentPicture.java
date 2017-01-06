@@ -1,4 +1,4 @@
-package kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponenteach;
+ï»¿package kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponenteach;
 
 import kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponent.lineinfo.LineInfoProperty;
 import kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponenteach.picture.InnerMargin;
@@ -8,86 +8,86 @@ import kr.dogfoot.hwplib.object.docinfo.borderfill.fillinfo.PictureInfo;
 import kr.dogfoot.hwplib.object.etc.Color4Byte;
 
 /**
- * ±×¸² °³Ã¼ ¼Ó¼º ·¹ÄÚµå
+ * ê·¸ë¦¼ ê°œì²´ ì†ì„± ë ˆì½”ë“œ
  * 
  * @author neolord
  */
 public class ShapeComponentPicture {
 	/**
-	 * Å×µÎ¸® »ö
+	 * í…Œë‘ë¦¬ ìƒ‰
 	 */
 	private Color4Byte borderColor;
 	/**
-	 * Å×µÎ¸® µÎ²¾
+	 * í…Œë‘ë¦¬ ë‘ê¼
 	 */
 	private int borderThickness;
 	/**
-	 * Å×µÎ¸® ¼Ó¼º
+	 * í…Œë‘ë¦¬ ì†ì„±
 	 */
 	private LineInfoProperty borderProperty;
 	/**
-	 * left,top ÁÂÇ¥
+	 * left,top ì¢Œí‘œ
 	 */
 	private PositionXY leftTop;
 	/**
-	 * right,top ÁÂÇ¥
+	 * right,top ì¢Œí‘œ
 	 */
 	private PositionXY rightTop;
 	/**
-	 * left, bottom ÁÂÇ¥
+	 * left, bottom ì¢Œí‘œ
 	 */
 	private PositionXY leftBottom;
 	/**
-	 * right, bottom ÁÂÇ¥
+	 * right, bottom ì¢Œí‘œ
 	 */
 	private PositionXY rightBottom;
 	/**
-	 * ÀÚ¸£±â ÇÑ ÈÄ »ç°¢ÇüÀÇ leftÁÂÇ¥
+	 * ìë¥´ê¸° í•œ í›„ ì‚¬ê°í˜•ì˜ leftì¢Œí‘œ
 	 */
 	private int leftAfterCutting;
 	/**
-	 * ÀÚ¸£±â ÇÑ ÈÄ »ç°¢ÇüÀÇ topÁÂÇ¥
+	 * ìë¥´ê¸° í•œ í›„ ì‚¬ê°í˜•ì˜ topì¢Œí‘œ
 	 */
 	private int topAfterCutting;
 	/**
-	 * ÀÚ¸£±â ÇÑ ÈÄ »ç°¢ÇüÀÇ rightÁÂÇ¥
+	 * ìë¥´ê¸° í•œ í›„ ì‚¬ê°í˜•ì˜ rightì¢Œí‘œ
 	 */
 	private int rightAfterCutting;
 	/**
-	 * ÀÚ¸£±â ÇÑ ÈÄ »ç°¢ÇüÀÇ bottomÁÂÇ¥
+	 * ìë¥´ê¸° í•œ í›„ ì‚¬ê°í˜•ì˜ bottomì¢Œí‘œ
 	 */
 	private int bottomAfterCutting;
 	/**
-	 * ¾ÈÂÊ ¿©¹é Á¤º¸
+	 * ì•ˆìª½ ì—¬ë°± ì •ë³´
 	 */
 	private InnerMargin innerMargin;
 	/**
-	 * ±×¸² Á¤º¸
+	 * ê·¸ë¦¼ ì •ë³´
 	 */
 	private PictureInfo pictureInfo;
 	/**
-	 * Å×µÎ¸® Åõ¸íµµ
+	 * í…Œë‘ë¦¬ íˆ¬ëª…ë„
 	 */
 	private short borderTransparency;
 	/**
-	 * ¹®¼­ ³» °¢ °³Ã¼¿¡ ´ëÇÑ °íÀ¯ ¾ÆÀÌµğ
+	 * ë¬¸ì„œ ë‚´ ê° ê°œì²´ì— ëŒ€í•œ ê³ ìœ  ì•„ì´ë””
 	 */
 	private long instanceId;
 	/**
-	 * ±×¸² È¿°ú Á¤º¸
+	 * ê·¸ë¦¼ íš¨ê³¼ ì •ë³´
 	 */
 	private PictureEffect pictureEffect;
 	/**
-	 * ÀÌ¹ÌÁö ³Êºñ (??)
+	 * ì´ë¯¸ì§€ ë„ˆë¹„ (??)
 	 */
 	private long imageWidth;
 	/**
-	 * ÀÌ¹ÌÁö ³ôÀÌ (??)
+	 * ì´ë¯¸ì§€ ë†’ì´ (??)
 	 */
 	private long imageHeight;
 
 	/**
-	 * »ı¼ºÀÚ
+	 * ìƒì„±ì
 	 */
 	public ShapeComponentPicture() {
 		borderColor = new Color4Byte();
@@ -102,252 +102,252 @@ public class ShapeComponentPicture {
 	}
 
 	/**
-	 * Å×µÎ¸® »ö»ó °´Ã¼¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * í…Œë‘ë¦¬ ìƒ‰ìƒ ê°ì²´ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return Å×µÎ¸® »ö»ó °´Ã¼
+	 * @return í…Œë‘ë¦¬ ìƒ‰ìƒ ê°ì²´
 	 */
 	public Color4Byte getBorderColor() {
 		return borderColor;
 	}
 
 	/**
-	 * Å×µÎ¸® µÎ²¾¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * í…Œë‘ë¦¬ ë‘ê¼ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return Å×µÎ¸® µÎ²¾
+	 * @return í…Œë‘ë¦¬ ë‘ê¼
 	 */
 	public int getBorderThickness() {
 		return borderThickness;
 	}
 
 	/**
-	 * Å×µÎ¸® µÎ²¾¸¦ ¼³Á¤ÇÑ´Ù.
+	 * í…Œë‘ë¦¬ ë‘ê¼ë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param borderThickness
-	 *            Å×µÎ¸® µÎ²¾
+	 *            í…Œë‘ë¦¬ ë‘ê¼
 	 */
 	public void setBorderThickness(int borderThickness) {
 		this.borderThickness = borderThickness;
 	}
 
 	/**
-	 * Å×µÎ¸® ¼±ÀÇ ¼Ó¼º °´Ã¼¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * í…Œë‘ë¦¬ ì„ ì˜ ì†ì„± ê°ì²´ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return Å×µÎ¸® ¼±ÀÇ ¼Ó¼º °´Ã¼
+	 * @return í…Œë‘ë¦¬ ì„ ì˜ ì†ì„± ê°ì²´
 	 */
 	public LineInfoProperty getBorderProperty() {
 		return borderProperty;
 	}
 
 	/**
-	 * left,top ÁÂÇ¥ °´Ã¼¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * left,top ì¢Œí‘œ ê°ì²´ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return left,top ÁÂÇ¥ °´Ã¼
+	 * @return left,top ì¢Œí‘œ ê°ì²´
 	 */
 	public PositionXY getLeftTop() {
 		return leftTop;
 	}
 
 	/**
-	 * right,top ÁÂÇ¥ °´Ã¼¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * right,top ì¢Œí‘œ ê°ì²´ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return right,top ÁÂÇ¥ °´Ã¼
+	 * @return right,top ì¢Œí‘œ ê°ì²´
 	 */
 	public PositionXY getRightTop() {
 		return rightTop;
 	}
 
 	/**
-	 * left, bottom ÁÂÇ¥ °´Ã¼¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * left, bottom ì¢Œí‘œ ê°ì²´ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return left, bottom ÁÂÇ¥ °´Ã¼
+	 * @return left, bottom ì¢Œí‘œ ê°ì²´
 	 */
 	public PositionXY getLeftBottom() {
 		return leftBottom;
 	}
 
 	/**
-	 * right, bottom ÁÂÇ¥ °´Ã¼¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * right, bottom ì¢Œí‘œ ê°ì²´ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return right, bottom ÁÂÇ¥ °´Ã¼
+	 * @return right, bottom ì¢Œí‘œ ê°ì²´
 	 */
 	public PositionXY getRightBottom() {
 		return rightBottom;
 	}
 
 	/**
-	 * ÀÚ¸£±â ÇÑ ÈÄ »ç°¢ÇüÀÇ leftÁÂÇ¥¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ìë¥´ê¸° í•œ í›„ ì‚¬ê°í˜•ì˜ leftì¢Œí‘œë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ÀÚ¸£±â ÇÑ ÈÄ »ç°¢ÇüÀÇ leftÁÂÇ¥
+	 * @return ìë¥´ê¸° í•œ í›„ ì‚¬ê°í˜•ì˜ leftì¢Œí‘œ
 	 */
 	public int getLeftAfterCutting() {
 		return leftAfterCutting;
 	}
 
 	/**
-	 * ÀÚ¸£±â ÇÑ ÈÄ »ç°¢ÇüÀÇ leftÁÂÇ¥¸¦ ¼³Á¤ÇÑ´Ù.
+	 * ìë¥´ê¸° í•œ í›„ ì‚¬ê°í˜•ì˜ leftì¢Œí‘œë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param leftAfterCutting
-	 *            ÀÚ¸£±â ÇÑ ÈÄ »ç°¢ÇüÀÇ leftÁÂÇ¥
+	 *            ìë¥´ê¸° í•œ í›„ ì‚¬ê°í˜•ì˜ leftì¢Œí‘œ
 	 */
 	public void setLeftAfterCutting(int leftAfterCutting) {
 		this.leftAfterCutting = leftAfterCutting;
 	}
 
 	/**
-	 * ÀÚ¸£±â ÇÑ ÈÄ »ç°¢ÇüÀÇ topÁÂÇ¥¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ìë¥´ê¸° í•œ í›„ ì‚¬ê°í˜•ì˜ topì¢Œí‘œë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ÀÚ¸£±â ÇÑ ÈÄ »ç°¢ÇüÀÇ topÁÂÇ¥
+	 * @return ìë¥´ê¸° í•œ í›„ ì‚¬ê°í˜•ì˜ topì¢Œí‘œ
 	 */
 	public int getTopAfterCutting() {
 		return topAfterCutting;
 	}
 
 	/**
-	 * ÀÚ¸£±â ÇÑ ÈÄ »ç°¢ÇüÀÇ topÁÂÇ¥¸¦ ¼³Á¤ÇÑ´Ù.
+	 * ìë¥´ê¸° í•œ í›„ ì‚¬ê°í˜•ì˜ topì¢Œí‘œë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param topAfterCutting
-	 *            ÀÚ¸£±â ÇÑ ÈÄ »ç°¢ÇüÀÇ topÁÂÇ¥
+	 *            ìë¥´ê¸° í•œ í›„ ì‚¬ê°í˜•ì˜ topì¢Œí‘œ
 	 */
 	public void setTopAfterCutting(int topAfterCutting) {
 		this.topAfterCutting = topAfterCutting;
 	}
 
 	/**
-	 * ÀÚ¸£±â ÇÑ ÈÄ »ç°¢ÇüÀÇ rightÁÂÇ¥¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ìë¥´ê¸° í•œ í›„ ì‚¬ê°í˜•ì˜ rightì¢Œí‘œë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ÀÚ¸£±â ÇÑ ÈÄ »ç°¢ÇüÀÇ rightÁÂÇ¥
+	 * @return ìë¥´ê¸° í•œ í›„ ì‚¬ê°í˜•ì˜ rightì¢Œí‘œ
 	 */
 	public int getRightAfterCutting() {
 		return rightAfterCutting;
 	}
 
 	/**
-	 * ÀÚ¸£±â ÇÑ ÈÄ »ç°¢ÇüÀÇ rightÁÂÇ¥¸¦ ¼³Á¤ÇÑ´Ù.
+	 * ìë¥´ê¸° í•œ í›„ ì‚¬ê°í˜•ì˜ rightì¢Œí‘œë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param rightAfterCutting
-	 *            ÀÚ¸£±â ÇÑ ÈÄ »ç°¢ÇüÀÇ rightÁÂÇ¥
+	 *            ìë¥´ê¸° í•œ í›„ ì‚¬ê°í˜•ì˜ rightì¢Œí‘œ
 	 */
 	public void setRightAfterCutting(int rightAfterCutting) {
 		this.rightAfterCutting = rightAfterCutting;
 	}
 
 	/**
-	 * ÀÚ¸£±â ÇÑ ÈÄ »ç°¢ÇüÀÇ bottomÁÂÇ¥¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ìë¥´ê¸° í•œ í›„ ì‚¬ê°í˜•ì˜ bottomì¢Œí‘œë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ÀÚ¸£±â ÇÑ ÈÄ »ç°¢ÇüÀÇ bottomÁÂÇ¥
+	 * @return ìë¥´ê¸° í•œ í›„ ì‚¬ê°í˜•ì˜ bottomì¢Œí‘œ
 	 */
 	public int getBottomAfterCutting() {
 		return bottomAfterCutting;
 	}
 
 	/**
-	 * ÀÚ¸£±â ÇÑ ÈÄ »ç°¢ÇüÀÇ bottomÁÂÇ¥¸¦ ¼³Á¤ÇÑ´Ù.
+	 * ìë¥´ê¸° í•œ í›„ ì‚¬ê°í˜•ì˜ bottomì¢Œí‘œë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param bottomAfterCutting
-	 *            ÀÚ¸£±â ÇÑ ÈÄ »ç°¢ÇüÀÇ bottomÁÂÇ¥
+	 *            ìë¥´ê¸° í•œ í›„ ì‚¬ê°í˜•ì˜ bottomì¢Œí‘œ
 	 */
 	public void setBottomAfterCutting(int bottomAfterCutting) {
 		this.bottomAfterCutting = bottomAfterCutting;
 	}
 
 	/**
-	 * ¾ÈÂÊ ¿©¹é Á¤º¸ °´Ã¼¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ì•ˆìª½ ì—¬ë°± ì •ë³´ ê°ì²´ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ¾ÈÂÊ ¿©¹é Á¤º¸ °´Ã¼
+	 * @return ì•ˆìª½ ì—¬ë°± ì •ë³´ ê°ì²´
 	 */
 	public InnerMargin getInnerMargin() {
 		return innerMargin;
 	}
 
 	/**
-	 * ±×¸² Á¤º¸ °´Ã¼¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ê·¸ë¦¼ ì •ë³´ ê°ì²´ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ±×¸² Á¤º¸ °´Ã¼
+	 * @return ê·¸ë¦¼ ì •ë³´ ê°ì²´
 	 */
 	public PictureInfo getPictureInfo() {
 		return pictureInfo;
 	}
 
 	/**
-	 * Å×µÎ¸® Åõ¸íµµ¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * í…Œë‘ë¦¬ íˆ¬ëª…ë„ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return Å×µÎ¸® Åõ¸íµµ
+	 * @return í…Œë‘ë¦¬ íˆ¬ëª…ë„
 	 */
 	public short getBorderTransparency() {
 		return borderTransparency;
 	}
 
 	/**
-	 * Å×µÎ¸® Åõ¸íµµ¸¦ ¼³Á¤ÇÑ´Ù.
+	 * í…Œë‘ë¦¬ íˆ¬ëª…ë„ë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param borderTransparency
-	 *            Å×µÎ¸® Åõ¸íµµ
+	 *            í…Œë‘ë¦¬ íˆ¬ëª…ë„
 	 */
 	public void setBorderTransparency(short borderTransparency) {
 		this.borderTransparency = borderTransparency;
 	}
 
 	/**
-	 * ¹®¼­ ³» °¢ °³Ã¼¿¡ ´ëÇÑ °íÀ¯ ¾ÆÀÌµğ¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ë¬¸ì„œ ë‚´ ê° ê°œì²´ì— ëŒ€í•œ ê³ ìœ  ì•„ì´ë””ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ¹®¼­ ³» °¢ °³Ã¼¿¡ ´ëÇÑ °íÀ¯ ¾ÆÀÌµğ
+	 * @return ë¬¸ì„œ ë‚´ ê° ê°œì²´ì— ëŒ€í•œ ê³ ìœ  ì•„ì´ë””
 	 */
 	public long getInstanceId() {
 		return instanceId;
 	}
 
 	/**
-	 * ¹®¼­ ³» °¢ °³Ã¼¿¡ ´ëÇÑ °íÀ¯ ¾ÆÀÌµğ¸¦ ¼³Á¤ÇÑ´Ù.
+	 * ë¬¸ì„œ ë‚´ ê° ê°œì²´ì— ëŒ€í•œ ê³ ìœ  ì•„ì´ë””ë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param instanceId
-	 *            ¹®¼­ ³» °¢ °³Ã¼¿¡ ´ëÇÑ °íÀ¯ ¾ÆÀÌµğ
+	 *            ë¬¸ì„œ ë‚´ ê° ê°œì²´ì— ëŒ€í•œ ê³ ìœ  ì•„ì´ë””
 	 */
 	public void setInstanceId(long instanceId) {
 		this.instanceId = instanceId;
 	}
 
 	/**
-	 * ±×¸² È¿°ú Á¤º¸ °´Ã¼¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ê·¸ë¦¼ íš¨ê³¼ ì •ë³´ ê°ì²´ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ±×¸² È¿°ú Á¤º¸ °´Ã¼
+	 * @return ê·¸ë¦¼ íš¨ê³¼ ì •ë³´ ê°ì²´
 	 */
 	public PictureEffect getPictureEffect() {
 		return pictureEffect;
 	}
 
 	/**
-	 * ÀÌ¹ÌÁö ÆøÀ» ¹İÈ¯ÇÑ´Ù.(??)
+	 * ì´ë¯¸ì§€ í­ì„ ë°˜í™˜í•œë‹¤.(??)
 	 * 
-	 * @return ÀÌ¹ÌÁö Æø
+	 * @return ì´ë¯¸ì§€ í­
 	 */
 	public long getImageWidth() {
 		return imageWidth;
 	}
 
 	/**
-	 * ÀÌ¹ÌÁö ÆøÀ» ¼³Á¤ÇÑ´Ù. (??)
+	 * ì´ë¯¸ì§€ í­ì„ ì„¤ì •í•œë‹¤. (??)
 	 * 
 	 * @param imageWidth
-	 *            ÀÌ¹ÌÁö Æø
+	 *            ì´ë¯¸ì§€ í­
 	 */
 	public void setImageWidth(long imageWidth) {
 		this.imageWidth = imageWidth;
 	}
 
 	/**
-	 * ÀÌ¹ÌÁö ³ôÀÌ¸¦ ¹İÈ¯ÇÑ´Ù. (??)
+	 * ì´ë¯¸ì§€ ë†’ì´ë¥¼ ë°˜í™˜í•œë‹¤. (??)
 	 * 
-	 * @return ÀÌ¹ÌÁö ³ôÀÌ
+	 * @return ì´ë¯¸ì§€ ë†’ì´
 	 */
 	public long getImageHeight() {
 		return imageHeight;
 	}
 
 	/**
-	 * ÀÌ¹ÌÁö ³ôÀÌ¸¦ ¼³Á¤ÇÑ´Ù. (??)
+	 * ì´ë¯¸ì§€ ë†’ì´ë¥¼ ì„¤ì •í•œë‹¤. (??)
 	 * 
 	 * @param imageHeight
-	 *            ÀÌ¹ÌÁö ³ôÀÌ
+	 *            ì´ë¯¸ì§€ ë†’ì´
 	 */
 	public void setImageHeight(long imageHeight) {
 		this.imageHeight = imageHeight;

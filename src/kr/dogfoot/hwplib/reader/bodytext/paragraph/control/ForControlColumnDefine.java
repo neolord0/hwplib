@@ -1,4 +1,4 @@
-package kr.dogfoot.hwplib.reader.bodytext.paragraph.control;
+ï»¿package kr.dogfoot.hwplib.reader.bodytext.paragraph.control;
 
 import java.io.IOException;
 
@@ -10,18 +10,18 @@ import kr.dogfoot.hwplib.object.docinfo.borderfill.BorderType;
 import kr.dogfoot.hwplib.util.compoundFile.StreamReader;
 
 /**
- * ´Ü Á¤ÀÇ ÄÁÆ®·ÑÀ» ÀĞ±â À§ÇÑ °´Ã¼
+ * ë‹¨ ì •ì˜ ì»¨íŠ¸ë¡¤ì„ ì½ê¸° ìœ„í•œ ê°ì²´
  * 
  * @author neolord
  */
 public class ForControlColumnDefine {
 	/**
-	 * ´Ü Á¤ÀÇ ÄÁÆ®·ÑÀ» ÀĞ´Â´Ù.
+	 * ë‹¨ ì •ì˜ ì»¨íŠ¸ë¡¤ì„ ì½ëŠ”ë‹¤.
 	 * 
 	 * @param cd
-	 *            ´Ü Á¤ÀÇ ÄÁÆ®·Ñ
+	 *            ë‹¨ ì •ì˜ ì»¨íŠ¸ë¡¤
 	 * @param sr
-	 *            ½ºÆ®¸² ¸®´õ
+	 *            ìŠ¤íŠ¸ë¦¼ ë¦¬ë”
 	 * @throws IOException
 	 */
 	public static void read(ControlColumnDefine cd, StreamReader sr)
@@ -30,12 +30,12 @@ public class ForControlColumnDefine {
 	}
 
 	/**
-	 * ´Ü Á¤ÀÇ ÄÁÆ®·Ñ Çì´õ ·¹ÄÚµå¸¦ ÀĞ´Â´Ù.
+	 * ë‹¨ ì •ì˜ ì»¨íŠ¸ë¡¤ í—¤ë” ë ˆì½”ë“œë¥¼ ì½ëŠ”ë‹¤.
 	 * 
 	 * @param h
-	 *            ´Ü Á¤ÀÇ ÄÁÆ®·ÑÀÇ ÄÁÆ®·Ñ Çì´õ ·¹ÄÚµå
+	 *            ë‹¨ ì •ì˜ ì»¨íŠ¸ë¡¤ì˜ ì»¨íŠ¸ë¡¤ í—¤ë” ë ˆì½”ë“œ
 	 * @param sr
-	 *            ½ºÆ®¸² ¸®´õ
+	 *            ìŠ¤íŠ¸ë¦¼ ë¦¬ë”
 	 * @throws IOException
 	 */
 	private static void ctrlHeader(CtrlHeaderColumnDefine h, StreamReader sr)
@@ -57,12 +57,12 @@ public class ForControlColumnDefine {
 	}
 
 	/**
-	 * ´Ü Á¤ÀÇ ÄÁÆ®·ÑÀÇ ÄÁÆ®·Ñ Çì´õ ·¹ÄÚµåÀÇ ´Ü Á¤º¸ ºÎºĞ¸¦ ÀĞ´Â´Ù.
+	 * ë‹¨ ì •ì˜ ì»¨íŠ¸ë¡¤ì˜ ì»¨íŠ¸ë¡¤ í—¤ë” ë ˆì½”ë“œì˜ ë‹¨ ì •ë³´ ë¶€ë¶„ë¥¼ ì½ëŠ”ë‹¤.
 	 * 
 	 * @param h
-	 *            ´Ü Á¤ÀÇ ÄÁÆ®·ÑÀÇ ÄÁÆ®·Ñ Çì´õ ·¹ÄÚµå
+	 *            ë‹¨ ì •ì˜ ì»¨íŠ¸ë¡¤ì˜ ì»¨íŠ¸ë¡¤ í—¤ë” ë ˆì½”ë“œ
 	 * @param sr
-	 *            ½ºÆ®¸² ¸®´õ
+	 *            ìŠ¤íŠ¸ë¦¼ ë¦¬ë”
 	 * @throws IOException
 	 */
 	private static void columnInfos(CtrlHeaderColumnDefine h, StreamReader sr)

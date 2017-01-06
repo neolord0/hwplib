@@ -1,176 +1,176 @@
-package kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponenteach;
+ï»¿package kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponenteach;
 
 import kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponenteach.arc.ArcBorder;
 
 /**
- * È£ °³Ã¼ ¼Ó¼º ·¹ÄÚµå
+ * í˜¸ ê°œì²´ ì†ì„± ë ˆì½”ë“œ
  * 
  * @author neolord
  */
 public class ShapeComponentArc {
 	/**
-	 * È£ Å×µÎ¸®
+	 * í˜¸ í…Œë‘ë¦¬
 	 */
 	private ArcBorder arcBorder;
 	/**
-	 * Å¸¿øÀÇ Áß½É ÁÂÇ¥ X°ª
+	 * íƒ€ì›ì˜ ì¤‘ì‹¬ ì¢Œí‘œ Xê°’
 	 */
 	private int centerX;
 	/**
-	 * Å¸¿øÀÇ Áß½É ÁÂÇ¥ Y°ª
+	 * íƒ€ì›ì˜ ì¤‘ì‹¬ ì¢Œí‘œ Yê°’
 	 */
 	private int centerY;
 	/**
-	 * Á¦1Ãà XÁÂÇ¥ °ª
+	 * ì œ1ì¶• Xì¢Œí‘œ ê°’
 	 */
 	private int axis1X;
 	/**
-	 * Á¦1Ãà YÁÂÇ¥ °ª
+	 * ì œ1ì¶• Yì¢Œí‘œ ê°’
 	 */
 	private int axis1Y;
 	/**
-	 * Á¦2Ãà XÁÂÇ¥ °ª
+	 * ì œ2ì¶• Xì¢Œí‘œ ê°’
 	 */
 	private int axis2X;
 	/**
-	 * Á¦2Ãà YÁÂÇ¥ °ª
+	 * ì œ2ì¶• Yì¢Œí‘œ ê°’
 	 */
 	private int axis2Y;
 
 	/**
-	 * »ı¼ºÀÚ
+	 * ìƒì„±ì
 	 */
 	public ShapeComponentArc() {
 	}
 
 	/**
-	 * È£ Å×µÎ¸® Á¾·ù¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * í˜¸ í…Œë‘ë¦¬ ì¢…ë¥˜ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return È£ Å×µÎ¸® Á¾·ù
+	 * @return í˜¸ í…Œë‘ë¦¬ ì¢…ë¥˜
 	 */
 	public ArcBorder getArcBorder() {
 		return arcBorder;
 	}
 
 	/**
-	 * È£ Å×µÎ¸® Á¾·ù¸¦ ¼³Á¤ÇÑ´Ù.
+	 * í˜¸ í…Œë‘ë¦¬ ì¢…ë¥˜ë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param arcBorder
-	 *            È£ Å×µÎ¸® Á¾·ù
+	 *            í˜¸ í…Œë‘ë¦¬ ì¢…ë¥˜
 	 */
 	public void setArcBorder(ArcBorder arcBorder) {
 		this.arcBorder = arcBorder;
 	}
 
 	/**
-	 * Å¸¿øÀÇ Áß½É ÁÂÇ¥ X°ªÀ» ¹İÈ¯ÇÑ´Ù.
+	 * íƒ€ì›ì˜ ì¤‘ì‹¬ ì¢Œí‘œ Xê°’ì„ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return Å¸¿øÀÇ Áß½É ÁÂÇ¥ X°ª
+	 * @return íƒ€ì›ì˜ ì¤‘ì‹¬ ì¢Œí‘œ Xê°’
 	 */
 	public int getCenterX() {
 		return centerX;
 	}
 
 	/**
-	 * Å¸¿øÀÇ Áß½É ÁÂÇ¥ X°ªÀ» ¼³Á¤ÇÑ´Ù.
+	 * íƒ€ì›ì˜ ì¤‘ì‹¬ ì¢Œí‘œ Xê°’ì„ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param centerX
-	 *            Å¸¿øÀÇ Áß½É ÁÂÇ¥ X°ª
+	 *            íƒ€ì›ì˜ ì¤‘ì‹¬ ì¢Œí‘œ Xê°’
 	 */
 	public void setCenterX(int centerX) {
 		this.centerX = centerX;
 	}
 
 	/**
-	 * Å¸¿øÀÇ Áß½É ÁÂÇ¥ Y°ªÀ» ¹İÈ¯ÇÑ´Ù.
+	 * íƒ€ì›ì˜ ì¤‘ì‹¬ ì¢Œí‘œ Yê°’ì„ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return Å¸¿øÀÇ Áß½É ÁÂÇ¥ Y°ª
+	 * @return íƒ€ì›ì˜ ì¤‘ì‹¬ ì¢Œí‘œ Yê°’
 	 */
 	public int getCenterY() {
 		return centerY;
 	}
 
 	/**
-	 * Å¸¿øÀÇ Áß½É ÁÂÇ¥ Y°ªÀ» ¼³Á¤ÇÑ´Ù.
+	 * íƒ€ì›ì˜ ì¤‘ì‹¬ ì¢Œí‘œ Yê°’ì„ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param centerY
-	 *            Å¸¿øÀÇ Áß½É ÁÂÇ¥ Y°ª
+	 *            íƒ€ì›ì˜ ì¤‘ì‹¬ ì¢Œí‘œ Yê°’
 	 */
 	public void setCenterY(int centerY) {
 		this.centerY = centerY;
 	}
 
 	/**
-	 * Á¦1Ãà XÁÂÇ¥ °ªÀ» ¹İÈ¯ÇÑ´Ù.
+	 * ì œ1ì¶• Xì¢Œí‘œ ê°’ì„ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return Á¦1Ãà XÁÂÇ¥ °ª
+	 * @return ì œ1ì¶• Xì¢Œí‘œ ê°’
 	 */
 	public int getAxis1X() {
 		return axis1X;
 	}
 
 	/**
-	 * Á¦1Ãà XÁÂÇ¥ °ªÀ» ¼³Á¤ÇÑ´Ù.
+	 * ì œ1ì¶• Xì¢Œí‘œ ê°’ì„ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param axis1X
-	 *            Á¦1Ãà XÁÂÇ¥ °ª
+	 *            ì œ1ì¶• Xì¢Œí‘œ ê°’
 	 */
 	public void setAxis1X(int axis1X) {
 		this.axis1X = axis1X;
 	}
 
 	/**
-	 * Á¦1Ãà YÁÂÇ¥ °ªÀ» ¹İÈ¯ÇÑ´Ù.
+	 * ì œ1ì¶• Yì¢Œí‘œ ê°’ì„ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return Á¦1Ãà YÁÂÇ¥ °ª
+	 * @return ì œ1ì¶• Yì¢Œí‘œ ê°’
 	 */
 	public int getAxis1Y() {
 		return axis1Y;
 	}
 
 	/**
-	 * Á¦1Ãà YÁÂÇ¥ °ªÀ» ¼³Á¤ÇÑ´Ù.
+	 * ì œ1ì¶• Yì¢Œí‘œ ê°’ì„ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param axis1Y
-	 *            Á¦1Ãà YÁÂÇ¥ °ª
+	 *            ì œ1ì¶• Yì¢Œí‘œ ê°’
 	 */
 	public void setAxis1Y(int axis1Y) {
 		this.axis1Y = axis1Y;
 	}
 
 	/**
-	 * Á¦2Ãà XÁÂÇ¥ °ªÀ» ¹İÈ¯ÇÑ´Ù.
+	 * ì œ2ì¶• Xì¢Œí‘œ ê°’ì„ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return Á¦2Ãà XÁÂÇ¥ °ª
+	 * @return ì œ2ì¶• Xì¢Œí‘œ ê°’
 	 */
 	public int getAxis2X() {
 		return axis2X;
 	}
 
 	/**
-	 * Á¦2Ãà XÁÂÇ¥ °ªÀ» ¼³Á¤ÇÑ´Ù.
+	 * ì œ2ì¶• Xì¢Œí‘œ ê°’ì„ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param axis2X
-	 *            Á¦2Ãà XÁÂÇ¥ °ª
+	 *            ì œ2ì¶• Xì¢Œí‘œ ê°’
 	 */
 	public void setAxis2X(int axis2X) {
 		this.axis2X = axis2X;
 	}
 
 	/**
-	 * Á¦2Ãà YÁÂÇ¥ °ªÀ» ¹İÈ¯ÇÑ´Ù.
+	 * ì œ2ì¶• Yì¢Œí‘œ ê°’ì„ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return Á¦2Ãà YÁÂÇ¥ °ª
+	 * @return ì œ2ì¶• Yì¢Œí‘œ ê°’
 	 */
 	public int getAxis2Y() {
 		return axis2Y;
 	}
 
 	/**
-	 * Á¦2Ãà YÁÂÇ¥ °ªÀ» ¼³Á¤ÇÑ´Ù.
+	 * ì œ2ì¶• Yì¢Œí‘œ ê°’ì„ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param axis2Y
-	 *            Á¦2Ãà YÁÂÇ¥ °ª
+	 *            ì œ2ì¶• Yì¢Œí‘œ ê°’
 	 */
 	public void setAxis2Y(int axis2Y) {
 		this.axis2Y = axis2Y;

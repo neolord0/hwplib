@@ -1,4 +1,4 @@
-package kr.dogfoot.hwplib.reader.bodytext.paragraph;
+ï»¿package kr.dogfoot.hwplib.reader.bodytext.paragraph;
 
 import java.io.IOException;
 
@@ -6,18 +6,18 @@ import kr.dogfoot.hwplib.object.bodytext.paragraph.Paragraph;
 import kr.dogfoot.hwplib.util.compoundFile.StreamReader;
 
 /**
- * ¹®´ÜÀÇ ±ÛÀÚ ¸ğ¾ç ·¹ÄÚµå¸¦ ÀĞ±â À§ÇÑ °´Ã¼
+ * ë¬¸ë‹¨ì˜ ê¸€ì ëª¨ì–‘ ë ˆì½”ë“œë¥¼ ì½ê¸° ìœ„í•œ ê°ì²´
  * 
  * @author neolord
  */
 public class ForParaCharShape {
 	/**
-	 * ¹®´ÜÀÇ ±ÛÀÚ ¸ğ¾ç ·¹ÄÚµå¸¦ ÀĞ´Â´Ù.
+	 * ë¬¸ë‹¨ì˜ ê¸€ì ëª¨ì–‘ ë ˆì½”ë“œë¥¼ ì½ëŠ”ë‹¤.
 	 * 
 	 * @param paragraph
-	 *            ¹®´Ü °´Ã¼
+	 *            ë¬¸ë‹¨ ê°ì²´
 	 * @param sr
-	 *            ½ºÆ®¸² ¸®´õ
+	 *            ìŠ¤íŠ¸ë¦¼ ë¦¬ë”
 	 * @throws IOException
 	 */
 	public static void read(Paragraph paragraph, StreamReader sr)

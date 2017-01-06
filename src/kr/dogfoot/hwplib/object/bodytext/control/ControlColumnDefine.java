@@ -1,24 +1,24 @@
-package kr.dogfoot.hwplib.object.bodytext.control;
+ï»¿package kr.dogfoot.hwplib.object.bodytext.control;
 
 import kr.dogfoot.hwplib.object.bodytext.control.ctrlheader.CtrlHeaderColumnDefine;
 
 /**
- * ´Ü Á¤ÀÇ ÄÁÆ®·Ñ¿¡ ´ëÇÑ °´Ã¼
+ * ë‹¨ ì •ì˜ ì»¨íŠ¸ë¡¤ì— ëŒ€í•œ ê°ì²´
  * 
  * @author neolord
  */
 public class ControlColumnDefine extends Control {
 	/**
-	 * »ı»óÀÚ
+	 * ìƒìƒì
 	 */
 	public ControlColumnDefine() {
 		super(new CtrlHeaderColumnDefine());
 	}
 
 	/**
-	 * ´Ü Á¤ÀÇ¿ë ÄÁÆ®·Ñ Çì´õ¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ë‹¨ ì •ì˜ìš© ì»¨íŠ¸ë¡¤ í—¤ë”ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ´Ü Á¤ÀÇ¿ë ÄÁÆ®·Ñ Çì´õ
+	 * @return ë‹¨ ì •ì˜ìš© ì»¨íŠ¸ë¡¤ í—¤ë”
 	 */
 	public CtrlHeaderColumnDefine getHeader() {
 		return (CtrlHeaderColumnDefine) header;

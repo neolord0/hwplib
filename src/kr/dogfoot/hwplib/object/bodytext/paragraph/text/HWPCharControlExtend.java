@@ -1,22 +1,22 @@
-package kr.dogfoot.hwplib.object.bodytext.paragraph.text;
+ï»¿package kr.dogfoot.hwplib.object.bodytext.paragraph.text;
 
 /**
- * È®Àå ÄÁÆ®·Ñ Character
+ * í™•ì¥ ì»¨íŠ¸ë¡¤ Character
  * 
  * @author neolord
  */
 public class HWPCharControlExtend extends HWPChar {
 	/**
-	 * ¹®ÀÚ ÄÚµå
+	 * ë¬¸ì ì½”ë“œ
 	 */
 	private int code;
 	/**
-	 * ÄÁÆ®·Ñ °´Ã¼ÀÇ Instance Id
+	 * ì»¨íŠ¸ë¡¤ ê°ì²´ì˜ Instance Id
 	 */
 	private String instanceId;
 
 	/**
-	 * »ı¼ºÀÚ
+	 * ìƒì„±ì
 	 */
 	public HWPCharControlExtend() {
 	}
@@ -27,38 +27,38 @@ public class HWPCharControlExtend extends HWPChar {
 	}
 
 	/**
-	 * ¹®ÀÚ ÄÚµå¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ë¬¸ì ì½”ë“œë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ¹®ÀÚ ÄÚµå
+	 * @return ë¬¸ì ì½”ë“œ
 	 */
 	public int getCode() {
 		return code;
 	}
 
 	/**
-	 * ¹®ÀÚ ÄÚµå¸¦ ¼³Á¤ÇÑ´Ù.
+	 * ë¬¸ì ì½”ë“œë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param code
-	 *            ¹®ÀÚ ÄÚµå
+	 *            ë¬¸ì ì½”ë“œ
 	 */
 	public void setCode(int code) {
 		this.code = code;
 	}
 
 	/**
-	 * ÄÁÆ®·Ñ °´Ã¼ÀÇ Instance Id¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ì»¨íŠ¸ë¡¤ ê°ì²´ì˜ Instance Idë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ÄÁÆ®·Ñ °´Ã¼ÀÇ Instance Id
+	 * @return ì»¨íŠ¸ë¡¤ ê°ì²´ì˜ Instance Id
 	 */
 	public String getInstanceId() {
 		return instanceId;
 	}
 
 	/**
-	 * ÄÁÆ®·Ñ °´Ã¼ÀÇ Instance Id¸¦ ¼³Á¤ÇÑ´Ù.
+	 * ì»¨íŠ¸ë¡¤ ê°ì²´ì˜ Instance Idë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param instanceId
-	 *            ÄÁÆ®·Ñ °´Ã¼ÀÇ Instance Id
+	 *            ì»¨íŠ¸ë¡¤ ê°ì²´ì˜ Instance Id
 	 */
 	public void setInstanceId(String instanceId) {
 		this.instanceId = instanceId;

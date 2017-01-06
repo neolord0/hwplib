@@ -1,4 +1,4 @@
-package kr.dogfoot.hwplib.util.compoundFile;
+ï»¿package kr.dogfoot.hwplib.util.compoundFile;
 
 import java.io.IOException;
 import java.nio.ByteBuffer;
@@ -10,21 +10,21 @@ import org.apache.poi.poifs.filesystem.DocumentEntry;
 import org.apache.poi.poifs.filesystem.DocumentInputStream;
 
 /**
- * ÀÏ¹İÀûÀÎ ½ºÆ®¸²À» ÀĞ±â À§ÇÑ °´Ã¼
+ * ì¼ë°˜ì ì¸ ìŠ¤íŠ¸ë¦¼ì„ ì½ê¸° ìœ„í•œ ê°ì²´
  * 
  * @author neolord
  */
 public class StreamReaderForNormal extends StreamReader {
 	/**
-	 * ½ºÆ®¸²À» ÀĞ±â À§ÇÑ Apache POI InputStream °´Ã¼
+	 * ìŠ¤íŠ¸ë¦¼ì„ ì½ê¸° ìœ„í•œ Apache POI InputStream ê°ì²´
 	 */
 	private DocumentInputStream dis;
 
 	/**
-	 * »ı¼ºÀÚ
+	 * ìƒì„±ì
 	 * 
 	 * @param de
-	 *            ½ºÆ®¸²À» °¡¸®Å°´Â Apache POI °´Ã¼
+	 *            ìŠ¤íŠ¸ë¦¼ì„ ê°€ë¦¬í‚¤ëŠ” Apache POI ê°ì²´
 	 * @param fileVersion
 	 * @throws IOException
 	 */

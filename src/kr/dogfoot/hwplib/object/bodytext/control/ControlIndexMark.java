@@ -1,24 +1,24 @@
-package kr.dogfoot.hwplib.object.bodytext.control;
+ï»¿package kr.dogfoot.hwplib.object.bodytext.control;
 
 import kr.dogfoot.hwplib.object.bodytext.control.ctrlheader.CtrlHeaderIndexMark;
 
 /**
- * Ã£¾Æº¸±â Ç¥½Ä ÄÁÆ®·Ñ
+ * ì°¾ì•„ë³´ê¸° í‘œì‹ ì»¨íŠ¸ë¡¤
  * 
  * @author neolord
  */
 public class ControlIndexMark extends Control {
 	/**
-	 * »ı¼ºÀÚ
+	 * ìƒì„±ì
 	 */
 	public ControlIndexMark() {
 		super(new CtrlHeaderIndexMark());
 	}
 
 	/**
-	 * Ã£¾Æº¸±â Ç¥½Ä¿ë ÄÁÆ®·Ñ Çì´õ¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ì°¾ì•„ë³´ê¸° í‘œì‹ìš© ì»¨íŠ¸ë¡¤ í—¤ë”ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return Ã£¾Æº¸±â Ç¥½Ä¿ë ÄÁÆ®·Ñ Çì´õ
+	 * @return ì°¾ì•„ë³´ê¸° í‘œì‹ìš© ì»¨íŠ¸ë¡¤ í—¤ë”
 	 */
 	public CtrlHeaderIndexMark getHeader() {
 		return (CtrlHeaderIndexMark) header;

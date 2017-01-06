@@ -1,31 +1,31 @@
-package kr.dogfoot.hwplib.object.bodytext.paragraph;
+ï»¿package kr.dogfoot.hwplib.object.bodytext.paragraph;
 
 import java.util.ArrayList;
 
 import kr.dogfoot.hwplib.object.bodytext.ParagraphListInterface;
 
 /**
- * ¹®´Ü ¸®½ºÆ®¸¦ ³ªÅ¸³»´Â °´Ã¼
+ * ë¬¸ë‹¨ ë¦¬ìŠ¤íŠ¸ë¥¼ ë‚˜íƒ€ë‚´ëŠ” ê°ì²´
  * 
  * @author neolord
  */
 public class ParagraphList implements ParagraphListInterface {
 	/**
-	 * ¹®´Ü ¸®½ºÆ®
+	 * ë¬¸ë‹¨ ë¦¬ìŠ¤íŠ¸
 	 */
 	private ArrayList<Paragraph> paragraphList;
 
 	/**
-	 * »ı¼ºÀÚ
+	 * ìƒì„±ì
 	 */
 	public ParagraphList() {
 		paragraphList = new ArrayList<Paragraph>();
 	}
 
 	/**
-	 * »õ·Î¿î ¹®´Ü¸¦ »ı¼ºÇÏ°í ¸®½ºÆ®¿¡ Ãß°¡ÇÑ´Ù.
+	 * ìƒˆë¡œìš´ ë¬¸ë‹¨ë¥¼ ìƒì„±í•˜ê³  ë¦¬ìŠ¤íŠ¸ì— ì¶”ê°€í•œë‹¤.
 	 * 
-	 * @return »õ·Î »ı¼ºµÈ ¹®´Ü
+	 * @return ìƒˆë¡œ ìƒì„±ëœ ë¬¸ë‹¨
 	 */
 	@Override
 	public Paragraph addNewParagraph() {
@@ -35,9 +35,9 @@ public class ParagraphList implements ParagraphListInterface {
 	}
 
 	/**
-	 * ¹®´Ü ¸®½ºÆ®¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ë¬¸ë‹¨ ë¦¬ìŠ¤íŠ¸ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ¹®´Ü ¸®½ºÆ®
+	 * @return ë¬¸ë‹¨ ë¦¬ìŠ¤íŠ¸
 	 */
 	@Override
 	public ArrayList<Paragraph> getParagraphList() {

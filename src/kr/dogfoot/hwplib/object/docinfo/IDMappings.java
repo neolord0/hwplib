@@ -1,427 +1,427 @@
-package kr.dogfoot.hwplib.object.docinfo;
+ï»¿package kr.dogfoot.hwplib.object.docinfo;
 
 /**
- * ¾ÆÀÌµğ ¸ÅÇÎ Çì´õ¸¦ ³ªÅ¸³»´Â  ·¹ÄÚµå. "DocInfo" stream ¾È¿¡ ÀÖ´Â ´Ù¸¥ °´Ã¼µéÀÇ °³¼ö¸¦ ÀúÀüÇÑ´Ù.
+ * ì•„ì´ë”” ë§¤í•‘ í—¤ë”ë¥¼ ë‚˜íƒ€ë‚´ëŠ”  ë ˆì½”ë“œ. "DocInfo" stream ì•ˆì— ìˆëŠ” ë‹¤ë¥¸ ê°ì²´ë“¤ì˜ ê°œìˆ˜ë¥¼ ì €ì „í•œë‹¤.
  * 
  * @author neolord
  */
 public class IDMappings {
 	/**
-	 * ¹ÙÀÌ³Ê¸® µ¥ÀÌÅÍÀÇ °³¼ö
+	 * ë°”ì´ë„ˆë¦¬ ë°ì´í„°ì˜ ê°œìˆ˜
 	 */
 	private int binDataCount;
 	/**
-	 * ÇÑ±Û ±Û²ÃÀÇ °³¼ö
+	 * í•œê¸€ ê¸€ê¼´ì˜ ê°œìˆ˜
 	 */
 	private int hangulFaceNameCount;
 	/**
-	 * ¿µ¾î ±Û²ÃÀÇ °³¼ö
+	 * ì˜ì–´ ê¸€ê¼´ì˜ ê°œìˆ˜
 	 */
 	private int englishFaceNameCount;
 	/**
-	 * ÇÑÀÚ ±Û²ÃÀÇ °³¼ö
+	 * í•œì ê¸€ê¼´ì˜ ê°œìˆ˜
 	 */
 	private int hanjaFaceNameCount;
 	/**
-	 * ÀÏº»¾î ±Û²ÃÀÇ °³¼ö
+	 * ì¼ë³¸ì–´ ê¸€ê¼´ì˜ ê°œìˆ˜
 	 */
 	private int japaneseFaceNameCount;
 	/**
-	 * ±âÅ¸ ±Û²ÃÀÇ °³¼ö
+	 * ê¸°íƒ€ ê¸€ê¼´ì˜ ê°œìˆ˜
 	 */
 	private int etcFaceNameCount;
 	/**
-	 * ±âÈ£ ±Û²ÃÀÇ °³¼ö
+	 * ê¸°í˜¸ ê¸€ê¼´ì˜ ê°œìˆ˜
 	 */
 	private int symbolFaceNameCount;
 	/**
-	 * »ç¿ëÀÚ ±Û²ÃÀÇ °³¼ö
+	 * ì‚¬ìš©ì ê¸€ê¼´ì˜ ê°œìˆ˜
 	 */
 	private int userFaceNameCount;
 	/**
-	 * Å×µÎ¸®/¹è°æÀÇ °³¼ö
+	 * í…Œë‘ë¦¬/ë°°ê²½ì˜ ê°œìˆ˜
 	 */
 	private int borderFillCount;
 	/**
-	 * ±ÛÀÚ ¸ğ¾çÀÇ °³¼ö
+	 * ê¸€ì ëª¨ì–‘ì˜ ê°œìˆ˜
 	 */
 	private int charShapeCount;
 	/**
-	 * ÅÇ Á¤ÀÇÀÇ °³¼ö
+	 * íƒ­ ì •ì˜ì˜ ê°œìˆ˜
 	 */
 	private int tabDefCount;
 	/**
-	 * ¹®´Ü ¹øÈ£ÀÇ °³¼ö
+	 * ë¬¸ë‹¨ ë²ˆí˜¸ì˜ ê°œìˆ˜
 	 */
 	private int numberingCount;
 	/**
-	 * ±Û¸Ó¸®Ç¥ÀÇ °³¼ö
+	 * ê¸€ë¨¸ë¦¬í‘œì˜ ê°œìˆ˜
 	 */
 	private int bulletCount;
 	/**
-	 * ¹®´Ü ¸ğ¾çÀÇ °³¼ö
+	 * ë¬¸ë‹¨ ëª¨ì–‘ì˜ ê°œìˆ˜
 	 */
 	private int paraShapeCount;
 	/**
-	 * ½ºÅ¸ÀÏÀÇ °³¼ö
+	 * ìŠ¤íƒ€ì¼ì˜ ê°œìˆ˜
 	 */
 	private int styleCount;
 	/**
-	 * ¸Ş¸ğ ¸ğ¾çÀÇ °³¼ö(5.0.2.1 ÀÌ»ó)
+	 * ë©”ëª¨ ëª¨ì–‘ì˜ ê°œìˆ˜(5.0.2.1 ì´ìƒ)
 	 */
 	private int memoShapeCount;
 	/**
-	 * º¯°æ ÃßÀûÀÇ °³¼ö(5.0.3.2 ÀÌ»ó)
+	 * ë³€ê²½ ì¶”ì ì˜ ê°œìˆ˜(5.0.3.2 ì´ìƒ)
 	 */
 	private int trackChangeCount;
 	/**
-	 * º¯°æÃßÀû »ç¿ëÀÚÀÇ °³¼ö (5.0.3.2 ÀÌ»ó)
+	 * ë³€ê²½ì¶”ì  ì‚¬ìš©ìì˜ ê°œìˆ˜ (5.0.3.2 ì´ìƒ)
 	 */
 	private int trackChangeAuthorCount;
 
 	/**
-	 * »ı¼ºÀÚ
+	 * ìƒì„±ì
 	 */
 	public IDMappings() {
 	}
 
 	/**
-	 * ¹ÙÀÌ³Ê¸® µ¥ÀÌÅÍ °´Ã¼ÀÇ °³¼ö¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ë°”ì´ë„ˆë¦¬ ë°ì´í„° ê°ì²´ì˜ ê°œìˆ˜ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ¹ÙÀÌ³Ê¸® µ¥ÀÌÅÍ °´Ã¼ÀÇ °³¼ö
+	 * @return ë°”ì´ë„ˆë¦¬ ë°ì´í„° ê°ì²´ì˜ ê°œìˆ˜
 	 */
 	public int getBinDataCount() {
 		return binDataCount;
 	}
 
 	/**
-	 * ¹ÙÀÌ³Ê¸® µ¥ÀÌÅÍ °´Ã¼ÀÇ °³¼ö¸¦ ¼³Á¤ÇÑ´Ù.
+	 * ë°”ì´ë„ˆë¦¬ ë°ì´í„° ê°ì²´ì˜ ê°œìˆ˜ë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param binDataCount
-	 *            ¹ÙÀÌ³Ê¸® µ¥ÀÌÅÍ °´Ã¼ÀÇ °³¼ö
+	 *            ë°”ì´ë„ˆë¦¬ ë°ì´í„° ê°ì²´ì˜ ê°œìˆ˜
 	 */
 	public void setBinDataCount(int binDataCount) {
 		this.binDataCount = binDataCount;
 	}
 
 	/**
-	 * ÇÑ±Û ±Û²Ã °´Ã¼ÀÇ °³¼ö¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * í•œê¸€ ê¸€ê¼´ ê°ì²´ì˜ ê°œìˆ˜ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ÇÑ±Û ±Û²Ã °´Ã¼ÀÇ °³¼ö
+	 * @return í•œê¸€ ê¸€ê¼´ ê°ì²´ì˜ ê°œìˆ˜
 	 */
 	public int getHangulFaceNameCount() {
 		return hangulFaceNameCount;
 	}
 
 	/**
-	 * ÇÑ±Û ±Û²Ã °´Ã¼ÀÇ °³¼ö¸¦ ¼³Á¤ÇÑ´Ù.
+	 * í•œê¸€ ê¸€ê¼´ ê°ì²´ì˜ ê°œìˆ˜ë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param hangulFaceNameCount
-	 *            ÇÑ±Û ±Û²Ã °´Ã¼ÀÇ °³¼ö
+	 *            í•œê¸€ ê¸€ê¼´ ê°ì²´ì˜ ê°œìˆ˜
 	 */
 	public void setHangulFaceNameCount(int hangulFaceNameCount) {
 		this.hangulFaceNameCount = hangulFaceNameCount;
 	}
 
 	/**
-	 * ¿µ¾î ±Û²Ã °´Ã¼ÀÇ °³¼ö¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ì˜ì–´ ê¸€ê¼´ ê°ì²´ì˜ ê°œìˆ˜ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ¿µ¾î ±Û²Ã °´Ã¼ÀÇ °³¼ö
+	 * @return ì˜ì–´ ê¸€ê¼´ ê°ì²´ì˜ ê°œìˆ˜
 	 */
 	public int getEnglishFaceNameCount() {
 		return englishFaceNameCount;
 	}
 
 	/**
-	 * ¿µ¾î ±Û²Ã °´Ã¼ÀÇ °³¼ö¸¦ ¼³Á¤ÇÑ´Ù.
+	 * ì˜ì–´ ê¸€ê¼´ ê°ì²´ì˜ ê°œìˆ˜ë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param englishFaceNameCount
-	 *            ¿µ¾î ±Û²Ã °´Ã¼ÀÇ °³¼ö
+	 *            ì˜ì–´ ê¸€ê¼´ ê°ì²´ì˜ ê°œìˆ˜
 	 */
 	public void setEnglishFaceNameCount(int englishFaceNameCount) {
 		this.englishFaceNameCount = englishFaceNameCount;
 	}
 
 	/**
-	 * ÇÑÀÚ ±Û²Ã °´Ã¼ÀÇ °³¼ö¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * í•œì ê¸€ê¼´ ê°ì²´ì˜ ê°œìˆ˜ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ÇÑÀÚ ±Û²Ã °´Ã¼ÀÇ °³¼ö
+	 * @return í•œì ê¸€ê¼´ ê°ì²´ì˜ ê°œìˆ˜
 	 */
 	public int getHanjaFaceNameCount() {
 		return hanjaFaceNameCount;
 	}
 
 	/**
-	 * ÇÑÀÚ ±Û²Ã °´Ã¼ÀÇ °³¼ö¸¦ ¼³Á¤ÇÑ´Ù.
+	 * í•œì ê¸€ê¼´ ê°ì²´ì˜ ê°œìˆ˜ë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param hanjaFaceNameCount
-	 *            ÇÑÀÚ ±Û²Ã °´Ã¼ÀÇ °³¼ö
+	 *            í•œì ê¸€ê¼´ ê°ì²´ì˜ ê°œìˆ˜
 	 */
 	public void setHanjaFaceNameCount(int hanjaFaceNameCount) {
 		this.hanjaFaceNameCount = hanjaFaceNameCount;
 	}
 
 	/**
-	 * ÀÏº»¾î ±Û²Ã °´Ã¼ÀÇ °³¼ö¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ì¼ë³¸ì–´ ê¸€ê¼´ ê°ì²´ì˜ ê°œìˆ˜ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ÀÏº»¾î ±Û²Ã °´Ã¼ÀÇ °³¼ö
+	 * @return ì¼ë³¸ì–´ ê¸€ê¼´ ê°ì²´ì˜ ê°œìˆ˜
 	 */
 	public int getJapaneseFaceNameCount() {
 		return japaneseFaceNameCount;
 	}
 
 	/**
-	 * ÀÏº»¾î ±Û²Ã °´Ã¼ÀÇ °³¼ö¸¦ ¼³Á¤ÇÑ´Ù.
+	 * ì¼ë³¸ì–´ ê¸€ê¼´ ê°ì²´ì˜ ê°œìˆ˜ë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param japaneseFaceNameCount
-	 *            ÀÏº»¾î ±Û²Ã °´Ã¼ÀÇ °³¼ö
+	 *            ì¼ë³¸ì–´ ê¸€ê¼´ ê°ì²´ì˜ ê°œìˆ˜
 	 */
 	public void setJapaneseFaceNameCount(int japaneseFaceNameCount) {
 		this.japaneseFaceNameCount = japaneseFaceNameCount;
 	}
 
 	/**
-	 * ±âÅ¸ ±Û²Ã °´Ã¼ÀÇ °³¼ö¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ê¸°íƒ€ ê¸€ê¼´ ê°ì²´ì˜ ê°œìˆ˜ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ±âÅ¸ ±Û²Ã °´Ã¼ÀÇ °³¼ö
+	 * @return ê¸°íƒ€ ê¸€ê¼´ ê°ì²´ì˜ ê°œìˆ˜
 	 */
 	public int getEtcFaceNameCount() {
 		return etcFaceNameCount;
 	}
 
 	/**
-	 * ±âÅ¸ ±Û²Ã °´Ã¼ÀÇ °³¼ö¸¦ ¼³Á¤ÇÑ´Ù.
+	 * ê¸°íƒ€ ê¸€ê¼´ ê°ì²´ì˜ ê°œìˆ˜ë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param etcFaceNameCount
-	 *            ±âÅ¸ ±Û²Ã °´Ã¼ÀÇ °³¼ö
+	 *            ê¸°íƒ€ ê¸€ê¼´ ê°ì²´ì˜ ê°œìˆ˜
 	 */
 	public void setEtcFaceNameCount(int etcFaceNameCount) {
 		this.etcFaceNameCount = etcFaceNameCount;
 	}
 
 	/**
-	 * ±âÈ£ ±Û²Ã °´Ã¼ÀÇ °³¼ö¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ê¸°í˜¸ ê¸€ê¼´ ê°ì²´ì˜ ê°œìˆ˜ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ±âÈ£ ±Û²Ã °´Ã¼ÀÇ °³¼ö
+	 * @return ê¸°í˜¸ ê¸€ê¼´ ê°ì²´ì˜ ê°œìˆ˜
 	 */
 	public int getSymbolFaceNameCount() {
 		return symbolFaceNameCount;
 	}
 
 	/**
-	 * ±âÈ£ ±Û²Ã °´Ã¼ÀÇ °³¼ö¸¦ ¼³Á¤ÇÑ´Ù.
+	 * ê¸°í˜¸ ê¸€ê¼´ ê°ì²´ì˜ ê°œìˆ˜ë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param symbolFaceNameCount
-	 *            ±âÈ£ ±Û²Ã °´Ã¼ÀÇ °³¼ö
+	 *            ê¸°í˜¸ ê¸€ê¼´ ê°ì²´ì˜ ê°œìˆ˜
 	 */
 	public void setSymbolFaceNameCount(int symbolFaceNameCount) {
 		this.symbolFaceNameCount = symbolFaceNameCount;
 	}
 
 	/**
-	 * »ç¿ëÀÚ ±Û²Ã °´Ã¼ÀÇ °³¼ö¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ì‚¬ìš©ì ê¸€ê¼´ ê°ì²´ì˜ ê°œìˆ˜ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return »ç¿ëÀÚ ±Û²Ã °´Ã¼ÀÇ °³¼ö
+	 * @return ì‚¬ìš©ì ê¸€ê¼´ ê°ì²´ì˜ ê°œìˆ˜
 	 */
 	public int getUserFaceNameCount() {
 		return userFaceNameCount;
 	}
 
 	/**
-	 * »ç¿ëÀÚ ±Û²Ã °´Ã¼ÀÇ °³¼ö¸¦ ¼³Á¤ÇÑ´Ù.
+	 * ì‚¬ìš©ì ê¸€ê¼´ ê°ì²´ì˜ ê°œìˆ˜ë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param userFaceNameCount
-	 *            »ç¿ëÀÚ ±Û²Ã °´Ã¼ÀÇ °³¼ö
+	 *            ì‚¬ìš©ì ê¸€ê¼´ ê°ì²´ì˜ ê°œìˆ˜
 	 */
 	public void setUserFaceNameCount(int userFaceNameCount) {
 		this.userFaceNameCount = userFaceNameCount;
 	}
 
 	/**
-	 * ¹è°æ/Å×µÎ¸® °´Ã¼ÀÇ °³¼ö¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ë°°ê²½/í…Œë‘ë¦¬ ê°ì²´ì˜ ê°œìˆ˜ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ¹è°æ/Å×µÎ¸® °´Ã¼ÀÇ °³¼ö
+	 * @return ë°°ê²½/í…Œë‘ë¦¬ ê°ì²´ì˜ ê°œìˆ˜
 	 */
 	public int getBorderFillCount() {
 		return borderFillCount;
 	}
 
 	/**
-	 * ¹è°æ/Å×µÎ¸® °´Ã¼ÀÇ °³¼ö¸¦ ¼³Á¤ÇÑ´Ù.
+	 * ë°°ê²½/í…Œë‘ë¦¬ ê°ì²´ì˜ ê°œìˆ˜ë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param borderFillCount
-	 *            ¹è°æ/Å×µÎ¸® °´Ã¼ÀÇ °³¼ö
+	 *            ë°°ê²½/í…Œë‘ë¦¬ ê°ì²´ì˜ ê°œìˆ˜
 	 */
 	public void setBorderFillCount(int borderFillCount) {
 		this.borderFillCount = borderFillCount;
 	}
 
 	/**
-	 * ±ÛÀÚ ¸ğ¾ç °´Ã¼ÀÇ °³¼ö¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ê¸€ì ëª¨ì–‘ ê°ì²´ì˜ ê°œìˆ˜ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ±ÛÀÚ ¸ğ¾ç °´Ã¼ÀÇ °³¼ö
+	 * @return ê¸€ì ëª¨ì–‘ ê°ì²´ì˜ ê°œìˆ˜
 	 */
 	public int getCharShapeCount() {
 		return charShapeCount;
 	}
 
 	/**
-	 * ±ÛÀÚ ¸ğ¾ç °´Ã¼ÀÇ °³¼ö¸¦ ¼³Á¤ÇÑ´Ù.
+	 * ê¸€ì ëª¨ì–‘ ê°ì²´ì˜ ê°œìˆ˜ë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param charShapeCount
-	 *            ±ÛÀÚ ¸ğ¾ç °´Ã¼ÀÇ °³¼ö
+	 *            ê¸€ì ëª¨ì–‘ ê°ì²´ì˜ ê°œìˆ˜
 	 */
 	public void setCharShapeCount(int charShapeCount) {
 		this.charShapeCount = charShapeCount;
 	}
 
 	/**
-	 * ÅÇ Á¤ÀÇ °´Ã¼ÀÇ °³¼ö¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * íƒ­ ì •ì˜ ê°ì²´ì˜ ê°œìˆ˜ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ÅÇ Á¤ÀÇ °´Ã¼ÀÇ °³¼ö
+	 * @return íƒ­ ì •ì˜ ê°ì²´ì˜ ê°œìˆ˜
 	 */
 	public int getTabDefCount() {
 		return tabDefCount;
 	}
 
 	/**
-	 * ÅÇ Á¤ÀÇ °´Ã¼ÀÇ °³¼ö¸¦ ¼³Á¤ÇÑ´Ù.
+	 * íƒ­ ì •ì˜ ê°ì²´ì˜ ê°œìˆ˜ë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param tabDefCount
-	 *            ÅÇ Á¤ÀÇ °´Ã¼ÀÇ °³¼ö
+	 *            íƒ­ ì •ì˜ ê°ì²´ì˜ ê°œìˆ˜
 	 */
 	public void setTabDefCount(int tabDefCount) {
 		this.tabDefCount = tabDefCount;
 	}
 
 	/**
-	 * ¹®´Ü ¹øÈ£ °´Ã¼ÀÇ °³¼ö¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ë¬¸ë‹¨ ë²ˆí˜¸ ê°ì²´ì˜ ê°œìˆ˜ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ¹®´Ü ¹øÈ£ °´Ã¼ÀÇ °³¼ö
+	 * @return ë¬¸ë‹¨ ë²ˆí˜¸ ê°ì²´ì˜ ê°œìˆ˜
 	 */
 	public int getNumberingCount() {
 		return numberingCount;
 	}
 
 	/**
-	 * ¹®´Ü ¹øÈ£ °´Ã¼ÀÇ °³¼ö¸¦ ¼³Á¤ÇÑ´Ù.
+	 * ë¬¸ë‹¨ ë²ˆí˜¸ ê°ì²´ì˜ ê°œìˆ˜ë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param numberingCount
-	 *            ¹®´Ü ¹øÈ£ °´Ã¼ÀÇ °³¼ö
+	 *            ë¬¸ë‹¨ ë²ˆí˜¸ ê°ì²´ì˜ ê°œìˆ˜
 	 */
 	public void setNumberingCount(int numberingCount) {
 		this.numberingCount = numberingCount;
 	}
 
 	/**
-	 * ±Û¸Ó¸®Ç¥ °´Ã¼ÀÇ °³¼ö¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ê¸€ë¨¸ë¦¬í‘œ ê°ì²´ì˜ ê°œìˆ˜ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ±Û¸Ó¸®Ç¥ °´Ã¼ÀÇ °³¼ö
+	 * @return ê¸€ë¨¸ë¦¬í‘œ ê°ì²´ì˜ ê°œìˆ˜
 	 */
 	public int getBulletCount() {
 		return bulletCount;
 	}
 
 	/**
-	 * ±Û¸Ó¸®Ç¥ °´Ã¼ÀÇ °³¼ö¸¦ ¼³Á¤ÇÑ´Ù.
+	 * ê¸€ë¨¸ë¦¬í‘œ ê°ì²´ì˜ ê°œìˆ˜ë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param bulletCount
-	 *            ±Û¸Ó¸®Ç¥ °´Ã¼ÀÇ °³¼ö
+	 *            ê¸€ë¨¸ë¦¬í‘œ ê°ì²´ì˜ ê°œìˆ˜
 	 */
 	public void setBulletCount(int bulletCount) {
 		this.bulletCount = bulletCount;
 	}
 
 	/**
-	 * ¹È´Ü ¸ğ¾ç °´Ã¼ÀÇ °³¼ö¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ë¯„ë‹¨ ëª¨ì–‘ ê°ì²´ì˜ ê°œìˆ˜ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ¹È´Ü ¸ğ¾ç °´Ã¼ÀÇ °³¼ö
+	 * @return ë¯„ë‹¨ ëª¨ì–‘ ê°ì²´ì˜ ê°œìˆ˜
 	 */
 	public int getParaShapeCount() {
 		return paraShapeCount;
 	}
 
 	/**
-	 * ¹È´Ü ¸ğ¾ç °´Ã¼ÀÇ °³¼ö¸¦ ¼³Á¤ÇÑ´Ù.
+	 * ë¯„ë‹¨ ëª¨ì–‘ ê°ì²´ì˜ ê°œìˆ˜ë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param paraShapeCount
-	 *            ¹È´Ü ¸ğ¾ç °´Ã¼ÀÇ °³¼ö
+	 *            ë¯„ë‹¨ ëª¨ì–‘ ê°ì²´ì˜ ê°œìˆ˜
 	 */
 	public void setParaShapeCount(int paraShapeCount) {
 		this.paraShapeCount = paraShapeCount;
 	}
 
 	/**
-	 * ½ºÅ¸ÀÏ °´Ã¼ÀÇ °³¼ö¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ìŠ¤íƒ€ì¼ ê°ì²´ì˜ ê°œìˆ˜ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ½ºÅ¸ÀÏ °´Ã¼ÀÇ °³¼ö
+	 * @return ìŠ¤íƒ€ì¼ ê°ì²´ì˜ ê°œìˆ˜
 	 */
 	public int getStyleCount() {
 		return styleCount;
 	}
 
 	/**
-	 * ½ºÅ¸ÀÏ °´Ã¼ÀÇ °³¼ö¸¦ ¼³Á¤ÇÑ´Ù.
+	 * ìŠ¤íƒ€ì¼ ê°ì²´ì˜ ê°œìˆ˜ë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param styleCount
-	 *            ½ºÅ¸ÀÏ °´Ã¼ÀÇ °³¼ö
+	 *            ìŠ¤íƒ€ì¼ ê°ì²´ì˜ ê°œìˆ˜
 	 */
 	public void setStyleCount(int styleCount) {
 		this.styleCount = styleCount;
 	}
 
 	/**
-	 * ¸Ş¸ğ ¸ğ¾ç °´Ã¼ÀÇ °³¼ö¸¦ ¹İÈ¯ÇÑ´Ù. (5.0.2.1 ÀÌ»ó)
+	 * ë©”ëª¨ ëª¨ì–‘ ê°ì²´ì˜ ê°œìˆ˜ë¥¼ ë°˜í™˜í•œë‹¤. (5.0.2.1 ì´ìƒ)
 	 * 
-	 * @return ¸Ş¸ğ ¸ğ¾ç °´Ã¼ÀÇ °³¼ö
+	 * @return ë©”ëª¨ ëª¨ì–‘ ê°ì²´ì˜ ê°œìˆ˜
 	 */
 	public int getMemoShapeCount() {
 		return memoShapeCount;
 	}
 
 	/**
-	 * ¸Ş¸ğ ¸ğ¾ç °´Ã¼ÀÇ °³¼ö¸¦ ¼³Á¤ÇÑ´Ù. (5.0.2.1 ÀÌ»ó)
+	 * ë©”ëª¨ ëª¨ì–‘ ê°ì²´ì˜ ê°œìˆ˜ë¥¼ ì„¤ì •í•œë‹¤. (5.0.2.1 ì´ìƒ)
 	 * 
 	 * @param memoShapeCount
-	 *            ¸Ş¸ğ ¸ğ¾ç °´Ã¼ÀÇ °³¼ö
+	 *            ë©”ëª¨ ëª¨ì–‘ ê°ì²´ì˜ ê°œìˆ˜
 	 */
 	public void setMemoShapeCount(int memoShapeCount) {
 		this.memoShapeCount = memoShapeCount;
 	}
 
 	/**
-	 * º¯°æ ÃßÀû °´Ã¼ÀÇ °³¼ö¸¦ ¹İÈ¯ÇÑ´Ù. (5.0.3.2 ÀÌ»ó)
+	 * ë³€ê²½ ì¶”ì  ê°ì²´ì˜ ê°œìˆ˜ë¥¼ ë°˜í™˜í•œë‹¤. (5.0.3.2 ì´ìƒ)
 	 * 
-	 * @return º¯°æ ÃßÀû °´Ã¼ÀÇ °³¼ö
+	 * @return ë³€ê²½ ì¶”ì  ê°ì²´ì˜ ê°œìˆ˜
 	 */
 	public int getTrackChangeCount() {
 		return trackChangeCount;
 	}
 
 	/**
-	 * º¯°æ ÃßÀû °´Ã¼ÀÇ °³¼ö¸¦ ¼³Á¤ÇÑ´Ù. (5.0.3.2 ÀÌ»ó)
+	 * ë³€ê²½ ì¶”ì  ê°ì²´ì˜ ê°œìˆ˜ë¥¼ ì„¤ì •í•œë‹¤. (5.0.3.2 ì´ìƒ)
 	 * 
 	 * @param trackChangeCount
-	 *            º¯°æ ÃßÀû °´Ã¼ÀÇ °³¼ö
+	 *            ë³€ê²½ ì¶”ì  ê°ì²´ì˜ ê°œìˆ˜
 	 */
 	public void setTrackChangeCount(int trackChangeCount) {
 		this.trackChangeCount = trackChangeCount;
 	}
 
 	/**
-	 * º¯°æÃßÀû »ç¿ëÀÚ °´Ã¼ÀÇ °³¼ö¸¦ ¹İÈ¯ÇÑ´Ù. (5.0.3.2 ÀÌ»ó)
+	 * ë³€ê²½ì¶”ì  ì‚¬ìš©ì ê°ì²´ì˜ ê°œìˆ˜ë¥¼ ë°˜í™˜í•œë‹¤. (5.0.3.2 ì´ìƒ)
 	 * 
-	 * @return º¯°æÃßÀû »ç¿ëÀÚ °´Ã¼ÀÇ °³¼ö
+	 * @return ë³€ê²½ì¶”ì  ì‚¬ìš©ì ê°ì²´ì˜ ê°œìˆ˜
 	 */
 	public int getTrackChangeAuthorCount() {
 		return trackChangeAuthorCount;
 	}
 
 	/**
-	 * º¯°æÃßÀû »ç¿ëÀÚ °´Ã¼ÀÇ °³¼ö¸¦ ¼³Á¤ÇÑ´Ù. (5.0.3.2 ÀÌ»ó)
+	 * ë³€ê²½ì¶”ì  ì‚¬ìš©ì ê°ì²´ì˜ ê°œìˆ˜ë¥¼ ì„¤ì •í•œë‹¤. (5.0.3.2 ì´ìƒ)
 	 * 
 	 * @param trackChangeAuthorCount
-	 *            º¯°æÃßÀû »ç¿ëÀÚ °´Ã¼ÀÇ °³¼ö
+	 *            ë³€ê²½ì¶”ì  ì‚¬ìš©ì ê°ì²´ì˜ ê°œìˆ˜
 	 */
 	public void setTrackChangeAuthorCount(int trackChangeAuthorCount) {
 		this.trackChangeAuthorCount = trackChangeAuthorCount;

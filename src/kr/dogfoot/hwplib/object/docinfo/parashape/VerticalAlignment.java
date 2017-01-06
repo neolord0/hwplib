@@ -1,58 +1,58 @@
-package kr.dogfoot.hwplib.object.docinfo.parashape;
+ï»¿package kr.dogfoot.hwplib.object.docinfo.parashape;
 
 /**
- * ¼¼·Î Á¤·Ä
+ * ì„¸ë¡œ ì •ë ¬
  * 
  * @author neolord
  */
 public enum VerticalAlignment {
 	/**
-	 * ±Û²Ã±âÁØ
+	 * ê¸€ê¼´ê¸°ì¤€
 	 */
 	ByFont((byte) 0),
 	/**
-	 * À§ÂÊ
+	 * ìœ„ìª½
 	 */
 	Top((byte) 1),
 	/**
-	 * °¡¿îµ¥
+	 * ê°€ìš´ë°
 	 */
 	Center((byte) 2),
 	/**
-	 * ¾Æ·¡
+	 * ì•„ë˜
 	 */
 	Bottom((byte) 3);
 	
 	/**
-	 * ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª
+	 * íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’
 	 */
     private byte value;
     
     /**
-	 * »ı¼ºÀÚ
+	 * ìƒì„±ì
 	 * 
 	 * @param value
-	 *            ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª
+	 *            íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’
      */
     private VerticalAlignment(byte value) {
         this.value = value;
     }
     
 	/**
-	 * ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ªÀ» ¹İÈ¯ÇÑ´Ù.
+	 * íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’ì„ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª
+	 * @return íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’
 	 */
     public byte getValue() {
         return value;
     }
     
 	/**
-	 * ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª¿¡ ÇØ´çµÇ´Â enum °ªÀ» ¹İÈ¯ÇÑ´Ù.
+	 * íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’ì— í•´ë‹¹ë˜ëŠ” enum ê°’ì„ ë°˜í™˜í•œë‹¤.
 	 * 
 	 * @param value
-	 *            ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª
-	 * @return enum °ª
+	 *            íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’
+	 * @return enum ê°’
 	 */
     public static VerticalAlignment valueOf(byte value) {
         for (VerticalAlignment va : values()) {

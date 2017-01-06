@@ -1,304 +1,304 @@
-package kr.dogfoot.hwplib.object.bodytext.control.ctrlheader.gso;
+ï»¿package kr.dogfoot.hwplib.object.bodytext.control.ctrlheader.gso;
 
 import kr.dogfoot.hwplib.util.binary.BitFlag;
 
 /**
- * ±×¸®±â °´Ã¼ ÄÁÆ®·ÑÀÇ ¼Ó¼ºÀ» ³ªÅ¸³»´Â °´Ã¼
+ * ê·¸ë¦¬ê¸° ê°ì²´ ì»¨íŠ¸ë¡¤ì˜ ì†ì„±ì„ ë‚˜íƒ€ë‚´ëŠ” ê°ì²´
  * 
  * @author neolord
  */
 public class GsoHeaderProperty {
 	/**
-	 * ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª(unsigned 4 byte)
+	 * íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’(unsigned 4 byte)
 	 */
 	private long value;
 
 	/**
-	 * »ı¼ºÀÚ
+	 * ìƒì„±ì
 	 */
 	public GsoHeaderProperty() {
 	}
 
 	/**
-	 * ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ªÀ» ¹İÈ¯ÇÑ´Ù.
+	 * íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’ì„ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª
+	 * @return íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’
 	 */
 	public long getValue() {
 		return value;
 	}
 
 	/**
-	 * ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ªÀ» ¼³Á¤ÇÑ´Ù.
+	 * íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’ì„ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param value
-	 *            ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª
+	 *            íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’
 	 */
 	public void setValue(long value) {
 		this.value = value;
 	}
 
 	/**
-	 * ±ÛÀÚÃ³·³ Ãë±Ş ¿©ºÎÀ» ¹İÈ¯ÇÑ´Ù. (0 bit)
+	 * ê¸€ìì²˜ëŸ¼ ì·¨ê¸‰ ì—¬ë¶€ì„ ë°˜í™˜í•œë‹¤. (0 bit)
 	 * 
-	 * @return ±ÛÀÚÃ³·³ Ãë±Ş ¿©ºÎ
+	 * @return ê¸€ìì²˜ëŸ¼ ì·¨ê¸‰ ì—¬ë¶€
 	 */
 	public boolean isLikeWord() {
 		return BitFlag.get(value, 0);
 	}
 
 	/**
-	 * ±ÛÀÚÃ³·³ Ãë±Ş ¿©ºÎ¸¦ ¼³Á¤ÇÑ´Ù. (0 bit)
+	 * ê¸€ìì²˜ëŸ¼ ì·¨ê¸‰ ì—¬ë¶€ë¥¼ ì„¤ì •í•œë‹¤. (0 bit)
 	 * 
 	 * @param likeWord
-	 *            ±ÛÀÚÃ³·³ Ãë±Ş ¿©ºÎ
+	 *            ê¸€ìì²˜ëŸ¼ ì·¨ê¸‰ ì—¬ë¶€
 	 */
 	public void setLikeWord(boolean likeWord) {
 		value = BitFlag.set(value, 0, likeWord);
 	}
 
 	/**
-	 * ÁÙ °£°İ¿¡ ¿µÇâÀ» ÁÙÁö ¿©ºÎ¸¦ ¹İÈ¯ÇÑ´Ù. (2 bit)
+	 * ì¤„ ê°„ê²©ì— ì˜í–¥ì„ ì¤„ì§€ ì—¬ë¶€ë¥¼ ë°˜í™˜í•œë‹¤. (2 bit)
 	 * 
-	 * @return ÁÙ °£°İ¿¡ ¿µÇâÀ» ÁÙÁö ¿©ºÎ
+	 * @return ì¤„ ê°„ê²©ì— ì˜í–¥ì„ ì¤„ì§€ ì—¬ë¶€
 	 */
 	public boolean isApplyLineSpace() {
 		return BitFlag.get(value, 2);
 	}
 
 	/**
-	 * ÁÙ °£°İ¿¡ ¿µÇâÀ» ÁÙÁö ¿©ºÎ¸¦ ¼³Á¤ÇÑ´Ù. (2 bit)
+	 * ì¤„ ê°„ê²©ì— ì˜í–¥ì„ ì¤„ì§€ ì—¬ë¶€ë¥¼ ì„¤ì •í•œë‹¤. (2 bit)
 	 * 
 	 * @param applyLineSpace
-	 *            ÁÙ °£°İ¿¡ ¿µÇâÀ» ÁÙÁö ¿©ºÎ
+	 *            ì¤„ ê°„ê²©ì— ì˜í–¥ì„ ì¤„ì§€ ì—¬ë¶€
 	 */
 	public void setApplyLineSpace(boolean applyLineSpace) {
 		value = BitFlag.set(value, 2, applyLineSpace);
 	}
 
 	/**
-	 * ¼¼·Î À§Ä¡ÀÇ ±âÁØÀ» ¹İÈ¯ÇÑ´Ù. (3~4 bit)
+	 * ì„¸ë¡œ ìœ„ì¹˜ì˜ ê¸°ì¤€ì„ ë°˜í™˜í•œë‹¤. (3~4 bit)
 	 * 
-	 * @return ¼¼·Î À§Ä¡ÀÇ ±âÁØ
+	 * @return ì„¸ë¡œ ìœ„ì¹˜ì˜ ê¸°ì¤€
 	 */
 	public VertRelTo getVertRelTo() {
 		return VertRelTo.valueOf((byte) BitFlag.get(value, 3, 4));
 	}
 
 	/**
-	 * ¼¼·Î À§Ä¡ÀÇ ±âÁØÀ» ¼³Á¤ÇÑ´Ù. (3~4 bit)
+	 * ì„¸ë¡œ ìœ„ì¹˜ì˜ ê¸°ì¤€ì„ ì„¤ì •í•œë‹¤. (3~4 bit)
 	 * 
 	 * @param vertRelTo
-	 *            ¼¼·Î À§Ä¡ÀÇ ±âÁØ
+	 *            ì„¸ë¡œ ìœ„ì¹˜ì˜ ê¸°ì¤€
 	 */
 	public void setVertRelTo(VertRelTo vertRelTo) {
 		value = BitFlag.set(value, 3, 4, vertRelTo.getValue());
 	}
 
 	/**
-	 * ¼¼·Î À§Ä¡ÀÇ ±âÁØ¿¡ ´ëÇÑ »ó´ëÀûÀÎ ¹è¿­¹æ½ÄÀ» ¹İÈ¯ÇÑ´Ù. (5~7 bit)
+	 * ì„¸ë¡œ ìœ„ì¹˜ì˜ ê¸°ì¤€ì— ëŒ€í•œ ìƒëŒ€ì ì¸ ë°°ì—´ë°©ì‹ì„ ë°˜í™˜í•œë‹¤. (5~7 bit)
 	 * 
-	 * @return ¼¼·Î À§Ä¡ÀÇ ±âÁØ¿¡ ´ëÇÑ »ó´ëÀûÀÎ ¹è¿­¹æ½Ä
+	 * @return ì„¸ë¡œ ìœ„ì¹˜ì˜ ê¸°ì¤€ì— ëŒ€í•œ ìƒëŒ€ì ì¸ ë°°ì—´ë°©ì‹
 	 */
 	public RelativeArrange getVertRelativeArrange() {
 		return RelativeArrange.valueOf((byte) BitFlag.get(value, 5, 7));
 	}
 
 	/**
-	 * ¼¼·Î À§Ä¡ÀÇ ±âÁØ¿¡ ´ëÇÑ »ó´ëÀûÀÎ ¹è¿­¹æ½Ä¸¦ ¼³Á¤ÇÑ´Ù. (5~7 bit)
+	 * ì„¸ë¡œ ìœ„ì¹˜ì˜ ê¸°ì¤€ì— ëŒ€í•œ ìƒëŒ€ì ì¸ ë°°ì—´ë°©ì‹ë¥¼ ì„¤ì •í•œë‹¤. (5~7 bit)
 	 * 
 	 * @param vertRelativeArrange
-	 *            ¼¼·Î À§Ä¡ÀÇ ±âÁØ¿¡ ´ëÇÑ »ó´ëÀûÀÎ ¹è¿­¹æ½Ä
+	 *            ì„¸ë¡œ ìœ„ì¹˜ì˜ ê¸°ì¤€ì— ëŒ€í•œ ìƒëŒ€ì ì¸ ë°°ì—´ë°©ì‹
 	 */
 	public void setVertRelativeArrange(RelativeArrange vertRelativeArrange) {
 		value = BitFlag.set(value, 5, 7, vertRelativeArrange.getValue());
 	}
 
 	/**
-	 * °¡·Î À§Ä¡ÀÇ ±âÁØÀ» ¹İÈ¯ÇÑ´Ù. (8~9 bit)
+	 * ê°€ë¡œ ìœ„ì¹˜ì˜ ê¸°ì¤€ì„ ë°˜í™˜í•œë‹¤. (8~9 bit)
 	 * 
-	 * @return °¡·Î À§Ä¡ÀÇ ±âÁØ
+	 * @return ê°€ë¡œ ìœ„ì¹˜ì˜ ê¸°ì¤€
 	 */
 	public HorzRelTo getHorzRelTo() {
 		return HorzRelTo.valueOf((byte) BitFlag.get(value, 8, 9));
 	}
 
 	/**
-	 * °¡·Î À§Ä¡ÀÇ ±âÁØÀ» ¼³Á¤ÇÑ´Ù. (8~9 bit)
+	 * ê°€ë¡œ ìœ„ì¹˜ì˜ ê¸°ì¤€ì„ ì„¤ì •í•œë‹¤. (8~9 bit)
 	 * 
 	 * @param horzRelTo
-	 *            °¡·Î À§Ä¡ÀÇ ±âÁØ
+	 *            ê°€ë¡œ ìœ„ì¹˜ì˜ ê¸°ì¤€
 	 */
 	public void setHorzRelTo(HorzRelTo horzRelTo) {
 		value = BitFlag.set(value, 8, 9, horzRelTo.getValue());
 	}
 
 	/**
-	 * HorzRelTo¿¡ ´ëÇÑ »ó´ëÀûÀÎ ¹è¿­¹æ½ÄÀ» ¹İÈ¯ÇÑ´Ù. (10~12 bit)
+	 * HorzRelToì— ëŒ€í•œ ìƒëŒ€ì ì¸ ë°°ì—´ë°©ì‹ì„ ë°˜í™˜í•œë‹¤. (10~12 bit)
 	 * 
-	 * @return HorzRelTo¿¡ ´ëÇÑ »ó´ëÀûÀÎ ¹è¿­¹æ½Ä
+	 * @return HorzRelToì— ëŒ€í•œ ìƒëŒ€ì ì¸ ë°°ì—´ë°©ì‹
 	 */
 	public RelativeArrange getHorzRelativeArrange() {
 		return RelativeArrange.valueOf((byte) BitFlag.get(value, 10, 12));
 	}
 
 	/**
-	 * HorzRelTo¿¡ ´ëÇÑ »ó´ëÀûÀÎ ¹è¿­¹æ½ÄÀ» ¼³Á¤ÇÑ´Ù. (10~12 bit)
+	 * HorzRelToì— ëŒ€í•œ ìƒëŒ€ì ì¸ ë°°ì—´ë°©ì‹ì„ ì„¤ì •í•œë‹¤. (10~12 bit)
 	 * 
 	 * @param horzRelativeArrange
-	 *            HorzRelTo¿¡ ´ëÇÑ »ó´ëÀûÀÎ ¹è¿­¹æ½Ä
+	 *            HorzRelToì— ëŒ€í•œ ìƒëŒ€ì ì¸ ë°°ì—´ë°©ì‹
 	 */
 	public void setHorzRelativeArrange(RelativeArrange horzRelativeArrange) {
 		value = BitFlag.set(value, 10, 12, horzRelativeArrange.getValue());
 	}
 
 	/**
-	 * VertRelToÀÌ ¡®para¡¯ÀÏ ¶§ ¿ÀºêÁ§Æ®ÀÇ ¼¼·Î À§Ä¡¸¦ º»¹® ¿µ¿ªÀ¸·Î Á¦ÇÑÇÒÁö ¿©ºÎ¸¦ ¹İÈ¯ÇÑ´Ù. (13 bit)
+	 * VertRelToì´ â€˜paraâ€™ì¼ ë•Œ ì˜¤ë¸Œì íŠ¸ì˜ ì„¸ë¡œ ìœ„ì¹˜ë¥¼ ë³¸ë¬¸ ì˜ì—­ìœ¼ë¡œ ì œí•œí• ì§€ ì—¬ë¶€ë¥¼ ë°˜í™˜í•œë‹¤. (13 bit)
 	 * 
-	 * @return VertRelToÀÌ ¡®para¡¯ÀÏ ¶§ ¿ÀºêÁ§Æ®ÀÇ ¼¼·Î À§Ä¡¸¦ º»¹® ¿µ¿ªÀ¸·Î Á¦ÇÑÇÒÁö ¿©ºÎ
+	 * @return VertRelToì´ â€˜paraâ€™ì¼ ë•Œ ì˜¤ë¸Œì íŠ¸ì˜ ì„¸ë¡œ ìœ„ì¹˜ë¥¼ ë³¸ë¬¸ ì˜ì—­ìœ¼ë¡œ ì œí•œí• ì§€ ì—¬ë¶€
 	 */
 	public boolean isVertRelToParaLimit() {
 		return BitFlag.get(value, 13);
 	}
 
 	/**
-	 * VertRelToÀÌ ¡®para¡¯ÀÏ ¶§ ¿ÀºêÁ§Æ®ÀÇ ¼¼·Î À§Ä¡¸¦ º»¹® ¿µ¿ªÀ¸·Î Á¦ÇÑÇÒÁö ¿©ºÎÀ» ¼³Á¤ÇÑ´Ù.
+	 * VertRelToì´ â€˜paraâ€™ì¼ ë•Œ ì˜¤ë¸Œì íŠ¸ì˜ ì„¸ë¡œ ìœ„ì¹˜ë¥¼ ë³¸ë¬¸ ì˜ì—­ìœ¼ë¡œ ì œí•œí• ì§€ ì—¬ë¶€ì„ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param vertRelToParaLimit
-	 *            VertRelToÀÌ ¡®para¡¯ÀÏ ¶§ ¿ÀºêÁ§Æ®ÀÇ ¼¼·Î À§Ä¡¸¦ º»¹® ¿µ¿ªÀ¸·Î Á¦ÇÑÇÒÁö ¿©ºÎ
+	 *            VertRelToì´ â€˜paraâ€™ì¼ ë•Œ ì˜¤ë¸Œì íŠ¸ì˜ ì„¸ë¡œ ìœ„ì¹˜ë¥¼ ë³¸ë¬¸ ì˜ì—­ìœ¼ë¡œ ì œí•œí• ì§€ ì—¬ë¶€
 	 */
 	public void setVertRelToParaLimit(boolean vertRelToParaLimit) {
 		value = BitFlag.set(value, 13, vertRelToParaLimit);
 	}
 
 	/**
-	 * ´Ù¸¥ ¿ÀºêÁ§Æ®¿Í °ãÄ¡´Â °ÍÀ» Çã¿ëÇÒÁö ¿©ºÎÀ» ¹İÇÑÇÑ´Ù. (14 bit)
+	 * ë‹¤ë¥¸ ì˜¤ë¸Œì íŠ¸ì™€ ê²¹ì¹˜ëŠ” ê²ƒì„ í—ˆìš©í• ì§€ ì—¬ë¶€ì„ ë°˜í•œí•œë‹¤. (14 bit)
 	 * 
-	 * @return ´Ù¸¥ ¿ÀºêÁ§Æ®¿Í °ãÄ¡´Â °ÍÀ» Çã¿ëÇÒÁö ¿©ºÎ
+	 * @return ë‹¤ë¥¸ ì˜¤ë¸Œì íŠ¸ì™€ ê²¹ì¹˜ëŠ” ê²ƒì„ í—ˆìš©í• ì§€ ì—¬ë¶€
 	 */
 	public boolean isAllowOverlap() {
 		return BitFlag.get(value, 14);
 	}
 
 	/**
-	 * ´Ù¸¥ ¿ÀºêÁ§Æ®¿Í °ãÄ¡´Â °ÍÀ» Çã¿ëÇÒÁö ¿©ºÎÀ» ¼³Á¤ÇÑ´Ù. (14 bit)
+	 * ë‹¤ë¥¸ ì˜¤ë¸Œì íŠ¸ì™€ ê²¹ì¹˜ëŠ” ê²ƒì„ í—ˆìš©í• ì§€ ì—¬ë¶€ì„ ì„¤ì •í•œë‹¤. (14 bit)
 	 * 
 	 * @param allowOverlap
-	 *            ´Ù¸¥ ¿ÀºêÁ§Æ®¿Í °ãÄ¡´Â °ÍÀ» Çã¿ëÇÒÁö ¿©ºÎ
+	 *            ë‹¤ë¥¸ ì˜¤ë¸Œì íŠ¸ì™€ ê²¹ì¹˜ëŠ” ê²ƒì„ í—ˆìš©í• ì§€ ì—¬ë¶€
 	 */
 	public void setAllowOverlap(boolean allowOverlap) {
 		value = BitFlag.set(value, 14, allowOverlap);
 	}
 
 	/**
-	 * ¿ÀºêÁ§Æ® ÆøÀÇ ±âÁØÀ» ¹İÈ¯ÇÑ´Ù. (15~17 bit)
+	 * ì˜¤ë¸Œì íŠ¸ í­ì˜ ê¸°ì¤€ì„ ë°˜í™˜í•œë‹¤. (15~17 bit)
 	 * 
-	 * @return ¿ÀºêÁ§Æ® ÆøÀÇ ±âÁØ
+	 * @return ì˜¤ë¸Œì íŠ¸ í­ì˜ ê¸°ì¤€
 	 */
 	public WidthCriterion getWidthCriterion() {
 		return WidthCriterion.valueOf((byte) BitFlag.get(value, 15, 17));
 	}
 
 	/**
-	 * ¿ÀºêÁ§Æ® ÆøÀÇ ±âÁØÀ» ¼³Á¤ÇÑ´Ù. (15~17 bit)
+	 * ì˜¤ë¸Œì íŠ¸ í­ì˜ ê¸°ì¤€ì„ ì„¤ì •í•œë‹¤. (15~17 bit)
 	 * 
 	 * @param widthCriterion
-	 *            ¿ÀºêÁ§Æ® ÆøÀÇ ±âÁØ
+	 *            ì˜¤ë¸Œì íŠ¸ í­ì˜ ê¸°ì¤€
 	 */
 	public void setWidthCriterion(WidthCriterion widthCriterion) {
 		value = BitFlag.set(value, 15, 17, widthCriterion.getValue());
 	}
 
 	/**
-	 * ¿ÀºêÁ§Æ® ³ôÀÌÀÇ ±âÁØÀ» ¹İÈ¯ÇÑ´Ù (18~19 bit)
+	 * ì˜¤ë¸Œì íŠ¸ ë†’ì´ì˜ ê¸°ì¤€ì„ ë°˜í™˜í•œë‹¤ (18~19 bit)
 	 * 
-	 * @return ¿ÀºêÁ§Æ® ³ôÀÌÀÇ ±âÁØ
+	 * @return ì˜¤ë¸Œì íŠ¸ ë†’ì´ì˜ ê¸°ì¤€
 	 */
 	public HeightCriterion getHeightCriterion() {
 		return HeightCriterion.valueOf((byte) BitFlag.get(value, 18, 19));
 	}
 
 	/**
-	 * ¿ÀºêÁ§Æ® ³ôÀÌÀÇ ±âÁØÀ» ¼³Á¤ÇÑ´Ù. (18~19 bit)
+	 * ì˜¤ë¸Œì íŠ¸ ë†’ì´ì˜ ê¸°ì¤€ì„ ì„¤ì •í•œë‹¤. (18~19 bit)
 	 * 
 	 * @param heightCriterion
-	 *            ¿ÀºêÁ§Æ® ³ôÀÌÀÇ ±âÁØ
+	 *            ì˜¤ë¸Œì íŠ¸ ë†’ì´ì˜ ê¸°ì¤€
 	 */
 	public void setHeightCriterion(HeightCriterion heightCriterion) {
 		value = BitFlag.set(value, 18, 19, heightCriterion.getValue());
 	}
 
 	/**
-	 * VertRelToÀÌ paraÀÏ ¶§ Å©±â º¸È£ ¿©ºÎÀ» ¹İÈ¯ÇÑ´Ù. (20 bit)
+	 * VertRelToì´ paraì¼ ë•Œ í¬ê¸° ë³´í˜¸ ì—¬ë¶€ì„ ë°˜í™˜í•œë‹¤. (20 bit)
 	 * 
-	 * @return VertRelToÀÌ paraÀÏ ¶§ Å©±â º¸È£ ¿©ºÎ
+	 * @return VertRelToì´ paraì¼ ë•Œ í¬ê¸° ë³´í˜¸ ì—¬ë¶€
 	 */
 	public boolean isProtectSize() {
 		return BitFlag.get(value, 20);
 	}
 
 	/**
-	 * VertRelToÀÌ paraÀÏ ¶§ Å©±â º¸È£ ¿©ºÎ¸¦ ¼³Á¤ÇÑ´Ù.
+	 * VertRelToì´ paraì¼ ë•Œ í¬ê¸° ë³´í˜¸ ì—¬ë¶€ë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param protectSize
-	 *            VertRelToÀÌ paraÀÏ ¶§ Å©±â º¸È£ ¿©ºÎ
+	 *            VertRelToì´ paraì¼ ë•Œ í¬ê¸° ë³´í˜¸ ì—¬ë¶€
 	 */
 	public void setProtectSize(boolean protectSize) {
 		value = BitFlag.set(value, 20, protectSize);
 	}
 
 	/**
-	 * ¿ÀºêÁ§Æ® ÁÖÀ§¸¦ ÅØ½ºÆ®°¡ ¾î¶»°Ô Èê·¯°¥Áö ÁöÁ¤ÇÏ´Â ¿É¼ÇÀ» ¹İÈ¯ÇÑ´Ù. (21~23 bit)
+	 * ì˜¤ë¸Œì íŠ¸ ì£¼ìœ„ë¥¼ í…ìŠ¤íŠ¸ê°€ ì–´ë–»ê²Œ í˜ëŸ¬ê°ˆì§€ ì§€ì •í•˜ëŠ” ì˜µì…˜ì„ ë°˜í™˜í•œë‹¤. (21~23 bit)
 	 * 
-	 * @return ¿ÀºêÁ§Æ® ÁÖÀ§¸¦ ÅØ½ºÆ®°¡ ¾î¶»°Ô Èê·¯°¥Áö ÁöÁ¤ÇÏ´Â ¿É¼Ç
+	 * @return ì˜¤ë¸Œì íŠ¸ ì£¼ìœ„ë¥¼ í…ìŠ¤íŠ¸ê°€ ì–´ë–»ê²Œ í˜ëŸ¬ê°ˆì§€ ì§€ì •í•˜ëŠ” ì˜µì…˜
 	 */
 	public TextFlowMethod getTextFlowMethod() {
 		return TextFlowMethod.valueOf((byte) BitFlag.get(value, 21, 23));
 	}
 
 	/**
-	 * ¿ÀºêÁ§Æ® ÁÖÀ§¸¦ ÅØ½ºÆ®°¡ ¾î¶»°Ô Èê·¯°¥Áö ÁöÁ¤ÇÏ´Â ¿É¼ÇÀ» ¼³Á¤ÇÑ´Ù. (21~23 bit)
+	 * ì˜¤ë¸Œì íŠ¸ ì£¼ìœ„ë¥¼ í…ìŠ¤íŠ¸ê°€ ì–´ë–»ê²Œ í˜ëŸ¬ê°ˆì§€ ì§€ì •í•˜ëŠ” ì˜µì…˜ì„ ì„¤ì •í•œë‹¤. (21~23 bit)
 	 * 
 	 * @param textFlowMethod
-	 *            ¿ÀºêÁ§Æ® ÁÖÀ§¸¦ ÅØ½ºÆ®°¡ ¾î¶»°Ô Èê·¯°¥Áö ÁöÁ¤ÇÏ´Â ¿É¼Ç
+	 *            ì˜¤ë¸Œì íŠ¸ ì£¼ìœ„ë¥¼ í…ìŠ¤íŠ¸ê°€ ì–´ë–»ê²Œ í˜ëŸ¬ê°ˆì§€ ì§€ì •í•˜ëŠ” ì˜µì…˜
 	 */
 	public void setTextFlowMethod(TextFlowMethod textFlowMethod) {
 		value = BitFlag.set(value, 21, 23, textFlowMethod.getValue());
 	}
 
 	/**
-	 * ¿ÀºêÁ§Æ®ÀÇ ÁÂ/¿ì ¾î´À ÂÊ¿¡ ±ÛÀ» ¹èÄ¡ÇÒÁö ÁöÁ¤ÇÏ´Â ¿É¼ÇÀ» ¹İÈ¯ÇÑ´Ù. (24~25 bit)
+	 * ì˜¤ë¸Œì íŠ¸ì˜ ì¢Œ/ìš° ì–´ëŠ ìª½ì— ê¸€ì„ ë°°ì¹˜í• ì§€ ì§€ì •í•˜ëŠ” ì˜µì…˜ì„ ë°˜í™˜í•œë‹¤. (24~25 bit)
 	 * 
-	 * @return ¿ÀºêÁ§Æ®ÀÇ ÁÂ/¿ì ¾î´À ÂÊ¿¡ ±ÛÀ» ¹èÄ¡ÇÒÁö ÁöÁ¤ÇÏ´Â ¿É¼Ç
+	 * @return ì˜¤ë¸Œì íŠ¸ì˜ ì¢Œ/ìš° ì–´ëŠ ìª½ì— ê¸€ì„ ë°°ì¹˜í• ì§€ ì§€ì •í•˜ëŠ” ì˜µì…˜
 	 */
 	public TextHorzArrange getTextHorzArrange() {
 		return TextHorzArrange.valueOf((byte) BitFlag.get(value, 24, 25));
 	}
 
 	/**
-	 * ¿ÀºêÁ§Æ®ÀÇ ÁÂ/¿ì ¾î´À ÂÊ¿¡ ±ÛÀ» ¹èÄ¡ÇÒÁö ÁöÁ¤ÇÏ´Â ¿É¼ÇÀ» ¼³Á¤ÇÑ´Ù. (24~25 bit)
+	 * ì˜¤ë¸Œì íŠ¸ì˜ ì¢Œ/ìš° ì–´ëŠ ìª½ì— ê¸€ì„ ë°°ì¹˜í• ì§€ ì§€ì •í•˜ëŠ” ì˜µì…˜ì„ ì„¤ì •í•œë‹¤. (24~25 bit)
 	 * 
 	 * @param textHorzArrange
-	 *            ¿ÀºêÁ§Æ®ÀÇ ÁÂ/¿ì ¾î´À ÂÊ¿¡ ±ÛÀ» ¹èÄ¡ÇÒÁö ÁöÁ¤ÇÏ´Â ¿É¼Ç
+	 *            ì˜¤ë¸Œì íŠ¸ì˜ ì¢Œ/ìš° ì–´ëŠ ìª½ì— ê¸€ì„ ë°°ì¹˜í• ì§€ ì§€ì •í•˜ëŠ” ì˜µì…˜
 	 */
 	public void setTextHorzArrange(TextHorzArrange textHorzArrange) {
 		value = BitFlag.set(value, 24, 25, textHorzArrange.getValue());
 	}
 
 	/**
-	 * °³Ã¼°¡ ¼ÓÇÏ´Â ¹øÈ£ ¹üÁÖ¸¦ ¹İÈ¯ÇÑ´Ù. (26~28 bit)
+	 * ê°œì²´ê°€ ì†í•˜ëŠ” ë²ˆí˜¸ ë²”ì£¼ë¥¼ ë°˜í™˜í•œë‹¤. (26~28 bit)
 	 * 
-	 * @return °³Ã¼°¡ ¼ÓÇÏ´Â ¹øÈ£ ¹üÁÖ
+	 * @return ê°œì²´ê°€ ì†í•˜ëŠ” ë²ˆí˜¸ ë²”ì£¼
 	 */
 	public ObjectNumberSort getObjectNumberSort() {
 		return ObjectNumberSort.valueOf((byte) BitFlag.get(value, 26, 28));
 	}
 
 	/**
-	 * °³Ã¼°¡ ¼ÓÇÏ´Â ¹øÈ£ ¹üÁÖ¸¦ ¼³Á¤ÇÑ´Ù. (26~28 bit)
+	 * ê°œì²´ê°€ ì†í•˜ëŠ” ë²ˆí˜¸ ë²”ì£¼ë¥¼ ì„¤ì •í•œë‹¤. (26~28 bit)
 	 * 
 	 * @param objectNumberSort
-	 *            °³Ã¼°¡ ¼ÓÇÏ´Â ¹øÈ£ ¹üÁÖ
+	 *            ê°œì²´ê°€ ì†í•˜ëŠ” ë²ˆí˜¸ ë²”ì£¼
 	 */
 	public void setObjectNumberSort(ObjectNumberSort objectNumberSort) {
 		value = BitFlag.set(value, 26, 28, objectNumberSort.getValue());

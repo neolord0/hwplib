@@ -1,4 +1,4 @@
-package kr.dogfoot.hwplib.reader.docinfo;
+ï»¿package kr.dogfoot.hwplib.reader.docinfo;
 
 import java.io.IOException;
 
@@ -6,18 +6,18 @@ import kr.dogfoot.hwplib.object.docinfo.Bullet;
 import kr.dogfoot.hwplib.util.compoundFile.StreamReader;
 
 /**
- * ±Û¸Ó¸®Ç¥ ·¹ÄÚµå¸¦ ÀĞ±â À§ÇÑ °´Ã¼
+ * ê¸€ë¨¸ë¦¬í‘œ ë ˆì½”ë“œë¥¼ ì½ê¸° ìœ„í•œ ê°ì²´
  * 
  * @author neolord
  */
 public class ForBullet {
 	/**
-	 * ±Û¸Ó¸®Ç¥ ·¹ÄÚµå¸¦ ÀĞ´Â´Ù.
+	 * ê¸€ë¨¸ë¦¬í‘œ ë ˆì½”ë“œë¥¼ ì½ëŠ”ë‹¤.
 	 * 
 	 * @param b
-	 *            ±Û¸Ó¸®Ç¥ ·¹ÄÚµå
+	 *            ê¸€ë¨¸ë¦¬í‘œ ë ˆì½”ë“œ
 	 * @param sr
-	 *            ½ºÆ®¸² ¸®´õ
+	 *            ìŠ¤íŠ¸ë¦¼ ë¦¬ë”
 	 * @throws IOException
 	 */
 	public static void read(Bullet b, StreamReader sr) throws IOException {
@@ -27,10 +27,10 @@ public class ForBullet {
 	}
 
 	/**
-	 * ¾Ë·ÁÁöÁö ¾ÊÀº 9 ¹ÙÀÌÆ®¸¦ Ã³¸®ÇÑ´Ù.
+	 * ì•Œë ¤ì§€ì§€ ì•Šì€ 9 ë°”ì´íŠ¸ë¥¼ ì²˜ë¦¬í•œë‹¤.
 	 * 
 	 * @param sr
-	 *            ½ºÆ®¸² ¸®´õ
+	 *            ìŠ¤íŠ¸ë¦¼ ë¦¬ë”
 	 * @throws IOException
 	 */
 	private static void unknown9Bytes(StreamReader sr) throws IOException {

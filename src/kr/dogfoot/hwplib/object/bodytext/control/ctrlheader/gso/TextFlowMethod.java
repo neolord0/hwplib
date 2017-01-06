@@ -1,66 +1,66 @@
-package kr.dogfoot.hwplib.object.bodytext.control.ctrlheader.gso;
+ï»¿package kr.dogfoot.hwplib.object.bodytext.control.ctrlheader.gso;
 
 /**
- * ¿ÀºêÁ§Æ® ÁÖÀ§¸¦ ÅØ½ºÆ®°¡ ¾î¶»°Ô Èê·¯°¥Áö ÁöÁ¤ÇÏ´Â ¿É¼Ç
+ * ì˜¤ë¸Œì íŠ¸ ì£¼ìœ„ë¥¼ í…ìŠ¤íŠ¸ê°€ ì–´ë–»ê²Œ í˜ëŸ¬ê°ˆì§€ ì§€ì •í•˜ëŠ” ì˜µì…˜
  * 
  * @author neolord
  */
 public enum TextFlowMethod {
 	/**
-	 * bound rect¸¦ µû¶ó
+	 * bound rectë¥¼ ë”°ë¼
 	 */
 	Square((byte) 0),
 	/**
-	 * ¿ÀºêÁ§Æ®ÀÇ outlineÀ» µû¶ó
+	 * ì˜¤ë¸Œì íŠ¸ì˜ outlineì„ ë”°ë¼
 	 */
 	Tight((byte) 1),
 	/**
-	 * ¿ÀºêÁ§Æ® ³»ºÎÀÇ ºó °ø°£±îÁö
+	 * ì˜¤ë¸Œì íŠ¸ ë‚´ë¶€ì˜ ë¹ˆ ê³µê°„ê¹Œì§€
 	 */
 	Through((byte) 2),
 	/**
-	 * ÁÂ, ¿ì¿¡´Â ÅØ½ºÆ®¸¦ ¹èÄ¡ÇÏÁö ¾ÊÀ½
+	 * ì¢Œ, ìš°ì—ëŠ” í…ìŠ¤íŠ¸ë¥¼ ë°°ì¹˜í•˜ì§€ ì•ŠìŒ
 	 */
 	TopAndBottom((byte) 3),
 	/**
-	 * ±Û°ú °ãÄ¡°Ô ÇÏ¿© ±Û µÚ·Î
+	 * ê¸€ê³¼ ê²¹ì¹˜ê²Œ í•˜ì—¬ ê¸€ ë’¤ë¡œ
 	 */
 	BehindText((byte) 4),
 	/**
-	 * ±Û°ú °ãÄ¡°Ô ÇÏ¿© ±Û ¾ÕÀ¸·Î
+	 * ê¸€ê³¼ ê²¹ì¹˜ê²Œ í•˜ì—¬ ê¸€ ì•ìœ¼ë¡œ
 	 */
 	InFrontOfText((byte) 5);
 
 	/**
-	 * ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª
+	 * íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’
 	 */
 	private byte value;
 
 	/**
-	 * »ı¼ºÀÚ
+	 * ìƒì„±ì
 	 * 
 	 * @param value
-	 *            ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª
+	 *            íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’
 	 */
 	private TextFlowMethod(byte value) {
 		this.value = value;
 	}
 
 	/**
-	 * ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ªÀ» ¹İÈ¯ÇÑ´Ù.
+	 * íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’ì„ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª
+	 * @return íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’
 	 */
 	public byte getValue() {
 		return value;
 	}
 
 	/**
-	 * ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª¿¡ ÇØ´çµÇ´Â enum °ªÀ» ¹İÈ¯ÇÑ´Ù.
+	 * íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’ì— í•´ë‹¹ë˜ëŠ” enum ê°’ì„ ë°˜í™˜í•œë‹¤.
 	 * 
 	 * @param value
-	 *            ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª
-	 * @return enum °ª
+	 *            íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’
+	 * @return enum ê°’
 	 */
 	public static TextFlowMethod valueOf(byte value) {
 		for (TextFlowMethod tfm : values()) {

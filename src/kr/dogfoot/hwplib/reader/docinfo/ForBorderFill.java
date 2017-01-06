@@ -1,4 +1,4 @@
-package kr.dogfoot.hwplib.reader.docinfo;
+ï»¿package kr.dogfoot.hwplib.reader.docinfo;
 
 import java.io.IOException;
 
@@ -13,18 +13,18 @@ import kr.dogfoot.hwplib.reader.docinfo.borderfill.ForFillInfo;
 import kr.dogfoot.hwplib.util.compoundFile.StreamReader;
 
 /**
- * Å×µÎ¸®/¹è°æ ·¹ÄÚµå¸¦ ÀĞ±â À§ÇÑ °´Ã¼
+ * í…Œë‘ë¦¬/ë°°ê²½ ë ˆì½”ë“œë¥¼ ì½ê¸° ìœ„í•œ ê°ì²´
  * 
  * @author neolord
  */
 public class ForBorderFill {
 	/**
-	 * Å×µÎ¸®/¹è°æ ·¹ÄÚµå¸¦ ÀĞ´Â´Ù.
+	 * í…Œë‘ë¦¬/ë°°ê²½ ë ˆì½”ë“œë¥¼ ì½ëŠ”ë‹¤.
 	 * 
 	 * @param bf
-	 *            Å×µÎ¸®/¹è°æ ·¹ÄÚµå
+	 *            í…Œë‘ë¦¬/ë°°ê²½ ë ˆì½”ë“œ
 	 * @param sr
-	 *            ½ºÆ®¸² ¸®´õ
+	 *            ìŠ¤íŠ¸ë¦¼ ë¦¬ë”
 	 * @throws IOException
 	 */
 	public static void read(BorderFill bf, StreamReader sr) throws IOException {
@@ -38,12 +38,12 @@ public class ForBorderFill {
 	}
 
 	/**
-	 * ¼Ó¼º ºÎºĞÀ» ÀĞ´Â´Ù.
+	 * ì†ì„± ë¶€ë¶„ì„ ì½ëŠ”ë‹¤.
 	 * 
 	 * @param p
-	 *            Å×µÎ¸®/¹è°æ ¼Ó¼º ºÎºĞ °´Ã¼
+	 *            í…Œë‘ë¦¬/ë°°ê²½ ì†ì„± ë¶€ë¶„ ê°ì²´
 	 * @param sr
-	 *            ½ºÆ®¸² ¸®´õ
+	 *            ìŠ¤íŠ¸ë¦¼ ë¦¬ë”
 	 * @throws IOException
 	 */
 	private static void property(BorderFillProperty p, StreamReader sr)
@@ -52,12 +52,12 @@ public class ForBorderFill {
 	}
 
 	/**
-	 * 4¹æÇâÀÇ Å×µÎ¸®¸¦ Ç¥ÇöÇÏ´Â °¢°¢ÀÇ ¼±¸¦ ÀĞ´Â´Ù.
+	 * 4ë°©í–¥ì˜ í…Œë‘ë¦¬ë¥¼ í‘œí˜„í•˜ëŠ” ê°ê°ì˜ ì„ ë¥¼ ì½ëŠ”ë‹¤.
 	 * 
 	 * @param eb
-	 *            4¹æÇâÀÇ Å×µÎ¸®¸¦ Ç¥ÇöÇÏ´Â °¢°¢ ¼± °´Ã¼
+	 *            4ë°©í–¥ì˜ í…Œë‘ë¦¬ë¥¼ í‘œí˜„í•˜ëŠ” ê°ê° ì„  ê°ì²´
 	 * @param sr
-	 *            ½ºÆ®¸² ¸®´õ
+	 *            ìŠ¤íŠ¸ë¦¼ ë¦¬ë”
 	 * @throws IOException
 	 */
 	private static void eachBorder(EachBorder eb, StreamReader sr)
@@ -68,12 +68,12 @@ public class ForBorderFill {
 	}
 
 	/**
-	 * ´ë°¢¼± Á¤º¸ ºÎºĞ¸¦ ÀĞ´Â´Ù.
+	 * ëŒ€ê°ì„  ì •ë³´ ë¶€ë¶„ë¥¼ ì½ëŠ”ë‹¤.
 	 * 
 	 * @param bf
-	 *            Å×µÎ¸®/¹è°æ ·¹ÄÚµå
+	 *            í…Œë‘ë¦¬/ë°°ê²½ ë ˆì½”ë“œ
 	 * @param sr
-	 *            ½ºÆ®¸² ¸®´õ
+	 *            ìŠ¤íŠ¸ë¦¼ ë¦¬ë”
 	 * @throws IOException
 	 */
 	private static void diagonal(BorderFill bf, StreamReader sr)
@@ -84,12 +84,12 @@ public class ForBorderFill {
 	}
 
 	/**
-	 * ¹è°æ Á¤º¸À» ÀĞ´Â´Ù.
+	 * ë°°ê²½ ì •ë³´ì„ ì½ëŠ”ë‹¤.
 	 * 
 	 * @param fi
-	 *            ¹è°æ Á¤º¸ °´Ã¼
+	 *            ë°°ê²½ ì •ë³´ ê°ì²´
 	 * @param sr
-	 *            ½ºÆ®¸² ¸®´õ
+	 *            ìŠ¤íŠ¸ë¦¼ ë¦¬ë”
 	 * @throws IOException
 	 */
 	private static void fillInfo(FillInfo fi, StreamReader sr)

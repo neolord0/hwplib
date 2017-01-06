@@ -1,26 +1,26 @@
-package kr.dogfoot.hwplib.object.bodytext.control;
+ï»¿package kr.dogfoot.hwplib.object.bodytext.control;
 
 import kr.dogfoot.hwplib.object.bodytext.control.ctrlheader.CtrlHeaderGso;
 import kr.dogfoot.hwplib.object.bodytext.control.equation.EQEdit;
 import kr.dogfoot.hwplib.object.bodytext.control.gso.caption.Caption;
 
 /**
- * ¼ö½Ä ÄÁÆ®·Ñ
+ * ìˆ˜ì‹ ì»¨íŠ¸ë¡¤
  * 
  * @author neolord
  */
 public class ControlEquation extends Control {
 	/**
-	 * Ä¸¼Ç
+	 * ìº¡ì…˜
 	 */
 	private Caption caption;
 	/**
-	 * ¼ö½Ä Á¤º¸
+	 * ìˆ˜ì‹ ì •ë³´
 	 */
 	private EQEdit eqEdit;
 
 	/**
-	 * »ı¼ºÀÚ
+	 * ìƒì„±ì
 	 */
 	public ControlEquation() {
 		super(new CtrlHeaderGso(ControlType.Equation));
@@ -29,41 +29,41 @@ public class ControlEquation extends Control {
 	}
 
 	/**
-	 * ±×¸®±â °´Ã¼¿ë ÄÁÆ®·Ñ Çì´õ¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ê·¸ë¦¬ê¸° ê°ì²´ìš© ì»¨íŠ¸ë¡¤ í—¤ë”ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ±×¸®±â °´Ã¼¿ë ÄÁÆ®·Ñ Çì´õ
+	 * @return ê·¸ë¦¬ê¸° ê°ì²´ìš© ì»¨íŠ¸ë¡¤ í—¤ë”
 	 */
 	public CtrlHeaderGso getHeader() {
 		return (CtrlHeaderGso) header;
 	}
 
 	/**
-	 * Ä¸¼Ç °´Ã¼¸¦ »ı¼ºÇÑ´Ù.
+	 * ìº¡ì…˜ ê°ì²´ë¥¼ ìƒì„±í•œë‹¤.
 	 */
 	public void createCaption() {
 		caption = new Caption();
 	}
 
 	/**
-	 * Ä¸¼Ç °´Ã¼¸¦ »èÁ¦ÇÑ´Ù.
+	 * ìº¡ì…˜ ê°ì²´ë¥¼ ì‚­ì œí•œë‹¤.
 	 */
 	public void deleteCaption() {
 		caption = null;
 	}
 
 	/**
-	 * Ä¸¼Ç °´Ã¼¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ìº¡ì…˜ ê°ì²´ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return Ä¸¼Ç °´Ã¼
+	 * @return ìº¡ì…˜ ê°ì²´
 	 */
 	public Caption getCaption() {
 		return caption;
 	}
 
 	/**
-	 * ¼ö½Ä Á¤º¸ °´Ã¼¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ìˆ˜ì‹ ì •ë³´ ê°ì²´ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ¼ö½Ä Á¤º¸ °´Ã¼
+	 * @return ìˆ˜ì‹ ì •ë³´ ê°ì²´
 	 */
 	public EQEdit getEQEdit() {
 		return eqEdit;

@@ -1,4 +1,4 @@
-package kr.dogfoot.hwplib.reader.bodytext.paragraph.control;
+ï»¿package kr.dogfoot.hwplib.reader.bodytext.paragraph.control;
 
 import java.io.IOException;
 
@@ -12,35 +12,35 @@ import kr.dogfoot.hwplib.reader.bodytext.paragraph.control.secd.ForPageDef;
 import kr.dogfoot.hwplib.util.compoundFile.StreamReader;
 
 /**
- * ±¸¿ª Á¤ÀÇ ÄÁÆ®·ÑÀ» ÀĞ±â À§ÇÑ °´Ã¼
+ * êµ¬ì—­ ì •ì˜ ì»¨íŠ¸ë¡¤ì„ ì½ê¸° ìœ„í•œ ê°ì²´
  * 
  * @author neolord
  */
 public class ForControlSectionDefine {
 	/**
-	 * ±¸¿ª Á¤ÀÇ ÄÁÆ®·Ñ
+	 * êµ¬ì—­ ì •ì˜ ì»¨íŠ¸ë¡¤
 	 */
 	private ControlSectionDefine secd;
 	/**
-	 * ½ºÆ®¸² ¸®´õ
+	 * ìŠ¤íŠ¸ë¦¼ ë¦¬ë”
 	 */
 	private StreamReader sr;
 
 	/**
-	 * ÄÁÆ®·ÑÇì´õÀÇ ·¹º§
+	 * ì»¨íŠ¸ë¡¤í—¤ë”ì˜ ë ˆë²¨
 	 */
 	private short ctrlHeaderLevel;
 	/**
-	 * ¹Ì/°¢ÁÖ¸ğ¾ç ·¹ÄÚµå ÀÎµ¦½º
+	 * ë¯¸/ê°ì£¼ëª¨ì–‘ ë ˆì½”ë“œ ì¸ë±ìŠ¤
 	 */
 	private int endFootnoteShapeIndex;
 	/**
-	 * ÂÊ Å×µÎ¸®/¹è°æ ·¹ÄÚµå ÀÎµ¦½º
+	 * ìª½ í…Œë‘ë¦¬/ë°°ê²½ ë ˆì½”ë“œ ì¸ë±ìŠ¤
 	 */
 	private int pageBorderFillIndex;
 
 	/**
-	 * »ı¼ºÀÚ
+	 * ìƒì„±ì
 	 */
 	public ForControlSectionDefine() {
 		endFootnoteShapeIndex = 0;
@@ -48,12 +48,12 @@ public class ForControlSectionDefine {
 	}
 
 	/**
-	 * ±¸¿ª Á¤ÀÇ ÄÁÆ®·ÑÀ» ÀĞ´Â´Ù.
+	 * êµ¬ì—­ ì •ì˜ ì»¨íŠ¸ë¡¤ì„ ì½ëŠ”ë‹¤.
 	 * 
 	 * @param secd
-	 *            ±¸¿ª Á¤ÀÇ ÄÁÆ®·Ñ °´Ã¼
+	 *            êµ¬ì—­ ì •ì˜ ì»¨íŠ¸ë¡¤ ê°ì²´
 	 * @param sr
-	 *            ½ºÆ®¸² ¸®´õ
+	 *            ìŠ¤íŠ¸ë¦¼ ë¦¬ë”
 	 * @throws Exception
 	 */
 	public void read(ControlSectionDefine secd, StreamReader sr)
@@ -77,7 +77,7 @@ public class ForControlSectionDefine {
 	}
 
 	/**
-	 * ±¸¿ª Á¤ÀÇ ÄÁÆ®·ÑÀÇ ÄÁÆ®·Ñ Çì´õ ·¹ÄÚµå¸¦ ÀĞ´Â´Ù.
+	 * êµ¬ì—­ ì •ì˜ ì»¨íŠ¸ë¡¤ì˜ ì»¨íŠ¸ë¡¤ í—¤ë” ë ˆì½”ë“œë¥¼ ì½ëŠ”ë‹¤.
 	 * 
 	 * @throws IOException
 	 */
@@ -86,7 +86,7 @@ public class ForControlSectionDefine {
 	}
 
 	/**
-	 * ÀÌ¹Ì ÀĞÀº ·¹ÄÚµå Çì´õ¿¡ µû¸¥ ·¹ÄÚµå ³»¿ëÀ» ÀĞ´Â´Ù.
+	 * ì´ë¯¸ ì½ì€ ë ˆì½”ë“œ í—¤ë”ì— ë”°ë¥¸ ë ˆì½”ë“œ ë‚´ìš©ì„ ì½ëŠ”ë‹¤.
 	 * 
 	 * @throws Exception
 	 */
@@ -108,7 +108,7 @@ public class ForControlSectionDefine {
 	}
 
 	/**
-	 * ¿ëÁö ¼³Á¤ ·¹ÄÚµå¸¦ ÀĞ´Â´Ù.
+	 * ìš©ì§€ ì„¤ì • ë ˆì½”ë“œë¥¼ ì½ëŠ”ë‹¤.
 	 * 
 	 * @throws IOException
 	 */
@@ -117,7 +117,7 @@ public class ForControlSectionDefine {
 	}
 
 	/**
-	 * °¢ÁÖ/¹ÌÁÖ ¸ğ¾ç ·¹ÄÚµå¸¦ ÀĞ´Â´Ù.
+	 * ê°ì£¼/ë¯¸ì£¼ ëª¨ì–‘ ë ˆì½”ë“œë¥¼ ì½ëŠ”ë‹¤.
 	 * 
 	 * @throws IOException
 	 */
@@ -131,7 +131,7 @@ public class ForControlSectionDefine {
 	}
 
 	/**
-	 * °¢ÁÖ ¸ğ¾ç ·¹ÄÚµå¸¦ ÀĞ´Â´Ù.
+	 * ê°ì£¼ ëª¨ì–‘ ë ˆì½”ë“œë¥¼ ì½ëŠ”ë‹¤.
 	 * 
 	 * @throws IOException
 	 */
@@ -140,7 +140,7 @@ public class ForControlSectionDefine {
 	}
 
 	/**
-	 * ¹ÌÁÖ ¸ğ¾ç ·¹ÄÚµå¸¦ ÀĞ´Â´Ù.
+	 * ë¯¸ì£¼ ëª¨ì–‘ ë ˆì½”ë“œë¥¼ ì½ëŠ”ë‹¤.
 	 * 
 	 * @throws IOException
 	 */
@@ -149,7 +149,7 @@ public class ForControlSectionDefine {
 	}
 
 	/**
-	 * ÂÊ Å×µÎ¸®/¹è°æ ·¹ÄÚµå¸¦ ÀĞ´Â´Ù.
+	 * ìª½ í…Œë‘ë¦¬/ë°°ê²½ ë ˆì½”ë“œë¥¼ ì½ëŠ”ë‹¤.
 	 * 
 	 * @throws IOException
 	 */
@@ -166,7 +166,7 @@ public class ForControlSectionDefine {
 	}
 
 	/**
-	 * ¾çÂÊ ÆäÀÌÁö¸¦ À§ÇÑ ÂÊ Å×µÎ¸®/¹è°æ ·¹ÄÚµå¸¦ ÀĞ´À´Ù.
+	 * ì–‘ìª½ í˜ì´ì§€ë¥¼ ìœ„í•œ ìª½ í…Œë‘ë¦¬/ë°°ê²½ ë ˆì½”ë“œë¥¼ ì½ëŠë‹¤.
 	 * 
 	 * @throws IOException
 	 */
@@ -175,7 +175,7 @@ public class ForControlSectionDefine {
 	}
 
 	/**
-	 * Â¦¼öÂÊ ÆäÀÌÁö¸¦ À§ÇÑ ÂÊ Å×µÎ¸®/¹è°æ ·¹ÄÚµå¸¦ ÀĞ´À´Ù.
+	 * ì§ìˆ˜ìª½ í˜ì´ì§€ë¥¼ ìœ„í•œ ìª½ í…Œë‘ë¦¬/ë°°ê²½ ë ˆì½”ë“œë¥¼ ì½ëŠë‹¤.
 	 * 
 	 * @throws IOException
 	 */
@@ -184,7 +184,7 @@ public class ForControlSectionDefine {
 	}
 
 	/**
-	 * È¦¼öÂÊ ÆäÀÌÁö¸¦ À§ÇÑ ÂÊ Å×µÎ¸®/¹è°æ ·¹ÄÚµå¸¦ ÀĞ´À´Ù.
+	 * í™€ìˆ˜ìª½ í˜ì´ì§€ë¥¼ ìœ„í•œ ìª½ í…Œë‘ë¦¬/ë°°ê²½ ë ˆì½”ë“œë¥¼ ì½ëŠë‹¤.
 	 * 
 	 * @throws IOException
 	 */
@@ -193,7 +193,7 @@ public class ForControlSectionDefine {
 	}
 
 	/**
-	 * ¹ÙÅÁÂÊ Á¤º¸¸¦ ÀĞ´Â´Ù.
+	 * ë°”íƒ•ìª½ ì •ë³´ë¥¼ ì½ëŠ”ë‹¤.
 	 * 
 	 * @throws Exception
 	 */

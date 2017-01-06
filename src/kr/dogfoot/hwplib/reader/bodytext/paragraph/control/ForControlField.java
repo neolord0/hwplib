@@ -1,4 +1,4 @@
-package kr.dogfoot.hwplib.reader.bodytext.paragraph.control;
+ï»¿package kr.dogfoot.hwplib.reader.bodytext.paragraph.control;
 
 import java.io.IOException;
 
@@ -7,18 +7,18 @@ import kr.dogfoot.hwplib.object.bodytext.control.ctrlheader.CtrlHeaderField;
 import kr.dogfoot.hwplib.util.compoundFile.StreamReader;
 
 /**
- * ÇÊµå ÄÁÆ®·ÑÀ» ÀĞ±â À§ÇÑ °´Ã¼
+ * í•„ë“œ ì»¨íŠ¸ë¡¤ì„ ì½ê¸° ìœ„í•œ ê°ì²´
  * 
  * @author neolord
  */
 public class ForControlField {
 	/**
-	 * ÇÊµå ÄÁÆ®·ÑÀ» ÀĞ´Â´Ù.
+	 * í•„ë“œ ì»¨íŠ¸ë¡¤ì„ ì½ëŠ”ë‹¤.
 	 * 
 	 * @param field
-	 *            ÇÊµå ÄÁÆ®·Ñ
+	 *            í•„ë“œ ì»¨íŠ¸ë¡¤
 	 * @param sr
-	 *            ½ºÆ®¸² ¸®´õ
+	 *            ìŠ¤íŠ¸ë¦¼ ë¦¬ë”
 	 * @throws IOException
 	 */
 	public static void read(ControlField field, StreamReader sr)
@@ -27,12 +27,12 @@ public class ForControlField {
 	}
 
 	/**
-	 * ÇÊµå ÄÁÆ®·ÑÀÇ ÄÁÆ®·Ñ Çì´õ ·¹ÄÚµåÀ» ÀĞ´Â´Ù.
+	 * í•„ë“œ ì»¨íŠ¸ë¡¤ì˜ ì»¨íŠ¸ë¡¤ í—¤ë” ë ˆì½”ë“œì„ ì½ëŠ”ë‹¤.
 	 * 
 	 * @param h
-	 *            ÇÊµå ÄÁÆ®·ÑÀÇ ÄÁÆ®·Ñ Çì´õ
+	 *            í•„ë“œ ì»¨íŠ¸ë¡¤ì˜ ì»¨íŠ¸ë¡¤ í—¤ë”
 	 * @param sr
-	 *            ½ºÆ®¸² ¸®´õ
+	 *            ìŠ¤íŠ¸ë¦¼ ë¦¬ë”
 	 * @throws IOException
 	 */
 	private static void ctrlHeader(CtrlHeaderField h, StreamReader sr)
@@ -46,10 +46,10 @@ public class ForControlField {
 	}
 
 	/**
-	 * ¾Ë·ÁÁöÁö ¾ÊÀº 4 byteÀ» Ã³¸®ÇÑ´Ù.
+	 * ì•Œë ¤ì§€ì§€ ì•Šì€ 4 byteì„ ì²˜ë¦¬í•œë‹¤.
 	 * 
 	 * @param sr
-	 *            ½ºÆ®¸² ¸®´õ
+	 *            ìŠ¤íŠ¸ë¦¼ ë¦¬ë”
 	 * @throws IOException
 	 */
 	private static void unknown4Bytes(StreamReader sr) throws IOException {

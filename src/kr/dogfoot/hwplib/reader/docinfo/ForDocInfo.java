@@ -1,4 +1,4 @@
-package kr.dogfoot.hwplib.reader.docinfo;
+﻿package kr.dogfoot.hwplib.reader.docinfo;
 
 import java.io.IOException;
 
@@ -20,33 +20,33 @@ import kr.dogfoot.hwplib.reader.ForUnknown;
 import kr.dogfoot.hwplib.util.compoundFile.StreamReader;
 
 /**
- * ���� ����(DocInfo) ��Ʈ���� �б� ���� ��ü
+ * 문서 정보(DocInfo) 스트림을 읽기 위한 객체
  * 
  * @author neolord
  */
 public class ForDocInfo {
 	/**
-	 * ���� ���� ��Ʈ���� ��Ÿ���� ��ü
+	 * 문서 정보 스트림을 나타내는 객체
 	 */
 	private DocInfo docInfo;
 	/**
-	 * ��Ʈ�� ����
+	 * 스트림 리더
 	 */
 	private StreamReader sr;
 
 	/**
-	 * ������
+	 * 생성자
 	 */
 	public ForDocInfo() {
 	}
 
 	/**
-	 * ���� ����(DocInfo) ��Ʈ���� �д´�.
+	 * 문서 정보(DocInfo) 스트림를 읽는다.
 	 * 
 	 * @param di
-	 *            ���� ���� ��Ʈ���� ��Ÿ���� ��ü
+	 *            문서 정보 스트림을 나타내는 객체
 	 * @param sr
-	 *            ��Ʈ�� ����
+	 *            스트림 리더
 	 * @throws Exception
 	 */
 	public void read(DocInfo di, StreamReader sr) throws Exception {
@@ -60,7 +60,7 @@ public class ForDocInfo {
 	}
 
 	/**
-	 * �̹� ���� ���ڵ� ����� ���� ���ڵ� ������ �д´�.
+	 * 이미 읽은 레코드 헤더에 따른 레코드 내용을 읽는다.
 	 * 
 	 * @throws Exception
 	 */
@@ -130,10 +130,10 @@ public class ForDocInfo {
 	}
 
 	/**
-	 * ���� �Ӽ� ���ڵ带 �д´�.
+	 * 문서 속성 레코드를 읽는다.
 	 * 
 	 * @param dp
-	 *            ���� ������ ������ ��ü
+	 *            읽은 내용을 저장할 객체
 	 * @throws IOException
 	 */
 	private void documentProerties(DocumentPropeties dp) throws IOException {
@@ -141,10 +141,10 @@ public class ForDocInfo {
 	}
 
 	/**
-	 * ���̵� ���� ��� ���ڵ带 �д´�.
+	 * 아이디 매핑 헤더 레코드를 읽는다.
 	 * 
 	 * @param im
-	 *            ���� ������ ������ ��ü
+	 *            읽은 내용을 저장할 객체
 	 * @throws IOException
 	 */
 	private void idMappings(IDMappings im) throws IOException {
@@ -152,7 +152,7 @@ public class ForDocInfo {
 	}
 
 	/**
-	 * ���̳ʸ� ������ ���ڵ带 �д´�.
+	 * 바이너리 데이터 레코드를 읽는다.
 	 * 
 	 * @throws IOException
 	 */
@@ -162,7 +162,7 @@ public class ForDocInfo {
 	}
 
 	/**
-	 * �۲� ���ڵ带 �д´�.
+	 * 글꼴 레코드를 읽는다.
 	 * 
 	 * @throws Exception
 	 */
@@ -173,10 +173,10 @@ public class ForDocInfo {
 	}
 
 	/**
-	 * �۲� ���ڵ� ��ü�� ���̵� ���� ���ڵ��� �۲� ������ ���� �߰��Ѵ�.
+	 * 글꼴 레코드 객체를 아이디 매핑 레코드의 글꼴 개수에 따라 추가한다.
 	 * 
 	 * @param fn
-	 *            �۲� ���ڵ� ��ü
+	 *            글꼴 레코드 객체
 	 * @throws Exception
 	 */
 	private void addFaceNameByIDMappings(FaceName fn) throws Exception {
@@ -208,7 +208,7 @@ public class ForDocInfo {
 	}
 
 	/**
-	 * �׵θ�/��� ���ڵ带 �д´�.
+	 * 테두리/배경 레코드를 읽는다.
 	 * 
 	 * @throws IOException
 	 */
@@ -218,7 +218,7 @@ public class ForDocInfo {
 	}
 
 	/**
-	 * ���� ��� ���ڵ带 �д´�.
+	 * 글자 모양 레코드를 읽는다.
 	 * 
 	 * @throws Exception
 	 */
@@ -228,7 +228,7 @@ public class ForDocInfo {
 	}
 
 	/**
-	 * �� ���� ���ڵ带 �д´�.
+	 * 탭 정의 레코드를 읽는다.
 	 * 
 	 * @throws IOException
 	 */
@@ -238,7 +238,7 @@ public class ForDocInfo {
 	}
 
 	/**
-	 * ���� ��ȣ ���ڵ带 �д´�.
+	 * 문단 번호 레코드를 읽는다.
 	 * 
 	 * @throws Exception
 	 */
@@ -248,7 +248,7 @@ public class ForDocInfo {
 	}
 
 	/**
-	 * �۸Ӹ�ǥ ���ڵ带 �д´�.
+	 * 글머리표 레코드를 읽는다.
 	 * 
 	 * @throws IOException
 	 */
@@ -258,7 +258,7 @@ public class ForDocInfo {
 	}
 
 	/**
-	 * ���� ��� ���ڵ带 �д´�.
+	 * 문단 모양 레코드를 읽는다.
 	 * 
 	 * @throws IOException
 	 */
@@ -268,7 +268,7 @@ public class ForDocInfo {
 	}
 
 	/**
-	 * ��Ÿ�� ���ڵ带 �д´�.
+	 * 스타일 레코드를 읽는다.
 	 * 
 	 * @throws IOException
 	 */
@@ -278,7 +278,7 @@ public class ForDocInfo {
 	}
 
 	/**
-	 * ���� ������ ������ ���ڵ带 �д´�.
+	 * 문서 임의의 데이터 레코드를 읽는다.
 	 * 
 	 * @throws IOException
 	 */
@@ -288,7 +288,7 @@ public class ForDocInfo {
 	}
 
 	/**
-	 * ������ ���� ������ ���ڵ带 �д´�.
+	 * 배포용 문서 데이터 레코드를 읽는다.
 	 * 
 	 * @throws IOException
 	 */
@@ -298,7 +298,7 @@ public class ForDocInfo {
 	}
 
 	/**
-	 * ȣȯ ���� ���ڵ带 �д´�.
+	 * 호환 문서 레코드를 읽는다.
 	 * 
 	 * @throws IOException
 	 */
@@ -308,7 +308,7 @@ public class ForDocInfo {
 	}
 
 	/**
-	 * ���̾ƿ� ȣȯ�� ���ڵ带 �д´�.
+	 * 레이아웃 호환성 레코드를 읽는다.
 	 * 
 	 * @throws IOException
 	 */
@@ -318,7 +318,7 @@ public class ForDocInfo {
 	}
 
 	/**
-	 * ���� ���� ���� ���ڵ带 �д´�.
+	 * 변경 추적 정보 레코드를 읽는다.
 	 * 
 	 * @throws IOException
 	 */
@@ -328,7 +328,7 @@ public class ForDocInfo {
 	}
 
 	/**
-	 * �޸� ��� ���ڵ带 �д´�.
+	 * 메모 모양 레코드를 읽는다.
 	 * 
 	 * @throws IOException
 	 */
@@ -338,7 +338,7 @@ public class ForDocInfo {
 	}
 
 	/**
-	 * ��Ģó�� ���� ���ڵ带 �д´�.
+	 * 금칙처리 문자 레코드를 읽는다.
 	 * 
 	 * @throws IOException
 	 */
@@ -348,7 +348,7 @@ public class ForDocInfo {
 	}
 
 	/**
-	 * ���� ���� ���� �� ��� ���ڵ带 �д´�.
+	 * 변경 추적 내용 및 모양 레코드를 읽는다.
 	 * 
 	 * @throws IOException
 	 */
@@ -359,7 +359,7 @@ public class ForDocInfo {
 	}
 
 	/**
-	 * ���� ���� �ۼ��� ���ڵ带 �д´�.
+	 * 변경 추적 작성자 레코드를 읽는다.
 	 * 
 	 * @throws IOException
 	 */

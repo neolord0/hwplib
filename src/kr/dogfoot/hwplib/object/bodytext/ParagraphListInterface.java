@@ -1,26 +1,26 @@
-package kr.dogfoot.hwplib.object.bodytext;
+ï»¿package kr.dogfoot.hwplib.object.bodytext;
 
 import java.util.ArrayList;
 
 import kr.dogfoot.hwplib.object.bodytext.paragraph.Paragraph;
 
 /**
- * ¹®´Ü ¸®½ºÆ® ÀÎÅÍÆäÀÌ½º
+ * ë¬¸ë‹¨ ë¦¬ìŠ¤íŠ¸ ì¸í„°í˜ì´ìŠ¤
  * 
  * @author neolord
  */
 public interface ParagraphListInterface {
 	/**
-	 * »õ·Î¿î ¹®´Ü¸¦ »ı¼ºÇÏ°í ¸®½ºÆ®¿¡ Ãß°¡ÇÑ´Ù.
+	 * ìƒˆë¡œìš´ ë¬¸ë‹¨ë¥¼ ìƒì„±í•˜ê³  ë¦¬ìŠ¤íŠ¸ì— ì¶”ê°€í•œë‹¤.
 	 * 
-	 * @return »õ·Î »ı¼ºµÈ ¹®´Ü
+	 * @return ìƒˆë¡œ ìƒì„±ëœ ë¬¸ë‹¨
 	 */
 	public Paragraph addNewParagraph();
 
 	/**
-	 * ¹®´Ü ¸®½ºÆ®¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ë¬¸ë‹¨ ë¦¬ìŠ¤íŠ¸ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ¹®´Ü ¸®½ºÆ®
+	 * @return ë¬¸ë‹¨ ë¦¬ìŠ¤íŠ¸
 	 */
 	public ArrayList<Paragraph> getParagraphList();
 }

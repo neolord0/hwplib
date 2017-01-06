@@ -1,86 +1,86 @@
-package kr.dogfoot.hwplib.object.bodytext.control.ctrlheader.pagenumberposition;
+ï»¿package kr.dogfoot.hwplib.object.bodytext.control.ctrlheader.pagenumberposition;
 
 /**
- * ¹øÈ£ÀÇ Ç¥½Ã À§Ä¡
+ * ë²ˆí˜¸ì˜ í‘œì‹œ ìœ„ì¹˜
  * 
  * @author neolord
  */
 public enum NumberPosition {
 	/**
-	 * ÂÊ ¹øÈ£ ¾øÀ½
+	 * ìª½ ë²ˆí˜¸ ì—†ìŒ
 	 */
 	None((byte) 0),
 	/**
-	 * ¿ŞÂÊ À§
+	 * ì™¼ìª½ ìœ„
 	 */
 	LeftTop((byte) 1),
 	/**
-	 * °¡¿îµ¥ À§
+	 * ê°€ìš´ë° ìœ„
 	 */
 	CenterTop((byte) 2),
 	/**
-	 * ¿À¸¥ÂÊ À§
+	 * ì˜¤ë¥¸ìª½ ìœ„
 	 */
 	RightTop((byte) 3),
 	/**
-	 * ¿ŞÂÊ ¾Æ·¡
+	 * ì™¼ìª½ ì•„ë˜
 	 */
 	LeftBottom((byte) 4),
 	/**
-	 * °¡¿îµ¥ ¾Æ·¡
+	 * ê°€ìš´ë° ì•„ë˜
 	 */
 	CenterBottom((byte) 5),
 	/**
-	 * ¿À¸¥ÂÊ ¾Æ·¡
+	 * ì˜¤ë¥¸ìª½ ì•„ë˜
 	 */
 	RightBottom((byte) 6),
 	/**
-	 * ¹Ù±ùÂÊ À§
+	 * ë°”ê¹¥ìª½ ìœ„
 	 */
 	OutsideTop((byte) 7),
 	/**
-	 * ¹Ù±ùÂÊ ¾Æ·¡
+	 * ë°”ê¹¥ìª½ ì•„ë˜
 	 */
 	OutsideBottom((byte) 8),
 	/**
-	 * ¾ÈÂÊ À§
+	 * ì•ˆìª½ ìœ„
 	 */
 	InsideTop((byte) 9),
 	/**
-	 * ¾ÈÂÊ ¾Æ·¡
+	 * ì•ˆìª½ ì•„ë˜
 	 */
 	InsideBottom((byte) 10);
 
 	/**
-	 * ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª
+	 * íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’
 	 */
 	private byte value;
 
 	/**
-	 * »ı¼ºÀÚ
+	 * ìƒì„±ì
 	 * 
 	 * @param value
-	 *            ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª
+	 *            íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’
 	 */
 	private NumberPosition(byte value) {
 		this.value = value;
 	}
 
 	/**
-	 * ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ªÀ» ¹İÈ¯ÇÑ´Ù.
+	 * íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’ì„ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª
+	 * @return íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’
 	 */
 	public byte getValue() {
 		return value;
 	}
 
 	/**
-	 * ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª¿¡ ÇØ´çµÇ´Â enum °ªÀ» ¹İÈ¯ÇÑ´Ù.
+	 * íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’ì— í•´ë‹¹ë˜ëŠ” enum ê°’ì„ ë°˜í™˜í•œë‹¤.
 	 * 
 	 * @param value
-	 *            ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª
-	 * @return enum °ª
+	 *            íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’
+	 * @return enum ê°’
 	 */
 	public static NumberPosition valueOf(byte value) {
 		for (NumberPosition np : values()) {

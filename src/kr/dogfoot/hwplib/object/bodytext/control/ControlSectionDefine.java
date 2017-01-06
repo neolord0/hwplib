@@ -1,4 +1,4 @@
-package kr.dogfoot.hwplib.object.bodytext.control;
+ï»¿package kr.dogfoot.hwplib.object.bodytext.control;
 
 import java.util.ArrayList;
 
@@ -9,42 +9,42 @@ import kr.dogfoot.hwplib.object.bodytext.control.sectiondefine.PageBorderFill;
 import kr.dogfoot.hwplib.object.bodytext.control.sectiondefine.PageDef;
 
 /**
- * ±¸¿ª Á¤ÀÇ ÄÁÆ®·Ñ
+ * êµ¬ì—­ ì •ì˜ ì»¨íŠ¸ë¡¤
  * 
  * @author neolord
  */
 public class ControlSectionDefine extends Control {
 	/**
-	 * ¿ëÁö¼³Á¤ Á¤º¸
+	 * ìš©ì§€ì„¤ì • ì •ë³´
 	 */
 	private PageDef pageDef;
 	/**
-	 * °¢ÁÖ ¸ğ¾ç Á¤º¸
+	 * ê°ì£¼ ëª¨ì–‘ ì •ë³´
 	 */
 	private FootEndNoteShape footNoteShape;
 	/**
-	 * ¹ÌÁÖ ¸ğ¾ç Á¤º¸
+	 * ë¯¸ì£¼ ëª¨ì–‘ ì •ë³´
 	 */
 	private FootEndNoteShape endNoteShape;
 	/**
-	 * ÂÊ Å×µÎ¸®/¹è°æ Á¤º¸ - ¾ç ÂÊ
+	 * ìª½ í…Œë‘ë¦¬/ë°°ê²½ ì •ë³´ - ì–‘ ìª½
 	 */
 	private PageBorderFill bothPageBorderFill;
 	/**
-	 * ÂÊ Å×µÎ¸®/¹è°æ Á¤º¸ - Â¦¼ö ÂÊ
+	 * ìª½ í…Œë‘ë¦¬/ë°°ê²½ ì •ë³´ - ì§ìˆ˜ ìª½
 	 */
 	private PageBorderFill evenPageBorderFill;
 	/**
-	 * ÂÊ Å×µÎ¸®/¹è°æ Á¤º¸ - È¦¼ö ÂÊ
+	 * ìª½ í…Œë‘ë¦¬/ë°°ê²½ ì •ë³´ - í™€ìˆ˜ ìª½
 	 */
 	private PageBorderFill oddPageBorderFill;
 	/**
-	 * ¹ÙÅÁÂÊ Á¤º¸(¾ç ÂÊ, Â¦¼ö ÂÊ, È¦¼ö ÂÊ) ¸®½ºÆ®
+	 * ë°”íƒ•ìª½ ì •ë³´(ì–‘ ìª½, ì§ìˆ˜ ìª½, í™€ìˆ˜ ìª½) ë¦¬ìŠ¤íŠ¸
 	 */
 	private ArrayList<BatangPageInfo> batangPageInfoList;
 
 	/**
-	 * »ı¼ºÀÚ
+	 * ìƒì„±ì
 	 */
 	public ControlSectionDefine() {
 		super(new CtrlHeaderSectionDefine());
@@ -59,72 +59,72 @@ public class ControlSectionDefine extends Control {
 	}
 
 	/**
-	 * ±¸¿ª Á¤ÀÇ ÄÁÆ®·Ñ ¿ë ÄÁÆ®·Ñ Çì´õ¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * êµ¬ì—­ ì •ì˜ ì»¨íŠ¸ë¡¤ ìš© ì»¨íŠ¸ë¡¤ í—¤ë”ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ±¸¿ª Á¤ÀÇ ÄÁÆ®·Ñ ¿ë ÄÁÆ®·Ñ Çì´õ
+	 * @return êµ¬ì—­ ì •ì˜ ì»¨íŠ¸ë¡¤ ìš© ì»¨íŠ¸ë¡¤ í—¤ë”
 	 */
 	public CtrlHeaderSectionDefine getHeader() {
 		return (CtrlHeaderSectionDefine) header;
 	}
 
 	/**
-	 * ¿ëÁö¼³Á¤ Á¤º¸¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ìš©ì§€ì„¤ì • ì •ë³´ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ¿ëÁö¼³Á¤ Á¤º¸
+	 * @return ìš©ì§€ì„¤ì • ì •ë³´
 	 */
 	public PageDef getPageDef() {
 		return pageDef;
 	}
 
 	/**
-	 * °¢ÁÖ ¸ğ¾ç Á¤º¸¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ê°ì£¼ ëª¨ì–‘ ì •ë³´ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return °¢ÁÖ ¸ğ¾ç Á¤º¸
+	 * @return ê°ì£¼ ëª¨ì–‘ ì •ë³´
 	 */
 	public FootEndNoteShape getFootNoteShape() {
 		return footNoteShape;
 	}
 
 	/**
-	 * ¹ÌÁÖ ¸ğ¾ç Á¤º¸¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ë¯¸ì£¼ ëª¨ì–‘ ì •ë³´ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ¹ÌÁÖ ¸ğ¾ç Á¤º¸
+	 * @return ë¯¸ì£¼ ëª¨ì–‘ ì •ë³´
 	 */
 	public FootEndNoteShape getEndNoteShape() {
 		return endNoteShape;
 	}
 
 	/**
-	 * ÂÊ Å×µÎ¸®/¹è°æ Á¤º¸(¾ç ÂÊ)¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ìª½ í…Œë‘ë¦¬/ë°°ê²½ ì •ë³´(ì–‘ ìª½)ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ÂÊ Å×µÎ¸®/¹è°æ Á¤º¸(¾ç ÂÊ)
+	 * @return ìª½ í…Œë‘ë¦¬/ë°°ê²½ ì •ë³´(ì–‘ ìª½)
 	 */
 	public PageBorderFill getBothPageBorderFill() {
 		return bothPageBorderFill;
 	}
 
 	/**
-	 * ÂÊ Å×µÎ¸®/¹è°æ Á¤º¸(Â¦¼ö ÂÊ)¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ìª½ í…Œë‘ë¦¬/ë°°ê²½ ì •ë³´(ì§ìˆ˜ ìª½)ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ÂÊ Å×µÎ¸®/¹è°æ Á¤º¸(Â¦¼ö ÂÊ)
+	 * @return ìª½ í…Œë‘ë¦¬/ë°°ê²½ ì •ë³´(ì§ìˆ˜ ìª½)
 	 */
 	public PageBorderFill getEvenPageBorderFill() {
 		return evenPageBorderFill;
 	}
 
 	/**
-	 * ÂÊ Å×µÎ¸®/¹è°æ Á¤º¸(È¦¼ö ÂÊ)¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ìª½ í…Œë‘ë¦¬/ë°°ê²½ ì •ë³´(í™€ìˆ˜ ìª½)ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ÂÊ Å×µÎ¸®/¹è°æ Á¤º¸(È¦¼ö ÂÊ)
+	 * @return ìª½ í…Œë‘ë¦¬/ë°°ê²½ ì •ë³´(í™€ìˆ˜ ìª½)
 	 */
 	public PageBorderFill getOddPageBorderFill() {
 		return oddPageBorderFill;
 	}
 
 	/**
-	 * »õ·Î¿î ¹ÙÅÁ ÂÊ Á¤º¸ °´Ã¼¸¦ »ı¼ºÇÏ°í ¸®½ºÆ®¿¡ Ãß°¡ÇÑ´Ù.
+	 * ìƒˆë¡œìš´ ë°”íƒ• ìª½ ì •ë³´ ê°ì²´ë¥¼ ìƒì„±í•˜ê³  ë¦¬ìŠ¤íŠ¸ì— ì¶”ê°€í•œë‹¤.
 	 * 
-	 * @return »õ·Î »ı¼ºµÈ ¹ÙÅÁ ÂÊ Á¤º¸ °´Ã¼
+	 * @return ìƒˆë¡œ ìƒì„±ëœ ë°”íƒ• ìª½ ì •ë³´ ê°ì²´
 	 */
 	public BatangPageInfo addNewBatangPageInfo() {
 		BatangPageInfo bpi = new BatangPageInfo();
@@ -133,9 +133,9 @@ public class ControlSectionDefine extends Control {
 	}
 
 	/**
-	 * ¹ÙÅÁÂÊ Á¤º¸ ¸®½ºÆ®¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ë°”íƒ•ìª½ ì •ë³´ ë¦¬ìŠ¤íŠ¸ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ¹ÙÅÁÂÊ Á¤º¸ ¸®½ºÆ®
+	 * @return ë°”íƒ•ìª½ ì •ë³´ ë¦¬ìŠ¤íŠ¸
 	 */
 	public ArrayList<BatangPageInfo> getBatangPageInfoList() {
 		return batangPageInfoList;

@@ -1,11 +1,11 @@
-package kr.dogfoot.hwplib.object.bodytext.control.ctrlheader;
+ï»¿package kr.dogfoot.hwplib.object.bodytext.control.ctrlheader;
 
 import kr.dogfoot.hwplib.object.bodytext.control.ControlType;
 import kr.dogfoot.hwplib.object.bodytext.control.ctrlheader.additionaltext.AdditionalTextPosition;
 import kr.dogfoot.hwplib.object.docinfo.parashape.Alignment;
 
 /**
- * µ¡¸» ÄÁÆ®·ÑÀ» À§ÇÑ ÄÁÆ®·Ñ Çì´õ ·¹ÄÚµå
+ * ë§ë§ ì»¨íŠ¸ë¡¤ì„ ìœ„í•œ ì»¨íŠ¸ë¡¤ í—¤ë” ë ˆì½”ë“œ
  * 
  * @author neolord
  */
@@ -19,15 +19,15 @@ public class CtrlHeaderAdditionalText extends CtrlHeader {
 	 */
 	private String subText;
 	/**
-	 * µ¡¸» À§Ä¡
+	 * ë§ë§ ìœ„ì¹˜
 	 */
 	private AdditionalTextPosition position;
 	/**
-	 * ÆùÆ® Å©±â ºñÀ²(??)
+	 * í°íŠ¸ í¬ê¸° ë¹„ìœ¨(??)
 	 */
 	private long fsizeratio;
 	/**
-	 * ¿É¼Ç(??)
+	 * ì˜µì…˜(??)
 	 */
 	private long option;
 	/**
@@ -35,19 +35,19 @@ public class CtrlHeaderAdditionalText extends CtrlHeader {
 	 */
 	private long styleId;
 	/**
-	 * Á¤·É ±âÁØ
+	 * ì •ë ¹ ê¸°ì¤€
 	 */
 	private Alignment alignment;
 
 	/**
-	 * »ı¼ºÀÚ
+	 * ìƒì„±ì
 	 */
 	public CtrlHeaderAdditionalText() {
 		super(ControlType.AdditionalText.getCtrlId());
 	}
 
 	/**
-	 * main text¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * main textë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
 	 * @return main text
 	 */
@@ -56,7 +56,7 @@ public class CtrlHeaderAdditionalText extends CtrlHeader {
 	}
 
 	/**
-	 * main text¸¦ ¼³Á¤ÇÑ´Ù.
+	 * main textë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param mainText
 	 *            main text
@@ -66,7 +66,7 @@ public class CtrlHeaderAdditionalText extends CtrlHeader {
 	}
 
 	/**
-	 * sub text¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * sub textë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
 	 * @return sub text
 	 */
@@ -75,7 +75,7 @@ public class CtrlHeaderAdditionalText extends CtrlHeader {
 	}
 
 	/**
-	 * sub text¸¦ ¼³Á¤ÇÑ´Ù.
+	 * sub textë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param subText
 	 *            sub text
@@ -85,54 +85,54 @@ public class CtrlHeaderAdditionalText extends CtrlHeader {
 	}
 
 	/**
-	 * µ¡¸» À§Ä¡ À» ¹İÈ¯ÇÑ´Ù.
+	 * ë§ë§ ìœ„ì¹˜ ì„ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return µ¡¸» À§Ä¡
+	 * @return ë§ë§ ìœ„ì¹˜
 	 */
 	public AdditionalTextPosition getPosition() {
 		return position;
 	}
 
 	/**
-	 * µ¡¸» À§Ä¡ ¸¦ ¼³Á¤ÇÑ´Ù.
+	 * ë§ë§ ìœ„ì¹˜ ë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param position
-	 *            µ¡¸» À§Ä¡
+	 *            ë§ë§ ìœ„ì¹˜
 	 */
 	public void setPosition(AdditionalTextPosition position) {
 		this.position = position;
 	}
 
 	/**
-	 * ÆùÆ® Å©±â ºñÀ²(??)À» ¹İÈ¯ÇÑ´Ù.
+	 * í°íŠ¸ í¬ê¸° ë¹„ìœ¨(??)ì„ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ÆùÆ® Å©±â ºñÀ²(??)
+	 * @return í°íŠ¸ í¬ê¸° ë¹„ìœ¨(??)
 	 */
 	public long getFsizeratio() {
 		return fsizeratio;
 	}
 
 	/**
-	 * ÆùÆ® Å©±â ºñÀ²(??)À» ¼³Á¤ÇÑ´Ù.
+	 * í°íŠ¸ í¬ê¸° ë¹„ìœ¨(??)ì„ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param fsizeratio
-	 *            ÆùÆ® Å©±â ºñÀ²(??)
+	 *            í°íŠ¸ í¬ê¸° ë¹„ìœ¨(??)
 	 */
 	public void setFsizeratio(long fsizeratio) {
 		this.fsizeratio = fsizeratio;
 	}
 
 	/**
-	 * ¿É¼Ç(??)À» ¹İÈ¯ÇÑ´Ù.
+	 * ì˜µì…˜(??)ì„ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ¿É¼Ç(??)
+	 * @return ì˜µì…˜(??)
 	 */
 	public long getOption() {
 		return option;
 	}
 
 	/**
-	 * ¿É¼Ç(??)À» ¼³Á¤ÇÑ´Ù.
+	 * ì˜µì…˜(??)ì„ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param option
 	 */
@@ -141,7 +141,7 @@ public class CtrlHeaderAdditionalText extends CtrlHeader {
 	}
 
 	/**
-	 * Style Number¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * Style Numberë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
 	 * @return Style Number
 	 */
@@ -150,7 +150,7 @@ public class CtrlHeaderAdditionalText extends CtrlHeader {
 	}
 
 	/**
-	 * Style Number¸¦ ¼³Á¤ÇÑ´Ù.
+	 * Style Numberë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param styleId
 	 *            Style Number
@@ -160,19 +160,19 @@ public class CtrlHeaderAdditionalText extends CtrlHeader {
 	}
 
 	/**
-	 * Á¤·É ±âÁØÀ» ¹İÈ¯ÇÑ´Ù.
+	 * ì •ë ¹ ê¸°ì¤€ì„ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return Á¤·É ±âÁØ
+	 * @return ì •ë ¹ ê¸°ì¤€
 	 */
 	public Alignment getAlignment() {
 		return alignment;
 	}
 
 	/**
-	 * Á¤·É ±âÁØÀ» ¼³Á¤ÇÑ´Ù.
+	 * ì •ë ¹ ê¸°ì¤€ì„ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param alignment
-	 *            Á¤·É ±âÁØ
+	 *            ì •ë ¹ ê¸°ì¤€
 	 */
 	public void setAlignment(Alignment alignment) {
 		this.alignment = alignment;

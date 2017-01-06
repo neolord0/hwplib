@@ -1,4 +1,4 @@
-package kr.dogfoot.hwplib.reader.bodytext.paragraph.control.secd;
+ï»¿package kr.dogfoot.hwplib.reader.bodytext.paragraph.control.secd;
 
 import java.io.IOException;
 
@@ -8,18 +8,18 @@ import kr.dogfoot.hwplib.object.docinfo.borderfill.BorderType;
 import kr.dogfoot.hwplib.util.compoundFile.StreamReader;
 
 /**
- * °¢ÁÖ/¹ÌÁÖ ¸ğ¾ç ·¹ÄÚµå¸¦ ÀĞ±â À§ÇÑ °´Ã¼
+ * ê°ì£¼/ë¯¸ì£¼ ëª¨ì–‘ ë ˆì½”ë“œë¥¼ ì½ê¸° ìœ„í•œ ê°ì²´
  * 
  * @author neolord
  */
 public class ForFootEndNoteShape {
 	/**
-	 * °¢ÁÖ/¹ÌÁÖ ¸ğ¾ç ·¹ÄÚµå¸¦ ÀĞ´Â´Ù.
+	 * ê°ì£¼/ë¯¸ì£¼ ëª¨ì–‘ ë ˆì½”ë“œë¥¼ ì½ëŠ”ë‹¤.
 	 * 
 	 * @param fens
-	 *            °¢ÁÖ/¹ÌÁÖ ¸ğ¾ç ·¹ÄÚµå
+	 *            ê°ì£¼/ë¯¸ì£¼ ëª¨ì–‘ ë ˆì½”ë“œ
 	 * @param sr
-	 *            ½ºÆ®¸² ¸®´õ
+	 *            ìŠ¤íŠ¸ë¦¼ ë¦¬ë”
 	 * @throws IOException
 	 */
 	public static void read(FootEndNoteShape fens, StreamReader sr)

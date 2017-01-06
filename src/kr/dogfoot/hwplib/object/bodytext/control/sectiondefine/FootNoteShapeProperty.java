@@ -1,76 +1,76 @@
-package kr.dogfoot.hwplib.object.bodytext.control.sectiondefine;
+ï»¿package kr.dogfoot.hwplib.object.bodytext.control.sectiondefine;
 
 import kr.dogfoot.hwplib.util.binary.BitFlag;
 
 /**
- * °¢ÁÖ ¸ğ¾ç¿¡ ´ëÇÑ ¼Ó¼ºÀ» ³ªÅ¸³»´Â °´Ã¼
+ * ê°ì£¼ ëª¨ì–‘ì— ëŒ€í•œ ì†ì„±ì„ ë‚˜íƒ€ë‚´ëŠ” ê°ì²´
  * 
  * @author neolord
  */
 public class FootNoteShapeProperty {
 	/**
-	 * ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª(unsigned 4 byte)
+	 * íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’(unsigned 4 byte)
 	 */
 	private long value;
 
 	/**
-	 * »ı¼ºÀÚ
+	 * ìƒì„±ì
 	 */
 	public FootNoteShapeProperty() {
 	}
 
 	/**
-	 * ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ªÀ» ¹İÈ¯ÇÑ´Ù.
+	 * íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’ì„ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª
+	 * @return íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’
 	 */
 	public long getValue() {
 		return value;
 	}
 
 	/**
-	 * ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ªÀ» ¼³Á¤ÇÑ´Ù.
+	 * íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’ì„ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param value
-	 *            ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª
+	 *            íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’
 	 */
 	public void setValue(long value) {
 		this.value = value;
 	}
 
 	/**
-	 * ¹øÈ£ ¸ğ¾çÀ» ¹İÈ¯ÇÑ´Ù. (0~7 bit) (0~16 Àº ¹ü¿ë. 0x80, 0x81Àº °¢ÁÖ/¹ÌÁÖ Àü¿ë)
+	 * ë²ˆí˜¸ ëª¨ì–‘ì„ ë°˜í™˜í•œë‹¤. (0~7 bit) (0~16 ì€ ë²”ìš©. 0x80, 0x81ì€ ê°ì£¼/ë¯¸ì£¼ ì „ìš©)
 	 * 
-	 * @return ¹øÈ£ ¸ğ¾ç
+	 * @return ë²ˆí˜¸ ëª¨ì–‘
 	 */
 	public NumberShape getNumberShape() {
 		return NumberShape.valueOf((short) BitFlag.get(value, 0, 7));
 	}
 
 	/**
-	 * ¹øÈ£ ¸ğ¾çÀ» ¼³Á¤ÇÑ´Ù. (0~7 bit) (0~16 Àº ¹ü¿ë. 0x80, 0x81Àº °¢ÁÖ/¹ÌÁÖ Àü¿ë)
+	 * ë²ˆí˜¸ ëª¨ì–‘ì„ ì„¤ì •í•œë‹¤. (0~7 bit) (0~16 ì€ ë²”ìš©. 0x80, 0x81ì€ ê°ì£¼/ë¯¸ì£¼ ì „ìš©)
 	 * 
 	 * @param numberShape
-	 *            ¹øÈ£ ¸ğ¾ç
+	 *            ë²ˆí˜¸ ëª¨ì–‘
 	 */
 	public void setNumberShape(NumberShape numberShape) {
 		value = BitFlag.set(value, 0, 7, numberShape.getValue());
 	}
 
 	/**
-	 * ÇÑ ÆäÀÌÁö ³»¿¡¼­ °¢ÁÖ¸¦ ´Ù´Ü¿¡ À§Ä¡½ÃÅ³ ¹æ¹ıÀ» ¹İÈ¯ÇÑ´Ù.(°¢ÁÖ ÀÏ °æ¿ì) (8~9 bit)
+	 * í•œ í˜ì´ì§€ ë‚´ì—ì„œ ê°ì£¼ë¥¼ ë‹¤ë‹¨ì— ìœ„ì¹˜ì‹œí‚¬ ë°©ë²•ì„ ë°˜í™˜í•œë‹¤.(ê°ì£¼ ì¼ ê²½ìš°) (8~9 bit)
 	 * 
-	 * @return ÇÑ ÆäÀÌÁö ³»¿¡¼­ °¢ÁÖ¸¦ ´Ù´Ü¿¡ À§Ä¡½ÃÅ³ ¹æ¹ı
+	 * @return í•œ í˜ì´ì§€ ë‚´ì—ì„œ ê°ì£¼ë¥¼ ë‹¤ë‹¨ì— ìœ„ì¹˜ì‹œí‚¬ ë°©ë²•
 	 */
 	public FootNoteDisplayMethod getFootNoteDisplayMethod() {
 		return FootNoteDisplayMethod.valueOf((byte) BitFlag.get(value, 8, 9));
 	}
 
 	/**
-	 * ÇÑ ÆäÀÌÁö ³»¿¡¼­ °¢ÁÖ¸¦ ´Ù´Ü¿¡ À§Ä¡½ÃÅ³ ¹æ¹ı¸¦ ¼³Á¤ÇÑ´Ù. (°¢ÁÖ ÀÏ °æ¿ì) (8~9 bit)
+	 * í•œ í˜ì´ì§€ ë‚´ì—ì„œ ê°ì£¼ë¥¼ ë‹¤ë‹¨ì— ìœ„ì¹˜ì‹œí‚¬ ë°©ë²•ë¥¼ ì„¤ì •í•œë‹¤. (ê°ì£¼ ì¼ ê²½ìš°) (8~9 bit)
 	 * 
 	 * @param footNoteDisplayMethod
-	 *            ÇÑ ÆäÀÌÁö ³»¿¡¼­ °¢ÁÖ¸¦ ´Ù´Ü¿¡ À§Ä¡½ÃÅ³ ¹æ¹ı
+	 *            í•œ í˜ì´ì§€ ë‚´ì—ì„œ ê°ì£¼ë¥¼ ë‹¤ë‹¨ì— ìœ„ì¹˜ì‹œí‚¬ ë°©ë²•
 	 */
 	public void setFootNoteDisplayMethod(
 			FootNoteDisplayMethod footNoteDisplayMethod) {
@@ -78,19 +78,19 @@ public class FootNoteShapeProperty {
 	}
 
 	/**
-	 * ¹ÌÁÖ¸¦ À§Ä¡½ÃÅ³ ¹æ¹ıÀ» ¹İÈ¯ÇÑ´Ù.(¹ÌÁÖ ÀÏ °æ¿ì) (8~9 bit)
+	 * ë¯¸ì£¼ë¥¼ ìœ„ì¹˜ì‹œí‚¬ ë°©ë²•ì„ ë°˜í™˜í•œë‹¤.(ë¯¸ì£¼ ì¼ ê²½ìš°) (8~9 bit)
 	 * 
-	 * @return ¹ÌÁÖ¸¦ À§Ä¡½ÃÅ³ ¹æ¹ı
+	 * @return ë¯¸ì£¼ë¥¼ ìœ„ì¹˜ì‹œí‚¬ ë°©ë²•
 	 */
 	public EndNoteDisplayMethod getEndNoteDisplayMethod() {
 		return EndNoteDisplayMethod.valueOf((byte) BitFlag.get(value, 8, 9));
 	}
 
 	/**
-	 * ¹ÌÁÖ¸¦ À§Ä¡½ÃÅ³ ¹æ¹ıÀ» ¼³Á¤ÇÑ´Ù.(¹ÌÁÖ ÀÏ °æ¿ì) (8~9 bit)
+	 * ë¯¸ì£¼ë¥¼ ìœ„ì¹˜ì‹œí‚¬ ë°©ë²•ì„ ì„¤ì •í•œë‹¤.(ë¯¸ì£¼ ì¼ ê²½ìš°) (8~9 bit)
 	 * 
 	 * @param endNoteDisplayMethod
-	 *            ¹ÌÁÖ¸¦ À§Ä¡½ÃÅ³ ¹æ¹ı
+	 *            ë¯¸ì£¼ë¥¼ ìœ„ì¹˜ì‹œí‚¬ ë°©ë²•
 	 */
 	public void setEndNoteDisplayMethod(
 			EndNoteDisplayMethod endNoteDisplayMethod) {
@@ -98,57 +98,57 @@ public class FootNoteShapeProperty {
 	}
 
 	/**
-	 * ¹øÈ£ ¸Å±è ¹æ¹ıÀ» ¹İÈ¯ÇÑ´Ù. (10~11 bit)
+	 * ë²ˆí˜¸ ë§¤ê¹€ ë°©ë²•ì„ ë°˜í™˜í•œë‹¤. (10~11 bit)
 	 * 
-	 * @return ¹øÈ£ ¸Å±è ¹æ¹ı
+	 * @return ë²ˆí˜¸ ë§¤ê¹€ ë°©ë²•
 	 */
 	public NumberingMethod getNumberingMethod() {
 		return NumberingMethod.valueOf((byte) BitFlag.get(value, 10, 11));
 	}
 
 	/**
-	 * ¹øÈ£ ¸Å±è ¹æ¹ıÀ» ¼³Á¤ÇÑ´Ù. (10~11 bit)
+	 * ë²ˆí˜¸ ë§¤ê¹€ ë°©ë²•ì„ ì„¤ì •í•œë‹¤. (10~11 bit)
 	 * 
 	 * @param numberingMethod
-	 *            ¹øÈ£ ¸Å±è ¹æ¹ı
+	 *            ë²ˆí˜¸ ë§¤ê¹€ ë°©ë²•
 	 */
 	public void setNumberingMethod(NumberingMethod numberingMethod) {
 		value = BitFlag.set(value, 10, 11, numberingMethod.getValue());
 	}
 
 	/**
-	 * °¢ÁÖ ³»¿ë Áß ¹øÈ£ ÄÚµåÀÇ ¸ğ¾çÀ» À§ Ã·ÀÚ Çü½ÄÀ¸·Î ÇÒÁö ¿©ºÎÀ» ¹İÈ¯ÇÑ´Ù. (12 bit)
+	 * ê°ì£¼ ë‚´ìš© ì¤‘ ë²ˆí˜¸ ì½”ë“œì˜ ëª¨ì–‘ì„ ìœ„ ì²¨ì í˜•ì‹ìœ¼ë¡œ í• ì§€ ì—¬ë¶€ì„ ë°˜í™˜í•œë‹¤. (12 bit)
 	 * 
-	 * @return °¢ÁÖ ³»¿ë Áß ¹øÈ£ ÄÚµåÀÇ ¸ğ¾çÀ» À§ Ã·ÀÚ Çü½ÄÀ¸·Î ÇÒÁö ¿©ºÎ
+	 * @return ê°ì£¼ ë‚´ìš© ì¤‘ ë²ˆí˜¸ ì½”ë“œì˜ ëª¨ì–‘ì„ ìœ„ ì²¨ì í˜•ì‹ìœ¼ë¡œ í• ì§€ ì—¬ë¶€
 	 */
 	public boolean isDisplayWithSupscript() {
 		return BitFlag.get(value, 12);
 	}
 
 	/**
-	 * °¢ÁÖ ³»¿ë Áß ¹øÈ£ ÄÚµåÀÇ ¸ğ¾çÀ» À§ Ã·ÀÚ Çü½ÄÀ¸·Î ÇÒÁö ¿©ºÎ¸¦ ¼³Á¤ÇÑ´Ù. (12 bit)
+	 * ê°ì£¼ ë‚´ìš© ì¤‘ ë²ˆí˜¸ ì½”ë“œì˜ ëª¨ì–‘ì„ ìœ„ ì²¨ì í˜•ì‹ìœ¼ë¡œ í• ì§€ ì—¬ë¶€ë¥¼ ì„¤ì •í•œë‹¤. (12 bit)
 	 * 
 	 * @param displayWithSupscript
-	 *            °¢ÁÖ ³»¿ë Áß ¹øÈ£ ÄÚµåÀÇ ¸ğ¾çÀ» À§ Ã·ÀÚ Çü½ÄÀ¸·Î ÇÒÁö ¿©ºÎ
+	 *            ê°ì£¼ ë‚´ìš© ì¤‘ ë²ˆí˜¸ ì½”ë“œì˜ ëª¨ì–‘ì„ ìœ„ ì²¨ì í˜•ì‹ìœ¼ë¡œ í• ì§€ ì—¬ë¶€
 	 */
 	public void setDisplayWithSupscript(boolean displayWithSupscript) {
 		value = BitFlag.set(value, 12, displayWithSupscript);
 	}
 
 	/**
-	 * ÅØ½ºÆ®¿¡ ÀÌ¾î ¹Ù·Î Ãâ·ÂÇÒÁö ¿©ºÎ¸¦ ¹İÈ¯ÇÑ´Ù. (13 bit)
+	 * í…ìŠ¤íŠ¸ì— ì´ì–´ ë°”ë¡œ ì¶œë ¥í• ì§€ ì—¬ë¶€ë¥¼ ë°˜í™˜í•œë‹¤. (13 bit)
 	 * 
-	 * @return ÅØ½ºÆ®¿¡ ÀÌ¾î ¹Ù·Î Ãâ·ÂÇÒÁö ¿©ºÎ
+	 * @return í…ìŠ¤íŠ¸ì— ì´ì–´ ë°”ë¡œ ì¶œë ¥í• ì§€ ì—¬ë¶€
 	 */
 	public boolean isContinueFromText() {
 		return BitFlag.get(value, 13);
 	}
 
 	/**
-	 * ÅØ½ºÆ®¿¡ ÀÌ¾î ¹Ù·Î Ãâ·ÂÇÒÁö ¿©ºÎ¸¦ ¼³Á¤ÇÑ´Ù. (13 bit)
+	 * í…ìŠ¤íŠ¸ì— ì´ì–´ ë°”ë¡œ ì¶œë ¥í• ì§€ ì—¬ë¶€ë¥¼ ì„¤ì •í•œë‹¤. (13 bit)
 	 * 
 	 * @param continueFromText
-	 *            ÅØ½ºÆ®¿¡ ÀÌ¾î ¹Ù·Î Ãâ·ÂÇÒÁö ¿©ºÎ
+	 *            í…ìŠ¤íŠ¸ì— ì´ì–´ ë°”ë¡œ ì¶œë ¥í• ì§€ ì—¬ë¶€
 	 */
 	public void setContinueFromText(boolean continueFromText) {
 		value = BitFlag.set(value, 13, continueFromText);

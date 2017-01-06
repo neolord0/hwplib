@@ -1,4 +1,4 @@
-package kr.dogfoot.hwplib.reader;
+ï»¿package kr.dogfoot.hwplib.reader;
 
 import java.io.IOException;
 
@@ -6,18 +6,18 @@ import kr.dogfoot.hwplib.object.etc.UnknownRecord;
 import kr.dogfoot.hwplib.util.compoundFile.StreamReader;
 
 /**
- * ¾Ë¼ö ¾ø´Â ·¹ÄÚµå¸¦ ÀĞ±â À§ÇÑ °´Ã¼
+ * ì•Œìˆ˜ ì—†ëŠ” ë ˆì½”ë“œë¥¼ ì½ê¸° ìœ„í•œ ê°ì²´
  * 
- * @author ¹Ú¼º±Õ
+ * @author ë°•ì„±ê· 
  */
 public class ForUnknown {
 	/**
-	 * ¾Ë¼ö ¾ø´Â ·¹ÄÚµå¸¦ ÀĞ´Â´Ù.
+	 * ì•Œìˆ˜ ì—†ëŠ” ë ˆì½”ë“œë¥¼ ì½ëŠ”ë‹¤.
 	 * 
 	 * @param unknown
-	 *            ¾Ë ¼ö ¾ø´Â ·¹ÄÚµå
+	 *            ì•Œ ìˆ˜ ì—†ëŠ” ë ˆì½”ë“œ
 	 * @param sr
-	 *            ½ºÆ®¸² ¸®´õ
+	 *            ìŠ¤íŠ¸ë¦¼ ë¦¬ë”
 	 * @throws IOException
 	 */
 	public static void read(UnknownRecord unknown, StreamReader sr)

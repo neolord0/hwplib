@@ -1,36 +1,36 @@
-package kr.dogfoot.hwplib.object.bodytext.control.gso;
+ï»¿package kr.dogfoot.hwplib.object.bodytext.control.gso;
 
 import kr.dogfoot.hwplib.object.bodytext.control.ctrlheader.CtrlHeaderGso;
 import kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponenteach.ShapeComponentPolygon;
 import kr.dogfoot.hwplib.object.bodytext.control.gso.textbox.TextBox;
 
 /**
- * ´Ù°¢Çü °³Ã¼ ÄÁÆ®·Ñ
+ * ë‹¤ê°í˜• ê°œì²´ ì»¨íŠ¸ë¡¤
  * 
  * @author neolord
  */
 public class ControlPolygon extends GsoControl {
 	/**
-	 * ±Û»óÀÚ
+	 * ê¸€ìƒì
 	 */
 	private TextBox textBox;
 	/**
-	 * ´Ù°¢Çü °³Ã¼ ¼Ó¼º
+	 * ë‹¤ê°í˜• ê°œì²´ ì†ì„±
 	 */
 	private ShapeComponentPolygon shapeComponentPolygon;
 
 	/**
-	 * »ı¼ºÀÚ
+	 * ìƒì„±ì
 	 */
 	public ControlPolygon() {
 		this(new CtrlHeaderGso());
 	}
 
 	/**
-	 * »ı¼ºÀÚ
+	 * ìƒì„±ì
 	 * 
 	 * @param header
-	 *            ±×¸®±â °³Ã¼¸¦ À§ÇÑ ÄÁÆ®·Ñ Çì´õ
+	 *            ê·¸ë¦¬ê¸° ê°œì²´ë¥¼ ìœ„í•œ ì»¨íŠ¸ë¡¤ í—¤ë”
 	 */
 	public ControlPolygon(CtrlHeaderGso header) {
 		super(header);
@@ -41,32 +41,32 @@ public class ControlPolygon extends GsoControl {
 	}
 
 	/**
-	 * ±Û»óÀÚ °´Ã¼¸¦ »ı¼ºÇÑ´Ù.
+	 * ê¸€ìƒì ê°ì²´ë¥¼ ìƒì„±í•œë‹¤.
 	 */
 	public void createTextBox() {
 		textBox = new TextBox();
 	}
 
 	/**
-	 * ±Û»óÀÚ °´Ã¼¸¦ »èÁ¦ÇÑ´Ù.
+	 * ê¸€ìƒì ê°ì²´ë¥¼ ì‚­ì œí•œë‹¤.
 	 */
 	public void deleteTextBox() {
 		textBox = null;
 	}
 
 	/**
-	 * ±Û»óÀÚ °´Ã¼¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ê¸€ìƒì ê°ì²´ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ±Û»óÀÚ °´Ã¼
+	 * @return ê¸€ìƒì ê°ì²´
 	 */
 	public TextBox getTextBox() {
 		return textBox;
 	}
 
 	/**
-	 * ´Ù°¢Çü °³Ã¼ÀÇ ¼Ó¼º °´Ã¼¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ë‹¤ê°í˜• ê°œì²´ì˜ ì†ì„± ê°ì²´ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ´Ù°¢Çü °³Ã¼ÀÇ ¼Ó¼º °´Ã¼
+	 * @return ë‹¤ê°í˜• ê°œì²´ì˜ ì†ì„± ê°ì²´
 	 */
 	public ShapeComponentPolygon getShapeComponentPolygon() {
 		return shapeComponentPolygon;

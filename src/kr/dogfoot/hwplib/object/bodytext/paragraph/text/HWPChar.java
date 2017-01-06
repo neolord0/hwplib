@@ -1,65 +1,65 @@
-package kr.dogfoot.hwplib.object.bodytext.paragraph.text;
+ï»¿package kr.dogfoot.hwplib.object.bodytext.paragraph.text;
 
 /**
- * ParaText¿¡ ÀúÀåµÇ´Â ±ÛÀÚ¸¦ ³ªÅ¸³»´Â Ãß»ó °´Ã¼
+ * ParaTextì— ì €ì¥ë˜ëŠ” ê¸€ìë¥¼ ë‚˜íƒ€ë‚´ëŠ” ì¶”ìƒ ê°ì²´
  * 
  * @author neolord
  * 
  */
 public abstract class HWPChar {
 	/**
-	 * ±ÛÀÚÀÇ Á¾·ùÀ» ¹İÈ¯ÇÑ´Ù.
+	 * ê¸€ìì˜ ì¢…ë¥˜ì„ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ±ÛÀÚÀÇ Å¸ÀÔ
+	 * @return ê¸€ìì˜ íƒ€ì…
 	 */
 	public abstract HWPCharType getType();
 
 	/**
-	 * code¿¡ ÇØ´çµÇ´Â ±ÛÀÚÀÇ Á¾·ù¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * codeì— í•´ë‹¹ë˜ëŠ” ê¸€ìì˜ ì¢…ë¥˜ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
 	 * @param code
-	 *            utf16le ¹®ÀÚ¿­À» ±¸¼ºÇÏ´Â unsigned 2 byte ÇÑ ±ÛÀÚ
-	 * @return code¿¡ ÇØ´çµÇ´Â ±ÛÀÚÀÇ Á¾·ù
+	 *            utf16le ë¬¸ìì—´ì„ êµ¬ì„±í•˜ëŠ” unsigned 2 byte í•œ ê¸€ì
+	 * @return codeì— í•´ë‹¹ë˜ëŠ” ê¸€ìì˜ ì¢…ë¥˜
 	 */
 	public static HWPCharType type(int code) {
 		if (code > 31) {
 			return HWPCharType.Normal;
 		}
 		switch (code) {
-		case 1: // ¿¹¾à
-		case 2: // ±¸¿ª Á¤ÀÇ/´Ü Á¤ÀÇ
-		case 3: // ÇÊµå ½ÃÀÛ(´©¸§Æ², ÇÏÀÌÆÛ¸µÅ©, ºí·Ï Ã¥°¥ÇÇ, Ç¥ °è»ê½Ä ...)
-		case 11: // ±×¸®±â °³Ã¼/Ç¥
-		case 12: // ¿¹¾à
-		case 14: // ¿¹¾à
-		case 15: // ¼ûÀº ¼³¸í
-		case 16: // ¸Ó¸®¸»/²¿¸®¸»
-		case 17: // °¢ÁÖ/¹ÌÁÖ
-		case 18: // ÀÚµ¿¹øÈ£(°¢ÁÖ, Ç¥ µî)
-		case 21: // ÆäÀÌÁö ÄÁÆ®·Ñ(°¨Ãß±â, »õ ¹øÈ£·Î ½ÃÀÛ µî)
-		case 22: // Ã¥°¥ÇÇ/Ã£¾Æº¸±â Ç¥½Ä
-		case 23: // µ¡¸»/±ÛÀÚ °ãÄ§
+		case 1: // ì˜ˆì•½
+		case 2: // êµ¬ì—­ ì •ì˜/ë‹¨ ì •ì˜
+		case 3: // í•„ë“œ ì‹œì‘(ëˆ„ë¦„í‹€, í•˜ì´í¼ë§í¬, ë¸”ë¡ ì±…ê°ˆí”¼, í‘œ ê³„ì‚°ì‹ ...)
+		case 11: // ê·¸ë¦¬ê¸° ê°œì²´/í‘œ
+		case 12: // ì˜ˆì•½
+		case 14: // ì˜ˆì•½
+		case 15: // ìˆ¨ì€ ì„¤ëª…
+		case 16: // ë¨¸ë¦¬ë§/ê¼¬ë¦¬ë§
+		case 17: // ê°ì£¼/ë¯¸ì£¼
+		case 18: // ìë™ë²ˆí˜¸(ê°ì£¼, í‘œ ë“±)
+		case 21: // í˜ì´ì§€ ì»¨íŠ¸ë¡¤(ê°ì¶”ê¸°, ìƒˆ ë²ˆí˜¸ë¡œ ì‹œì‘ ë“±)
+		case 22: // ì±…ê°ˆí”¼/ì°¾ì•„ë³´ê¸° í‘œì‹
+		case 23: // ë§ë§/ê¸€ì ê²¹ì¹¨
 			return HWPCharType.ControlExtend;
-		case 4: // ÇÊµå ³¡
-		case 5: // ¿¹¾à
-		case 6: // ¿¹¾à
-		case 7: // ¿¹¾à
+		case 4: // í•„ë“œ ë
+		case 5: // ì˜ˆì•½
+		case 6: // ì˜ˆì•½
+		case 7: // ì˜ˆì•½
 		case 8: // title mark
-		case 9: // ÅÇ
-		case 19: // ¿¹¾à
-		case 20: // ¿¹¾à
+		case 9: // íƒ­
+		case 19: // ì˜ˆì•½
+		case 20: // ì˜ˆì•½
 			return HWPCharType.ControlInline;
 		case 0: // unusable
-		case 10: // ÇÑ ÁÙ ³¡(line break)
-		case 13: // ¹®´Ü ³¡(para break)
-		case 24: // ÇÏÀÌÇÂ
-		case 25: // ¿¹¾à
-		case 26: // ¿¹¾à
-		case 27: // ¿¹¾à
-		case 28: // ¿¹¾à
-		case 29: // ¿¹¾à
-		case 30: // ¹­À½ ºóÄ­
-		case 31: // °íÁ¤Æø ºóÄ­
+		case 10: // í•œ ì¤„ ë(line break)
+		case 13: // ë¬¸ë‹¨ ë(para break)
+		case 24: // í•˜ì´í”ˆ
+		case 25: // ì˜ˆì•½
+		case 26: // ì˜ˆì•½
+		case 27: // ì˜ˆì•½
+		case 28: // ì˜ˆì•½
+		case 29: // ì˜ˆì•½
+		case 30: // ë¬¶ìŒ ë¹ˆì¹¸
+		case 31: // ê³ ì •í­ ë¹ˆì¹¸
 			return HWPCharType.ControlChar;
 		}
 		return HWPCharType.Normal;

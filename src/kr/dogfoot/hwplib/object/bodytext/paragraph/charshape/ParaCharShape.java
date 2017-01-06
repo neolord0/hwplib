@@ -1,21 +1,21 @@
-package kr.dogfoot.hwplib.object.bodytext.paragraph.charshape;
+ï»¿package kr.dogfoot.hwplib.object.bodytext.paragraph.charshape;
 
 import java.util.ArrayList;
 
 /**
- * ¹®´ÜÀÇ ±ÛÀÚ ¸ğ¾ç¿¡ ´ëÇÑ ·¹ÄÚµå. ex) (À§Ä¡:0, ±ÛÀÚ¸ğ¾ç:1), (À§Ä¡:5, ±ÛÀÚ¸ğ¾ç:3), (À§Ä¡:9, ±ÛÀÚ¸ğ¾ç:2) ÀÌ·² °æ¿ì,
- * 1¹ø ±ÛÀÚ¸ğ¾çÀ¸·Î ½ÃÀÛÇØ¼­, 5¹øÂ° ±ÛÀÚºÎÅÍ 3¹øÀ¸·Î ±ÛÀÚ¸ğ¾çÀ¸·Î Àû¿ëµÇ´Ù°¡, 9¹øÂ° ±ÛÀÚ ºÎÅÍ ³¡±îÁö 2¹ø ±ÛÀÚ¸ğ¾çÀ¸·Î Àû¿ëµÈ´Ù.
+ * ë¬¸ë‹¨ì˜ ê¸€ì ëª¨ì–‘ì— ëŒ€í•œ ë ˆì½”ë“œ. ex) (ìœ„ì¹˜:0, ê¸€ìëª¨ì–‘:1), (ìœ„ì¹˜:5, ê¸€ìëª¨ì–‘:3), (ìœ„ì¹˜:9, ê¸€ìëª¨ì–‘:2) ì´ëŸ´ ê²½ìš°,
+ * 1ë²ˆ ê¸€ìëª¨ì–‘ìœ¼ë¡œ ì‹œì‘í•´ì„œ, 5ë²ˆì§¸ ê¸€ìë¶€í„° 3ë²ˆìœ¼ë¡œ ê¸€ìëª¨ì–‘ìœ¼ë¡œ ì ìš©ë˜ë‹¤ê°€, 9ë²ˆì§¸ ê¸€ì ë¶€í„° ëê¹Œì§€ 2ë²ˆ ê¸€ìëª¨ì–‘ìœ¼ë¡œ ì ìš©ëœë‹¤.
  * 
  * @author neolord
  */
 public class ParaCharShape {
 	/**
-	 * À§Ä¡¿Í ±ÛÀÚ ¸ğ¾çÀÇ ½Ö¿¡ ´ëÇÑ ¸®½ºÆ®
+	 * ìœ„ì¹˜ì™€ ê¸€ì ëª¨ì–‘ì˜ ìŒì— ëŒ€í•œ ë¦¬ìŠ¤íŠ¸
 	 */
 	private ArrayList<CharPositonShapeIdPair> positionShapeIdPairList;
 
 	/**
-	 * »ı¼ºÀÚ
+	 * ìƒì„±ì
 	 */
 	public ParaCharShape() {
 		positionShapeIdPairList = new ArrayList<CharPositonShapeIdPair>();
@@ -23,12 +23,12 @@ public class ParaCharShape {
 
 	/**
 	 * 
-	 * position À§Ä¡¿Í charShapeId ±ÛÀÚ ¸ğ¾çÀÇ ½Ö¿¡ ´ëÇÑ °´Ã¼¸¦ »ı¼ºÇÏ°í ¸®½ºÆ®¿¡ Ãß°¡ÇÑ´Ù.
+	 * position ìœ„ì¹˜ì™€ charShapeId ê¸€ì ëª¨ì–‘ì˜ ìŒì— ëŒ€í•œ ê°ì²´ë¥¼ ìƒì„±í•˜ê³  ë¦¬ìŠ¤íŠ¸ì— ì¶”ê°€í•œë‹¤.
 	 * 
 	 * @param position
-	 *            ±ÛÀÚ¸ğ¾çÀÌ charShapeId·Î ¹Ù²ãÁö´Â ±ÛÀÚÀÇ À§Ä¡
+	 *            ê¸€ìëª¨ì–‘ì´ charShapeIdë¡œ ë°”ê¿”ì§€ëŠ” ê¸€ìì˜ ìœ„ì¹˜
 	 * @param charShapeId
-	 *            ÂüÁ¶µÈ ±ÛÀÚ¸ğ¾ç id
+	 *            ì°¸ì¡°ëœ ê¸€ìëª¨ì–‘ id
 	 */
 	public void addParaCharShape(long position, long charShapeId) {
 		CharPositonShapeIdPair cpsp = new CharPositonShapeIdPair(position,
@@ -37,9 +37,9 @@ public class ParaCharShape {
 	}
 
 	/**
-	 * À§Ä¡¿Í ±ÛÀÚ ¸ğ¾çÀÇ ½Ö¿¡ ´ëÇÑ ¸®½ºÆ®¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ìœ„ì¹˜ì™€ ê¸€ì ëª¨ì–‘ì˜ ìŒì— ëŒ€í•œ ë¦¬ìŠ¤íŠ¸ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return À§Ä¡¿Í ±ÛÀÚ ¸ğ¾çÀÇ ½Ö¿¡ ´ëÇÑ ¸®½ºÆ®
+	 * @return ìœ„ì¹˜ì™€ ê¸€ì ëª¨ì–‘ì˜ ìŒì— ëŒ€í•œ ë¦¬ìŠ¤íŠ¸
 	 */
 	public ArrayList<CharPositonShapeIdPair> getPositonShapeIdPairList() {
 		return positionShapeIdPairList;

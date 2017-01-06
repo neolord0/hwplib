@@ -1,57 +1,57 @@
-package kr.dogfoot.hwplib.object.docinfo.style;
+ï»¿package kr.dogfoot.hwplib.object.docinfo.style;
 
 import kr.dogfoot.hwplib.util.binary.BitFlag;
 
 /**
- * ½ºÅ¸ÀÏÀÇ ¼Ó¼º °´Ã¼
+ * ìŠ¤íƒ€ì¼ì˜ ì†ì„± ê°ì²´
  * 
  * @author neolord
  */
 public class StyleProperty {
 	/**
-	 * ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª(unsigned 1 byte)
+	 * íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’(unsigned 1 byte)
 	 */
 	private short value;
 
 	/**
-	 * »ı¼ºÀÚ
+	 * ìƒì„±ì
 	 */
 	public StyleProperty() {
 	}
 
 	/**
-	 * ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ªÀ» ¹İÈ¯ÇÑ´Ù.
+	 * íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’ì„ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª
+	 * @return íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’
 	 */
 	public short getValue() {
 		return value;
 	}
 
 	/**
-	 * ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ªÀ» ¼³Á¤ÇÑ´Ù.
+	 * íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’ì„ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param value
-	 *            ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª
+	 *            íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’
 	 */
 	public void setValue(short value) {
 		this.value = value;
 	}
 
 	/**
-	 * ½ºÅ¸ÀÏ Á¾·ù¸¦ ¹İÈ¯ÇÑ´Ù. (0~2 bit)
+	 * ìŠ¤íƒ€ì¼ ì¢…ë¥˜ë¥¼ ë°˜í™˜í•œë‹¤. (0~2 bit)
 	 * 
-	 * @return ½ºÅ¸ÀÏ Á¾·ù
+	 * @return ìŠ¤íƒ€ì¼ ì¢…ë¥˜
 	 */
 	public StyleSort getStyleSort() {
 		return StyleSort.valueOf((byte) BitFlag.get(value, 0, 2));
 	}
 
 	/**
-	 * ½ºÅ¸ÀÏ Á¾·ù¸¦ ¼³Á¤ÇÑ´Ù. (0~2 bit)
+	 * ìŠ¤íƒ€ì¼ ì¢…ë¥˜ë¥¼ ì„¤ì •í•œë‹¤. (0~2 bit)
 	 * 
 	 * @param styleSort
-	 *            ½ºÅ¸ÀÏ Á¾·ù
+	 *            ìŠ¤íƒ€ì¼ ì¢…ë¥˜
 	 */
 	public void setStyleSort(StyleSort styleSort) {
 		value = BitFlag.set(value, 0, 2, styleSort.getValue());

@@ -1,23 +1,23 @@
-package kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponent.lineinfo;
+ï»¿package kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponent.lineinfo;
 
 import kr.dogfoot.hwplib.object.etc.Color4Byte;
 
 /**
- * Å×µÎ¸® ¼± Á¤º¸
+ * í…Œë‘ë¦¬ ì„  ì •ë³´
  * 
  * @author neolord
  */
 public class LineInfo {
 	/**
-	 * ¼± »ö»ó
+	 * ì„  ìƒ‰ìƒ
 	 */
 	private Color4Byte color;
 	/**
-	 * ¼± ±½±â
+	 * ì„  êµµê¸°
 	 */
 	private int thickness;
 	/**
-	 * ¼Ó¼º
+	 * ì†ì„±
 	 */
 	private LineInfoProperty property;
 	/**
@@ -26,7 +26,7 @@ public class LineInfo {
 	private OutlineStyle outlineStyle;
 
 	/**
-	 * »ı¼ºÀÚ
+	 * ìƒì„±ì
 	 */
 	public LineInfo() {
 		color = new Color4Byte();
@@ -34,44 +34,44 @@ public class LineInfo {
 	}
 
 	/**
-	 * ¼± »ö»ó °´Ã¼¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ì„  ìƒ‰ìƒ ê°ì²´ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ¼± »ö»ó °´Ã¼
+	 * @return ì„  ìƒ‰ìƒ ê°ì²´
 	 */
 	public Color4Byte getColor() {
 		return color;
 	}
 
 	/**
-	 * ¼± ±½±â¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ì„  êµµê¸°ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ¼± ±½±â
+	 * @return ì„  êµµê¸°
 	 */
 	public int getThickness() {
 		return thickness;
 	}
 
 	/**
-	 * ¼± ±½±â¸¦ ¼³Á¤ÇÑ´Ù.
+	 * ì„  êµµê¸°ë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param thickness
-	 *            ¼± ±½±â
+	 *            ì„  êµµê¸°
 	 */
 	public void setThickness(int thickness) {
 		this.thickness = thickness;
 	}
 
 	/**
-	 * ¼Ó¼º °´Ã¼¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ì†ì„± ê°ì²´ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ¼Ó¼º °´Ã¼
+	 * @return ì†ì„± ê°ì²´
 	 */
 	public LineInfoProperty getProperty() {
 		return property;
 	}
 
 	/**
-	 * outline style¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * outline styleë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
 	 * @return outline style
 	 */
@@ -80,7 +80,7 @@ public class LineInfo {
 	}
 
 	/**
-	 * outline style¸¦ ¼³Á¤ÇÑ´Ù.
+	 * outline styleë¥¼ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param outlineStyle
 	 *            outline style

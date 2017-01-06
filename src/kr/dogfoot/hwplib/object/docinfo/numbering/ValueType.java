@@ -1,50 +1,50 @@
-package kr.dogfoot.hwplib.object.docinfo.numbering;
+ï»¿package kr.dogfoot.hwplib.object.docinfo.numbering;
 
 /**
- * ¼öÁØº° º»¹®°úÀÇ °Å¸® Á¾·ù
+ * ìˆ˜ì¤€ë³„ ë³¸ë¬¸ê³¼ì˜ ê±°ë¦¬ ì¢…ë¥˜
  * 
  * @author neolord
  */
 public enum ValueType {
 	/**
-	 * ±ÛÀÚ Å©±â¿¡ ´ëÇÑ »ó´ë ºñÀ²
+	 * ê¸€ì í¬ê¸°ì— ëŒ€í•œ ìƒëŒ€ ë¹„ìœ¨
 	 */
 	RatioForLetter((byte) 0),
 	/**
-	 * °ª
+	 * ê°’
 	 */
 	Value((byte) 1);
 
 	/**
-	 * ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª
+	 * íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’
 	 */
 	private byte value;
 
 	/**
-	 * »ı¼ºÀÚ
+	 * ìƒì„±ì
 	 * 
 	 * @param value
-	 *            ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª
+	 *            íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’
 	 */
 	private ValueType(byte value) {
 		this.value = value;
 	}
 
 	/**
-	 * ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ªÀ» ¹İÈ¯ÇÑ´Ù.
+	 * íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’ì„ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª
+	 * @return íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’
 	 */
 	public byte getValue() {
 		return value;
 	}
 
 	/**
-	 * ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª¿¡ ÇØ´çµÇ´Â enum °ªÀ» ¹İÈ¯ÇÑ´Ù.
+	 * íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’ì— í•´ë‹¹ë˜ëŠ” enum ê°’ì„ ë°˜í™˜í•œë‹¤.
 	 * 
 	 * @param value
-	 *            ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª
-	 * @return enum °ª
+	 *            íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’
+	 * @return enum ê°’
 	 */
 	public static ValueType valueOf(byte value) {
 		for (ValueType vt : values()) {

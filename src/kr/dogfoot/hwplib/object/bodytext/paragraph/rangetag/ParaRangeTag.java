@@ -1,29 +1,29 @@
-package kr.dogfoot.hwplib.object.bodytext.paragraph.rangetag;
+ï»¿package kr.dogfoot.hwplib.object.bodytext.paragraph.rangetag;
 
 import java.util.ArrayList;
 
 /**
- * ¹®´ÜÀÇ ¿µ¿ª ÅÂ±×¿¡ ´ëÇÑ ·¹ÄÚµå
+ * ë¬¸ë‹¨ì˜ ì˜ì—­ íƒœê·¸ì— ëŒ€í•œ ë ˆì½”ë“œ
  * 
  * @author neolord
  */
 public class ParaRangeTag {
 	/**
-	 * ¿µ¿ª ÅÂ±× Á¤º¸¿¡ ´ëÇÑ °´Ã¼ÀÇ ¸®½ºÆ®
+	 * ì˜ì—­ íƒœê·¸ ì •ë³´ì— ëŒ€í•œ ê°ì²´ì˜ ë¦¬ìŠ¤íŠ¸
 	 */
 	private ArrayList<RangeTagItem> rangeTagItemList;
 
 	/**
-	 * »ı¼ºÀÚ
+	 * ìƒì„±ì
 	 */
 	public ParaRangeTag() {
 		rangeTagItemList = new ArrayList<RangeTagItem>();
 	}
 
 	/**
-	 * »õ·Î¿î ¿µ¿ª ÅÂ±× Á¤º¸ÀÇ °´Ã¼¸¦ »ı¼ºÇÏ°í ¸®½ºÆ®¿¡ Ãß°¡ÇÑ´Ù.
+	 * ìƒˆë¡œìš´ ì˜ì—­ íƒœê·¸ ì •ë³´ì˜ ê°ì²´ë¥¼ ìƒì„±í•˜ê³  ë¦¬ìŠ¤íŠ¸ì— ì¶”ê°€í•œë‹¤.
 	 * 
-	 * @return »õ·Î »ı¼ºµÈ ¿µ¿ª ÅÂ±× Á¤º¸¿¡ ´ëÇÑ °´Ã¼
+	 * @return ìƒˆë¡œ ìƒì„±ëœ ì˜ì—­ íƒœê·¸ ì •ë³´ì— ëŒ€í•œ ê°ì²´
 	 */
 	public RangeTagItem addNewRangeTagItem() {
 		RangeTagItem rt = new RangeTagItem();
@@ -32,9 +32,9 @@ public class ParaRangeTag {
 	}
 
 	/**
-	 * ¿µ¿ª ÅÂ±× Á¤º¸¿¡ ´ëÇÑ °´Ã¼ÀÇ ¸®½ºÆ®¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ì˜ì—­ íƒœê·¸ ì •ë³´ì— ëŒ€í•œ ê°ì²´ì˜ ë¦¬ìŠ¤íŠ¸ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ¿µ¿ª ÅÂ±× Á¤º¸¿¡ ´ëÇÑ °´Ã¼ÀÇ ¸®½ºÆ®
+	 * @return ì˜ì—­ íƒœê·¸ ì •ë³´ì— ëŒ€í•œ ê°ì²´ì˜ ë¦¬ìŠ¤íŠ¸
 	 */
 	public ArrayList<RangeTagItem> getRangeTagItemList() {
 		return rangeTagItemList;

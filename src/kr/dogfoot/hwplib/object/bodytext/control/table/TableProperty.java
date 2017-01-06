@@ -1,57 +1,57 @@
-package kr.dogfoot.hwplib.object.bodytext.control.table;
+ï»¿package kr.dogfoot.hwplib.object.bodytext.control.table;
 
 import kr.dogfoot.hwplib.util.binary.BitFlag;
 
 /**
- * Ç¥ÀÇ ¼Ó¼ºÀ» ³ªÅ¸³»´Â °´Ã¼
+ * í‘œì˜ ì†ì„±ì„ ë‚˜íƒ€ë‚´ëŠ” ê°ì²´
  * 
  * @author neolord
  */
 public class TableProperty {
 	/**
-	 * ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª(unsigned 4 byte)
+	 * íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’(unsigned 4 byte)
 	 */
 	private long value;
 
 	/**
-	 * »ı¼ºÀÚ
+	 * ìƒì„±ì
 	 */
 	public TableProperty() {
 	}
 
 	/**
-	 * ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ªÀ» ¹İÈ¯ÇÑ´Ù.
+	 * íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’ì„ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª
+	 * @return íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’
 	 */
 	public long getValue() {
 		return value;
 	}
 
 	/**
-	 * ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ªÀ» ¼³Á¤ÇÑ´Ù.
+	 * íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’ì„ ì„¤ì •í•œë‹¤.
 	 * 
 	 * @param value
-	 *            ÆÄÀÏ¿¡ ÀúÀåµÇ´Â Á¤¼ö°ª
+	 *            íŒŒì¼ì— ì €ì¥ë˜ëŠ” ì •ìˆ˜ê°’
 	 */
 	public void setValue(long value) {
 		this.value = value;
 	}
 
 	/**
-	 * ÂÊ °æ°è¿¡¼­ ³ª´® ¹æ¹ı¸¦ ¹İÈ¯ÇÑ´Ù. (0~1 bit)
+	 * ìª½ ê²½ê³„ì—ì„œ ë‚˜ëˆ” ë°©ë²•ë¥¼ ë°˜í™˜í•œë‹¤. (0~1 bit)
 	 * 
-	 * @return ÂÊ °æ°è¿¡¼­ ³ª´® ¹æ¹ı
+	 * @return ìª½ ê²½ê³„ì—ì„œ ë‚˜ëˆ” ë°©ë²•
 	 */
 	public DivideAtPageBoundary getDivideAtPageBoundary() {
 		return DivideAtPageBoundary.valueOf((byte) BitFlag.get(value, 0, 1));
 	}
 
 	/**
-	 * ÂÊ °æ°è¿¡¼­ ³ª´® ¹æ¹ıÀ» ¼³Á¤ÇÑ´Ù. (0~1 bit)
+	 * ìª½ ê²½ê³„ì—ì„œ ë‚˜ëˆ” ë°©ë²•ì„ ì„¤ì •í•œë‹¤. (0~1 bit)
 	 * 
 	 * @param divideAtPageBoundary
-	 *            ÂÊ °æ°è¿¡¼­ ³ª´® ¹æ¹ı
+	 *            ìª½ ê²½ê³„ì—ì„œ ë‚˜ëˆ” ë°©ë²•
 	 */
 	public void setDivideAtPageBoundary(
 			DivideAtPageBoundary divideAtPageBoundary) {
@@ -59,19 +59,19 @@ public class TableProperty {
 	}
 
 	/**
-	 * Á¦¸ñ ÁÙ ÀÚµ¿ ¹İº¹ ¿©ºÎÀ» ¹İÈ¯ÇÑ´Ù. (2 bit)
+	 * ì œëª© ì¤„ ìë™ ë°˜ë³µ ì—¬ë¶€ì„ ë°˜í™˜í•œë‹¤. (2 bit)
 	 * 
-	 * @return Á¦¸ñ ÁÙ ÀÚµ¿ ¹İº¹ ¿©ºÎ
+	 * @return ì œëª© ì¤„ ìë™ ë°˜ë³µ ì—¬ë¶€
 	 */
 	public boolean isAutoRepeatTitleRow() {
 		return BitFlag.get(value, 2);
 	}
 
 	/**
-	 * Á¦¸ñ ÁÙ ÀÚµ¿ ¹İº¹ ¿©ºÎ¸¦ ¼³Á¤ÇÑ´Ù. (2 bit)
+	 * ì œëª© ì¤„ ìë™ ë°˜ë³µ ì—¬ë¶€ë¥¼ ì„¤ì •í•œë‹¤. (2 bit)
 	 * 
 	 * @param autoRepeatTitleRow
-	 *            Á¦¸ñ ÁÙ ÀÚµ¿ ¹İº¹ ¿©ºÎ
+	 *            ì œëª© ì¤„ ìë™ ë°˜ë³µ ì—¬ë¶€
 	 */
 	public void setAutoRepeatTitleRow(boolean autoRepeatTitleRow) {
 		value = BitFlag.set(value, 2, autoRepeatTitleRow);

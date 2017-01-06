@@ -1,29 +1,29 @@
-package kr.dogfoot.hwplib.object.bodytext.control.table;
+ï»¿package kr.dogfoot.hwplib.object.bodytext.control.table;
 
 import java.util.ArrayList;
 
 /**
- * Ç¥ÀÇ ÇàÀ» ³ªÅ¸³»´Â °´Ã¼
+ * í‘œì˜ í–‰ì„ ë‚˜íƒ€ë‚´ëŠ” ê°ì²´
  * 
  * @author neolord
  */
 public class Row {
 	/**
-	 * ¼¿ ¸®½ºÆ®
+	 * ì…€ ë¦¬ìŠ¤íŠ¸
 	 */
 	private ArrayList<Cell> cellList;
 
 	/**
-	 * »ı¼ºÀÚ
+	 * ìƒì„±ì
 	 */
 	public Row() {
 		cellList = new ArrayList<Cell>();
 	}
 
 	/**
-	 * »õ·Î¿î ¼¿ °´Ã¼¸¦ »ı¼ºÇÏ°í ¸®½ºÆ®¿¡ Ãß°¡ÇÑ´Ù.
+	 * ìƒˆë¡œìš´ ì…€ ê°ì²´ë¥¼ ìƒì„±í•˜ê³  ë¦¬ìŠ¤íŠ¸ì— ì¶”ê°€í•œë‹¤.
 	 * 
-	 * @return »õ·Î »ı¼ºµÈ ¼¿ °´Ã¼
+	 * @return ìƒˆë¡œ ìƒì„±ëœ ì…€ ê°ì²´
 	 */
 	public Cell addNewCell() {
 		Cell c = new Cell();
@@ -32,9 +32,9 @@ public class Row {
 	}
 
 	/**
-	 * ¼¿ ¸®½ºÆ®¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * ì…€ ë¦¬ìŠ¤íŠ¸ë¥¼ ë°˜í™˜í•œë‹¤.
 	 * 
-	 * @return ¼¿ ¸®½ºÆ®
+	 * @return ì…€ ë¦¬ìŠ¤íŠ¸
 	 */
 	public ArrayList<Cell> getCellList() {
 		return cellList;
