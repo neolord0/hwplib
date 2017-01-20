@@ -19,7 +19,7 @@ http://www.hancom.com/etc/hwpDownload.do?gnb0=269&gnb1=271&gnb0=101&gnb1=140
  	TextExtractor.extract()의 두번째 파라미터 값에 따라 세가지 추출 방법을 구현했습니다. <br>
 	
 	OnlyMainParagraph // 메인 문단에 포함된 텍스트만 추출함 <br>
-	InsertControlTextBetweenParagraphText // 컨트롤의 텍스트를 문단 텍스트 뒤에 추가하여 추출함 <br>
+	InsertControlTextBetweenParagraphText // 컨트롤의 텍스트를 문단 텍스트 사이에 삽입하여 추출함 <br>
 	AppendControlTextAfterParagraphText // 컨트롤의 텍스트를 문단 텍스트 뒤에 추가하여 추출함 <br>
 	
 * 읽기 모듈에서 버그 수정하였습니다. <br>
