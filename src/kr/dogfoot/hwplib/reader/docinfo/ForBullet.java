@@ -3,7 +3,7 @@ package kr.dogfoot.hwplib.reader.docinfo;
 import java.io.IOException;
 
 import kr.dogfoot.hwplib.object.docinfo.Bullet;
-import kr.dogfoot.hwplib.util.compoundFile.StreamReader;
+import kr.dogfoot.hwplib.util.compoundFile.reader.StreamReader;
 
 /**
  * 글머리표 레코드를 읽기 위한 객체

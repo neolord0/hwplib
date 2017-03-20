@@ -8,8 +8,8 @@ import kr.dogfoot.hwplib.object.HWPFile;
 import kr.dogfoot.hwplib.object.fileheader.FileVersion;
 import kr.dogfoot.hwplib.reader.bodytext.ForSection;
 import kr.dogfoot.hwplib.reader.docinfo.ForDocInfo;
-import kr.dogfoot.hwplib.util.compoundFile.CompoundFileReader;
-import kr.dogfoot.hwplib.util.compoundFile.StreamReader;
+import kr.dogfoot.hwplib.util.compoundFile.reader.CompoundFileReader;
+import kr.dogfoot.hwplib.util.compoundFile.reader.StreamReader;
 
 /**
  * 한글 파일을 읽는 객체

@@ -42,6 +42,15 @@ public class FileVersion {
 		rr = (short) (version & 0xff);
 	}
 
+	public long getVersion() {
+		long version = 0;
+		version += (mm & 0xff) << 24;
+		version += (nn & 0xff) << 16;
+		version += (pp & 0xff) << 8;
+		version += (rr & 0xff);
+		return version;
+	}
+	
 	/**
 	 * 파일 버전 - MM를 반환한다.
 	 * 

@@ -7,7 +7,7 @@ import kr.dogfoot.hwplib.object.bodytext.control.ctrlheader.CtrlHeaderColumnDefi
 import kr.dogfoot.hwplib.object.bodytext.control.ctrlheader.columndefine.ColumnInfo;
 import kr.dogfoot.hwplib.object.docinfo.borderfill.BorderThickness;
 import kr.dogfoot.hwplib.object.docinfo.borderfill.BorderType;
-import kr.dogfoot.hwplib.util.compoundFile.StreamReader;
+import kr.dogfoot.hwplib.util.compoundFile.reader.StreamReader;
 
 /**
  * 단 정의 컨트롤을 읽기 위한 객체

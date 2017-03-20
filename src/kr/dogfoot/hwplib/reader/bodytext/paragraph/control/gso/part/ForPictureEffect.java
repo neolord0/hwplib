@@ -9,7 +9,7 @@ import kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponenteach.picture.
 import kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponenteach.picture.ReflectionEffect;
 import kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponenteach.picture.ShadowEffect;
 import kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponenteach.picture.SoftEdgeEffect;
-import kr.dogfoot.hwplib.util.compoundFile.StreamReader;
+import kr.dogfoot.hwplib.util.compoundFile.reader.StreamReader;
 
 /**
  * 그림 개체 속성 레코드의 그림 효과 부분을 읽기 위한 객체

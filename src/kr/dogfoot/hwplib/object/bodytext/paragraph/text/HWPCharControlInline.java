@@ -7,10 +7,6 @@ package kr.dogfoot.hwplib.object.bodytext.paragraph.text;
  */
 public class HWPCharControlInline extends HWPChar {
 	/**
-	 * 믄지 코드
-	 */
-	private int code;
-	/**
 	 * 추가 정보
 	 */
 	private byte[] addition;
@@ -27,25 +23,6 @@ public class HWPCharControlInline extends HWPChar {
 	}
 
 	/**
-	 * 믄지 코드를 반환한다.
-	 * 
-	 * @return 믄지 코드
-	 */
-	public int getCode() {
-		return code;
-	}
-
-	/**
-	 * 믄지 코드를 설정한다.
-	 * 
-	 * @param code
-	 *            믄지 코드
-	 */
-	public void setCode(int code) {
-		this.code = code;
-	}
-
-	/**
 	 * 추가 정보를 반환한다.
 	 * 
 	 * @return 추가 정보
@@ -59,8 +36,12 @@ public class HWPCharControlInline extends HWPChar {
 	 * 
 	 * @param addition
 	 *            추가 정보
+	 * @throws Exception 
 	 */
-	public void setAddition(byte[] addition) {
+	public void setAddition(byte[] addition) throws Exception {
+		if (addition.length != 12) {
+			throw new Exception("addition's length must be 12");
+		}
 		this.addition = addition;
 	}
 }

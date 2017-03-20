@@ -3,7 +3,7 @@ package kr.dogfoot.hwplib.reader.bodytext.paragraph;
 import java.io.IOException;
 
 import kr.dogfoot.hwplib.object.bodytext.paragraph.header.ParaHeader;
-import kr.dogfoot.hwplib.util.compoundFile.StreamReader;
+import kr.dogfoot.hwplib.util.compoundFile.reader.StreamReader;
 
 /**
  * 문단 헤더 레코드를 읽는 객체
@@ -21,7 +21,7 @@ public class ForParaHeader {
 	 * @throws IOException
 	 */
 	public static void read(ParaHeader ph, StreamReader sr) throws IOException {
-		LastInList_TextCount(ph, sr);
+		lastInList_TextCount(ph, sr);
 		ph.getControlMask().setValue(sr.readUInt4());
 		ph.setParaShapeId(sr.readUInt2());
 		ph.setStyleId(sr.readUInt1());
@@ -44,7 +44,7 @@ public class ForParaHeader {
 	 *            스트림 리더
 	 * @throws IOException
 	 */
-	private static void LastInList_TextCount(ParaHeader ph, StreamReader sr)
+	private static void lastInList_TextCount(ParaHeader ph, StreamReader sr)
 			throws IOException {
 		long value = sr.readUInt4();
 		if ((value & 0x80000000) == 0x80000000) {

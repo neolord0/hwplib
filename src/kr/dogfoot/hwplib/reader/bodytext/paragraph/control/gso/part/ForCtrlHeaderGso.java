@@ -4,7 +4,7 @@ import java.io.IOException;
 
 import kr.dogfoot.hwplib.object.bodytext.control.ctrlheader.CtrlHeaderGso;
 import kr.dogfoot.hwplib.util.binary.BitFlag;
-import kr.dogfoot.hwplib.util.compoundFile.StreamReader;
+import kr.dogfoot.hwplib.util.compoundFile.reader.StreamReader;
 
 /**
  * 그리기 개체의 컨트롤 헤더 레코드를 읽는다.

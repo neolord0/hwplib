@@ -6,7 +6,7 @@ import kr.dogfoot.hwplib.object.bodytext.control.gso.textbox.ListHeaderForTextBo
 import kr.dogfoot.hwplib.object.bodytext.control.gso.textbox.TextBox;
 import kr.dogfoot.hwplib.object.bodytext.paragraph.ParagraphList;
 import kr.dogfoot.hwplib.reader.bodytext.ForParagraphList;
-import kr.dogfoot.hwplib.util.compoundFile.StreamReader;
+import kr.dogfoot.hwplib.util.compoundFile.reader.StreamReader;
 
 /**
  * 글상자를 읽는다.

@@ -6,7 +6,7 @@ import kr.dogfoot.hwplib.object.bodytext.control.gso.caption.Caption;
 import kr.dogfoot.hwplib.object.bodytext.control.gso.caption.ListHeaderForCaption;
 import kr.dogfoot.hwplib.object.bodytext.paragraph.ParagraphList;
 import kr.dogfoot.hwplib.reader.bodytext.ForParagraphList;
-import kr.dogfoot.hwplib.util.compoundFile.StreamReader;
+import kr.dogfoot.hwplib.util.compoundFile.reader.StreamReader;
 
 /**
  * 캡션 정보을 읽기 위한 객체

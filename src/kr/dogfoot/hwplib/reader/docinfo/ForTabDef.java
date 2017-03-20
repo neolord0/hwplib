@@ -6,7 +6,7 @@ import kr.dogfoot.hwplib.object.docinfo.TabDef;
 import kr.dogfoot.hwplib.object.docinfo.borderfill.BorderType;
 import kr.dogfoot.hwplib.object.docinfo.tabdef.TabInfo;
 import kr.dogfoot.hwplib.object.docinfo.tabdef.TabSort;
-import kr.dogfoot.hwplib.util.compoundFile.StreamReader;
+import kr.dogfoot.hwplib.util.compoundFile.reader.StreamReader;
 
 /**
  * 탭 정의 레코드를 읽는다.

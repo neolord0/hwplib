@@ -6,7 +6,7 @@ import kr.dogfoot.hwplib.object.docinfo.charshape.CharSpaces;
 import kr.dogfoot.hwplib.object.docinfo.charshape.FaceNameIds;
 import kr.dogfoot.hwplib.object.docinfo.charshape.Ratios;
 import kr.dogfoot.hwplib.object.docinfo.charshape.RelativeSizes;
-import kr.dogfoot.hwplib.util.compoundFile.StreamReader;
+import kr.dogfoot.hwplib.util.compoundFile.reader.StreamReader;
 
 /**
  * 글자 모양 레코드를 읽기 위한 객체

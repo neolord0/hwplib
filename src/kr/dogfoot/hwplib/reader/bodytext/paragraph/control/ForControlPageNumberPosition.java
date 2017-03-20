@@ -4,7 +4,7 @@ import java.io.IOException;
 
 import kr.dogfoot.hwplib.object.bodytext.control.ControlPageNumberPosition;
 import kr.dogfoot.hwplib.object.bodytext.control.ctrlheader.CtrlHeaderPageNumberPosition;
-import kr.dogfoot.hwplib.util.compoundFile.StreamReader;
+import kr.dogfoot.hwplib.util.compoundFile.reader.StreamReader;
 
 /**
  * 쪽 번호 위치 컨트롤을 읽기 위한 객체

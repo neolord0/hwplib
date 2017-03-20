@@ -5,7 +5,7 @@ import java.io.IOException;
 import kr.dogfoot.hwplib.object.bodytext.paragraph.Paragraph;
 import kr.dogfoot.hwplib.object.bodytext.paragraph.rangetag.ParaRangeTag;
 import kr.dogfoot.hwplib.object.bodytext.paragraph.rangetag.RangeTagItem;
-import kr.dogfoot.hwplib.util.compoundFile.StreamReader;
+import kr.dogfoot.hwplib.util.compoundFile.reader.StreamReader;
 
 /**
  * 문서의 영역 테그 레코드를 읽기 위한 객체

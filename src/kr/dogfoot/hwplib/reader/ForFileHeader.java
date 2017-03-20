@@ -6,7 +6,7 @@ import java.util.Arrays;
 import kr.dogfoot.hwplib.object.fileheader.FileHeader;
 import kr.dogfoot.hwplib.object.fileheader.FileVersion;
 import kr.dogfoot.hwplib.util.binary.BitFlag;
-import kr.dogfoot.hwplib.util.compoundFile.StreamReader;
+import kr.dogfoot.hwplib.util.compoundFile.reader.StreamReader;
 
 /**
  * 파일 헤더를 읽기 위한 객체

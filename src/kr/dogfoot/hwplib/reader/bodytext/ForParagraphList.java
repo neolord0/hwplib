@@ -3,7 +3,7 @@ package kr.dogfoot.hwplib.reader.bodytext;
 import kr.dogfoot.hwplib.object.bodytext.ParagraphListInterface;
 import kr.dogfoot.hwplib.object.bodytext.paragraph.Paragraph;
 import kr.dogfoot.hwplib.reader.bodytext.paragraph.ForParagraph;
-import kr.dogfoot.hwplib.util.compoundFile.StreamReader;
+import kr.dogfoot.hwplib.util.compoundFile.reader.StreamReader;
 
 /**
  * 문단 리스트를 읽는 객체

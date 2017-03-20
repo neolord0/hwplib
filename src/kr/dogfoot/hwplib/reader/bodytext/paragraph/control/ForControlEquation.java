@@ -7,7 +7,7 @@ import kr.dogfoot.hwplib.object.etc.HWPTag;
 import kr.dogfoot.hwplib.reader.bodytext.paragraph.control.eqed.ForEQEdit;
 import kr.dogfoot.hwplib.reader.bodytext.paragraph.control.gso.part.ForCaption;
 import kr.dogfoot.hwplib.reader.bodytext.paragraph.control.gso.part.ForCtrlHeaderGso;
-import kr.dogfoot.hwplib.util.compoundFile.StreamReader;
+import kr.dogfoot.hwplib.util.compoundFile.reader.StreamReader;
 
 /**
  * 수식 컨트롤을 읽기 위한 객체

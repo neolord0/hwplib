@@ -17,7 +17,7 @@ import kr.dogfoot.hwplib.object.docinfo.TabDef;
 import kr.dogfoot.hwplib.object.etc.HWPTag;
 import kr.dogfoot.hwplib.object.etc.UnknownRecord;
 import kr.dogfoot.hwplib.reader.ForUnknown;
-import kr.dogfoot.hwplib.util.compoundFile.StreamReader;
+import kr.dogfoot.hwplib.util.compoundFile.reader.StreamReader;
 
 /**
  * 문서 정보(DocInfo) 스트림을 읽기 위한 객체
@@ -102,6 +102,9 @@ public class ForDocInfo {
 		case HWPTag.DOC_DATA:
 			docData();
 			break;
+		case HWPTag.FORBIDDEN_CHAR:
+			forbiddenChar();
+			break;			
 		case HWPTag.DISTRIBUTE_DOC_DATA:
 			distributeDocData();
 			break;
@@ -116,9 +119,6 @@ public class ForDocInfo {
 			break;
 		case HWPTag.MEMO_SHAPE:
 			memoShape();
-			break;
-		case HWPTag.FORBIDDEN_CHAR:
-			forbiddenChar();
 			break;
 		case HWPTag.TRACK_CHANGE:
 			trackChange2();
