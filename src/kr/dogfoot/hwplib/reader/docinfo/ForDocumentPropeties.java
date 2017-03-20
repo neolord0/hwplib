@@ -5,7 +5,7 @@ import java.io.IOException;
 import kr.dogfoot.hwplib.object.docinfo.DocumentPropeties;
 import kr.dogfoot.hwplib.object.docinfo.documentproperties.CaretPosition;
 import kr.dogfoot.hwplib.object.docinfo.documentproperties.StartNumber;
-import kr.dogfoot.hwplib.util.compoundFile.StreamReader;
+import kr.dogfoot.hwplib.util.compoundFile.reader.StreamReader;
 
 /**
  * 문서 속성 레코드를 읽기 위한 객체.
@@ -26,7 +26,7 @@ public class ForDocumentPropeties {
 			StreamReader sr) throws IOException {
 		property(dp, sr);
 		startNumber(dp.getStartNumber(), sr);
-		caretPosition(dp.getCurrentPosition(), sr);
+		caretPosition(dp.getCaretPosition(), sr);
 	}
 
 	/**

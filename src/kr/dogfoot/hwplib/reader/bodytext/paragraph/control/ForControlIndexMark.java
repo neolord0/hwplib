@@ -4,7 +4,7 @@ import java.io.IOException;
 
 import kr.dogfoot.hwplib.object.bodytext.control.ControlIndexMark;
 import kr.dogfoot.hwplib.object.bodytext.control.ctrlheader.CtrlHeaderIndexMark;
-import kr.dogfoot.hwplib.util.compoundFile.StreamReader;
+import kr.dogfoot.hwplib.util.compoundFile.reader.StreamReader;
 
 /**
  * 찾아보기 표식 컨트롤을 읽기 위한 객체

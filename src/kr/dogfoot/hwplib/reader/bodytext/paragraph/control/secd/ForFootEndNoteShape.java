@@ -5,7 +5,7 @@ import java.io.IOException;
 import kr.dogfoot.hwplib.object.bodytext.control.sectiondefine.FootEndNoteShape;
 import kr.dogfoot.hwplib.object.docinfo.borderfill.BorderThickness;
 import kr.dogfoot.hwplib.object.docinfo.borderfill.BorderType;
-import kr.dogfoot.hwplib.util.compoundFile.StreamReader;
+import kr.dogfoot.hwplib.util.compoundFile.reader.StreamReader;
 
 /**
  * 각주/미주 모양 레코드를 읽기 위한 객체

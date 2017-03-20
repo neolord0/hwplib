@@ -20,14 +20,14 @@ public class DocumentPropeties {
 	/**
 	 * 문서 내 캐럿의 위치 정보
 	 */
-	private CaretPosition currentPosition;
+	private CaretPosition caretPosition;
 
 	/**
 	 * 생성자
 	 */
 	public DocumentPropeties() {
 		startNumber = new StartNumber();
-		currentPosition = new CaretPosition();
+		caretPosition = new CaretPosition();
 	}
 
 	/**
@@ -63,7 +63,7 @@ public class DocumentPropeties {
 	 * 
 	 * @return 문서 내 캐럿의 위치 정보 객체
 	 */
-	public CaretPosition getCurrentPosition() {
-		return currentPosition;
+	public CaretPosition getCaretPosition() {
+		return caretPosition;
 	}
 }

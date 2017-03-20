@@ -1,4 +1,4 @@
-package kr.dogfoot.hwplib.util.compoundFile;
+package kr.dogfoot.hwplib.util.compoundFile.reader;
 
 import java.io.ByteArrayInputStream;
 import java.io.IOException;

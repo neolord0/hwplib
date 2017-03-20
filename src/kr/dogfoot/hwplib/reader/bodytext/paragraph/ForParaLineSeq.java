@@ -5,7 +5,7 @@ import java.io.IOException;
 import kr.dogfoot.hwplib.object.bodytext.paragraph.Paragraph;
 import kr.dogfoot.hwplib.object.bodytext.paragraph.lineseg.ParaLineSeg;
 import kr.dogfoot.hwplib.object.bodytext.paragraph.lineseg.LineSegItem;
-import kr.dogfoot.hwplib.util.compoundFile.StreamReader;
+import kr.dogfoot.hwplib.util.compoundFile.reader.StreamReader;
 
 /**
  * 문단의 레이아웃 레코드를 읽기 위한 객체

@@ -7,7 +7,7 @@ import kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponenteach.ShapeCom
 import kr.dogfoot.hwplib.object.etc.HWPTag;
 import kr.dogfoot.hwplib.reader.RecordHeader;
 import kr.dogfoot.hwplib.reader.bodytext.paragraph.control.gso.part.ForTextBox;
-import kr.dogfoot.hwplib.util.compoundFile.StreamReader;
+import kr.dogfoot.hwplib.util.compoundFile.reader.StreamReader;
 
 /**
  * 타원 컨트롤을 읽는다.

@@ -9,7 +9,7 @@ import kr.dogfoot.hwplib.reader.bodytext.paragraph.control.secd.ForCtrlHeaderSec
 import kr.dogfoot.hwplib.reader.bodytext.paragraph.control.secd.ForFootEndNoteShape;
 import kr.dogfoot.hwplib.reader.bodytext.paragraph.control.secd.ForPageBorderFill;
 import kr.dogfoot.hwplib.reader.bodytext.paragraph.control.secd.ForPageDef;
-import kr.dogfoot.hwplib.util.compoundFile.StreamReader;
+import kr.dogfoot.hwplib.util.compoundFile.reader.StreamReader;
 
 /**
  * 구역 정의 컨트롤을 읽기 위한 객체

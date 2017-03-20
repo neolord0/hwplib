@@ -11,7 +11,7 @@ import kr.dogfoot.hwplib.object.docinfo.borderfill.fillinfo.PatternFill;
 import kr.dogfoot.hwplib.object.docinfo.borderfill.fillinfo.PatternType;
 import kr.dogfoot.hwplib.object.docinfo.borderfill.fillinfo.PictureEffect;
 import kr.dogfoot.hwplib.object.docinfo.borderfill.fillinfo.PictureInfo;
-import kr.dogfoot.hwplib.util.compoundFile.StreamReader;
+import kr.dogfoot.hwplib.util.compoundFile.reader.StreamReader;
 
 /**
  * 테두리/배경 레코드의 채우기 정보를 읽기 위한 객체

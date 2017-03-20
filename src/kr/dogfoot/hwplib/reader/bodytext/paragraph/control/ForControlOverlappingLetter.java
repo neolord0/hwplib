@@ -4,7 +4,7 @@ import java.io.IOException;
 
 import kr.dogfoot.hwplib.object.bodytext.control.ControlOverlappingLetter;
 import kr.dogfoot.hwplib.object.bodytext.control.ctrlheader.CtrlHeaderOverlappingLetter;
-import kr.dogfoot.hwplib.util.compoundFile.StreamReader;
+import kr.dogfoot.hwplib.util.compoundFile.reader.StreamReader;
 
 /**
  * 글자 겹침 컨트롤을 읽기 위한 객체

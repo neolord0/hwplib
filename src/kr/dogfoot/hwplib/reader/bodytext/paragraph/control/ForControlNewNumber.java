@@ -4,7 +4,7 @@ import java.io.IOException;
 
 import kr.dogfoot.hwplib.object.bodytext.control.ControlNewNumber;
 import kr.dogfoot.hwplib.object.bodytext.control.ctrlheader.CtrlHeaderNewNumber;
-import kr.dogfoot.hwplib.util.compoundFile.StreamReader;
+import kr.dogfoot.hwplib.util.compoundFile.reader.StreamReader;
 
 /**
  * 새 번호 지정 컨트롤을 읽기 위한 객체

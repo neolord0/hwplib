@@ -3,7 +3,7 @@ package kr.dogfoot.hwplib.reader.bodytext.paragraph.control.gso;
 import kr.dogfoot.hwplib.object.bodytext.control.gso.ControlContainer;
 import kr.dogfoot.hwplib.object.bodytext.control.gso.GsoControl;
 import kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponent.ShapeComponentContainer;
-import kr.dogfoot.hwplib.util.compoundFile.StreamReader;
+import kr.dogfoot.hwplib.util.compoundFile.reader.StreamReader;
 
 /**
  * 묶은 컨트롤을 읽기 위한 객체

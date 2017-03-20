@@ -3,7 +3,7 @@ package kr.dogfoot.hwplib.reader.bodytext.paragraph.control.secd;
 import java.io.IOException;
 
 import kr.dogfoot.hwplib.object.bodytext.control.ctrlheader.CtrlHeaderSectionDefine;
-import kr.dogfoot.hwplib.util.compoundFile.StreamReader;
+import kr.dogfoot.hwplib.util.compoundFile.reader.StreamReader;
 
 /**
  * 구역 정보 컨트롤의 컨트롤 헤더 레코드를 읽기 위한 객체
@@ -35,17 +35,17 @@ public class ForCtrlHeaderSecd {
 		if (sr.getFileVersion().isOver(5, 0, 1, 2)) {
 			header.setDefaultLanguage(sr.readUInt2());
 		}
-		unknown8Bytes(sr);
+		unknownRestBytes(sr);
 	}
 
 	/**
-	 * 앙려지지 않은 8 bytes을 처리한다.
+	 * 알려지지 않은 나머지 바이트를 처리한다.
 	 * 
 	 * @param sr
 	 *            스트림 리더
 	 * @throws IOException
 	 */
-	private static void unknown8Bytes(StreamReader sr) throws IOException {
-		sr.skip(8);
+	private static void unknownRestBytes(StreamReader sr) throws IOException {
+		sr.skipToEndRecord();
 	}
 }

@@ -10,7 +10,7 @@ import kr.dogfoot.hwplib.object.docinfo.borderfill.DiagonalSort;
 import kr.dogfoot.hwplib.object.docinfo.borderfill.EachBorder;
 import kr.dogfoot.hwplib.object.docinfo.borderfill.fillinfo.FillInfo;
 import kr.dogfoot.hwplib.reader.docinfo.borderfill.ForFillInfo;
-import kr.dogfoot.hwplib.util.compoundFile.StreamReader;
+import kr.dogfoot.hwplib.util.compoundFile.reader.StreamReader;
 
 /**
  * 테두리/배경 레코드를 읽기 위한 객체

@@ -3,7 +3,7 @@ package kr.dogfoot.hwplib.reader.bodytext.paragraph.control.secd;
 import java.io.IOException;
 
 import kr.dogfoot.hwplib.object.bodytext.control.sectiondefine.PageDef;
-import kr.dogfoot.hwplib.util.compoundFile.StreamReader;
+import kr.dogfoot.hwplib.util.compoundFile.reader.StreamReader;
 
 /**
  * 용지 설정 레코드를 읽기 위한 객체

@@ -26,7 +26,7 @@ public class Section implements ParagraphListInterface {
 	 */
 	public Section() {
 		paragraphList = new ArrayList<Paragraph>();
-		lastBatangPageInfo = new BatangPageInfo();
+		lastBatangPageInfo = null;
 	}
 
 	/**
@@ -51,6 +51,13 @@ public class Section implements ParagraphListInterface {
 		return paragraphList;
 	}
 
+	/**
+	 * 마지막 바탕쪽 정보 객체를 생성한다.
+	 */
+	public void createLastBatangPageInfo() {
+		lastBatangPageInfo = new BatangPageInfo();
+	}
+	
 	/**
 	 * 마지막 바탕쪽 정보를 리턴한다.
 	 * 

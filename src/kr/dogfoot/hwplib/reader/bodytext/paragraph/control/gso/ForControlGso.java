@@ -20,7 +20,7 @@ import kr.dogfoot.hwplib.object.etc.HWPTag;
 import kr.dogfoot.hwplib.reader.bodytext.paragraph.control.gso.part.ForCaption;
 import kr.dogfoot.hwplib.reader.bodytext.paragraph.control.gso.part.ForCtrlHeaderGso;
 import kr.dogfoot.hwplib.reader.bodytext.paragraph.control.gso.part.ForShapeComponent;
-import kr.dogfoot.hwplib.util.compoundFile.StreamReader;
+import kr.dogfoot.hwplib.util.compoundFile.reader.StreamReader;
 
 /**
  * 그리기 개체 컨트롤들을 읽는다.

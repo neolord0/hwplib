@@ -7,13 +7,9 @@ package kr.dogfoot.hwplib.object.bodytext.paragraph.text;
  */
 public class HWPCharControlExtend extends HWPChar {
 	/**
-	 * 문자 코드
+	 * 추가 정보
 	 */
-	private int code;
-	/**
-	 * 컨트롤 객체의 Instance Id
-	 */
-	private String instanceId;
+	private byte[] addition;
 
 	/**
 	 * 생성자
@@ -27,40 +23,46 @@ public class HWPCharControlExtend extends HWPChar {
 	}
 
 	/**
-	 * 문자 코드를 반환한다.
-	 * 
-	 * @return 문자 코드
-	 */
-	public int getCode() {
-		return code;
-	}
-
-	/**
-	 * 문자 코드를 설정한다.
-	 * 
-	 * @param code
-	 *            문자 코드
-	 */
-	public void setCode(int code) {
-		this.code = code;
-	}
-
-	/**
 	 * 컨트롤 객체의 Instance Id를 반환한다.
 	 * 
 	 * @return 컨트롤 객체의 Instance Id
 	 */
 	public String getInstanceId() {
-		return instanceId;
+		int bufferIndex = 0;
+		boolean insert = false;
+		byte[] buf = new byte[addition.length];
+		for (int i = addition.length - 1; i >= 0; i--) {
+			if (addition[i] != 0) {
+				insert = true;
+			}
+
+			if (insert == true) {
+				buf[bufferIndex++] = addition[i];
+			}
+		}
+		return new String(buf, 0, bufferIndex);
 	}
 
 	/**
-	 * 컨트롤 객체의 Instance Id를 설정한다.
+	 * 추가 정보를 반환한다.
 	 * 
-	 * @param instanceId
-	 *            컨트롤 객체의 Instance Id
+	 * @return 추가 정보
 	 */
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
+	public byte[] getAddition() {
+		return addition;
+	}
+
+	/**
+	 * 추가 정보를 설정한다.
+	 * 
+	 * @param addition
+	 *            추가 정보
+	 * @throws Exception 
+	 */
+	public void setAddition(byte[] addition) throws Exception {
+		if (addition.length != 12) {
+			throw new Exception("addition's length must be 12");
+		}
+		this.addition = addition;
 	}
 }

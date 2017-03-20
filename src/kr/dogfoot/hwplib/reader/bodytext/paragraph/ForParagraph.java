@@ -8,7 +8,7 @@ import kr.dogfoot.hwplib.object.bodytext.paragraph.Paragraph;
 import kr.dogfoot.hwplib.object.etc.HWPTag;
 import kr.dogfoot.hwplib.reader.bodytext.paragraph.control.ForControl;
 import kr.dogfoot.hwplib.reader.bodytext.paragraph.control.gso.ForControlGso;
-import kr.dogfoot.hwplib.util.compoundFile.StreamReader;
+import kr.dogfoot.hwplib.util.compoundFile.reader.StreamReader;
 
 /**
  * 하나의 문단을 읽기 위한 객체

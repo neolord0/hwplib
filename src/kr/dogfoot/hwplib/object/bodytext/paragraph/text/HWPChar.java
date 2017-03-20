@@ -8,6 +8,11 @@ package kr.dogfoot.hwplib.object.bodytext.paragraph.text;
  */
 public abstract class HWPChar {
 	/**
+	 * 믄자 코드
+	 */
+	private short code;
+	
+	/**
 	 * 글자의 종류을 반환한다.
 	 * 
 	 * @return 글자의 타입
@@ -64,4 +69,24 @@ public abstract class HWPChar {
 		}
 		return HWPCharType.Normal;
 	}
+
+	/**
+	 * 문자 코드를 반환한다.
+	 * 
+	 * @return 문자 코드
+	 */
+	public short getCode() {
+		return code;
+	}
+
+	/**
+	 * 문자 코드를 설정한다.
+	 * 
+	 * @param code
+	 *            문자 코드
+	 */
+	public void setCode(short code) {
+		this.code = code;
+	}
+
 }

@@ -4,7 +4,9 @@ import java.io.IOException;
 
 import kr.dogfoot.hwplib.object.bodytext.control.ControlField;
 import kr.dogfoot.hwplib.object.bodytext.control.ctrlheader.CtrlHeaderField;
-import kr.dogfoot.hwplib.util.compoundFile.StreamReader;
+import kr.dogfoot.hwplib.object.etc.HWPTag;
+import kr.dogfoot.hwplib.reader.RecordHeader;
+import kr.dogfoot.hwplib.util.compoundFile.reader.StreamReader;
 
 /**
  * 필드 컨트롤을 읽기 위한 객체
@@ -24,6 +26,7 @@ public class ForControlField {
 	public static void read(ControlField field, StreamReader sr)
 			throws IOException {
 		ctrlHeader(field.getHeader(), sr);
+		ctrlData(field, sr);
 	}
 
 	/**
@@ -41,7 +44,6 @@ public class ForControlField {
 		h.setEtcProperty(sr.readUInt1());
 		h.setCommand(sr.readUTF16LEString());
 		h.setInstanceId(sr.readUInt4());
-
 		unknown4Bytes(sr);
 	}
 
@@ -55,4 +57,25 @@ public class ForControlField {
 	private static void unknown4Bytes(StreamReader sr) throws IOException {
 		sr.skip(4);
 	}
+
+	/**
+	 * 컨트롤 데이터 레코드를 읽는다.
+	 * 
+	 * @param field
+	 *            필드 컨트롤
+	 * @param sr
+	 *            스트림 리더
+	 * @throws IOException
+	 */
+	private static void ctrlData(ControlField field, StreamReader sr)
+			throws IOException {
+		RecordHeader rh = sr.readRecordHeder();
+		if (rh.getTagID() == HWPTag.CTRL_DATA) {
+			field.createCtrlData();
+			byte[] data = new byte[rh.getSize()];
+			sr.readBytes(data);
+			field.getCtrlData().setData(data);
+		}
+	}
+
 }

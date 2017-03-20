@@ -16,7 +16,7 @@ import kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponent.shadowinfo.S
 import kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponent.shadowinfo.ShadowType;
 import kr.dogfoot.hwplib.object.docinfo.borderfill.fillinfo.FillInfo;
 import kr.dogfoot.hwplib.reader.docinfo.borderfill.ForFillInfo;
-import kr.dogfoot.hwplib.util.compoundFile.StreamReader;
+import kr.dogfoot.hwplib.util.compoundFile.reader.StreamReader;
 
 /**
  * 그리기 개체의 객체 공통 속성 레코드을 읽기 위한 객체

@@ -32,6 +32,10 @@ public class ControlTable extends Control {
 	 */
 	public ControlTable() {
 		this(new CtrlHeaderGso(ControlType.Table));
+		
+		caption = null;
+		table = new Table();
+		rowList = new ArrayList<Row>();
 	}
 
 	/**
@@ -43,6 +47,7 @@ public class ControlTable extends Control {
 	public ControlTable(CtrlHeader header) {
 		super(header);
 
+		caption = null;
 		table = new Table();
 		rowList = new ArrayList<Row>();
 	}

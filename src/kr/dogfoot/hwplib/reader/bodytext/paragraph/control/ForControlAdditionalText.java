@@ -6,7 +6,7 @@ import kr.dogfoot.hwplib.object.bodytext.control.ControlAdditionalText;
 import kr.dogfoot.hwplib.object.bodytext.control.ctrlheader.CtrlHeaderAdditionalText;
 import kr.dogfoot.hwplib.object.bodytext.control.ctrlheader.additionaltext.AdditionalTextPosition;
 import kr.dogfoot.hwplib.object.docinfo.parashape.Alignment;
-import kr.dogfoot.hwplib.util.compoundFile.StreamReader;
+import kr.dogfoot.hwplib.util.compoundFile.reader.StreamReader;
 
 /**
  * 덧말 컨트롤을 읽기 위한 객체

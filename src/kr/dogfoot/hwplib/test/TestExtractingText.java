@@ -9,7 +9,6 @@ public class TestExtractingText {
 
 	public static void main(String[] args) throws Exception {
 		TextExtractMethod tem = TextExtractMethod.InsertControlTextBetweenParagraphText;
-
 		test("sample_hwp\\test-blank.hwp", tem);
 		test("sample_hwp\\test-etc.hwp", tem);
 		test("sample_hwp\\test-ole.hwp", tem);
@@ -31,6 +30,7 @@ public class TestExtractingText {
 		test("sample_hwp\\test-책갈피.hwp", tem);
 		test("sample_hwp\\test-페이지숨김.hwp", tem);
 		test("sample_hwp\\test-필드.hwp", tem);
+		test("sample_hwp\\test-필드_누름틀.hwp", tem);
 		test("sample_hwp\\[붙임1]정부포상 추천 구비서류 서식.hwp", tem);
 	}
 

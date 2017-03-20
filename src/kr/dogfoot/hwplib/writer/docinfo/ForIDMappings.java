@@ -1,0 +1,51 @@
+package kr.dogfoot.hwplib.writer.docinfo;
+
+import java.io.IOException;
+
+import kr.dogfoot.hwplib.object.docinfo.IDMappings;
+import kr.dogfoot.hwplib.object.etc.HWPTag;
+import kr.dogfoot.hwplib.object.fileheader.FileVersion;
+import kr.dogfoot.hwplib.util.compoundFile.writer.StreamWriter;
+
+public class ForIDMappings {
+	public static void write(IDMappings im, StreamWriter sw) throws IOException {
+		recordHeader(sw);
+
+		sw.writeSInt4(im.getBinDataCount());				// 0
+		sw.writeSInt4(im.getHangulFaceNameCount());			// 1
+		sw.writeSInt4(im.getEnglishFaceNameCount());		// 2
+		sw.writeSInt4(im.getHanjaFaceNameCount());			// 3
+		sw.writeSInt4(im.getJapaneseFaceNameCount());		// 4
+		sw.writeSInt4(im.getEtcFaceNameCount());			// 5
+		sw.writeSInt4(im.getSymbolFaceNameCount());			// 6
+		sw.writeSInt4(im.getUserFaceNameCount());			// 7
+		sw.writeSInt4(im.getBorderFillCount());				// 8
+		sw.writeSInt4(im.getCharShapeCount());				// 9
+		sw.writeSInt4(im.getTabDefCount());					// 10
+		sw.writeSInt4(im.getNumberingCount());				// 11
+		sw.writeSInt4(im.getBulletCount());					// 12
+		sw.writeSInt4(im.getParaShapeCount());				// 13
+		sw.writeSInt4(im.getStyleCount());					// 14
+		if (sw.getFileVersion().isOver(5, 0, 2, 1)) {			
+			sw.writeSInt4(im.getMemoShapeCount());			// 15
+		}
+		if (sw.getFileVersion().isOver(5, 0, 3, 2)) {			
+			sw.writeSInt4(im.getTrackChangeCount());		// 16
+			sw.writeSInt4(im.getTrackChangeAuthorCount());	// 17
+		}
+	}
+
+	private static void recordHeader(StreamWriter sw) throws IOException {
+		sw.writeRecordHeader(HWPTag.ID_MAPPINGS, 0, getSize(sw.getFileVersion()));
+	}
+
+	private static int getSize(FileVersion version) {
+		if (version.isOver(5, 0, 3, 2)) {
+			return 72;
+		} else if (version.isOver(5, 0, 3, 2)) {
+			return 64;
+		} else {
+			return 60;
+		}
+	}
+}

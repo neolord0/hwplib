@@ -4,7 +4,7 @@ import kr.dogfoot.hwplib.object.bodytext.control.sectiondefine.BatangPageInfo;
 import kr.dogfoot.hwplib.object.bodytext.control.sectiondefine.ListHeaderForBatangPage;
 import kr.dogfoot.hwplib.object.bodytext.paragraph.ParagraphList;
 import kr.dogfoot.hwplib.reader.bodytext.ForParagraphList;
-import kr.dogfoot.hwplib.util.compoundFile.StreamReader;
+import kr.dogfoot.hwplib.util.compoundFile.reader.StreamReader;
 
 /**
  * 바탕쪽 정보을 읽기 위한 객체

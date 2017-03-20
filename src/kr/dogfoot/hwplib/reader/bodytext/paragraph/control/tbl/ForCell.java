@@ -6,7 +6,7 @@ import kr.dogfoot.hwplib.object.bodytext.control.table.Cell;
 import kr.dogfoot.hwplib.object.bodytext.control.table.ListHeaderForCell;
 import kr.dogfoot.hwplib.object.etc.HWPTag;
 import kr.dogfoot.hwplib.reader.bodytext.ForParagraphList;
-import kr.dogfoot.hwplib.util.compoundFile.StreamReader;
+import kr.dogfoot.hwplib.util.compoundFile.reader.StreamReader;
 
 /**
  * 표의 셀을 읽기 위한 객체
@@ -65,10 +65,8 @@ public class ForCell {
 		if (flag == 0xff) {
 			unknownBytes(10, sr);
 			lh.setFieldName(sr.readUTF16LEString());
-			unknownBytes(8, sr);
-		} else {
-			unknownBytes(7, sr);
-		}
+		} 
+		unknownRestBytes(sr);
 	}
 
 	/**
@@ -82,5 +80,16 @@ public class ForCell {
 	 */
 	private static void unknownBytes(int n, StreamReader sr) throws IOException {
 		sr.skip(n);
+	}
+
+	/**
+	 * 알려지지 않은 나머지 바이트를 처리한다.
+	 * 
+	 * @param sr
+	 *            스트림 리더
+	 * @throws IOException
+	 */
+	private static void unknownRestBytes(StreamReader sr) throws IOException {
+		sr.skipToEndRecord();
 	}
 }
