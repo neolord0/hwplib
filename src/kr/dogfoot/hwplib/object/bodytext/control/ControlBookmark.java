@@ -20,7 +20,7 @@ public class ControlBookmark extends Control {
 	public ControlBookmark() {
 		super(new CtrlHeaderBookmark());
 
-		ctrlData = new CtrlData();
+		ctrlData = null;
 	}
 
 	/**
@@ -32,6 +32,13 @@ public class ControlBookmark extends Control {
 		return (CtrlHeaderBookmark) header;
 	}
 
+	/**
+	 * 임의 데이터 객체를 생성한다.
+	 */
+	public void createCtrlData() {
+		ctrlData = new CtrlData();
+	}
+	
 	/**
 	 * 임의 데이터 객체를 반환한다.
 	 * 

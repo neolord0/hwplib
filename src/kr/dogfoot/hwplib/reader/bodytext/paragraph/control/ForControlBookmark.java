@@ -1,9 +1,9 @@
 package kr.dogfoot.hwplib.reader.bodytext.paragraph.control;
 
 import kr.dogfoot.hwplib.object.bodytext.control.ControlBookmark;
-import kr.dogfoot.hwplib.object.bodytext.control.bookmark.CtrlData;
 import kr.dogfoot.hwplib.object.etc.HWPTag;
 import kr.dogfoot.hwplib.reader.RecordHeader;
+import kr.dogfoot.hwplib.reader.bodytext.paragraph.control.bookmark.ForCtrlData;
 import kr.dogfoot.hwplib.util.compoundFile.reader.StreamReader;
 
 /**
@@ -23,24 +23,24 @@ public class ForControlBookmark {
 	 */
 	public static void read(ControlBookmark b, StreamReader sr)
 			throws Exception {
-		ctrlData(b.getCtrlData(), sr);
+		ctrlData(b, sr);
 	}
 
 	/**
 	 * 컨트롤 데이터 레코드를 읽는다.
 	 * 
-	 * @param cd
+	 * @param b
 	 *            컨트롤 데이터 레코드
 	 * @param sr
 	 *            스트림 리더
 	 * @throws Exception
 	 */
-	private static void ctrlData(CtrlData cd, StreamReader sr) throws Exception {
+	private static void ctrlData(ControlBookmark b, StreamReader sr)
+			throws Exception {
 		RecordHeader rh = sr.readRecordHeder();
 		if (rh.getTagID() == HWPTag.CTRL_DATA) {
-			byte[] data = new byte[rh.getSize()];
-			sr.readBytes(data);
-			cd.setData(data);
+			b.createCtrlData();
+			ForCtrlData.read(b.getCtrlData(), sr);
 		}
 	}
 }

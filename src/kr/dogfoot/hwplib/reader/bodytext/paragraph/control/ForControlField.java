@@ -6,6 +6,7 @@ import kr.dogfoot.hwplib.object.bodytext.control.ControlField;
 import kr.dogfoot.hwplib.object.bodytext.control.ctrlheader.CtrlHeaderField;
 import kr.dogfoot.hwplib.object.etc.HWPTag;
 import kr.dogfoot.hwplib.reader.RecordHeader;
+import kr.dogfoot.hwplib.reader.bodytext.paragraph.control.bookmark.ForCtrlData;
 import kr.dogfoot.hwplib.util.compoundFile.reader.StreamReader;
 
 /**
@@ -72,9 +73,7 @@ public class ForControlField {
 		RecordHeader rh = sr.readRecordHeder();
 		if (rh.getTagID() == HWPTag.CTRL_DATA) {
 			field.createCtrlData();
-			byte[] data = new byte[rh.getSize()];
-			sr.readBytes(data);
-			field.getCtrlData().setData(data);
+			ForCtrlData.read(field.getCtrlData(), sr);
 		}
 	}
 

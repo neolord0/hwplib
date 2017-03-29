@@ -1,38 +1,29 @@
 package kr.dogfoot.hwplib.object.bodytext.control.bookmark;
 
 /**
- * 북마크의 임의 데이터 레코드
+ * 임의 데이터 레코드
  * 
  * @author neolord
  */
 public class CtrlData {
 	/**
-	 * 임의 데이타
+	 * 파라미터 셋
 	 */
-	private byte[] data;
+	private ParameterSet parameterSet;
 
 	/**
 	 * 생성자
 	 */
 	public CtrlData() {
+		parameterSet = new ParameterSet();
 	}
 
 	/**
-	 * 임의 데이터를 반환한다.
+	 * 파라미터 셋을 반환한다.
 	 * 
-	 * @return 임의 데이터
+	 * @return 파라미터 셋
 	 */
-	public byte[] getData() {
-		return data;
-	}
-
-	/**
-	 * 임의 데이터를 설정한다.
-	 * 
-	 * @param data
-	 *            임의 데이터
-	 */
-	public void setData(byte[] data) {
-		this.data = data;
+	public ParameterSet getParameterSet() {
+		return parameterSet;
 	}
 }

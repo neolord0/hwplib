@@ -72,4 +72,71 @@ public class ParaText {
 	public ArrayList<HWPChar> getCharList() {
 		return charList;
 	}
+
+	/**
+	 * 확장 컨트롤 Character 순번에 해당하는 글자의 문단 내의 순번을 반환한다.
+	 * 
+	 * @param extendCharIndex
+	 *            확장 컨트롤 Character 순번
+	 * @return 확장 컨트롤 Character 순번에 해당하는 글자의 문단 내의 순번
+	 */
+	public int getCharIndexFromExtendCharIndex(int extendCharIndex) {
+		int extendCharIndex2 = 0;
+		int count = charList.size();
+		for (int index = 0; index < count; index++) {
+			if (charList.get(index).getType() == HWPCharType.ControlExtend) {
+				if (extendCharIndex == extendCharIndex2) {
+					return index;
+				}
+				extendCharIndex2++;
+			}
+		}
+		return -1;
+	}
+
+	/**
+	 * startIndex 순번부터 코드가 charCode인 인라인 컨트롤 character의 순번을 반환한다.
+	 * 
+	 * @param startIndex
+	 *            검색을 시작할 순번
+	 * @param charCode
+	 *            찾을 인라인 컨트롤 character의 코드
+	 * @return 인라인 컨트롤 character의 순번
+	 */
+	public int getInlineCharIndex(int startIndex, short charCode) {
+		int count = charList.size();
+		for (int index = startIndex; index < count; index++) {
+			HWPChar ch = charList.get(index);
+			if (ch.getType() == HWPCharType.ControlInline
+					&& ch.getCode() == charCode) {
+				return index;
+			}
+		}
+		return -1;
+	}
+
+	/**
+	 * startIndex 순번 부터 endIndex 순번 까지의  일반 Character의 문자열을 반환한다.
+	 * @param startIndex 시작 순번
+	 * @param endIndex 끝 순번
+	 * @return startIndex 순번 부터 endIndex 순번 까지의  일반 Character의 문자열
+	 */
+	public String getNormalString(int startIndex, int endIndex) {
+		if (startIndex == endIndex) {
+			return "";
+		}
+		if (startIndex > endIndex) {
+			return null;
+		}
+		StringBuffer sb = new StringBuffer();
+		for (int index = startIndex; index <= endIndex; index++) {
+			HWPChar ch = charList.get(index);
+			if (ch.getType() == HWPCharType.Normal) {
+				HWPCharNormal chn = (HWPCharNormal) ch;
+				sb.append(chn.getCh());
+			}
+		}
+		return sb.toString();
+	}
+
 }

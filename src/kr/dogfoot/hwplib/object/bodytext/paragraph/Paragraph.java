@@ -195,4 +195,15 @@ public class Paragraph {
 	public ArrayList<Control> getControlList() {
 		return controlList;
 	}
+
+	/**
+	 * 컨트롤 리스트에서 컨트롤의 순번을 반환한다.
+	 * 
+	 * @param c
+	 *            컨트롤
+	 * @return 컨트롤의 순번
+	 */
+	public int getControlIndex(Control c) {
+		return controlList.indexOf(c);
+	}
 }
