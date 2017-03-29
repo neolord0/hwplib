@@ -12,7 +12,7 @@ http://www.hancom.com/etc/hwpDownload.do?gnb0=269&gnb1=271&gnb0=101&gnb1=140
 =========================================================================================
 * 누름틀 필드 텍스트 찾기 기능 완료<br>
 
-	HWPFile hwpFile = HWPReader.fromFile(filename);<br> 
+	HWPFile hwpFile = HWPReader.fromFile(filename);<br>
 	String text1 = FieldFinder.getClickHereText(hwpFile, "필드이름"); <br> 
 
 	(test/TestGettingClickHereFieldText.java 파일 참고)<br> 
