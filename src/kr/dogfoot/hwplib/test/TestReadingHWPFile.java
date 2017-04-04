@@ -5,8 +5,6 @@ import kr.dogfoot.hwplib.reader.HWPReader;
 
 public class TestReadingHWPFile {
 	public static void main(String[] args) throws Exception {
-		test("sample_hwp\\test-필드_누름틀.hwp");
-		/*		
 		test("sample_hwp\\test-blank.hwp");
 		test("sample_hwp\\test-etc.hwp");
 		test("sample_hwp\\test-ole.hwp");
@@ -28,7 +26,7 @@ public class TestReadingHWPFile {
 		test("sample_hwp\\test-책갈피.hwp");
 		test("sample_hwp\\test-페이지숨김.hwp");
 		test("sample_hwp\\test-필드.hwp");
-		*/
+		test("sample_hwp\\test-필드_누름틀.hwp");
 	}
 
 	private static void test(String filename) throws Exception {

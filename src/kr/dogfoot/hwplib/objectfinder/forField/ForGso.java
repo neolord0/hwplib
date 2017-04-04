@@ -9,6 +9,7 @@ import kr.dogfoot.hwplib.object.bodytext.control.gso.ControlPolygon;
 import kr.dogfoot.hwplib.object.bodytext.control.gso.ControlRectangle;
 import kr.dogfoot.hwplib.object.bodytext.control.gso.GsoControl;
 import kr.dogfoot.hwplib.object.bodytext.control.gso.textbox.TextBox;
+import kr.dogfoot.hwplib.textextractor.TextExtractMethod;
 
 /**
  * 그리기 개체에서 필드 객체를 찾는 기능을 포함하는 클래스
@@ -25,29 +26,35 @@ public class ForGso {
 	 *            필드 타입
 	 * @param fieldName
 	 *            필드 이름
+	 * @param temInField
+	 *            필드 안에 텍스트의 텍스트 추출 방법
 	 * @return 필드 텍스트
 	 */
 	public static String getFieldText(GsoControl gc, ControlType fieldType,
-			String fieldName) {
+			String fieldName, TextExtractMethod temInField) {
 		switch (gc.getGsoType()) {
 		case Line:
 			break;
 		case Rectangle:
-			return rectangle((ControlRectangle) gc, fieldType, fieldName);
+			return rectangle((ControlRectangle) gc, fieldType, fieldName,
+					temInField);
 		case Ellipse:
-			return ellipse((ControlEllipse) gc, fieldType, fieldName);
+			return ellipse((ControlEllipse) gc, fieldType, fieldName,
+					temInField);
 		case Arc:
-			return arc((ControlArc) gc, fieldType, fieldName);
+			return arc((ControlArc) gc, fieldType, fieldName, temInField);
 		case Polygon:
-			return polygon((ControlPolygon) gc, fieldType, fieldName);
+			return polygon((ControlPolygon) gc, fieldType, fieldName,
+					temInField);
 		case Curve:
-			return curve((ControlCurve) gc, fieldType, fieldName);
+			return curve((ControlCurve) gc, fieldType, fieldName, temInField);
 		case Picture:
 			break;
 		case OLE:
 			break;
 		case Container:
-			return container((ControlContainer) gc, fieldType, fieldName);
+			return container((ControlContainer) gc, fieldType, fieldName,
+					temInField);
 		}
 		return null;
 	}
@@ -61,11 +68,14 @@ public class ForGso {
 	 *            필드 타입
 	 * @param fieldName
 	 *            필드 이름
+	 * @param temInField
+	 *            필드 안에 텍스트의 텍스트 추출 방법
 	 * @return 필드 텍스트
 	 */
 	private static String rectangle(ControlRectangle rectangle,
-			ControlType fieldType, String fieldName) {
-		return textBox(rectangle.getTextBox(), fieldType, fieldName);
+			ControlType fieldType, String fieldName,
+			TextExtractMethod temInField) {
+		return textBox(rectangle.getTextBox(), fieldType, fieldName, temInField);
 	}
 
 	/**
@@ -77,12 +87,14 @@ public class ForGso {
 	 *            필드 타입
 	 * @param fieldName
 	 *            필드 이름
+	 * @param temInField
+	 *            필드 안에 텍스트의 텍스트 추출 방법
 	 * @return 필드 텍스트
 	 */
 	private static String textBox(TextBox textBox, ControlType fieldType,
-			String fieldName) {
-		return ForParagraphList.getFieldText(textBox.getParagraphList(),
-				fieldType, fieldName);
+			String fieldName, TextExtractMethod temInField) {
+		return ForParagraphList.getFieldText(textBox.getParagraphList()
+				.getParagraphList(), fieldType, fieldName, temInField);
 	}
 
 	/**
@@ -94,11 +106,14 @@ public class ForGso {
 	 *            필드 타입
 	 * @param fieldName
 	 *            필드 이름
+	 * @param temInField
+	 *            필드 안에 텍스트의 텍스트 추출 방법
 	 * @return 필드 텍스트
 	 */
 	private static String ellipse(ControlEllipse ellipse,
-			ControlType fieldType, String fieldName) {
-		return textBox(ellipse.getTextBox(), fieldType, fieldName);
+			ControlType fieldType, String fieldName,
+			TextExtractMethod temInField) {
+		return textBox(ellipse.getTextBox(), fieldType, fieldName, temInField);
 	}
 
 	/**
@@ -110,11 +125,13 @@ public class ForGso {
 	 *            필드 타입
 	 * @param fieldName
 	 *            필드 이름
+	 * @param temInField
+	 *            필드 안에 텍스트의 텍스트 추출 방법
 	 * @return 필드 텍스트
 	 */
 	private static String arc(ControlArc arc, ControlType fieldType,
-			String fieldName) {
-		return textBox(arc.getTextBox(), fieldType, fieldName);
+			String fieldName, TextExtractMethod temInField) {
+		return textBox(arc.getTextBox(), fieldType, fieldName, temInField);
 	}
 
 	/**
@@ -126,11 +143,14 @@ public class ForGso {
 	 *            필드 타입
 	 * @param fieldName
 	 *            필드 이름
+	 * @param temInField
+	 *            필드 안에 텍스트의 텍스트 추출 방법
 	 * @return 필드 텍스트
 	 */
 	private static String polygon(ControlPolygon polygon,
-			ControlType fieldType, String fieldName) {
-		return textBox(polygon.getTextBox(), fieldType, fieldName);
+			ControlType fieldType, String fieldName,
+			TextExtractMethod temInField) {
+		return textBox(polygon.getTextBox(), fieldType, fieldName, temInField);
 	}
 
 	/**
@@ -142,24 +162,33 @@ public class ForGso {
 	 *            필드 타입
 	 * @param fieldName
 	 *            필드 이름
+	 * @param temInField
+	 *            필드 안에 텍스트의 텍스트 추출 방법
 	 * @return 필드 텍스트
 	 */
 	private static String curve(ControlCurve curve, ControlType fieldType,
-			String fieldName) {
-		return textBox(curve.getTextBox(), fieldType, fieldName);
+			String fieldName, TextExtractMethod temInField) {
+		return textBox(curve.getTextBox(), fieldType, fieldName, temInField);
 	}
 
 	/**
-	 * 묶음 개체에서  필드 객체의 텍스트를 찾아 반환한다.
-	 * @param container 컨테이터 개체
-	 * @param fieldType 필드 타입
-	 * @param fieldName 필드 이름
+	 * 묶음 개체에서 필드 객체의 텍스트를 찾아 반환한다.
+	 * 
+	 * @param container
+	 *            컨테이터 개체
+	 * @param fieldType
+	 *            필드 타입
+	 * @param fieldName
+	 *            필드 이름
+	 * @param temInField
+	 *            필드 안에 텍스트의 텍스트 추출 방법
 	 * @return 필드 텍스트
 	 */
 	private static String container(ControlContainer container,
-			ControlType fieldType, String fieldName) {
+			ControlType fieldType, String fieldName,
+			TextExtractMethod temInField) {
 		for (GsoControl child : container.getChildControlList()) {
-			String text = getFieldText(child, fieldType, fieldName);
+			String text = getFieldText(child, fieldType, fieldName, temInField);
 			if (text != null) {
 				return text;
 			}

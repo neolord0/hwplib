@@ -83,7 +83,7 @@ public class ForGso {
 	private static void textBox(TextBox textBox, TextExtractMethod tem,
 			StringBuffer sb) {
 		if (textBox != null) {
-			ForParagraphList.extract(textBox.getParagraphList(), tem, sb);
+			ForParagraphList.extract(textBox.getParagraphList().getParagraphList(), tem, sb);
 		}
 	}
 

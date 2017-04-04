@@ -116,10 +116,13 @@ public class ParaText {
 	}
 
 	/**
-	 * startIndex 순번 부터 endIndex 순번 까지의  일반 Character의 문자열을 반환한다.
-	 * @param startIndex 시작 순번
-	 * @param endIndex 끝 순번
-	 * @return startIndex 순번 부터 endIndex 순번 까지의  일반 Character의 문자열
+	 * startIndex 순번 부터 endIndex 순번 까지의 일반 Character의 문자열을 반환한다.
+	 * 
+	 * @param startIndex
+	 *            시작 순번
+	 * @param endIndex
+	 *            끝 순번
+	 * @return startIndex 순번 부터 endIndex 순번 까지의 일반 Character의 문자열
 	 */
 	public String getNormalString(int startIndex, int endIndex) {
 		if (startIndex == endIndex) {
@@ -139,4 +142,15 @@ public class ParaText {
 		return sb.toString();
 	}
 
+	/**
+	 * startIndex 순번 부터 끝까지의 일반 Character의 문자열을 반환한다
+	 * 
+	 * @param startIndex
+	 *            시작 순번
+	 * 
+	 * @return startIndex 순번 부터 끝까지의 일반 Character의 일반 Character의 문자열
+	 */
+	public String getNormalString(int startIndex) {
+		return getNormalString(startIndex, charList.size() - 1);
+	}
 }

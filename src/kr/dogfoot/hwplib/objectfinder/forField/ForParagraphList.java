@@ -6,7 +6,7 @@ import kr.dogfoot.hwplib.object.bodytext.control.Control;
 import kr.dogfoot.hwplib.object.bodytext.control.ControlField;
 import kr.dogfoot.hwplib.object.bodytext.control.ControlType;
 import kr.dogfoot.hwplib.object.bodytext.paragraph.Paragraph;
-import kr.dogfoot.hwplib.object.bodytext.paragraph.ParagraphList;
+import kr.dogfoot.hwplib.textextractor.TextExtractMethod;
 
 /**
  * 문단리스트, 문단에서 필드 객체를 찾는 기능을 포함하는 클래스
@@ -23,86 +23,54 @@ public class ForParagraphList {
 	 *            필드 타입
 	 * @param fieldName
 	 *            필드 이름
-	 * @return 필드 텍스트
-	 */
-	public static String getFieldText(ParagraphList paragraphList,
-			ControlType fieldType, String fieldName) {
-		return getFieldText(paragraphList.getParagraphList(), fieldType,
-				fieldName);
-	}
-
-	/**
-	 * 문단리스트에서 필드 객체의 텍스트를 찾아 반환한다.
-	 * 
-	 * @param paragraphList
-	 *            문단리스트
-	 * @param fieldType
-	 *            필드 타입
-	 * @param fieldName
-	 *            필드 이름
+	 * @param temInField
+	 *            필드 안에 텍스트의 텍스트 추출 방법
 	 * @return 필드 텍스트
 	 */
 	public static String getFieldText(ArrayList<Paragraph> paragraphList,
-			ControlType fieldType, String fieldName) {
+			ControlType fieldType, String fieldName,
+			TextExtractMethod temInField) {
 		if (paragraphList == null) {
 			return null;
 		}
-		String text = null;
+		ControlField cf = null;
+		StringBuffer sb = new StringBuffer();
+		int startFieldIndex = -1;
+		int endFieldIndex = -1;
 		for (Paragraph p : paragraphList) {
-			text = paragraph(p, fieldType, fieldName);
-			if (text != null) {
+			if (cf == null) {
+				cf = findField(p, fieldType, fieldName);
+				if (cf != null) {
+					int indexOfControl = p.getControlIndex(cf);
+					startFieldIndex = p.getText()
+							.getCharIndexFromExtendCharIndex(indexOfControl);
+					endFieldIndex = p.getText().getInlineCharIndex(
+							startFieldIndex + 1, (short) 0x04);
+					if (endFieldIndex != -1) {
+						getParaText(p, startFieldIndex + 1, endFieldIndex - 1,
+								temInField, sb);
+						return sb.toString();
+					} else {
+						getParaText(p, startFieldIndex + 1, temInField, sb);
+					}
+				}
+			} else {
+				sb.append("\n");
+				endFieldIndex = p.getText().getInlineCharIndex(0, (short) 0x04);
+				if (endFieldIndex != -1) {
+					getParaText(p, 0, endFieldIndex - 1, temInField, sb); 
+				} else {
+					getParaText(p, 0, temInField, sb);
+				}
+			}
+			if (endFieldIndex != -1) {
 				break;
 			}
 		}
-		return text;
-	}
-
-	/**
-	 * 문단과 문단의 포함된 컨트롤에서 필드 객체의 텍스트를 찾아 반환한다.
-	 * 
-	 * @param p
-	 *            문단
-	 * @param fieldType
-	 *            필드 타입
-	 * @param fieldName
-	 *            필드 이름
-	 * @return 필드 텍스트
-	 */
-	private static String paragraph(Paragraph p, ControlType fieldType,
-			String fieldName) {
-		String text = getFieldText(p, fieldType, fieldName);
-		if (text == null) {
-			text = controls(p.getControlList(), fieldType, fieldName);
+		if (cf == null) {
+			return controls(paragraphList, fieldType, fieldName, temInField);
 		}
-		return text;
-	}
-
-	/**
-	 * 문단에서 필드 객체의 텍스트를 찾아 반환한다.
-	 * 
-	 * @param p
-	 *            문단
-	 * @param fieldType
-	 *            필드 타입
-	 * @param fieldName
-	 *            필드 이름
-	 * @return 필드 텍스트
-	 */
-	private static String getFieldText(Paragraph p, ControlType fieldType,
-			String fieldName) {
-		ControlField cf = findField(p, fieldType, fieldName);
-		if (cf != null) {
-			int indexOfControl = p.getControlIndex(cf);
-			int indexOfStartField = p.getText()
-					.getCharIndexFromExtendCharIndex(indexOfControl);
-			int indexOfEndField = p.getText().getInlineCharIndex(
-					indexOfStartField + 1, (short) 0x04);
-			if (indexOfStartField != -1 && indexOfEndField != -1) {
-				return p.getText().getNormalString(indexOfStartField + 1,
-						indexOfEndField - 1);
-			}
-		}
-		return null;
+		return sb.toString();
 	}
 
 	/**
@@ -133,27 +101,74 @@ public class ForParagraphList {
 	}
 
 	/**
-	 * 문단의 포함된 컨트롤에서 필드 객체의 텍스트를 찾아 반환한다.
+	 * 문단 리스트에 포함된 컨트롤에서 필드 객체의 텍스트를 찾아 반환한다.
 	 * 
-	 * @param controlList
-	 *            컨트롤 리스트
+	 * @param paragraphList
+	 *            문단 리스트
 	 * @param fieldType
 	 *            필드 타입
 	 * @param fieldName
 	 *            필드 이름
+	 * @param temInField
+	 *            필드 안에 텍스트의 텍스트 추출 방법
 	 * @return 필드 텍스트
 	 */
-	private static String controls(ArrayList<Control> controlList,
-			ControlType fieldType, String fieldName) {
-		String text = null;
-		if (controlList != null) {
-			for (Control c : controlList) {
-				text = ForControl.getFieldText(c, fieldType, fieldName);
-				if (text != null) {
-					break;
+	private static String controls(ArrayList<Paragraph> paragraphList,
+			ControlType fieldType, String fieldName,
+			TextExtractMethod temInField) {
+		for (Paragraph p : paragraphList) {
+			ArrayList<Control> controlList = p.getControlList();
+			if (controlList != null) {
+				for (Control c : controlList) {
+					String text = ForControl.getFieldText(c, fieldType,
+							fieldName, temInField);
+					if (text != null) {
+						return text;
+					}
 				}
 			}
 		}
-		return text;
+		return null;
 	}
+
+	/**
+	 * startIndex 순번 부터 endIndex 순번 까지의 문단의 텍스트를 반환한다.
+	 * 
+	 * @param p
+	 *            문단
+	 * @param startIndex
+	 *            시작 순번
+	 * @param endIndex
+	 *            끝 순번
+	 * @param temInField
+	 *            필드 안에 텍스트의 텍스트 추출 방법
+	 * @param sb
+	 *            필드 텍스트가 저장될 StringBuffer
+	 */
+	private static void getParaText(Paragraph p, int startIndex, int endIndex,
+			TextExtractMethod temInField, StringBuffer sb) {
+		kr.dogfoot.hwplib.textextractor.ForParagraphList.extract(p, startIndex,
+				endIndex, temInField, sb);
+	}
+
+	/**
+	 * startIndex 순번 부터 endIndex 순번 까지의 문단의 텍스트를 반환한다.
+	 * 
+	 * @param p
+	 *            문단
+	 * @param startIndex
+	 *            시작 순번
+	 * @param endIndex
+	 *            끝 순번
+	 * @param temInField
+	 *            필드 안에 텍스트의 텍스트 추출 방법
+	 * @param sb
+	 *            필드 텍스트가 저장될 StringBuffer
+	 */
+	private static void getParaText(Paragraph p, int startIndex,
+			TextExtractMethod temInField, StringBuffer sb) {
+		kr.dogfoot.hwplib.textextractor.ForParagraphList.extract(p, startIndex,
+				temInField, sb);
+	}
+
 }
