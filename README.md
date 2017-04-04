@@ -7,6 +7,16 @@
 
 http://www.hancom.com/etc/hwpDownload.do?gnb0=269&gnb1=271&gnb0=101&gnb1=140
 
+2017.4.4
+=========================================================================================
+* 누름틀 필드 텍스트 찾기 기능 
+	- 필드 텍스트가 여러 줄일때 처리		
+	- 필드 텍스트에 컨트롤이 포함되었을 경우 처리  
+
+	String text1 = FieldFinder.getClickHereText(hwpFile, "필드1", TextExtractMethod.OnlyMainParagraph);			
+	
+	(FieldFinder.getClickHereText()  에서 필드 텍스트에 컨트롤이 포함되었을 경우 처리를 위해 
+	 TextExtractMethod temInField 매개변수를 추가하였습니다.	
 
 2017.3.29
 =========================================================================================
