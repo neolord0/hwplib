@@ -8,6 +8,15 @@
 http://www.hancom.com/etc/hwpDownload.do?gnb0=269&gnb1=271&gnb0=101&gnb1=140
 
 
+2017.3.29
+=========================================================================================
+* 누름틀 필드 텍스트 찾기 기능 완료 - musasin84님 요청<br>
+
+	HWPFile hwpFile = HWPReader.fromFile(filename);<br>
+	String text1 = FieldFinder.getClickHereText(hwpFile, "필드이름"); <br> 
+
+	(test/TestGettingClickHereFieldText.java 파일 참고)<br> 
+
 2017.3.20
 =========================================================================================
 * 누름틀 필드 컨트롤 읽기 오류 수정
@@ -26,7 +35,9 @@ http://www.hancom.com/etc/hwpDownload.do?gnb0=269&gnb1=271&gnb0=101&gnb1=140
 	OnlyMainParagraph // 메인 문단에 포함된 텍스트만 추출함 <br>
 	InsertControlTextBetweenParagraphText // 컨트롤의 텍스트를 문단 텍스트 사이에 삽입하여 추출함 <br>
 	AppendControlTextAfterParagraphText // 컨트롤의 텍스트를 문단 텍스트 뒤에 추가하여 추출함 <br>
-	
+
+	(test/TestExtractingText.java 파일 참고)<br> 
+
 * 읽기 모듈에서 버그 수정하였습니다. <br>
 
 * 소스 인코딩을 euc-kr에서 utf-8로 변경하였습니다. <br>
