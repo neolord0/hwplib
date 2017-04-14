@@ -28,6 +28,10 @@ public class ForParaText {
 		p.createText();
 
 		long size = p.getHeader().getCharacterCount() * 2;
+		if (p.getHeader().getCharacterCount() * 2 > sr.getCurrentRecordHeader().getSize()) {
+			long size2 = sr.readUInt4();
+		}
+		
 		long read = 0;
 		while (read < size) {
 			read += hwpChar(p.getText(), sr);
@@ -61,7 +65,7 @@ public class ForParaText {
 			inlineChar(paraText.addNewInlineControlChar(), sr);
 			return 16;
 		}
-		return 0;
+		return 2;
 	}
 
 	/**
