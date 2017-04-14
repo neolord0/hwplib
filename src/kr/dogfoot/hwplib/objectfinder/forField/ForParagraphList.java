@@ -56,11 +56,13 @@ public class ForParagraphList {
 				}
 			} else {
 				sb.append("\n");
-				endFieldIndex = p.getText().getInlineCharIndex(0, (short) 0x04);
-				if (endFieldIndex != -1) {
-					getParaText(p, 0, endFieldIndex - 1, temInField, sb); 
-				} else {
-					getParaText(p, 0, temInField, sb);
+				if (p.getText() != null) {
+					endFieldIndex = p.getText().getInlineCharIndex(0, (short) 0x04);
+					if (endFieldIndex != -1) {
+						getParaText(p, 0, endFieldIndex - 1, temInField, sb); 
+					} else {
+						getParaText(p, 0, temInField, sb);
+					}
 				}
 			}
 			if (endFieldIndex != -1) {

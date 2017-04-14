@@ -26,10 +26,10 @@ public class ForParaText {
 	 */
 	public static void read(Paragraph p, StreamReader sr) throws Exception {
 		p.createText();
-
 		long size = p.getHeader().getCharacterCount() * 2;
-		if (p.getHeader().getCharacterCount() * 2 > sr.getCurrentRecordHeader().getSize()) {
-			long size2 = sr.readUInt4();
+		
+		if (p.getHeader().getCharacterCount() * 2 >= 4096) {
+			long bigRecordSize = sr.readUInt4();
 		}
 		
 		long read = 0;
