@@ -24,13 +24,12 @@ public class ForParaRangeTag {
 	 *            레코드 크기
 	 * @throws Exception
 	 */
-	public static void read(Paragraph p, StreamReader sr, short size)
+	public static void read(Paragraph p, StreamReader sr, long size)
 			throws Exception {
 		p.createRangeTag();
 		ParaRangeTag prt = p.getRangeTag();
-
-		int count = size / 12;
-		for (int index = 0; index < count; index++) {
+		long count = size / 12;
+		for (long index = 0; index < count; index++) {
 			RangeTagItem rti = prt.addNewRangeTagItem();
 			rti.setRangeStart(sr.readUInt4());
 			rti.setRangeEnd(sr.readUInt4());

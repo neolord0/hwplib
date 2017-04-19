@@ -22,7 +22,7 @@ public class ForUnknown {
 	 */
 	public static void read(UnknownRecord unknown, StreamReader sr)
 			throws IOException {
-		byte[] body = new byte[unknown.getHeader().getSize()];
+		byte[] body = new byte[(int)unknown.getHeader().getSize()];
 		sr.readBytes(body);
 		unknown.setBody(body);
 	}

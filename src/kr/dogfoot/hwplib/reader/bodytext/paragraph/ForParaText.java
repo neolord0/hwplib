@@ -29,7 +29,8 @@ public class ForParaText {
 		long size = p.getHeader().getCharacterCount() * 2;
 		
 		if (p.getHeader().getCharacterCount() * 2 >= 4096) {
-			long bigRecordSize = sr.readUInt4();
+			long realRecordSize = sr.readUInt4(); 
+			sr.getCurrentRecordHeader().setSize(realRecordSize);
 		}
 		
 		long read = 0;

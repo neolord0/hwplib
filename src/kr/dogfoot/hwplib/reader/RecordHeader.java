@@ -17,7 +17,7 @@ public class RecordHeader {
 	/**
 	 * 크기
 	 */
-	private short size;
+	private long size;
 
 	/**
 	 * 생성자
@@ -68,7 +68,7 @@ public class RecordHeader {
 	 * 
 	 * @return 크기
 	 */
-	public short getSize() {
+	public long getSize() {
 		return size;
 	}
 
@@ -78,7 +78,7 @@ public class RecordHeader {
 	 * @param size
 	 *            크기
 	 */
-	public void setSize(short size) {
+	public void setSize(long size) {
 		this.size = size;
 	}
 

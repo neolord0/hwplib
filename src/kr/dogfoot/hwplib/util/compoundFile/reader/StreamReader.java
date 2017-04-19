@@ -295,6 +295,8 @@ public abstract class StreamReader {
 	public void skipToEndRecord() throws IOException {
 		long n = getCurrentRecordHeader().getSize()
 				- getCurrentPositionAfterHeader();
-		skip(n);
+		if (n > 0) {
+			skip(n);
+		}
 	}
 }

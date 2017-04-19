@@ -27,6 +27,7 @@ public class TestReadingHWPFile {
 		test("sample_hwp\\test-페이지숨김.hwp");
 		test("sample_hwp\\test-필드.hwp");
 		test("sample_hwp\\test-필드_누름틀.hwp");
+		test("sample_hwp\\구버전(5.0.2.2) Picture 컨트롤.hwp");
 	}
 
 	private static void test(String filename) throws Exception {

@@ -60,12 +60,12 @@ public class ForControlPicture {
 		scp.setTopAfterCutting(sr.readSInt4());
 		scp.setRightAfterCutting(sr.readSInt4());
 		scp.setBottomAfterCutting(sr.readSInt4());
-
 		innerMargin(scp.getInnerMargin(), sr);
 		ForFillInfo.pictureInfo(scp.getPictureInfo(), sr);
-
 		scp.setBorderTransparency(sr.readUInt1());
-		scp.setInstanceId(sr.readUInt4());
+		if (sr.getCurrentRecordHeader().getSize() > sr.getCurrentPositionAfterHeader()) {
+			scp.setInstanceId(sr.readUInt4());
+		}
 		if (sr.getCurrentRecordHeader().getSize() > sr.getCurrentPositionAfterHeader()) {
 			ForPictureEffect.read(scp.getPictureEffect(), sr);
 
