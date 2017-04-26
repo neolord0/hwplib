@@ -63,7 +63,6 @@ public class ForParagraph {
 			if (isOutOfParagraph(sr) || isFollowLastBatangPageInfo(sr)) {
 				break;
 			}
-	
 			readBody();
 		}
 	}

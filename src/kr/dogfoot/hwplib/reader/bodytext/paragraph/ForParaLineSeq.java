@@ -3,8 +3,8 @@ package kr.dogfoot.hwplib.reader.bodytext.paragraph;
 import java.io.IOException;
 
 import kr.dogfoot.hwplib.object.bodytext.paragraph.Paragraph;
-import kr.dogfoot.hwplib.object.bodytext.paragraph.lineseg.ParaLineSeg;
 import kr.dogfoot.hwplib.object.bodytext.paragraph.lineseg.LineSegItem;
+import kr.dogfoot.hwplib.object.bodytext.paragraph.lineseg.ParaLineSeg;
 import kr.dogfoot.hwplib.util.compoundFile.reader.StreamReader;
 
 /**

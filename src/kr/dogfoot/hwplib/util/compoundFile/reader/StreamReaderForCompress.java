@@ -4,6 +4,7 @@ import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
+import java.util.Arrays;
 import java.util.zip.DataFormatException;
 import java.util.zip.Inflater;
 
@@ -52,9 +53,9 @@ public class StreamReaderForCompress extends StreamReader {
 		dis.close();
 
 		byte[] decompressed = decompress(compressed, originSize);
-		if (originSize == decompressed.length) {
+		if (originSize == 0x3ffff || originSize == decompressed.length) {
 			bis = new ByteArrayInputStream(decompressed);
-			setSize(originSize);
+			setSize(decompressed.length);
 		} else {
 			throw new Exception("Decompressed bytes size is wrong.");
 		}
@@ -105,9 +106,9 @@ public class StreamReaderForCompress extends StreamReader {
 		byte[] result = new byte[originSize];
 		Inflater decompresser = new Inflater(true);
 		decompresser.setInput(compressed, 0, compressed.length);
-		decompresser.inflate(result);
+		int resultLength = decompresser.inflate(result);
 		decompresser.end();
-		return result;
+		return Arrays.copyOfRange(result, 0, resultLength); 
 	}
 
 	@Override

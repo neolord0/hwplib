@@ -33,6 +33,7 @@ public class ForParaHeader {
 		if (sr.getFileVersion().isOver(5, 0, 3, 2)) {
 			ph.setIsMergedByTrack(sr.readUInt2());
 		}
+		sr.skipToEndRecord();
 	}
 
 	/**

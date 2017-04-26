@@ -25,6 +25,7 @@ public class ForParagraphList {
 		ForParagraph fp = new ForParagraph();
 		sr.readRecordHeder();
 		while (sr.isEndOfStream() == false) {
+			
 			Paragraph para = pli.addNewParagraph();
 			fp.read(para, sr);
 			if (para.getHeader().isLastInList()) {

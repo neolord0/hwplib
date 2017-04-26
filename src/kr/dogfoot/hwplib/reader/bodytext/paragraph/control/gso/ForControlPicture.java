@@ -62,7 +62,9 @@ public class ForControlPicture {
 		scp.setBottomAfterCutting(sr.readSInt4());
 		innerMargin(scp.getInnerMargin(), sr);
 		ForFillInfo.pictureInfo(scp.getPictureInfo(), sr);
-		scp.setBorderTransparency(sr.readUInt1());
+		if (sr.getCurrentRecordHeader().getSize() > sr.getCurrentPositionAfterHeader()) {
+			scp.setBorderTransparency(sr.readUInt1());
+		}
 		if (sr.getCurrentRecordHeader().getSize() > sr.getCurrentPositionAfterHeader()) {
 			scp.setInstanceId(sr.readUInt4());
 		}

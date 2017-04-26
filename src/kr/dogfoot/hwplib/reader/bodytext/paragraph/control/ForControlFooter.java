@@ -57,7 +57,9 @@ public class ForControlFooter {
 	private void ctrlHeader() throws IOException {
 		foot.getHeader().setApplyPage(
 				HeaderFooterApplyPage.valueOf((byte) sr.readUInt4()));
-		foot.getHeader().setCreateIndex(sr.readSInt4());
+		if (sr.getCurrentRecordHeader().getSize() > sr.getCurrentPositionAfterHeader()) {
+			foot.getHeader().setCreateIndex(sr.readSInt4());
+		}
 	}
 
 	/**

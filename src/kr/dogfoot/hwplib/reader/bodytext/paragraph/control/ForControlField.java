@@ -45,18 +45,18 @@ public class ForControlField {
 		h.setEtcProperty(sr.readUInt1());
 		h.setCommand(sr.readUTF16LEString());
 		h.setInstanceId(sr.readUInt4());
-		unknown4Bytes(sr);
+		unknownBytes(sr);
 	}
 
 	/**
-	 * 알려지지 않은 4 byte을 처리한다.
+	 * 알려지지 않은 byte을 처리한다.
 	 * 
 	 * @param sr
 	 *            스트림 리더
 	 * @throws IOException
 	 */
-	private static void unknown4Bytes(StreamReader sr) throws IOException {
-		sr.skip(4);
+	private static void unknownBytes(StreamReader sr) throws IOException {
+		sr.skipToEndRecord();
 	}
 
 	/**

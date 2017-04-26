@@ -103,7 +103,8 @@ public class FileVersion {
 	public boolean isOver(int mm2, int nn2, int pp2, int rr2) {
 		if ((mm > mm2) || (mm == mm2 && nn > nn2)
 				|| (mm == mm2 && nn == nn2 && pp > pp2)
-				|| (mm == mm2 && nn == nn2 && pp == pp2 && rr > rr2)) {
+				|| (mm == mm2 && nn == nn2 && pp == pp2 && rr > rr2)
+				|| (mm == mm2 && nn == nn2 && pp == pp2 && rr == rr2)) {
 			return true;
 		}
 		return false;

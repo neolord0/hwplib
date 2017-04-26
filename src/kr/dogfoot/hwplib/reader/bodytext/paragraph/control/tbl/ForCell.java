@@ -61,12 +61,14 @@ public class ForCell {
 		lh.setBottomMargin(sr.readUInt2());
 		lh.setBorderFillId(sr.readUInt2());
 		lh.setTextWidth(sr.readUInt4());
-		short flag = sr.readUInt1();
-		if (flag == 0xff) {
-			unknownBytes(10, sr);
-			lh.setFieldName(sr.readUTF16LEString());
-		} 
-		unknownRestBytes(sr);
+		if (sr.getCurrentRecordHeader().getSize() > sr.getCurrentPositionAfterHeader()) {
+			short flag = sr.readUInt1();
+			if (flag == 0xff) {
+				unknownBytes(10, sr);
+				lh.setFieldName(sr.readUTF16LEString());
+			} 
+			unknownRestBytes(sr);
+		}
 	}
 
 	/**
