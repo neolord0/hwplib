@@ -11,20 +11,22 @@ http://www.hancom.com/etc/hwpDownload.do?gnb0=269&gnb1=271&gnb0=101&gnb1=140
 =========================================================================================
 * 저장 모듈 완료 (TestEditingHWPFile.java, TestReWritingHWPFile.java 참고) <br>
 		
-	// 파일을 열어서 <br>
-	String filename = "sample_hwp\\test-blank.hwp"; <br>
-	HWPFile hwpFile = HWPReader.fromFile(filename); <br>
+<pre><code>
+	// 파일을 열어서
+	String filename = "sample_hwp\\test-blank.hwp"; 
+	HWPFile hwpFile = HWPReader.fromFile(filename); 
 	
-	if (hwpFile != null) { <br>
-	    // 첫번째 구역/문단에 문자열 추가하고 <br> 
-		Section s = hwpFile.getBodyText().getSectionList().get(0); <br>
-		Paragraph firstParagraph = s.getParagraph(0); <br>
-		firstParagraph.getText().addString("이것은 추가된 문자열입니다."); <br>
+	if (hwpFile != null) {
+	    // 첫번째 구역/문단에 문자열 추가하고
+		Section s = hwpFile.getBodyText().getSectionList().get(0);
+		Paragraph firstParagraph = s.getParagraph(0);
+		firstParagraph.getText().addString("이것은 추가된 문자열입니다.");
 
-		// 다른 이름으로 저장 <br>
-		String writePath = filename.substring(0, 11) + "ed-" + filename.substring(11); <br>
-		HWPWriter.toFile(hwpFile, writePath); <br>
-	} <br>
+		// 다른 이름으로 저장
+		String writePath = filename.substring(0, 11) + "ed-" + filename.substring(11);
+		HWPWriter.toFile(hwpFile, writePath);
+	}
+</code></pre>
 
 2017.4.26
 =========================================================================================
@@ -41,7 +43,9 @@ http://www.hancom.com/etc/hwpDownload.do?gnb0=269&gnb1=271&gnb0=101&gnb1=140
 	- 필드 텍스트가 여러 줄일때 처리 <br>		
 	- 필드 텍스트에 컨트롤이 포함되었을 경우 처리 <br>  
 
-	String text1 = FieldFinder.getClickHereText(hwpFile, "필드1", TextExtractMethod.OnlyMainParagraph); <br>
+<pre><code>
+	String text1 = FieldFinder.getClickHereText(hwpFile, "필드1", TextExtractMethod.OnlyMainParagraph);
+</code></pre>
 	
 	(FieldFinder.getClickHereText()  에서 필드 텍스트에 컨트롤이 포함되었을 경우 처리를 위해 <br>
 	 TextExtractMethod temInField 매개변수를 추가하였습니다.) <br>
@@ -50,8 +54,10 @@ http://www.hancom.com/etc/hwpDownload.do?gnb0=269&gnb1=271&gnb0=101&gnb1=140
 =========================================================================================
 * 누름틀 필드 텍스트 찾기 기능 완료 - musasin84님 요청<br>
 
-	HWPFile hwpFile = HWPReader.fromFile(filename);<br>
-	String text1 = FieldFinder.getClickHereText(hwpFile, "필드이름"); <br> 
+<pre><code>
+	HWPFile hwpFile = HWPReader.fromFile(filename);
+	String text1 = FieldFinder.getClickHereText(hwpFile, "필드이름");
+</code></pre>
 
 	(test/TestGettingClickHereFieldText.java 파일 참고)<br> 
 
@@ -65,12 +71,13 @@ http://www.hancom.com/etc/hwpDownload.do?gnb0=269&gnb1=271&gnb0=101&gnb1=140
 
 * 텍스트 추출기 모듈을 추가하였습니다. <br>
 
-	HWPFile hwpFile = HWPReader.fromFile(filename); <br>
-	String hwpText = TextExtractor.extract(hwpFile, TextExtractMethod.InsertControlTextBetweenParagraphText); <br> 
+<pre><code>
+	HWPFile hwpFile = HWPReader.fromFile(filename); 
+	String hwpText = TextExtractor.extract(hwpFile, TextExtractMethod.InsertControlTextBetweenParagraphText);
+</code></pre>
 	
  	TextExtractor.extract()의 두번째 파라미터 값에 따라 세가지 추출 방법을 구현했습니다. <br>
-	
-	OnlyMainParagraph // 메인 문단에 포함된 텍스트만 추출함 <br>
+	OnlyMainParagraph // 메인 문단에 포함된 텍스트만 추출함 <br> 
 	InsertControlTextBetweenParagraphText // 컨트롤의 텍스트를 문단 텍스트 사이에 삽입하여 추출함 <br>
 	AppendControlTextAfterParagraphText // 컨트롤의 텍스트를 문단 텍스트 뒤에 추가하여 추출함 <br>
 
@@ -86,10 +93,12 @@ http://www.hancom.com/etc/hwpDownload.do?gnb0=269&gnb1=271&gnb0=101&gnb1=140
 * 이 번 배포버전은 읽기 모듈 까지만 구현되었습니다. 쓰기 모듈은 추후 상황을 봐서 구현할 계획입니다. <br>
 	사용법은  <br>
 	
-	HWPFile hwpFile = HWPReader.fromFile(filename);  			// 파일을 읽는다. <br>	
-	Section s = hwpFile.getBodyText().getSectionList().get(0); 		// 파일에서 첫번째 구역을 얻는다. <br>	
-	Paragraph p = s.getParagraphList().get(0);				// 첫번째 구역에서 첫번째 문단을 얻는다. <br>
+<pre><code>
+	HWPFile hwpFile = HWPReader.fromFile(filename);  			// 파일을 읽는다. 
+	Section s = hwpFile.getBodyText().getSectionList().get(0); 		// 파일에서 첫번째 구역을 얻는다. 
+	Paragraph p = s.getParagraphList().get(0);				// 첫번째 구역에서 첫번째 문단을 얻는다. 
 	...		
+</code></pre>
 	
 	입니다. <br>
 	
