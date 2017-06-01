@@ -11,7 +11,7 @@ http://www.hancom.com/etc/hwpDownload.do?gnb0=269&gnb1=271&gnb0=101&gnb1=140
 =========================================================================================
 * 저장 모듈 완료
 	- TestEditingHWPFile.java, TestReWritingHWPFile.java 참고
-<pre><code>
+```java
 	// 파일을 열어서
 	String filename = "sample_hwp\\test-blank.hwp"; 
 	HWPFile hwpFile = HWPReader.fromFile(filename); 
@@ -27,7 +27,7 @@ http://www.hancom.com/etc/hwpDownload.do?gnb0=269&gnb1=271&gnb0=101&gnb1=140
 		String writePath = filename.substring(0, 11) + "ed-" + filename.substring(11);
 		HWPWriter.toFile(hwpFile, writePath);
 	}
-</code></pre>
+```
 
 2017.4.26
 =========================================================================================
@@ -44,18 +44,18 @@ http://www.hancom.com/etc/hwpDownload.do?gnb0=269&gnb1=271&gnb0=101&gnb1=140
 	- 필드 텍스트가 여러 줄일때 처리 
 	- 필드 텍스트에 컨트롤이 포함되었을 경우 처리
 	- FieldFinder.getClickHereText() 에서 필드 텍스트에 컨트롤이 포함되었을 경우 처리를 위해 TextExtractMethod temInField 매개변수를 추가하였습니다.
-<pre><code>
+```java
 	String text1 = FieldFinder.getClickHereText(hwpFile, "필드1", TextExtractMethod.OnlyMainParagraph);
-</code></pre>
+```
 
 2017.3.29
 =========================================================================================
 * 누름틀 필드 텍스트 찾기 기능 완료 - musasin84님 요청
 	- test/TestGettingClickHereFieldText.java 파일 참고 
-<pre><code>
+```java
 	HWPFile hwpFile = HWPReader.fromFile(filename);
 	String text1 = FieldFinder.getClickHereText(hwpFile, "필드이름");
-</code></pre>
+```
 
 2017.3.20
 =========================================================================================
@@ -71,10 +71,11 @@ http://www.hancom.com/etc/hwpDownload.do?gnb0=269&gnb1=271&gnb0=101&gnb1=140
 		- InsertControlTextBetweenParagraphText // 컨트롤의 텍스트를 문단 텍스트 사이에 삽입하여 추출함
 		- AppendControlTextAfterParagraphText // 컨트롤의 텍스트를 문단 텍스트 뒤에 추가하여 추출함
 	- test/TestExtractingText.java 파일 참고 <br> 
-<pre><code>
+```java
 	HWPFile hwpFile = HWPReader.fromFile(filename); 
 	String hwpText = TextExtractor.extract(hwpFile, TextExtractMethod.InsertControlTextBetweenParagraphText);
-</code></pre>
+```
+
 * 읽기 모듈에서 버그 수정하였습니다.
 * 소스 인코딩을 euc-kr에서 utf-8로 변경하였습니다. 
 
@@ -83,7 +84,7 @@ http://www.hancom.com/etc/hwpDownload.do?gnb0=269&gnb1=271&gnb0=101&gnb1=140
 =========================================================================================
 * 이 번 배포버전은 읽기 모듈 까지만 구현되었습니다. 쓰기 모듈은 추후 상황을 봐서 구현할 계획입니다.
 	- 각각의 객체들과 객체에 포함된 메소스들에 대해선 "/doc" 디렉토리에 있는 javadoc 문서를 참고하시기 바랍니다.
-<pre><code>
+```java
 	// 파일을 읽는다. 
 	HWPFile hwpFile = HWPReader.fromFile(filename);  			
 	
@@ -93,4 +94,4 @@ http://www.hancom.com/etc/hwpDownload.do?gnb0=269&gnb1=271&gnb0=101&gnb1=140
 	// 첫번째 구역에서 첫번째 문단을 얻는다. 
 	Paragraph p = s.getParagraphList().get(0);				
 	...		
-</code></pre>
+```
