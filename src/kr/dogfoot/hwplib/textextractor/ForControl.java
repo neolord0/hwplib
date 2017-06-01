@@ -98,8 +98,7 @@ public class ForControl {
 			StringBuffer sb) {
 		for (Row r : table.getRowList()) {
 			for (Cell c : r.getCellList()) {
-				ForParagraphList.extract(c.getParagraphList()
-						.getParagraphList(), tem, sb);
+				ForParagraphList.extract(c.getParagraphList(), tem, sb);
 			}
 		}
 	}
@@ -128,8 +127,7 @@ public class ForControl {
 	 */
 	private static void header(ControlHeader header, TextExtractMethod tem,
 			StringBuffer sb) {
-		ForParagraphList.extract(header.getParagraphList().getParagraphList(),
-				tem, sb);
+		ForParagraphList.extract(header.getParagraphList(), tem, sb);
 	}
 
 	/**
@@ -144,8 +142,7 @@ public class ForControl {
 	 */
 	private static void footer(ControlFooter footer, TextExtractMethod tem,
 			StringBuffer sb) {
-		ForParagraphList.extract(footer.getParagraphList().getParagraphList(),
-				tem, sb);
+		ForParagraphList.extract(footer.getParagraphList(), tem, sb);
 	}
 
 	/**
@@ -160,8 +157,7 @@ public class ForControl {
 	 */
 	private static void footnote(ControlFootnote footnote,
 			TextExtractMethod tem, StringBuffer sb) {
-		ForParagraphList.extract(
-				footnote.getParagraphList().getParagraphList(), tem, sb);
+		ForParagraphList.extract(footnote.getParagraphList(), tem, sb);
 	}
 
 	/**
@@ -176,8 +172,7 @@ public class ForControl {
 	 */
 	private static void endnote(ControlEndnote endnote, TextExtractMethod tem,
 			StringBuffer sb) {
-		ForParagraphList.extract(endnote.getParagraphList().getParagraphList(),
-				tem, sb);
+		ForParagraphList.extract(endnote.getParagraphList(), tem, sb);
 	}
 
 	/**
@@ -206,7 +201,6 @@ public class ForControl {
 	 */
 	private static void hiddenComment(ControlHiddenComment hiddenComment,
 			TextExtractMethod tem, StringBuffer sb) {
-		ForParagraphList.extract(hiddenComment.getParagraphList()
-				.getParagraphList(), tem, sb);
+		ForParagraphList.extract(hiddenComment.getParagraphList(), tem, sb);
 	}
 }

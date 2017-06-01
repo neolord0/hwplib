@@ -31,7 +31,12 @@ public abstract class Control {
 	public ControlType getType() {
 		return ControlType.ctrlIdOf(header.getCtrlId());
 	}
-	
+
+	/**
+	 * 필드 컨트롤인지 여부를 반환한다.
+	 * 
+	 * @return 필드 컨트롤인지 여부
+	 */
 	public boolean isField() {
 		return ControlType.isField(header.getCtrlId());
 	}

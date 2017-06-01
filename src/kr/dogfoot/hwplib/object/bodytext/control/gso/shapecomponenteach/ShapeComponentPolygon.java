@@ -14,10 +14,6 @@ public class ShapeComponentPolygon {
 	 * 좌표 리스트
 	 */
 	private ArrayList<PositionXY> positionList;
-	/**
-	 * 다각형이 닫혔는지 여부
-	 */
-	private boolean closed;
 
 	/**
 	 * 생성자
@@ -44,24 +40,5 @@ public class ShapeComponentPolygon {
 	 */
 	public ArrayList<PositionXY> getPositionList() {
 		return positionList;
-	}
-
-	/**
-	 * 다각형이 닫혔는지 여부를 반환한다.
-	 * 
-	 * @return 다각형이 닫혔는지 여부
-	 */
-	public boolean isClosed() {
-		return closed;
-	}
-
-	/**
-	 * 다각형이 닫혔는지 여부를 설정한다.
-	 * 
-	 * @param closed
-	 *            다각형이 닫혔는지 여부
-	 */
-	public void setClosed(boolean closed) {
-		this.closed = closed;
 	}
 }

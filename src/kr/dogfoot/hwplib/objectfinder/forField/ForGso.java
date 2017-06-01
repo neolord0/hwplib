@@ -93,8 +93,7 @@ public class ForGso {
 	 */
 	private static String textBox(TextBox textBox, ControlType fieldType,
 			String fieldName, TextExtractMethod temInField) {
-		return ForParagraphList.getFieldText(textBox.getParagraphList()
-				.getParagraphList(), fieldType, fieldName, temInField);
+		return ForParagraphList.getFieldText(textBox.getParagraphList(), fieldType, fieldName, temInField);
 	}
 
 	/**

@@ -8,7 +8,7 @@ import kr.dogfoot.hwplib.object.docinfo.documentproperties.StartNumber;
 import kr.dogfoot.hwplib.util.compoundFile.reader.StreamReader;
 
 /**
- * 문서 속성 레코드를 읽기 위한 객체.
+ * 문서 속성 레코드를 읽기 위한 객체
  * 
  * @author neolord
  */

@@ -26,15 +26,13 @@ public class ForParaText {
 	 */
 	public static void read(Paragraph p, StreamReader sr) throws Exception {
 		p.createText();
-		long size = p.getHeader().getCharacterCount() * 2;
-		
-		if (p.getHeader().getCharacterCount() * 2 >= 4096) {
-			long realRecordSize = sr.readUInt4(); 
-			sr.getCurrentRecordHeader().setSize(realRecordSize);
+		long recordSize = p.getHeader().getCharacterCount() * 2;
+		if (recordSize > 4095) {
+			recordSize = sr.readUInt4(); 
 		}
 		
 		long read = 0;
-		while (read < size) {
+		while (read < recordSize) {
 			read += hwpChar(p.getText(), sr);
 		}
 	}

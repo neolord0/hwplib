@@ -22,23 +22,23 @@ public class Matrix {
 	/**
 	 * 행렬의 원소를 반환한다.
 	 * 
-	 * @param i
+	 * @param index
 	 *            원소의 인덱스
 	 * @return 행렬의 원소
 	 */
-	public double getValue(int i) {
-		return values[i];
+	public double getValue(int index) {
+		return values[index];
 	}
 
 	/**
 	 * 행렬의 원소를 설정한다.
 	 * 
-	 * @param i
+	 * @param index
 	 *            원소의 인덱스
 	 * @param value
 	 *            행렬의 원소
 	 */
-	public void setValue(int i, double value) {
-		values[i] = value;
+	public void setValue(int index, double value) {
+		values[index] = value;
 	}
 }

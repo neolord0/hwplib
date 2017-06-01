@@ -22,15 +22,17 @@ public class TestExtractingText {
 		test("sample_hwp\\test-묶음.hwp", tem);
 		test("sample_hwp\\test-바탕쪽.hwp", tem);
 		test("sample_hwp\\test-새번호지정.hwp", tem);
-		test("sample_hwp\\test-선-사각형.hwp", tem);
+		test("sample_hwp\\test-선-사각형-타원.hwp", tem);
 		test("sample_hwp\\test-수식.hwp", tem);
 		test("sample_hwp\\test-숨은설명.hwp", tem);
 		test("sample_hwp\\test-이미지추가.hwp", tem);
 		test("sample_hwp\\test-차트.hwp", tem);
 		test("sample_hwp\\test-책갈피.hwp", tem);
 		test("sample_hwp\\test-페이지숨김.hwp", tem);
+		test("sample_hwp\\test-표.hwp", tem);
 		test("sample_hwp\\test-필드.hwp", tem);
 		test("sample_hwp\\test-필드_누름틀.hwp", tem);
+		test("sample_hwp\\test-호 곡선.hwp", tem);
 		test("sample_hwp\\[붙임1]정부포상 추천 구비서류 서식.hwp", tem);
 	}
 

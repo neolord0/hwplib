@@ -27,7 +27,7 @@ public class FieldFinder {
 			TextExtractMethod temInField) {
 		String strText = null;
 		for (Section s : hwpFile.getBodyText().getSectionList()) {
-			strText = ForParagraphList.getFieldText(s.getParagraphList(),
+			strText = ForParagraphList.getFieldText(s,
 					ControlType.FIELD_CLICKHERE, fieldName, temInField);
 			if (strText != null) {
 				break;

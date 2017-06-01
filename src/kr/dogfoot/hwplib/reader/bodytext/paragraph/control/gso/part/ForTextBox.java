@@ -2,14 +2,17 @@ package kr.dogfoot.hwplib.reader.bodytext.paragraph.control.gso.part;
 
 import java.io.IOException;
 
+import kr.dogfoot.hwplib.object.bodytext.control.bookmark.ParameterItem;
+import kr.dogfoot.hwplib.object.bodytext.control.bookmark.ParameterSet;
+import kr.dogfoot.hwplib.object.bodytext.control.bookmark.ParameterType;
 import kr.dogfoot.hwplib.object.bodytext.control.gso.textbox.ListHeaderForTextBox;
 import kr.dogfoot.hwplib.object.bodytext.control.gso.textbox.TextBox;
-import kr.dogfoot.hwplib.object.bodytext.paragraph.ParagraphList;
 import kr.dogfoot.hwplib.reader.bodytext.ForParagraphList;
+import kr.dogfoot.hwplib.reader.bodytext.paragraph.control.bookmark.ForParameterSet;
 import kr.dogfoot.hwplib.util.compoundFile.reader.StreamReader;
 
 /**
- * 글상자를 읽는다.
+ * 글상자를 읽기 위한 객체
  * 
  * @author neolord
  */
@@ -25,7 +28,7 @@ public class ForTextBox {
 	 */
 	public static void read(TextBox textBox, StreamReader sr) throws Exception {
 		listHeader(textBox.getListHeader(), sr);
-		paragraphList(textBox.getParagraphList(), sr);
+		ForParagraphList.read(textBox.getParagraphList(), sr);
 	}
 
 	/**
@@ -53,10 +56,10 @@ public class ForTextBox {
 		} else {
 			lh.setEditableAtFormMode(false);
 		}
-		short temp2 = sr.readUInt1();
-		if (temp2 == 0xff) {
-			unknownBytes(10, sr);
-			lh.setFieldName(sr.readUTF16LEString());
+
+		short flag = sr.readUInt1();
+		if (flag == 0xff) {
+			fieldName(lh, sr);
 		}
 	}
 
@@ -74,17 +77,26 @@ public class ForTextBox {
 	}
 
 	/**
-	 * 문단 리스트를 읽는다.
+	 * 필드 이름을 읽는다.
 	 * 
-	 * @param paragraphList
-	 *            문단 리스트
+	 * @param lh
+	 *            글상자의 문단 리스트 헤더 레코드
 	 * @param sr
 	 *            스트림 리더
-	 * @throws Exception
+	 * @throws IOException
 	 */
-	private static void paragraphList(ParagraphList paragraphList,
-			StreamReader sr) throws Exception {
-		ForParagraphList.read(paragraphList, sr);
-	}
+	private static void fieldName(ListHeaderForTextBox lh, StreamReader sr)
+			throws IOException {
+		ParameterSet ps = new ParameterSet();
+		ForParameterSet.read(ps, sr);
 
+		if (ps.getId() == 0x21b) {
+			for (ParameterItem pi : ps.getParameterItemList()) {
+				if (pi.getId() == 0x4000
+						&& pi.getType() == ParameterType.String) {
+					lh.setFieldName(pi.getValue_BSTR());
+				}
+			}
+		}
+	}
 }

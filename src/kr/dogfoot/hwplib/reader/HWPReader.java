@@ -12,7 +12,7 @@ import kr.dogfoot.hwplib.util.compoundFile.reader.CompoundFileReader;
 import kr.dogfoot.hwplib.util.compoundFile.reader.StreamReader;
 
 /**
- * 한글 파일을 읽는 객체
+ * 한글 파일을 읽기 위한 객체
  * 
  * @author neolord
  */
@@ -116,8 +116,8 @@ public class HWPReader {
 		cfr.moveChildStorage("BodyText");
 		int sectionCount = hwpFile.getDocInfo().getDocumentProperties()
 				.getSectionCount();
-		for (int i = 0; i < sectionCount; i++) {
-			section(i);
+		for (int index = 0; index < sectionCount; index++) {
+			section(index);
 		}
 		cfr.moveParentStorage();
 	}
@@ -170,5 +170,6 @@ public class HWPReader {
 		sr.readBytes(binaryData);
 		sr.close();
 		return binaryData;
+				
 	}
 }

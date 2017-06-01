@@ -18,7 +18,7 @@ public class TestReadingHWPFile {
 		test("sample_hwp\\test-묶음.hwp");
 		test("sample_hwp\\test-바탕쪽.hwp");
 		test("sample_hwp\\test-새번호지정.hwp");
-		test("sample_hwp\\test-선-사각형.hwp");
+		test("sample_hwp\\test-선-사각형-타원.hwp");
 		test("sample_hwp\\test-수식.hwp");
 		test("sample_hwp\\test-숨은설명.hwp");
 		test("sample_hwp\\test-이미지추가.hwp");
@@ -27,6 +27,7 @@ public class TestReadingHWPFile {
 		test("sample_hwp\\test-페이지숨김.hwp");
 		test("sample_hwp\\test-필드.hwp");
 		test("sample_hwp\\test-필드_누름틀.hwp");
+		test("sample_hwp\\test-호 곡선.hwp");
 		test("sample_hwp\\구버전(5.0.2.2) Picture 컨트롤.hwp");
 	}
 

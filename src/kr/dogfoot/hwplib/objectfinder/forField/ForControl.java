@@ -103,9 +103,8 @@ public class ForControl {
 			String fieldName, TextExtractMethod temInField) {
 		for (Row r : table.getRowList()) {
 			for (Cell c : r.getCellList()) {
-				String text = ForParagraphList.getFieldText(c
-						.getParagraphList().getParagraphList(), fieldType,
-						fieldName, temInField);
+				String text = ForParagraphList.getFieldText(
+						c.getParagraphList(), fieldType, fieldName, temInField);
 				if (text != null) {
 					return text;
 				}
@@ -129,8 +128,8 @@ public class ForControl {
 	 */
 	private static String header(ControlHeader header, ControlType fieldType,
 			String fieldName, TextExtractMethod temInField) {
-		return ForParagraphList.getFieldText(header.getParagraphList()
-				.getParagraphList(), fieldType, fieldName, temInField);
+		return ForParagraphList.getFieldText(header.getParagraphList(),
+				fieldType, fieldName, temInField);
 	}
 
 	/**
@@ -148,8 +147,8 @@ public class ForControl {
 	 */
 	private static String footer(ControlFooter footer, ControlType fieldType,
 			String fieldName, TextExtractMethod temInField) {
-		return ForParagraphList.getFieldText(footer.getParagraphList()
-				.getParagraphList(), fieldType, fieldName, temInField);
+		return ForParagraphList.getFieldText(footer.getParagraphList(),
+				fieldType, fieldName, temInField);
 	}
 
 	/**
@@ -168,8 +167,8 @@ public class ForControl {
 	private static String footnote(ControlFootnote footnote,
 			ControlType fieldType, String fieldName,
 			TextExtractMethod temInField) {
-		return ForParagraphList.getFieldText(footnote.getParagraphList()
-				.getParagraphList(), fieldType, fieldName, temInField);
+		return ForParagraphList.getFieldText(footnote.getParagraphList(),
+				fieldType, fieldName, temInField);
 	}
 
 	/**
@@ -188,8 +187,8 @@ public class ForControl {
 	private static String endnote(ControlEndnote endnote,
 			ControlType fieldType, String fieldName,
 			TextExtractMethod temInField) {
-		return ForParagraphList.getFieldText(endnote.getParagraphList()
-				.getParagraphList(), fieldType, fieldName, temInField);
+		return ForParagraphList.getFieldText(endnote.getParagraphList(),
+				fieldType, fieldName, temInField);
 	}
 
 	/**
@@ -208,7 +207,7 @@ public class ForControl {
 	private static String hiddenComment(ControlHiddenComment hiddenComment,
 			ControlType fieldType, String fieldName,
 			TextExtractMethod temInField) {
-		return ForParagraphList.getFieldText(hiddenComment.getParagraphList()
-				.getParagraphList(), fieldType, fieldName, temInField);
+		return ForParagraphList.getFieldText(hiddenComment.getParagraphList(),
+				fieldType, fieldName, temInField);
 	}
 }

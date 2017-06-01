@@ -1,5 +1,6 @@
 package kr.dogfoot.hwplib.object.bodytext.paragraph.text;
 
+import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 
 /**
@@ -152,5 +153,30 @@ public class ParaText {
 	 */
 	public String getNormalString(int startIndex) {
 		return getNormalString(startIndex, charList.size() - 1);
+	}
+
+	/**
+	 * 문자열을 추가한다.
+	 * 
+	 * @param str 추가할 문자열
+	 * @throws UnsupportedEncodingException
+	 */
+	public void addString(String str) throws UnsupportedEncodingException {
+		HWPChar lastChar = null;
+		if (charList.size() > 0) {
+			lastChar = charList.get(charList.size() - 1);
+		}
+		if (lastChar != null && lastChar.getCode() == 0x0d) {
+			charList.remove(charList.size() - 1);
+		}
+		
+		int len = str.length();
+		for (int i = 0; i < len; i++) {
+			HWPCharControlChar ch = addNewCharControlChar();
+			ch.setCode((String) str.subSequence(i, i+1));
+		}
+		
+		HWPCharControlChar ch = addNewCharControlChar();
+		ch.setCode((short) 0x0d);
 	}
 }

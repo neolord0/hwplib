@@ -1,8 +1,8 @@
 package kr.dogfoot.hwplib.reader.bodytext.paragraph.control;
 
+import kr.dogfoot.hwplib.object.RecordHeader;
 import kr.dogfoot.hwplib.object.bodytext.control.ControlBookmark;
 import kr.dogfoot.hwplib.object.etc.HWPTag;
-import kr.dogfoot.hwplib.reader.RecordHeader;
 import kr.dogfoot.hwplib.reader.bodytext.paragraph.control.bookmark.ForCtrlData;
 import kr.dogfoot.hwplib.util.compoundFile.reader.StreamReader;
 

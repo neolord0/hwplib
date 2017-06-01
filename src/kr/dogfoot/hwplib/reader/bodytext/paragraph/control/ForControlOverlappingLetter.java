@@ -58,7 +58,7 @@ public class ForControlOverlappingLetter {
 	private static void overlappingLetters(CtrlHeaderOverlappingLetter header,
 			StreamReader sr) throws IOException {
 		int count = sr.readUInt2();
-		for (int i = 0; i < count; i++) {
+		for (int index = 0; index < count; index++) {
 			String letter = sr.readWChar();
 			header.addOverlappingLetter(letter);
 		}

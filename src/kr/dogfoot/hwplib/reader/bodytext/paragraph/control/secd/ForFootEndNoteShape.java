@@ -37,7 +37,7 @@ public class ForFootEndNoteShape {
 				.readUInt1()));
 		fens.setDivideLineThickness(BorderThickness.valueOf((byte) sr
 				.readUInt1()));
-		fens.getDivideLineColor().setColor(sr.readUInt4());
+		fens.getDivideLineColor().setValue(sr.readUInt4());
 	}
 
 }

@@ -19,11 +19,7 @@ public class ShapeComponentCurve {
 	 * segment type 리스트
 	 */
 	private ArrayList<CurveSegmentType> segmentTypeList;
-	/**
-	 * 곡선이 닫혔는지 여부
-	 */
-	private boolean closed;
-
+	
 	/**
 	 * 생성자
 	 */
@@ -69,24 +65,5 @@ public class ShapeComponentCurve {
 	 */
 	public ArrayList<CurveSegmentType> getSegmentTypeList() {
 		return segmentTypeList;
-	}
-
-	/**
-	 * 곡선이 닫혔는지 여부를 반환한다.
-	 * 
-	 * @return 곡선이 닫혔는지 여부
-	 */
-	public boolean isClosed() {
-		return closed;
-	}
-
-	/**
-	 * 곡선이 닫혔는지 여부를 설정한다.
-	 * 
-	 * @param closed
-	 *            곡선이 닫혔는지 여부
-	 */
-	public void setClosed(boolean closed) {
-		this.closed = closed;
 	}
 }

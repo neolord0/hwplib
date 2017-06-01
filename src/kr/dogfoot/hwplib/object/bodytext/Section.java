@@ -1,6 +1,7 @@
 package kr.dogfoot.hwplib.object.bodytext;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
 import kr.dogfoot.hwplib.object.bodytext.control.sectiondefine.BatangPageInfo;
 import kr.dogfoot.hwplib.object.bodytext.paragraph.Paragraph;
@@ -42,13 +43,35 @@ public class Section implements ParagraphListInterface {
 	}
 
 	/**
-	 * 문단 리스트를 반환한다.
+	 * 문단 개수를 반환한다.
 	 * 
-	 * @return 문단 리스트
+	 * @return 문단 개수
 	 */
 	@Override
-	public ArrayList<Paragraph> getParagraphList() {
-		return paragraphList;
+	public int getParagraphCount() {
+		return paragraphList.size();
+	}
+
+	/**
+	 * index 번째의 문단을 반환한다.
+	 * 
+	 * @param index
+	 *            찾고자 하는 문단의 순번
+	 * @return index 번째의 문단
+	 */
+	@Override
+	public Paragraph getParagraph(int index) {
+		return paragraphList.get(index);
+	}
+
+	/**
+	 * Iterator<Paragraph> 객체를 반환한다.
+	 * 
+	 * @return Iterator<Paragraph> 객체
+	 */
+	@Override
+	public Iterator<Paragraph> iterator() {
+		return paragraphList.iterator();
 	}
 
 	/**
@@ -57,7 +80,7 @@ public class Section implements ParagraphListInterface {
 	public void createLastBatangPageInfo() {
 		lastBatangPageInfo = new BatangPageInfo();
 	}
-	
+
 	/**
 	 * 마지막 바탕쪽 정보를 리턴한다.
 	 * 

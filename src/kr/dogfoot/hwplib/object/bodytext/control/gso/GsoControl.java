@@ -13,10 +13,6 @@ import kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponent.ShapeCompone
  */
 public class GsoControl extends Control {
 	/**
-	 * 그리기 개체 아이디
-	 */
-	private long gsoId;
-	/**
 	 * 캡션 정보
 	 */
 	private Caption caption;
@@ -41,6 +37,7 @@ public class GsoControl extends Control {
 	public GsoControl(CtrlHeaderGso header) {
 		super(header);
 
+		caption = null;
 		shapeComponent = new ShapeComponentNormal();
 	}
 
@@ -59,7 +56,7 @@ public class GsoControl extends Control {
 	 * @return 그리기 개체 아이디
 	 */
 	public long getGsoId() {
-		return gsoId;
+		return shapeComponent.getGsoId();
 	}
 
 	/**
@@ -68,8 +65,8 @@ public class GsoControl extends Control {
 	 * @param gsoId
 	 *            그리기 개체 아이디
 	 */
-	public void setGsoId(long gsoId) {
-		this.gsoId = gsoId;
+	protected void setGsoId(long gsoId) {
+		shapeComponent.setGsoId(gsoId);
 	}
 
 	/**
@@ -78,9 +75,16 @@ public class GsoControl extends Control {
 	 * @return 그리기 개체 타입
 	 */
 	public GsoControlType getGsoType() {
-		return GsoControlType.idOf(gsoId);
+		return GsoControlType.idOf(getGsoId());
 	}
 
+	/**
+	 * 캡션 객체를 생성한다.
+	 */
+	public void createCaption() {
+		caption = new Caption();
+	}
+	
 	/**
 	 * 캡션 정보 객체를 반환한다.
 	 * 

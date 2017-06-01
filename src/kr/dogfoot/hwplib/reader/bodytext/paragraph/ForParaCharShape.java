@@ -25,7 +25,7 @@ public class ForParaCharShape {
 		paragraph.createCharShape();
 
 		int count = paragraph.getHeader().getCharShapeCount();
-		for (int i = 0; i < count; i++) {
+		for (int index = 0; index < count; index++) {
 			long position = sr.readUInt4();
 			long charShapeId = sr.readUInt4();
 

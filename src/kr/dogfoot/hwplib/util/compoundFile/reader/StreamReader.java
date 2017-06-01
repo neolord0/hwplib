@@ -2,8 +2,8 @@ package kr.dogfoot.hwplib.util.compoundFile.reader;
 
 import java.io.IOException;
 
+import kr.dogfoot.hwplib.object.RecordHeader;
 import kr.dogfoot.hwplib.object.fileheader.FileVersion;
-import kr.dogfoot.hwplib.reader.RecordHeader;
 import kr.dogfoot.hwplib.util.binary.BitFlag;
 
 /**
@@ -157,6 +157,7 @@ public abstract class StreamReader {
 		header.setLevel((short) BitFlag.get(value, 10, 19));
 		header.setSize((short) BitFlag.get(value, 20, 31));
 		readAfterHeader = 0;
+		
 		return header;
 	}
 
@@ -187,7 +188,7 @@ public abstract class StreamReader {
 	public String readWChar() throws IOException {
 		byte[] arr = new byte[2];
 		readBytes(arr);
-		return new String(arr, 0, arr.length, "UTF-16LE");
+		return new String(arr, 0, 2, "UTF-16LE");
 	}
 
 	/**

@@ -2,10 +2,14 @@ package kr.dogfoot.hwplib.reader.bodytext.paragraph.control.tbl;
 
 import java.io.IOException;
 
+import kr.dogfoot.hwplib.object.bodytext.control.bookmark.ParameterItem;
+import kr.dogfoot.hwplib.object.bodytext.control.bookmark.ParameterSet;
+import kr.dogfoot.hwplib.object.bodytext.control.bookmark.ParameterType;
 import kr.dogfoot.hwplib.object.bodytext.control.table.Cell;
 import kr.dogfoot.hwplib.object.bodytext.control.table.ListHeaderForCell;
 import kr.dogfoot.hwplib.object.etc.HWPTag;
 import kr.dogfoot.hwplib.reader.bodytext.ForParagraphList;
+import kr.dogfoot.hwplib.reader.bodytext.paragraph.control.bookmark.ForParameterSet;
 import kr.dogfoot.hwplib.util.compoundFile.reader.StreamReader;
 
 /**
@@ -61,27 +65,36 @@ public class ForCell {
 		lh.setBottomMargin(sr.readUInt2());
 		lh.setBorderFillId(sr.readUInt2());
 		lh.setTextWidth(sr.readUInt4());
-		if (sr.getCurrentRecordHeader().getSize() > sr.getCurrentPositionAfterHeader()) {
+		if (sr.getCurrentRecordHeader().getSize() > sr
+				.getCurrentPositionAfterHeader()) {
 			short flag = sr.readUInt1();
 			if (flag == 0xff) {
-				unknownBytes(10, sr);
-				lh.setFieldName(sr.readUTF16LEString());
-			} 
+				fieldName(lh, sr);
+			}
 			unknownRestBytes(sr);
 		}
 	}
 
 	/**
-	 * 알려지지 않은 n 바이트을 처리한다.
+	 * 필드 이름을 읽는다.
 	 * 
-	 * @param n
-	 *            알려지지 않은 바이트 수
+	 * @param lh
+	 *            셀의 문단 리스트 헤더 레코드
 	 * @param sr
 	 *            스트림 리더
-	 * @throws IOException
+	 * @throws IOException 
 	 */
-	private static void unknownBytes(int n, StreamReader sr) throws IOException {
-		sr.skip(n);
+	private static void fieldName(ListHeaderForCell lh, StreamReader sr) throws IOException {
+		ParameterSet ps = new ParameterSet();
+		ForParameterSet.read(ps, sr);
+		   
+		if (ps.getId() == 0x21b) {
+			for (ParameterItem pi : ps.getParameterItemList()) {
+				if (pi.getId() == 0x4000 && pi.getType() == ParameterType.String) {
+					lh.setFieldName(pi.getValue_BSTR());
+				}
+			}
+		}
 	}
 
 	/**

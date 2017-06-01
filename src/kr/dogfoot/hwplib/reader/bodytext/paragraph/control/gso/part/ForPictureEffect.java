@@ -76,7 +76,7 @@ public class ForPictureEffect {
 	 * 색상 속성 부분을 읽는다.
 	 * 
 	 * @param cp
-	 *            색상 속성 부분을 나타내는  객체
+	 *            색상 속성을 나타내는  객체
 	 * @param sr
 	 *            스트림 리더
 	 * @throws Exception
@@ -103,7 +103,7 @@ public class ForPictureEffect {
 	 * 네온 효과 부분을 읽는다.
 	 * 
 	 * @param ne
-	 *            네온 효과 부분을 나타내는 객체
+	 *            네온 효과을 나타내는 객체
 	 * @param sr
 	 *            스트림 리더
 	 * @throws Exception
@@ -119,7 +119,7 @@ public class ForPictureEffect {
 	 * 부드러운 가장자리 효과 부분을 읽는다.
 	 * 
 	 * @param see
-	 *            부드러운 가장자리 효과 부분을 나타내는 객체
+	 *            부드러운 가장자리 효과을 나타내는 객체
 	 * @param sr
 	 *            스트림 리더
 	 * @throws IOException
@@ -133,7 +133,7 @@ public class ForPictureEffect {
 	 * 반사 효과 부분을 읽는다.
 	 * 
 	 * @param re
-	 *            반사 효과 부분을 나타내는 객체
+	 *            반사 효과을 나타내는 객체
 	 * @param sr
 	 *            스트림 리더
 	 * @throws IOException

@@ -2,21 +2,21 @@ package kr.dogfoot.hwplib.reader.bodytext.paragraph.control.gso;
 
 import java.io.IOException;
 
+import kr.dogfoot.hwplib.object.RecordHeader;
 import kr.dogfoot.hwplib.object.bodytext.control.gso.ControlRectangle;
 import kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponenteach.ShapeComponentRectangle;
 import kr.dogfoot.hwplib.object.etc.HWPTag;
-import kr.dogfoot.hwplib.reader.RecordHeader;
 import kr.dogfoot.hwplib.reader.bodytext.paragraph.control.gso.part.ForTextBox;
 import kr.dogfoot.hwplib.util.compoundFile.reader.StreamReader;
 
 /**
- * 사각형 컨트롤을 읽기 위한 객체
+ * 사각형 컨트롤의 나머지 부분을 읽기 위한 객체
  * 
  * @author neolord
  */
 public class ForControlRectangle {
 	/**
-	 * 사각형 컨트롤을 읽는다.
+	 * 사각형 컨트롤의 나머지 부분을 읽는다.
 	 * 
 	 * @param rectangle
 	 *            사각형 컨트롤
@@ -24,7 +24,7 @@ public class ForControlRectangle {
 	 *            스트림 리더
 	 * @throws Exception
 	 */
-	public static void read(ControlRectangle rectangle, StreamReader sr)
+	public static void readRest(ControlRectangle rectangle, StreamReader sr)
 			throws Exception {
 		RecordHeader rh = sr.readRecordHeder();
 		if (rh.getTagID() == HWPTag.LIST_HEADER) {

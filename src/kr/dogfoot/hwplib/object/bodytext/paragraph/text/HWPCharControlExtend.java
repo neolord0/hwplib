@@ -17,6 +17,11 @@ public class HWPCharControlExtend extends HWPChar {
 	public HWPCharControlExtend() {
 	}
 
+	/**
+	 * 글자의 종류을 반환한다.
+	 * 
+	 * @return 글자의 타입
+	 */
 	@Override
 	public HWPCharType getType() {
 		return HWPCharType.ControlExtend;
@@ -31,13 +36,13 @@ public class HWPCharControlExtend extends HWPChar {
 		int bufferIndex = 0;
 		boolean insert = false;
 		byte[] buf = new byte[addition.length];
-		for (int i = addition.length - 1; i >= 0; i--) {
-			if (addition[i] != 0) {
+		for (int index = addition.length - 1; index >= 0; index--) {
+			if (addition[index] != 0) {
 				insert = true;
 			}
 
 			if (insert == true) {
-				buf[bufferIndex++] = addition[i];
+				buf[bufferIndex++] = addition[index];
 			}
 		}
 		return new String(buf, 0, bufferIndex);

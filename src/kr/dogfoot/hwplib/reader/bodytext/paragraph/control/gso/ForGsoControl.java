@@ -27,7 +27,7 @@ import kr.dogfoot.hwplib.util.compoundFile.reader.StreamReader;
  * 
  * @author neolord
  */
-public class ForControlGso {
+public class ForGsoControl {
 	/**
 	 * 문단 객체
 	 */
@@ -44,7 +44,7 @@ public class ForControlGso {
 	/**
 	 * 생성자
 	 */
-	public ForControlGso() {
+	public ForGsoControl() {
 	}
 
 	/**
@@ -151,114 +151,33 @@ public class ForControlGso {
 	private void restPartOfControl() throws Exception {
 		switch (gsoControl.getGsoType()) {
 		case Line:
-			line();
+			ForControlLine.readRest((ControlLine) gsoControl, sr);
 			break;
 		case Rectangle:
-			rectangle();
+			ForControlRectangle.readRest((ControlRectangle) gsoControl, sr);
 			break;
 		case Ellipse:
-			ellipse();
+			ForControlEllipse.readRest((ControlEllipse) gsoControl, sr);
 			break;
 		case Arc:
-			arc();
+			ForControlArc.readRest((ControlArc) gsoControl, sr);
 			break;
 		case Polygon:
-			polygon();
+			ForControlPolygon.readRest((ControlPolygon) gsoControl, sr);
 			break;
 		case Curve:
-			curve();
+			ForControlCurve.readRest((ControlCurve) gsoControl, sr);
 			break;
 		case Picture:
-			picture();
+			ForControlPicture.readRest((ControlPicture) gsoControl, sr);
 			break;
 		case OLE:
-			ole();
+			ForControlOLE.readRest((ControlOLE) gsoControl, sr);
 			break;
 		case Container:
-			container();
+			ForControlContainer.readRest((ControlContainer) gsoControl, sr);
 			break;
 		}
-	}
-
-	/**
-	 * 선 컨트롤의 나머지 부분을 읽는다.
-	 * 
-	 * @throws IOException
-	 */
-	private void line() throws IOException {
-		ForControlLine.read((ControlLine) gsoControl, sr);
-	}
-
-	/**
-	 * 사각형 컨트롤의 나머지 부분을 읽는다.
-	 * 
-	 * @throws Exception
-	 */
-	private void rectangle() throws Exception {
-		ForControlRectangle.read((ControlRectangle) gsoControl, sr);
-	}
-
-	/**
-	 * 타원 컨트롤의 나머지 부분을 읽는다.
-	 * 
-	 * @throws Exception
-	 */
-	private void ellipse() throws Exception {
-		ForControlEllipse.read((ControlEllipse) gsoControl, sr);
-	}
-
-	/**
-	 * 호 컨트롤의 나머지 부분을 읽는다.
-	 * 
-	 * @throws Exception
-	 */
-	private void arc() throws Exception {
-		ForControlArc.read((ControlArc) gsoControl, sr);
-	}
-
-	/**
-	 * 다각형 컨트롤의 나머지 부분을 읽는다.
-	 * 
-	 * @throws Exception
-	 */
-	private void polygon() throws Exception {
-		ForControlPolygon.read((ControlPolygon) gsoControl, sr);
-	}
-
-	/**
-	 * 곡선 컨트롤의 나머지 부분을 읽는다.
-	 * 
-	 * @throws Exception
-	 */
-	private void curve() throws Exception {
-		ForControlCurve.read((ControlCurve) gsoControl, sr);
-	}
-
-	/**
-	 * 그림 컨트롤의 나머지 부분을 읽는다.
-	 * 
-	 * @throws Exception
-	 */
-	private void picture() throws Exception {
-		ForControlPicture.read((ControlPicture) gsoControl, sr);
-	}
-
-	/**
-	 * OLE 컨트롤의 나머지 부분을 읽는다.
-	 * 
-	 * @throws IOException
-	 */
-	private void ole() throws IOException {
-		ForControlOLE.read((ControlOLE) gsoControl, sr);
-	}
-
-	/**
-	 * 묶음 컨트롤의 나머지 부분을 읽는다.
-	 * 
-	 * @throws Exception
-	 */
-	private void container() throws Exception {
-		ForControlContainer.read((ControlContainer) gsoControl, sr);
 	}
 
 	/**
@@ -271,7 +190,6 @@ public class ForControlGso {
 	 */
 	public GsoControl readInContainer(StreamReader sr) throws Exception {
 		this.sr = sr;
-
 		shapeComponentInContainer();
 		restPartOfControl();
 		return gsoControl;

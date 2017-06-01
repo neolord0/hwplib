@@ -2,22 +2,22 @@ package kr.dogfoot.hwplib.reader.bodytext.paragraph.control.gso;
 
 import java.io.IOException;
 
+import kr.dogfoot.hwplib.object.RecordHeader;
 import kr.dogfoot.hwplib.object.bodytext.control.gso.ControlArc;
 import kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponenteach.ShapeComponentArc;
 import kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponenteach.arc.ArcBorder;
 import kr.dogfoot.hwplib.object.etc.HWPTag;
-import kr.dogfoot.hwplib.reader.RecordHeader;
 import kr.dogfoot.hwplib.reader.bodytext.paragraph.control.gso.part.ForTextBox;
 import kr.dogfoot.hwplib.util.compoundFile.reader.StreamReader;
 
 /**
- * 호 컨트롤을 읽기 위한 객체
+ * 호 컨트롤의 나머지 부분을 읽기 위한 객체
  * 
  * @author neolord
  */
 public class ForControlArc {
 	/**
-	 * 호 컨트롤을 읽는다.
+	 * 호 컨트롤의 나머지 부분을 읽는다.
 	 * 
 	 * @param arc
 	 *            호 컨트롤
@@ -25,7 +25,7 @@ public class ForControlArc {
 	 *            스트림 리더
 	 * @throws Exception
 	 */
-	public static void read(ControlArc arc, StreamReader sr) throws Exception {
+	public static void readRest(ControlArc arc, StreamReader sr) throws Exception {
 		RecordHeader rh = sr.readRecordHeder();
 		if (rh.getTagID() == HWPTag.LIST_HEADER) {
 			arc.createTextBox();

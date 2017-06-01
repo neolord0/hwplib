@@ -36,7 +36,7 @@ public class Numbering {
 	 */
 	private void createLevelNumberings() {
 		levelNumberingList = new ArrayList<LevelNumbering>();
-		for (int i = 0; i < 7; i++) {
+		for (int index = 0; index < 7; index++) {
 			LevelNumbering ln = new LevelNumbering();
 			levelNumberingList.add(ln);
 		}

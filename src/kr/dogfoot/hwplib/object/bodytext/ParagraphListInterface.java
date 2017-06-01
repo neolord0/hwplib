@@ -1,7 +1,5 @@
 package kr.dogfoot.hwplib.object.bodytext;
 
-import java.util.ArrayList;
-
 import kr.dogfoot.hwplib.object.bodytext.paragraph.Paragraph;
 
 /**
@@ -9,7 +7,7 @@ import kr.dogfoot.hwplib.object.bodytext.paragraph.Paragraph;
  * 
  * @author neolord
  */
-public interface ParagraphListInterface {
+public interface ParagraphListInterface extends Iterable<Paragraph> {
 	/**
 	 * 새로운 문단를 생성하고 리스트에 추가한다.
 	 * 
@@ -18,9 +16,18 @@ public interface ParagraphListInterface {
 	public Paragraph addNewParagraph();
 
 	/**
-	 * 문단 리스트를 반환한다.
+	 * 문단 개수를 반환한다.
 	 * 
-	 * @return 문단 리스트
+	 * @return 문단 개수
 	 */
-	public ArrayList<Paragraph> getParagraphList();
+	public int getParagraphCount();
+
+	/**
+	 * index 번째의 문단을 반환한다.
+	 * 
+	 * @param index
+	 *            찾고자 하는 문단의 순번
+	 * @return index 번째의 문단
+	 */
+	public Paragraph getParagraph(int index);
 }

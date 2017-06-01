@@ -2,6 +2,7 @@ package kr.dogfoot.hwplib.textextractor;
 
 import java.util.ArrayList;
 
+import kr.dogfoot.hwplib.object.bodytext.ParagraphListInterface;
 import kr.dogfoot.hwplib.object.bodytext.control.Control;
 import kr.dogfoot.hwplib.object.bodytext.paragraph.Paragraph;
 import kr.dogfoot.hwplib.object.bodytext.paragraph.text.HWPChar;
@@ -24,7 +25,7 @@ public class ForParagraphList {
 	 * @param sb
 	 *            추출된 텍스트를 저정할 StringBuffer 객체
 	 */
-	public static void extract(ArrayList<Paragraph> paragraphList,
+	public static void extract(ParagraphListInterface paragraphList,
 			TextExtractMethod tem, StringBuffer sb) {
 		if (paragraphList == null) {
 			return;

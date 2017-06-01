@@ -1,6 +1,6 @@
 package kr.dogfoot.hwplib.object.etc;
 
-import kr.dogfoot.hwplib.reader.RecordHeader;
+import kr.dogfoot.hwplib.object.RecordHeader;
 
 /**
  * 알려지지 않은 레코드

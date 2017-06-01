@@ -34,16 +34,16 @@ public class ForCharShape {
 		cs.getProperty().setValue(sr.readUInt4());
 		cs.setShadowGap1(sr.readSInt1());
 		cs.setShadowGap2(sr.readSInt1());
-		cs.getCharColor().setColor(sr.readUInt4());
-		cs.getUnderLineColor().setColor(sr.readUInt4());
-		cs.getShadeColor().setColor(sr.readUInt4());
-		cs.getShadowColor().setColor(sr.readUInt4());
+		cs.getCharColor().setValue(sr.readUInt4());
+		cs.getUnderLineColor().setValue(sr.readUInt4());
+		cs.getShadeColor().setValue(sr.readUInt4());
+		cs.getShadowColor().setValue(sr.readUInt4());
 
 		if (sr.getFileVersion().isOver(5, 0, 2, 1)) {
 			cs.setBorderFillId(sr.readUInt2());
 		}
 		if (sr.getFileVersion().isOver(5, 0, 3, 0)) {
-			cs.getStrikeLineColor().setColor(sr.readUInt4());
+			cs.getStrikeLineColor().setValue(sr.readUInt4());
 		}
 	}
 
@@ -59,8 +59,8 @@ public class ForCharShape {
 	private static void faceNameIds(FaceNameIds fnis, StreamReader sr)
 			throws Exception {
 		int[] array = new int[7];
-		for (int i = 0; i < 7; i++) {
-			array[i] = sr.readUInt2();
+		for (int index = 0; index < 7; index++) {
+			array[index] = sr.readUInt2();
 		}
 		fnis.setArray(array);
 	}
@@ -76,8 +76,8 @@ public class ForCharShape {
 	 */
 	private static void ratios(Ratios rs, StreamReader sr) throws Exception {
 		short[] array = new short[7];
-		for (int i = 0; i < 7; i++) {
-			array[i] = sr.readUInt1();
+		for (int index = 0; index < 7; index++) {
+			array[index] = sr.readUInt1();
 		}
 		rs.setArray(array);
 	}
@@ -94,8 +94,8 @@ public class ForCharShape {
 	private static void charSpaces(CharSpaces css, StreamReader sr)
 			throws Exception {
 		byte[] array = new byte[7];
-		for (int i = 0; i < 7; i++) {
-			array[i] = sr.readSInt1();
+		for (int index = 0; index < 7; index++) {
+			array[index] = sr.readSInt1();
 		}
 		css.setArray(array);
 	}
@@ -112,8 +112,8 @@ public class ForCharShape {
 	private static void relativeSizes(RelativeSizes rss, StreamReader sr)
 			throws Exception {
 		short[] array = new short[7];
-		for (int i = 0; i < 7; i++) {
-			array[i] = sr.readUInt1();
+		for (int index = 0; index < 7; index++) {
+			array[index] = sr.readUInt1();
 		}
 		rss.setArray(array);
 	}
@@ -130,8 +130,8 @@ public class ForCharShape {
 	private static void charPositions(CharOffsets cos, StreamReader sr)
 			throws Exception {
 		byte[] array = new byte[7];
-		for (int i = 0; i < 7; i++) {
-			array[i] = sr.readSInt1();
+		for (int index = 0; index < 7; index++) {
+			array[index] = sr.readSInt1();
 		}
 		cos.setArray(array);
 	}

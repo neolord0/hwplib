@@ -32,9 +32,6 @@ public class ForBinData {
 		if (bd.getProperty().getType() == BinDataType.Embedding
 				|| bd.getProperty().getType() == BinDataType.Storage) {
 			bd.setBinDataID(sr.readUInt2());
-		}
-
-		if (bd.getProperty().getType() == BinDataType.Embedding) {
 			bd.setExtensionForEmbedding(sr.readUTF16LEString());
 		}
 	}

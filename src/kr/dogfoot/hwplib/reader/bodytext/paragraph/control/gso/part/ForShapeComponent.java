@@ -36,9 +36,12 @@ public class ForShapeComponent {
 	public static void read(GsoControl gsoControl, StreamReader sr)
 			throws IOException {
 		if (gsoControl.getGsoType() != GsoControlType.Container) {
-			shapeComponentForNormal(gsoControl.getShapeComponent(), sr);
+			shapeComponentForNormal(
+					(ShapeComponentNormal) gsoControl.getShapeComponent(), sr);
 		} else {
-			shapeComponentForContainer(gsoControl.getShapeComponent(), sr);
+			shapeComponentForContainer(
+					(ShapeComponentContainer) gsoControl.getShapeComponent(),
+					sr);
 		}
 	}
 
@@ -51,13 +54,12 @@ public class ForShapeComponent {
 	 *            스트림 리더
 	 * @throws IOException
 	 */
-	private static void shapeComponentForNormal(ShapeComponent sc,
+	private static void shapeComponentForNormal(ShapeComponentNormal scn,
 			StreamReader sr) throws IOException {
-		commonPart(sc, sr);
+		commonPart(scn, sr);
 		if (sr.isEndOfRecord() == true) {
 			return;
 		}
-		ShapeComponentNormal scn = (ShapeComponentNormal) sc;
 		lineInfo(scn, sr);
 		if (sr.isEndOfRecord() == true) {
 			return;
@@ -109,7 +111,7 @@ public class ForShapeComponent {
 			throws IOException {
 		int scaleRotateMatrixCount = sr.readUInt2();
 		matrix(ri.getTranslationMatrix(), sr);
-		for (int i = 0; i < scaleRotateMatrixCount; i++) {
+		for (int index = 0; index < scaleRotateMatrixCount; index++) {
 			ScaleRotateMatrixPair srmp = ri.addNewScaleRotateMatrixPair();
 			matrix(srmp.getScaleMatrix(), sr);
 			matrix(srmp.getRotateMatrix(), sr);
@@ -126,8 +128,8 @@ public class ForShapeComponent {
 	 * @throws IOException
 	 */
 	private static void matrix(Matrix m, StreamReader sr) throws IOException {
-		for (int i = 0; i < 6; i++) {
-			m.setValue(i, sr.readDouble());
+		for (int index = 0; index < 6; index++) {
+			m.setValue(index, sr.readDouble());
 		}
 	}
 
@@ -144,7 +146,7 @@ public class ForShapeComponent {
 			throws IOException {
 		scn.createLineInfo();
 		LineInfo li = scn.getLineInfo();
-		li.getColor().setColor(sr.readUInt4());
+		li.getColor().setValue(sr.readUInt4());
 		li.setThickness(sr.readSInt4());
 		li.getProperty().setValue(sr.readUInt4());
 		li.setOutlineStyle(OutlineStyle.valueOf((byte) sr.readUInt1()));
@@ -154,7 +156,7 @@ public class ForShapeComponent {
 	 * 일반 컨트롤을 위한 객체 공통 속성 레코드의 배경 정보를 읽는다.
 	 * 
 	 * @param scn
-	 *            일반 컨트롤을 위한  객체 공통 속성 레코드
+	 *            일반 컨트롤을 위한 객체 공통 속성 레코드
 	 * @param sr
 	 *            스트림 리더
 	 * @throws IOException
@@ -180,7 +182,7 @@ public class ForShapeComponent {
 		scn.createShadowInfo();
 		ShadowInfo si = scn.getShadowInfo();
 		si.setType(ShadowType.valueOf((byte) sr.readUInt4()));
-		si.getColor().setColor(sr.readUInt4());
+		si.getColor().setValue(sr.readUInt4());
 		si.setOffsetX(sr.readSInt4());
 		si.setOffsetY(sr.readSInt4());
 		sr.skip(5);
@@ -189,17 +191,16 @@ public class ForShapeComponent {
 
 	/**
 	 * 묶음 컨트롤을 위한 객체 공통 속성 레코드를 읽는다.
-	 *
+	 * 
 	 * @param sc
 	 *            객체 공통 속성 레코드
 	 * @param sr
 	 *            스트림 리더
 	 * @throws IOException
 	 */
-	private static void shapeComponentForContainer(ShapeComponent sc,
+	private static void shapeComponentForContainer(ShapeComponentContainer scc,
 			StreamReader sr) throws IOException {
-		commonPart(sc, sr);
-		ShapeComponentContainer scc = (ShapeComponentContainer) sc;
+		commonPart(scc, sr);
 		childInfo(scc, sr);
 		unknown4Bytes(sr);
 	}
@@ -216,7 +217,7 @@ public class ForShapeComponent {
 	private static void childInfo(ShapeComponentContainer scc, StreamReader sr)
 			throws IOException {
 		int count = sr.readUInt2();
-		for (int i = 0; i < count; i++) {
+		for (int index = 0; index < count; index++) {
 			long childId = sr.readUInt4();
 			scc.addChildControlId(childId);
 		}

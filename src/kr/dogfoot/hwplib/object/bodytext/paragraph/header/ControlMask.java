@@ -96,6 +96,26 @@ public class ControlMask {
 	}
 
 	/**
+	 * Title Mark를 가졌는지 여부를 반환한다.
+	 * 
+	 * @return Title Mark를 가졌는지 여부
+	 */
+	public boolean hasTitleMark() {
+		return BitFlag.get(value, 8);
+	}
+
+	/**
+	 * Title Mark를 가졌는지 여부를 설정한다.
+	 * 
+	 * @param hasTitleMark
+	 *            Title Mark를 가졌는지 여부
+	 */
+	public void setHasTitleMark(boolean hasTitleMark) {
+		value = BitFlag.set(value, 8, hasTitleMark);
+
+	}
+
+	/**
 	 * 탭을 가졌는지 여부를 반환한다. (9 bit)
 	 * 
 	 * @return 탭을 가졌는지 여부
@@ -119,18 +139,18 @@ public class ControlMask {
 	 * 
 	 * @return 강제 줄 나눔을 가졌는지 여부
 	 */
-	public boolean hasDivideLineForce() {
+	public boolean hasLineBreak() {
 		return BitFlag.get(value, 10);
 	}
 
 	/**
 	 * 강제 줄 나눔을 가졌는지 여부를 설정한다. (10 bit)
 	 * 
-	 * @param hasDivideLineForce
+	 * @param hasLineBreak
 	 *            강제 줄 나눔을 가졌는지 여부
 	 */
-	public void setHasDivideLineForce(boolean hasDivideLineForce) {
-		value = BitFlag.set(value, 10, hasDivideLineForce);
+	public void setHasLineBreak(boolean hasLineBreak) {
+		value = BitFlag.set(value, 10, hasLineBreak);
 	}
 
 	/**
@@ -157,37 +177,37 @@ public class ControlMask {
 	 * 
 	 * @return 문단 나누기를 가졌는지 여부
 	 */
-	public boolean hasDivideParagraph() {
+	public boolean hasParaBreak() {
 		return BitFlag.get(value, 13);
 	}
 
 	/**
 	 * 문단 나누기를 가졌는지 여부를 설정한다. (13 bit)
 	 * 
-	 * @param hasDivideParagraph
+	 * @param hasParaBreak
 	 *            문단 나누기를 가졌는지 여부
 	 */
-	public void setHasDivideParagraph(boolean hasDivideParagraph) {
-		value = BitFlag.set(value, 13, hasDivideParagraph);
+	public void setHasParaBreak(boolean hasParaBreak) {
+		value = BitFlag.set(value, 13, hasParaBreak);
 	}
 
 	/**
-	 * 주석을 가졌는지 여부를 반환한다. (15 bit)
+	 * 숨은 설명을 가졌는지 여부를 반환한다. (15 bit)
 	 * 
-	 * @return 주석을 가졌는지 여부
+	 * @return 숨은 설명을 가졌는지 여부
 	 */
-	public boolean hasRemark() {
+	public boolean hasHiddenComment() {
 		return BitFlag.get(value, 15);
 	}
 
 	/**
-	 * 주석을 가졌는지 여부를 설정한다. (15 bit)
+	 * 숨은 설명을 가졌는지 여부를 설정한다. (15 bit)
 	 * 
-	 * @param hasRemark
-	 *            주석을 가졌는지 여부
+	 * @param hasHiddenComment
+	 *            숨은 설명을 가졌는지 여부
 	 */
-	public void setHasRemark(boolean hasRemark) {
-		value = BitFlag.set(value, 15, hasRemark);
+	public void setHasHiddenComment(boolean hasHiddenComment) {
+		value = BitFlag.set(value, 15, hasHiddenComment);
 	}
 
 	/**
@@ -248,22 +268,22 @@ public class ControlMask {
 	}
 
 	/**
-	 * 쪽 바꿈을 가졌는지 여부를 반환한다. (21 bit)
+	 * 페이지 컨트롤(감추기, 새 번호로 시작 등)을 가졌는지 여부를 반환한다. (21 bit)
 	 * 
-	 * @return 쪽 바꿈을 가졌는지 여부
+	 * @return 페이지 컨트롤(감추기, 새 번호로 시작 등)을 가졌는지 여부
 	 */
-	public boolean hasPageFeed() {
+	public boolean hasPageControl() {
 		return BitFlag.get(value, 21);
 	}
 
 	/**
-	 * 쪽 바꿈을 가졌는지 여부를 설정한다. (21 bit)
+	 * 페이지 컨트롤(감추기, 새 번호로 시작 등)을 가졌는지 여부를 설정한다. (21 bit)
 	 * 
-	 * @param hasPageFeed
-	 *            쪽 바꿈을 가졌는지 여부
+	 * @param hasPageControl
+	 *            페이지 컨트롤(감추기, 새 번호로 시작 등)을 가졌는지 여부
 	 */
-	public void setHasPageFeed(boolean hasPageFeed) {
-		value = BitFlag.set(value, 21, hasPageFeed);
+	public void setHasPageControl(boolean hasPageControl) {
+		value = BitFlag.set(value, 21, hasPageControl);
 	}
 
 	/**
@@ -290,18 +310,19 @@ public class ControlMask {
 	 * 
 	 * @return 덧말/글자 겹침를 가졌는지 여부
 	 */
-	public boolean hasDutMalOverlapLetter() {
+	public boolean hasAdditionalTextOverlappingLetter() {
 		return BitFlag.get(value, 23);
 	}
 
 	/**
 	 * 덧말/글자 겹침을 가졌는지 여부를 설정한다. (23 bit)
 	 * 
-	 * @param hasOverlapLetter
+	 * @param hasAdditionalTextOverlappingLetter
 	 *            덧말/글자 겹침를 가졌는지 여부
 	 */
-	public void setHasDutMalOverlapLetter(boolean hasOverlapLetter) {
-		value = BitFlag.set(value, 23, hasOverlapLetter);
+	public void setHasAdditionalTextOverlappingLetter(
+			boolean hasAdditionalTextOverlappingLetter) {
+		value = BitFlag.set(value, 23, hasAdditionalTextOverlappingLetter);
 	}
 
 	/**

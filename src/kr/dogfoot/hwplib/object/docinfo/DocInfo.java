@@ -2,8 +2,8 @@ package kr.dogfoot.hwplib.object.docinfo;
 
 import java.util.ArrayList;
 
+import kr.dogfoot.hwplib.object.RecordHeader;
 import kr.dogfoot.hwplib.object.etc.UnknownRecord;
-import kr.dogfoot.hwplib.reader.RecordHeader;
 
 /**
  * 문서 정보를 나타내는 객체. HWP파일 내의 "DocInfo" stream에 저장된다.

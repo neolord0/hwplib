@@ -41,7 +41,7 @@ public class ForControlColumnDefine {
 	private static void ctrlHeader(CtrlHeaderColumnDefine h, StreamReader sr)
 			throws IOException {
 		h.getProperty().setValue(sr.readUInt2());
-
+		
 		int count = h.getProperty().getColumnCount();
 		boolean sameWidth = h.getProperty().isSameWidth();
 		if (count < 2 || sameWidth == true) {
@@ -53,7 +53,7 @@ public class ForControlColumnDefine {
 
 		h.setDivideLineSort(BorderType.valueOf((byte) sr.readUInt1()));
 		h.setDivideLineThickness(BorderThickness.valueOf((byte) sr.readUInt1()));
-		h.getDivideLineColor().setColor(sr.readUInt4());
+		h.getDivideLineColor().setValue(sr.readUInt4());
 	}
 
 	/**

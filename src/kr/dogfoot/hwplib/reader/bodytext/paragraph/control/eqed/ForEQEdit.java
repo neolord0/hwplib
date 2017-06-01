@@ -24,7 +24,7 @@ public class ForEQEdit {
 		eqEdit.setProperty(sr.readUInt4());
 		eqEdit.setScript(sr.readUTF16LEString());
 		eqEdit.setLetterSize(sr.readUInt4());
-		eqEdit.getLetterColor().setColor(sr.readUInt4());
+		eqEdit.getLetterColor().setValue(sr.readUInt4());
 		eqEdit.setBaseLine(sr.readSInt2());
 		sr.skip(2); // unknown
 		eqEdit.setVersionInfo(sr.readUTF16LEString());

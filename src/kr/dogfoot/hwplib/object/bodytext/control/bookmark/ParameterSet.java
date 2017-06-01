@@ -65,9 +65,11 @@ public class ParameterSet {
 	}
 
 	/**
+	 * 아이디가 id인 파라미터 아이탬을 반환한다.
 	 * 
 	 * @param id
-	 * @return
+	 *            파리미터 아이탬의 아이디
+	 * @return 아이디가 id인 파라미터 아이탬
 	 */
 	public ParameterItem getParameterItem(int id) {
 		for (ParameterItem pi : parameterItemList) {
@@ -76,5 +78,26 @@ public class ParameterSet {
 			}
 		}
 		return null;
+	}
+
+	/**
+	 * 필드 이름을 위한 파라미터 셋 객체를 만든다.
+	 * 
+	 * @param fieldName
+	 *            필드 이름
+	 * @return 필드 이름을 위한 파라미터 셋 객체
+	 */
+	public static ParameterSet createForFieldName(String fieldName) {
+		if (fieldName == null || fieldName.length() == 0) {
+			return null;
+		}
+
+		ParameterSet ps = new ParameterSet();
+		ps.setId(0x21b);
+		ParameterItem pi = ps.addNewParameterItem();
+		pi.setId(0x4000);
+		pi.setType(ParameterType.String);
+		pi.setValue_BSTR(fieldName);
+		return ps;
 	}
 }

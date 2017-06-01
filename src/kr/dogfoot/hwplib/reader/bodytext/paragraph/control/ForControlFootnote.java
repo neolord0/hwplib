@@ -2,10 +2,12 @@ package kr.dogfoot.hwplib.reader.bodytext.paragraph.control;
 
 import java.io.IOException;
 
+import kr.dogfoot.hwplib.object.RecordHeader;
 import kr.dogfoot.hwplib.object.bodytext.control.ControlFootnote;
+import kr.dogfoot.hwplib.object.bodytext.control.ctrlheader.CtrlHeaderFootnote;
 import kr.dogfoot.hwplib.object.bodytext.control.footnoteendnote.ListHeaderForFootnodeEndnote;
+import kr.dogfoot.hwplib.object.bodytext.control.sectiondefine.NumberShape;
 import kr.dogfoot.hwplib.object.etc.HWPTag;
-import kr.dogfoot.hwplib.reader.RecordHeader;
 import kr.dogfoot.hwplib.reader.bodytext.ForParagraphList;
 import kr.dogfoot.hwplib.util.compoundFile.reader.StreamReader;
 
@@ -54,8 +56,12 @@ public class ForControlFootnote {
 	 * @throws IOException
 	 */
 	private void ctrlHeader() throws IOException {
-		fn.getHeader().setNumber(sr.readUInt4());
-		sr.skipToEndRecord();
+		CtrlHeaderFootnote h = fn.getHeader();
+		h.setNumber(sr.readUInt4());
+		h.setBeforeDecorationLetter(sr.readWChar());
+		h.setAfterDecorationLetter(sr.readWChar());
+		h.setNumberShape(NumberShape.valueOf((short) sr.readUInt4()));
+		h.setInstanceId(sr.readUInt4());
 	}
 
 	/**

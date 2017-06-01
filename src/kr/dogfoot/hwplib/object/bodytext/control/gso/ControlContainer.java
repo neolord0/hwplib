@@ -31,8 +31,9 @@ public class ControlContainer extends GsoControl {
 	 */
 	public ControlContainer(CtrlHeaderGso header) {
 		super(header);
-		setGsoId(GsoControlType.Container.getId());
 		shapeComponent = new ShapeComponentContainer();
+		
+		setGsoId(GsoControlType.Container.getId());
 
 		childControlList = new ArrayList<GsoControl>();
 	}

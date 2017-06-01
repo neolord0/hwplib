@@ -40,8 +40,8 @@ public class ForControl {
 	 * @throws Exception
 	 */
 	public static void read(Control c, StreamReader sr) throws Exception {
-		if (ControlType.isField(c.getType().getCtrlId())) {
-			field(c, sr); // 필드
+		if (ControlType.isField(c.getType().getCtrlId())) { // 필드
+			field(c, sr); 
 			return;
 		}
 		switch (c.getType()) {
@@ -103,7 +103,7 @@ public class ForControl {
 	 * 필드 컨트를을 읽는다.
 	 * 
 	 * @param c
-	 *            컨트롤 객체
+	 *            컨트롤
 	 * @param sr
 	 *            스트림 리더
 	 * @throws IOException
@@ -187,7 +187,7 @@ public class ForControl {
 	 * 꼬리말 컨트롤을 읽는다.
 	 * 
 	 * @param c
-	 *            컨트롤 객체
+	 *            컨트롤
 	 * @param sr
 	 *            스트림 리더
 	 * @throws Exception
@@ -215,7 +215,7 @@ public class ForControl {
 	 * 미주 컨트롤을 읽는다.
 	 * 
 	 * @param c
-	 *            컨트롤 객체
+	 *            컨트롤
 	 * @param sr
 	 *            스트림 리더
 	 * @throws Exception
@@ -243,7 +243,7 @@ public class ForControl {
 	 * 새 번호 지정 컨트롤을 읽는다.
 	 * 
 	 * @param c
-	 *            컨트롤 객체
+	 *            컨트롤
 	 * @param sr
 	 *            스트림 리더
 	 * @throws IOException
@@ -257,7 +257,7 @@ public class ForControl {
 	 * 감추기 컨트롤을 읽는다.
 	 * 
 	 * @param c
-	 *            컨트롤 객체
+	 *            컨트롤
 	 * @param sr
 	 *            스트림 리더
 	 * @throws IOException
@@ -298,7 +298,7 @@ public class ForControl {
 	 * 책갈피 컨트롤을 읽는다.
 	 * 
 	 * @param c
-	 *            컨트롤 객체
+	 *            컨트롤
 	 * @param sr
 	 *            스트림 리더
 	 * @throws Exception
@@ -349,5 +349,4 @@ public class ForControl {
 		ForControlHiddenComment fchc = new ForControlHiddenComment();
 		fchc.read((ControlHiddenComment) c, sr);
 	}
-
 }

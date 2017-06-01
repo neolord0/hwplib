@@ -63,8 +63,8 @@ public class ForFillInfo {
 	 */
 	private static void patternFill(PatternFill pf, StreamReader sr)
 			throws IOException {
-		pf.getBackColor().setColor(sr.readUInt4());
-		pf.getPatternColor().setColor(sr.readUInt4());
+		pf.getBackColor().setValue(sr.readUInt4());
+		pf.getPatternColor().setValue(sr.readUInt4());
 		pf.setPatternType(PatternType.valueOf((byte) sr.readSInt4()));
 	}
 
@@ -88,12 +88,12 @@ public class ForFillInfo {
 
 		long colorCount = sr.readUInt4(); // 문서오류 2byte -> 4 byte
 		if (colorCount > 2) {
-			for (int i = 0; i < colorCount; i++) {
+			for (int index = 0; index < colorCount; index++) {
 				gf.addChangePoint(sr.readSInt4());
 			}
 		}
-		for (int i = 0; i < colorCount; i++) {
-			gf.addNewColor().setColor(sr.readUInt4());
+		for (int index = 0; index < colorCount; index++) {
+			gf.addNewColor().setValue(sr.readUInt4());
 		}
 	}
 
@@ -151,7 +151,7 @@ public class ForFillInfo {
 	}
 
 	/**
-	 * 알려지지 않은 바이트를 읽는아.
+	 * 알려지지 않은 바이트를 읽는다.
 	 * 
 	 * @param fi
 	 *            채우기 정보

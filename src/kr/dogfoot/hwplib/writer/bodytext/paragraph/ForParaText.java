@@ -3,85 +3,163 @@ package kr.dogfoot.hwplib.writer.bodytext.paragraph;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 
+import kr.dogfoot.hwplib.object.bodytext.paragraph.Paragraph;
 import kr.dogfoot.hwplib.object.bodytext.paragraph.text.HWPChar;
 import kr.dogfoot.hwplib.object.bodytext.paragraph.text.HWPCharControlChar;
 import kr.dogfoot.hwplib.object.bodytext.paragraph.text.HWPCharControlExtend;
 import kr.dogfoot.hwplib.object.bodytext.paragraph.text.HWPCharControlInline;
 import kr.dogfoot.hwplib.object.bodytext.paragraph.text.HWPCharNormal;
-import kr.dogfoot.hwplib.object.bodytext.paragraph.text.ParaText;
 import kr.dogfoot.hwplib.object.etc.HWPTag;
 import kr.dogfoot.hwplib.util.compoundFile.writer.StreamWriter;
 
+/**
+ * 문단의 텍스트 레코드를 쓰기 위한 객체
+ * 
+ * @author neolord
+ */
 public class ForParaText {
-	public static void write(ParaText pt, StreamWriter sw) throws IOException {
-		if (pt == null) {
+	/**
+	 * 문단의 텍스트 레코드를 쓴다.
+	 * 
+	 * @param p
+	 *            문단
+	 * @param sw
+	 *            스트림 라이터
+	 * @throws IOException
+	 */
+	public static void write(Paragraph p, StreamWriter sw) throws IOException {
+		if (p.getText() == null) {
 			return;
 		}
-		
-		recordHeader(pt, sw);
-		
-		for (HWPChar hc : pt.getCharList()) {
+
+		long size = p.getHeader().getCharacterCount() * 2;
+		recordHeader(size, sw);
+
+		realRecordSize(size, sw);
+
+		for (HWPChar hc : p.getText().getCharList()) {
 			hwpChar(hc, sw);
 		}
 	}
 
-	private static void recordHeader(ParaText pt, StreamWriter sw) throws IOException {
-		sw.writeRecordHeader(HWPTag.PARA_TEXT, sw.getCurrentParagraphLevel() + 1, getSize(pt));
+	/**
+	 * 문단의 텍스트 레코드의 레코드 헤더를 쓴다.
+	 * 
+	 * @param size
+	 *            실제 계산된 레코드 크기
+	 * @param sw
+	 *            스트림 라이터
+	 * @throws IOException
+	 */
+	private static void recordHeader(long size, StreamWriter sw)
+			throws IOException {
+		if (size > 4095) {
+			sw.writeRecordHeader(HWPTag.PARA_TEXT, 4095);
+		} else {
+			sw.writeRecordHeader(HWPTag.PARA_TEXT, (int) size);
+		}
 	}
 
-	private static int getSize(ParaText pt) {
-		int size = 0;
-		for (HWPChar hc : pt.getCharList()) { 
-			switch(hc.getType()) {
-			case Normal:
-				size += 2;
-				break;
-			case ControlChar:
-				size += 2;
-				break;
-			case ControlInline:
-				size += 16;
-				break;
-			case ControlExtend:
-				size += 16;
-				break;
-			}
+	/**
+	 * 레코드의 크기가 4095보다 클 경우 실제 크기를 쓴다.
+	 * 
+	 * @param size
+	 *            실제 계산된 레코드 크기
+	 * @param sw
+	 *            스트림 라이터
+	 * @throws IOException
+	 */
+	private static void realRecordSize(long size, StreamWriter sw)
+			throws IOException {
+		if (size > 4095) {
+			sw.writeUInt4(size);
 		}
-		return size;
 	}
-	
-	private static void hwpChar(HWPChar hc, StreamWriter sw) throws UnsupportedEncodingException, IOException {
-		switch(hc.getType()) {
+
+	/**
+	 * Character을 쓴다.
+	 * 
+	 * @param hc
+	 *            글자 객체
+	 * @param sw
+	 *            스트림 라이터
+	 * @throws UnsupportedEncodingException
+	 * @throws IOException
+	 */
+	private static void hwpChar(HWPChar hc, StreamWriter sw)
+			throws UnsupportedEncodingException, IOException {
+		switch (hc.getType()) {
 		case Normal:
-			normal((HWPCharNormal)hc, sw);
+			normal((HWPCharNormal) hc, sw);
 			break;
 		case ControlChar:
-			controlChar((HWPCharControlChar)hc, sw);
+			controlChar((HWPCharControlChar) hc, sw);
 			break;
 		case ControlInline:
-			controlInline((HWPCharControlInline)hc, sw); 
+			controlInline((HWPCharControlInline) hc, sw);
 			break;
 		case ControlExtend:
-			controlExtend((HWPCharControlExtend)hc, sw);
+			controlExtend((HWPCharControlExtend) hc, sw);
 			break;
 		}
 	}
 
-	private static void normal(HWPCharNormal hc, StreamWriter sw) throws UnsupportedEncodingException, IOException {
+	/**
+	 * 일반 Character를 쓴다.
+	 * 
+	 * @param hc
+	 *            일반 Character
+	 * @param sw
+	 *            스트림 라이터
+	 * @throws UnsupportedEncodingException
+	 * @throws IOException
+	 */
+	private static void normal(HWPCharNormal hc, StreamWriter sw)
+			throws UnsupportedEncodingException, IOException {
 		sw.writeBytes(hc.getCh().getBytes("UTF-16LE"));
 	}
 
-	private static void controlChar(HWPCharControlChar hc, StreamWriter sw) throws IOException {
+	/**
+	 * 문자 컨트롤 Character를 쓴다.
+	 * 
+	 * @param hc
+	 *            문자 컨트롤 Character
+	 * @param sw
+	 *            스트림 라이터
+	 * @throws IOException
+	 */
+	private static void controlChar(HWPCharControlChar hc, StreamWriter sw)
+			throws IOException {
 		sw.writeSInt2(hc.getCode());
 	}
 
-	private static void controlInline(HWPCharControlInline hc, StreamWriter sw) throws IOException {
+	/**
+	 * 인라인 컨트롤 character을 쓴다.
+	 * 
+	 * @param hc
+	 *            인라인 컨트롤 character
+	 * @param sw
+	 *            스트림 라이터
+	 * @throws IOException
+	 */
+	private static void controlInline(HWPCharControlInline hc, StreamWriter sw)
+			throws IOException {
 		sw.writeSInt2(hc.getCode());
 		sw.writeBytes(hc.getAddition());
 		sw.writeSInt2(hc.getCode());
 	}
 
-	private static void controlExtend(HWPCharControlExtend hc, StreamWriter sw) throws IOException {
+	/**
+	 * 확장 컨트롤 Character를 쓴다.
+	 * 
+	 * @param hc
+	 *            확장 컨트롤 Character
+	 * @param sw
+	 *            스트림 라이터
+	 * @throws IOException
+	 */
+	private static void controlExtend(HWPCharControlExtend hc, StreamWriter sw)
+			throws IOException {
 		sw.writeSInt2(hc.getCode());
 		sw.writeBytes(hc.getAddition());
 		sw.writeSInt2(hc.getCode());

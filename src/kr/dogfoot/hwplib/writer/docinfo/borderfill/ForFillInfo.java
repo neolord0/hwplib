@@ -10,7 +10,21 @@ import kr.dogfoot.hwplib.object.docinfo.borderfill.fillinfo.PictureInfo;
 import kr.dogfoot.hwplib.object.etc.Color4Byte;
 import kr.dogfoot.hwplib.util.compoundFile.writer.StreamWriter;
 
+/**
+ * 테두리/배경 레코드의 채우기 정보를 쓰기 위한 객체
+ * 
+ * @author neolord
+ */
 public class ForFillInfo {
+	/**
+	 * 테두리/배경 레코드의 채우기 정보를 쓴다.
+	 * 
+	 * @param fi
+	 *            테두리/배경 레코드의 채우기 정보
+	 * @param sw
+	 *            스트림 라이터
+	 * @throws IOException
+	 */
 	public static void write(FillInfo fi, StreamWriter sw) throws IOException {
 		sw.writeUInt4(fi.getType().getValue());
 		if (fi.getType().getValue() != 0) {
@@ -30,13 +44,31 @@ public class ForFillInfo {
 		}
 	}
 
+	/**
+	 * 패턴 채움 정보를 쓴다.
+	 * 
+	 * @param pf
+	 *            패턴 채움 정보
+	 * @param sw
+	 *            스트림 라이터
+	 * @throws IOException
+	 */
 	private static void writePatternFill(PatternFill pf, StreamWriter sw)
 			throws IOException {
-		sw.writeUInt4(pf.getBackColor().getColor());
-		sw.writeUInt4(pf.getPatternColor().getColor());
+		sw.writeUInt4(pf.getBackColor().getValue());
+		sw.writeUInt4(pf.getPatternColor().getValue());
 		sw.writeUInt4(pf.getPatternType().getValue());
 	}
 
+	/**
+	 * 그라데이션 채움 정보를 쓴다.
+	 * 
+	 * @param gf
+	 *            그라데이션 채움 정보
+	 * @param sw
+	 *            스트림 라이터
+	 * @throws IOException
+	 */
 	private static void writeGradientFill(GradientFill gf, StreamWriter sw)
 			throws IOException {
 		sw.writeSInt1(gf.getGradientType().getValue());
@@ -53,17 +85,35 @@ public class ForFillInfo {
 			}
 		}
 		for (Color4Byte c : gf.getColorList()) {
-			sw.writeUInt4(c.getColor());
+			sw.writeUInt4(c.getValue());
 		}
 	}
 
+	/**
+	 * 이미지 채움 정보을 쓴다.
+	 * 
+	 * @param imf
+	 *            이미지 채움 정보
+	 * @param sw
+	 *            스트림 라이터
+	 * @throws IOException
+	 */
 	private static void writeImageFill(ImageFill imf, StreamWriter sw)
 			throws IOException {
 		sw.writeUInt1(imf.getImageFillType().getValue());
 		pictureInfo(imf.getPictureInfo(), sw);
 	}
 
-	private static void pictureInfo(PictureInfo pi, StreamWriter sw)
+	/**
+	 * 그림 정보을 쓴다.
+	 * 
+	 * @param pi
+	 *            그림 정보
+	 * @param sw
+	 *            스트림 라이터
+	 * @throws IOException
+	 */
+	public static void pictureInfo(PictureInfo pi, StreamWriter sw)
 			throws IOException {
 		sw.writeSInt1(pi.getBrightness());
 		sw.writeSInt1(pi.getContrast());
@@ -71,6 +121,15 @@ public class ForFillInfo {
 		sw.writeUInt2(pi.getBinItemID());
 	}
 
+	/**
+	 * 추가적인 속성을 쓴다.
+	 * 
+	 * @param fi
+	 *            테두리/배경 레코드의 채우기 정보
+	 * @param sw
+	 *            스트림 라이터
+	 * @throws IOException
+	 */
 	private static void additionalProperty(FillInfo fi, StreamWriter sw)
 			throws IOException {
 		if (fi.getType().hasGradientFill() == true) {
@@ -81,6 +140,15 @@ public class ForFillInfo {
 		}
 	}
 
+	/**
+	 * 알려지지 않은 바이트를 쓴다.
+	 * 
+	 * @param fi
+	 *            테두리/배경 레코드의 채우기 정보
+	 * @param sw
+	 *            스트림 라이터
+	 * @throws IOException
+	 */
 	private static void unknownBytes(FillInfo fi, StreamWriter sw)
 			throws IOException {
 		if (fi.getType().hasPatternFill()) {
@@ -94,6 +162,13 @@ public class ForFillInfo {
 		}
 	}
 
+	/**
+	 * 테두리/배경 레코드의 채우기 정보의 크기를 반환한다.
+	 * 
+	 * @param fi
+	 *            테두리/배경 레코드의 채우기 정보
+	 * @return 테두리/배경 레코드의 채우기 정보의 크기
+	 */
 	public static int getSize(FillInfo fi) {
 		int size = 0;
 		size += 4;

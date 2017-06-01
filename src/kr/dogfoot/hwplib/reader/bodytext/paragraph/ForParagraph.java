@@ -7,7 +7,7 @@ import kr.dogfoot.hwplib.object.bodytext.control.ControlType;
 import kr.dogfoot.hwplib.object.bodytext.paragraph.Paragraph;
 import kr.dogfoot.hwplib.object.etc.HWPTag;
 import kr.dogfoot.hwplib.reader.bodytext.paragraph.control.ForControl;
-import kr.dogfoot.hwplib.reader.bodytext.paragraph.control.gso.ForControlGso;
+import kr.dogfoot.hwplib.reader.bodytext.paragraph.control.gso.ForGsoControl;
 import kr.dogfoot.hwplib.util.compoundFile.reader.StreamReader;
 
 /**
@@ -66,6 +66,7 @@ public class ForParagraph {
 			readBody();
 		}
 	}
+
 	/**
 	 * 문단 헤더 레코드를 읽는다.
 	 * 
@@ -78,7 +79,8 @@ public class ForParagraph {
 	/**
 	 * 읽은 레코드 헤더가 문단 바깥쪽인지 여부를 반환한다.
 	 * 
-	 * @param sr 스트림 리더
+	 * @param sr
+	 *            스트림 리더
 	 * @return 읽은 레코드 헤더가 문단 바깥쪽인지 여부
 	 */
 	private boolean isOutOfParagraph(StreamReader sr) {
@@ -97,7 +99,6 @@ public class ForParagraph {
 				&& sr.getCurrentRecordHeader().getTagID() == HWPTag.LIST_HEADER
 				&& sr.getCurrentRecordHeader().getLevel() == 1;
 	}
-
 
 	/**
 	 * 이미 읽은 레코드 헤더에 따른 레코드 내용을 읽는다.
@@ -169,13 +170,11 @@ public class ForParagraph {
 	private void control() throws Exception {
 		long id = sr.readUInt4();
 		if (id == ControlType.Gso.getCtrlId()) {
-			ForControlGso fgc = new ForControlGso();
+			ForGsoControl fgc = new ForGsoControl();
 			fgc.read(paragraph, sr);
 		} else {
 			Control c = paragraph.addNewControl(id);
 			ForControl.read(c, sr);
 		}
 	}
-
-
 }

@@ -22,7 +22,6 @@ public class ForSection {
 	 * @throws Exception
 	 */
 	public static void read(Section s, StreamReader sr) throws Exception {
-		
 		ForParagraphList.read(s, sr);
 		if (sr.isEndOfStream() == false) {
 			s.createLastBatangPageInfo();
@@ -33,9 +32,11 @@ public class ForSection {
 	/**
 	 * 마지막 바탕쪽을 읽는다.
 	 * 
-	 * @param lastBatangPageInfo 마지막 바탕쪽 객체
-	 * @param sr 스트림 리더
-	 * @throws Exception 
+	 * @param lastBatangPageInfo
+	 *            마지막 바탕쪽 객체
+	 * @param sr
+	 *            스트림 리더
+	 * @throws Exception
 	 */
 	private static void lastBatangPageInfo(BatangPageInfo lastBatangPageInfo,
 			StreamReader sr) throws Exception {

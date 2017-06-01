@@ -4,9 +4,24 @@ import java.io.IOException;
 
 import kr.dogfoot.hwplib.object.docinfo.ParaShape;
 import kr.dogfoot.hwplib.object.etc.HWPTag;
+import kr.dogfoot.hwplib.object.fileheader.FileVersion;
 import kr.dogfoot.hwplib.util.compoundFile.writer.StreamWriter;
 
+/**
+ * 문단 모양 레코드를 쓰기 위한 객체
+ * 
+ * @author neolord
+ */
 public class ForParaShape {
+	/**
+	 * 문단 모양 레코드를 쓴다.
+	 * 
+	 * @param ps
+	 *            문단 모양 레코드
+	 * @param sw
+	 *            스트림 라이터
+	 * @throws IOException
+	 */
 	public static void write(ParaShape ps, StreamWriter sw) throws IOException {
 		recordHeader(ps, sw);
 
@@ -33,17 +48,34 @@ public class ForParaShape {
 		}
 	}
 
-	private static void recordHeader(ParaShape ps, StreamWriter sw) throws IOException {
-		sw.writeRecordHeader(HWPTag.PARA_SHAPE, 1, getSize(sw));
+	/**
+	 * 문단 모양 레코드의 레코드 헤더를 쓴다.
+	 * 
+	 * @param ps
+	 *            문단 모양 레코드
+	 * @param sw
+	 *            스트림 라이터
+	 * @throws IOException
+	 */
+	private static void recordHeader(ParaShape ps, StreamWriter sw)
+			throws IOException {
+		sw.writeRecordHeader(HWPTag.PARA_SHAPE, getSize(sw.getFileVersion()));
 	}
 
-	private static int getSize(StreamWriter sw) {
+	/**
+	 * 문단 모양 레코드의 크기를 반환한다.
+	 * 
+	 * @param version
+	 *            파일 버전
+	 * @return 문단 모양 레코드의 크기
+	 */
+	private static int getSize(FileVersion version) {
 		int size = 0;
 		size += 42;
-		if (sw.getFileVersion().isOver(5, 0, 1, 7)) {
+		if (version.isOver(5, 0, 1, 7)) {
 			size += 4;
 		}
-		if (sw.getFileVersion().isOver(5, 0, 2, 5)) {
+		if (version.isOver(5, 0, 2, 5)) {
 			size += 8;
 		}
 		return size;

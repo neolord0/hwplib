@@ -17,6 +17,11 @@ public class HWPCharNormal extends HWPChar {
 	public HWPCharNormal() {
 	}
 
+	/**
+	 * 글자의 종류을 반환한다.
+	 * 
+	 * @return 글자의 타입
+	 */
 	@Override
 	public HWPCharType getType() {
 		return HWPCharType.Normal;

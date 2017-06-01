@@ -11,7 +11,7 @@ public class ShapeComponent {
 	/**
 	 * 개체 컨트롤 Id
 	 */
-	private int gsoId;
+	private long gsoId;
 	/**
 	 * 개체가 속한 그룹 내에서의 X offset
 	 */
@@ -77,7 +77,7 @@ public class ShapeComponent {
 	 * 
 	 * @return 개체 컨트롤 Id
 	 */
-	public int getGsoId() {
+	public long getGsoId() {
 		return gsoId;
 	}
 
@@ -87,7 +87,7 @@ public class ShapeComponent {
 	 * @param gsoId
 	 *            개체 컨트롤 Id
 	 */
-	public void setGsoId(int gsoId) {
+	public void setGsoId(long gsoId) {
 		this.gsoId = gsoId;
 	}
 
@@ -115,7 +115,7 @@ public class ShapeComponent {
 	 * 
 	 * @return 개체가 속한 그룹 내에서의 Y offset
 	 */
-	public int getyOffset() {
+	public int getOffsetY() {
 		return offsetY;
 	}
 

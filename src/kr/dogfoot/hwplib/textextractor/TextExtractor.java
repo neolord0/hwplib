@@ -21,7 +21,7 @@ public class TextExtractor {
 	public static String extract(HWPFile hwpFile, TextExtractMethod tem) {
 		StringBuffer sb = new StringBuffer();
 		for (Section s : hwpFile.getBodyText().getSectionList()) {
-			ForParagraphList.extract(s.getParagraphList(), tem, sb);
+			ForParagraphList.extract(s, tem, sb);
 		}
 		return sb.toString();
 	}

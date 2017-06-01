@@ -2,21 +2,21 @@ package kr.dogfoot.hwplib.reader.bodytext.paragraph.control.gso;
 
 import java.io.IOException;
 
+import kr.dogfoot.hwplib.object.RecordHeader;
 import kr.dogfoot.hwplib.object.bodytext.control.gso.ControlEllipse;
 import kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponenteach.ShapeComponentEllipse;
 import kr.dogfoot.hwplib.object.etc.HWPTag;
-import kr.dogfoot.hwplib.reader.RecordHeader;
 import kr.dogfoot.hwplib.reader.bodytext.paragraph.control.gso.part.ForTextBox;
 import kr.dogfoot.hwplib.util.compoundFile.reader.StreamReader;
 
 /**
- * 타원 컨트롤을 읽는다.
+ * 타원 컨트롤의 나머지 부분을 읽는다.
  * 
  * @author neolord
  */
 public class ForControlEllipse {
 	/**
-	 * 타원 컨트롤을 읽는다.
+	 * 타원 컨트롤의 나머지 부분을 읽는다.
 	 * 
 	 * @param ellipse
 	 *            타원 컨트롤
@@ -24,7 +24,7 @@ public class ForControlEllipse {
 	 *            스트림 리더
 	 * @throws Exception
 	 */
-	public static void read(ControlEllipse ellipse, StreamReader sr)
+	public static void readRest(ControlEllipse ellipse, StreamReader sr)
 			throws Exception {
 		RecordHeader rh = sr.readRecordHeder();
 		if (rh.getTagID() == HWPTag.LIST_HEADER) {

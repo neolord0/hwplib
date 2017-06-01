@@ -2,20 +2,20 @@ package kr.dogfoot.hwplib.reader.bodytext.paragraph.control.gso;
 
 import java.io.IOException;
 
+import kr.dogfoot.hwplib.object.RecordHeader;
 import kr.dogfoot.hwplib.object.bodytext.control.gso.ControlLine;
 import kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponenteach.ShapeComponentLine;
 import kr.dogfoot.hwplib.object.etc.HWPTag;
-import kr.dogfoot.hwplib.reader.RecordHeader;
 import kr.dogfoot.hwplib.util.compoundFile.reader.StreamReader;
 
 /**
- * 선 컨트롤을 읽기 위한 객체
+ * 선 컨트롤의 나머지 부분을 읽기 위한 객체
  * 
  * @author neolord
  */
 public class ForControlLine {
 	/**
-	 * 선 컨트롤을 읽는다.
+	 * 선 컨트롤의 나머지 부분을 읽는다.
 	 * 
 	 * @param line
 	 *            선 컨트롤
@@ -23,7 +23,7 @@ public class ForControlLine {
 	 *            스트림 리더
 	 * @throws IOException
 	 */
-	public static void read(ControlLine line, StreamReader sr)
+	public static void readRest(ControlLine line, StreamReader sr)
 			throws IOException {
 		RecordHeader rh = sr.readRecordHeder();
 		if (rh.getTagID() == HWPTag.SHAPE_COMPONENT_LINE) {

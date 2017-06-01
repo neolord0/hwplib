@@ -8,16 +8,34 @@ import kr.dogfoot.hwplib.object.bodytext.Section;
 import kr.dogfoot.hwplib.object.fileheader.FileVersion;
 import kr.dogfoot.hwplib.util.compoundFile.writer.CompoundFileWriter;
 import kr.dogfoot.hwplib.util.compoundFile.writer.StreamWriter;
+import kr.dogfoot.hwplib.writer.autosetter.AutoSetter;
+import kr.dogfoot.hwplib.writer.autosetter.InstanceID;
 import kr.dogfoot.hwplib.writer.bodytext.ForSection;
 import kr.dogfoot.hwplib.writer.docinfo.ForDocInfo;
 
+/**
+ * 한글 파일을 쓰기 위한 객체
+ * 
+ * @author neolord
+ */
 public class HWPWriter {
-	public static void toFile(HWPFile hwpFile, String filepath) throws Exception {
-		if (hwpFile.getFileHeader().hasPassword()) { 
+	/**
+	 * 한글 파일 객체를 파일로 쓴다.
+	 * 
+	 * @param hwpFile
+	 *            한글 파일 객체
+	 * @param filepath
+	 *            파일 경로
+	 * @throws Exception
+	 */
+	public static void toFile(HWPFile hwpFile, String filepath)
+			throws Exception {
+		if (hwpFile.getFileHeader().hasPassword()) {
 			throw new Exception("Files with passwords are not supported.");
 		}
 
 		HWPWriter w = new HWPWriter(hwpFile);
+		w.autoSet();
 		w.fileHeader();
 		w.docInfo();
 		w.bodyText();
@@ -25,72 +43,155 @@ public class HWPWriter {
 		w.writeAndClose(filepath);
 	}
 
+	/**
+	 * 한긆 파일
+	 */
 	private HWPFile hwpFile;
+	/**
+	 * MS Compound 파일을 읽기 위한 라이터 객체
+	 */
 	private CompoundFileWriter cfw;
-	
+
+	/**
+	 * 생성자
+	 * 
+	 * @param hwpFile
+	 *            한글 파일
+	 */
 	private HWPWriter(HWPFile hwpFile) {
 		this.hwpFile = hwpFile;
 		cfw = new CompoundFileWriter();
 	}
-	
+
+	/**
+	 * 파일을 쓰기 전에 자동으로 설정할 수 있는 값들을 설정한다.
+	 */
+	private void autoSet() {
+		InstanceID iid = new InstanceID();
+		AutoSetter.autoSet(hwpFile, iid);
+	}
+
+	/**
+	 * FileHeader 스트림을 쓴다.
+	 * 
+	 * @throws IOException
+	 */
 	private void fileHeader() throws IOException {
-		StreamWriter sw =  cfw.openCurrentStream("FileHeader", false, getVersion());
+		StreamWriter sw = cfw.openCurrentStream("FileHeader", false,
+				getVersion());
 		ForFileHeader.write(hwpFile.getFileHeader(), sw);
 		cfw.closeCurrentStream();
 	}
-	
+
+	/**
+	 * 파일 버전을 반환한다.
+	 * 
+	 * @return 파일 버전
+	 */
 	private FileVersion getVersion() {
 		return hwpFile.getFileHeader().getVersion();
 	}
 
+	/**
+	 * DocInfo 스트림을 쓴다.
+	 * 
+	 * @throws Exception
+	 */
 	private void docInfo() throws Exception {
-		StreamWriter sw =  cfw.openCurrentStream("DocInfo", isCompressed(), getVersion());
+		StreamWriter sw = cfw.openCurrentStream("DocInfo", isCompressed(),
+				getVersion());
 		ForDocInfo fdi = new ForDocInfo();
 		fdi.write(hwpFile.getDocInfo(), sw);
 		cfw.closeCurrentStream();
 	}
-	
+
+	/**
+	 * 압축된 파일인지 여부를 반환한다.
+	 * 
+	 * @return 압축된 파일인지 여부
+	 */
 	private boolean isCompressed() {
 		return hwpFile.getFileHeader().isCompressed();
 	}
 
-	private void bodyText() throws IOException {
-		cfw.openCurrentStorage("BodyText");		
+	/**
+	 * BodyText 스토리지를 쓴다.
+	 * 
+	 * @throws Exception
+	 */
+	private void bodyText() throws Exception {
+		cfw.openCurrentStorage("BodyText");
 		int index = 0;
-		for(Section s : hwpFile.getBodyText().getSectionList()) {
+		for (Section s : hwpFile.getBodyText().getSectionList()) {
 			seciton(index, s);
+			index++;
 		}
-		
+
 		cfw.closeCurrentStorage();
 	}
 
-	private void seciton(int index, Section s) throws IOException {
-		StreamWriter sw =  cfw.openCurrentStream("Section" + index, isCompressed(), getVersion());
-		ForSection
-				.write(s, sw);
+	/**
+	 * Section 스트림을 쓴다.
+	 * 
+	 * @param index
+	 *            섹션 인덱스
+	 * @param s
+	 *            구역 객체
+	 * @throws Exception
+	 */
+	private void seciton(int index, Section s) throws Exception {
+		StreamWriter sw = cfw.openCurrentStream("Section" + index,
+				isCompressed(), getVersion());
+		ForSection.write(s, sw);
 		cfw.closeCurrentStream();
 	}
 
+	/**
+	 * BinData 스토리지를 쓴다.
+	 * 
+	 * @throws IOException
+	 */
 	private void binData() throws IOException {
 		if (hasBinData()) {
 			cfw.openCurrentStorage("BinData");
-			for (EmbeddedBinaryData ebd : hwpFile.getBinData().getEmbeddedBinaryDataList()) {
+			for (EmbeddedBinaryData ebd : hwpFile.getBinData()
+					.getEmbeddedBinaryDataList()) {
 				embeddedBinaryData(ebd);
 			}
 			cfw.closeCurrentStorage();
 		}
 	}
 
+	/**
+	 * 첨부된 바이너리 데이터를 쓴다.
+	 * 
+	 * @param ebd
+	 *            첨부된 바이너리 데이터에 대한 정보
+	 * @throws IOException
+	 */
 	private void embeddedBinaryData(EmbeddedBinaryData ebd) throws IOException {
-		StreamWriter sw =  cfw.openCurrentStream(ebd.getName(), isCompressed(), getVersion());
+		StreamWriter sw = cfw.openCurrentStream(ebd.getName(), false,
+				getVersion());
 		sw.writeBytes(ebd.getData());
 		cfw.closeCurrentStream();
 	}
 
+	/**
+	 * 첨부된 바이너리 데이터가 있는지 여부를 반환한다.
+	 * 
+	 * @return 첨부된 바이너리 데이터가 있는지 여부
+	 */
 	private boolean hasBinData() {
 		return hwpFile.getBinData().getEmbeddedBinaryDataList().size() > 0;
 	}
 
+	/**
+	 * 파일을 쓰고 닫는다.
+	 * 
+	 * @param filepath
+	 *            파일 경로
+	 * @throws IOException
+	 */
 	private void writeAndClose(String filepath) throws IOException {
 		cfw.write(filepath);
 		cfw.close();

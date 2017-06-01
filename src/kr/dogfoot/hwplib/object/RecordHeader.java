@@ -1,4 +1,4 @@
-package kr.dogfoot.hwplib.reader;
+package kr.dogfoot.hwplib.object;
 
 /**
  * 레코드 헤더

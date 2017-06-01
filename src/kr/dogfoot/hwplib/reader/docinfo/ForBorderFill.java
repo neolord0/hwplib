@@ -64,7 +64,7 @@ public class ForBorderFill {
 			throws IOException {
 		eb.setType(BorderType.valueOf((byte) sr.readUInt1()));
 		eb.setThickness(BorderThickness.valueOf((byte) sr.readUInt1()));
-		eb.getColor().setColor(sr.readUInt4());
+		eb.getColor().setValue(sr.readUInt4());
 	}
 
 	/**
@@ -80,7 +80,7 @@ public class ForBorderFill {
 			throws IOException {
 		bf.setDiagonalSort(DiagonalSort.valueOf((byte) sr.readUInt1()));
 		bf.setDiagonalThickness(BorderThickness.valueOf((byte) sr.readUInt1()));
-		bf.getDiagonalColor().setColor(sr.readUInt4());
+		bf.getDiagonalColor().setValue(sr.readUInt4());
 	}
 
 	/**

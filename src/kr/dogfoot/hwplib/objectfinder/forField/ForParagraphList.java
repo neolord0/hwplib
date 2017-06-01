@@ -2,6 +2,7 @@ package kr.dogfoot.hwplib.objectfinder.forField;
 
 import java.util.ArrayList;
 
+import kr.dogfoot.hwplib.object.bodytext.ParagraphListInterface;
 import kr.dogfoot.hwplib.object.bodytext.control.Control;
 import kr.dogfoot.hwplib.object.bodytext.control.ControlField;
 import kr.dogfoot.hwplib.object.bodytext.control.ControlType;
@@ -27,7 +28,7 @@ public class ForParagraphList {
 	 *            필드 안에 텍스트의 텍스트 추출 방법
 	 * @return 필드 텍스트
 	 */
-	public static String getFieldText(ArrayList<Paragraph> paragraphList,
+	public static String getFieldText(ParagraphListInterface paragraphList,
 			ControlType fieldType, String fieldName,
 			TextExtractMethod temInField) {
 		if (paragraphList == null) {
@@ -57,9 +58,10 @@ public class ForParagraphList {
 			} else {
 				sb.append("\n");
 				if (p.getText() != null) {
-					endFieldIndex = p.getText().getInlineCharIndex(0, (short) 0x04);
+					endFieldIndex = p.getText().getInlineCharIndex(0,
+							(short) 0x04);
 					if (endFieldIndex != -1) {
-						getParaText(p, 0, endFieldIndex - 1, temInField, sb); 
+						getParaText(p, 0, endFieldIndex - 1, temInField, sb);
 					} else {
 						getParaText(p, 0, temInField, sb);
 					}
@@ -115,7 +117,7 @@ public class ForParagraphList {
 	 *            필드 안에 텍스트의 텍스트 추출 방법
 	 * @return 필드 텍스트
 	 */
-	private static String controls(ArrayList<Paragraph> paragraphList,
+	private static String controls(ParagraphListInterface paragraphList,
 			ControlType fieldType, String fieldName,
 			TextExtractMethod temInField) {
 		for (Paragraph p : paragraphList) {

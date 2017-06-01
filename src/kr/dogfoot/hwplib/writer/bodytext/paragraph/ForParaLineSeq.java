@@ -7,28 +7,70 @@ import kr.dogfoot.hwplib.object.bodytext.paragraph.lineseg.ParaLineSeg;
 import kr.dogfoot.hwplib.object.etc.HWPTag;
 import kr.dogfoot.hwplib.util.compoundFile.writer.StreamWriter;
 
+/**
+ * 문단의 레이아웃 레코드를 쓰기 위한 객체
+ * 
+ * @author neolord
+ */
 public class ForParaLineSeq {
-	public static void write(ParaLineSeg pls, StreamWriter sw) throws IOException {
+	/**
+	 * 문단의 레이아웃 레코드를 쓴다.
+	 * 
+	 * @param pls
+	 *            문단의 레이아웃 레코드
+	 * @param sw
+	 *            스트림 라이터
+	 * @throws IOException
+	 */
+	public static void write(ParaLineSeg pls, StreamWriter sw)
+			throws IOException {
 		if (pls == null) {
 			return;
 		}
-		
+
 		recordHeader(pls, sw);
-		
+
 		for (LineSegItem lsi : pls.getLineSegItemList()) {
 			lineSegItem(lsi, sw);
 		}
 	}
 
-	private static void recordHeader(ParaLineSeg pls, StreamWriter sw) throws IOException {
-		sw.writeRecordHeader(HWPTag.PARA_LINE_SEG, sw.getCurrentParagraphLevel() + 1, getSize(pls));
+	/**
+	 * 문단의 레이아웃 레코드의 레코드 헤더를 쓴다.
+	 * 
+	 * @param pls
+	 *            문단의 레이아웃 레코드
+	 * @param sw
+	 *            스트림 라이터
+	 * @throws IOException
+	 */
+	private static void recordHeader(ParaLineSeg pls, StreamWriter sw)
+			throws IOException {
+		sw.writeRecordHeader(HWPTag.PARA_LINE_SEG, getSize(pls));
 	}
 
+	/**
+	 * 문단의 레이아웃 레코드의 크기를 반환한다.
+	 * 
+	 * @param pls
+	 *            문단의 레이아웃 레코드
+	 * @return 문단의 레이아웃 레코드의 크기
+	 */
 	private static int getSize(ParaLineSeg pls) {
 		return pls.getLineSegItemList().size() * 36;
 	}
 
-	private static void lineSegItem(LineSegItem lsi, StreamWriter sw) throws IOException {
+	/**
+	 * 한 라인의 레이아웃 정보를 쓴다.
+	 * 
+	 * @param lsi
+	 *            한 라인의 레이아웃 정보
+	 * @param sw
+	 *            스트림 라이터
+	 * @throws IOException
+	 */
+	private static void lineSegItem(LineSegItem lsi, StreamWriter sw)
+			throws IOException {
 		sw.writeUInt4(lsi.getTextStartPositon());
 		sw.writeSInt4(lsi.getLineVerticalPosition());
 		sw.writeSInt4(lsi.getLineHeight());

@@ -2,23 +2,23 @@ package kr.dogfoot.hwplib.reader.bodytext.paragraph.control.gso;
 
 import java.io.IOException;
 
+import kr.dogfoot.hwplib.object.RecordHeader;
 import kr.dogfoot.hwplib.object.bodytext.control.gso.ControlPicture;
 import kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponenteach.ShapeComponentPicture;
 import kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponenteach.picture.InnerMargin;
 import kr.dogfoot.hwplib.object.etc.HWPTag;
-import kr.dogfoot.hwplib.reader.RecordHeader;
 import kr.dogfoot.hwplib.reader.bodytext.paragraph.control.gso.part.ForPictureEffect;
 import kr.dogfoot.hwplib.reader.docinfo.borderfill.ForFillInfo;
 import kr.dogfoot.hwplib.util.compoundFile.reader.StreamReader;
 
 /**
- * 그림 컨트롤을 읽기 위한 객체
+ * 그림 컨트롤의 나머지 부분을 읽기 위한 객체
  * 
  * @author neolord
  */
 public class ForControlPicture {
 	/**
-	 * 그림 컨트롤을 읽는다.
+	 * 그림 컨트롤의 나머지 부분을 읽는다.
 	 * 
 	 * @param picture
 	 *            그림 컨트롤
@@ -26,7 +26,7 @@ public class ForControlPicture {
 	 *            스트림 리더
 	 * @throws Exception
 	 */
-	public static void read(ControlPicture picture, StreamReader sr)
+	public static void readRest(ControlPicture picture, StreamReader sr)
 			throws Exception {
 		RecordHeader rh = sr.readRecordHeder();
 		if (rh.getTagID() == HWPTag.SHAPE_COMPONENT_PICTURE) {
@@ -45,7 +45,7 @@ public class ForControlPicture {
 	 */
 	private static void shapeComponentPicture(ShapeComponentPicture scp,
 			StreamReader sr) throws Exception {
-		scp.getBorderColor().setColor(sr.readUInt4());
+		scp.getBorderColor().setValue(sr.readUInt4());
 		scp.setBorderThickness(sr.readSInt4());
 		scp.getBorderProperty().setValue(sr.readUInt4());
 		scp.getLeftTop().setX(sr.readSInt4());

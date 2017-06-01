@@ -7,7 +7,7 @@ import kr.dogfoot.hwplib.object.docinfo.compatibledocument.CompatibleDocumentSor
 import kr.dogfoot.hwplib.util.compoundFile.reader.StreamReader;
 
 /**
- * 호환 문서 레코드를  읽기 위한 객체
+ * 호환 문서 레코드를 읽기 위한 객체
  * 
  * @author neolord
  */

@@ -26,7 +26,7 @@ public class ForParaLineSeq {
 		p.createLineSeg();
 		ParaLineSeg pls = p.getLineSeg();
 		int count = p.getHeader().getLineAlignCount();
-		for (int i = 0; i < count; i++) {
+		for (int index = 0; index < count; index++) {
 			paraLineSeqItem(pls.addNewLineSegItem(), sr);
 		}
 	}

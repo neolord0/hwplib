@@ -30,7 +30,7 @@ public class ForTable {
 		table.setRightInnerMargin(sr.readUInt2());
 		table.setTopInnerMargin(sr.readUInt2());
 		table.setBottomInnerMargin(sr.readUInt2());
-		for (int i = 0; i < table.getRowCount(); i++) {
+		for (int index = 0; index < table.getRowCount(); index++) {
 			table.addCellCountOfRow(sr.readUInt2());
 		}
 		table.setBorderFillId(sr.readUInt2());
@@ -52,7 +52,7 @@ public class ForTable {
 	private static void zoneInfo(Table table, StreamReader sr)
 			throws IOException {
 		int count = sr.readUInt2();
-		for (int i = 0; i < count; i++) {
+		for (int index = 0; index < count; index++) {
 			ZoneInfo zi = table.addNewZoneInfo();
 			zi.setStartColumn(sr.readUInt2());
 			zi.setStartRow(sr.readUInt2());

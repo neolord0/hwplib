@@ -4,7 +4,6 @@ import java.io.IOException;
 
 import kr.dogfoot.hwplib.object.bodytext.control.gso.caption.Caption;
 import kr.dogfoot.hwplib.object.bodytext.control.gso.caption.ListHeaderForCaption;
-import kr.dogfoot.hwplib.object.bodytext.paragraph.ParagraphList;
 import kr.dogfoot.hwplib.reader.bodytext.ForParagraphList;
 import kr.dogfoot.hwplib.util.compoundFile.reader.StreamReader;
 
@@ -25,7 +24,7 @@ public class ForCaption {
 	 */
 	public static void read(Caption caption, StreamReader sr) throws Exception {
 		listHeader(caption.getListHeader(), sr);
-		paragraphList(caption.getParagraphList(), sr);
+		ForParagraphList.read(caption.getParagraphList(), sr);
 	}
 
 	/**
@@ -57,19 +56,5 @@ public class ForCaption {
 	 */
 	private static void unknown8bytes(StreamReader sr) throws IOException {
 		sr.skip(8);
-	}
-
-	/**
-	 * 문단 리스트를 읽는다.
-	 * 
-	 * @param paragraphList
-	 *            문단 리스트
-	 * @param sr
-	 *            스트림 리더
-	 * @throws Exception
-	 */
-	private static void paragraphList(ParagraphList paragraphList,
-			StreamReader sr) throws Exception {
-		ForParagraphList.read(paragraphList, sr);
 	}
 }

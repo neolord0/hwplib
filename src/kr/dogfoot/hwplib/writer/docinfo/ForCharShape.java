@@ -9,9 +9,24 @@ import kr.dogfoot.hwplib.object.docinfo.charshape.FaceNameIds;
 import kr.dogfoot.hwplib.object.docinfo.charshape.Ratios;
 import kr.dogfoot.hwplib.object.docinfo.charshape.RelativeSizes;
 import kr.dogfoot.hwplib.object.etc.HWPTag;
+import kr.dogfoot.hwplib.object.fileheader.FileVersion;
 import kr.dogfoot.hwplib.util.compoundFile.writer.StreamWriter;
 
+/**
+ * 글자 모양 레코드를 쓰기 위한 객체
+ * 
+ * @author neolord
+ */
 public class ForCharShape {
+	/**
+	 * 글자 모양 레코드를 쓴다.
+	 * 
+	 * @param cs
+	 *            글자 모양 레코드
+	 * @param sw
+	 *            스트림 라이터
+	 * @throws IOException
+	 */
 	public static void write(CharShape cs, StreamWriter sw) throws IOException {
 		recordHeader(sw);
 
@@ -25,32 +40,45 @@ public class ForCharShape {
 		sw.writeUInt4(cs.getProperty().getValue());
 		sw.writeSInt1(cs.getShadowGap1());
 		sw.writeSInt1(cs.getShadowGap2());
-		sw.writeUInt4(cs.getCharColor().getColor());
-		sw.writeUInt4(cs.getUnderLineColor().getColor());
-		sw.writeUInt4(cs.getShadeColor().getColor());
-		sw.writeUInt4(cs.getShadowColor().getColor());
+		sw.writeUInt4(cs.getCharColor().getValue());
+		sw.writeUInt4(cs.getUnderLineColor().getValue());
+		sw.writeUInt4(cs.getShadeColor().getValue());
+		sw.writeUInt4(cs.getShadowColor().getValue());
 
 		if (sw.getFileVersion().isOver(5, 0, 2, 1)) {
 			sw.writeUInt2(cs.getBorderFillId());
 		}
 		if (sw.getFileVersion().isOver(5, 0, 3, 0)) {
-			sw.writeUInt4(cs.getStrikeLineColor().getColor());
+			sw.writeUInt4(cs.getStrikeLineColor().getValue());
 		}
 	}
 
-	private static void recordHeader(StreamWriter sw)
-			throws IOException {
-		sw.writeRecordHeader(HWPTag.CHAR_SHAPE, 1, getSize(sw));
+	/**
+	 * 글자 모양 레코드의 레코드 헤더를 쓴다.
+	 * 
+	 * @param sw
+	 *            스트림 라이터
+	 * @throws IOException
+	 */
+	private static void recordHeader(StreamWriter sw) throws IOException {
+		sw.writeRecordHeader(HWPTag.CHAR_SHAPE, getSize(sw.getFileVersion()));
 	}
 
-	private static int getSize(StreamWriter sw) {
+	/**
+	 * 글자 모양 레코드의 크기를 반환한다.
+	 * 
+	 * @param version
+	 *            파일 버전
+	 * @return 글자 모양 레코드의 크기
+	 */
+	private static int getSize(FileVersion version) {
 		int size = 0;
 		size += 14 + 7 + 7 + 7 + 7;
 		size += 26;
-		if (sw.getFileVersion().isOver(5, 0, 2, 1)) {
+		if (version.isOver(5, 0, 2, 1)) {
 			size += 2;
 		}
-		if (sw.getFileVersion().isOver(5, 0, 3, 0)) {
+		if (version.isOver(5, 0, 3, 0)) {
 			size += 4;
 		}
 		return size;
@@ -77,14 +105,15 @@ public class ForCharShape {
 		}
 	}
 
-	private static void relativeSizes(RelativeSizes rss, StreamWriter sw) throws IOException {
+	private static void relativeSizes(RelativeSizes rss, StreamWriter sw)
+			throws IOException {
 		for (short rs : rss.getArray()) {
 			sw.writeUInt1(rs);
 		}
 	}
-	
 
-	private static void charPositions(CharOffsets cos, StreamWriter sw) throws IOException {
+	private static void charPositions(CharOffsets cos, StreamWriter sw)
+			throws IOException {
 		for (byte co : cos.getArray()) {
 			sw.writeSInt1(co);
 		}

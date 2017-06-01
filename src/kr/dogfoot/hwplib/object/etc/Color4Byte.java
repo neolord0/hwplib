@@ -11,7 +11,7 @@ public class Color4Byte {
 	/**
 	 * unsigned 4 byte color 값을 저장
 	 */
-	private long color;
+	private long value;
 
 	public Color4Byte() {
 	}
@@ -21,8 +21,8 @@ public class Color4Byte {
 	 * 
 	 * @return unsigned 4 byte color 값
 	 */
-	public long getColor() {
-		return color;
+	public long getValue() {
+		return value;
 	}
 
 	/**
@@ -31,8 +31,8 @@ public class Color4Byte {
 	 * @param color
 	 *            unsigned 4 byte color 값, windows API에서 COLORREF의 값
 	 */
-	public void setColor(long color) {
-		this.color = color;
+	public void setValue(long value) {
+		this.value = value;
 	}
 
 	/**
@@ -41,7 +41,7 @@ public class Color4Byte {
 	 * @return red 값(0~255)
 	 */
 	public short getR() {
-		return (short) BitFlag.get(color, 0, 7);
+		return (short) BitFlag.get(value, 0, 7);
 	}
 
 	/**
@@ -51,7 +51,7 @@ public class Color4Byte {
 	 *            red 값(0~255)
 	 */
 	public void setR(short r) {
-		BitFlag.set(color, 0, 7, r);
+		value = BitFlag.set(value, 0, 7, r);
 	}
 
 	/**
@@ -60,7 +60,7 @@ public class Color4Byte {
 	 * @return green 값(0~255)
 	 */
 	public short getG() {
-		return (short) BitFlag.get(color, 8, 15);
+		return (short) BitFlag.get(value, 8, 15);
 	}
 
 	/**
@@ -70,7 +70,7 @@ public class Color4Byte {
 	 *            green 값(0~255)
 	 */
 	public void setG(short g) {
-		BitFlag.set(color, 8, 15, g);
+		value = BitFlag.set(value, 8, 15, g);
 	}
 
 	/**
@@ -79,7 +79,7 @@ public class Color4Byte {
 	 * @return blue 값(0~255)
 	 */
 	public short getB() {
-		return (short) BitFlag.get(color, 16, 23);
+		return (short) BitFlag.get(value, 16, 23);
 	}
 
 	/**
@@ -89,7 +89,7 @@ public class Color4Byte {
 	 *            blue 값(0~255)
 	 */
 	public void setB(short b) {
-		BitFlag.set(color, 16, 23, b);
+		value = BitFlag.set(value, 16, 23, b);
 	}
 
 	/**
@@ -98,7 +98,7 @@ public class Color4Byte {
 	 * @return alpha 값(0~255)
 	 */
 	public short getA() {
-		return (short) BitFlag.get(color, 24, 31);
+		return (short) BitFlag.get(value, 24, 31);
 	}
 
 	/**
@@ -108,6 +108,6 @@ public class Color4Byte {
 	 *            alpha 값(0~255)
 	 */
 	public void setA(short a) {
-		BitFlag.set(color, 24, 31, a);
+		value = BitFlag.set(value, 24, 31, a);
 	}
 }
