@@ -2,30 +2,49 @@
 
 한글과 컴퓨터(한컴)에서 만든 워드프로세서 "한글"의 파일에 대한 라이브러리입니다.
 
-본 라이브러리는 JAVA로 구현되었으며, 한글 파일의 하부 구조인 Microsoft Compound File의 읽기 부분은 Apache-POI의 POIFS File System을 사용하여 처리합니다.
+본 라이브러리는 JAVA로 구현되었으며, 한글 파일의 하부 구조인 Microsoft Compound File의 부분은 Apache-POI의 POIFS File System을 사용하여 처리합니다.
 본 라이브러리는 한글과컴퓨터의 한글 문서 파일(.hwp) 공개 문서를 참고하여 개발하였습니다. 한컴에서 제공하는 문서(HWP 5.0)는 아래URL에서 받을 수 있습니다. 
 
 http://www.hancom.com/etc/hwpDownload.do?gnb0=269&gnb1=271&gnb0=101&gnb1=140
 
+2017.6.1
+=========================================================================================
+* 저장 모듈 완료 (TestEditingHWPFile.java, TestReWritingHWPFile.java 참고) <br>
+		
+	// 파일을 열어서 <br>
+	String filename = "sample_hwp\\test-blank.hwp"; <br>
+	HWPFile hwpFile = HWPReader.fromFile(filename); <br>
+	
+	if (hwpFile != null) { <br>
+	    // 첫번째 구역/문단에 문자열 추가하고 <br> 
+		Section s = hwpFile.getBodyText().getSectionList().get(0); <br>
+		Paragraph firstParagraph = s.getParagraph(0); <br>
+		firstParagraph.getText().addString("이것은 추가된 문자열입니다."); <br>
+
+		// 다른 이름으로 저장 <br>
+		String writePath = filename.substring(0, 11) + "ed-" + filename.substring(11); <br>
+		HWPWriter.toFile(hwpFile, writePath); <br>
+	} <br>
+
 2017.4.26
 =========================================================================================
-* 구버전에서 만든 파일 읽기 오류 수정 - quantum123님 요청
-	- 5.0.0.6, 5.0.2.4.1, 5.0.0.3, 5.0.1.6, 5.0.3.0.1, 5.0.0.5, 5.0.1.7 버전
+* 구버전에서 만든 파일 읽기 오류 수정 - quantum123님 요청 <br>
+	- 5.0.0.6, 5.0.2.4.1, 5.0.0.3, 5.0.1.6, 5.0.3.0.1, 5.0.0.5, 5.0.1.7 버전 <br>
 
 2017.4.14
 =========================================================================================
-* 한 장 이상의 긴 문단을 읽지 못하는 문제 해결
+* 한 장 이상의 긴 문단을 읽지 못하는 문제 해결 <br>
 
 2017.4.4
 =========================================================================================
-* 누름틀 필드 텍스트 찾기 기능 
-	- 필드 텍스트가 여러 줄일때 처리		
-	- 필드 텍스트에 컨트롤이 포함되었을 경우 처리  
+* 누름틀 필드 텍스트 찾기 기능 <br>
+	- 필드 텍스트가 여러 줄일때 처리 <br>		
+	- 필드 텍스트에 컨트롤이 포함되었을 경우 처리 <br>  
 
-	String text1 = FieldFinder.getClickHereText(hwpFile, "필드1", TextExtractMethod.OnlyMainParagraph);			
+	String text1 = FieldFinder.getClickHereText(hwpFile, "필드1", TextExtractMethod.OnlyMainParagraph); <br>
 	
-	(FieldFinder.getClickHereText()  에서 필드 텍스트에 컨트롤이 포함되었을 경우 처리를 위해 
-	 TextExtractMethod temInField 매개변수를 추가하였습니다.)
+	(FieldFinder.getClickHereText()  에서 필드 텍스트에 컨트롤이 포함되었을 경우 처리를 위해 <br>
+	 TextExtractMethod temInField 매개변수를 추가하였습니다.) <br>
 
 2017.3.29
 =========================================================================================
