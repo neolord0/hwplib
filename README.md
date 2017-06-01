@@ -9,8 +9,8 @@ http://www.hancom.com/etc/hwpDownload.do?gnb0=269&gnb1=271&gnb0=101&gnb1=140
 
 2017.6.1
 =========================================================================================
-* 저장 모듈 완료 <br>
-		
+* 저장 모듈 완료
+	- TestEditingHWPFile.java, TestReWritingHWPFile.java 참고
 <pre><code>
 	// 파일을 열어서
 	String filename = "sample_hwp\\test-blank.hwp"; 
@@ -28,36 +28,34 @@ http://www.hancom.com/etc/hwpDownload.do?gnb0=269&gnb1=271&gnb0=101&gnb1=140
 		HWPWriter.toFile(hwpFile, writePath);
 	}
 </code></pre>
-	- TestEditingHWPFile.java, TestReWritingHWPFile.java 참고 <br>
 
 2017.4.26
 =========================================================================================
-* 구버전에서 만든 파일 읽기 오류 수정 - quantum123님 요청 <br>
-	- 5.0.0.6, 5.0.2.4.1, 5.0.0.3, 5.0.1.6, 5.0.3.0.1, 5.0.0.5, 5.0.1.7 버전 <br>
+* 구버전에서 만든 파일 읽기 오류 수정 - quantum123님 요청
+	- 5.0.0.6, 5.0.2.4.1, 5.0.0.3, 5.0.1.6, 5.0.3.0.1, 5.0.0.5, 5.0.1.7 버전
 
 2017.4.14
 =========================================================================================
-* 한 장 이상의 긴 문단을 읽지 못하는 문제 해결 <br>
+* 한 장 이상의 긴 문단을 읽지 못하는 문제 해결
 
 2017.4.4
 =========================================================================================
-* 누름틀 필드 텍스트 찾기 기능 <br>
-	- 필드 텍스트가 여러 줄일때 처리 <br>		
-	- 필드 텍스트에 컨트롤이 포함되었을 경우 처리 <br>  
+* 누름틀 필드 텍스트 찾기 기능 
+	- 필드 텍스트가 여러 줄일때 처리 
+	- 필드 텍스트에 컨트롤이 포함되었을 경우 처리
+	- FieldFinder.getClickHereText() 에서 필드 텍스트에 컨트롤이 포함되었을 경우 처리를 위해 TextExtractMethod temInField 매개변수를 추가하였습니다.
 <pre><code>
 	String text1 = FieldFinder.getClickHereText(hwpFile, "필드1", TextExtractMethod.OnlyMainParagraph);
 </code></pre>
-	- FieldFinder.getClickHereText() 에서 필드 텍스트에 컨트롤이 포함되었을 경우 처리를 위해 TextExtractMethod temInField 매개변수를 추가하였습니다. <br>
 
 2017.3.29
 =========================================================================================
-* 누름틀 필드 텍스트 찾기 기능 완료 - musasin84님 요청<br>
-
+* 누름틀 필드 텍스트 찾기 기능 완료 - musasin84님 요청
+	- test/TestGettingClickHereFieldText.java 파일 참고 
 <pre><code>
 	HWPFile hwpFile = HWPReader.fromFile(filename);
 	String text1 = FieldFinder.getClickHereText(hwpFile, "필드이름");
 </code></pre>
-	- test/TestGettingClickHereFieldText.java 파일 참고 <br> 
 
 2017.3.20
 =========================================================================================
@@ -67,28 +65,24 @@ http://www.hancom.com/etc/hwpDownload.do?gnb0=269&gnb1=271&gnb0=101&gnb1=140
 2017.1.6
 =========================================================================================
 
-* 텍스트 추출기 모듈을 추가하였습니다. <br>
-
+* 텍스트 추출기 모듈을 추가하였습니다. 
+ 	- TextExtractor.extract()의 두번째 파라미터 값에 따라 세가지 추출 방법을 구현했습니다.
+		- OnlyMainParagraph // 메인 문단에 포함된 텍스트만 추출함
+		- InsertControlTextBetweenParagraphText // 컨트롤의 텍스트를 문단 텍스트 사이에 삽입하여 추출함
+		- AppendControlTextAfterParagraphText // 컨트롤의 텍스트를 문단 텍스트 뒤에 추가하여 추출함
+	- test/TestExtractingText.java 파일 참고 <br> 
 <pre><code>
 	HWPFile hwpFile = HWPReader.fromFile(filename); 
 	String hwpText = TextExtractor.extract(hwpFile, TextExtractMethod.InsertControlTextBetweenParagraphText);
 </code></pre>
-	
- 	- TextExtractor.extract()의 두번째 파라미터 값에 따라 세가지 추출 방법을 구현했습니다. <br>
-		OnlyMainParagraph // 메인 문단에 포함된 텍스트만 추출함 <br> 
-		InsertControlTextBetweenParagraphText // 컨트롤의 텍스트를 문단 텍스트 사이에 삽입하여 추출함 <br>
-		AppendControlTextAfterParagraphText // 컨트롤의 텍스트를 문단 텍스트 뒤에 추가하여 추출함 <br>
-
-	- test/TestExtractingText.java 파일 참고 <br> 
-
-* 읽기 모듈에서 버그 수정하였습니다. <br>
-
-* 소스 인코딩을 euc-kr에서 utf-8로 변경하였습니다. <br>
+* 읽기 모듈에서 버그 수정하였습니다.
+* 소스 인코딩을 euc-kr에서 utf-8로 변경하였습니다. 
 
 
 2016.12.23 
 =========================================================================================
-* 이 번 배포버전은 읽기 모듈 까지만 구현되었습니다. 쓰기 모듈은 추후 상황을 봐서 구현할 계획입니다. <br>
+* 이 번 배포버전은 읽기 모듈 까지만 구현되었습니다. 쓰기 모듈은 추후 상황을 봐서 구현할 계획입니다.
+	- 각각의 객체들과 객체에 포함된 메소스들에 대해선 "/doc" 디렉토리에 있는 javadoc 문서를 참고하시기 바랍니다.
 <pre><code>
 	// 파일을 읽는다. 
 	HWPFile hwpFile = HWPReader.fromFile(filename);  			
@@ -100,5 +94,3 @@ http://www.hancom.com/etc/hwpDownload.do?gnb0=269&gnb1=271&gnb0=101&gnb1=140
 	Paragraph p = s.getParagraphList().get(0);				
 	...		
 </code></pre>
-	
-	- 각각의 객체들과 객체에 포함된 메소스들에 대해선 "/doc" 디렉토리에 있는 javadoc 문서를 참고하시기 바랍니다.  <br>
