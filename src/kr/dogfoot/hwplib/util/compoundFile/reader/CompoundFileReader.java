@@ -3,6 +3,7 @@ package kr.dogfoot.hwplib.util.compoundFile.reader;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.Set;
 
 import kr.dogfoot.hwplib.object.fileheader.FileVersion;
@@ -37,6 +38,19 @@ public class CompoundFileReader {
 	 */
 	public CompoundFileReader(File file) throws IOException {
 		fs = new POIFSFileSystem(file);
+		currentStorage = fs.getRoot();
+	}
+
+	/**
+	 * 생성자. MS Compound 파일을 열고, 현재 스토리지를 파일의 root 스토리지로 설정한다.
+	 * 
+	 * @param is
+	 *            Input Stream 객체
+	 * @throws IOException
+	 *             파일 에러
+	 */
+	public CompoundFileReader(InputStream is) throws IOException {
+		fs = new POIFSFileSystem(is);
 		currentStorage = fs.getRoot();
 	}
 

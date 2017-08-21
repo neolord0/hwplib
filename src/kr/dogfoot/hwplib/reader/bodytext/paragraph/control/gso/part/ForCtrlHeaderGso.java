@@ -34,8 +34,10 @@ public class ForCtrlHeaderGso {
 		header.setOutterMarginTop(sr.readUInt2());
 		header.setOutterMarginBottom(sr.readUInt2());
 		header.setInstanceId(sr.readUInt4());
-		int temp = sr.readSInt4();
-		header.setPreventPageDivide(BitFlag.get(temp, 0));
+		if (sr.getCurrentRecordHeader().getSize() > sr.getCurrentPositionAfterHeader()) {
+			int temp = sr.readSInt4();
+			header.setPreventPageDivide(BitFlag.get(temp, 0));
+		}
 		if (sr.getCurrentRecordHeader().getSize() > sr.getCurrentPositionAfterHeader()) {
 			header.setExplanation(sr.readUTF16LEString());
 		}

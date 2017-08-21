@@ -1,6 +1,8 @@
 package kr.dogfoot.hwplib.reader;
 
-import java.io.File;
+import java.io.FileInputStream;
+import java.io.InputStream;
+import java.net.URL;
 import java.util.Iterator;
 import java.util.Set;
 
@@ -26,9 +28,33 @@ public class HWPReader {
 	 * @throws Exception
 	 */
 	public static HWPFile fromFile(String filepath) throws Exception {
+		return fromInputStream(new FileInputStream(filepath));
+	}
+		
+	/**
+	 * hwp 파일을 읽는다.
+	 * 
+	 * @param url
+	 *            hwp파일의 경로
+	 * @return HWPFile 객체
+	 * @throws Exception
+	 */
+	public static HWPFile fromURL(String url) throws Exception {
+		return fromInputStream(new URL(url).openStream());
+	}
+
+	/**
+	 * hwp 파일을 읽는다.
+	 * 
+	 * @param is
+	 *            hwp파일을 가리키는 Input Stream ㅒ객체
+	 * @return HWPFile 객체
+	 * @throws Exception
+	 */
+	public static HWPFile fromInputStream(InputStream is) throws Exception {
 		HWPReader r = new HWPReader();
 		r.hwpFile = new HWPFile();
-		r.cfr = new CompoundFileReader(new File(filepath));
+		r.cfr = new CompoundFileReader(is);
 
 		r.fileHeader();
 		if (r.hasPassword()) {
