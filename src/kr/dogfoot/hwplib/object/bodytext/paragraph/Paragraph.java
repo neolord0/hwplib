@@ -206,4 +206,16 @@ public class Paragraph {
 	public int getControlIndex(Control c) {
 		return controlList.indexOf(c);
 	}
+
+	/**
+	 * 문단 내의 일반 문자열을 반환한다.
+	 * 
+	 * @return 문단 내의 일반 문자열
+	 */
+	public String getNormalString() {
+		if (text != null) {
+			return text.getNormalString(0);
+		}
+		return "";
+	}
 }

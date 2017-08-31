@@ -66,4 +66,18 @@ public class ParagraphList implements ParagraphListInterface {
 	public Iterator<Paragraph> iterator() {
 		return paragraphList.iterator();
 	}
+
+	/**
+	 * 문단 리스트의 일반 문자열을 반환한다.
+	 * 
+	 * @return 문단 리스트의 일반 문자열
+	 */
+	public String getNormalString() {
+		StringBuffer sb = new StringBuffer();
+		for (Paragraph p : paragraphList) {
+			sb.append(p.getNormalString());
+			sb.append("\n");
+		}
+		return sb.toString();
+	}
 }
