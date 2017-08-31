@@ -1,3 +1,4 @@
+
 # hwplib
 
 한글과 컴퓨터(한컴)에서 만든 워드프로세서 "한글"의 파일에 대한 라이브러리입니다.
@@ -12,14 +13,14 @@ http://www.hancom.com/etc/hwpDownload.do?gnb0=269&gnb1=271&gnb0=101&gnb1=140
 * 컨트롤 찾기 기능 추가 - osc91 님 요청
 	- TestFindObject.java 참조
 ```java
-    public static class MyControlFilter implements ControlFilter {
-    	public boolean isMatched(Control control, Paragraph paragrpah, Section section) {
-	   // 필터링 조건 입력 
-	}
-    }
-	...
+    	public static class MyControlFilter implements ControlFilter {
+    		public boolean isMatched(Control control, Paragraph paragrpah, Section section) {
+	   		// 필터링 조건 입력 
+		}
+    	}
+	
 	ArrayList<Control> result = ControlFinder.find(hwpFile, new MyControlFilter());
-```    
+```
 
 2017.8.21
 =========================================================================================
