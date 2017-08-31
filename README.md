@@ -7,6 +7,15 @@
 
 http://www.hancom.com/etc/hwpDownload.do?gnb0=269&gnb1=271&gnb0=101&gnb1=140
 
+2017.8.21
+=========================================================================================
+* URL로 부터 읽는 기능 추가 - osc91 님 요청
+
+```java
+	String url = "http://ocwork.haansoft.com/sample/sample.hwp";
+	HWPFile hwpFile = HWPReader.fromURL(url); 
+```
+
 2017.6.1
 =========================================================================================
 * 저장 모듈 완료
