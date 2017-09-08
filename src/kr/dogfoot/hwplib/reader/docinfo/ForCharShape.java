@@ -39,10 +39,10 @@ public class ForCharShape {
 		cs.getShadeColor().setValue(sr.readUInt4());
 		cs.getShadowColor().setValue(sr.readUInt4());
 
-		if (sr.getFileVersion().isOver(5, 0, 2, 1)) {
+		if (sr.isEndOfRecord() == false && sr.getFileVersion().isOver(5, 0, 2, 1)) {
 			cs.setBorderFillId(sr.readUInt2());
 		}
-		if (sr.getFileVersion().isOver(5, 0, 3, 0)) {
+		if (sr.isEndOfRecord() == false &&  sr.getFileVersion().isOver(5, 0, 3, 0)) {
 			cs.getStrikeLineColor().setValue(sr.readUInt4());
 		}
 	}

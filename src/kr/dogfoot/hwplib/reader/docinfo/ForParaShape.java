@@ -35,10 +35,10 @@ public class ForParaShape {
 		ps.setRightBorderSpace(sr.readSInt2());
 		ps.setTopBorderSpace(sr.readSInt2());
 		ps.setBottomBorderSpace(sr.readSInt2());
-		if (sr.getFileVersion().isOver(5, 0, 1, 7)) {
+		if (sr.isEndOfRecord() == false && sr.getFileVersion().isOver(5, 0, 1, 7)) {
 			ps.getProperty2().setValue(sr.readUInt4());
 		}
-		if (sr.getFileVersion().isOver(5, 0, 2, 5)) {
+		if (sr.isEndOfRecord() == false && sr.getFileVersion().isOver(5, 0, 2, 5)) {
 			ps.getProperty3().setValue(sr.readUInt4());
 			ps.setLineSpace2(sr.readUInt4());
 		}

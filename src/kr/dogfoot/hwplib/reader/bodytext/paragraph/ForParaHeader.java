@@ -30,7 +30,7 @@ public class ForParaHeader {
 		ph.setRangeTagCount(sr.readUInt2());
 		ph.setLineAlignCount(sr.readUInt2());
 		ph.setInstanceID(sr.readUInt4());
-		if (sr.getFileVersion().isOver(5, 0, 3, 2)) {
+		if (sr.isEndOfRecord() == false && sr.getFileVersion().isOver(5, 0, 3, 2)) {
 			ph.setIsMergedByTrack(sr.readUInt2());
 		}
 		sr.skipToEndRecord();

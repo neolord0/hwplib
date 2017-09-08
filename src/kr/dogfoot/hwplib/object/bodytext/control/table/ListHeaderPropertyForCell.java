@@ -100,6 +100,25 @@ public class ListHeaderPropertyForCell {
 	}
 
 	/**
+	 * 셀 보호 여부를 반환한다. (17 bit)
+	 * 
+	 * @return 셀 보호 여부
+	 */
+	public boolean isProtectCell() {
+		return BitFlag.get(value, 17);
+	}
+
+	/**
+	 * 셀 보호 여부를 설정한다. (17 bit)
+	 * 
+	 * @param protectCell
+	 *            셀 보호 여부
+	 */
+	public void setProtectCell(boolean protectCell) {
+		value = BitFlag.set(value, 17, protectCell);
+	}
+
+	/**
 	 * 양식 모드에서 편집 가능 여부를 반환한다. (19 bit)
 	 * 
 	 * @return 양식 모드에서 편집 가능 여부

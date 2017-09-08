@@ -27,12 +27,13 @@ public class ForParameterSet {
 		ps.setId(sr.readUInt2());
 		short parameterCount = sr.readSInt2();
 		sr.skip(2);
-
 		for (int parameterIndex = 0; parameterIndex < parameterCount; parameterIndex++) {
 			ParameterItem pi = ps.addNewParameterItem();
 			parameterItem(pi, sr);
 		}
 	}
+	
+	
 
 	/**
 	 * 파라메터 아이템을 읽는다.
@@ -68,10 +69,10 @@ public class ForParameterSet {
 			pi.setValue_BSTR(sr.readUTF16LEString());
 			break;
 		case Integer1:
-			pi.setValue_I1(sr.readSInt1());
+			pi.setValue_I1((byte) sr.readSInt4());
 			break;
 		case Integer2:
-			pi.setValue_I2(sr.readSInt2());
+			pi.setValue_I2((short) sr.readSInt4());
 			break;
 		case Integer4:
 			pi.setValue_I4(sr.readSInt4());
@@ -80,10 +81,10 @@ public class ForParameterSet {
 			pi.setValue_I(sr.readSInt4());
 			break;
 		case UnsignedInteger1:
-			pi.setValue_UI1(sr.readUInt1());
+			pi.setValue_UI1((short) sr.readUInt4());
 			break;
 		case UnsignedInteger2:
-			pi.setValue_UI2(sr.readUInt2());
+			pi.setValue_UI2((int) sr.readUInt4());
 			break;
 		case UnsignedInteger4:
 			pi.setValue_UI4(sr.readUInt4());
@@ -92,7 +93,7 @@ public class ForParameterSet {
 			pi.setValue_UI(sr.readUInt4());
 			break;
 		case ParameterSet:
-			read(pi.getValue_ParameterSet(), sr);
+			parameterSet(pi, sr);
 			break;
 		case Array:
 			parameterArray(pi, sr);
@@ -102,6 +103,21 @@ public class ForParameterSet {
 			break;
 
 		}
+	}
+
+	/**
+	 * 파라미터셋 타입의 파라메터 아이템값을 읽는다.
+	 * 
+	 * @param pi
+	 *            파라메터 아이템
+	 * @param sr
+	 *            스트림 리더
+	 * @throws IOException
+	 */
+	private static void parameterSet(ParameterItem pi, StreamReader sr)
+			throws IOException {
+		pi.createValue_ParameterSet();
+		read(pi.getValue_ParameterSet(), sr);
 	}
 
 	/**
@@ -117,8 +133,27 @@ public class ForParameterSet {
 			throws IOException {
 		short count = sr.readSInt2();
 		pi.createValue_ParameterArray(count);
+		int id =sr.readUInt2();
 		for (int index = 0; index < count; index++) {
-			parameterItem(pi.getValue_ParameterArray(index), sr);
+			parameterItemForArray(pi.getValue_ParameterArray(index), sr, id);
 		}
+	}
+
+	/**
+	 * 배열안에 파라메터 아이템을 읽는다.
+	 * 
+	 * @param pi
+	 *            파라메터 아이템
+	 * @param sr
+	 *            스트림 리더
+	 * @param id
+	 *            파라메터 아이템의 아이디
+	 * @throws IOException
+	 */
+	private static void parameterItemForArray(
+			ParameterItem pi, StreamReader sr, int id) throws IOException {
+		pi.setId(id);
+		pi.setType(ParameterType.valueOf(sr.readUInt2()));
+		paramterValue(pi, sr);
 	}
 }

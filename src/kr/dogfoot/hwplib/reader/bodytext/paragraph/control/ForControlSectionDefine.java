@@ -4,6 +4,7 @@ import java.io.IOException;
 
 import kr.dogfoot.hwplib.object.bodytext.control.ControlSectionDefine;
 import kr.dogfoot.hwplib.object.etc.HWPTag;
+import kr.dogfoot.hwplib.reader.bodytext.paragraph.control.bookmark.ForCtrlData;
 import kr.dogfoot.hwplib.reader.bodytext.paragraph.control.secd.ForBatangPageInfo;
 import kr.dogfoot.hwplib.reader.bodytext.paragraph.control.secd.ForCtrlHeaderSecd;
 import kr.dogfoot.hwplib.reader.bodytext.paragraph.control.secd.ForFootEndNoteShape;
@@ -104,6 +105,9 @@ public class ForControlSectionDefine {
 		case HWPTag.LIST_HEADER:
 			batangPageInfo();
 			break;
+		case HWPTag.CTRL_DATA:
+			ctrlData();
+			break;
 		}
 	}
 
@@ -199,5 +203,10 @@ public class ForControlSectionDefine {
 	 */
 	private void batangPageInfo() throws Exception {
 		ForBatangPageInfo.read(secd.addNewBatangPageInfo(), sr);
+	}
+
+	private void ctrlData() throws IOException {
+		secd.createCtrlData();
+		ForCtrlData.read(secd.getCtrlData(), sr);
 	}
 }

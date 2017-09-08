@@ -25,7 +25,7 @@ public class ForNumbering {
 	public static void read(Numbering n, StreamReader sr) throws Exception {
 		levelNumberings(n, sr);
 		n.setStartNumber(sr.readUInt2());
-		if (sr.getFileVersion().isOver(5, 0, 2, 5)) {
+		if (sr.isEndOfRecord() == false && sr.getFileVersion().isOver(5, 0, 2, 5)) {
 			startNumberForLevels(n, sr);
 		}
 	}
