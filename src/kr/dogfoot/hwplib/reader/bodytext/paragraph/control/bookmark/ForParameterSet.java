@@ -32,8 +32,6 @@ public class ForParameterSet {
 			parameterItem(pi, sr);
 		}
 	}
-	
-	
 
 	/**
 	 * 파라메터 아이템을 읽는다.
@@ -132,10 +130,12 @@ public class ForParameterSet {
 	private static void parameterArray(ParameterItem pi, StreamReader sr)
 			throws IOException {
 		short count = sr.readSInt2();
-		pi.createValue_ParameterArray(count);
-		int id =sr.readUInt2();
-		for (int index = 0; index < count; index++) {
-			parameterItemForArray(pi.getValue_ParameterArray(index), sr, id);
+		if (count > 0) {
+			pi.createValue_ParameterArray(count);
+			int id = sr.readUInt2();
+			for (int index = 0; index < count; index++) {
+				parameterItemForArray(pi.getValue_ParameterArray(index), sr, id);
+			}
 		}
 	}
 
@@ -150,8 +150,8 @@ public class ForParameterSet {
 	 *            파라메터 아이템의 아이디
 	 * @throws IOException
 	 */
-	private static void parameterItemForArray(
-			ParameterItem pi, StreamReader sr, int id) throws IOException {
+	private static void parameterItemForArray(ParameterItem pi,
+			StreamReader sr, int id) throws IOException {
 		pi.setId(id);
 		pi.setType(ParameterType.valueOf(sr.readUInt2()));
 		paramterValue(pi, sr);

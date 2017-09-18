@@ -1,6 +1,7 @@
 package kr.dogfoot.hwplib.object.bodytext.control.gso;
 
 import kr.dogfoot.hwplib.object.bodytext.control.Control;
+import kr.dogfoot.hwplib.object.bodytext.control.bookmark.CtrlData;
 import kr.dogfoot.hwplib.object.bodytext.control.ctrlheader.CtrlHeaderGso;
 import kr.dogfoot.hwplib.object.bodytext.control.gso.caption.Caption;
 import kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponent.ShapeComponent;
@@ -12,6 +13,10 @@ import kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponent.ShapeCompone
  * @author neolord
  */
 public class GsoControl extends Control {
+	/**
+	 * 컨트롤 데이터
+	 */
+	private CtrlData ctrlData;
 	/**
 	 * 캡션 정보
 	 */
@@ -37,6 +42,7 @@ public class GsoControl extends Control {
 	public GsoControl(CtrlHeaderGso header) {
 		super(header);
 
+		ctrlData = null;
 		caption = null;
 		shapeComponent = new ShapeComponentNormal();
 	}
@@ -79,12 +85,28 @@ public class GsoControl extends Control {
 	}
 
 	/**
+	 * 컨트롤 데이터(??)를 생성한다.
+	 */
+	public void createCtrlData() {
+		ctrlData = new CtrlData();
+	}
+
+	/**
+	 * 컨트롤 데이터(??)를 반환한다.
+	 * 
+	 * @return 컨트롤 데이터 객체
+	 */
+	public CtrlData getCtrlData() {
+		return ctrlData;
+	}
+
+	/**
 	 * 캡션 객체를 생성한다.
 	 */
 	public void createCaption() {
 		caption = new Caption();
 	}
-	
+
 	/**
 	 * 캡션 정보 객체를 반환한다.
 	 * 

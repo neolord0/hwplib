@@ -50,16 +50,19 @@ public class ForTextBox {
 		lh.setBottomMargin(sr.readUInt2());
 		lh.setTextWidth(sr.readUInt4());
 		unknownBytes(8, sr);
-		int temp = sr.readSInt4();
-		if (temp == 1) {
-			lh.setEditableAtFormMode(true);
-		} else {
-			lh.setEditableAtFormMode(false);
-		}
+			
+		if (sr.isEndOfRecord() == false) {
+			int temp = sr.readSInt4();
+			if (temp == 1) {
+				lh.setEditableAtFormMode(true);
+			} else {
+				lh.setEditableAtFormMode(false);
+			}
 
-		short flag = sr.readUInt1();
-		if (flag == 0xff) {
-			fieldName(lh, sr);
+			short flag = sr.readUInt1();
+			if (flag == 0xff) {
+				fieldName(lh, sr);
+			}
 		}
 	}
 

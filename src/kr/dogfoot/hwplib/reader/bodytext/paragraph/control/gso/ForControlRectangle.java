@@ -6,6 +6,7 @@ import kr.dogfoot.hwplib.object.RecordHeader;
 import kr.dogfoot.hwplib.object.bodytext.control.gso.ControlRectangle;
 import kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponenteach.ShapeComponentRectangle;
 import kr.dogfoot.hwplib.object.etc.HWPTag;
+import kr.dogfoot.hwplib.reader.bodytext.paragraph.control.bookmark.ForCtrlData;
 import kr.dogfoot.hwplib.reader.bodytext.paragraph.control.gso.part.ForTextBox;
 import kr.dogfoot.hwplib.util.compoundFile.reader.StreamReader;
 
@@ -26,7 +27,15 @@ public class ForControlRectangle {
 	 */
 	public static void readRest(ControlRectangle rectangle, StreamReader sr)
 			throws Exception {
-		RecordHeader rh = sr.readRecordHeder();
+		RecordHeader rh;
+		rh = sr.readRecordHeder();
+		if (rh.getTagID() == HWPTag.CTRL_DATA) {
+			rectangle.createCtrlData();
+			ForCtrlData.read(rectangle.getCtrlData(), sr);
+			if (sr.isImmediatelyAfterReadingHeader() == false) {
+				rh = sr.readRecordHeder();
+			}
+		}
 		if (rh.getTagID() == HWPTag.LIST_HEADER) {
 			rectangle.createTextBox();
 			ForTextBox.read(rectangle.getTextBox(), sr);

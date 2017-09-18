@@ -50,10 +50,10 @@ public class ForParameterSet {
 			size += StringUtil.getUTF16LEStringSize(pi.getValue_BSTR());
 			break;
 		case Integer1:
-			size += 1;
+			size += 4;
 			break;
 		case Integer2:
-			size += 2;
+			size += 4;
 			break;
 		case Integer4:
 			size += 4;
@@ -62,10 +62,10 @@ public class ForParameterSet {
 			size += 4;
 			break;
 		case UnsignedInteger1:
-			size += 1;
+			size += 4;
 			break;
 		case UnsignedInteger2:
-			size += 2;
+			size += 4;
 			break;
 		case UnsignedInteger4:
 			size += 4;
@@ -96,10 +96,10 @@ public class ForParameterSet {
 	 */
 	private static int getSizeForParameterArray(ParameterItem pi) {
 		int size = 0;
-		size += 2;
+		size += 4;
 		short count = (short) pi.getValue_ParameterArrayCount();
 		for (int index = 0; index < count; index++) {
-			size += getSizeForParameterItem(pi.getValue_ParameterArray(index));
+			size += getSizeForParameterItem(pi.getValue_ParameterArray(index)) - 2;
 		}
 		return size;
 	}
@@ -158,10 +158,10 @@ public class ForParameterSet {
 			sw.writeUTF16LEString(pi.getValue_BSTR());
 			break;
 		case Integer1:
-			sw.writeSInt1(pi.getValue_I1());
+			sw.writeSInt4(pi.getValue_I1());
 			break;
 		case Integer2:
-			sw.writeSInt2(pi.getValue_I2());
+			sw.writeSInt4(pi.getValue_I2());
 			break;
 		case Integer4:
 			sw.writeSInt4(pi.getValue_I4());
@@ -170,10 +170,10 @@ public class ForParameterSet {
 			sw.writeSInt4(pi.getValue_I());
 			break;
 		case UnsignedInteger1:
-			sw.writeUInt1(pi.getValue_UI1());
+			sw.writeUInt4(pi.getValue_UI1());
 			break;
 		case UnsignedInteger2:
-			sw.writeUInt2(pi.getValue_UI2());
+			sw.writeUInt4(pi.getValue_UI2());
 			break;
 		case UnsignedInteger4:
 			sw.writeUInt4(pi.getValue_UI4());
@@ -206,8 +206,14 @@ public class ForParameterSet {
 			throws IOException {
 		short count = (short) pi.getValue_ParameterArrayCount();
 		sw.writeSInt2(count);
-		for (int index = 0; index < count; index++) {
-			parameterItem(pi.getValue_ParameterArray(index), sw);
+		if (count > 0) {
+			sw.writeUInt2((int) pi.getValue_ParameterArray(0).getId());
+
+			for (int index = 0; index < count; index++) {
+				ParameterItem elementPi = pi.getValue_ParameterArray(index);
+				sw.writeUInt2(elementPi.getType().getValue());
+				paramterValue(elementPi, sw);
+			}
 		}
 	}
 }

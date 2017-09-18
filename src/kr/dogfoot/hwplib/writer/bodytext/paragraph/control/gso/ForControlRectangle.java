@@ -6,6 +6,7 @@ import kr.dogfoot.hwplib.object.bodytext.control.gso.ControlRectangle;
 import kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponenteach.ShapeComponentRectangle;
 import kr.dogfoot.hwplib.object.etc.HWPTag;
 import kr.dogfoot.hwplib.util.compoundFile.writer.StreamWriter;
+import kr.dogfoot.hwplib.writer.bodytext.paragraph.control.bookmark.ForCtrlData;
 import kr.dogfoot.hwplib.writer.bodytext.paragraph.control.gso.part.ForTextBox;
 
 /**
@@ -27,10 +28,26 @@ public class ForControlRectangle {
 			throws Exception {
 		sw.upRecordLevel();
 
+		ctrlData(rect, sw);
 		ForTextBox.write(rect.getTextBox(), sw);
 		shapeComponentRectangle(rect.getShapeComponentRectangle(), sw);
 
 		sw.downRecordLevel();
+	}
+
+	/**
+	 * 컨트롤 데이터 레코드를 쓴다.
+	 * 
+	 * @param rect
+	 *            사각형 컨트롤
+	 * @param sw
+	 *            스트림 라이터
+	 */
+	private static void ctrlData(ControlRectangle rect, StreamWriter sw)
+			throws IOException {
+		if (rect.getCtrlData() != null) {
+			ForCtrlData.write(rect.getCtrlData(), sw);
+		}
 	}
 
 	/**
