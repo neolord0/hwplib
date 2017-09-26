@@ -7,6 +7,7 @@ import kr.dogfoot.hwplib.object.bodytext.control.ControlTable;
 import kr.dogfoot.hwplib.object.bodytext.control.table.Cell;
 import kr.dogfoot.hwplib.object.bodytext.control.table.Row;
 import kr.dogfoot.hwplib.object.etc.HWPTag;
+import kr.dogfoot.hwplib.reader.bodytext.paragraph.control.bookmark.ForCtrlData;
 import kr.dogfoot.hwplib.reader.bodytext.paragraph.control.gso.part.ForCaption;
 import kr.dogfoot.hwplib.reader.bodytext.paragraph.control.gso.part.ForCtrlHeaderGso;
 import kr.dogfoot.hwplib.reader.bodytext.paragraph.control.tbl.ForCell;
@@ -48,6 +49,7 @@ public class ForControlTable {
 		this.sr = sr;
 
 		ctrlHeader();
+		ctrlData();
 		caption();
 		table();
 		rows();
@@ -62,13 +64,30 @@ public class ForControlTable {
 		ForCtrlHeaderGso.read(table.getHeader(), sr);
 	}
 
+	
+	/**
+	 * 컨트롤 데이터를 읽는다.
+	 * 
+	 * @throws Exception
+	 */
+	private void ctrlData() throws Exception {
+		sr.readRecordHeder();
+		if (sr.getCurrentRecordHeader().getTagID() == HWPTag.CTRL_DATA) {
+			table.createCtrlData();
+			ForCtrlData.read(table.getCtrlData(), sr);
+		}
+	}
+	
+	
 	/**
 	 * 캡션 정보를 읽는다.
 	 * 
 	 * @throws Exception
 	 */
 	private void caption() throws Exception {
-		sr.readRecordHeder();
+		if (sr.isImmediatelyAfterReadingHeader() == false) {
+			sr.readRecordHeder();
+		}
 		if (sr.getCurrentRecordHeader().getTagID() == HWPTag.LIST_HEADER) {
 			table.createCaption();
 			ForCaption.read(table.getCaption(), sr);

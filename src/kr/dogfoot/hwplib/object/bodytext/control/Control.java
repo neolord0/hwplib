@@ -1,5 +1,6 @@
 package kr.dogfoot.hwplib.object.bodytext.control;
 
+import kr.dogfoot.hwplib.object.bodytext.control.bookmark.CtrlData;
 import kr.dogfoot.hwplib.object.bodytext.control.ctrlheader.CtrlHeader;
 
 /**
@@ -12,6 +13,10 @@ public abstract class Control {
 	 * 컨트롤 헤더 객체
 	 */
 	protected CtrlHeader header;
+	/**
+	 * 컨트롤 데이터
+	 */
+	private CtrlData ctrlData;
 
 	/**
 	 * 생성자
@@ -21,6 +26,7 @@ public abstract class Control {
 	 */
 	public Control(CtrlHeader header) {
 		this.header = header;
+		ctrlData = null;
 	}
 
 	/**
@@ -39,5 +45,21 @@ public abstract class Control {
 	 */
 	public boolean isField() {
 		return ControlType.isField(header.getCtrlId());
+	}
+
+	/**
+	 * 컨트롤 데이터(??)를 생성한다.
+	 */
+	public void createCtrlData() {
+		ctrlData = new CtrlData();
+	}
+
+	/**
+	 * 컨트롤 데이터(??)를 반환한다.
+	 * 
+	 * @return 컨트롤 데이터 객체
+	 */
+	public CtrlData getCtrlData() {
+		return ctrlData;
 	}
 }

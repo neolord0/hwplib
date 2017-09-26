@@ -2,7 +2,6 @@ package kr.dogfoot.hwplib.object.bodytext.control;
 
 import java.util.ArrayList;
 
-import kr.dogfoot.hwplib.object.bodytext.control.bookmark.CtrlData;
 import kr.dogfoot.hwplib.object.bodytext.control.ctrlheader.CtrlHeaderSectionDefine;
 import kr.dogfoot.hwplib.object.bodytext.control.sectiondefine.BatangPageInfo;
 import kr.dogfoot.hwplib.object.bodytext.control.sectiondefine.FootEndNoteShape;
@@ -43,10 +42,6 @@ public class ControlSectionDefine extends Control {
 	 * 바탕쪽 정보(양 쪽, 짝수 쪽, 홀수 쪽) 리스트
 	 */
 	private ArrayList<BatangPageInfo> batangPageInfoList;
-	/**
-	 * 컨트롤 Data ??
-	 */
-	private CtrlData ctrlData;
 
 	/**
 	 * 생성자
@@ -61,7 +56,6 @@ public class ControlSectionDefine extends Control {
 		evenPageBorderFill = new PageBorderFill();
 		oddPageBorderFill = new PageBorderFill();
 		batangPageInfoList = new ArrayList<BatangPageInfo>();
-		ctrlData = null;
 	}
 
 	/**
@@ -145,21 +139,5 @@ public class ControlSectionDefine extends Control {
 	 */
 	public ArrayList<BatangPageInfo> getBatangPageInfoList() {
 		return batangPageInfoList;
-	}
-
-	/**
-	 * 컨트롤 데이터(??)를 생성한다.
-	 */
-	public void createCtrlData() {
-		ctrlData = new CtrlData();
-	}
-
-	/**
-	 * 컨트롤 데이터(??)를 반환한다.
-	 * 
-	 * @return 컨트롤 데이터 객체
-	 */
-	public CtrlData getCtrlData() {
-		return ctrlData;
 	}
 }

@@ -60,7 +60,7 @@ public class ControlTable extends Control {
 	public CtrlHeaderGso getHeader() {
 		return (CtrlHeaderGso) header;
 	}
-
+	
 	/**
 	 * 캡션 객체를 생성한다.
 	 */
