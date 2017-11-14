@@ -4,6 +4,7 @@ import kr.dogfoot.hwplib.object.bodytext.control.Control;
 import kr.dogfoot.hwplib.object.bodytext.paragraph.Paragraph;
 import kr.dogfoot.hwplib.util.compoundFile.writer.StreamWriter;
 import kr.dogfoot.hwplib.writer.bodytext.paragraph.control.ForControl;
+import kr.dogfoot.hwplib.writer.bodytext.paragraph.memo.ForMemo;
 
 /**
  * 문단을 쓰기 위한 객체
@@ -29,8 +30,9 @@ public class ForParagraph {
 		ForParaCharShape.write(p.getCharShape(), sw);
 		ForParaLineSeq.write(p.getLineSeg(), sw);
 		ForParaRangeTag.write(p.getRangeTag(), sw);
+		ForMemo.write(p.getMemoList(), sw);
 		controls(p, sw);
-
+		
 		sw.downRecordLevel();
 	}
 

@@ -4,6 +4,7 @@ import java.io.IOException;
 
 import kr.dogfoot.hwplib.object.RecordHeader;
 import kr.dogfoot.hwplib.object.bodytext.control.ControlField;
+import kr.dogfoot.hwplib.object.bodytext.control.ControlType;
 import kr.dogfoot.hwplib.object.bodytext.control.ctrlheader.CtrlHeaderField;
 import kr.dogfoot.hwplib.object.etc.HWPTag;
 import kr.dogfoot.hwplib.reader.bodytext.paragraph.control.bookmark.ForCtrlData;
@@ -45,6 +46,11 @@ public class ForControlField {
 		h.setEtcProperty(sr.readUInt1());
 		h.setCommand(sr.readUTF16LEString());
 		h.setInstanceId(sr.readUInt4());
+		if (sr.isEndOfRecord() == false
+				&& h.getCtrlId() == ControlType.FIELD_UNKNOWN.getCtrlId()) {
+			h.setMemoIndex(sr.readSInt4());
+		}
+
 		unknownBytes(sr);
 	}
 

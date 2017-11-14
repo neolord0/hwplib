@@ -8,6 +8,7 @@ import kr.dogfoot.hwplib.object.bodytext.paragraph.Paragraph;
 import kr.dogfoot.hwplib.object.etc.HWPTag;
 import kr.dogfoot.hwplib.reader.bodytext.paragraph.control.ForControl;
 import kr.dogfoot.hwplib.reader.bodytext.paragraph.control.gso.ForGsoControl;
+import kr.dogfoot.hwplib.reader.bodytext.paragraph.memo.ForMemo;
 import kr.dogfoot.hwplib.util.compoundFile.reader.StreamReader;
 
 /**
@@ -122,6 +123,12 @@ public class ForParagraph {
 		case HWPTag.CTRL_HEADER:
 			control();
 			break;
+		case HWPTag.MEMO_LIST:
+			memo();
+			break;
+		default:
+			skipETCRecord();
+			break;
 		}
 	}
 
@@ -176,5 +183,14 @@ public class ForParagraph {
 			Control c = paragraph.addNewControl(id);
 			ForControl.read(c, sr);
 		}
+	}
+
+	private void memo() throws Exception {
+		ForMemo.read(paragraph.addNewMemo(), sr);
+	}
+
+	private void skipETCRecord() throws IOException {
+		byte[] buffer = new byte[(int) sr.getCurrentRecordHeader().getSize()];
+		sr.readBytes(buffer);
 	}
 }

@@ -1,5 +1,7 @@
 package kr.dogfoot.hwplib.objectfinder;
 
+import java.io.UnsupportedEncodingException;
+
 import kr.dogfoot.hwplib.object.HWPFile;
 import kr.dogfoot.hwplib.object.bodytext.Section;
 import kr.dogfoot.hwplib.object.bodytext.control.ControlType;
@@ -22,9 +24,10 @@ public class FieldFinder {
 	 * @param temInField
 	 *            필드 안에 텍스트의 텍스트 추출 방법
 	 * @return 필드 텍스트
+	 * @throws UnsupportedEncodingException 
 	 */
 	public static String getClickHereText(HWPFile hwpFile, String fieldName,
-			TextExtractMethod temInField) {
+			TextExtractMethod temInField) throws UnsupportedEncodingException {
 		String strText = null;
 		for (Section s : hwpFile.getBodyText().getSectionList()) {
 			strText = ForParagraphList.getFieldText(s,

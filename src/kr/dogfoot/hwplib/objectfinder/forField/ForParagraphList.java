@@ -1,5 +1,6 @@
 package kr.dogfoot.hwplib.objectfinder.forField;
 
+import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 
 import kr.dogfoot.hwplib.object.bodytext.ParagraphListInterface;
@@ -27,10 +28,11 @@ public class ForParagraphList {
 	 * @param temInField
 	 *            필드 안에 텍스트의 텍스트 추출 방법
 	 * @return 필드 텍스트
+	 * @throws UnsupportedEncodingException 
 	 */
 	public static String getFieldText(ParagraphListInterface paragraphList,
 			ControlType fieldType, String fieldName,
-			TextExtractMethod temInField) {
+			TextExtractMethod temInField) throws UnsupportedEncodingException {
 		if (paragraphList == null) {
 			return null;
 		}
@@ -116,10 +118,11 @@ public class ForParagraphList {
 	 * @param temInField
 	 *            필드 안에 텍스트의 텍스트 추출 방법
 	 * @return 필드 텍스트
+	 * @throws UnsupportedEncodingException 
 	 */
 	private static String controls(ParagraphListInterface paragraphList,
 			ControlType fieldType, String fieldName,
-			TextExtractMethod temInField) {
+			TextExtractMethod temInField) throws UnsupportedEncodingException {
 		for (Paragraph p : paragraphList) {
 			ArrayList<Control> controlList = p.getControlList();
 			if (controlList != null) {
@@ -148,9 +151,10 @@ public class ForParagraphList {
 	 *            필드 안에 텍스트의 텍스트 추출 방법
 	 * @param sb
 	 *            필드 텍스트가 저장될 StringBuffer
+	 * @throws UnsupportedEncodingException 
 	 */
 	private static void getParaText(Paragraph p, int startIndex, int endIndex,
-			TextExtractMethod temInField, StringBuffer sb) {
+			TextExtractMethod temInField, StringBuffer sb) throws UnsupportedEncodingException {
 		kr.dogfoot.hwplib.textextractor.ForParagraphList.extract(p, startIndex,
 				endIndex, temInField, sb);
 	}
@@ -168,9 +172,10 @@ public class ForParagraphList {
 	 *            필드 안에 텍스트의 텍스트 추출 방법
 	 * @param sb
 	 *            필드 텍스트가 저장될 StringBuffer
+	 * @throws UnsupportedEncodingException 
 	 */
 	private static void getParaText(Paragraph p, int startIndex,
-			TextExtractMethod temInField, StringBuffer sb) {
+			TextExtractMethod temInField, StringBuffer sb) throws UnsupportedEncodingException {
 		kr.dogfoot.hwplib.textextractor.ForParagraphList.extract(p, startIndex,
 				temInField, sb);
 	}

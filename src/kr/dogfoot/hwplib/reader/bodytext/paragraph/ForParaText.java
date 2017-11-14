@@ -1,7 +1,5 @@
 package kr.dogfoot.hwplib.reader.bodytext.paragraph;
 
-import java.io.UnsupportedEncodingException;
-
 import kr.dogfoot.hwplib.object.bodytext.paragraph.Paragraph;
 import kr.dogfoot.hwplib.object.bodytext.paragraph.text.HWPChar;
 import kr.dogfoot.hwplib.object.bodytext.paragraph.text.HWPCharControlExtend;
@@ -26,11 +24,12 @@ public class ForParaText {
 	 */
 	public static void read(Paragraph p, StreamReader sr) throws Exception {
 		p.createText();
+
 		long recordSize = p.getHeader().getCharacterCount() * 2;
 		if (recordSize > 4095) {
-			recordSize = sr.readUInt4(); 
+			recordSize = sr.readUInt4();
 		}
-		
+
 		long read = 0;
 		while (read < recordSize) {
 			read += hwpChar(p.getText(), sr);
@@ -52,7 +51,7 @@ public class ForParaText {
 		short code = sr.readSInt2();
 		switch (HWPChar.type(code)) {
 		case Normal:
-			paraText.addNewNormalChar().setCh(shortToString(code));
+			paraText.addNewNormalChar().setCode(code);
 			return 2;
 		case ControlChar:
 			paraText.addNewCharControlChar().setCode(code);
@@ -68,29 +67,13 @@ public class ForParaText {
 	}
 
 	/**
-	 * 2 byte 문자코드를 문자열로 변환한다.
-	 * 
-	 * @param code
-	 *            2 byte 문자코드
-	 * @return 변환된 문자열
-	 * @throws UnsupportedEncodingException
-	 */
-	private static String shortToString(short code)
-			throws UnsupportedEncodingException {
-		byte[] ch = new byte[2];
-		ch[0] = (byte) (code & 0xff);
-		ch[1] = (byte) ((code >> 8) & 0xff);
-		return new String(ch, 0, 2, "UTF-16LE");
-	}
-
-	/**
 	 * 확장 컨트롤 문자을 읽는다.
 	 * 
 	 * @param extendChar
 	 *            확장 컨트롤 문자
 	 * @param sr
 	 *            스트림 리더
-	 * @throws Exception 
+	 * @throws Exception
 	 */
 	private static void extendChar(HWPCharControlExtend extendChar,
 			StreamReader sr) throws Exception {
@@ -107,7 +90,7 @@ public class ForParaText {
 	 *            인라인 컨트를 문자
 	 * @param sr
 	 *            스트림 리더
-	 * @throws Exception 
+	 * @throws Exception
 	 */
 	private static void inlineChar(HWPCharControlInline inlineChar,
 			StreamReader sr) throws Exception {

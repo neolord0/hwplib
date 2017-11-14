@@ -124,8 +124,9 @@ public class ParaText {
 	 * @param endIndex
 	 *            끝 순번
 	 * @return startIndex 순번 부터 endIndex 순번 까지의 일반 Character의 문자열
+	 * @throws UnsupportedEncodingException 
 	 */
-	public String getNormalString(int startIndex, int endIndex) {
+	public String getNormalString(int startIndex, int endIndex) throws UnsupportedEncodingException {
 		if (startIndex == endIndex) {
 			return "";
 		}
@@ -150,8 +151,9 @@ public class ParaText {
 	 *            시작 순번
 	 * 
 	 * @return startIndex 순번 부터 끝까지의 일반 Character의 일반 Character의 문자열
+	 * @throws UnsupportedEncodingException 
 	 */
-	public String getNormalString(int startIndex) {
+	public String getNormalString(int startIndex) throws UnsupportedEncodingException {
 		return getNormalString(startIndex, charList.size() - 1);
 	}
 

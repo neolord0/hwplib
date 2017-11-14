@@ -1,5 +1,7 @@
 package kr.dogfoot.hwplib.textextractor;
 
+import java.io.UnsupportedEncodingException;
+
 import kr.dogfoot.hwplib.object.HWPFile;
 import kr.dogfoot.hwplib.object.bodytext.Section;
 
@@ -17,8 +19,9 @@ public class TextExtractor {
 	 * @param tem
 	 *            추출 방법
 	 * @return 추출된 문자열
+	 * @throws UnsupportedEncodingException 
 	 */
-	public static String extract(HWPFile hwpFile, TextExtractMethod tem) {
+	public static String extract(HWPFile hwpFile, TextExtractMethod tem) throws UnsupportedEncodingException {
 		StringBuffer sb = new StringBuffer();
 		for (Section s : hwpFile.getBodyText().getSectionList()) {
 			ForParagraphList.extract(s, tem, sb);

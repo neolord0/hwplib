@@ -87,7 +87,8 @@ public class ForControlSectionDefine {
 	 */
 	private static void recordHeader(CtrlHeaderSectionDefine h, StreamWriter sw)
 			throws IOException {
-		sw.writeRecordHeader(HWPTag.CTRL_HEADER, 38);
+		int size = (sw.getFileVersion().isOver(5, 0, 1, 2)) ? 38 : 36;
+		sw.writeRecordHeader(HWPTag.CTRL_HEADER, size);
 	}
 
 	/**

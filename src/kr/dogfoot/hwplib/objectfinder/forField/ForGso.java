@@ -1,5 +1,7 @@
 package kr.dogfoot.hwplib.objectfinder.forField;
 
+import java.io.UnsupportedEncodingException;
+
 import kr.dogfoot.hwplib.object.bodytext.control.ControlType;
 import kr.dogfoot.hwplib.object.bodytext.control.gso.ControlArc;
 import kr.dogfoot.hwplib.object.bodytext.control.gso.ControlContainer;
@@ -29,9 +31,10 @@ public class ForGso {
 	 * @param temInField
 	 *            필드 안에 텍스트의 텍스트 추출 방법
 	 * @return 필드 텍스트
+	 * @throws UnsupportedEncodingException 
 	 */
 	public static String getFieldText(GsoControl gc, ControlType fieldType,
-			String fieldName, TextExtractMethod temInField) {
+			String fieldName, TextExtractMethod temInField) throws UnsupportedEncodingException {
 		switch (gc.getGsoType()) {
 		case Line:
 			break;
@@ -71,10 +74,11 @@ public class ForGso {
 	 * @param temInField
 	 *            필드 안에 텍스트의 텍스트 추출 방법
 	 * @return 필드 텍스트
+	 * @throws UnsupportedEncodingException 
 	 */
 	private static String rectangle(ControlRectangle rectangle,
 			ControlType fieldType, String fieldName,
-			TextExtractMethod temInField) {
+			TextExtractMethod temInField) throws UnsupportedEncodingException {
 		return textBox(rectangle.getTextBox(), fieldType, fieldName, temInField);
 	}
 
@@ -90,9 +94,10 @@ public class ForGso {
 	 * @param temInField
 	 *            필드 안에 텍스트의 텍스트 추출 방법
 	 * @return 필드 텍스트
+	 * @throws UnsupportedEncodingException 
 	 */
 	private static String textBox(TextBox textBox, ControlType fieldType,
-			String fieldName, TextExtractMethod temInField) {
+			String fieldName, TextExtractMethod temInField) throws UnsupportedEncodingException {
 		return ForParagraphList.getFieldText(textBox.getParagraphList(), fieldType, fieldName, temInField);
 	}
 
@@ -108,10 +113,11 @@ public class ForGso {
 	 * @param temInField
 	 *            필드 안에 텍스트의 텍스트 추출 방법
 	 * @return 필드 텍스트
+	 * @throws UnsupportedEncodingException 
 	 */
 	private static String ellipse(ControlEllipse ellipse,
 			ControlType fieldType, String fieldName,
-			TextExtractMethod temInField) {
+			TextExtractMethod temInField) throws UnsupportedEncodingException {
 		return textBox(ellipse.getTextBox(), fieldType, fieldName, temInField);
 	}
 
@@ -127,9 +133,10 @@ public class ForGso {
 	 * @param temInField
 	 *            필드 안에 텍스트의 텍스트 추출 방법
 	 * @return 필드 텍스트
+	 * @throws UnsupportedEncodingException 
 	 */
 	private static String arc(ControlArc arc, ControlType fieldType,
-			String fieldName, TextExtractMethod temInField) {
+			String fieldName, TextExtractMethod temInField) throws UnsupportedEncodingException {
 		return textBox(arc.getTextBox(), fieldType, fieldName, temInField);
 	}
 
@@ -145,10 +152,11 @@ public class ForGso {
 	 * @param temInField
 	 *            필드 안에 텍스트의 텍스트 추출 방법
 	 * @return 필드 텍스트
+	 * @throws UnsupportedEncodingException 
 	 */
 	private static String polygon(ControlPolygon polygon,
 			ControlType fieldType, String fieldName,
-			TextExtractMethod temInField) {
+			TextExtractMethod temInField) throws UnsupportedEncodingException {
 		return textBox(polygon.getTextBox(), fieldType, fieldName, temInField);
 	}
 
@@ -164,9 +172,10 @@ public class ForGso {
 	 * @param temInField
 	 *            필드 안에 텍스트의 텍스트 추출 방법
 	 * @return 필드 텍스트
+	 * @throws UnsupportedEncodingException 
 	 */
 	private static String curve(ControlCurve curve, ControlType fieldType,
-			String fieldName, TextExtractMethod temInField) {
+			String fieldName, TextExtractMethod temInField) throws UnsupportedEncodingException {
 		return textBox(curve.getTextBox(), fieldType, fieldName, temInField);
 	}
 
@@ -182,10 +191,11 @@ public class ForGso {
 	 * @param temInField
 	 *            필드 안에 텍스트의 텍스트 추출 방법
 	 * @return 필드 텍스트
+	 * @throws UnsupportedEncodingException 
 	 */
 	private static String container(ControlContainer container,
 			ControlType fieldType, String fieldName,
-			TextExtractMethod temInField) {
+			TextExtractMethod temInField) throws UnsupportedEncodingException {
 		for (GsoControl child : container.getChildControlList()) {
 			String text = getFieldText(child, fieldType, fieldName, temInField);
 			if (text != null) {

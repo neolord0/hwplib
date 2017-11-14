@@ -1,5 +1,7 @@
 package kr.dogfoot.hwplib.textextractor;
 
+import java.io.UnsupportedEncodingException;
+
 import kr.dogfoot.hwplib.object.bodytext.control.Control;
 import kr.dogfoot.hwplib.object.bodytext.control.ControlAdditionalText;
 import kr.dogfoot.hwplib.object.bodytext.control.ControlEndnote;
@@ -28,8 +30,9 @@ public class ForControl {
 	 *            텍스트 추출 방법
 	 * @param sb
 	 *            추출된 텍스트를 저정할 StringBuffer 객체
+	 * @throws UnsupportedEncodingException 
 	 */
-	public static void extract(Control c, TextExtractMethod tem, StringBuffer sb) {
+	public static void extract(Control c, TextExtractMethod tem, StringBuffer sb) throws UnsupportedEncodingException {
 		if (c.isField()) {
 		} else {
 			switch (c.getType()) {
@@ -93,9 +96,10 @@ public class ForControl {
 	 *            텍스트 추출 방법
 	 * @param sb
 	 *            추출된 텍스트를 저정할 StringBuffer 객체
+	 * @throws UnsupportedEncodingException 
 	 */
 	private static void table(ControlTable table, TextExtractMethod tem,
-			StringBuffer sb) {
+			StringBuffer sb) throws UnsupportedEncodingException {
 		for (Row r : table.getRowList()) {
 			for (Cell c : r.getCellList()) {
 				ForParagraphList.extract(c.getParagraphList(), tem, sb);
@@ -124,9 +128,10 @@ public class ForControl {
 	 *            텍스트 추출 방법
 	 * @param sb
 	 *            추출된 텍스트를 저정할 StringBuffer 객체
+	 * @throws UnsupportedEncodingException 
 	 */
 	private static void header(ControlHeader header, TextExtractMethod tem,
-			StringBuffer sb) {
+			StringBuffer sb) throws UnsupportedEncodingException {
 		ForParagraphList.extract(header.getParagraphList(), tem, sb);
 	}
 
@@ -139,9 +144,10 @@ public class ForControl {
 	 *            텍스트 추출 방법
 	 * @param sb
 	 *            추출된 텍스트를 저정할 StringBuffer 객체
+	 * @throws UnsupportedEncodingException 
 	 */
 	private static void footer(ControlFooter footer, TextExtractMethod tem,
-			StringBuffer sb) {
+			StringBuffer sb) throws UnsupportedEncodingException {
 		ForParagraphList.extract(footer.getParagraphList(), tem, sb);
 	}
 
@@ -154,9 +160,10 @@ public class ForControl {
 	 *            텍스트 추출 방법
 	 * @param sb
 	 *            추출된 텍스트를 저정할 StringBuffer 객체
+	 * @throws UnsupportedEncodingException 
 	 */
 	private static void footnote(ControlFootnote footnote,
-			TextExtractMethod tem, StringBuffer sb) {
+			TextExtractMethod tem, StringBuffer sb) throws UnsupportedEncodingException {
 		ForParagraphList.extract(footnote.getParagraphList(), tem, sb);
 	}
 
@@ -169,9 +176,10 @@ public class ForControl {
 	 *            텍스트 추출 방법
 	 * @param sb
 	 *            추출된 텍스트를 저정할 StringBuffer 객체
+	 * @throws UnsupportedEncodingException 
 	 */
 	private static void endnote(ControlEndnote endnote, TextExtractMethod tem,
-			StringBuffer sb) {
+			StringBuffer sb) throws UnsupportedEncodingException {
 		ForParagraphList.extract(endnote.getParagraphList(), tem, sb);
 	}
 
@@ -198,9 +206,10 @@ public class ForControl {
 	 *            텍스트 추출 방법
 	 * @param sb
 	 *            추출된 텍스트를 저정할 StringBuffer 객체
+	 * @throws UnsupportedEncodingException 
 	 */
 	private static void hiddenComment(ControlHiddenComment hiddenComment,
-			TextExtractMethod tem, StringBuffer sb) {
+			TextExtractMethod tem, StringBuffer sb) throws UnsupportedEncodingException {
 		ForParagraphList.extract(hiddenComment.getParagraphList(), tem, sb);
 	}
 }

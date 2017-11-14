@@ -24,6 +24,12 @@ public class ForParaLineSeq {
 	 */
 	public static void read(Paragraph p, StreamReader sr) throws IOException {
 		p.createLineSeg();
+
+		long recordSize = sr.getCurrentRecordHeader().getSize();
+		if (recordSize == 4095) {
+			recordSize = sr.readUInt4();
+		}
+
 		ParaLineSeg pls = p.getLineSeg();
 		int count = p.getHeader().getLineAlignCount();
 		for (int index = 0; index < count; index++) {

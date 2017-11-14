@@ -1,5 +1,6 @@
 package kr.dogfoot.hwplib.object.bodytext.paragraph;
 
+import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 
 import kr.dogfoot.hwplib.object.bodytext.control.Control;
@@ -9,6 +10,7 @@ import kr.dogfoot.hwplib.object.bodytext.control.gso.GsoControl;
 import kr.dogfoot.hwplib.object.bodytext.paragraph.charshape.ParaCharShape;
 import kr.dogfoot.hwplib.object.bodytext.paragraph.header.ParaHeader;
 import kr.dogfoot.hwplib.object.bodytext.paragraph.lineseg.ParaLineSeg;
+import kr.dogfoot.hwplib.object.bodytext.paragraph.memo.Memo;
 import kr.dogfoot.hwplib.object.bodytext.paragraph.rangetag.ParaRangeTag;
 import kr.dogfoot.hwplib.object.bodytext.paragraph.text.ParaText;
 
@@ -43,6 +45,11 @@ public class Paragraph {
 	 * 컨트롤 리스트
 	 */
 	private ArrayList<Control> controlList;
+
+	/**
+	 * 메모 리스트
+	 */
+	private ArrayList<Memo> memoList;
 
 	/**
 	 * 생성자
@@ -211,11 +218,36 @@ public class Paragraph {
 	 * 문단 내의 일반 문자열을 반환한다.
 	 * 
 	 * @return 문단 내의 일반 문자열
+	 * @throws UnsupportedEncodingException 
 	 */
-	public String getNormalString() {
+	public String getNormalString() throws UnsupportedEncodingException {
 		if (text != null) {
 			return text.getNormalString(0);
 		}
 		return "";
+	}
+
+	/**
+	 * 새로운 메모을 생성하여 반환한다.
+	 * 
+	 * @return 새로 생성된 메모
+	 */
+	public Memo addNewMemo() {
+		if (memoList == null) {
+			memoList = new ArrayList<Memo>();
+		}
+
+		Memo m = new Memo();
+		memoList.add(m);
+		return m;
+	}
+
+	/**
+	 * 메모 리스트를 반환한다.
+	 * 
+	 * @return 메모 리스트
+	 */
+	public ArrayList<Memo> getMemoList() {
+		return memoList;
 	}
 }

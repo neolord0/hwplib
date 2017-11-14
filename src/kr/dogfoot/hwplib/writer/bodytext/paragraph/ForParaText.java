@@ -116,7 +116,7 @@ public class ForParaText {
 	 */
 	private static void normal(HWPCharNormal hc, StreamWriter sw)
 			throws UnsupportedEncodingException, IOException {
-		sw.writeBytes(hc.getCh().getBytes("UTF-16LE"));
+		sw.writeSInt2(hc.getCode());
 	}
 
 	/**

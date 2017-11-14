@@ -49,6 +49,11 @@ public class ForTextBox {
 		lh.setTopMargin(sr.readUInt2());
 		lh.setBottomMargin(sr.readUInt2());
 		lh.setTextWidth(sr.readUInt4());
+		
+		if (sr.isEndOfRecord()) {
+			return;
+		}
+		
 		unknownBytes(8, sr);
 			
 		if (sr.isEndOfRecord() == false) {

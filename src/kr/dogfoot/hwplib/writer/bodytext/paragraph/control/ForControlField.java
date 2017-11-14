@@ -3,6 +3,7 @@ package kr.dogfoot.hwplib.writer.bodytext.paragraph.control;
 import java.io.IOException;
 
 import kr.dogfoot.hwplib.object.bodytext.control.ControlField;
+import kr.dogfoot.hwplib.object.bodytext.control.ControlType;
 import kr.dogfoot.hwplib.object.bodytext.control.ctrlheader.CtrlHeaderField;
 import kr.dogfoot.hwplib.object.etc.HWPTag;
 import kr.dogfoot.hwplib.util.StringUtil;
@@ -52,7 +53,12 @@ public class ForControlField {
 		sw.writeUInt1(h.getEtcProperty());
 		sw.writeUTF16LEString(h.getCommand());
 		sw.writeUInt4(h.getInstanceId());
-		sw.writeZero(4);
+		
+		if(h.getCtrlId() == ControlType.FIELD_UNKNOWN.getCtrlId()) {
+			sw.writeSInt4(h.getMemoIndex());
+		} else {
+			sw.writeZero(4);
+		}
 	}
 
 	/**

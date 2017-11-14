@@ -25,6 +25,10 @@ public class CtrlHeaderField extends CtrlHeader {
 	 * id(문서 내 고유 아이디)
 	 */
 	private long instanceId;
+	/**
+	 * 메모 인덱스
+	 */
+	private int memoIndex;
 
 	/**
 	 * 생성자
@@ -119,5 +123,21 @@ public class CtrlHeaderField extends CtrlHeader {
 	 */
 	public void setInstanceId(long instanceId) {
 		this.instanceId = instanceId;
+	}
+
+	/**
+	 * 메모 인덱스를 반환한다.
+	 * @return 메모 인덱스
+	 */
+	public int getMemoIndex() {
+		return memoIndex;
+	}
+
+	/**
+	 * 메모 인덱스를 설정한다.
+	 * @param memoIndex 메모 인덱스
+	 */
+	public void setMemoIndex(int memoIndex) {
+		this.memoIndex = memoIndex;
 	}
 }

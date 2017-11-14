@@ -1,5 +1,7 @@
 package kr.dogfoot.hwplib.objectfinder.forField;
 
+import java.io.UnsupportedEncodingException;
+
 import kr.dogfoot.hwplib.object.bodytext.control.Control;
 import kr.dogfoot.hwplib.object.bodytext.control.ControlEndnote;
 import kr.dogfoot.hwplib.object.bodytext.control.ControlFooter;
@@ -31,9 +33,10 @@ public class ForControl {
 	 * @param temInField
 	 *            필드 안에 텍스트의 텍스트 추출 방법
 	 * @return 필드 텍스트
+	 * @throws UnsupportedEncodingException 
 	 */
 	public static String getFieldText(Control c, ControlType fieldType,
-			String fieldName, TextExtractMethod temInField) {
+			String fieldName, TextExtractMethod temInField) throws UnsupportedEncodingException {
 		if (c.isField()) {
 		} else {
 			switch (c.getType()) {
@@ -98,9 +101,10 @@ public class ForControl {
 	 * @param temInField
 	 *            필드 안에 텍스트의 텍스트 추출 방법
 	 * @return 필드 텍스트
+	 * @throws UnsupportedEncodingException 
 	 */
 	private static String table(ControlTable table, ControlType fieldType,
-			String fieldName, TextExtractMethod temInField) {
+			String fieldName, TextExtractMethod temInField) throws UnsupportedEncodingException {
 		for (Row r : table.getRowList()) {
 			for (Cell c : r.getCellList()) {
 				String text = ForParagraphList.getFieldText(
@@ -125,9 +129,10 @@ public class ForControl {
 	 * @param temInField
 	 *            필드 안에 텍스트의 텍스트 추출 방법
 	 * @return 필드 텍스트
+	 * @throws UnsupportedEncodingException 
 	 */
 	private static String header(ControlHeader header, ControlType fieldType,
-			String fieldName, TextExtractMethod temInField) {
+			String fieldName, TextExtractMethod temInField) throws UnsupportedEncodingException {
 		return ForParagraphList.getFieldText(header.getParagraphList(),
 				fieldType, fieldName, temInField);
 	}
@@ -144,9 +149,10 @@ public class ForControl {
 	 * @param temInField
 	 *            필드 안에 텍스트의 텍스트 추출 방법
 	 * @return 필드 텍스트
+	 * @throws UnsupportedEncodingException 
 	 */
 	private static String footer(ControlFooter footer, ControlType fieldType,
-			String fieldName, TextExtractMethod temInField) {
+			String fieldName, TextExtractMethod temInField) throws UnsupportedEncodingException {
 		return ForParagraphList.getFieldText(footer.getParagraphList(),
 				fieldType, fieldName, temInField);
 	}
@@ -163,10 +169,11 @@ public class ForControl {
 	 * @param temInField
 	 *            필드 안에 텍스트의 텍스트 추출 방법
 	 * @return 필드 텍스트
+	 * @throws UnsupportedEncodingException 
 	 */
 	private static String footnote(ControlFootnote footnote,
 			ControlType fieldType, String fieldName,
-			TextExtractMethod temInField) {
+			TextExtractMethod temInField) throws UnsupportedEncodingException {
 		return ForParagraphList.getFieldText(footnote.getParagraphList(),
 				fieldType, fieldName, temInField);
 	}
@@ -183,10 +190,11 @@ public class ForControl {
 	 * @param temInField
 	 *            필드 안에 텍스트의 텍스트 추출 방법
 	 * @return 필드 텍스트
+	 * @throws UnsupportedEncodingException 
 	 */
 	private static String endnote(ControlEndnote endnote,
 			ControlType fieldType, String fieldName,
-			TextExtractMethod temInField) {
+			TextExtractMethod temInField) throws UnsupportedEncodingException {
 		return ForParagraphList.getFieldText(endnote.getParagraphList(),
 				fieldType, fieldName, temInField);
 	}
@@ -203,10 +211,11 @@ public class ForControl {
 	 * @param temInField
 	 *            필드 안에 텍스트의 텍스트 추출 방법
 	 * @return 필드 텍스트
+	 * @throws UnsupportedEncodingException 
 	 */
 	private static String hiddenComment(ControlHiddenComment hiddenComment,
 			ControlType fieldType, String fieldName,
-			TextExtractMethod temInField) {
+			TextExtractMethod temInField) throws UnsupportedEncodingException {
 		return ForParagraphList.getFieldText(hiddenComment.getParagraphList(),
 				fieldType, fieldName, temInField);
 	}

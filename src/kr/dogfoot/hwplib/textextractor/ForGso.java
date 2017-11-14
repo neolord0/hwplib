@@ -1,5 +1,7 @@
 package kr.dogfoot.hwplib.textextractor;
 
+import java.io.UnsupportedEncodingException;
+
 import kr.dogfoot.hwplib.object.bodytext.control.gso.ControlArc;
 import kr.dogfoot.hwplib.object.bodytext.control.gso.ControlContainer;
 import kr.dogfoot.hwplib.object.bodytext.control.gso.ControlCurve;
@@ -24,9 +26,10 @@ public class ForGso {
 	 *            텍스트 추출 방법
 	 * @param sb
 	 *            추출된 텍스트를 저정할 StringBuffer 객체
+	 * @throws UnsupportedEncodingException 
 	 */
 	public static void extract(GsoControl gc, TextExtractMethod tem,
-			StringBuffer sb) {
+			StringBuffer sb) throws UnsupportedEncodingException {
 		switch (gc.getGsoType()) {
 		case Line:
 			break;
@@ -64,9 +67,10 @@ public class ForGso {
 	 *            텍스트 추출 방법
 	 * @param sb
 	 *            추출된 텍스트를 저정할 StringBuffer 객체
+	 * @throws UnsupportedEncodingException 
 	 */
 	private static void rectangle(ControlRectangle rectangle,
-			TextExtractMethod tem, StringBuffer sb) {
+			TextExtractMethod tem, StringBuffer sb) throws UnsupportedEncodingException {
 		textBox(rectangle.getTextBox(), tem, sb);
 	}
 
@@ -79,9 +83,10 @@ public class ForGso {
 	 *            텍스트 추출 방법
 	 * @param sb
 	 *            추출된 텍스트를 저정할 StringBuffer 객체
+	 * @throws UnsupportedEncodingException 
 	 */
 	private static void textBox(TextBox textBox, TextExtractMethod tem,
-			StringBuffer sb) {
+			StringBuffer sb) throws UnsupportedEncodingException {
 		if (textBox != null) {
 			ForParagraphList.extract(textBox.getParagraphList(), tem, sb);
 		}
@@ -96,9 +101,10 @@ public class ForGso {
 	 *            텍스트 추출 방법
 	 * @param sb
 	 *            추출된 텍스트를 저정할 StringBuffer 객체
+	 * @throws UnsupportedEncodingException 
 	 */
 	private static void ellipse(ControlEllipse ellipse, TextExtractMethod tem,
-			StringBuffer sb) {
+			StringBuffer sb) throws UnsupportedEncodingException {
 		textBox(ellipse.getTextBox(), tem, sb);
 	}
 
@@ -111,9 +117,10 @@ public class ForGso {
 	 *            텍스트 추출 방법
 	 * @param sb
 	 *            추출된 텍스트를 저정할 StringBuffer 객체
+	 * @throws UnsupportedEncodingException 
 	 */
 	private static void arc(ControlArc arc, TextExtractMethod tem,
-			StringBuffer sb) {
+			StringBuffer sb) throws UnsupportedEncodingException {
 		textBox(arc.getTextBox(), tem, sb);
 	}
 
@@ -126,9 +133,10 @@ public class ForGso {
 	 *            텍스트 추출 방법
 	 * @param sb
 	 *            추출된 텍스트를 저정할 StringBuffer 객체
+	 * @throws UnsupportedEncodingException 
 	 */
 	private static void polygon(ControlPolygon polygon, TextExtractMethod tem,
-			StringBuffer sb) {
+			StringBuffer sb) throws UnsupportedEncodingException {
 		textBox(polygon.getTextBox(), tem, sb);
 	}
 
@@ -141,9 +149,10 @@ public class ForGso {
 	 *            텍스트 추출 방법
 	 * @param sb
 	 *            추출된 텍스트를 저정할 StringBuffer 객체
+	 * @throws UnsupportedEncodingException 
 	 */
 	private static void curve(ControlCurve curve, TextExtractMethod tem,
-			StringBuffer sb) {
+			StringBuffer sb) throws UnsupportedEncodingException {
 		textBox(curve.getTextBox(), tem, sb);
 	}
 
@@ -156,9 +165,10 @@ public class ForGso {
 	 *            텍스트 추출 방법
 	 * @param sb
 	 *            추출된 텍스트를 저정할 StringBuffer 객체
+	 * @throws UnsupportedEncodingException 
 	 */
 	private static void container(ControlContainer container,
-			TextExtractMethod tem, StringBuffer sb) {
+			TextExtractMethod tem, StringBuffer sb) throws UnsupportedEncodingException {
 		for (GsoControl child : container.getChildControlList()) {
 			extract(child, tem, sb);
 		}

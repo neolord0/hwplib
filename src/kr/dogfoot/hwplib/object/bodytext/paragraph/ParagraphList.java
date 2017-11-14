@@ -1,5 +1,6 @@
 package kr.dogfoot.hwplib.object.bodytext.paragraph;
 
+import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.Iterator;
 
@@ -71,8 +72,9 @@ public class ParagraphList implements ParagraphListInterface {
 	 * 문단 리스트의 일반 문자열을 반환한다.
 	 * 
 	 * @return 문단 리스트의 일반 문자열
+	 * @throws UnsupportedEncodingException 
 	 */
-	public String getNormalString() {
+	public String getNormalString() throws UnsupportedEncodingException {
 		StringBuffer sb = new StringBuffer();
 		for (Paragraph p : paragraphList) {
 			sb.append(p.getNormalString());

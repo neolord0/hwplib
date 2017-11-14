@@ -1,5 +1,6 @@
 package kr.dogfoot.hwplib.test;
 
+import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 
 import kr.dogfoot.hwplib.object.HWPFile;
@@ -27,8 +28,13 @@ public class TestFindControl {
 				Cell firstCell = firstRow.getCellList().get(0);
 			
 				// 첫번째 셀의 문자열이 "A"로 시작되는 테이블을 찾는다.
-				if (firstCell.getParagraphList().getNormalString().startsWith("A")) {
-					return true;
+				try {
+					if (firstCell.getParagraphList().getNormalString().startsWith("A")) {
+						return true;
+					}
+				} catch (UnsupportedEncodingException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
 				}
 			}
 			return false;

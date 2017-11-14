@@ -202,6 +202,7 @@ public class ForShapeComponent {
 			StreamReader sr) throws IOException {
 		commonPart(scc, sr);
 		childInfo(scc, sr);
+		
 		unknown4Bytes(sr);
 	}
 

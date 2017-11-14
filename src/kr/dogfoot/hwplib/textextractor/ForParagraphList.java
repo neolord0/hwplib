@@ -1,5 +1,6 @@
 package kr.dogfoot.hwplib.textextractor;
 
+import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 
 import kr.dogfoot.hwplib.object.bodytext.ParagraphListInterface;
@@ -24,9 +25,10 @@ public class ForParagraphList {
 	 *            텍스트 추출 방법
 	 * @param sb
 	 *            추출된 텍스트를 저정할 StringBuffer 객체
+	 * @throws UnsupportedEncodingException 
 	 */
 	public static void extract(ParagraphListInterface paragraphList,
-			TextExtractMethod tem, StringBuffer sb) {
+			TextExtractMethod tem, StringBuffer sb) throws UnsupportedEncodingException {
 		if (paragraphList == null) {
 			return;
 		}
@@ -46,9 +48,10 @@ public class ForParagraphList {
 	 *            텍스트 추출 방법
 	 * @param sb
 	 *            추출된 텍스트를 저정할 StringBuffer 객체
+	 * @throws UnsupportedEncodingException 
 	 */
 	public static void extract(Paragraph p, int startIndex,
-			TextExtractMethod tem, StringBuffer sb) {
+			TextExtractMethod tem, StringBuffer sb) throws UnsupportedEncodingException {
 		ParaText pt = p.getText();
 		if (pt != null) {
 			extract(p, startIndex, pt.getCharList().size() - 1, tem, sb);
@@ -68,9 +71,10 @@ public class ForParagraphList {
 	 *            텍스트 추출 방법
 	 * @param sb
 	 *            추출된 텍스트를 저정할 StringBuffer 객체
+	 * @throws UnsupportedEncodingException 
 	 */
 	public static void extract(Paragraph p, int startIndex, int endIndex,
-			TextExtractMethod tem, StringBuffer sb) {
+			TextExtractMethod tem, StringBuffer sb) throws UnsupportedEncodingException {
 		ArrayList<Control> controlList = new ArrayList<Control>();
 		ParaText pt = p.getText();
 		if (pt != null) {
@@ -116,9 +120,10 @@ public class ForParagraphList {
 	 *            텍스트 추출 방법
 	 * @param sb
 	 *            추출된 텍스트를 저정할 StringBuffer 객체
+	 * @throws UnsupportedEncodingException 
 	 */
 	private static void paragraph(Paragraph p, TextExtractMethod tem,
-			StringBuffer sb) {
+			StringBuffer sb) throws UnsupportedEncodingException {
 		ParaText pt = p.getText();
 		if (pt != null) {
 			int controlIndex = 0;
@@ -150,8 +155,9 @@ public class ForParagraphList {
 	 *            한글 문자
 	 * @param sb
 	 *            추출된 텍스트를 저정할 StringBuffer 객체
+	 * @throws UnsupportedEncodingException 
 	 */
-	private static void normalText(HWPChar ch, StringBuffer sb) {
+	private static void normalText(HWPChar ch, StringBuffer sb) throws UnsupportedEncodingException {
 		sb.append(((HWPCharNormal) ch).getCh());
 	}
 
@@ -164,9 +170,10 @@ public class ForParagraphList {
 	 *            텍스트 추출 방법
 	 * @param sb
 	 *            추출된 텍스트를 저정할 StringBuffer 객체
+	 * @throws UnsupportedEncodingException 
 	 */
 	private static void controls(ArrayList<Control> controlList,
-			TextExtractMethod tem, StringBuffer sb) {
+			TextExtractMethod tem, StringBuffer sb) throws UnsupportedEncodingException {
 		if (controlList != null) {
 			for (Control c : controlList) {
 				ForControl.extract(c, tem, sb);

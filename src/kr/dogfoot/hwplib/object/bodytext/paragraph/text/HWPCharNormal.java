@@ -1,5 +1,7 @@
 package kr.dogfoot.hwplib.object.bodytext.paragraph.text;
 
+import java.io.UnsupportedEncodingException;
+
 /**
  * 일반 Character
  * 
@@ -7,9 +9,9 @@ package kr.dogfoot.hwplib.object.bodytext.paragraph.text;
  */
 public class HWPCharNormal extends HWPChar {
 	/**
-	 * 글자
+	 * 글자 코드
 	 */
-	private String ch;
+	private short code;
 
 	/**
 	 * 생성자
@@ -28,26 +30,47 @@ public class HWPCharNormal extends HWPChar {
 	}
 
 	/**
-	 * 글자를 반환한다.
+	 * 글자 코드를 반환한다.
 	 * 
-	 * @return 글자
+	 * @return 글자 코드
 	 */
-	public String getCh() {
-		return ch;
+	public short getCode() {
+		return code;
+	}
+	
+	/**
+	 * 글자 코드를 설정한다.
+	 * 
+	 * @param code
+	 *            글자 코드
+	 */
+	public void setCode(short code) {
+		this.code = code;
 	}
 
 	/**
-	 * 글자를 설정한다.
+	 * 글자를 반환한다.
 	 * 
-	 * @param ch
-	 *            글자
-	 * @throws Exception
-	 *             ch의 길이가 1이 아닐 때 발생
+	 * @return 글자
+	 * @throws UnsupportedEncodingException 
 	 */
-	public void setCh(String ch) throws Exception {
-		if (ch.length() != 1) {
-			throw new Exception("ch's length must be 1");
-		}
-		this.ch = ch;
+	public String getCh() throws UnsupportedEncodingException {
+		return shortToString(code);
+	}
+
+	/**
+	 * 2 byte 문자코드를 문자열로 변환한다.
+	 * 
+	 * @param code
+	 *            2 byte 문자코드
+	 * @return 변환된 문자열
+	 * @throws UnsupportedEncodingException
+	 */
+	private String shortToString(short code)
+			throws UnsupportedEncodingException {
+		byte[] ch = new byte[2];
+		ch[0] = (byte) (code & 0xff);
+		ch[1] = (byte) ((code >> 8) & 0xff);
+		return new String(ch, 0, 2, "UTF-16LE");
 	}
 }
