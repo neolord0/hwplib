@@ -38,6 +38,7 @@ kr.dogfoot.hwplib.object.bodytext.paragraph
 kr.dogfoot.hwplib.object.bodytext.paragraph.charshape
 kr.dogfoot.hwplib.object.bodytext.paragraph.header
 kr.dogfoot.hwplib.object.bodytext.paragraph.lineseg
+kr.dogfoot.hwplib.object.bodytext.paragraph.memo
 kr.dogfoot.hwplib.object.bodytext.paragraph.rangetag
 kr.dogfoot.hwplib.object.bodytext.paragraph.text
 kr.dogfoot.hwplib.object.docinfo
@@ -66,6 +67,7 @@ kr.dogfoot.hwplib.reader.bodytext.paragraph.control.gso
 kr.dogfoot.hwplib.reader.bodytext.paragraph.control.gso.part
 kr.dogfoot.hwplib.reader.bodytext.paragraph.control.secd
 kr.dogfoot.hwplib.reader.bodytext.paragraph.control.tbl
+kr.dogfoot.hwplib.reader.bodytext.paragraph.memo
 kr.dogfoot.hwplib.reader.docinfo
 kr.dogfoot.hwplib.reader.docinfo.borderfill
 kr.dogfoot.hwplib.test
@@ -92,5 +94,6 @@ kr.dogfoot.hwplib.writer.bodytext.paragraph.control.headerfooter
 kr.dogfoot.hwplib.writer.bodytext.paragraph.control.hiddencomment
 kr.dogfoot.hwplib.writer.bodytext.paragraph.control.secd
 kr.dogfoot.hwplib.writer.bodytext.paragraph.control.tbl
+kr.dogfoot.hwplib.writer.bodytext.paragraph.memo
 kr.dogfoot.hwplib.writer.docinfo
 kr.dogfoot.hwplib.writer.docinfo.borderfill
