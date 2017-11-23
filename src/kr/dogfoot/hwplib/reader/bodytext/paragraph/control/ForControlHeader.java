@@ -57,7 +57,9 @@ public class ForControlHeader {
 	private void ctrlHeader() throws IOException {
 		head.getHeader().setApplyPage(
 				HeaderFooterApplyPage.valueOf((byte) sr.readUInt4()));
-		head.getHeader().setCreateIndex(sr.readSInt4());
+		if (sr.isEndOfRecord() == false) {
+			head.getHeader().setCreateIndex(sr.readSInt4());
+		}
 	}
 
 	/**

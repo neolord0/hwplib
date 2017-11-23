@@ -8,6 +8,7 @@ import kr.dogfoot.hwplib.object.bodytext.control.gso.ControlCurve;
 import kr.dogfoot.hwplib.object.bodytext.control.gso.ControlEllipse;
 import kr.dogfoot.hwplib.object.bodytext.control.gso.ControlLine;
 import kr.dogfoot.hwplib.object.bodytext.control.gso.ControlOLE;
+import kr.dogfoot.hwplib.object.bodytext.control.gso.ControlObjectLinkLine;
 import kr.dogfoot.hwplib.object.bodytext.control.gso.ControlPicture;
 import kr.dogfoot.hwplib.object.bodytext.control.gso.ControlPolygon;
 import kr.dogfoot.hwplib.object.bodytext.control.gso.ControlRectangle;
@@ -106,6 +107,9 @@ public class ForGsoControl {
 			break;
 		case Container:
 			ForControlContainer.writeRest((ControlContainer) gso, sw);
+			break;
+		case ObjectLinkLine:
+			ForControlObjectLinkLine.writeRest((ControlObjectLinkLine) gso, sw);
 			break;
 		}
 	}

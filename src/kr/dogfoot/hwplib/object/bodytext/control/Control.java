@@ -62,4 +62,13 @@ public abstract class Control {
 	public CtrlData getCtrlData() {
 		return ctrlData;
 	}
+
+	/**
+	 * 컨트롤 데이터를 설정한다.
+	 * @param ctrlData 컨트롤 데이터
+	 */
+	public void setCtrlData(CtrlData ctrlData) {
+		this.ctrlData = new CtrlData();
+	}
+
 }

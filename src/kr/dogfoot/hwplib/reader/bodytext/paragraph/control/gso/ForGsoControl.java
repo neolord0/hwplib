@@ -3,6 +3,7 @@ package kr.dogfoot.hwplib.reader.bodytext.paragraph.control.gso;
 import java.io.IOException;
 
 import kr.dogfoot.hwplib.object.bodytext.control.FactoryForControl;
+import kr.dogfoot.hwplib.object.bodytext.control.bookmark.CtrlData;
 import kr.dogfoot.hwplib.object.bodytext.control.ctrlheader.CtrlHeaderGso;
 import kr.dogfoot.hwplib.object.bodytext.control.gso.ControlArc;
 import kr.dogfoot.hwplib.object.bodytext.control.gso.ControlContainer;
@@ -10,6 +11,7 @@ import kr.dogfoot.hwplib.object.bodytext.control.gso.ControlCurve;
 import kr.dogfoot.hwplib.object.bodytext.control.gso.ControlEllipse;
 import kr.dogfoot.hwplib.object.bodytext.control.gso.ControlLine;
 import kr.dogfoot.hwplib.object.bodytext.control.gso.ControlOLE;
+import kr.dogfoot.hwplib.object.bodytext.control.gso.ControlObjectLinkLine;
 import kr.dogfoot.hwplib.object.bodytext.control.gso.ControlPicture;
 import kr.dogfoot.hwplib.object.bodytext.control.gso.ControlPolygon;
 import kr.dogfoot.hwplib.object.bodytext.control.gso.ControlRectangle;
@@ -17,6 +19,7 @@ import kr.dogfoot.hwplib.object.bodytext.control.gso.GsoControl;
 import kr.dogfoot.hwplib.object.bodytext.control.gso.caption.Caption;
 import kr.dogfoot.hwplib.object.bodytext.paragraph.Paragraph;
 import kr.dogfoot.hwplib.object.etc.HWPTag;
+import kr.dogfoot.hwplib.reader.bodytext.paragraph.control.bookmark.ForCtrlData;
 import kr.dogfoot.hwplib.reader.bodytext.paragraph.control.gso.part.ForCaption;
 import kr.dogfoot.hwplib.reader.bodytext.paragraph.control.gso.part.ForCtrlHeaderGso;
 import kr.dogfoot.hwplib.reader.bodytext.paragraph.control.gso.part.ForShapeComponent;
@@ -61,8 +64,9 @@ public class ForGsoControl {
 		this.sr = sr;
 		CtrlHeaderGso header = ctrlHeader();
 		Caption caption = caption();
+		CtrlData ctrlData = ctrlData();
 		long gsoId = gsoIDFromShapeComponent();
-		gsoControl = createGsoControl(header, caption, gsoId);
+		gsoControl = createGsoControl(header, caption, ctrlData, gsoId);
 		restPartOfShapeCompponent();
 		restPartOfControl();
 	}
@@ -97,6 +101,25 @@ public class ForGsoControl {
 	}
 
 	/**
+	 * 컨트롤 데이터를 읽는다.
+	 * 
+	 * @return 컨트롤 데이터
+	 * @throws IOException
+	 */
+	private CtrlData ctrlData() throws IOException {
+		if (sr.isImmediatelyAfterReadingHeader() == false) {
+			sr.readRecordHeder();
+		}
+		if (sr.getCurrentRecordHeader().getTagID() == HWPTag.CTRL_DATA) {
+			CtrlData ctrlData = new CtrlData();
+			ForCtrlData.read(ctrlData, sr);
+			return ctrlData;
+		} else {
+			return null;
+		}
+	}
+
+	/**
 	 * 객체 공통 속성 레코드로 부터 그리기 개체의 id를 읽는다.
 	 * 
 	 * @return 그리기 개체의 id
@@ -123,14 +146,17 @@ public class ForGsoControl {
 	 *            컨트롤 헤더
 	 * @param caption
 	 *            캡션 정보
+	 * @param ctrlData
+	 *            컨트롤 데이터
 	 * @param gsoId
 	 *            그리기 개체 아이디
 	 * @return 생성된 그리기 개체 컨트롤
 	 */
 	private GsoControl createGsoControl(CtrlHeaderGso header, Caption caption,
-			long gsoId) {
+			CtrlData ctrlData, long gsoId) {
 		GsoControl gc = paragraph.addNewGsoControl(gsoId, header);
 		gc.setCaption(caption);
+		gc.setCtrlData(ctrlData);
 		return gc;
 	}
 
@@ -176,6 +202,9 @@ public class ForGsoControl {
 			break;
 		case Container:
 			ForControlContainer.readRest((ControlContainer) gsoControl, sr);
+			break;
+		case ObjectLinkLine:
+			ForControlObjectLinkLine.readRest((ControlObjectLinkLine) gsoControl, sr);
 			break;
 		}
 	}

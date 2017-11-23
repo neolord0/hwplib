@@ -7,6 +7,7 @@ import kr.dogfoot.hwplib.object.bodytext.control.gso.ControlCurve;
 import kr.dogfoot.hwplib.object.bodytext.control.gso.ControlEllipse;
 import kr.dogfoot.hwplib.object.bodytext.control.gso.ControlLine;
 import kr.dogfoot.hwplib.object.bodytext.control.gso.ControlOLE;
+import kr.dogfoot.hwplib.object.bodytext.control.gso.ControlObjectLinkLine;
 import kr.dogfoot.hwplib.object.bodytext.control.gso.ControlPicture;
 import kr.dogfoot.hwplib.object.bodytext.control.gso.ControlPolygon;
 import kr.dogfoot.hwplib.object.bodytext.control.gso.ControlRectangle;
@@ -96,6 +97,8 @@ public class FactoryForControl {
 			return new ControlOLE(header);
 		} else if (gsoId == GsoControlType.Container.getId()) {
 			return new ControlContainer(header);
+		} else if (gsoId == GsoControlType.ObjectLinkLine.getId()) {
+			return new ControlObjectLinkLine(header);
 		}
 		return null;
 	}

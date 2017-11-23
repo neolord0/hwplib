@@ -10,7 +10,7 @@ import kr.dogfoot.hwplib.reader.bodytext.paragraph.control.gso.part.ForTextBox;
 import kr.dogfoot.hwplib.util.compoundFile.reader.StreamReader;
 
 /**
- * 타원 컨트롤의 나머지 부분을 읽는다.
+ * 타원 컨트롤의 나머지 부분을 읽기 위한 객체
  * 
  * @author neolord
  */

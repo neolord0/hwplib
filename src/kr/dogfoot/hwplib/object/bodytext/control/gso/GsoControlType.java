@@ -43,7 +43,11 @@ public enum GsoControlType {
 	/**
 	 * 묶음 객체
 	 */
-	Container(CtrlID.make('$', 'c', 'o', 'n'));
+	Container(CtrlID.make('$', 'c', 'o', 'n')),
+	/**
+	 * 객체 연결선
+	 */
+	ObjectLinkLine(CtrlID.make('$', 'c', 'o', 'l'));
 
 	/**
 	 * 아아디

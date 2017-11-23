@@ -1,10 +1,10 @@
 package kr.dogfoot.hwplib.util.compoundFile.reader;
 
 import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
-import java.util.Arrays;
 import java.util.zip.DataFormatException;
 import java.util.zip.Inflater;
 
@@ -47,18 +47,12 @@ public class StreamReaderForCompress extends StreamReader {
 	 */
 	private void setByteArrayInputStream(DocumentEntry de) throws Exception {
 		DocumentInputStream dis = new DocumentInputStream(de);
-		byte[] compressed = getCompressedBytes(dis, de.getSize() - 8);
-		dis.skip(4);
-		int originSize = readOriginalSize(dis);
+		byte[] compressed = getCompressedBytes(dis, de.getSize());
 		dis.close();
 
-		byte[] decompressed = decompress(compressed, originSize);
-		if (originSize == 0x3ffff || originSize == decompressed.length) {
-			bis = new ByteArrayInputStream(decompressed);
-			setSize(decompressed.length);
-		} else {
-			throw new Exception("Decompressed bytes size is wrong.");
-		}
+		byte[] decompressed = decompress(compressed);
+		bis = new ByteArrayInputStream(decompressed);
+		setSize(decompressed.length);
 	}
 
 	/**
@@ -79,18 +73,6 @@ public class StreamReaderForCompress extends StreamReader {
 	}
 
 	/**
-	 * 압축된 스트림에 끝에서 원본 데이터의 크기를 읽는다.
-	 * 
-	 * @param dis
-	 *            스트림을 읽기 위한 InputStream 객체
-	 * @return 원본 데이터의 크기
-	 * @throws IOException
-	 */
-	private int readOriginalSize(DocumentInputStream dis) throws IOException {
-		return dis.readInt();
-	}
-
-	/**
 	 * 압축된 데이터를 풀어서 원본 데이터를 얻는다.
 	 * 
 	 * @param compressed
@@ -101,14 +83,21 @@ public class StreamReaderForCompress extends StreamReader {
 	 * @throws DataFormatException
 	 * @throws IOException
 	 */
-	private byte[] decompress(byte[] compressed, int originSize)
-			throws DataFormatException, IOException {
-		byte[] result = new byte[originSize];
-		Inflater decompresser = new Inflater(true);
-		decompresser.setInput(compressed, 0, compressed.length);
-		int resultLength = decompresser.inflate(result);
-		decompresser.end();
-		return Arrays.copyOfRange(result, 0, resultLength); 
+	private byte[] decompress(byte[] compressed) throws DataFormatException,
+			IOException {
+		Inflater decompressor = new Inflater(true);
+		decompressor.setInput(compressed, 0, compressed.length);
+
+		ByteArrayOutputStream bos = new ByteArrayOutputStream(compressed.length);
+
+		// Decompress the data
+		byte[] buf = new byte[1024];
+		while (!decompressor.finished()) {
+			int count = decompressor.inflate(buf);
+			bos.write(buf, 0, count);
+		}
+		bos.close();
+		return bos.toByteArray();
 	}
 
 	@Override
