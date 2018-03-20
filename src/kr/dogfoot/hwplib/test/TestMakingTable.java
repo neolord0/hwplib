@@ -39,14 +39,14 @@ import kr.dogfoot.hwplib.object.docinfo.borderfill.fillinfo.PatternType;
 import kr.dogfoot.hwplib.reader.HWPReader;
 import kr.dogfoot.hwplib.writer.HWPWriter;
 
-public class TestMakingtTable {
+public class TestMakingTable {
 	
 	public static void main(String[] args) throws Exception {
 		String filename = "sample_hwp\\test-blank.hwp";
 		
 		HWPFile hwpFile = HWPReader.fromFile(filename);
 		if (hwpFile != null) {
-			TestMakingtTable tmt = new TestMakingtTable();
+			TestMakingTable tmt = new TestMakingTable();
 			tmt.makeTable(hwpFile);
 			String writePath = "sample_hwp\\test-making-table.hwp";
 			HWPWriter.toFile(hwpFile, writePath);
