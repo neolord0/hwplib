@@ -96,6 +96,8 @@ public class ForControl {
 		case HiddenComment: // 숨은 설명
 			hiddenComment(c, sr);
 			break;
+		default:
+			break;
 		}
 	}
 

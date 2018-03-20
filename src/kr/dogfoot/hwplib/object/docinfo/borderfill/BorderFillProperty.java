@@ -80,8 +80,8 @@ public class BorderFillProperty {
 	 * 
 	 * @return Slash 대각선 모양
 	 */
-	public SlashDiagonaShape getSlashDiagonalShape() {
-		return SlashDiagonaShape.valueOf((byte) BitFlag.get(value, 2, 4));
+	public SlashDiagonalShape getSlashDiagonalShape() {
+		return SlashDiagonalShape.valueOf((byte) BitFlag.get(value, 2, 4));
 	}
 
 	/**
@@ -90,7 +90,7 @@ public class BorderFillProperty {
 	 * @param diagonaShape
 	 *            Slash 대각선 모양
 	 */
-	public void setSlashDiagonalShape(SlashDiagonaShape diagonaShape) {
+	public void setSlashDiagonalShape(SlashDiagonalShape diagonaShape) {
 		value = BitFlag.set(value, 2, 4, diagonaShape.getValue());
 	}
 
@@ -99,8 +99,8 @@ public class BorderFillProperty {
 	 * 
 	 * @return BackSlash 대각선 모양
 	 */
-	public BackSlashDiagonaShape getBackSlashDiagonalShape() {
-		return BackSlashDiagonaShape.valueOf((byte) BitFlag.get(value, 5, 7));
+	public BackSlashDiagonalShape getBackSlashDiagonalShape() {
+		return BackSlashDiagonalShape.valueOf((byte) BitFlag.get(value, 5, 7));
 	}
 
 	/**
@@ -109,7 +109,7 @@ public class BorderFillProperty {
 	 * @param diagonaShape
 	 *            BackSlash 대각선 모양
 	 */
-	public void setBackSlashDiagonalShape(BackSlashDiagonaShape diagonaShape) {
+	public void setBackSlashDiagonalShape(BackSlashDiagonalShape diagonaShape) {
 		value = BitFlag.set(value, 5, 7, diagonaShape.getValue());
 	}
 

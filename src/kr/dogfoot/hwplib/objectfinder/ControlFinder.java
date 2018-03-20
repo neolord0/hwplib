@@ -173,6 +173,8 @@ public class ControlFinder {
 		case HiddenComment:
 			forHiddenComment((ControlHiddenComment) c);
 			break;
+		default:
+			break;
 		}
 	}
 
@@ -272,6 +274,8 @@ public class ControlFinder {
 		case Container:
 			forContainer((ControlContainer) gc);
 			break;
+		default:
+			break;				
 		}
 
 	}

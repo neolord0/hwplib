@@ -55,6 +55,8 @@ public class ForGso {
 		case Container:
 			container((ControlContainer) gc, tem, sb);
 			break;
+		default:
+			break;
 		}
 	}
 

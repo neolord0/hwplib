@@ -7,73 +7,77 @@ package kr.dogfoot.hwplib.object.docinfo.borderfill;
  */
 public enum BorderType {
 	/**
+	 * 선없음
+	 */
+	None((byte) 0),
+	/**
 	 * 실선
 	 */
-	Solid((byte) 0),
+	Solid((byte) 1),
 	/**
 	 * 긴 점선 (쇄선)
 	 */
-	Dash((byte) 1),
+	Dash((byte) 2),
 	/**
 	 * 점선
 	 */
-	Dot((byte) 2),
+	Dot((byte) 3),
 	/**
 	 * -.-.-.-.(일점 쇄선)
 	 */
-	DashDot((byte) 3),
+	DashDot((byte) 4),
 	/**
 	 * -..-..-..(이점 쇄선)
 	 */
-	DashDotDot((byte) 4),
+	DashDotDot((byte) 5),
 	/**
 	 * Dash보다 긴 선분의 반복
 	 */
-	LongDash((byte) 5),
+	LongDash((byte) 6),
 	/**
 	 * Dot보다 큰 동그라미의 반복
 	 */
-	CircleDot((byte) 6),
+	CircleDot((byte) 7),
 	/**
 	 * 2중선
 	 */
-	Double((byte) 7),
+	Double((byte) 8),
 	/**
 	 * 가는선 + 굵은선 2중선
 	 */
-	ThinThick((byte) 8),
+	ThinThick((byte) 9),
 	/**
 	 * 굵은선 + 가는선 2중선
 	 */
-	ThickThin((byte) 9),
+	ThickThin((byte) 10),
 	/**
 	 * 가는선 + 굵은선 + 가는선 3중선
 	 */
-	ThinThickThn((byte) 10),
+	ThinThickThn((byte) 11),
 	/**
 	 * 물결
 	 */
-	Wave((byte) 11),
+	Wave((byte) 12),
 	/**
 	 * 물결 2중선
 	 */
-	DoubleWave((byte) 12),
+	DoubleWave((byte) 13),
 	/**
 	 * 두꺼운 3D
 	 */
-	Thick3D((byte) 13),
+	Thick3D((byte) 14),
 	/**
 	 * 두꺼운 3D(광원 반대)
 	 */
-	Thick3DReverseLighting((byte) 13),
+	Thick3DReverseLighting((byte) 15),
 	/**
 	 * 3D 단선
 	 */
-	Solid3D((byte) 15),
+	Solid3D((byte) 16),
 	/**
 	 * 3D 단선(광원 반대)
 	 */
-	Solid3DReverseLighting((byte) 16);
+	Solid3DReverseLighting((byte) 17);
 
 	/**
 	 * 파일에 저장되는 정수값

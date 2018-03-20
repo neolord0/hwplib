@@ -83,6 +83,8 @@ public class ForControl {
 			case HiddenComment:
 				hiddenComment((ControlHiddenComment) c, tem, sb);
 				break;
+			default:
+				break;
 			}
 		}
 	}

@@ -164,21 +164,146 @@ public class ParaText {
 	 * @throws UnsupportedEncodingException
 	 */
 	public void addString(String str) throws UnsupportedEncodingException {
-		HWPChar lastChar = null;
-		if (charList.size() > 0) {
-			lastChar = charList.get(charList.size() - 1);
-		}
-		if (lastChar != null && lastChar.getCode() == 0x0d) {
-			charList.remove(charList.size() - 1);
-		}
-		
 		int len = str.length();
 		for (int i = 0; i < len; i++) {
 			HWPCharControlChar ch = addNewCharControlChar();
 			ch.setCode((String) str.subSequence(i, i+1));
 		}
 		
-		HWPCharControlChar ch = addNewCharControlChar();
-		ch.setCode((short) 0x0d);
+    	processEndOfParagraph();
 	}
+	
+	/**
+	 * 구역 정의 컨트롤를 추가하기 위한  확장 컨트롤 문자를 추가한다.
+	 */
+    public void addExtendCharForSectionDefine()  {
+    	HWPCharControlExtend chExtend = addNewExtendControlChar();
+    	chExtend.setCode((short) 0x0002);
+    	byte[] addition = new byte[12];
+    	addition[3] = 's';
+    	addition[2] = 'e';
+    	addition[1] = 'c';
+    	addition[0] = 'd';    	
+    	try {
+			chExtend.setAddition(addition);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+    	processEndOfParagraph();
+    }
+
+    /**
+     * 문단 끝을 나타내는 문자를 찾아서 마지막으로 보낸다.
+     */
+	private void processEndOfParagraph() {
+		for (HWPChar ch : charList) {
+		 	if (ch.getCode() == 13/*para break*/) {
+		 		charList.remove(ch);
+		 		break;
+		 	}
+		}
+		HWPCharControlChar ch2 = addNewCharControlChar();
+		ch2.setCode((short) 0x0d);
+	}
+
+	/**
+	 * 단 정의 컨트롤를 추가하기 위한  확장 컨트롤 문자를 추가한다.
+	 */
+    public void addExtendCharForColumnDefine() {
+    	HWPCharControlExtend chExtend = addNewExtendControlChar();
+    	chExtend.setCode((short) 0x0002);
+    	byte[] addition = new byte[12];
+    	addition[3] = 'c';
+    	addition[2] = 'o';
+    	addition[1] = 'l';
+    	addition[0] = 'd';    	
+    	try {
+			chExtend.setAddition(addition);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+    	processEndOfParagraph();
+    }
+
+
+	/**
+	 * 표 컨트롤를 추가하기 위한  확장 컨트롤 문자를 추가한다.
+	 */
+    public void addExtendCharForTable() {
+    	HWPCharControlExtend chExtend = addNewExtendControlChar();
+    	chExtend.setCode((short) 0x000b);
+    	byte[] addition = new byte[12];
+    	addition[3] = 't';
+    	addition[2] = 'b';
+    	addition[1] = 'l';
+    	addition[0] = ' ';    	
+    	try {
+			chExtend.setAddition(addition);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+    	processEndOfParagraph();
+    }
+
+	/**
+	 * 그리기 개체 컨트롤를 추가하기 위한  확장 컨트롤 문자를 추가한다.
+	 */
+    public void addExtendCharForGSO() {
+    	HWPCharControlExtend chExtend = addNewExtendControlChar();
+    	chExtend.setCode((short) 0x000b);
+    	byte[] addition = new byte[12];
+    	addition[3] = 't';
+    	addition[2] = 'b';
+    	addition[1] = 'l';
+    	addition[0] = ' ';    	
+    	try {
+			chExtend.setAddition(addition);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+    	processEndOfParagraph();
+    }
+
+    /**
+     * 하이퍼 링크의 시작을 위한 확장 컨트롤 문자를 추가한다.
+     */
+    public void addExtendCharForHyperlinkStart() {
+    	HWPCharControlExtend chExtend = addNewExtendControlChar();
+        chExtend.setCode((short) 0x0003);
+    	byte[] addition = new byte[12];
+    	addition[3] = '%';
+    	addition[2] = 'h';
+    	addition[1] = 'l';
+    	addition[0] = 'k';    	
+    	try {
+			chExtend.setAddition(addition);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+    	processEndOfParagraph();
+    }
+
+    /**
+     * 하이퍼 링크의 끝을 위한 확장 컨트롤 문자를 추가한다.
+     */
+    public void addExtendCharForHyperlinkEnd() {
+    	HWPCharControlExtend chExtend = addNewExtendControlChar();
+        chExtend.setCode((short) 0x0004);        
+        byte[] addition = new byte[12];
+    	addition[2] = 'h';
+    	addition[1] = 'l';
+    	addition[0] = 'k';    	
+    	try {
+			chExtend.setAddition(addition);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+    	processEndOfParagraph();
+    }
 }

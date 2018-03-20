@@ -100,6 +100,8 @@ public class ForControl {
 		case Gso:
 			ForGsoControl.write((GsoControl) c, sw);
 			break;
+		default:
+			break;
 		}
 	}
 }

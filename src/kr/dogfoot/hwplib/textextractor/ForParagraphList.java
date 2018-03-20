@@ -102,6 +102,9 @@ public class ForParagraphList {
 						}
 					}
 					controlIndex++;
+					break;
+				default:
+					break;
 				}
 			}
 		}
@@ -139,6 +142,9 @@ public class ForParagraphList {
 								p.getControlList().get(controlIndex), tem, sb);
 						controlIndex++;
 					}
+					break;
+				default:
+					break;
 				}
 			}
 			sb.append("\n");

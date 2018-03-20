@@ -6,7 +6,6 @@ import kr.dogfoot.hwplib.object.docinfo.BorderFill;
 import kr.dogfoot.hwplib.object.docinfo.borderfill.BorderFillProperty;
 import kr.dogfoot.hwplib.object.docinfo.borderfill.BorderThickness;
 import kr.dogfoot.hwplib.object.docinfo.borderfill.BorderType;
-import kr.dogfoot.hwplib.object.docinfo.borderfill.DiagonalSort;
 import kr.dogfoot.hwplib.object.docinfo.borderfill.EachBorder;
 import kr.dogfoot.hwplib.object.docinfo.borderfill.fillinfo.FillInfo;
 import kr.dogfoot.hwplib.reader.docinfo.borderfill.ForFillInfo;
@@ -78,7 +77,7 @@ public class ForBorderFill {
 	 */
 	private static void diagonal(BorderFill bf, StreamReader sr)
 			throws IOException {
-		bf.setDiagonalSort(DiagonalSort.valueOf((byte) sr.readUInt1()));
+		bf.setDiagonalSort(BorderType.valueOf((byte) sr.readUInt1()));
 		bf.setDiagonalThickness(BorderThickness.valueOf((byte) sr.readUInt1()));
 		bf.getDiagonalColor().setValue(sr.readUInt4());
 	}

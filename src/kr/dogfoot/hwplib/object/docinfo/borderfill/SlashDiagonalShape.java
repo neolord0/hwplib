@@ -5,7 +5,7 @@ package kr.dogfoot.hwplib.object.docinfo.borderfill;
  * 
  * @author neolord
  */
-public enum SlashDiagonaShape {
+public enum SlashDiagonalShape {
 	/**
 	 * none
 	 */
@@ -38,7 +38,7 @@ public enum SlashDiagonaShape {
 	 * @param value
 	 *            파일에 저장되는 정수값
 	 */
-	private SlashDiagonaShape(byte value) {
+	private SlashDiagonalShape(byte value) {
 		this.value = value;
 	}
 
@@ -58,8 +58,8 @@ public enum SlashDiagonaShape {
 	 *            파일에 저장되는 정수값
 	 * @return enum 값
 	 */
-	public static SlashDiagonaShape valueOf(byte value) {
-		for (SlashDiagonaShape sds : values()) {
+	public static SlashDiagonalShape valueOf(byte value) {
+		for (SlashDiagonalShape sds : values()) {
 			if (sds.value == value) {
 				return sds;
 			}

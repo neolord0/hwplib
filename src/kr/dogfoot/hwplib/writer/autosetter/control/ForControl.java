@@ -82,6 +82,8 @@ public class ForControl {
 			case Table:
 				ForControlTable.autoSet((ControlTable) c, iid);
 				break;
+			default:
+				break;
 			}
 		}
 	}

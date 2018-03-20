@@ -84,6 +84,8 @@ public class ForControl {
 			case HiddenComment:
 				return hiddenComment((ControlHiddenComment) c, fieldType,
 						fieldName, temInField);
+			default:
+				break;
 			}
 		}
 		return null;

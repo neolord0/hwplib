@@ -67,6 +67,8 @@ public class ForGsoControl {
 		case Rectangle:
 			rectangle((ControlRectangle) gc, iid);
 			break;
+		default:
+			break;
 		}
 	}
 

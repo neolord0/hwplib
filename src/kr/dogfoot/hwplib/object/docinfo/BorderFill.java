@@ -2,7 +2,7 @@ package kr.dogfoot.hwplib.object.docinfo;
 
 import kr.dogfoot.hwplib.object.docinfo.borderfill.BorderFillProperty;
 import kr.dogfoot.hwplib.object.docinfo.borderfill.BorderThickness;
-import kr.dogfoot.hwplib.object.docinfo.borderfill.DiagonalSort;
+import kr.dogfoot.hwplib.object.docinfo.borderfill.BorderType;
 import kr.dogfoot.hwplib.object.docinfo.borderfill.EachBorder;
 import kr.dogfoot.hwplib.object.docinfo.borderfill.fillinfo.FillInfo;
 import kr.dogfoot.hwplib.object.etc.Color4Byte;
@@ -36,7 +36,7 @@ public class BorderFill {
 	/**
 	 * 대각선 종류
 	 */
-	private DiagonalSort diagonalSort;
+	private BorderType diagonalSort;
 	/**
 	 * 대각선 굵기
 	 */
@@ -113,7 +113,7 @@ public class BorderFill {
 	 * 
 	 * @return 대각선의 종류
 	 */
-	public DiagonalSort getDiagonalSort() {
+	public BorderType getDiagonalSort() {
 		return diagonalSort;
 	}
 
@@ -123,7 +123,7 @@ public class BorderFill {
 	 * @param diagonalSort
 	 *            대각선의 종류
 	 */
-	public void setDiagonalSort(DiagonalSort diagonalSort) {
+	public void setDiagonalSort(BorderType diagonalSort) {
 		this.diagonalSort = diagonalSort;
 	}
 
