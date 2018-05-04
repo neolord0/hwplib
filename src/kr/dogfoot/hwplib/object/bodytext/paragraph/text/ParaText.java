@@ -255,9 +255,9 @@ public class ParaText {
     	HWPCharControlExtend chExtend = addNewExtendControlChar();
     	chExtend.setCode((short) 0x000b);
     	byte[] addition = new byte[12];
-    	addition[3] = 't';
-    	addition[2] = 'b';
-    	addition[1] = 'l';
+    	addition[3] = 'g';
+    	addition[2] = 's';
+    	addition[1] = 'o';
     	addition[0] = ' ';    	
     	try {
 			chExtend.setAddition(addition);

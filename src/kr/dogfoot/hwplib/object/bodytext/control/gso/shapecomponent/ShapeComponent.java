@@ -1,6 +1,7 @@
 package kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponent;
 
 import kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponent.renderingnfo.RenderingInfo;
+import kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponent.renderingnfo.ScaleRotateMatrixPair;
 
 /**
  * 객체 공통 속성
@@ -326,4 +327,29 @@ public class ShapeComponent {
 	public RenderingInfo getRenderingInfo() {
 		return renderingInfo;
 	}
+	
+    public void setMatrixsNormal() {
+    	renderingInfo.getTranslationMatrix().setValue(0, 1.0f);
+    	renderingInfo.getTranslationMatrix().setValue(1, 0.0f);
+    	renderingInfo.getTranslationMatrix().setValue(2, 0.0f);
+    	renderingInfo.getTranslationMatrix().setValue(3, 0.0f);
+    	renderingInfo.getTranslationMatrix().setValue(4, 1.0f);
+    	renderingInfo.getTranslationMatrix().setValue(5, 0.0f);
+    
+		ScaleRotateMatrixPair pair = renderingInfo.addNewScaleRotateMatrixPair();
+    	pair.getScaleMatrix().setValue(0, 1.0f);
+    	pair.getScaleMatrix().setValue(1, 0.0f);
+    	pair.getScaleMatrix().setValue(2, 0.0f);
+    	pair.getScaleMatrix().setValue(3, 0.0f);
+    	pair.getScaleMatrix().setValue(4, 1.0f);
+    	pair.getScaleMatrix().setValue(5, 0.0f);
+    
+    	pair.getRotateMatrix().setValue(0, 1.0f);
+    	pair.getRotateMatrix().setValue(1, 0.0f);
+    	pair.getRotateMatrix().setValue(2, 0.0f);
+    	pair.getRotateMatrix().setValue(3, 0.0f);
+    	pair.getRotateMatrix().setValue(4, 1.0f);
+    	pair.getRotateMatrix().setValue(5, 0.0f);
+    }
+
 }
