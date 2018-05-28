@@ -191,11 +191,10 @@ public class HWPReader {
 	 * @throws Exception
 	 */
 	private byte[] readEmbededBinaryData(String name) throws Exception {
-		StreamReader sr = cfr.getChildStreamReader(name, false, null);
+		StreamReader sr = cfr.getChildStreamReader(name, isCompressed(), null);
 		byte[] binaryData = new byte[(int) sr.getSize()];
 		sr.readBytes(binaryData);
 		sr.close();
 		return binaryData;
-				
 	}
 }
