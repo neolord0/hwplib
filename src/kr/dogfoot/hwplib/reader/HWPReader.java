@@ -7,6 +7,7 @@ import java.util.Iterator;
 import java.util.Set;
 
 import kr.dogfoot.hwplib.object.HWPFile;
+import kr.dogfoot.hwplib.object.docinfo.BinData;
 import kr.dogfoot.hwplib.object.fileheader.FileVersion;
 import kr.dogfoot.hwplib.reader.bodytext.ForSection;
 import kr.dogfoot.hwplib.reader.docinfo.ForDocInfo;
@@ -30,7 +31,7 @@ public class HWPReader {
 	public static HWPFile fromFile(String filepath) throws Exception {
 		return fromInputStream(new FileInputStream(filepath));
 	}
-		
+
 	/**
 	 * hwp 파일을 읽는다.
 	 * 
@@ -140,8 +141,7 @@ public class HWPReader {
 	 */
 	private void bodyText() throws Exception {
 		cfr.moveChildStorage("BodyText");
-		int sectionCount = hwpFile.getDocInfo().getDocumentProperties()
-				.getSectionCount();
+		int sectionCount = hwpFile.getDocInfo().getDocumentProperties().getSectionCount();
 		for (int index = 0; index < sectionCount; index++) {
 			section(index);
 		}
@@ -156,10 +156,8 @@ public class HWPReader {
 	 * @throws Exception
 	 */
 	private void section(int sectionIndex) throws Exception {
-		StreamReader sr = cfr.getChildStreamReader("Section" + sectionIndex,
-				isCompressed(), getVersion());
-		ForSection
-				.read(hwpFile.getBodyText().addNewSection(), sr);
+		StreamReader sr = cfr.getChildStreamReader("Section" + sectionIndex, isCompressed(), getVersion());
+		ForSection.read(hwpFile.getBodyText().addNewSection(), sr);
 		sr.close();
 	}
 
@@ -171,12 +169,13 @@ public class HWPReader {
 	private void binData() throws Exception {
 		if (cfr.isChildStorage("BinData")) {
 			cfr.moveChildStorage("BinData");
+			int id = 1;
 			Set<String> ss = cfr.listChildNames();
 			Iterator<String> it = ss.iterator();
 			while (it.hasNext()) {
 				String name = it.next();
-				hwpFile.getBinData().addNewEmbeddedBinaryData(name,
-						readEmbededBinaryData(name));
+				hwpFile.getBinData().addNewEmbeddedBinaryData(name, readEmbededBinaryData(name, id));
+				id++;
 			}
 			cfr.moveParentStorage();
 		}
@@ -187,14 +186,56 @@ public class HWPReader {
 	 * 
 	 * @param name
 	 *            스트림 이름
+	 * @param index
+	 *            스트림 인덱스
 	 * @return 스트림에 저장된 데이타
 	 * @throws Exception
 	 */
-	private byte[] readEmbededBinaryData(String name) throws Exception {
-		StreamReader sr = cfr.getChildStreamReader(name, isCompressed(), null);
+	private byte[] readEmbededBinaryData(String name, int id) throws Exception {
+		StreamReader sr = cfr.getChildStreamReader(name, getCompressState(id), null);
 		byte[] binaryData = new byte[(int) sr.getSize()];
 		sr.readBytes(binaryData);
 		sr.close();
 		return binaryData;
+	}
+
+	/**
+	 * BinData의 압축 여부를 반환한다.
+	 * 
+	 * @param id
+	 *            BinData의 아이디
+	 * @return BinData의 압축 여부
+	 */
+	private boolean getCompressState(int id) {
+		BinData bd = getBinData(id);
+		if (bd == null) {
+			return false;
+		}
+		System.out.println(bd.getProperty().getCompress());
+		switch (bd.getProperty().getCompress()) {
+		case ByStroageDefault:
+			return isCompressed();
+		case Compress:
+			return true;
+		case NoCompress:
+			return false;
+		}
+		return false;
+	}
+
+	/**
+	 * 아이디가 id인 BinData를 반환한다.
+	 * 
+	 * @param id
+	 *            BinData의 아이디
+	 * @return 아이디가 id인 BinData
+	 */
+	private BinData getBinData(int id) {
+		for (BinData bd : hwpFile.getDocInfo().getBinDataList()) {
+			if (bd.getBinDataID() == id) {
+				return bd;
+			}
+		}
+		return null;
 	}
 }
