@@ -23,17 +23,17 @@ public class ForBullet {
 	public static void read(Bullet b, StreamReader sr) throws IOException {
 		ForNumbering.paragraphHeadInfo(b.getParagraphHeadInfo(), sr);
 		b.setBulletChar(sr.readWChar());
-		unknown9Bytes(sr);
+		unknownBytes(sr);
 	}
 
 	/**
-	 * 알려지지 않은 9 바이트를 처리한다.
+	 * 알려지지 않은  바이트를 처리한다.
 	 * 
 	 * @param sr
 	 *            스트림 리더
 	 * @throws IOException
 	 */
-	private static void unknown9Bytes(StreamReader sr) throws IOException {
-		sr.skip(9);
+	private static void unknownBytes(StreamReader sr) throws IOException {
+		sr.skipToEndRecord();
 	}
 }

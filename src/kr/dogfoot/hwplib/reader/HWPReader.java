@@ -211,7 +211,6 @@ public class HWPReader {
 		if (bd == null) {
 			return false;
 		}
-		System.out.println(bd.getProperty().getCompress());
 		switch (bd.getProperty().getCompress()) {
 		case ByStroageDefault:
 			return isCompressed();
