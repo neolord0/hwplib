@@ -174,4 +174,16 @@ public class CharOffsets {
 	public void setUser(byte charOffset) {
 		array[6] = charOffset;
 	}
+
+	/**
+	 * 모든 문자에 대한 글자 위치 값를 설정한다.
+	 * 
+	 * @param charOffset
+	 *            모든 문자에 대한 글자 위치 값
+	 */
+	public void setForAll(byte charOffset) {
+		for (int index = 0; index < 7; index++) {
+			array[index] = charOffset;
+		}
+	}
 }

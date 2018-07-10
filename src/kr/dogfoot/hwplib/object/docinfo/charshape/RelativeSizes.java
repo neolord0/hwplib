@@ -174,4 +174,16 @@ public class RelativeSizes {
 	public void setUser(short relativeSize) {
 		array[6] = relativeSize;
 	}
+
+	/**
+	 * 모든 문자에 대한 글자 장평을 설정한다.
+	 * 
+	 * @param relativeSize
+	 *            모든 문자에 대한 글자 장평
+	 */
+	public void setForAll(short relativeSize) {
+		for (int index = 0; index < 7; index++) {
+			array[index] = relativeSize;
+		}
+	}
 }

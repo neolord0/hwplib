@@ -174,4 +174,16 @@ public class CharSpaces {
 	public void setUser(byte charSpace) {
 		array[6] = charSpace;
 	}
+	
+	/**
+	 * 모든 문자에 대한 자간 값를 설정한다.
+	 * 
+	 * @param charSpace
+	 *            모든 문자에 대한 자간 값
+	 */
+	public void setForAll(byte charSpace) {
+		for (int index = 0; index < 7; index++) {
+			array[index] = charSpace;
+ 		}
+	}
 }

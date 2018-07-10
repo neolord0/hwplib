@@ -174,4 +174,16 @@ public class Ratios {
 	public void setUser(short ratio) {
 		array[6] = ratio;
 	}
+	
+	/**
+	 * 모든 문자에 대한 글자 장평을 설정한다.
+	 * 
+	 * @param ratio
+	 *            모든 문자에 대한 글자 장평
+	 */
+	public void setForAll(short ratio) {
+		for (int index = 0; index < 7; index++) {
+			array[index] = ratio;
+		}
+	}
 }

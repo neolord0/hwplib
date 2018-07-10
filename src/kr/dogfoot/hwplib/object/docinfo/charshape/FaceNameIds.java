@@ -174,4 +174,16 @@ public class FaceNameIds {
 	public void setUser(int faceNameID) {
 		array[6] = faceNameID;
 	}
+	
+	/**
+	 * 모든 문자에 대한 참조된 글꼴 Id를 설정한다.
+	 * 
+	 * @param faceNameID
+	 *            모든 문자에 대한 참조된 글꼴 Id
+	 */
+	public void setForAll(int faceNameID) {
+		for (int index = 0; index < 7; index++) {
+			array[index] = faceNameID;
+		}
+	}
 }
