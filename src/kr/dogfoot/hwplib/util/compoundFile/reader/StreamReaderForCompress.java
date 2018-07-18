@@ -49,10 +49,15 @@ public class StreamReaderForCompress extends StreamReader {
 		DocumentInputStream dis = new DocumentInputStream(de);
 		byte[] compressed = getCompressedBytes(dis, de.getSize());
 		dis.close();
-
-		byte[] decompressed = decompress(compressed);
-		bis = new ByteArrayInputStream(decompressed);
-		setSize(decompressed.length);
+		try {
+			byte[] decompressed = decompress(compressed);
+			
+			bis = new ByteArrayInputStream(decompressed);
+			setSize(decompressed.length);
+		} catch (java.util.zip.DataFormatException e) {
+			bis = new ByteArrayInputStream(compressed);
+			setSize(compressed.length);
+		}
 	}
 
 	/**
@@ -87,11 +92,10 @@ public class StreamReaderForCompress extends StreamReader {
 			IOException {
 		Inflater decompressor = new Inflater(true);
 		decompressor.setInput(compressed, 0, compressed.length);
-
 		ByteArrayOutputStream bos = new ByteArrayOutputStream(compressed.length);
 
 		// Decompress the data
-		byte[] buf = new byte[1024];
+		byte[] buf = new byte[8096];
 		while (!decompressor.finished()) {
 			int count = decompressor.inflate(buf);
 			bos.write(buf, 0, count);
