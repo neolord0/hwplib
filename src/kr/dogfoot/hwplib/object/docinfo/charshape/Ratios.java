@@ -161,7 +161,7 @@ public class Ratios {
 	 * 
 	 * @return 사용자 정의 글자 장평
 	 */
-	public int getUser() {
+	public short getUser() {
 		return array[6];
 	}
 
