@@ -5,6 +5,7 @@ import java.io.IOException;
 import kr.dogfoot.hwplib.object.HWPFile;
 import kr.dogfoot.hwplib.object.bindata.EmbeddedBinaryData;
 import kr.dogfoot.hwplib.object.bodytext.Section;
+import kr.dogfoot.hwplib.object.docinfo.bindata.BinDataCompress;
 import kr.dogfoot.hwplib.object.fileheader.FileVersion;
 import kr.dogfoot.hwplib.util.compoundFile.writer.CompoundFileWriter;
 import kr.dogfoot.hwplib.util.compoundFile.writer.StreamWriter;
@@ -163,20 +164,6 @@ public class HWPWriter {
 	}
 
 	/**
-	 * 첨부된 바이너리 데이터를 쓴다.
-	 * 
-	 * @param ebd
-	 *            첨부된 바이너리 데이터에 대한 정보
-	 * @throws IOException
-	 */
-	private void embeddedBinaryData(EmbeddedBinaryData ebd) throws IOException {
-		StreamWriter sw = cfw.openCurrentStream(ebd.getName(), false,
-				getVersion());
-		sw.writeBytes(ebd.getData());
-		cfw.closeCurrentStream();
-	}
-
-	/**
 	 * 첨부된 바이너리 데이터가 있는지 여부를 반환한다.
 	 * 
 	 * @return 첨부된 바이너리 데이터가 있는지 여부
@@ -184,6 +171,40 @@ public class HWPWriter {
 	private boolean hasBinData() {
 		return hwpFile.getBinData().getEmbeddedBinaryDataList().size() > 0;
 	}
+
+	/**
+	 * 첨부된 바이너리 데이터를 쓴다.
+	 * 
+	 * @param ebd
+	 *            첨부된 바이너리 데이터에 대한 정보
+	 * @throws IOException
+	 */
+	private void embeddedBinaryData(EmbeddedBinaryData ebd) throws IOException {
+		StreamWriter sw = cfw.openCurrentStream(ebd.getName(), isCompressBinData(ebd.getCompressMethod()),
+				getVersion());
+		sw.writeBytes(ebd.getData());
+		cfw.closeCurrentStream();
+	}
+
+	/**
+	 * BinData의 압축 여부를 반환한다.
+	 * 
+	 * @param compressMethod
+	 *            압축 방법
+	 * @return BinData의 압축 여부
+	 */
+	private boolean isCompressBinData(BinDataCompress compressMethod) {
+		switch (compressMethod) {
+		case ByStroageDefault:
+			return isCompressed();
+		case Compress:
+			return true;
+		case NoCompress:
+			return false;
+		}
+		return false;
+	}
+
 
 	/**
 	 * 파일을 쓰고 닫는다.

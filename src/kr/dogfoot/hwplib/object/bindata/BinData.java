@@ -2,6 +2,8 @@ package kr.dogfoot.hwplib.object.bindata;
 
 import java.util.ArrayList;
 
+import kr.dogfoot.hwplib.object.docinfo.bindata.BinDataCompress;
+
 /**
  * 바이너리 데이터를 나타내는 객체 HWP파일 내의 "BinData" storage에 저장된다.
  * 
@@ -47,10 +49,13 @@ public class BinData {
 	 *            새로운 첨부된 바이너리 데이터 객체의 이름
 	 * @param data
 	 *            새로운 첨부된 바이너리 데이터 객체의 데이터
+	 * @param compressMethod
+	 *            암축 방법
 	 */
-	public void addNewEmbeddedBinaryData(String name, byte[] data) {
+	public void addNewEmbeddedBinaryData(String name, byte[] data, BinDataCompress compressMethod) {
 		EmbeddedBinaryData ebd = addNewEmbeddedBinaryData();
 		ebd.setName(name);
 		ebd.setData(data);
+		ebd.setCompressMethod(compressMethod);
 	}
 }

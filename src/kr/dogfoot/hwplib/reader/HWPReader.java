@@ -8,6 +8,7 @@ import java.util.Set;
 
 import kr.dogfoot.hwplib.object.HWPFile;
 import kr.dogfoot.hwplib.object.docinfo.BinData;
+import kr.dogfoot.hwplib.object.docinfo.bindata.BinDataCompress;
 import kr.dogfoot.hwplib.object.fileheader.FileVersion;
 import kr.dogfoot.hwplib.reader.bodytext.ForSection;
 import kr.dogfoot.hwplib.reader.docinfo.ForDocInfo;
@@ -174,11 +175,27 @@ public class HWPReader {
 			Iterator<String> it = ss.iterator();
 			while (it.hasNext()) {
 				String name = it.next();
-				hwpFile.getBinData().addNewEmbeddedBinaryData(name, readEmbededBinaryData(name, id));
+				BinDataCompress compressMethod = getCompressMethod(id);
+				hwpFile.getBinData().addNewEmbeddedBinaryData(name, readEmbededBinaryData(name, compressMethod),
+						compressMethod);
+
 				id++;
 			}
 			cfr.moveParentStorage();
 		}
+	}
+
+	private BinDataCompress getCompressMethod(int id) {
+		BinData binData;
+		try {
+			binData = hwpFile.getDocInfo().getBinDataList().get(id - 1);
+		} catch(Exception e) {
+			binData = null;
+		}
+		if (binData != null) {
+			return binData.getProperty().getCompress();
+		}
+		return BinDataCompress.ByStroageDefault;
 	}
 
 	/**
@@ -191,8 +208,8 @@ public class HWPReader {
 	 * @return 스트림에 저장된 데이타
 	 * @throws Exception
 	 */
-	private byte[] readEmbededBinaryData(String name, int id) throws Exception {
-		StreamReader sr = cfr.getChildStreamReader(name, getCompressState(id), null);
+	private byte[] readEmbededBinaryData(String name, BinDataCompress compressMethod) throws Exception {
+		StreamReader sr = cfr.getChildStreamReader(name, isCompressBinData(compressMethod), null);
 		byte[] binaryData = new byte[(int) sr.getSize()];
 		sr.readBytes(binaryData);
 		sr.close();
@@ -202,16 +219,12 @@ public class HWPReader {
 	/**
 	 * BinData의 압축 여부를 반환한다.
 	 * 
-	 * @param id
-	 *            BinData의 아이디
+	 * @param compressMethod
+	 *            압축 방법
 	 * @return BinData의 압축 여부
 	 */
-	private boolean getCompressState(int id) {
-		BinData bd = getBinData(id);
-		if (bd == null) {
-			return false;
-		}
-		switch (bd.getProperty().getCompress()) {
+	private boolean isCompressBinData(BinDataCompress compressMethod) {
+		switch (compressMethod) {
 		case ByStroageDefault:
 			return isCompressed();
 		case Compress:
@@ -220,21 +233,5 @@ public class HWPReader {
 			return false;
 		}
 		return false;
-	}
-
-	/**
-	 * 아이디가 id인 BinData를 반환한다.
-	 * 
-	 * @param id
-	 *            BinData의 아이디
-	 * @return 아이디가 id인 BinData
-	 */
-	private BinData getBinData(int id) {
-		for (BinData bd : hwpFile.getDocInfo().getBinDataList()) {
-			if (bd.getBinDataID() == id) {
-				return bd;
-			}
-		}
-		return null;
 	}
 }

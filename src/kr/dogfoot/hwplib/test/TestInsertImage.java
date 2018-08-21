@@ -58,6 +58,7 @@ public class TestInsertImage {
 
 	private final String imageFilePath = "sample_hwp\\sample.jpg";
 	private final String imageFileExt = "jpg";
+	private final BinDataCompress compressMethod = BinDataCompress.ByStroageDefault;
 	
 	private int instanceID = 0x5bb840e1;
 	private HWPFile hwpFile;
@@ -81,7 +82,7 @@ public class TestInsertImage {
 		String streamName = getStreamName();
 		byte[] fileBinary = loadFile();
 
-		hwpFile.getBinData().addNewEmbeddedBinaryData(streamName, fileBinary);
+		hwpFile.getBinData().addNewEmbeddedBinaryData(streamName, fileBinary, compressMethod);
 	}
 
 	private String getStreamName() {
@@ -108,7 +109,7 @@ public class TestInsertImage {
 	private int addBinDataInDocInfo(int streamIndex) {
 		BinData bd = new BinData();
 		bd.getProperty().setType(BinDataType.Embedding);
-		bd.getProperty().setCompress(BinDataCompress.ByStroageDefault);
+		bd.getProperty().setCompress(compressMethod);
 		bd.getProperty().setState(BinDataState.NotAcceess);
 		bd.setBinDataID(streamIndex);
 		bd.setExtensionForEmbedding(imageFileExt);
