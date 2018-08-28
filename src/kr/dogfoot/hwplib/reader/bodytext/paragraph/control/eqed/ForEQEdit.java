@@ -28,6 +28,9 @@ public class ForEQEdit {
 		eqEdit.setBaseLine(sr.readSInt2());
 		sr.skip(2); // unknown
 		eqEdit.setVersionInfo(sr.readUTF16LEString());
+		if (sr.isEndOfRecord() == false) {
+			eqEdit.setEtcInfo(sr.readUTF16LEString());
+		}
 	}
 
 }

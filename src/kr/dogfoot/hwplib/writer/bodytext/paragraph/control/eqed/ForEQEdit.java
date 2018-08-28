@@ -32,6 +32,9 @@ public class ForEQEdit {
 		sw.writeSInt2(ee.getBaseLine());
 		sw.writeZero(2);
 		sw.writeUTF16LEString(ee.getVersionInfo());
+		if (ee.getEtcInfo() != null && ee.getEtcInfo().length() != 0) {
+			sw.writeUTF16LEString(ee.getEtcInfo());
+		}
 	}
 
 	/**
@@ -61,6 +64,9 @@ public class ForEQEdit {
 		size += StringUtil.getUTF16LEStringSize(ee.getScript());
 		size += 12;
 		size += StringUtil.getUTF16LEStringSize(ee.getVersionInfo());
+		if (ee.getEtcInfo() != null && ee.getEtcInfo().length() != 0) {
+			size += StringUtil.getUTF16LEStringSize(ee.getEtcInfo());
+		}
 		return size;
 	}
 }

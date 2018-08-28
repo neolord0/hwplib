@@ -32,6 +32,10 @@ public class EQEdit {
 	 * 버전 정보 ??
 	 */
 	private String versionInfo;
+	/**
+	 * 기타 정보 ??
+	 */
+	private String etcInfo;
 
 	/**
 	 * 생성자
@@ -142,5 +146,22 @@ public class EQEdit {
 	 */
 	public void setVersionInfo(String versionInfo) {
 		this.versionInfo = versionInfo;
+	}
+
+	/**
+	 * 기타 정보를 반환한다. 
+	 * @return 기타 정보
+	 */
+	public String getEtcInfo() {
+		return etcInfo;
+	}
+
+	/**
+	 * 기타 정보를 설정한다.
+	 * 
+	 * @param etcInfo 기타 정보
+	 */
+	public void setEtcInfo(String etcInfo) {
+		this.etcInfo = etcInfo;
 	}
 }
