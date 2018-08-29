@@ -15,7 +15,7 @@ public enum RelativeArrange {
 	 */
 	Center((byte) 1),
 	/**
-	 * erRelTo이 ‘paper’나 ‘page’ 이면 bottom, 그렇지 않a으면 right
+	 * VerRelTo이 ‘paper’나 ‘page’ 이면 bottom, 그렇지 않으면 right
 	 */
 	BottomOrRight((byte) 2),
 	/**
