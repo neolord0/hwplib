@@ -32,7 +32,7 @@ public class DocInfo {
 	 */
 	private ArrayList<FaceName> englishFaceNameList;
 	/**
-	 * 한자 긍꼴 리스트
+	 * 한자 글꼴 리스트
 	 */
 	private ArrayList<FaceName> hanjaFaceNameList;
 	/**
