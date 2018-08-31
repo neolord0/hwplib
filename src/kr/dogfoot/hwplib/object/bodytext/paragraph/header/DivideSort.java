@@ -57,57 +57,57 @@ public class DivideSort {
 	}
 
 	/**
-	 * 다단 나누기가 적욛되었는지 여부를 반환한다. (1 bit)
+	 * 다단 나누기가 적용되었는지 여부를 반환한다. (1 bit)
 	 * 
-	 * @return 다단 나누기가 적욛되었는지 여부
+	 * @return 다단 나누기가 적용되었는지 여부
 	 */
 	public boolean isDivideMultiColumn() {
 		return BitFlag.get(value, 1);
 	}
 
 	/**
-	 * 다단 나누기가 적욛되었는지 여부를 섧정한다. (1 bit)
+	 * 다단 나누기가 적용되었는지 여부를 설정한다. (1 bit)
 	 * 
 	 * @param divideMultiColumn
-	 *            다단 나누기가 적욛되었는지 여부
+	 *            다단 나누기가 적용되었는지 여부
 	 */
 	public void setDivideMultiColumn(boolean divideMultiColumn) {
 		value = BitFlag.set(value, 1, divideMultiColumn);
 	}
 
 	/**
-	 * 쪽 나누기가 적욛되었는지 여부를 반환한다. (2 bit)
+	 * 쪽 나누기가 적용되었는지 여부를 반환한다. (2 bit)
 	 * 
-	 * @return 쪽 나누기가 적욛되었는지 여부
+	 * @return 쪽 나누기가 적용되었는지 여부
 	 */
 	public boolean isDividePage() {
 		return BitFlag.get(value, 2);
 	}
 
 	/**
-	 * 쪽 나누기가 적욛되었는지 여부를 설정한다. (2 bit)
+	 * 쪽 나누기가 적용되었는지 여부를 설정한다. (2 bit)
 	 * 
 	 * @param dividePage
-	 *            쪽 나누기가 적욛되었는지 여부
+	 *            쪽 나누기가 적용되었는지 여부
 	 */
 	public void setDividePage(boolean dividePage) {
 		value = BitFlag.set(value, 2, dividePage);
 	}
 
 	/**
-	 * 단 나누기가 적욛되었는지 여부를 반환한다. (3 bit)
+	 * 단 나누기가 적용되었는지 여부를 반환한다. (3 bit)
 	 * 
-	 * @return 단 나누기가 적욛되었는지 여부
+	 * @return 단 나누기가 적용되었는지 여부
 	 */
 	public boolean isDivideColumn() {
 		return BitFlag.get(value, 3);
 	}
 
 	/**
-	 * 단 나누기가 적욛되었는지 여부를 설정한다. (3 bit)
+	 * 단 나누기가 적용되었는지 여부를 설정한다. (3 bit)
 	 * 
 	 * @param divideColumn
-	 *            단 나누기가 적욛되었는지 여부
+	 *            단 나누기가 적용되었는지 여부
 	 */
 	public void setDivideColumn(boolean divideColumn) {
 		value = BitFlag.set(value, 3, divideColumn);
