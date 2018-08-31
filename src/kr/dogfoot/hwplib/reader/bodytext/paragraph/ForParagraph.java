@@ -96,8 +96,7 @@ public class ForParagraph {
 	 * @return 마지막 바탕쪽 정보가 뒤에 붙어 있는지 여부
 	 */
 	private boolean isFollowLastBatangPageInfo(StreamReader sr) {
-		return this.paraHeaderLevel == 0
-				&& sr.getCurrentRecordHeader().getTagID() == HWPTag.LIST_HEADER
+		return this.paraHeaderLevel == 0 && sr.getCurrentRecordHeader().getTagID() == HWPTag.LIST_HEADER
 				&& sr.getCurrentRecordHeader().getLevel() == 1;
 	}
 
@@ -165,8 +164,7 @@ public class ForParagraph {
 	 * @throws Exception
 	 */
 	private void paraRangeTag() throws Exception {
-		ForParaRangeTag.read(paragraph, sr, sr.getCurrentRecordHeader()
-				.getSize());
+		ForParaRangeTag.read(paragraph, sr, sr.getCurrentRecordHeader().getSize());
 	}
 
 	/**
@@ -185,10 +183,20 @@ public class ForParagraph {
 		}
 	}
 
+	/**
+	 * 메모리를 읽는다.
+	 * 
+	 * @throws Exception
+	 */
 	private void memo() throws Exception {
 		ForMemo.read(paragraph.addNewMemo(), sr);
 	}
 
+	/**
+	 * 기타 레코드를 스킵한다.
+	 * 
+	 * @throws IOException
+	 */
 	private void skipETCRecord() throws IOException {
 		byte[] buffer = new byte[(int) sr.getCurrentRecordHeader().getSize()];
 		sr.readBytes(buffer);

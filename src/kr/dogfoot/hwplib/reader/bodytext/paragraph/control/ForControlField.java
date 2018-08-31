@@ -82,5 +82,4 @@ public class ForControlField {
 			ForCtrlData.read(field.getCtrlData(), sr);
 		}
 	}
-
 }

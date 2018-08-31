@@ -33,9 +33,9 @@ public class EQEdit {
 	 */
 	private String versionInfo;
 	/**
-	 * 기타 정보 ??
+	 * 알수 없는 문자열 ??
 	 */
-	private String etcInfo;
+	private String unknown;
 
 	/**
 	 * 생성자
@@ -149,19 +149,19 @@ public class EQEdit {
 	}
 
 	/**
-	 * 기타 정보를 반환한다. 
-	 * @return 기타 정보
+	 * 알 수 없는 문자열를 반환한다. 
+	 * @return 알 수 없는 문자열 
 	 */
-	public String getEtcInfo() {
-		return etcInfo;
+	public String getUnknown() {
+		return unknown;
 	}
 
 	/**
-	 * 기타 정보를 설정한다.
+	 * 알 수 없는 문자열를 설정한다.
 	 * 
-	 * @param etcInfo 기타 정보
+	 * @param unknown 알 수 없는 문자열 
 	 */
-	public void setEtcInfo(String etcInfo) {
-		this.etcInfo = etcInfo;
+	public void setUnknown(String unknown) {
+		this.unknown = unknown;
 	}
 }

@@ -205,6 +205,11 @@ public class ForControlSectionDefine {
 		ForBatangPageInfo.read(secd.addNewBatangPageInfo(), sr);
 	}
 
+	/**
+	 * 컨트롤 데이터를 읽는다. 
+	 * 
+	 * @throws IOException
+	 */
 	private void ctrlData() throws IOException {
 		secd.createCtrlData();
 		ForCtrlData.read(secd.getCtrlData(), sr);

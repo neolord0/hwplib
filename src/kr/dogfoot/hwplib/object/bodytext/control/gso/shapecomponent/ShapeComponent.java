@@ -328,6 +328,9 @@ public class ShapeComponent {
 		return renderingInfo;
 	}
 	
+	/**
+	 * 메트릭스들를 일반 상태(회전이나 확대되지 않은 상턔)로 설정한다.
+	 */
     public void setMatrixsNormal() {
     	renderingInfo.getTranslationMatrix().setValue(0, 1.0f);
     	renderingInfo.getTranslationMatrix().setValue(1, 0.0f);

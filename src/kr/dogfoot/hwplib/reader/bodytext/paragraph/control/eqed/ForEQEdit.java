@@ -29,7 +29,7 @@ public class ForEQEdit {
 		sr.skip(2); // unknown
 		eqEdit.setVersionInfo(sr.readUTF16LEString());
 		if (sr.isEndOfRecord() == false) {
-			eqEdit.setEtcInfo(sr.readUTF16LEString());
+			eqEdit.setUnknown(sr.readUTF16LEString());
 		}
 	}
 

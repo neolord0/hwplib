@@ -165,12 +165,11 @@ public class ParaText {
 	 */
 	public void addString(String str) throws UnsupportedEncodingException {
 		int len = str.length();
-		for (int i = 0; i < len; i++) {
-			HWPCharControlChar ch = addNewCharControlChar();
-			ch.setCode((String) str.subSequence(i, i+1));
+		for (int index = 0; index < len; index++) {
+			HWPCharNormal ch = addNewNormalChar();
+			ch.setCode((short) str.codePointAt(index));
 		}
-		
-    	processEndOfParagraph();
+		processEndOfParagraph();
 	}
 	
 	/**
@@ -203,7 +202,7 @@ public class ParaText {
 		 		break;
 		 	}
 		}
-		HWPCharControlChar ch2 = addNewCharControlChar();
+		HWPCharNormal ch2 = addNewNormalChar();
 		ch2.setCode((short) 0x0d);
 	}
 

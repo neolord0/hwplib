@@ -8,6 +8,8 @@ import kr.dogfoot.hwplib.object.bodytext.control.Control;
 import kr.dogfoot.hwplib.object.bodytext.control.ControlField;
 import kr.dogfoot.hwplib.object.bodytext.control.ControlType;
 import kr.dogfoot.hwplib.object.bodytext.paragraph.Paragraph;
+import kr.dogfoot.hwplib.objectfinder.forField.gettext.ForControl;
+import kr.dogfoot.hwplib.paragraphadder.ParaTextSetter;
 import kr.dogfoot.hwplib.textextractor.TextExtractMethod;
 
 /**
@@ -28,10 +30,9 @@ public class ForParagraphList {
 	 * @param temInField
 	 *            필드 안에 텍스트의 텍스트 추출 방법
 	 * @return 필드 텍스트
-	 * @throws UnsupportedEncodingException 
+	 * @throws UnsupportedEncodingException
 	 */
-	public static String getFieldText(ParagraphListInterface paragraphList,
-			ControlType fieldType, String fieldName,
+	public static String getFieldText(ParagraphListInterface paragraphList, ControlType fieldType, String fieldName,
 			TextExtractMethod temInField) throws UnsupportedEncodingException {
 		if (paragraphList == null) {
 			return null;
@@ -45,13 +46,10 @@ public class ForParagraphList {
 				cf = findField(p, fieldType, fieldName);
 				if (cf != null) {
 					int indexOfControl = p.getControlIndex(cf);
-					startFieldIndex = p.getText()
-							.getCharIndexFromExtendCharIndex(indexOfControl);
-					endFieldIndex = p.getText().getInlineCharIndex(
-							startFieldIndex + 1, (short) 0x04);
+					startFieldIndex = p.getText().getCharIndexFromExtendCharIndex(indexOfControl);
+					endFieldIndex = p.getText().getInlineCharIndex(startFieldIndex + 1, (short) 0x04);
 					if (endFieldIndex != -1) {
-						getParaText(p, startFieldIndex + 1, endFieldIndex - 1,
-								temInField, sb);
+						getParaText(p, startFieldIndex + 1, endFieldIndex - 1, temInField, sb);
 						return sb.toString();
 					} else {
 						getParaText(p, startFieldIndex + 1, temInField, sb);
@@ -60,8 +58,7 @@ public class ForParagraphList {
 			} else {
 				sb.append("\n");
 				if (p.getText() != null) {
-					endFieldIndex = p.getText().getInlineCharIndex(0,
-							(short) 0x04);
+					endFieldIndex = p.getText().getInlineCharIndex(0, (short) 0x04);
 					if (endFieldIndex != -1) {
 						getParaText(p, 0, endFieldIndex - 1, temInField, sb);
 					} else {
@@ -74,7 +71,7 @@ public class ForParagraphList {
 			}
 		}
 		if (cf == null) {
-			return controls(paragraphList, fieldType, fieldName, temInField);
+			return getFieldTextForControl(paragraphList, fieldType, fieldName, temInField);
 		}
 		return sb.toString();
 	}
@@ -90,8 +87,7 @@ public class ForParagraphList {
 	 *            필드 이름
 	 * @return 필드 컨트롤
 	 */
-	private static ControlField findField(Paragraph p, ControlType fieldType,
-			String fieldName) {
+	private static ControlField findField(Paragraph p, ControlType fieldType, String fieldName) {
 		if (p.getControlList() == null) {
 			return null;
 		}
@@ -118,17 +114,15 @@ public class ForParagraphList {
 	 * @param temInField
 	 *            필드 안에 텍스트의 텍스트 추출 방법
 	 * @return 필드 텍스트
-	 * @throws UnsupportedEncodingException 
+	 * @throws UnsupportedEncodingException
 	 */
-	private static String controls(ParagraphListInterface paragraphList,
-			ControlType fieldType, String fieldName,
-			TextExtractMethod temInField) throws UnsupportedEncodingException {
+	private static String getFieldTextForControl(ParagraphListInterface paragraphList, ControlType fieldType,
+			String fieldName, TextExtractMethod temInField) throws UnsupportedEncodingException {
 		for (Paragraph p : paragraphList) {
 			ArrayList<Control> controlList = p.getControlList();
 			if (controlList != null) {
 				for (Control c : controlList) {
-					String text = ForControl.getFieldText(c, fieldType,
-							fieldName, temInField);
+					String text = ForControl.getFieldText(c, fieldType, fieldName, temInField);
 					if (text != null) {
 						return text;
 					}
@@ -151,12 +145,11 @@ public class ForParagraphList {
 	 *            필드 안에 텍스트의 텍스트 추출 방법
 	 * @param sb
 	 *            필드 텍스트가 저장될 StringBuffer
-	 * @throws UnsupportedEncodingException 
+	 * @throws UnsupportedEncodingException
 	 */
-	private static void getParaText(Paragraph p, int startIndex, int endIndex,
-			TextExtractMethod temInField, StringBuffer sb) throws UnsupportedEncodingException {
-		kr.dogfoot.hwplib.textextractor.ForParagraphList.extract(p, startIndex,
-				endIndex, temInField, sb);
+	private static void getParaText(Paragraph p, int startIndex, int endIndex, TextExtractMethod temInField,
+			StringBuffer sb) throws UnsupportedEncodingException {
+		kr.dogfoot.hwplib.textextractor.ForParagraphList.extract(p, startIndex, endIndex, temInField, sb);
 	}
 
 	/**
@@ -172,12 +165,82 @@ public class ForParagraphList {
 	 *            필드 안에 텍스트의 텍스트 추출 방법
 	 * @param sb
 	 *            필드 텍스트가 저장될 StringBuffer
-	 * @throws UnsupportedEncodingException 
+	 * @throws UnsupportedEncodingException
 	 */
-	private static void getParaText(Paragraph p, int startIndex,
-			TextExtractMethod temInField, StringBuffer sb) throws UnsupportedEncodingException {
-		kr.dogfoot.hwplib.textextractor.ForParagraphList.extract(p, startIndex,
-				temInField, sb);
+	private static void getParaText(Paragraph p, int startIndex, TextExtractMethod temInField, StringBuffer sb)
+			throws UnsupportedEncodingException {
+		kr.dogfoot.hwplib.textextractor.ForParagraphList.extract(p, startIndex, temInField, sb);
+	}
+
+	/**
+	 * 문단리스트에 포함된 필드 객체의 텍스트를 설정한다.
+	 * 
+	 * @param paragraphList
+	 *            문단 리스트
+	 * @param fieldType
+	 *            필드 타입
+	 * @param fieldName
+	 *            필드 이름
+	 * @param text
+	 *            텍스트
+	 * @return 설정 성공 여부
+	 * @throws Exception
+	 */
+	public static boolean setFieldText(ParagraphListInterface paragraphList, ControlType fieldType, String fieldName,
+			String text) throws Exception {
+		if (paragraphList == null) {
+			return false;
+		}
+		ControlField cf = null;
+		int startFieldIndex = -1;
+		int endFieldIndex = -1;
+		for (Paragraph p : paragraphList) {
+			cf = findField(p, fieldType, fieldName);
+			if (cf != null) {
+				int indexOfControl = p.getControlIndex(cf);
+				startFieldIndex = p.getText().getCharIndexFromExtendCharIndex(indexOfControl);
+				endFieldIndex = p.getText().getInlineCharIndex(startFieldIndex + 1, (short) 0x04);
+				if (endFieldIndex != -1) {
+					ParaTextSetter.changeText(p, startFieldIndex + 1, endFieldIndex - 1, text);
+					return true;
+				} else {
+					throw new Exception("field text spans multiple paragraph.");
+				}
+			}
+
+			if (setFieldTextForControls(p, fieldType, fieldName, text)) {
+				return true;
+			}
+		}
+		return false;
+	}
+
+	/**
+	 * 문단에 포함된 컨트롤에서 필드 객체의 텍스트를 설정한다.
+	 * 
+	 * @param p
+	 *            문단
+	 * @param fieldType
+	 *            필드 타입
+	 * @param fieldName
+	 *            필드 이름
+	 * @param text
+	 *            텍스트
+	 * @return 설정 성공 여부
+	 * @throws Exception
+	 */
+	private static boolean setFieldTextForControls(Paragraph p, ControlType fieldType, String fieldName, String text)
+			throws Exception {
+		ArrayList<Control> controlList = p.getControlList();
+		if (controlList != null) {
+			for (Control c : controlList) {
+				if (kr.dogfoot.hwplib.objectfinder.forField.settext.ForControl.setFieldText(c, fieldType, fieldName,
+						text)) {
+					return true;
+				}
+			}
+		}
+		return false;
 	}
 
 }

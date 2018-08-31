@@ -1,4 +1,4 @@
-package kr.dogfoot.hwplib.objectfinder.forField;
+package kr.dogfoot.hwplib.objectfinder.forField.gettext;
 
 import java.io.UnsupportedEncodingException;
 
@@ -13,6 +13,7 @@ import kr.dogfoot.hwplib.object.bodytext.control.ControlType;
 import kr.dogfoot.hwplib.object.bodytext.control.gso.GsoControl;
 import kr.dogfoot.hwplib.object.bodytext.control.table.Cell;
 import kr.dogfoot.hwplib.object.bodytext.control.table.Row;
+import kr.dogfoot.hwplib.objectfinder.forField.ForParagraphList;
 import kr.dogfoot.hwplib.textextractor.TextExtractMethod;
 
 /**

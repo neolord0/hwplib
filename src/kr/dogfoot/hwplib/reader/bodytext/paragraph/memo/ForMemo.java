@@ -5,7 +5,21 @@ import kr.dogfoot.hwplib.object.bodytext.paragraph.memo.Memo;
 import kr.dogfoot.hwplib.reader.bodytext.ForParagraphList;
 import kr.dogfoot.hwplib.util.compoundFile.reader.StreamReader;
 
+/**
+ * 메모를 읽기 위한 객체
+ * 
+ * @author neolord
+ */
 public class ForMemo {
+	/**
+	 * 메모를 읽는다.
+	 * 
+	 * @param m
+	 *            메모 객체
+	 * @param sr
+	 *            스트림 리더
+	 * @throws Exception
+	 */
 	public static void read(Memo m, StreamReader sr) throws Exception {
 		ForMemoList.read(m.getMemoList(), sr);
 		listHeader(m.getListHeader(), sr);
@@ -21,8 +35,7 @@ public class ForMemo {
 	 *            스트림 리더
 	 * @throws Exception
 	 */
-	private static void listHeader(ListHeaderForMemo listHeaderForMemo,
-			StreamReader sr) throws Exception {
+	private static void listHeader(ListHeaderForMemo listHeaderForMemo, StreamReader sr) throws Exception {
 		sr.readRecordHeder();
 
 		listHeaderForMemo.setParaCount(sr.readSInt4());

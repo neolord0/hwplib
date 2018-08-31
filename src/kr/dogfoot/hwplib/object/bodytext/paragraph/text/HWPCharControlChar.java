@@ -24,6 +24,13 @@ public class HWPCharControlChar extends HWPChar {
 		return HWPCharType.ControlChar;
 	}
 
+	/**
+	 * 문자 코드를 설정한다.
+	 * 
+	 * @param ch
+	 *            문자열
+	 * @throws UnsupportedEncodingException
+	 */
 	public void setCode(String ch) throws UnsupportedEncodingException {
 		byte[] b = ch.getBytes("UTF-16LE");
 
