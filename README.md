@@ -1,19 +1,27 @@
 
 # hwplib
 
-이 오픈소스 프로젝트는 클립소프트( www.clipsoft.co.kr )에서 후원합니다. 
-
 한글과 컴퓨터(한컴)에서 만든 워드프로세서 "한글"의 파일에 대한 라이브러리입니다.
+이 라이브러리는 개발자의 순수한 재능 기부 차원에서 진행하고 있습니다.맘 편하니 받아서 사용하시면 됩니다. 
+ 
+* 사용한 라이브러리나 문서 
+- Apache-POI 라이브러리 - 한글 파일의 하부 구조인 Microsoft Compound File의 부분의 파싱.
+- 한글과컴퓨터에서 공개한  '한글 문서 파일 구조 5.0' 문서 ( http://www.hancom.com/etc/hwpDownload.do?gnb0=269&gnb1=271&gnb0=101&gnb1=140 )
 
-본 라이브러리는 JAVA로 구현되었으며, 한글 파일의 하부 구조인 Microsoft Compound File의 부분은 Apache-POI의 POIFS File System을 사용하여 처리합니다.
-본 라이브러리는 한글과컴퓨터의 한글 문서 파일(.hwp) 공개 문서를 참고하여 개발하였습니다. 한컴에서 제공하는 문서(HWP 5.0)는 아래URL에서 받을 수 있습니다. 
+* 이 라이브러리에서 할 수 있는 일.(kr.dogfoot.hwplib.test 패키지 참조)
+- 한글 파일을 읽어서 객체로 생성 (TestReadingHWPFile 참고)
+- 만들어진 객체를 파일로 저장 (TestReWritingHWPFile 참고)
+- 한글 파일에서 텍스트 추출(TestExtractingText 참고)
+- 특정 필드의 텍스트 추출  (TestGettingClickHereFieldText 참고)
+- 특정 필드의 텍스트 설정 (TestSetClickHereFieldText 참고)
+- 조건에 맞는 컨트롤 찾기 (TestFindControl 참고)
+- 다른 파일의 내용(문단)을 추가하기 (TestParagraphAdder 참고)
+- 기타  설정 
+      페이지 크기 변경 (TestChangePaperSize 참고), 이미지 주가(TestInsertImage 참고), 폰트 크기, 밑줄 등의  글자모양 설정(TestMakingCharShape 참고)
+      표 컨트롤 생성 (TestMakingTable 참고)...
 
-http://www.hancom.com/etc/hwpDownload.do?gnb0=269&gnb1=271&gnb0=101&gnb1=140
+* 이 라이브러리는 이미지 파일, PDF 파일, HTML 파일로 변환 기능은 아직 지원하지 않습니다. (문의가 많이 들어옴)
 
-문제가 되지 않는다면, 라이브러리를 사용하시는 사이트/프로젝트 이름을 저한테 메일(neolord@hanmail.net)로 보내주셨으면 합니다.
-라이브러리에 대해 소개할 때 사용처 리스트가 있으면 좋을 거 같아서 부탁드립니다.
-
-(이 라이브러리는 이미 만들어진 한글 파일을 읽거나, 새로운 파일을 만들어 내용를 추가/편집/삭제 하여 저장할 수 있는 기능을 지원합니다. 이미지 파일, PDF 파일, HTML 파일로 변환 또는 저장은 아직 지원하지 않습니다. 이 기능을 구현하려면 HWP 파일에 포함된 글자나 컨트롤의 위치를 계산해서 정확히 그릴 수 있어야 합니다. 이 부분에 대해서는 공개된 정보가 없어서 하나씩 시행착오를 격으면서 해나가야 하는데, 시간이나 실력이 그에 미치지 못 합니다. 이 기능에 대해 질문이 많이 들어와서 미리 알려 드립니다.)
 
 2018.08.31
 =========================================================================================
