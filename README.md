@@ -2,6 +2,7 @@
 # hwplib
 
 한글과 컴퓨터(한컴)에서 만든 워드프로세서 "한글"의 파일에 대한 라이브러리입니다.
+
 이 라이브러리는 개발자의 순수한 재능 기부 차원에서 진행하고 있습니다.맘 편하니 받아서 사용하시면 됩니다. 
  
 * 사용한 라이브러리나 문서 
@@ -16,9 +17,7 @@
 	- 특정 필드의 텍스트 설정 (TestSetClickHereFieldText 참고)
 	- 조건에 맞는 컨트롤 찾기 (TestFindControl 참고)
 	- 다른 파일의 내용(문단)을 추가하기 (TestParagraphAdder 참고)
-	- 기타  설정 
-     	 페이지 크기 변경 (TestChangePaperSize 참고), 이미지 주가(TestInsertImage 참고), 폰트 크기, 밑줄 등의  글자모양 설정(TestMakingCharShape 참고)
-      	표 컨트롤 생성 (TestMakingTable 참고)...
+	- 기타  설정 : 페이지 크기 변경 (TestChangePaperSize 참고), 이미지 주가(TestInsertImage 참고), 폰트 크기, 밑줄 등의  글자모양 설정(TestMakingCharShape 참고), 표 컨트롤 생성 (TestMakingTable 참고)...
 
 * 이 라이브러리는 이미지 파일, PDF 파일, HTML 파일로 변환 기능은 아직 지원하지 않습니다. (문의가 많이 들어옴)
 
