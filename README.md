@@ -17,9 +17,16 @@
 	- 특정 필드의 텍스트 설정 (TestSetClickHereFieldText 참고)
 	- 조건에 맞는 컨트롤 찾기 (TestFindControl 참고)
 	- 다른 파일의 내용(문단)을 추가하기 (TestParagraphAdder 참고)
+	- 표의 셀 병합하기 (TestMergingCell 참고)
 	- 기타  설정 : 페이지 크기 변경 (TestChangePaperSize 참고), 이미지 주가(TestInsertImage 참고), 폰트 크기, 밑줄 등의  글자모양 설정(TestMakingCharShape 참고), 표 컨트롤 생성 (TestMakingTable 참고)...
 
 * 이 라이브러리는 이미지 파일, PDF 파일, HTML 파일로 변환 기능은 아직 지원하지 않습니다. (문의가 많이 들어옴)
+
+2018.09.14
+=========================================================================================
+* 표 셀 병합하기 - codeless73 님 요청
+* test/TestMergingCell.java 참고
+
 
 
 2018.08.31
