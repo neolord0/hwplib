@@ -2,8 +2,8 @@ package kr.dogfoot.hwplib.test;
 
 import kr.dogfoot.hwplib.object.HWPFile;
 import kr.dogfoot.hwplib.reader.HWPReader;
-import kr.dogfoot.hwplib.textextractor.TextExtractMethod;
-import kr.dogfoot.hwplib.textextractor.TextExtractor;
+import kr.dogfoot.hwplib.tool.textextractor.TextExtractMethod;
+import kr.dogfoot.hwplib.tool.textextractor.TextExtractor;
 
 public class TestExtractingText {
 

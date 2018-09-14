@@ -3,8 +3,8 @@ package kr.dogfoot.hwplib.test;
 import kr.dogfoot.hwplib.object.HWPFile;
 import kr.dogfoot.hwplib.object.bodytext.ParagraphListInterface;
 import kr.dogfoot.hwplib.object.bodytext.paragraph.Paragraph;
-import kr.dogfoot.hwplib.paragraphadder.ParagraphAdder;
 import kr.dogfoot.hwplib.reader.HWPReader;
+import kr.dogfoot.hwplib.tool.paragraphadder.ParagraphAdder;
 import kr.dogfoot.hwplib.writer.HWPWriter;
 
 public class TestParagraphAdder {

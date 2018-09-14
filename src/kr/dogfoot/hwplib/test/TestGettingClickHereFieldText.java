@@ -1,9 +1,9 @@
 package kr.dogfoot.hwplib.test;
 
 import kr.dogfoot.hwplib.object.HWPFile;
-import kr.dogfoot.hwplib.objectfinder.FieldFinder;
 import kr.dogfoot.hwplib.reader.HWPReader;
-import kr.dogfoot.hwplib.textextractor.TextExtractMethod;
+import kr.dogfoot.hwplib.tool.objectfinder.FieldFinder;
+import kr.dogfoot.hwplib.tool.textextractor.TextExtractMethod;
 
 public class TestGettingClickHereFieldText {
 	public static void main(String[] args) throws Exception {

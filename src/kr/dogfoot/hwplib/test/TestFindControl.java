@@ -11,9 +11,9 @@ import kr.dogfoot.hwplib.object.bodytext.control.ControlType;
 import kr.dogfoot.hwplib.object.bodytext.control.table.Cell;
 import kr.dogfoot.hwplib.object.bodytext.control.table.Row;
 import kr.dogfoot.hwplib.object.bodytext.paragraph.Paragraph;
-import kr.dogfoot.hwplib.objectfinder.ControlFilter;
-import kr.dogfoot.hwplib.objectfinder.ControlFinder;
 import kr.dogfoot.hwplib.reader.HWPReader;
+import kr.dogfoot.hwplib.tool.objectfinder.ControlFilter;
+import kr.dogfoot.hwplib.tool.objectfinder.ControlFinder;
 
 public class TestFindControl {
 	public static class MyControlFilter implements ControlFilter {
