@@ -9,6 +9,8 @@ import kr.dogfoot.hwplib.object.bodytext.control.gso.ControlPolygon;
 import kr.dogfoot.hwplib.object.bodytext.control.gso.ControlRectangle;
 import kr.dogfoot.hwplib.object.bodytext.control.gso.GsoControl;
 import kr.dogfoot.hwplib.object.bodytext.control.gso.textbox.TextBox;
+import kr.dogfoot.hwplib.tool.objectfinder.SetFieldResult;
+import kr.dogfoot.hwplib.tool.objectfinder.TextBuffer;
 import kr.dogfoot.hwplib.tool.objectfinder.forField.ForParagraphList;
 
 /**
@@ -26,36 +28,35 @@ public class ForGso {
 	 *            필드 타입
 	 * @param fieldName
 	 *            필드 이름
-	 * @param text
-	 *            텍스트
-	 * @return 설정 성공 여부
-	 * @throws Exception
+	 * @param textBuffer
+	 *            텍스트 버퍼
+	 * @return 필드 설정 결과값
 	 */
-	public static boolean setFieldText(GsoControl gc, ControlType fieldType, String fieldName, String text)
-			throws Exception {
+	public static SetFieldResult setFieldText(GsoControl gc, ControlType fieldType, String fieldName,
+			TextBuffer textBuffer) {
 		switch (gc.getGsoType()) {
 		case Line:
 			break;
 		case Rectangle:
-			return rectangle((ControlRectangle) gc, fieldType, fieldName, text);
+			return rectangle((ControlRectangle) gc, fieldType, fieldName, textBuffer);
 		case Ellipse:
-			return ellipse((ControlEllipse) gc, fieldType, fieldName, text);
+			return ellipse((ControlEllipse) gc, fieldType, fieldName, textBuffer);
 		case Arc:
-			return arc((ControlArc) gc, fieldType, fieldName, text);
+			return arc((ControlArc) gc, fieldType, fieldName, textBuffer);
 		case Polygon:
-			return polygon((ControlPolygon) gc, fieldType, fieldName, text);
+			return polygon((ControlPolygon) gc, fieldType, fieldName, textBuffer);
 		case Curve:
-			return curve((ControlCurve) gc, fieldType, fieldName, text);
+			return curve((ControlCurve) gc, fieldType, fieldName, textBuffer);
 		case Picture:
 			break;
 		case OLE:
 			break;
 		case Container:
-			return container((ControlContainer) gc, fieldType, fieldName, text);
+			return container((ControlContainer) gc, fieldType, fieldName, textBuffer);
 		default:
 			break;
 		}
-		return false;
+		return SetFieldResult.InProcess;
 	}
 
 	/**
@@ -67,14 +68,13 @@ public class ForGso {
 	 *            필드 타입
 	 * @param fieldName
 	 *            필드 이름
-	 * @param text
-	 *            텍스트
-	 * @return 설정 성공 여부
-	 * @throws Exception
+	 * @param textBuffer
+	 *            텍스트 버퍼
+	 * @return 필드 설정 결과값
 	 */
-	private static boolean rectangle(ControlRectangle rectangle, ControlType fieldType, String fieldName, String text)
-			throws Exception {
-		return textBox(rectangle.getTextBox(), fieldType, fieldName, text);
+	private static SetFieldResult rectangle(ControlRectangle rectangle, ControlType fieldType, String fieldName,
+			TextBuffer textBuffer) {
+		return textBox(rectangle.getTextBox(), fieldType, fieldName, textBuffer);
 	}
 
 	/**
@@ -86,14 +86,13 @@ public class ForGso {
 	 *            필드 타입
 	 * @param fieldName
 	 *            필드 이름
-	 * @param text
-	 *            텍스트
-	 * @return 설정 성공 여부
-	 * @throws Exception
+	 * @param textBuffer
+	 *            텍스트 버퍼
+	 * @return 필드 설정 결과값
 	 */
-	private static boolean textBox(TextBox textBox, ControlType fieldType, String fieldName, String text)
-			throws Exception {
-		return ForParagraphList.setFieldText(textBox.getParagraphList(), fieldType, fieldName, text);
+	private static SetFieldResult textBox(TextBox textBox, ControlType fieldType, String fieldName,
+			TextBuffer textBuffer) {
+		return ForParagraphList.setFieldText(textBox.getParagraphList(), fieldType, fieldName, textBuffer);
 	}
 
 	/**
@@ -105,14 +104,13 @@ public class ForGso {
 	 *            필드 타입
 	 * @param fieldName
 	 *            필드 이름
-	 * @param text
-	 *            텍스트
-	 * @return 설정 성공 여부
-	 * @throws Exception
+	 * @param textBuffer
+	 *            텍스트 버퍼
+	 * @return 필드 설정 결과값
 	 */
-	private static boolean ellipse(ControlEllipse ellipse, ControlType fieldType, String fieldName, String text)
-			throws Exception {
-		return textBox(ellipse.getTextBox(), fieldType, fieldName, text);
+	private static SetFieldResult ellipse(ControlEllipse ellipse, ControlType fieldType, String fieldName,
+			TextBuffer textBuffer) {
+		return textBox(ellipse.getTextBox(), fieldType, fieldName, textBuffer);
 	}
 
 	/**
@@ -124,13 +122,12 @@ public class ForGso {
 	 *            필드 타입
 	 * @param fieldName
 	 *            필드 이름
-	 * @param text
-	 *            텍스트
-	 * @return 설정 성공 여부
-	 * @throws Exception
+	 * @param textBuffer
+	 *            텍스트 버퍼
+	 * @return 필드 설정 결과값
 	 */
-	private static boolean arc(ControlArc arc, ControlType fieldType, String fieldName, String text) throws Exception {
-		return textBox(arc.getTextBox(), fieldType, fieldName, text);
+	private static SetFieldResult arc(ControlArc arc, ControlType fieldType, String fieldName, TextBuffer textBuffer) {
+		return textBox(arc.getTextBox(), fieldType, fieldName, textBuffer);
 	}
 
 	/**
@@ -142,14 +139,13 @@ public class ForGso {
 	 *            필드 타입
 	 * @param fieldName
 	 *            필드 이름
-	 * @param text
-	 *            텍스트
-	 * @return 설정 성공 여부
-	 * @throws Exception
+	 * @param textBuffer
+	 *            텍스트 버퍼
+	 * @return 필드 설정 결과값
 	 */
-	private static boolean polygon(ControlPolygon polygon, ControlType fieldType, String fieldName, String text)
-			throws Exception {
-		return textBox(polygon.getTextBox(), fieldType, fieldName, text);
+	private static SetFieldResult polygon(ControlPolygon polygon, ControlType fieldType, String fieldName,
+			TextBuffer textBuffer) {
+		return textBox(polygon.getTextBox(), fieldType, fieldName, textBuffer);
 	}
 
 	/**
@@ -161,14 +157,13 @@ public class ForGso {
 	 *            필드 타입
 	 * @param fieldName
 	 *            필드 이름
-	 * @param text
-	 *            텍스트
-	 * @return 설정 성공 여부
-	 * @throws Exception
+	 * @param textBuffer
+	 *            텍스트 버퍼
+	 * @return 필드 설정 결과값
 	 */
-	private static boolean curve(ControlCurve curve, ControlType fieldType, String fieldName, String text)
-			throws Exception {
-		return textBox(curve.getTextBox(), fieldType, fieldName, text);
+	private static SetFieldResult curve(ControlCurve curve, ControlType fieldType, String fieldName,
+			TextBuffer textBuffer) {
+		return textBox(curve.getTextBox(), fieldType, fieldName, textBuffer);
 	}
 
 	/**
@@ -180,18 +175,17 @@ public class ForGso {
 	 *            필드 타입
 	 * @param fieldName
 	 *            필드 이름
-	 * @param text
-	 *            텍스트
-	 * @return 설정 성공 여부
-	 * @throws Exception
+	 * @param textBuffer
+	 *            텍스트 버퍼
+	 * @return 필드 설정 결과값
 	 */
-	private static boolean container(ControlContainer container, ControlType fieldType, String fieldName, String text)
-			throws Exception {
+	private static SetFieldResult container(ControlContainer container, ControlType fieldType, String fieldName,
+			TextBuffer textBuffer) {
 		for (GsoControl child : container.getChildControlList()) {
-			if (setFieldText(child, fieldType, fieldName, text)) {
-				return true;
+			if (setFieldText(child, fieldType, fieldName, textBuffer) == SetFieldResult.NotEnoughText) {
+				return SetFieldResult.NotEnoughText;
 			}
 		}
-		return false;
+		return SetFieldResult.InProcess;
 	}
 }

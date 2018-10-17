@@ -8,6 +8,8 @@ import kr.dogfoot.hwplib.object.bodytext.control.Control;
 import kr.dogfoot.hwplib.object.bodytext.control.ControlField;
 import kr.dogfoot.hwplib.object.bodytext.control.ControlType;
 import kr.dogfoot.hwplib.object.bodytext.paragraph.Paragraph;
+import kr.dogfoot.hwplib.tool.objectfinder.SetFieldResult;
+import kr.dogfoot.hwplib.tool.objectfinder.TextBuffer;
 import kr.dogfoot.hwplib.tool.objectfinder.forField.gettext.ForControl;
 import kr.dogfoot.hwplib.tool.paragraphadder.ParaTextSetter;
 import kr.dogfoot.hwplib.tool.textextractor.TextExtractMethod;
@@ -181,15 +183,14 @@ public class ForParagraphList {
 	 *            필드 타입
 	 * @param fieldName
 	 *            필드 이름
-	 * @param text
+	 * @param textBuffer
 	 *            텍스트
-	 * @return 설정 성공 여부
-	 * @throws Exception
+	 * @return 필드 설정 결과값
 	 */
-	public static boolean setFieldText(ParagraphListInterface paragraphList, ControlType fieldType, String fieldName,
-			String text) throws Exception {
+	public static SetFieldResult setFieldText(ParagraphListInterface paragraphList, ControlType fieldType,
+			String fieldName, TextBuffer textBuffer) {
 		if (paragraphList == null) {
-			return false;
+			return SetFieldResult.InProcess;
 		}
 		ControlField cf = null;
 		int startFieldIndex = -1;
@@ -201,18 +202,19 @@ public class ForParagraphList {
 				startFieldIndex = p.getText().getCharIndexFromExtendCharIndex(indexOfControl);
 				endFieldIndex = p.getText().getInlineCharIndex(startFieldIndex + 1, (short) 0x04);
 				if (endFieldIndex != -1) {
-					ParaTextSetter.changeText(p, startFieldIndex + 1, endFieldIndex - 1, text);
-					return true;
-				} else {
-					throw new Exception("field text spans multiple paragraph.");
+					if (textBuffer.hasNext() == true) {
+						ParaTextSetter.changeText(p, startFieldIndex + 1, endFieldIndex - 1, textBuffer.nextText());
+					} else {
+						return SetFieldResult.NotEnoughText;
+					}
 				}
 			}
 
-			if (setFieldTextForControls(p, fieldType, fieldName, text)) {
-				return true;
+			if (setFieldTextForControls(p, fieldType, fieldName, textBuffer) == SetFieldResult.NotEnoughText) {
+				return SetFieldResult.NotEnoughText;
 			}
 		}
-		return false;
+		return SetFieldResult.InProcess;
 	}
 
 	/**
@@ -226,21 +228,20 @@ public class ForParagraphList {
 	 *            필드 이름
 	 * @param text
 	 *            텍스트
-	 * @return 설정 성공 여부
-	 * @throws Exception
+	 * @return 필드 설정 결과값
 	 */
-	private static boolean setFieldTextForControls(Paragraph p, ControlType fieldType, String fieldName, String text)
-			throws Exception {
+	private static SetFieldResult setFieldTextForControls(Paragraph p, ControlType fieldType, String fieldName,
+			TextBuffer textBuffer) {
 		ArrayList<Control> controlList = p.getControlList();
 		if (controlList != null) {
 			for (Control c : controlList) {
-				if (kr.dogfoot.hwplib.tool.objectfinder.forField.settext.ForControl.setFieldText(c, fieldType, fieldName,
-						text)) {
-					return true;
+				if (kr.dogfoot.hwplib.tool.objectfinder.forField.settext.ForControl.setFieldText(c, fieldType,
+						fieldName, textBuffer) == SetFieldResult.NotEnoughText) {
+					return SetFieldResult.NotEnoughText;
 				}
 			}
 		}
-		return false;
+		return SetFieldResult.InProcess;
 	}
 
 }

@@ -11,6 +11,8 @@ import kr.dogfoot.hwplib.object.bodytext.control.ControlType;
 import kr.dogfoot.hwplib.object.bodytext.control.gso.GsoControl;
 import kr.dogfoot.hwplib.object.bodytext.control.table.Cell;
 import kr.dogfoot.hwplib.object.bodytext.control.table.Row;
+import kr.dogfoot.hwplib.tool.objectfinder.SetFieldResult;
+import kr.dogfoot.hwplib.tool.objectfinder.TextBuffer;
 import kr.dogfoot.hwplib.tool.objectfinder.forField.ForParagraphList;
 
 /**
@@ -28,20 +30,19 @@ public class ForControl {
 	 *            필드 타입
 	 * @param fieldName
 	 *            필드 이름
-	 * @param text
-	 *            텍스트
-	 * @return 설정 성공 여부
-	 * @throws Exception
+	 * @param textBuffer
+	 *            텍스트 버퍼
+	 * @return 필드 설정 결과값
 	 */
-	public static boolean setFieldText(Control c, ControlType fieldType, String fieldName, String text)
-			throws Exception {
+	public static SetFieldResult setFieldText(Control c, ControlType fieldType, String fieldName,
+			TextBuffer textBuffer) {
 		if (c.isField()) {
 		} else {
 			switch (c.getType()) {
 			case Table:
-				return table((ControlTable) c, fieldType, fieldName, text);
+				return table((ControlTable) c, fieldType, fieldName, textBuffer);
 			case Gso:
-				return ForGso.setFieldText((GsoControl) c, fieldType, fieldName, text);
+				return ForGso.setFieldText((GsoControl) c, fieldType, fieldName, textBuffer);
 			case Equation:
 				break;
 			case SectionDefine:
@@ -49,13 +50,13 @@ public class ForControl {
 			case ColumnDefine:
 				break;
 			case Header:
-				return header((ControlHeader) c, fieldType, fieldName, text);
+				return header((ControlHeader) c, fieldType, fieldName, textBuffer);
 			case Footer:
-				return footer((ControlFooter) c, fieldType, fieldName, text);
+				return footer((ControlFooter) c, fieldType, fieldName, textBuffer);
 			case Footnote:
-				return footnote((ControlFootnote) c, fieldType, fieldName, text);
+				return footnote((ControlFootnote) c, fieldType, fieldName, textBuffer);
 			case Endnote:
-				return endnote((ControlEndnote) c, fieldType, fieldName, text);
+				return endnote((ControlEndnote) c, fieldType, fieldName, textBuffer);
 			case AutoNumber:
 				break;
 			case NewNumber:
@@ -75,12 +76,12 @@ public class ForControl {
 			case AdditionalText:
 				break;
 			case HiddenComment:
-				return hiddenComment((ControlHiddenComment) c, fieldType, fieldName, text);
+				return hiddenComment((ControlHiddenComment) c, fieldType, fieldName, textBuffer);
 			default:
 				break;
 			}
 		}
-		return false;
+		return SetFieldResult.InProcess;
 	}
 
 	/**
@@ -92,21 +93,21 @@ public class ForControl {
 	 *            필드 타입
 	 * @param fieldName
 	 *            필드 이름
-	 * @param text
-	 *            텍스트
-	 * @return 설정 성공 여부
-	 * @throws Exception
+	 * @param textBuffer
+	 *            텍스트 버퍼
+	 * @return 필드 설정 결과값
 	 */
-	private static boolean table(ControlTable table, ControlType fieldType, String fieldName, String text)
-			throws Exception {
+	private static SetFieldResult table(ControlTable table, ControlType fieldType, String fieldName,
+			TextBuffer textBuffer) {
 		for (Row r : table.getRowList()) {
 			for (Cell c : r.getCellList()) {
-				if (ForParagraphList.setFieldText(c.getParagraphList(), fieldType, fieldName, text)) {
-					return true;
+				if (ForParagraphList.setFieldText(c.getParagraphList(), fieldType, fieldName,
+						textBuffer) == SetFieldResult.NotEnoughText) {
+					return SetFieldResult.NotEnoughText;
 				}
 			}
 		}
-		return false;
+		return SetFieldResult.InProcess;
 	}
 
 	/**
@@ -118,14 +119,13 @@ public class ForControl {
 	 *            필드 타입
 	 * @param fieldName
 	 *            필드 이름
-	 * @param text
-	 *            텍스트
-	 * @return 설정 성공 여부
-	 * @throws Exception
+	 * @param textBuffer
+	 *            텍스트 버퍼
+	 * @return 필드 설정 결과값
 	 */
-	private static boolean header(ControlHeader header, ControlType fieldType, String fieldName, String text)
-			throws Exception {
-		return ForParagraphList.setFieldText(header.getParagraphList(), fieldType, fieldName, text);
+	private static SetFieldResult header(ControlHeader header, ControlType fieldType, String fieldName,
+			TextBuffer textBuffer) {
+		return ForParagraphList.setFieldText(header.getParagraphList(), fieldType, fieldName, textBuffer);
 	}
 
 	/**
@@ -137,14 +137,13 @@ public class ForControl {
 	 *            필드 타입
 	 * @param fieldName
 	 *            필드 이름
-	 * @param text
-	 *            텍스트
-	 * @return 설정 성공 여부
-	 * @throws Exception
+	 * @param textBuffer
+	 *            텍스트 버퍼
+	 * @return 필드 설정 결과값
 	 */
-	private static boolean footer(ControlFooter footer, ControlType fieldType, String fieldName, String text)
-			throws Exception {
-		return ForParagraphList.setFieldText(footer.getParagraphList(), fieldType, fieldName, text);
+	private static SetFieldResult footer(ControlFooter footer, ControlType fieldType, String fieldName,
+			TextBuffer textBuffer) {
+		return ForParagraphList.setFieldText(footer.getParagraphList(), fieldType, fieldName, textBuffer);
 	}
 
 	/**
@@ -156,14 +155,13 @@ public class ForControl {
 	 *            필드 타입
 	 * @param fieldName
 	 *            필드 이름
-	 * @param text
-	 *            텍스트
-	 * @return 설정 성공 여부
-	 * @throws Exception
+	 * @param textBuffer
+	 *            텍스트 버퍼
+	 * @return 필드 설정 결과값
 	 */
-	private static boolean footnote(ControlFootnote footnote, ControlType fieldType, String fieldName, String text)
-			throws Exception {
-		return ForParagraphList.setFieldText(footnote.getParagraphList(), fieldType, fieldName, text);
+	private static SetFieldResult footnote(ControlFootnote footnote, ControlType fieldType, String fieldName,
+			TextBuffer textBuffer) {
+		return ForParagraphList.setFieldText(footnote.getParagraphList(), fieldType, fieldName, textBuffer);
 	}
 
 	/**
@@ -175,14 +173,13 @@ public class ForControl {
 	 *            필드 타입
 	 * @param fieldName
 	 *            필드 이름
-	 * @param text
-	 *            텍스트
-	 * @return 설정 성공 여부
-	 * @throws Exception
+	 * @param textBuffer
+	 *            텍스트 버퍼
+	 * @return 필드 설정 결과값
 	 */
-	private static boolean endnote(ControlEndnote endnote, ControlType fieldType, String fieldName, String text)
-			throws Exception {
-		return ForParagraphList.setFieldText(endnote.getParagraphList(), fieldType, fieldName, text);
+	private static SetFieldResult endnote(ControlEndnote endnote, ControlType fieldType, String fieldName,
+			TextBuffer textBuffer) {
+		return ForParagraphList.setFieldText(endnote.getParagraphList(), fieldType, fieldName, textBuffer);
 	}
 
 	/**
@@ -194,13 +191,12 @@ public class ForControl {
 	 *            필드 타입
 	 * @param fieldName
 	 *            필드 이름
-	 * @param text
-	 *            텍스트
-	 * @return 설정 성공 여부
-	 * @throws Exception
+	 * @param textBuffer
+	 *            텍스트 버퍼
+	 * @return 필드 설정 결과값
 	 */
-	private static boolean hiddenComment(ControlHiddenComment hiddenComment, ControlType fieldType, String fieldName,
-			String text) throws Exception {
-		return ForParagraphList.setFieldText(hiddenComment.getParagraphList(), fieldType, fieldName, text);
+	private static SetFieldResult hiddenComment(ControlHiddenComment hiddenComment, ControlType fieldType,
+			String fieldName, TextBuffer textBuffer) {
+		return ForParagraphList.setFieldText(hiddenComment.getParagraphList(), fieldType, fieldName, textBuffer);
 	}
 }
