@@ -50,7 +50,7 @@ public class FileVersion {
 		version += (rr & 0xff);
 		return version;
 	}
-	
+
 	/**
 	 * 파일 버전 - MM를 반환한다.
 	 * 
@@ -101,12 +101,17 @@ public class FileVersion {
 	 * @return 현재 버전이 비교 버전(mm2,nn2,pp2,rr2)보다 상위 버전인지 여부
 	 */
 	public boolean isOver(int mm2, int nn2, int pp2, int rr2) {
-		if ((mm > mm2) || (mm == mm2 && nn > nn2)
-				|| (mm == mm2 && nn == nn2 && pp > pp2)
+		if ((mm > mm2) || (mm == mm2 && nn > nn2) || (mm == mm2 && nn == nn2 && pp > pp2)
 				|| (mm == mm2 && nn == nn2 && pp == pp2 && rr > rr2)
 				|| (mm == mm2 && nn == nn2 && pp == pp2 && rr == rr2)) {
 			return true;
 		}
 		return false;
+	}
+
+	public String toString() {
+		StringBuffer sb = new StringBuffer();
+		sb.append(mm).append(".").append(nn).append(".").append(pp).append(".").append(rr).append(".");
+		return sb.toString();
 	}
 }

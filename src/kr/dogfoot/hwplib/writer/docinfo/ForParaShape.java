@@ -46,6 +46,9 @@ public class ForParaShape {
 			sw.writeUInt4(ps.getProperty3().getValue());
 			sw.writeUInt4(ps.getLineSpace2());
 		}
+		if (sw.getFileVersion().isOver(5, 0, 255, 255)) { 
+			sw.writeUInt4(ps.getUnknown());
+		}
 	}
 
 	/**
@@ -78,6 +81,10 @@ public class ForParaShape {
 		if (version.isOver(5, 0, 2, 5)) {
 			size += 8;
 		}
+		if (version.isOver(5, 0, 255, 255)) {
+			size += 4;
+		}
+		
 		return size;
 	}
 }

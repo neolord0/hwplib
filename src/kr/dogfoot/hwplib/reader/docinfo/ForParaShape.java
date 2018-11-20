@@ -42,5 +42,8 @@ public class ForParaShape {
 			ps.getProperty3().setValue(sr.readUInt4());
 			ps.setLineSpace2(sr.readUInt4());
 		}
+		if (sr.isEndOfRecord() == false) {	
+			ps.setUnknown(sr.readUInt4());
+		}
 	}
 }

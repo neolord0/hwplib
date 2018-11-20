@@ -3,6 +3,7 @@ package kr.dogfoot.hwplib.util.compoundFile.reader;
 import java.io.IOException;
 
 import kr.dogfoot.hwplib.object.RecordHeader;
+import kr.dogfoot.hwplib.object.docinfo.DocInfo;
 import kr.dogfoot.hwplib.object.fileheader.FileVersion;
 import kr.dogfoot.hwplib.util.binary.BitFlag;
 
@@ -35,6 +36,11 @@ public abstract class StreamReader {
 	 */
 	private FileVersion fileVersion;
 
+	/**
+	 * 문서 정보를 나타내는 객체  
+	 */
+	private DocInfo docInfo;
+	
 	/**
 	 * byte 배열의 크기 만큼 byte 배열을 읽은다.
 	 * 
@@ -132,6 +138,7 @@ public abstract class StreamReader {
 		read = 0;
 		header = new RecordHeader();
 		readAfterHeader = 0;
+		docInfo = null;
 	}
 
 	/**
@@ -300,4 +307,17 @@ public abstract class StreamReader {
 			skip(n);
 		}
 	}
+
+	public void setDocInfo(DocInfo docInfo) {
+		this.docInfo = docInfo;
+	}
+
+	public int correctParaShapeId(int oldParaShapeId) {
+		if (docInfo != null) {
+			return oldParaShapeId - docInfo.getIDMappings().getParaShapeCount() + docInfo.getParaShapeList().size();
+		} else {
+			return oldParaShapeId;
+		}
+	}
+
 }

@@ -158,6 +158,7 @@ public class HWPReader {
 	 */
 	private void section(int sectionIndex) throws Exception {
 		StreamReader sr = cfr.getChildStreamReader("Section" + sectionIndex, isCompressed(), getVersion());
+		sr.setDocInfo(hwpFile.getDocInfo());
 		ForSection.read(hwpFile.getBodyText().addNewSection(), sr);
 		sr.close();
 	}

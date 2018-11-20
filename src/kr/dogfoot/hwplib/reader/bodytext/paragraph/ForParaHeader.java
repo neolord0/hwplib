@@ -23,7 +23,7 @@ public class ForParaHeader {
 	public static void read(ParaHeader ph, StreamReader sr) throws IOException {
 		lastInList_TextCount(ph, sr);
 		ph.getControlMask().setValue(sr.readUInt4());
-		ph.setParaShapeId(sr.readUInt2());
+		ph.setParaShapeId(sr.correctParaShapeId(sr.readUInt2()));
 		ph.setStyleId(sr.readUInt1());
 		ph.getDivideSort().setValue(sr.readUInt1());
 		ph.setCharShapeCount(sr.readUInt2());

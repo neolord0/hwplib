@@ -78,6 +78,10 @@ public class ParaShape {
 	 * 줄 간격(5.0.2.5 버전 이상)
 	 */
 	private long lineSpace2;
+	/**
+	 * 알수 없음(5.1.0.0 버전 이상)
+	 */
+	private long unknown;
 
 	/**
 	 * 생성자
@@ -379,5 +383,13 @@ public class ParaShape {
 	 */
 	public void setLineSpace2(long lineSpace2) {
 		this.lineSpace2 = lineSpace2;
+	}
+
+	public long getUnknown() {
+		return unknown;
+	}
+
+	public void setUnknown(long unknown) {
+		this.unknown = unknown;
 	}
 }
