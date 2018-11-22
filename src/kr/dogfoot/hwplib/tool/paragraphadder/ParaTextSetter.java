@@ -23,12 +23,12 @@ public class ParaTextSetter {
 		for (int index = 0; index < len; index++) {
 			char ch = text.charAt(index);
 			if (ch == '\r') {
-				if (text.charAt(index + 1) == '\n') {
+				if (index + 1 < len && text.charAt(index + 1) == '\n') {
 					index++;
 				}
 				sb.append('\r');
 			} else if (ch == '\n') { 
-				if (text.charAt(index + 1) == '\r') {
+				if (index + 1 < len && text.charAt(index + 1) == '\r') {
 					index++;
 				}
 				sb.append('\r');

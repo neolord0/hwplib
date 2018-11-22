@@ -16,7 +16,7 @@ public class TestSetField {
 		if (hwpFile != null) {
 			{
 				ArrayList<String> textList = new ArrayList<String>();
-				textList.add("필드1 값1\n2줄\n3줄");
+				textList.add("필드1 값1\n2줄\n3줄\n");
 				textList.add("필드1 값1\n2줄\n3줄");
 				textList.add("필드1 값3");
 				textList.add("필드1 값4");
