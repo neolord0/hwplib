@@ -6,9 +6,11 @@ import kr.dogfoot.hwplib.object.bodytext.paragraph.Paragraph;
 import kr.dogfoot.hwplib.reader.HWPReader;
 import kr.dogfoot.hwplib.writer.HWPWriter;
 
+import java.io.File;
+
 public class TestEditingHWPFile {
 	public static void main(String[] args) throws Exception {
-		String filename = "sample_hwp\\test-blank.hwp";
+		String filename = "sample_hwp" + File.separator + "test-blank.hwp";
 		
 		HWPFile hwpFile = HWPReader.fromFile(filename);
 		if (hwpFile != null) {

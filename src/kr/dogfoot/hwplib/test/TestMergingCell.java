@@ -8,9 +8,11 @@ import kr.dogfoot.hwplib.reader.HWPReader;
 import kr.dogfoot.hwplib.tool.TableCellMerger;
 import kr.dogfoot.hwplib.writer.HWPWriter;
 
+import java.io.File;
+
 public class TestMergingCell {
 	public static void main(String[] args) throws Exception {
-		String filename = "sample_hwp\\test-merge-cell.hwp";
+		String filename = "sample_hwp" + File.separator + "test-merge-cell.hwp";
 
 		HWPFile hwpFile = HWPReader.fromFile(filename);
 		if (hwpFile != null) {
@@ -20,7 +22,7 @@ public class TestMergingCell {
 				TableCellMerger.mergeCell(table, 2, 2, 4, 3);
 			}
 
-			String writePath = "sample_hwp\\test-merge-cell-2.hwp";
+			String writePath = "sample_hwp" + File.separator + "test-merge-cell-2.hwp";
 			HWPWriter.toFile(hwpFile, writePath);
 		}
 	}

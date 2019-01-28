@@ -16,7 +16,7 @@ import kr.dogfoot.hwplib.tool.textextractor.TextExtractMethod;
  */
 public class FieldFinder {
 	/**
-	 * 누름틀 컨트롤(ClickHere 필드)를 찾는다.
+	 * 누름틀 컨트롤(ClickHere 필드)을 찾아 텍스트를 반환한다.
 	 * 
 	 * @param hwpFile
 	 *            한글 파일 객체
@@ -37,6 +37,28 @@ public class FieldFinder {
 			}
 		}
 		return strText;
+	}
+
+	/**
+	 * 파일 안에 이름이 같은 모든 누름틀 컨트롤(ClickHere 필드)을 찾아 텍스트를 리스트에 추가한다.
+	 *
+	 * @param hwpFile
+	 * 				한글 파일 객체
+	 * @param fieldName
+	 * 				필드 이름
+	 * @param temInField
+	 * 				필드 안에 택스트의 텍스트 추출 방법
+	 * @return 필드 텍스트 리스트
+	 * @throws UnsupportedEncodingException
+	 */
+	public static ArrayList<String> getAllClickHereText(HWPFile hwpFile, String fieldName, TextExtractMethod temInField)
+			throws UnsupportedEncodingException {
+		ArrayList<String> textList = new ArrayList<String>();
+		for (Section s : hwpFile.getBodyText().getSectionList()) {
+			ForParagraphList.getAllFieldText(s, ControlType.FIELD_CLICKHERE, fieldName, temInField, textList);
+		}
+
+		return textList;
 	}
 
 	/**
@@ -68,6 +90,53 @@ public class FieldFinder {
 			return SetFieldResult.NotFound;
 		} 
 		return SetFieldResult.TextRemains;
+	}
+
+	/**
+	 * 필드 컨트롤을 찾아 텍스트를 반환한다.
+	 *
+	 * @param hwpFile
+	 * 				한글 파일 객체
+	 * @param fieldType
+	 * 				필드 타입
+	 * @param fieldName
+	 * 				필드 이름
+	 * @param temInField
+	 * 				필드 안에 택스트의 텍스트 추출 방법
+	 * @return 필드 텍스트
+	 * @throws UnsupportedEncodingException
+	 */
+	public static String getFieldText(HWPFile hwpFile, ControlType fieldType, String fieldName, TextExtractMethod temInField) throws UnsupportedEncodingException {
+		String strText = null;
+		for (Section s : hwpFile.getBodyText().getSectionList()) {
+			strText = ForParagraphList.getFieldText(s, fieldType, fieldName, temInField);
+			if (strText != null) {
+				break;
+			}
+		}
+		return strText;
+	}
+
+	/**
+	 * 파일 안에 이름이 같은 모든 필드를 찾아 텍스트를 리스트에 추가한다.
+	 *
+	 * @param hwpFile
+	 *				한글 파일 객체
+	 * @param fieldType
+	 * 				필드 타입
+	 * @param fieldName
+	 * 				필드 이름
+	 * @param temInField
+	 * 				필드 안에 택스트의 텍스트 추출 방법
+	 * @return 필드 텍스트 리스트
+	 * @throws UnsupportedEncodingException
+	 */
+	public static ArrayList<String> getAllFieldText(HWPFile hwpFile, ControlType fieldType, String fieldName, TextExtractMethod temInField) throws UnsupportedEncodingException {
+		ArrayList<String> textList = new ArrayList<String>();
+		for (Section s : hwpFile.getBodyText().getSectionList()) {
+			ForParagraphList.getAllFieldText(s, fieldType, fieldName, temInField, textList);
+		}
+		return textList;
 	}
 
 	/**

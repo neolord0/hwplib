@@ -5,9 +5,11 @@ import kr.dogfoot.hwplib.reader.HWPReader;
 import kr.dogfoot.hwplib.tool.objectfinder.FieldFinder;
 import kr.dogfoot.hwplib.tool.textextractor.TextExtractMethod;
 
+import java.io.File;
+
 public class TestGettingClickHereFieldText {
 	public static void main(String[] args) throws Exception {
-		HWPFile hwpFile = HWPReader.fromFile("sample_hwp\\test-필드_누름틀.hwp");
+		HWPFile hwpFile = HWPReader.fromFile("sample_hwp" + File.separator + "test-필드_누름틀.hwp");
 		String text1 = FieldFinder.getClickHereText(hwpFile, "필드1", TextExtractMethod.OnlyMainParagraph);
 		String text2 = FieldFinder.getClickHereText(hwpFile, "필드2", TextExtractMethod.OnlyMainParagraph);
 		String text3 = FieldFinder.getClickHereText(hwpFile, "Table필드1", TextExtractMethod.OnlyMainParagraph);

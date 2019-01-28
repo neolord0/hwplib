@@ -1,5 +1,6 @@
 package kr.dogfoot.hwplib.test;
 
+import java.io.File;
 import java.io.UnsupportedEncodingException;
 
 import kr.dogfoot.hwplib.object.HWPFile;
@@ -42,13 +43,13 @@ import kr.dogfoot.hwplib.writer.HWPWriter;
 public class TestMakingTable {
 	
 	public static void main(String[] args) throws Exception {
-		String filename = "sample_hwp\\test-blank.hwp";
+		String filename = "sample_hwp" + File.separator + "test-blank.hwp";
 		
 		HWPFile hwpFile = HWPReader.fromFile(filename);
 		if (hwpFile != null) {
 			TestMakingTable tmt = new TestMakingTable();
 			tmt.makeTable(hwpFile);
-			String writePath = "sample_hwp\\test-making-table.hwp";
+			String writePath = "sample_hwp" + File.separator + "test-making-table.hwp";
 			HWPWriter.toFile(hwpFile, writePath);
 		}
 		

@@ -7,6 +7,8 @@ import kr.dogfoot.hwplib.object.bodytext.paragraph.Paragraph;
 import kr.dogfoot.hwplib.reader.HWPReader;
 import kr.dogfoot.hwplib.writer.HWPWriter;
 
+import java.io.File;
+
 public class TestChangePaperSize {
 	private static class Size {
 		public long cx;
@@ -19,7 +21,7 @@ public class TestChangePaperSize {
 	};
 	
 	public static void main(String[] args) throws Exception {
-		String filename = "sample_hwp\\test-blank.hwp";
+		String filename = "sample_hwp"+ File.separator + "test-blank.hwp";
 		
 		HWPFile hwpFile = HWPReader.fromFile(filename);
 		if (hwpFile != null) {
@@ -31,7 +33,7 @@ public class TestChangePaperSize {
 			csd.getPageDef().setPaperWidth(paperSize.cx);
 			csd.getPageDef().setPaperHeight(paperSize.cy);
 			
-			String writePath = "sample_hwp\\test-change-paper-size.hwp";
+			String writePath = "sample_hwp"+ File.separator + "test-change-paper-size.hwp";
 			HWPWriter.toFile(hwpFile, writePath);
 		}
 	}

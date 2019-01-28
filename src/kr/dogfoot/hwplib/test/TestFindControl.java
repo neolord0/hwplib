@@ -1,5 +1,6 @@
 package kr.dogfoot.hwplib.test;
 
+import java.io.File;
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 
@@ -42,7 +43,7 @@ public class TestFindControl {
 	}
 
 	public static void main(String[] args) throws Exception {
-		String filename = "sample_hwp\\test-컨트롤 찾기.hwp";
+		String filename = "sample_hwp" + File.separator + "test-컨트롤 찾기.hwp";
 		
 		HWPFile hwpFile = HWPReader.fromFile(filename);
 		if (hwpFile != null) {

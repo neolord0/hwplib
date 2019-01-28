@@ -1,6 +1,7 @@
 package kr.dogfoot.hwplib.tool.objectfinder.forField.gettext;
 
 import java.io.UnsupportedEncodingException;
+import java.util.ArrayList;
 
 import kr.dogfoot.hwplib.object.bodytext.control.Control;
 import kr.dogfoot.hwplib.object.bodytext.control.ControlEndnote;
@@ -94,7 +95,7 @@ public class ForControl {
 
 	/**
 	 * 표 컨트롤에서 필드 객체의 텍스트를 찾아 반환한다.
-	 * 
+	 *
 	 * @param table
 	 *            표 컨트롤
 	 * @param fieldType
@@ -104,7 +105,7 @@ public class ForControl {
 	 * @param temInField
 	 *            필드 안에 텍스트의 텍스트 추출 방법
 	 * @return 필드 텍스트
-	 * @throws UnsupportedEncodingException 
+	 * @throws UnsupportedEncodingException
 	 */
 	private static String table(ControlTable table, ControlType fieldType,
 			String fieldName, TextExtractMethod temInField) throws UnsupportedEncodingException {

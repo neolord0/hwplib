@@ -44,19 +44,19 @@ import kr.dogfoot.hwplib.writer.HWPWriter;
 
 public class TestInsertImage {
 	public static void main(String[] args) throws Exception {
-		String filename = "sample_hwp\\test-blank.hwp";
+		String filename = "sample_hwp" + File.separator + "test-blank.hwp";
 
 		HWPFile hwpFile = HWPReader.fromFile(filename);
 		if (hwpFile != null) {
 			TestInsertImage tii = new TestInsertImage();
 			tii.insertShapeWithImage(hwpFile);
 
-			String writePath = "sample_hwp\\test-insert-image.hwp";
+			String writePath = "sample_hwp" + File.separator + "test-insert-image.hwp";
 			HWPWriter.toFile(hwpFile, writePath);
 		}
 	}
 
-	private final String imageFilePath = "sample_hwp\\sample.jpg";
+	private final String imageFilePath = "sample_hwp" + File.separator + "sample.jpg";
 	private final String imageFileExt = "jpg";
 	private final BinDataCompress compressMethod = BinDataCompress.ByStroageDefault;
 	

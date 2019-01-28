@@ -7,10 +7,12 @@ import kr.dogfoot.hwplib.reader.HWPReader;
 import kr.dogfoot.hwplib.tool.paragraphadder.ParagraphAdder;
 import kr.dogfoot.hwplib.writer.HWPWriter;
 
+import java.io.File;
+
 public class TestParagraphAdder {
 	public static void main(String[] args) throws Exception {
-		HWPFile sourceHWPFile = HWPReader.fromFile("sample_hwp\\test-source.hwp");
-		HWPFile targetHWPFile = HWPReader.fromFile("sample_hwp\\test-target.hwp");
+		HWPFile sourceHWPFile = HWPReader.fromFile("sample_hwp" + File.separator + "test-source.hwp");
+		HWPFile targetHWPFile = HWPReader.fromFile("sample_hwp" + File.separator + "test-target.hwp");
 		
 		if (sourceHWPFile != null && targetHWPFile != null) {
 			// test-source.hwp의  두번째 문단을 구한다

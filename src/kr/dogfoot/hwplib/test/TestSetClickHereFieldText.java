@@ -1,5 +1,6 @@
 package kr.dogfoot.hwplib.test;
 
+import java.io.File;
 import java.util.ArrayList;
 
 import kr.dogfoot.hwplib.object.HWPFile;
@@ -10,7 +11,7 @@ import kr.dogfoot.hwplib.writer.HWPWriter;
 
 public class TestSetClickHereFieldText {
 	public static void main(String[] args) throws Exception {
-		HWPFile hwpFile = HWPReader.fromFile("sample_hwp\\test-필드_누름틀.hwp");
+		HWPFile hwpFile = HWPReader.fromFile("sample_hwp" + File.separator + "test-필드_누름틀.hwp");
 		if (hwpFile != null) {
 			{
 				ArrayList<String> textList = new ArrayList<String>();
@@ -25,7 +26,7 @@ public class TestSetClickHereFieldText {
 				System.out.println("필드2 설정경과  = " + sfr);
 			}
 
-			HWPWriter.toFile(hwpFile, "sample_hwp\\test-필드_누름틀_saved.hwp");
+			HWPWriter.toFile(hwpFile, "sample_hwp" + File.separator + "test-필드_누름틀_saved.hwp");
 		}
 	}
 }
