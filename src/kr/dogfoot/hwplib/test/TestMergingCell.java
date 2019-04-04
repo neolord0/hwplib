@@ -10,21 +10,24 @@ import kr.dogfoot.hwplib.writer.HWPWriter;
 
 import java.io.File;
 
+/**
+ * 표의 셀을 병합하는 샘플 프로그램.
+ */
 public class TestMergingCell {
-	public static void main(String[] args) throws Exception {
-		String filename = "sample_hwp" + File.separator + "test-merge-cell.hwp";
+    public static void main(String[] args) throws Exception {
+        String filename = "sample_hwp" + File.separator + "test-merge-cell.hwp";
 
-		HWPFile hwpFile = HWPReader.fromFile(filename);
-		if (hwpFile != null) {
-			Control control = hwpFile.getBodyText().getSectionList().get(0).getParagraph(0).getControlList().get(2);
-			if (control.getType() == ControlType.Table) {
-				ControlTable table = (ControlTable) control;
-				TableCellMerger.mergeCell(table, 2, 2, 4, 3);
-			}
+        HWPFile hwpFile = HWPReader.fromFile(filename);
+        if (hwpFile != null) {
+            Control control = hwpFile.getBodyText().getSectionList().get(0).getParagraph(0).getControlList().get(2);
+            if (control.getType() == ControlType.Table) {
+                ControlTable table = (ControlTable) control;
+                TableCellMerger.mergeCell(table, 2, 2, 4, 3);
+            }
 
-			String writePath = "sample_hwp" + File.separator + "test-merge-cell-2.hwp";
-			HWPWriter.toFile(hwpFile, writePath);
-		}
-	}
+            String writePath = "sample_hwp" + File.separator + "test-merge-cell-2.hwp";
+            HWPWriter.toFile(hwpFile, writePath);
+        }
+    }
 
 }

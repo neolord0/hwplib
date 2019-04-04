@@ -2,41 +2,69 @@ package kr.dogfoot.hwplib.tool.objectfinder;
 
 import java.util.ArrayList;
 
+/**
+ * 텍스트 버퍼
+ */
 public class TextBuffer {
-	private ArrayList<String> textList;
-	private int textCount;
-	private int currentIndex;
+    /**
+     * 텍스트 리스트
+     */
+    private ArrayList<String> textList;
+    /**
+     * 텍스트 갯수
+     */
+    private int textCount;
+    /**
+     * 현재 사용중인 텍스트 인덱스
+     */
+    private int currentIndex;
 
-	public TextBuffer(ArrayList<String> textList) {
-		this.textList = textList;
-		this.textCount = textList.size();
-		currentIndex = 0;
-	}
+    /**
+     * 생성자
+     *
+     * @param textList 텍스트 리스트
+     */
+    public TextBuffer(ArrayList<String> textList) {
+        this.textList = textList;
+        this.textCount = textList.size();
+        currentIndex = 0;
+    }
 
-	public String nextText() {
-		String text = textList.get(currentIndex);
-		currentIndex++;
-		return text;
-	}
+    /**
+     * 다음 텍스트를 반환한다.
+     *
+     * @return 다음 텍스트
+     */
+    public String nextText() {
+        String text = textList.get(currentIndex);
+        currentIndex++;
+        return text;
+    }
 
-	public boolean hasNext() {
-		if (currentIndex < textCount) {	
-			return true;
-		}
-		return false;
-	}
+    /**
+     * 다음 텍스트가 존재하는지 여부를 반환한다.
+     *
+     * @return 다음 텍스트가 존재하는지 여부
+     */
+    public boolean hasNext() {
+        return currentIndex < textCount;
+    }
 
-	public boolean usedAll() {
-		if (currentIndex == textCount) {
-			return true;
-		}
-		return false;
-	}
+    /**
+     * 텍스트를 모두 사용했지는 여부를 반환한다.
+     *
+     * @return 텍스트를 모두 사용했지는 여부
+     */
+    public boolean usedAll() {
+        return currentIndex == textCount;
+    }
 
-	public boolean notUsed() {
-		if (currentIndex == 0) {
-			return true;
-		}
-		return false;
-	}
+    /**
+     * 텍스트를 하나도 사용하지 않았는지 여부를 반환한다.
+     *
+     * @return 텍스트를 하나도 사용하지 않았는지 여부
+     */
+    public boolean notUsed() {
+        return currentIndex == 0;
+    }
 }

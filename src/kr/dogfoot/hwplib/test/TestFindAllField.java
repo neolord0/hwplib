@@ -6,12 +6,14 @@ import kr.dogfoot.hwplib.reader.HWPReader;
 import kr.dogfoot.hwplib.tool.objectfinder.FieldFinder;
 import kr.dogfoot.hwplib.tool.textextractor.TextExtractMethod;
 
-import javax.xml.soap.Text;
 import java.io.File;
 import java.util.ArrayList;
 
-public class TestFindAllField {
 
+/**
+ * 파일에 있는 모든 필드 컨트롤의 텍스트를 찾는 샘플 프로그램.
+ */
+public class TestFindAllField {
     public static void main(String[] args) throws Exception {
         HWPFile hwpFile = HWPReader.fromFile("sample_hwp" + File.separator + "test-find-allfield.hwp");
         if (hwpFile != null) {

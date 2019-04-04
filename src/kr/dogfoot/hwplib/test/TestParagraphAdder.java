@@ -9,22 +9,25 @@ import kr.dogfoot.hwplib.writer.HWPWriter;
 
 import java.io.File;
 
+/**
+ * 문단을 추가하는 샘플 프로그램.
+ */
 public class TestParagraphAdder {
-	public static void main(String[] args) throws Exception {
-		HWPFile sourceHWPFile = HWPReader.fromFile("sample_hwp" + File.separator + "test-source.hwp");
-		HWPFile targetHWPFile = HWPReader.fromFile("sample_hwp" + File.separator + "test-target.hwp");
-		
-		if (sourceHWPFile != null && targetHWPFile != null) {
-			// test-source.hwp의  두번째 문단을 구한다
-			Paragraph sourceParagraph = sourceHWPFile.getBodyText().getSectionList().get(0).getParagraph(1);
-	
-			// test-target.hwp의 첫번째 섹션을 구한다. 
-			ParagraphListInterface targetFirstSection = targetHWPFile.getBodyText().getSectionList().get(0);
-			
-			ParagraphAdder paraAdder = new ParagraphAdder(targetHWPFile, targetFirstSection);
-			paraAdder.add(sourceHWPFile, sourceParagraph);
-			
-			HWPWriter.toFile(targetHWPFile, "sample_hwp\\\\test-target-add-paragraph.hwp");
-		}
-	}
+    public static void main(String[] args) throws Exception {
+        HWPFile sourceHWPFile = HWPReader.fromFile("sample_hwp" + File.separator + "test-source.hwp");
+        HWPFile targetHWPFile = HWPReader.fromFile("sample_hwp" + File.separator + "test-target.hwp");
+
+        if (sourceHWPFile != null && targetHWPFile != null) {
+            // test-source.hwp의  두번째 문단을 구한다
+            Paragraph sourceParagraph = sourceHWPFile.getBodyText().getSectionList().get(0).getParagraph(1);
+
+            // test-target.hwp의 첫번째 섹션을 구한다.
+            ParagraphListInterface targetFirstSection = targetHWPFile.getBodyText().getSectionList().get(0);
+
+            ParagraphAdder paraAdder = new ParagraphAdder(targetHWPFile, targetFirstSection);
+            paraAdder.add(sourceHWPFile, sourceParagraph);
+
+            HWPWriter.toFile(targetHWPFile, "sample_hwp\\\\test-target-add-paragraph.hwp");
+        }
+    }
 }

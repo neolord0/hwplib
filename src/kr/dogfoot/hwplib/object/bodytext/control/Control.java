@@ -5,72 +5,70 @@ import kr.dogfoot.hwplib.object.bodytext.control.ctrlheader.CtrlHeader;
 
 /**
  * 컨트롤에 대한 추상 객체
- * 
+ *
  * @author neolord
  */
 public abstract class Control {
-	/**
-	 * 컨트롤 헤더 객체
-	 */
-	protected CtrlHeader header;
-	/**
-	 * 컨트롤 데이터
-	 */
-	private CtrlData ctrlData;
+    /**
+     * 컨트롤 헤더 객체
+     */
+    protected CtrlHeader header;
+    /**
+     * 컨트롤 데이터
+     */
+    private CtrlData ctrlData;
 
-	/**
-	 * 생성자
-	 * 
-	 * @param header
-	 *            컨트롤 헤더 객체
-	 */
-	public Control(CtrlHeader header) {
-		this.header = header;
-		ctrlData = null;
-	}
+    /**
+     * 생성자
+     *
+     * @param header 컨트롤 헤더 객체
+     */
+    public Control(CtrlHeader header) {
+        this.header = header;
+        ctrlData = null;
+    }
 
-	/**
-	 * 컨트롤 헤더 객체를 반환한다.
-	 * 
-	 * @return 컨트롤 헤더 객체
-	 */
-	public ControlType getType() {
-		return ControlType.ctrlIdOf(header.getCtrlId());
-	}
+    /**
+     * 컨트롤 헤더 객체를 반환한다.
+     *
+     * @return 컨트롤 헤더 객체
+     */
+    public ControlType getType() {
+        return ControlType.ctrlIdOf(header.getCtrlId());
+    }
 
-	/**
-	 * 필드 컨트롤인지 여부를 반환한다.
-	 * 
-	 * @return 필드 컨트롤인지 여부
-	 */
-	public boolean isField() {
-		return ControlType.isField(header.getCtrlId());
-	}
+    /**
+     * 필드 컨트롤인지 여부를 반환한다.
+     *
+     * @return 필드 컨트롤인지 여부
+     */
+    public boolean isField() {
+        return ControlType.isField(header.getCtrlId());
+    }
 
-	/**
-	 * 컨트롤 데이터(??)를 생성한다.
-	 */
-	public void createCtrlData() {
-		ctrlData = new CtrlData();
-	}
+    /**
+     * 컨트롤 데이터(??)를 생성한다.
+     */
+    public void createCtrlData() {
+        ctrlData = new CtrlData();
+    }
 
-	/**
-	 * 컨트롤 데이터(??)를 반환한다.
-	 * 
-	 * @return 컨트롤 데이터 객체
-	 */
-	public CtrlData getCtrlData() {
-		return ctrlData;
-	}
+    /**
+     * 컨트롤 데이터(??)를 반환한다.
+     *
+     * @return 컨트롤 데이터 객체
+     */
+    public CtrlData getCtrlData() {
+        return ctrlData;
+    }
 
-	/**
-	 * 컨트롤 데이터를 설정한다.
-	 * 
-	 * @param ctrlData
-	 *            컨트롤 데이터
-	 */
-	public void setCtrlData(CtrlData ctrlData) {
-		this.ctrlData = new CtrlData();
-	}
+    /**
+     * 컨트롤 데이터를 설정한다.
+     *
+     * @param ctrlData 컨트롤 데이터
+     */
+    public void setCtrlData(CtrlData ctrlData) {
+        this.ctrlData = new CtrlData();
+    }
 
 }

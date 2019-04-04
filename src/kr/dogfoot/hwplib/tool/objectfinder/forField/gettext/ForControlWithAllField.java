@@ -18,18 +18,13 @@ import java.util.ArrayList;
 public class ForControlWithAllField {
     /**
      * 컨트롤 속에 있는 이름이 같은 모든 필드를 찾아 텍스트를 리스트에 추가한다.
-     * @param c
-     * 			컨트롤
-     * @param fieldType
-     *            컨트롤
-     * @param fieldType
-     *            필드 타입
-     * @param fieldName
-     *            필드 이름
-     * @param temInField
-     *            필드 안에 텍스트의 텍스트 추출 방법
-     * @param textList
-     * 			  반환할 필드 텍스트 리스트
+     *
+     * @param c          컨트롤
+     * @param fieldType  컨트롤
+     * @param fieldType  필드 타입
+     * @param fieldName  필드 이름
+     * @param temInField 필드 안에 텍스트의 텍스트 추출 방법
+     * @param textList   반환할 필드 텍스트 리스트
      */
     public static void getFieldText(Control c, ControlType fieldType, String fieldName, TextExtractMethod temInField, ArrayList<String> textList) throws UnsupportedEncodingException {
         if (c.isField()) {
@@ -94,20 +89,15 @@ public class ForControlWithAllField {
     /**
      * 표 컨트롤에서 필드 객체의 텍스트를 찾아 리스트에 추가한다.
      *
-     * @param table
-     *            표 컨트롤
-     * @param fieldType
-     *            필드 타입
-     * @param fieldName
-     *            필드 이름
-     * @param temInField
-     *            필드 안에 텍스트의 텍스트 추출 방법
-     * @param textList
-     * 			  반환할 필드 텍스트 리스트
+     * @param table      표 컨트롤
+     * @param fieldType  필드 타입
+     * @param fieldName  필드 이름
+     * @param temInField 필드 안에 텍스트의 텍스트 추출 방법
+     * @param textList   반환할 필드 텍스트 리스트
      * @throws UnsupportedEncodingException
      */
     private static void table(ControlTable table, ControlType fieldType,
-                                    String fieldName, TextExtractMethod temInField, ArrayList<String> textList) throws UnsupportedEncodingException {
+                              String fieldName, TextExtractMethod temInField, ArrayList<String> textList) throws UnsupportedEncodingException {
         for (Row r : table.getRowList()) {
             for (Cell c : r.getCellList()) {
                 ForParagraphList.getAllFieldText(
@@ -119,20 +109,15 @@ public class ForControlWithAllField {
     /**
      * 머리말 컨트롤에서 필드 객체의 텍스트를 찾아 리스트에 추가한다.
      *
-     * @param header
-     *            머리말 컨트롤
-     * @param fieldType
-     *            필드 타입
-     * @param fieldName
-     *            필드 이름
-     * @param temInField
-     *            필드 안에 텍스트의 텍스트 추출 방법
-     * @param textList
-     * 			  반환할 필드 텍스트 리스트
+     * @param header     머리말 컨트롤
+     * @param fieldType  필드 타입
+     * @param fieldName  필드 이름
+     * @param temInField 필드 안에 텍스트의 텍스트 추출 방법
+     * @param textList   반환할 필드 텍스트 리스트
      * @throws UnsupportedEncodingException
      */
     private static void header(ControlHeader header, ControlType fieldType,
-                                     String fieldName, TextExtractMethod temInField, ArrayList<String> textList) throws UnsupportedEncodingException {
+                               String fieldName, TextExtractMethod temInField, ArrayList<String> textList) throws UnsupportedEncodingException {
         ForParagraphList.getAllFieldText(header.getParagraphList(),
                 fieldType, fieldName, temInField, textList);
     }
@@ -141,20 +126,15 @@ public class ForControlWithAllField {
     /**
      * 꼬리말 컨트롤에서 필드 객체의 텍스트를 찾아 리스트에 추가한다.
      *
-     * @param footer
-     *            꼬리말 컨트롤
-     * @param fieldType
-     *            필드 타입
-     * @param fieldName
-     *            필드 이름
-     * @param temInField
-     *            필드 안에 텍스트의 텍스트 추출 방법
-     * @param textList
-     * 			  반환할 필드 텍스트 리스트
+     * @param footer     꼬리말 컨트롤
+     * @param fieldType  필드 타입
+     * @param fieldName  필드 이름
+     * @param temInField 필드 안에 텍스트의 텍스트 추출 방법
+     * @param textList   반환할 필드 텍스트 리스트
      * @throws UnsupportedEncodingException
      */
     private static void footer(ControlFooter footer, ControlType fieldType,
-                                 String fieldName, TextExtractMethod temInField, ArrayList<String> textList) throws UnsupportedEncodingException {
+                               String fieldName, TextExtractMethod temInField, ArrayList<String> textList) throws UnsupportedEncodingException {
         ForParagraphList.getAllFieldText(footer.getParagraphList(),
                 fieldType, fieldName, temInField, textList);
     }
@@ -162,21 +142,16 @@ public class ForControlWithAllField {
     /**
      * 각주 컨트롤에서 필드 객체의 텍스트를 찾아 리스트에 추가한다.
      *
-     * @param footnote
-     *            각주 컨트롤
-     * @param fieldType
-     *            필드 타입
-     * @param fieldName
-     *            필드 이름
-     * @param temInField
-     *            필드 안에 텍스트의 텍스트 추출 방법
-     * @param textList
-     * 			  반환할 필드 텍스트 리스트
+     * @param footnote   각주 컨트롤
+     * @param fieldType  필드 타입
+     * @param fieldName  필드 이름
+     * @param temInField 필드 안에 텍스트의 텍스트 추출 방법
+     * @param textList   반환할 필드 텍스트 리스트
      * @throws UnsupportedEncodingException
      */
     private static void footnote(ControlFootnote footnote,
-                                   ControlType fieldType, String fieldName,
-                                   TextExtractMethod temInField, ArrayList<String> textList) throws UnsupportedEncodingException {
+                                 ControlType fieldType, String fieldName,
+                                 TextExtractMethod temInField, ArrayList<String> textList) throws UnsupportedEncodingException {
         ForParagraphList.getAllFieldText(footnote.getParagraphList(),
                 fieldType, fieldName, temInField, textList);
     }
@@ -184,21 +159,16 @@ public class ForControlWithAllField {
     /**
      * 미주 컨트롤에서 필드 객체의 텍스트를 찾아 리스트에 추가한다.
      *
-     * @param endnote
-     *            미주 컨트롤
-     * @param fieldType
-     *            필드 타입
-     * @param fieldName
-     *            필드 이름
-     * @param temInField
-     *            필드 안에 텍스트의 텍스트 추출 방법
-     * @param textList
-     * 			  반환할 필드 텍스트 리스트
+     * @param endnote    미주 컨트롤
+     * @param fieldType  필드 타입
+     * @param fieldName  필드 이름
+     * @param temInField 필드 안에 텍스트의 텍스트 추출 방법
+     * @param textList   반환할 필드 텍스트 리스트
      * @throws UnsupportedEncodingException
      */
     private static void endnote(ControlEndnote endnote,
-                                  ControlType fieldType, String fieldName,
-                                  TextExtractMethod temInField, ArrayList<String> textList) throws UnsupportedEncodingException {
+                                ControlType fieldType, String fieldName,
+                                TextExtractMethod temInField, ArrayList<String> textList) throws UnsupportedEncodingException {
         ForParagraphList.getAllFieldText(endnote.getParagraphList(),
                 fieldType, fieldName, temInField, textList);
     }
@@ -206,21 +176,16 @@ public class ForControlWithAllField {
     /**
      * 숨은 설명 컨트롤에서 필드 객체의 텍스트를 찾아 반환한다.
      *
-     * @param hiddenComment
-     *            숨은 설명 컨트롤 숨
-     * @param fieldType
-     *            필드 타입
-     * @param fieldName
-     *            필드 이름
-     * @param temInField
-     *            필드 안에 텍스트의 텍스트 추출 방법
-     * @param textList
-     * 			  반환할 필드 텍스트 리스트
+     * @param hiddenComment 숨은 설명 컨트롤 숨
+     * @param fieldType     필드 타입
+     * @param fieldName     필드 이름
+     * @param temInField    필드 안에 텍스트의 텍스트 추출 방법
+     * @param textList      반환할 필드 텍스트 리스트
      * @throws UnsupportedEncodingException
      */
     private static void hiddenComment(ControlHiddenComment hiddenComment,
-                                        ControlType fieldType, String fieldName,
-                                        TextExtractMethod temInField, ArrayList<String> textList) throws UnsupportedEncodingException {
+                                      ControlType fieldType, String fieldName,
+                                      TextExtractMethod temInField, ArrayList<String> textList) throws UnsupportedEncodingException {
         ForParagraphList.getAllFieldText(hiddenComment.getParagraphList(),
                 fieldType, fieldName, temInField, textList);
     }

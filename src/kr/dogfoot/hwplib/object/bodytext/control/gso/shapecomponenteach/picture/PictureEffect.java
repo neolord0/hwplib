@@ -2,136 +2,136 @@ package kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponenteach.picture
 
 /**
  * 그림 효과
- * 
+ *
  * @author neolord
  */
 public class PictureEffect {
-	/**
-	 * 속성
-	 */
-	private PictureEffectProperty property;
-	/**
-	 * 그림자 효과
-	 */
-	private ShadowEffect shadowEffect;
-	/**
-	 * 네온 효과
-	 */
-	private NeonEffect neonEffect;
-	/**
-	 * 부드러운 가장자리 효과
-	 */
-	private SoftEdgeEffect softEdgeEffect;
-	/**
-	 * 반사 효과
-	 */
-	private ReflectionEffect reflectionEffect;
+    /**
+     * 속성
+     */
+    private PictureEffectProperty property;
+    /**
+     * 그림자 효과
+     */
+    private ShadowEffect shadowEffect;
+    /**
+     * 네온 효과
+     */
+    private NeonEffect neonEffect;
+    /**
+     * 부드러운 가장자리 효과
+     */
+    private SoftEdgeEffect softEdgeEffect;
+    /**
+     * 반사 효과
+     */
+    private ReflectionEffect reflectionEffect;
 
-	/**
-	 * 생성자
-	 */
-	public PictureEffect() {
-		property = new PictureEffectProperty();
-	}
+    /**
+     * 생성자
+     */
+    public PictureEffect() {
+        property = new PictureEffectProperty();
+    }
 
-	/**
-	 * 속성 객체를 반환한다.
-	 * 
-	 * @return 속성 객체
-	 */
-	public PictureEffectProperty getProperty() {
-		return property;
-	}
+    /**
+     * 속성 객체를 반환한다.
+     *
+     * @return 속성 객체
+     */
+    public PictureEffectProperty getProperty() {
+        return property;
+    }
 
-	/**
-	 * 그림자 효과 객체를 생성한다.
-	 */
-	public void createShadowEffect() {
-		shadowEffect = new ShadowEffect();
-	}
+    /**
+     * 그림자 효과 객체를 생성한다.
+     */
+    public void createShadowEffect() {
+        shadowEffect = new ShadowEffect();
+    }
 
-	/**
-	 * 그림자 효과 객체를 삭제한다.
-	 */
-	public void deleteShadowEffect() {
-		shadowEffect = null;
-	}
+    /**
+     * 그림자 효과 객체를 삭제한다.
+     */
+    public void deleteShadowEffect() {
+        shadowEffect = null;
+    }
 
-	/**
-	 * 그림자 효과 객체를 반환한다.
-	 * 
-	 * @return 그림자 효과 객체
-	 */
-	public ShadowEffect getShadowEffect() {
-		return shadowEffect;
-	}
+    /**
+     * 그림자 효과 객체를 반환한다.
+     *
+     * @return 그림자 효과 객체
+     */
+    public ShadowEffect getShadowEffect() {
+        return shadowEffect;
+    }
 
-	/**
-	 * 네온 효과 객체를 생성한다.
-	 */
-	public void createNeonEffect() {
-		neonEffect = new NeonEffect();
-	}
+    /**
+     * 네온 효과 객체를 생성한다.
+     */
+    public void createNeonEffect() {
+        neonEffect = new NeonEffect();
+    }
 
-	/**
-	 * 네온 효과 객체를 삭제한다.
-	 */
-	public void deleteNeonEffect() {
-		neonEffect = null;
-	}
+    /**
+     * 네온 효과 객체를 삭제한다.
+     */
+    public void deleteNeonEffect() {
+        neonEffect = null;
+    }
 
-	/**
-	 * 네온 효과 객체를 반환한다.
-	 * 
-	 * @return 네온 효과 객체
-	 */
-	public NeonEffect getNeonEffect() {
-		return neonEffect;
-	}
+    /**
+     * 네온 효과 객체를 반환한다.
+     *
+     * @return 네온 효과 객체
+     */
+    public NeonEffect getNeonEffect() {
+        return neonEffect;
+    }
 
-	/**
-	 * 부드러운 가장자리 효과 객체를 생성한다.
-	 */
-	public void createSoftEdgeEffect() {
-		softEdgeEffect = new SoftEdgeEffect();
-	}
+    /**
+     * 부드러운 가장자리 효과 객체를 생성한다.
+     */
+    public void createSoftEdgeEffect() {
+        softEdgeEffect = new SoftEdgeEffect();
+    }
 
-	/**
-	 * 부드러운 가장자리 효과 객체를 삭제한다.
-	 */
-	public void deleteSoftEdgeEffect() {
-		softEdgeEffect = null;
-	}
+    /**
+     * 부드러운 가장자리 효과 객체를 삭제한다.
+     */
+    public void deleteSoftEdgeEffect() {
+        softEdgeEffect = null;
+    }
 
-	/**
-	 * 부드러운 가장자리 효과 객체를 반환한다.
-	 * 
-	 * @return 부드러운 가장자리 효과 객체
-	 */
-	public SoftEdgeEffect getSoftEdgeEffect() {
-		return softEdgeEffect;
-	}
+    /**
+     * 부드러운 가장자리 효과 객체를 반환한다.
+     *
+     * @return 부드러운 가장자리 효과 객체
+     */
+    public SoftEdgeEffect getSoftEdgeEffect() {
+        return softEdgeEffect;
+    }
 
-	/**
-	 * 반사 효과 객체를 생성한다.
-	 */
-	public void createReflectionEffect() {
-		reflectionEffect = new ReflectionEffect();
-	}
+    /**
+     * 반사 효과 객체를 생성한다.
+     */
+    public void createReflectionEffect() {
+        reflectionEffect = new ReflectionEffect();
+    }
 
-	/**
-	 * 반사 효과 객체를 삭제한다.
-	 */
-	public void deleteReflectionEffect() {
-		reflectionEffect = null;
-	}
+    /**
+     * 반사 효과 객체를 삭제한다.
+     */
+    public void deleteReflectionEffect() {
+        reflectionEffect = null;
+    }
 
-	/**
-	 * 반사 효과 객체를 반환한다.
-	 * 
-	 * @return 반사 효과 객체
-	 */
-	public ReflectionEffect getReflectionEffect() {
-		return reflectionEffect;
-	}
+    /**
+     * 반사 효과 객체를 반환한다.
+     *
+     * @return 반사 효과 객체
+     */
+    public ReflectionEffect getReflectionEffect() {
+        return reflectionEffect;
+    }
 }

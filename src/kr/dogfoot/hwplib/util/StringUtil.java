@@ -1,37 +1,35 @@
 package kr.dogfoot.hwplib.util;
 
 public class StringUtil {
-	private final static char[] hexArray = "0123456789ABCDEF".toCharArray();
+    private final static char[] hexArray = "0123456789ABCDEF".toCharArray();
 
-	/**
-	 * 문자열(UTF-16LE)이 저장될 때 필요한 byte의 개수를 반환한다.
-	 * 
-	 * @param s
-	 *            문자열
-	 * @return 문자열(UTF-16LE)이 저장될 때 필요한 byte의 개수
-	 */
-	public static int getUTF16LEStringSize(String s) {
-		if (s == null) {
-			return 2;
-		} else {
-			return 2 + s.length() * 2;
-		}
-	}
+    /**
+     * 문자열(UTF-16LE)이 저장될 때 필요한 byte의 개수를 반환한다.
+     *
+     * @param s 문자열
+     * @return 문자열(UTF - 16LE)이 저장될 때 필요한 byte의 개수
+     */
+    public static int getUTF16LEStringSize(String s) {
+        if (s == null) {
+            return 2;
+        } else {
+            return 2 + s.length() * 2;
+        }
+    }
 
-	/**
-	 * 바이트 배열을 16진수 문자열로 바꾼다.
-	 * 
-	 * @param bytes
-	 *            바이트 배열
-	 * @return 16진수 문자열
-	 */
-	public static String bytesToHex(byte[] bytes) {
-		char[] hexChars = new char[bytes.length * 2];
-		for (int j = 0; j < bytes.length; j++) {
-			int v = bytes[j] & 0xFF;
-			hexChars[j * 2] = hexArray[v >>> 4];
-			hexChars[j * 2 + 1] = hexArray[v & 0x0F];
-		}
-		return new String(hexChars);
-	}
+    /**
+     * 바이트 배열을 16진수 문자열로 바꾼다.
+     *
+     * @param bytes 바이트 배열
+     * @return 16진수 문자열
+     */
+    public static String bytesToHex(byte[] bytes) {
+        char[] hexChars = new char[bytes.length * 2];
+        for (int j = 0; j < bytes.length; j++) {
+            int v = bytes[j] & 0xFF;
+            hexChars[j * 2] = hexArray[v >>> 4];
+            hexChars[j * 2 + 1] = hexArray[v & 0x0F];
+        }
+        return new String(hexChars);
+    }
 }
