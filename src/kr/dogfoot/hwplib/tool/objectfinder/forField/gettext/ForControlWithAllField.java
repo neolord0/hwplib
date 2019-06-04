@@ -50,6 +50,7 @@ public class ForControlWithAllField {
                 case Footer:
                     footer((ControlFooter) c, fieldType, fieldName,
                             temInField, textList);
+                    break;
                 case Footnote:
                     footnote((ControlFootnote) c, fieldType, fieldName,
                             temInField, textList);

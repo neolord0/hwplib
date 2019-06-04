@@ -96,6 +96,24 @@ public class ListHeaderPropertyForCell {
     }
 
     /**
+     * 안 여백 지정 여부를 반환한다. (16 bit)
+     *
+     * @return 안 여백 지정 여부
+     */
+    public boolean isApplyInnerMagin() {
+        return BitFlag.get(value, 16);
+    }
+
+    /**
+     * 안 여백 지정 여부를 설정한다. (16 bit)
+     *
+     * @param applyInnerMagin 안 여백 지정 여부
+     */
+    public void setApplyInnerMagin(boolean applyInnerMagin) {
+        value = BitFlag.set(value, 16, applyInnerMagin);
+    }
+
+    /**
      * 셀 보호 여부를 반환한다. (17 bit)
      *
      * @return 셀 보호 여부
