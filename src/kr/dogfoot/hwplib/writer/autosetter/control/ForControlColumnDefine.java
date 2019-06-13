@@ -16,11 +16,14 @@ public class ForControlColumnDefine {
      */
     public static void autoSet(ControlColumnDefine cd) {
         CtrlHeaderColumnDefine h = cd.getHeader();
-        if (h.getColumnInfoList().size() > 1) {
-            h.getProperty()
-                    .setColumnCount((short) h.getColumnInfoList().size());
-        } else {
-            h.getProperty().setColumnCount((short) 1);
+
+        if (h.getProperty().isSameWidth() == false) {
+            if (h.getColumnInfoList().size() > 1) {
+                h.getProperty()
+                        .setColumnCount((short) h.getColumnInfoList().size());
+            } else {
+                h.getProperty().setColumnCount((short) 1);
+            }
         }
     }
 }
