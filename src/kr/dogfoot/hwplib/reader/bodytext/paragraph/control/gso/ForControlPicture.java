@@ -71,6 +71,11 @@ public class ForControlPicture {
             scp.setImageWidth(sr.readUInt4());
             scp.setImageHeight(sr.readUInt4());
         }
+        unknownBytes(sr);
+    }
+
+    private static void unknownBytes(StreamReader sr) throws IOException {
+        sr.skipToEndRecord();
     }
 
     /**
