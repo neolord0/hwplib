@@ -12,7 +12,9 @@ import kr.dogfoot.hwplib.writer.autosetter.InstanceID;
 import kr.dogfoot.hwplib.writer.bodytext.ForSection;
 import kr.dogfoot.hwplib.writer.docinfo.ForDocInfo;
 
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.OutputStream;
 
 /**
  * 한글 파일을 쓰기 위한 객체
@@ -41,6 +43,29 @@ public class HWPWriter {
         w.binData();
         w.writeAndClose(filepath);
     }
+
+
+    /**
+     * 한글 파일 객체를 파일로 쓴다.
+     *
+     * @param hwpFile  한글 파일 객체
+     * @param os 출력 스트림
+     * @throws Exception
+     */
+    public static void toStream(HWPFile hwpFile, OutputStream os) throws Exception {
+        if (hwpFile.getFileHeader().hasPassword()) {
+            throw new Exception("Files with passwords are not supported.");
+        }
+
+        HWPWriter w = new HWPWriter(hwpFile);
+        w.autoSet();
+        w.fileHeader();
+        w.docInfo();
+        w.bodyText();
+        w.binData();
+        w.writeAndClose(os);
+    }
+
 
     /**
      * 한긆 파일
@@ -198,7 +223,6 @@ public class HWPWriter {
         return false;
     }
 
-
     /**
      * 파일을 쓰고 닫는다.
      *
@@ -207,6 +231,17 @@ public class HWPWriter {
      */
     private void writeAndClose(String filepath) throws IOException {
         cfw.write(filepath);
+        cfw.close();
+    }
+
+    /**
+     * 출력 스트림에 쓰고 닫는다.
+     *
+     * @param os 출력 스트림
+     * @throws IOException
+     */
+    private void writeAndClose(OutputStream os) throws IOException {
+        cfw.write(os);
         cfw.close();
     }
 }

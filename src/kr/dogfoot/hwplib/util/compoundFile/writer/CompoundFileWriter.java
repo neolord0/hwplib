@@ -49,6 +49,17 @@ public class CompoundFileWriter {
     }
 
     /**
+     * 파일 시스탬(Apache POI 라이브러리)에 저장하고 있는 내용을 파일로 저장한다.
+     *
+     * @param os 출력 스트림
+     * @throws IOException
+     */
+    public void write(OutputStream os) throws IOException {
+        fs.writeFilesystem(os);
+        os.close();
+    }
+
+    /**
      * 파일 시스탬(Apache POI 라이브러리)을 닫는다.
      *
      * @throws IOException
