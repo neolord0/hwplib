@@ -1,4 +1,4 @@
-package kr.dogfoot.hwplib.test;
+package kr.dogfoot.hwplib.sample;
 
 import kr.dogfoot.hwplib.object.HWPFile;
 import kr.dogfoot.hwplib.object.bodytext.paragraph.Paragraph;
@@ -23,13 +23,13 @@ import java.io.UnsupportedEncodingException;
 /**
  * 새로운 글자 모양을 추가하고 문단에 글자 모양을 설정하는 샘플 프로그램.
  */
-public class TestMakingCharShape {
+public class Inserting_CharShape {
     public static void main(String[] args) throws Exception {
         String filename = "sample_hwp" + File.separator + "test-blank.hwp";
 
         HWPFile hwpFile = HWPReader.fromFile(filename);
         if (hwpFile != null) {
-            TestMakingCharShape tmcs = new TestMakingCharShape();
+            Inserting_CharShape tmcs = new Inserting_CharShape();
             tmcs.test(hwpFile);
 
             String writePath = "sample_hwp" + File.separator + "test-making-charshape.hwp";
@@ -42,7 +42,7 @@ public class TestMakingCharShape {
     private int charShapeIndexForBold;
     private int faceNameIndexForBatang;
 
-    private TestMakingCharShape() {
+    private Inserting_CharShape() {
         hwpFile = null;
     }
 

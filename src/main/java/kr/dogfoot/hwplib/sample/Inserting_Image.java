@@ -1,4 +1,4 @@
-package kr.dogfoot.hwplib.test;
+package kr.dogfoot.hwplib.sample;
 
 import kr.dogfoot.hwplib.object.HWPFile;
 import kr.dogfoot.hwplib.object.bodytext.Section;
@@ -32,13 +32,13 @@ import java.io.InputStream;
 /**
  * 파일에 이미지와 이미지 컨트롤를 삽입하는 샘플 프로그램
  */
-public class TestInsertImage {
+public class Inserting_Image {
     public static void main(String[] args) throws Exception {
         String filename = "sample_hwp" + File.separator + "test-blank.hwp";
 
         HWPFile hwpFile = HWPReader.fromFile(filename);
         if (hwpFile != null) {
-            TestInsertImage tii = new TestInsertImage();
+            Inserting_Image tii = new Inserting_Image();
             tii.insertShapeWithImage(hwpFile);
 
             String writePath = "sample_hwp" + File.separator + "test-insert-image.hwp";

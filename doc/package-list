@@ -70,7 +70,7 @@ kr.dogfoot.hwplib.reader.bodytext.paragraph.control.tbl
 kr.dogfoot.hwplib.reader.bodytext.paragraph.memo
 kr.dogfoot.hwplib.reader.docinfo
 kr.dogfoot.hwplib.reader.docinfo.borderfill
-kr.dogfoot.hwplib.test
+kr.dogfoot.hwplib.sample
 kr.dogfoot.hwplib.textextractor
 kr.dogfoot.hwplib.util
 kr.dogfoot.hwplib.util.binary

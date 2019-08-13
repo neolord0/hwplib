@@ -1,4 +1,4 @@
-package kr.dogfoot.hwplib.test;
+package kr.dogfoot.hwplib.sample;
 
 import kr.dogfoot.hwplib.object.HWPFile;
 import kr.dogfoot.hwplib.object.bodytext.Section;
@@ -19,9 +19,8 @@ import java.util.ArrayList;
 /**
  * 특정 조건에 맛는 컨트롤을 찾는 샘플 프로그램
  */
-public class TestFindControl {
+public class Finding_Control {
     public static class MyControlFilter implements ControlFilter {
-        @Override
         public boolean isMatched(Control control, Paragraph paragrpah,
                                  Section section) {
             // 컨트롤이 테이블이고

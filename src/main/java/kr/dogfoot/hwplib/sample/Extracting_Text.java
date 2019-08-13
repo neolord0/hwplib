@@ -1,4 +1,4 @@
-package kr.dogfoot.hwplib.test;
+package kr.dogfoot.hwplib.sample;
 
 import kr.dogfoot.hwplib.object.HWPFile;
 import kr.dogfoot.hwplib.reader.HWPReader;
@@ -11,7 +11,7 @@ import java.io.File;
 /**
  * 파일에 전체 텍스트를 추출하는 샘플 프로그램
  */
-public class TestExtractingText {
+public class Extracting_Text {
     public static void main(String[] args) throws Exception {
         TextExtractMethod tem = TextExtractMethod.InsertControlTextBetweenParagraphText;
         test("sample_hwp" + File.separator + "test-blank.hwp", tem);

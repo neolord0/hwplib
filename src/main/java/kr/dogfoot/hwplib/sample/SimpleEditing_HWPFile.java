@@ -1,4 +1,4 @@
-package kr.dogfoot.hwplib.test;
+package kr.dogfoot.hwplib.sample;
 
 import kr.dogfoot.hwplib.object.HWPFile;
 import kr.dogfoot.hwplib.object.bodytext.Section;
@@ -11,7 +11,7 @@ import java.io.File;
 /**
  * 기존 파일을 변경하는 샘플 프로그램.
  */
-public class TestEditingHWPFile {
+public class SimpleEditing_HWPFile {
     public static void main(String[] args) throws Exception {
         String filename = "sample_hwp" + File.separator + "test-blank.hwp";
 

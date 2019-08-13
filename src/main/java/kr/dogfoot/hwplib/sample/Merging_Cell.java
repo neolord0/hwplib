@@ -1,4 +1,4 @@
-package kr.dogfoot.hwplib.test;
+package kr.dogfoot.hwplib.sample;
 
 import kr.dogfoot.hwplib.object.HWPFile;
 import kr.dogfoot.hwplib.object.bodytext.control.Control;
@@ -13,7 +13,7 @@ import java.io.File;
 /**
  * 표의 셀을 병합하는 샘플 프로그램.
  */
-public class TestMergingCell {
+public class Merging_Cell {
     public static void main(String[] args) throws Exception {
         String filename = "sample_hwp" + File.separator + "test-merge-cell.hwp";
 
@@ -29,5 +29,4 @@ public class TestMergingCell {
             HWPWriter.toFile(hwpFile, writePath);
         }
     }
-
 }

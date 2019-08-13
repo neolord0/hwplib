@@ -1,4 +1,4 @@
-package kr.dogfoot.hwplib.test;
+package kr.dogfoot.hwplib.sample;
 
 import kr.dogfoot.hwplib.object.HWPFile;
 import kr.dogfoot.hwplib.object.bodytext.control.ControlType;
@@ -13,7 +13,7 @@ import java.util.ArrayList;
 /**
  * 파일에 있는 모든 필드 컨트롤의 텍스트를 찾는 샘플 프로그램.
  */
-public class TestFindAllField {
+public class Finding_AllField {
     public static void main(String[] args) throws Exception {
         HWPFile hwpFile = HWPReader.fromFile("sample_hwp" + File.separator + "test-find-allfield.hwp");
         if (hwpFile != null) {

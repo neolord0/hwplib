@@ -1,4 +1,4 @@
-package kr.dogfoot.hwplib.test;
+package kr.dogfoot.hwplib.sample;
 
 import kr.dogfoot.hwplib.object.HWPFile;
 import kr.dogfoot.hwplib.object.bodytext.control.ControlType;
@@ -13,7 +13,7 @@ import java.util.ArrayList;
 /**
  * 필드 컨트롤의 텍스트를 설정하는 샘플 프로그램.
  */
-public class TestSetField {
+public class Setting_FieldText {
 
     public static void main(String[] args) throws Exception {
         HWPFile hwpFile = HWPReader.fromFile("sample_hwp" + File.separator + "test-필드설정.hwp");

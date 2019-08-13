@@ -9,7 +9,7 @@
 	- Apache-POI 라이브러리 - 한글 파일의 하부 구조인 Microsoft Compound File의 부분의 파싱.
 	- 한글과컴퓨터에서 공개한  '한글 문서 파일 구조 5.0' 문서 ( http://www.hancom.com/etc/hwpDownload.do?gnb0=269&gnb1=271&gnb0=101&gnb1=140 )
 
-* 이 라이브러리에서 할 수 있는 일.(kr.dogfoot.hwplib.test 패키지 참조)
+* 이 라이브러리에서 할 수 있는 일.(kr.dogfoot.hwplib.sample 패키지 참조)
 	- 한글 파일을 읽어서 객체로 생성 (TestReadingHWPFile 참고)
 	- 만들어진 객체를 파일로 저장 (TestReWritingHWPFile 참고)
 	- 한글 파일에서 텍스트 추출(TestExtractingText 참고)

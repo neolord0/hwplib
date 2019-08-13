@@ -1,4 +1,4 @@
-package kr.dogfoot.hwplib.test;
+package kr.dogfoot.hwplib.sample;
 
 import kr.dogfoot.hwplib.object.HWPFile;
 import kr.dogfoot.hwplib.object.bodytext.ParagraphListInterface;
@@ -10,9 +10,9 @@ import kr.dogfoot.hwplib.writer.HWPWriter;
 import java.io.File;
 
 /**
- * 문단을 추가하는 샘플 프로그램.
+ * 다른 파일 사이에 문단을 복사하는 샘플 프로그램.
  */
-public class TestParagraphAdder {
+public class Copying_Paragraph_Between_HWPFile {
     public static void main(String[] args) throws Exception {
         HWPFile sourceHWPFile = HWPReader.fromFile("sample_hwp" + File.separator + "test-source.hwp");
         HWPFile targetHWPFile = HWPReader.fromFile("sample_hwp" + File.separator + "test-target.hwp");

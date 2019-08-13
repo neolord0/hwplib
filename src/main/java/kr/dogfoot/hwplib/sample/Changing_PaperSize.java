@@ -1,4 +1,4 @@
-package kr.dogfoot.hwplib.test;
+package kr.dogfoot.hwplib.sample;
 
 import kr.dogfoot.hwplib.object.HWPFile;
 import kr.dogfoot.hwplib.object.bodytext.Section;
@@ -12,7 +12,7 @@ import java.io.File;
 /**
  * 페이지 크기를 변경하는 샢플 프로그램.
  */
-public class TestChangePaperSize {
+public class Changing_PaperSize {
     private static class Size {
         public long cx;
         public long cy;

@@ -1,4 +1,4 @@
-package kr.dogfoot.hwplib.test;
+package kr.dogfoot.hwplib.sample;
 
 import kr.dogfoot.hwplib.object.HWPFile;
 import kr.dogfoot.hwplib.object.bodytext.Section;
@@ -12,7 +12,10 @@ import kr.dogfoot.hwplib.writer.HWPWriter;
 
 import java.io.File;
 
-public class TestRemoveRow {
+/**
+ * 표의 열을 삭제하는 샘플 프로그램.
+ */
+public class Removing_Table_Row {
     public static void main(String[] args) throws Exception {
         String filename = "sample_hwp" + File.separator + "test-removerow.hwp";
 

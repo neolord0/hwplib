@@ -1,4 +1,4 @@
-package kr.dogfoot.hwplib.test;
+package kr.dogfoot.hwplib.sample;
 
 import kr.dogfoot.hwplib.object.HWPFile;
 import kr.dogfoot.hwplib.reader.HWPReader;
@@ -8,9 +8,9 @@ import kr.dogfoot.hwplib.tool.textextractor.TextExtractMethod;
 import java.io.File;
 
 /**
- * 누름틀 필드 컨트롤의 텍스트를 찾는 샢플 프로그램.
+ * 누름틀 필드 컨트롤의 텍스트를 구하는 샢플 프로그램.
  */
-public class TestGettingClickHereFieldText {
+public class Getting_ClickHere_FieldText {
     public static void main(String[] args) throws Exception {
         HWPFile hwpFile = HWPReader.fromFile("sample_hwp" + File.separator + "test-필드_누름틀.hwp");
         String text1 = FieldFinder.getClickHereText(hwpFile, "필드1", TextExtractMethod.OnlyMainParagraph);
