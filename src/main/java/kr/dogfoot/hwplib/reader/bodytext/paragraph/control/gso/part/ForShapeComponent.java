@@ -211,6 +211,6 @@ public class ForShapeComponent {
      * @throws IOException
      */
     private static void unknown4Bytes(StreamReader sr) throws IOException {
-        sr.skip(4);
+        sr.skipToEndRecord();
     }
 }
