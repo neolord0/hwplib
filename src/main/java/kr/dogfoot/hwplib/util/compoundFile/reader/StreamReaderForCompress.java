@@ -54,6 +54,7 @@ public class StreamReaderForCompress extends StreamReader {
         } catch (java.util.zip.DataFormatException e) {
             bis = new ByteArrayInputStream(compressed);
             setSize(compressed.length);
+
         }
     }
 
@@ -76,13 +77,11 @@ public class StreamReaderForCompress extends StreamReader {
      * 압축된 데이터를 풀어서 원본 데이터를 얻는다.
      *
      * @param compressed 압축된 데이터
-     * @param originSize 원본 데이터 크기
      * @return 원본 데이터
      * @throws DataFormatException
      * @throws IOException
      */
-    private byte[] decompress(byte[] compressed) throws DataFormatException,
-            IOException {
+    private byte[] decompress(byte[] compressed) throws Exception {
         Inflater decompressor = new Inflater(true);
         decompressor.setInput(compressed, 0, compressed.length);
         ByteArrayOutputStream bos = new ByteArrayOutputStream(compressed.length);
@@ -91,7 +90,11 @@ public class StreamReaderForCompress extends StreamReader {
         byte[] buf = new byte[8096];
         while (!decompressor.finished()) {
             int count = decompressor.inflate(buf);
-            bos.write(buf, 0, count);
+            if (count > 0) {
+                bos.write(buf, 0, count);
+            } else {
+                throw new Exception("can't decompress data");
+            }
         }
         bos.close();
         return bos.toByteArray();
