@@ -27,6 +27,7 @@ public class PictureInfo {
      * 생성자
      */
     public PictureInfo() {
+        effect = PictureEffect.RealPicture;
     }
 
     /**

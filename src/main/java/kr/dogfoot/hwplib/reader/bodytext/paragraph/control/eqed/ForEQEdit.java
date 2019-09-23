@@ -24,11 +24,16 @@ public class ForEQEdit {
         eqEdit.setLetterSize(sr.readUInt4());
         eqEdit.getLetterColor().setValue(sr.readUInt4());
         eqEdit.setBaseLine(sr.readSInt2());
-        sr.skip(2); // unknown
+        System.out.println(sr.getFileVersion().toString());
+        if (!sr.getFileVersion().isOver(5, 0, 0, 0)) {
+            sr.skip(2); // unknown
+        }
         eqEdit.setVersionInfo(sr.readUTF16LEString());
         if (sr.isEndOfRecord() == false) {
             eqEdit.setUnknown(sr.readUTF16LEString());
         }
+
+        sr.skipToEndRecord();
     }
 
 }
