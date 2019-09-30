@@ -12,13 +12,13 @@ public class ParaCharShape {
     /**
      * 위치와 글자 모양의 쌍에 대한 리스트
      */
-    private ArrayList<CharPositonShapeIdPair> positionShapeIdPairList;
+    private ArrayList<CharPositionShapeIdPair> positionShapeIdPairList;
 
     /**
      * 생성자
      */
     public ParaCharShape() {
-        positionShapeIdPairList = new ArrayList<CharPositonShapeIdPair>();
+        positionShapeIdPairList = new ArrayList<CharPositionShapeIdPair>();
     }
 
     /**
@@ -28,7 +28,7 @@ public class ParaCharShape {
      * @param charShapeId 참조된 글자모양 id
      */
     public void addParaCharShape(long position, long charShapeId) {
-        CharPositonShapeIdPair cpsp = new CharPositonShapeIdPair(position,
+        CharPositionShapeIdPair cpsp = new CharPositionShapeIdPair(position,
                 charShapeId);
         positionShapeIdPairList.add(cpsp);
     }
@@ -38,7 +38,7 @@ public class ParaCharShape {
      *
      * @return 위치와 글자 모양의 쌍에 대한 리스트
      */
-    public ArrayList<CharPositonShapeIdPair> getPositonShapeIdPairList() {
+    public ArrayList<CharPositionShapeIdPair> getPositonShapeIdPairList() {
         return positionShapeIdPairList;
     }
 }

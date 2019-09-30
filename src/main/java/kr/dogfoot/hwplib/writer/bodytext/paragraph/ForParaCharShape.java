@@ -1,6 +1,6 @@
 package kr.dogfoot.hwplib.writer.bodytext.paragraph;
 
-import kr.dogfoot.hwplib.object.bodytext.paragraph.charshape.CharPositonShapeIdPair;
+import kr.dogfoot.hwplib.object.bodytext.paragraph.charshape.CharPositionShapeIdPair;
 import kr.dogfoot.hwplib.object.bodytext.paragraph.charshape.ParaCharShape;
 import kr.dogfoot.hwplib.object.etc.HWPTag;
 import kr.dogfoot.hwplib.util.compoundFile.writer.StreamWriter;
@@ -28,7 +28,7 @@ public class ForParaCharShape {
 
         recordHeader(pcs, sw);
 
-        for (CharPositonShapeIdPair cpsip : pcs.getPositonShapeIdPairList()) {
+        for (CharPositionShapeIdPair cpsip : pcs.getPositonShapeIdPairList()) {
             charPositonShapeIdPair(cpsip, sw);
         }
     }
@@ -62,9 +62,9 @@ public class ForParaCharShape {
      * @param sw    스트림 라이터
      * @throws IOException
      */
-    private static void charPositonShapeIdPair(CharPositonShapeIdPair cpsip,
+    private static void charPositonShapeIdPair(CharPositionShapeIdPair cpsip,
                                                StreamWriter sw) throws IOException {
-        sw.writeUInt4(cpsip.getPositon());
+        sw.writeUInt4(cpsip.getPosition());
         sw.writeUInt4(cpsip.getShapeId());
     }
 }

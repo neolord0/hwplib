@@ -5,11 +5,11 @@ package kr.dogfoot.hwplib.object.bodytext.paragraph.charshape;
  *
  * @author neolord
  */
-public class CharPositonShapeIdPair {
+public class CharPositionShapeIdPair {
     /**
      * 글자 모양이 바뀌는 시작 위치
      */
-    private long positon;
+    private long position;
     /**
      * 글자 모양 ID
      */
@@ -21,8 +21,8 @@ public class CharPositonShapeIdPair {
      * @param position 글자 모양이 바뀌는 시작 위치
      * @param shapeId  글자 모양 ID
      */
-    public CharPositonShapeIdPair(long position, long shapeId) {
-        this.positon = position;
+    public CharPositionShapeIdPair(long position, long shapeId) {
+        this.position = position;
         this.shapeId = shapeId;
     }
 
@@ -31,17 +31,17 @@ public class CharPositonShapeIdPair {
      *
      * @return 글자 모양이 바뀌는 시작 위치
      */
-    public long getPositon() {
-        return positon;
+    public long getPosition() {
+        return position;
     }
 
     /**
      * 글자 모양이 바뀌는 시작 위치를 설정한다.
      *
-     * @param positon 글자 모양이 바뀌는 시작 위치
+     * @param position 글자 모양이 바뀌는 시작 위치
      */
-    public void setPositon(long positon) {
-        this.positon = positon;
+    public void setPosition(long position) {
+        this.position = position;
     }
 
     /**
