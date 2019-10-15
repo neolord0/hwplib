@@ -38,6 +38,7 @@ public class Changing_ParagraphText {
     private static void changeParagraphText(Paragraph paragraph) throws UnsupportedEncodingException {
         ArrayList<HWPChar> newCharList = getNewCharList(paragraph.getText().getCharList());
         changeNewCharList(paragraph, newCharList);
+        removeLineSeg(paragraph);
         removeCharShapeExceptFirstOne(paragraph);
     }
 
@@ -104,6 +105,10 @@ public class Changing_ParagraphText {
             paragraph.getText().getCharList().add(ch);
         }
         paragraph.getHeader().setCharacterCount(newCharList.size());
+    }
+
+    private static void removeLineSeg(Paragraph paragraph) {
+        paragraph.deleteLineSeg();
     }
 
 
