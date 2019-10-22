@@ -57,6 +57,9 @@ public class ForControl {
             case PageHide: // 감추기
                 pageHide(c, sr);
                 break;
+            case PageOddEvenAdjust:
+                pageOddEvenAdjust(c, sr);
+                break;
             case PageNumberPositon: // 쪽 번호 위치
                 pageNumberPositon(c, sr);
                 break;
@@ -221,6 +224,17 @@ public class ForControl {
      */
     private static void pageHide(Control c, StreamReader sr) throws IOException {
         ForControlPageHide.read((ControlPageHide) c, sr);
+    }
+
+    /**
+     * 홀/짝수 조정 컨트롤을 읽는다.
+     *
+     * @param c  컨트롤
+     * @param sr 스트림 리더
+     * @throws IOException
+     */
+    private static void pageOddEvenAdjust(Control c, StreamReader sr) throws IOException {
+        ForControlPageOddEvenAdjust.read((ControlPageOddEvenAdjust) c, sr);
     }
 
     /**

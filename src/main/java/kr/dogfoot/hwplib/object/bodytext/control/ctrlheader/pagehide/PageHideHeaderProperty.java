@@ -7,7 +7,7 @@ import kr.dogfoot.hwplib.util.binary.BitFlag;
  *
  * @author neolord
  */
-public class PagehideHeaderProperty {
+public class PageHideHeaderProperty {
     /**
      * 파일에 저장되는 정수값(unsigned 4 byte)
      */
@@ -16,7 +16,7 @@ public class PagehideHeaderProperty {
     /**
      * 생성자
      */
-    public PagehideHeaderProperty() {
+    public PageHideHeaderProperty() {
     }
 
     /**

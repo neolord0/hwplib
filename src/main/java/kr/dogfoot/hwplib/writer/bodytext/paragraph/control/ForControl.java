@@ -57,9 +57,11 @@ public class ForControl {
             case PageHide: // 감추기
                 ForControlPageHide.write((ControlPageHide) c, sw);
                 break;
+            case PageOddEvenAdjust:
+                ForControlPageOddEvenAdjust.write((ControlPageOddEvenAdjust) c, sw);
+                break;
             case PageNumberPositon: // 쪽 번호 위치
-                ForControlPageNumberPosition.write((ControlPageNumberPosition) c,
-                        sw);
+                ForControlPageNumberPosition.write((ControlPageNumberPosition) c, sw);
                 break;
             case IndexMark: // 찾아보기 표식
                 ForControlIndexMark.write((ControlIndexMark) c, sw);

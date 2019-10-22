@@ -1,7 +1,7 @@
 package kr.dogfoot.hwplib.object.bodytext.control.ctrlheader;
 
 import kr.dogfoot.hwplib.object.bodytext.control.ControlType;
-import kr.dogfoot.hwplib.object.bodytext.control.ctrlheader.pagehide.PagehideHeaderProperty;
+import kr.dogfoot.hwplib.object.bodytext.control.ctrlheader.pagehide.PageHideHeaderProperty;
 
 /**
  * 감추기 컨트롤을 위한 컨트롤 헤더 레코드
@@ -12,7 +12,7 @@ public class CtrlHeaderPageHide extends CtrlHeader {
     /**
      * 속성
      */
-    private PagehideHeaderProperty property;
+    private PageHideHeaderProperty property;
 
     /**
      * 생성자
@@ -20,7 +20,7 @@ public class CtrlHeaderPageHide extends CtrlHeader {
     public CtrlHeaderPageHide() {
         super(ControlType.PageHide.getCtrlId());
 
-        property = new PagehideHeaderProperty();
+        property = new PageHideHeaderProperty();
     }
 
     /**
@@ -28,7 +28,7 @@ public class CtrlHeaderPageHide extends CtrlHeader {
      *
      * @return 감추기 컨트롤의 속성 객체
      */
-    public PagehideHeaderProperty getProperty() {
+    public PageHideHeaderProperty getProperty() {
         return property;
     }
 }

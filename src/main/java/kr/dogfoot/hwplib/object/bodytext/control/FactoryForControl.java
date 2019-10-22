@@ -38,6 +38,8 @@ public class FactoryForControl {
             return new ControlNewNumber();
         } else if (ctrlId == ControlType.PageHide.getCtrlId()) {
             return new ControlPageHide();
+        } else if (ctrlId == ControlType.PageOddEvenAdjust.getCtrlId()) {
+            return new ControlPageOddEvenAdjust();
         } else if (ctrlId == ControlType.PageNumberPositon.getCtrlId()) {
             return new ControlPageNumberPosition();
         } else if (ctrlId == ControlType.IndexMark.getCtrlId()) {
