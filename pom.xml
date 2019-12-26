@@ -3,14 +3,27 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-
     <groupId>kr.dogfoot</groupId>
     <artifactId>hwplib</artifactId>
     <packaging>pom</packaging>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0.0</version>
+
+    <name>HWP Library</name>
+    <description>The hwp library is a library that can read and write hwp files used in the word processor developed by Hancom.</description>
+    <url>https://github.com/neolord0/hwplib</url>
+     
+    <licenses>
+        <license>
+            <name>apache-2.0</name>
+            <url>https://opensource.org/licenses/Apache-2.0</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+    
     <modules>
         <module>src/main/java/kr/dogfoot/hwplib/sample/htmltohwp</module>
     </modules>
+    
     <dependencies>
         <!-- https://mvnrepository.com/artifact/org.apache.poi/poi -->
         <dependency>
