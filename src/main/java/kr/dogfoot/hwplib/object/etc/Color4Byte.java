@@ -31,7 +31,7 @@ public class Color4Byte {
     /**
      * unsigned 4 byte color 값을 설정한다.
      *
-     * @param color unsigned 4 byte color 값, windows API에서 COLORREF의 값
+     * @param value unsigned 4 byte color 값, windows API에서 COLORREF의 값
      */
     public void setValue(long value) {
         this.value = value;

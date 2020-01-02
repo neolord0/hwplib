@@ -5,13 +5,18 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>kr.dogfoot</groupId>
     <artifactId>hwplib</artifactId>
-    <packaging>pom</packaging>
-    <version>1.0.0</version>
+    <packaging>jar</packaging>
+    <version>1.0</version>
 
     <name>HWP Library</name>
     <description>The hwp library is a library that can read and write hwp files used in the word processor developed by Hancom.</description>
     <url>https://github.com/neolord0/hwplib</url>
-     
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+    </properties>
+
     <licenses>
         <license>
             <name>apache-2.0</name>
@@ -19,11 +24,21 @@
             <distribution>repo</distribution>
         </license>
     </licenses>
-    
-    <modules>
-        <module>src/main/java/kr/dogfoot/hwplib/sample/htmltohwp</module>
-    </modules>
-    
+
+    <scm>
+        <url>https://github.com/neolord0/hwplib</url>
+        <connection>scm:git:git://github.com/neolord0/hwplib.git</connection>
+    </scm>
+
+    <developers>
+        <developer>
+            <email>neolord@hanmail.net</email>
+            <name>Park.sungkyon</name>
+            <url>https://github.com/neolord0</url>
+            <id>neolord0</id>
+        </developer>
+    </developers>
+
     <dependencies>
         <!-- https://mvnrepository.com/artifact/org.apache.poi/poi -->
         <dependency>
@@ -32,7 +47,91 @@
             <artifactId>poi</artifactId>
             <version>4.1.0</version>
         </dependency>
-
     </dependencies>
-    
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>2.3.2</version>
+                <configuration>
+                    <excludes>
+                        <exclude>**/sample/**</exclude>
+                        <exclude>**/*.iml</exclude>
+                        <exclude>**/*.hwp</exclude>
+                    </excludes>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+                <version>2.3</version>
+                <executions>
+                    <execution>
+                        <id>attach-sources</id>
+                        <phase>verify</phase>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>2.9.1</version>
+                <configuration>
+                    <additionalJOption>-Xdoclint:none</additionalJOption>
+                    <javadocExecutable>${java.home}/../bin/javadoc</javadocExecutable>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>attach-javadocs</id>
+                        <phase>verify</phase>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-gpg-plugin</artifactId>
+                <version>1.6</version>
+                <executions>
+                    <execution>
+                        <id>sign-artifacts</id>
+                        <phase>verify</phase>
+                        <goals>
+                            <goal>sign</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.sonatype.plugins</groupId>
+                <artifactId>nexus-staging-maven-plugin</artifactId>
+                <version>1.6.8</version>
+                <configuration>
+                    <serverId>ossrh</serverId>
+                    <nexusUrl>https://oss.sonatype.org/</nexusUrl>
+                    <autoReleaseAfterClose>true</autoReleaseAfterClose>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <distributionManagement>
+        <snapshotRepository>
+            <id>ossrh</id>
+            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+        </snapshotRepository>
+        <repository>
+            <id>ossrh</id>
+            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2</url>
+        </repository>
+    </distributionManagement>
+
 </project>

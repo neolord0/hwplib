@@ -20,7 +20,6 @@ public class ForControlWithAllField {
      * 컨트롤 속에 있는 이름이 같은 모든 필드를 찾아 텍스트를 리스트에 추가한다.
      *
      * @param c          컨트롤
-     * @param fieldType  컨트롤
      * @param fieldType  필드 타입
      * @param fieldName  필드 이름
      * @param temInField 필드 안에 텍스트의 텍스트 추출 방법

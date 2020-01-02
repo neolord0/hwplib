@@ -69,7 +69,6 @@ public class CellFinder {
      * 표 안에서 필드명이 일치하는 셀들을 찾는다.
      *
      * @param table 표 컨트롤
-     * @return 셀 리스트
      */
     public void find(ControlTable table) {
         for (Row row : table.getRowList()) {
