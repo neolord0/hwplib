@@ -22,6 +22,14 @@
 
 * 이 라이브러리는 이미지 파일, PDF 파일, HTML 파일로 변환 기능은 아직 지원하지 않습니다. (문의가 많이 들어옴)
 
+* 메이븐 레파지토리 설정
+    ```{.xml}
+    <dependency>
+        <groupId>kr.dogfoot</groupId>
+        <artifactId>hwplib</artifactId>
+        <version>1.0</version>
+    </dependency>
+    ```
 
 2019.12.20
 =========================================================================================
