@@ -14,6 +14,10 @@ public class LevelNumbering {
      * 번호 형식
      */
     private String numberFormat;
+    /**
+     * 수준별 시작번호 (5.0.2.5 이상)
+     */
+    private long startNumber;
 
     /**
      * 생성자
@@ -48,4 +52,24 @@ public class LevelNumbering {
     public void setNumberFormat(String numberFormat) {
         this.numberFormat = numberFormat;
     }
+
+    /**
+     * 수준별 시작번호를 반환한다.
+     *
+     * @return 수준별 시작번호
+     */
+    public long getStartNumber() {
+        return startNumber;
+    }
+
+    /**
+     * 수준별 시작번호를 설정한다.
+     *
+     * @param startNumber 수준별 시작번호
+     */
+    public void setStartNumber(long startNumber) {
+        this.startNumber = startNumber;
+    }
 }
+
+

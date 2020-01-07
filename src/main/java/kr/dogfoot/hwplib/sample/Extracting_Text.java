@@ -38,7 +38,7 @@ public class Extracting_Text {
         test("sample_hwp" + File.separator + "test-필드.hwp", tem);
         test("sample_hwp" + File.separator + "test-필드_누름틀.hwp", tem);
         test("sample_hwp" + File.separator + "test-호 곡선.hwp", tem);
-        test("sample_hwp" + File.separator + "[붙임1]정부포상 추천 구비서류 서식.hwp", tem);
+        test("sample_hwp" + File.separator + "test-[붙임1]정부포상 추천 구비서류 서식.hwp", tem);
     }
 
     private static void test(String filename, TextExtractMethod tem)

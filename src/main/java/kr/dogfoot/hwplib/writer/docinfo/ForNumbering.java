@@ -26,10 +26,13 @@ public class ForNumbering {
     public static void write(Numbering n, StreamWriter sw) throws Exception {
         recordHeader(n, sw);
 
-        levelNumberings(n, sw);
+        levelNumberings1To7(n, sw);
         sw.writeUInt2(n.getStartNumber());
         if (sw.getFileVersion().isOver(5, 0, 2, 5)) {
-            startNumberForLevels(n, sw);
+            startNumbersFor1To7(n, sw);
+
+            levelNumberings8To10(n, sw);
+            startNumbersFor8To10(n, sw);
         }
     }
 
@@ -62,18 +65,24 @@ public class ForNumbering {
         size += 2;
         if (version.isOver(5, 0, 2, 5)) {
             size += 4 * 7;
+
+            for (int level = 8; level <=10; level++) {
+                LevelNumbering ln = n.getLevelNumbering(level);
+                size += 12 + StringUtil.getUTF16LEStringSize(ln.getNumberFormat());
+            }
+            size += 4 * 3;
         }
         return size;
     }
 
     /**
-     * 모든 수준(1～7)에 해당하는 문단 번호 정보 부분을 쓴다.
+     * 1-7 수준에 해당하는 문단 번호 정보 부분을 쓴다.
      *
      * @param n  문단 번호 레코드
      * @param sw 스트림 라이터
      * @throws Exception
      */
-    private static void levelNumberings(Numbering n, StreamWriter sw)
+    private static void levelNumberings1To7(Numbering n, StreamWriter sw)
             throws Exception {
         for (int level = 1; level <= 7; level++) {
             levelNumbering(n.getLevelNumbering(level), sw);
@@ -109,16 +118,45 @@ public class ForNumbering {
     }
 
     /**
-     * 수준별 시작번호 부분을 쓴다.
+     * 1-7 수준의 시작번호을 쓴다.
      *
      * @param n  문단 번호 레코드
      * @param sw 스트림 라이터
      * @throws Exception
      */
-    private static void startNumberForLevels(Numbering n, StreamWriter sw)
+    private static void startNumbersFor1To7(Numbering n, StreamWriter sw)
             throws Exception {
         for (int level = 1; level <= 7; level++) {
-            sw.writeUInt4(n.getStartNumberForLevel(level));
+            sw.writeUInt4(n.getLevelNumbering(level).getStartNumber());
         }
     }
+
+    /**
+     * 8-10 수준에 해당하는 문단 번호 정보 부분을 쓴다.
+     *
+     * @param n  문단 번호 레코드
+     * @param sw 스트림 라이터
+     * @throws Exception
+     */
+    private static void levelNumberings8To10(Numbering n, StreamWriter sw)
+            throws Exception {
+        for (int level = 8; level <= 10; level++) {
+            levelNumbering(n.getLevelNumbering(level), sw);
+        }
+    }
+
+    /**
+     * 8-10 수준의 시작번호을 쓴다.
+     *
+     * @param n  문단 번호 레코드
+     * @param sw 스트림 라이터
+     * @throws Exception
+     */
+    private static void startNumbersFor8To10(Numbering n, StreamWriter sw)
+            throws Exception {
+        for (int level = 8; level <= 10; level++) {
+            sw.writeUInt4(n.getLevelNumbering(level).getStartNumber());
+        }
+    }
+
 }

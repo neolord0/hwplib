@@ -37,8 +37,7 @@ public class NumberingAdder {
     }
 
     private boolean equal(Numbering source, Numbering target) {
-        return equalLevelNumberingList(source, target) && source.getStartNumber() == target.getStartNumber()
-                && equalStartNumbersForLevel(source, target);
+        return equalLevelNumberingList(source, target) && source.getStartNumber() == target.getStartNumber();
     }
 
     private boolean equalLevelNumberingList(Numbering source, Numbering target) {
@@ -56,7 +55,8 @@ public class NumberingAdder {
 
     private boolean equalLevelNumbering(LevelNumbering source, LevelNumbering target) {
         return equalParagraphHeadInfo(source.getParagraphHeadInfo(), target.getParagraphHeadInfo())
-                && source.getNumberFormat().equals(target.getNumberFormat());
+                && source.getNumberFormat().equals(target.getNumberFormat())
+                && source.getStartNumber() == target.getStartNumber();
     }
 
     private boolean equalParagraphHeadInfo(ParagraphHeadInfo source, ParagraphHeadInfo target) {
@@ -66,35 +66,17 @@ public class NumberingAdder {
                 .equalById((int) source.getCharShapeID(), (int) target.getCharShapeID());
     }
 
-    private boolean equalStartNumbersForLevel(Numbering source, Numbering target) {
-        for (int level = 0; level < 7; level++) {
-            try {
-                if (source.getStartNumberForLevel(level) != target.getStartNumberForLevel(level)) {
-                    return false;
-                }
-            } catch (Exception e) {
-                return false;
-            }
-        }
-        return true;
-    }
 
     private int addAndCopy(Numbering source) {
         Numbering target = docInfoAdder.getTargetHWPFile().getDocInfo().addNewNumbering();
         int level;
-        for (level = 0; level < 7; level++) {
+        for (level = 0; level < 10; level++) {
             try {
                 copyLevelNumbering(source.getLevelNumbering(level), target.getLevelNumbering(level));
             } catch (Exception e) {
             }
         }
         target.setStartNumber(source.getStartNumber());
-        for (level = 0; level < 7; level++) {
-            try {
-                target.setStartNumberForLevel(source.getStartNumberForLevel(level), level);
-            } catch (Exception e) {
-            }
-        }
 
         return docInfoAdder.getTargetHWPFile().getDocInfo().getNumberingList().size() - 1;
     }
@@ -102,6 +84,7 @@ public class NumberingAdder {
     private void copyLevelNumbering(LevelNumbering source, LevelNumbering target) {
         copyParagraphHeadInfo(source.getParagraphHeadInfo(), target.getParagraphHeadInfo());
         target.setNumberFormat(source.getNumberFormat());
+        target.setStartNumber(source.getStartNumber());
     }
 
     private void copyParagraphHeadInfo(ParagraphHeadInfo source, ParagraphHeadInfo target) {

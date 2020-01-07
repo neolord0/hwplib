@@ -21,21 +21,25 @@ public class ForNumbering {
      * @throws Exception
      */
     public static void read(Numbering n, StreamReader sr) throws Exception {
-        levelNumberings(n, sr);
+        levelNumberingsFor1To7(n, sr);
         n.setStartNumber(sr.readUInt2());
         if (sr.isEndOfRecord() == false && sr.getFileVersion().isOver(5, 0, 2, 5)) {
-            startNumberForLevels(n, sr);
+            startNumbersFor1To7(n, sr);
+            if (sr.isEndOfRecord() == false) {
+                levelNumberingsFor8To10(n, sr);
+                startNumbersFor8To10(n, sr);
+            }
         }
     }
 
     /**
-     * 모든 수준(1～7)에 해당하는 문단 번호 정보 부분을 읽는다.
+     * 1～7 수준에 해당하는 문단 번호 정보 부분을 읽는다.
      *
      * @param n  문단 번호 레코드
      * @param sr 스트림 리더
      * @throws Exception
      */
-    private static void levelNumberings(Numbering n, StreamReader sr)
+    private static void levelNumberingsFor1To7(Numbering n, StreamReader sr)
             throws Exception {
         for (int level = 1; level <= 7; level++) {
             levelNumbering(n.getLevelNumbering(level), sr);
@@ -55,6 +59,7 @@ public class ForNumbering {
         ln.setNumberFormat(sr.readUTF16LEString());
     }
 
+
     /**
      * 문단 머리 정보 부분을 읽는다.
      *
@@ -71,16 +76,44 @@ public class ForNumbering {
     }
 
     /**
-     * 수준별 시작번호 부분을 읽는다.
+     * 1～7 수준의 시작번호 부분을 읽는다.
      *
      * @param n  문단 번호 레코드
      * @param sr 스트림 리더
      * @throws Exception
      */
-    private static void startNumberForLevels(Numbering n, StreamReader sr)
+    private static void startNumbersFor1To7(Numbering n, StreamReader sr)
             throws Exception {
         for (int level = 1; level <= 7; level++) {
-            n.setStartNumberForLevel(sr.readUInt4(), level);
+            n.getLevelNumbering(level).setStartNumber(sr.readUInt4());
+        }
+    }
+
+    /**
+     * 8～10 수준에 해당하는 문단 번호 정보 부분을 읽는다.
+     *
+     * @param n  문단 번호 레코드
+     * @param sr 스트림 리더
+     * @throws Exception
+     */
+    private static void levelNumberingsFor8To10(Numbering n, StreamReader sr)
+            throws Exception {
+        for (int level = 8; level <= 10; level++) {
+            levelNumbering(n.getLevelNumbering(level), sr);
+        }
+    }
+
+    /**
+     * 8～10 수준의 시작번호 부분을 읽는다.
+     *
+     * @param n  문단 번호 레코드
+     * @param sr 스트림 리더
+     * @throws Exception
+     */
+    private static void startNumbersFor8To10(Numbering n, StreamReader sr)
+            throws Exception {
+        for (int level = 8; level <= 10; level++) {
+            n.getLevelNumbering(level).setStartNumber(sr.readUInt4());
         }
     }
 }

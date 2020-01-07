@@ -36,8 +36,8 @@ public class ReWriting_HWPFile {
         test("sample_hwp" + File.separator + "test-필드.hwp");
         test("sample_hwp" + File.separator + "test-호 곡선.hwp");
         test("sample_hwp" + File.separator + "test-필드_누름틀.hwp");
-        test("sample_hwp" + File.separator + "구버전(5.0.2.2) Picture 컨트롤.hwp");
-
+        test("sample_hwp" + File.separator + "test-구버전(5.0.2.2) Picture 컨트롤.hwp");
+        test("sample_hwp" + File.separator + "test-문단번호 1-10 수준.hwp");
     }
 
     private static void test(String filename) throws Exception {

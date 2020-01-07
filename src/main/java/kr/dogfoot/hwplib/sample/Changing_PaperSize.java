@@ -33,6 +33,7 @@ public class Changing_PaperSize {
             System.out.println(paperSize.cx);
             System.out.println(paperSize.cy);
 
+
             csd.getPageDef().setPaperWidth(paperSize.cx);
             csd.getPageDef().setPaperHeight(paperSize.cy);
 
