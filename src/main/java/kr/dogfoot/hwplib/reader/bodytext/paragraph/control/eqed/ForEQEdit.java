@@ -30,9 +30,7 @@ public class ForEQEdit {
         if (sr.isEndOfRecord()) {
             return;
         }
-        if (!sr.getFileVersion().isOver(5, 0, 0, 0)) {
-            sr.skip(2); // unknown
-        }
+        eqEdit.setUnknown(sr.readUInt2());
         if (sr.isEndOfRecord()) {
             return;
         }
@@ -40,7 +38,7 @@ public class ForEQEdit {
         if (sr.isEndOfRecord()) {
             return;
         }
-        eqEdit.setUnknown(sr.readUTF16LEString());
+        eqEdit.setFontName(sr.readUTF16LEString());
     }
 
 }

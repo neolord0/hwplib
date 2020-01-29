@@ -29,13 +29,17 @@ public class EQEdit {
      */
     private short baseLine;
     /**
-     * 버전 정보 ??
+     * 알수 없는 2 byte;
+     */
+    private int unknown;
+    /**
+     * 버전 정보
      */
     private String versionInfo;
     /**
-     * 알수 없는 문자열 ??
+     * 폰트 이름
      */
-    private String unknown;
+    private String fontName;
 
     /**
      * 생성자
@@ -126,6 +130,22 @@ public class EQEdit {
     }
 
     /**
+     * 알수 없는 2 byte를 반환한다.
+     */
+    public int getUnknown() {
+        return unknown;
+    }
+
+    /**
+     * 알수 없는 2 byte를 설정한다.
+     *
+     * @param unknown 알수 없는 2 byte
+     */
+    public void setUnknown(int unknown) {
+        this.unknown = unknown;
+    }
+
+    /**
      * 버전 정보를 반환한다.
      *
      * @return 버전 정보
@@ -144,20 +164,20 @@ public class EQEdit {
     }
 
     /**
-     * 알 수 없는 문자열를 반환한다.
+     * 폰트 이름을 반환한다.
      *
-     * @return 알 수 없는 문자열
+     * @return 폰트 이름
      */
-    public String getUnknown() {
-        return unknown;
+    public String getFontName() {
+        return fontName;
     }
 
     /**
-     * 알 수 없는 문자열를 설정한다.
+     * 폰트 이름을 설정한다.
      *
-     * @param unknown 알 수 없는 문자열
+     * @param fontName 폰트 이름
      */
-    public void setUnknown(String unknown) {
-        this.unknown = unknown;
+    public void setFontName(String fontName) {
+        this.fontName = fontName;
     }
 }
