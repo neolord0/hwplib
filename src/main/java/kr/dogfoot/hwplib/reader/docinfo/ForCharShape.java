@@ -36,6 +36,7 @@ public class ForCharShape {
         if (sr.isEndOfRecord() == false && sr.getFileVersion().isOver(5, 0, 2, 1)) {
             cs.setBorderFillId(sr.readUInt2());
         }
+
         if (sr.isEndOfRecord() == false && sr.getFileVersion().isOver(5, 0, 3, 0)) {
             cs.getStrikeLineColor().setValue(sr.readUInt4());
         }

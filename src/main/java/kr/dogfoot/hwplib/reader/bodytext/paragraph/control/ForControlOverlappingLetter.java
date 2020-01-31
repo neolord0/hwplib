@@ -34,6 +34,7 @@ public class ForControlOverlappingLetter {
     private static void ctrlHeader(CtrlHeaderOverlappingLetter header,
                                    StreamReader sr) throws IOException {
         overlappingLetters(header, sr);
+
         if (sr.isEndOfRecord() == false) {
             header.setBorderType(sr.readUInt1());
             header.setInternalFontSize(sr.readSInt1());

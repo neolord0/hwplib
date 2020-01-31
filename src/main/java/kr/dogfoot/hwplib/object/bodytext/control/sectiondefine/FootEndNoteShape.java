@@ -58,6 +58,10 @@ public class FootEndNoteShape {
      * 구분선 색상
      */
     private Color4Byte divideLineColor;
+    /**
+     * 알수 없는 4 byte;
+     */
+    private long unknown;
 
     /**
      * 생성자
@@ -263,5 +267,21 @@ public class FootEndNoteShape {
      */
     public Color4Byte getDivideLineColor() {
         return divideLineColor;
+    }
+
+    /**
+     * 알수 없는 4byte를 반환한다.
+     * @return 알수 없는 4byte
+     */
+    public long getUnknown() {
+        return unknown;
+    }
+
+    /**
+     * 알수 없는 4byte를 설정한다.
+     * @param unknown 알수 없는 4byte
+     */
+    public void setUnknown(long unknown) {
+        this.unknown = unknown;
     }
 }

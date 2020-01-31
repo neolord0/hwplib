@@ -42,12 +42,15 @@ public class ForControlField {
         h.setEtcProperty(sr.readUInt1());
         h.setCommand(sr.readUTF16LEString());
         h.setInstanceId(sr.readUInt4());
+
         if (sr.isEndOfRecord() == false
                 && h.getCtrlId() == ControlType.FIELD_UNKNOWN.getCtrlId()) {
             h.setMemoIndex(sr.readSInt4());
         }
 
-        unknownBytes(sr);
+        if (sr.isEndOfRecord() == false) {
+            unknownBytes(sr);
+        }
     }
 
     /**

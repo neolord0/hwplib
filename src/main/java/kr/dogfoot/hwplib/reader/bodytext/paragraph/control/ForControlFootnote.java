@@ -59,7 +59,10 @@ public class ForControlFootnote {
         h.setBeforeDecorationLetter(sr.readWChar());
         h.setAfterDecorationLetter(sr.readWChar());
         h.setNumberShape(NumberShape.valueOf((short) sr.readUInt4()));
-        h.setInstanceId(sr.readUInt4());
+
+        if (sr.isEndOfRecord() == false) {
+            h.setInstanceId(sr.readUInt4());
+        }
     }
 
     /**

@@ -51,10 +51,9 @@ public class StreamReaderForCompress extends StreamReader {
 
             bis = new ByteArrayInputStream(decompressed);
             setSize(decompressed.length);
-        } catch (java.util.zip.DataFormatException e) {
+        } catch (Exception e) {
             bis = new ByteArrayInputStream(compressed);
             setSize(compressed.length);
-
         }
     }
 

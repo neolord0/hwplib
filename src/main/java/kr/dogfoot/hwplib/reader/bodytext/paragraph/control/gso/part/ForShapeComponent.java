@@ -53,18 +53,18 @@ public class ForShapeComponent {
     private static void shapeComponentForNormal(ShapeComponentNormal scn,
                                                 StreamReader sr) throws IOException {
         commonPart(scn, sr);
-        if (sr.isEndOfRecord() == true) {
-            return;
+
+        if (sr.isEndOfRecord() == false) {
+            lineInfo(scn, sr);
         }
-        lineInfo(scn, sr);
-        if (sr.isEndOfRecord() == true) {
-            return;
+
+        if (sr.isEndOfRecord() == false) {
+            fillInfo(scn, sr);
         }
-        fillInfo(scn, sr);
-        if (sr.isEndOfRecord() == true) {
-            return;
+
+        if (sr.isEndOfRecord() == false) {
+            shadowInfo(scn, sr);
         }
-        shadowInfo(scn, sr);
     }
 
     /**

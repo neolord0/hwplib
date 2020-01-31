@@ -23,22 +23,22 @@ public class ForEQEdit {
         eqEdit.setScript(sr.readUTF16LEString());
         eqEdit.setLetterSize(sr.readUInt4());
         eqEdit.getLetterColor().setValue(sr.readUInt4());
-        if (sr.isEndOfRecord()) {
-            return;
+
+        if (sr.isEndOfRecord() == false) {
+            eqEdit.setBaseLine(sr.readSInt2());
         }
-        eqEdit.setBaseLine(sr.readSInt2());
-        if (sr.isEndOfRecord()) {
-            return;
+
+        if (sr.isEndOfRecord() == false) {
+            eqEdit.setUnknown(sr.readUInt2());
         }
-        eqEdit.setUnknown(sr.readUInt2());
-        if (sr.isEndOfRecord()) {
-            return;
+
+        if (sr.isEndOfRecord() == false) {
+            eqEdit.setVersionInfo(sr.readUTF16LEString());
         }
-        eqEdit.setVersionInfo(sr.readUTF16LEString());
-        if (sr.isEndOfRecord()) {
-            return;
+
+        if (sr.isEndOfRecord() == false) {
+            eqEdit.setFontName(sr.readUTF16LEString());
         }
-        eqEdit.setFontName(sr.readUTF16LEString());
     }
 
 }

@@ -30,11 +30,15 @@ public class ForCtrlHeaderSecd {
         header.setImageStartNumber(sr.readUInt2());
         header.setTableStartNumber(sr.readUInt2());
         header.setEquationStartNumber(sr.readUInt2());
+
         if (sr.isEndOfRecord() == false
                 && sr.getFileVersion().isOver(5, 0, 1, 2)) {
             header.setDefaultLanguage(sr.readUInt2());
         }
-        unknownRestBytes(sr);
+
+        if (sr.isEndOfRecord() == false) {
+            unknownRestBytes(sr);
+        }
     }
 
     /**

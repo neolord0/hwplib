@@ -23,12 +23,14 @@ public class ForNumbering {
     public static void read(Numbering n, StreamReader sr) throws Exception {
         levelNumberingsFor1To7(n, sr);
         n.setStartNumber(sr.readUInt2());
+
         if (sr.isEndOfRecord() == false && sr.getFileVersion().isOver(5, 0, 2, 5)) {
             startNumbersFor1To7(n, sr);
-            if (sr.isEndOfRecord() == false) {
-                levelNumberingsFor8To10(n, sr);
-                startNumbersFor8To10(n, sr);
-            }
+        }
+
+        if (sr.isEndOfRecord() == false) {
+            levelNumberingsFor8To10(n, sr);
+            startNumbersFor8To10(n, sr);
         }
     }
 

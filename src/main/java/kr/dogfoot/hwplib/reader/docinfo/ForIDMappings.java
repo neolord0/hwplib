@@ -34,9 +34,11 @@ public class ForIDMappings {
         idm.setBulletCount(sr.readSInt4());            // 12
         idm.setParaShapeCount(sr.readSInt4());            // 13
         idm.setStyleCount(sr.readSInt4());                // 14
+
         if (sr.isEndOfRecord() == false && sr.getFileVersion().isOver(5, 0, 2, 1)) {
             idm.setMemoShapeCount(sr.readSInt4());            // 15
         }
+
         if (sr.isEndOfRecord() == false && sr.getFileVersion().isOver(5, 0, 3, 2)) {
             idm.setTrackChangeCount(sr.readSInt4());        // 16
             idm.setTrackChangeAuthorCount(sr.readSInt4());    // 17
