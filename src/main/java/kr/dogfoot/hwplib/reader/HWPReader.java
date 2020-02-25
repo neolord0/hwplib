@@ -4,8 +4,11 @@ import kr.dogfoot.hwplib.object.HWPFile;
 import kr.dogfoot.hwplib.object.docinfo.BinData;
 import kr.dogfoot.hwplib.object.docinfo.bindata.BinDataCompress;
 import kr.dogfoot.hwplib.object.fileheader.FileVersion;
+import kr.dogfoot.hwplib.reader.bodytext.ForParagraphList;
 import kr.dogfoot.hwplib.reader.bodytext.ForSection;
 import kr.dogfoot.hwplib.reader.docinfo.ForDocInfo;
+import kr.dogfoot.hwplib.tool.textextractor.TextExtractMethod;
+import kr.dogfoot.hwplib.tool.textextractor.TextExtractorListener;
 import kr.dogfoot.hwplib.util.compoundFile.reader.CompoundFileReader;
 import kr.dogfoot.hwplib.util.compoundFile.reader.StreamReader;
 
@@ -227,5 +230,72 @@ public class HWPReader {
                 return false;
         }
         return false;
+    }
+
+
+    /**
+     * 텍스트를 추출하기 위해 hwp 파일을 읽는다.
+     *
+     * @param filepath hwp파일의 경로
+     * @param listener 텍스트 추출 리스너
+     * @param tem      추출 방법
+     *     @throws Exception
+     */
+    public static void forExtractText(String filepath, TextExtractorListener listener, TextExtractMethod tem) throws Exception {
+        forExtractText(new FileInputStream(filepath), listener, tem);
+    }
+
+    /**
+     * 텍스트를 추출하기 위해 hwp 파일을 읽는다.
+     *
+     * @param is hwp파일을 가리키는 Input Stream ㅒ객체
+     * @param listener 텍스트 추출 리스너
+     * @param tem      추출 방법
+     * @throws Exception
+     */
+    private static void forExtractText(FileInputStream is, TextExtractorListener listener, TextExtractMethod tem) throws Exception {
+        HWPReader r = new HWPReader();
+        r.hwpFile = new HWPFile();
+        r.cfr = new CompoundFileReader(is);
+
+        r.fileHeader();
+        if (r.hasPassword()) {
+            throw new Exception("Files with passwords are not supported.");
+        }
+        r.docInfo();
+        r.extractBodyText(listener, tem);
+
+        r.cfr.close();
+    }
+
+    /**
+     * 텍스트를 추출하기 위해 hwp 파일의 bodyText 부분을 읽는다.
+     *
+     * @param listener 텍스트 추출 리스너
+     * @param tem      추출 방법
+     * @throws Exception
+     */
+    private void extractBodyText(TextExtractorListener listener, TextExtractMethod tem) throws Exception {
+        cfr.moveChildStorage("BodyText");
+        int sectionCount = hwpFile.getDocInfo().getDocumentProperties().getSectionCount();
+        for (int index = 0; index < sectionCount; index++) {
+            extractSectionText(index, listener, tem);
+        }
+        cfr.moveParentStorage();
+    }
+
+    /**
+     * 텍스트를 추출하기 위해 hwp 파일의 섹션 부분을 읽는다.
+     *
+     * @param sectionIndex 섹션 인덱스
+     * @param listener 텍스트 추출 리스너
+     * @param tem      추출 방법
+     * @throws Exception
+     */
+    private void extractSectionText(int sectionIndex, TextExtractorListener listener, TextExtractMethod tem) throws Exception {
+        StreamReader sr = cfr.getChildStreamReader("Section" + sectionIndex, isCompressed(), getVersion());
+        sr.setDocInfo(hwpFile.getDocInfo());
+        ForParagraphList.extractText(sr, listener, tem);
+        sr.close();
     }
 }

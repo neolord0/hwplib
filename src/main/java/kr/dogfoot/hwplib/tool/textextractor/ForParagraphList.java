@@ -110,7 +110,7 @@ public class ForParagraphList {
      * @param sb  추출된 텍스트를 저정할 StringBuffer 객체
      * @throws UnsupportedEncodingException
      */
-    private static void paragraph(Paragraph p, TextExtractMethod tem,
+    public static void paragraph(Paragraph p, TextExtractMethod tem,
                                   StringBuffer sb) throws UnsupportedEncodingException {
         ParaText pt = p.getText();
         if (pt != null) {

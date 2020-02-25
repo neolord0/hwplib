@@ -29,7 +29,6 @@ public class ParagraphList implements ParagraphListInterface {
      *
      * @return 새로 생성된 문단
      */
-    @Override
     public Paragraph addNewParagraph() {
         Paragraph p = new Paragraph();
         paragraphList.add(p);
@@ -41,7 +40,6 @@ public class ParagraphList implements ParagraphListInterface {
      *
      * @return 문단 개수
      */
-    @Override
     public int getParagraphCount() {
         return paragraphList.size();
     }
@@ -52,7 +50,6 @@ public class ParagraphList implements ParagraphListInterface {
      * @param index 찾고자 하는 문단의 순번
      * @return index 번째의 문단
      */
-    @Override
     public Paragraph getParagraph(int index) {
         return paragraphList.get(index);
     }
@@ -62,7 +59,6 @@ public class ParagraphList implements ParagraphListInterface {
      *
      * @return Iterator<Paragraph> 객체
      */
-    @Override
     public Iterator<Paragraph> iterator() {
         return paragraphList.iterator();
     }

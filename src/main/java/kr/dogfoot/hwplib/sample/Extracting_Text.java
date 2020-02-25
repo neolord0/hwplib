@@ -14,7 +14,8 @@ import java.io.File;
 public class Extracting_Text {
     public static void main(String[] args) throws Exception {
         TextExtractMethod tem = TextExtractMethod.InsertControlTextBetweenParagraphText;
-        test("sample_hwp" + File.separator + "test-blank.hwp", tem);
+        test("sample_hwp" + File.separator + "big_file.hwp", tem);
+     /*
         test("sample_hwp" + File.separator + "test-etc.hwp", tem);
         test("sample_hwp" + File.separator + "test-ole.hwp", tem);
         test("sample_hwp" + File.separator + "test-각주미주.hwp", tem);
@@ -39,6 +40,8 @@ public class Extracting_Text {
         test("sample_hwp" + File.separator + "test-필드_누름틀.hwp", tem);
         test("sample_hwp" + File.separator + "test-호 곡선.hwp", tem);
         test("sample_hwp" + File.separator + "test-[붙임1]정부포상 추천 구비서류 서식.hwp", tem);
+
+      */
     }
 
     private static void test(String filename, TextExtractMethod tem)
