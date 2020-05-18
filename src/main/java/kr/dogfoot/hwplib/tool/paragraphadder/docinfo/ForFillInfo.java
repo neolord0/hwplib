@@ -12,7 +12,7 @@ import java.util.ArrayList;
  */
 public class ForFillInfo {
     public static boolean equal(FillInfo source, FillInfo target) {
-        if (source.getType() == target.getType()) {
+        if (source.getType().getValue() == target.getType().getValue()) {
             FillType fillType = source.getType();
             if (fillType.hasPatternFill()
                     && equalPatternFill(source.getPatternFill(), target.getPatternFill()) == false) {

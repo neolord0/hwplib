@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/src/main/java/kr/dogfoot/hwplib/sample/htmltohwp/htmltohwp.iml" filepath="$PROJECT_DIR$/src/main/java/kr/dogfoot/hwplib/sample/htmltohwp/htmltohwp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/hwplib.iml" filepath="$PROJECT_DIR$/hwplib.iml" />
+    </modules>
+  </component>
+</project>

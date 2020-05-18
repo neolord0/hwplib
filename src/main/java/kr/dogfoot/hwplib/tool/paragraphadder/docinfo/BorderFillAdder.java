@@ -29,7 +29,7 @@ public class BorderFillAdder {
         for (int index = 0; index < count; index++) {
             BorderFill target = docInfoAdder.getTargetHWPFile().getDocInfo().getBorderFillList().get(index);
             if (equal(source, target)) {
-                return index;
+                return index + 1;
             }
         }
         return -1;
@@ -63,7 +63,7 @@ public class BorderFillAdder {
         target.setDiagonalThickness(source.getDiagonalThickness());
         target.getDiagonalColor().setValue(source.getDiagonalColor().getValue());
         ForFillInfo.copy(source.getFillInfo(), target.getFillInfo(), docInfoAdder);
-        return docInfoAdder.getTargetHWPFile().getDocInfo().getBorderFillList().size() - 1;
+        return docInfoAdder.getTargetHWPFile().getDocInfo().getBorderFillList().size();
     }
 
     private void copyEachBorder(EachBorder source, EachBorder target) {

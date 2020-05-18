@@ -25,7 +25,7 @@ public class ZoneInfo {
     /**
      * 참조된 테두리/배경 Id
      */
-    private int bordefFillId;
+    private int borderFillId;
 
     /**
      * 생성자
@@ -110,16 +110,16 @@ public class ZoneInfo {
      *
      * @return 참조된 테두리/배경 Id
      */
-    public int getBordefFillId() {
-        return bordefFillId;
+    public int getBorderFillId() {
+        return borderFillId;
     }
 
     /**
      * 참조된 테두리/배경 Id를 설정한다.
      *
-     * @param bordefFillId 참조된 테두리/배경 Id
+     * @param borderFillId 참조된 테두리/배경 Id
      */
-    public void setBordefFillId(int bordefFillId) {
-        this.bordefFillId = bordefFillId;
+    public void setBorderFillId(int borderFillId) {
+        this.borderFillId = borderFillId;
     }
 }

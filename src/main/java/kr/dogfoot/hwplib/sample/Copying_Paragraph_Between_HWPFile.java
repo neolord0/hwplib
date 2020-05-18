@@ -18,16 +18,22 @@ public class Copying_Paragraph_Between_HWPFile {
         HWPFile targetHWPFile = HWPReader.fromFile("sample_hwp" + File.separator + "test-target.hwp");
 
         if (sourceHWPFile != null && targetHWPFile != null) {
-            // test-source.hwp의  두번째 문단을 구한다
-            Paragraph sourceParagraph = sourceHWPFile.getBodyText().getSectionList().get(0).getParagraph(1);
 
-            // test-target.hwp의 첫번째 섹션을 구한다.
             ParagraphListInterface targetFirstSection = targetHWPFile.getBodyText().getSectionList().get(0);
+            {
+                Paragraph sourceParagraph = sourceHWPFile.getBodyText().getSectionList().get(0).getParagraph(5);
 
-            ParagraphAdder paraAdder = new ParagraphAdder(targetHWPFile, targetFirstSection);
-            paraAdder.add(sourceHWPFile, sourceParagraph);
+                ParagraphAdder paraAdder = new ParagraphAdder(targetHWPFile, targetFirstSection);
+                paraAdder.add(sourceHWPFile, sourceParagraph);
+            }
+            {
+                Paragraph sourceParagraph = sourceHWPFile.getBodyText().getSectionList().get(0).getParagraph(6);
 
-            HWPWriter.toFile(targetHWPFile, "sample_hwp\\\\test-target-add-paragraph.hwp");
+                ParagraphAdder paraAdder = new ParagraphAdder(targetHWPFile, targetFirstSection);
+                paraAdder.add(sourceHWPFile, sourceParagraph);
+            }
+
+           HWPWriter.toFile(targetHWPFile, "sample_hwp" + File.separator +"test-target-add-paragraph.hwp");
         }
     }
 }

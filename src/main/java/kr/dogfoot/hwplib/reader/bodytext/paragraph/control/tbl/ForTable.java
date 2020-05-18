@@ -54,7 +54,7 @@ public class ForTable {
             zi.setStartRow(sr.readUInt2());
             zi.setEndColumn(sr.readUInt2());
             zi.setEndRow(sr.readUInt2());
-            zi.setBordefFillId(sr.readUInt2());
+            zi.setBorderFillId(sr.readUInt2());
         }
     }
 }

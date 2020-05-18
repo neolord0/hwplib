@@ -39,7 +39,7 @@ public class ParagraphAdder {
      * @throws Exception
      */
     public void add(HWPFile hwpFile, Paragraph p) throws Exception {
-        ParapraphCopyer paraCopyer = new ParapraphCopyer(new DocInfoAdder(hwpFile, targetHWPFile));
+        ParagraphCopier paraCopyer = new ParagraphCopier(new DocInfoAdder(hwpFile, targetHWPFile));
 
         Paragraph targetParagraph = targetParaList.addNewParagraph();
         paraCopyer.copy(p, targetParagraph);
@@ -53,7 +53,7 @@ public class ParagraphAdder {
      * @throws Exception
      */
     public void add(HWPFile hwpFile, ArrayList<Paragraph> list) throws Exception {
-        ParapraphCopyer copyer = new ParapraphCopyer(new DocInfoAdder(hwpFile, targetHWPFile));
+        ParagraphCopier copyer = new ParagraphCopier(new DocInfoAdder(hwpFile, targetHWPFile));
         for (Paragraph p : list) {
             Paragraph targetParagraph = targetParaList.addNewParagraph();
             copyer.copy(p, targetParagraph);

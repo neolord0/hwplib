@@ -96,7 +96,7 @@ public class ForTable {
             sw.writeUInt2(zi.getStartRow());
             sw.writeUInt2(zi.getEndColumn());
             sw.writeUInt2(zi.getEndRow());
-            sw.writeUInt2(zi.getBordefFillId());
+            sw.writeUInt2(zi.getBorderFillId());
         }
     }
 }
