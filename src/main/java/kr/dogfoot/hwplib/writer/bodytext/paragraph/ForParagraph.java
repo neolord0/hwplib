@@ -2,6 +2,8 @@ package kr.dogfoot.hwplib.writer.bodytext.paragraph;
 
 import kr.dogfoot.hwplib.object.bodytext.control.Control;
 import kr.dogfoot.hwplib.object.bodytext.paragraph.Paragraph;
+import kr.dogfoot.hwplib.object.bodytext.paragraph.text.HWPChar;
+import kr.dogfoot.hwplib.object.bodytext.paragraph.text.ParaText;
 import kr.dogfoot.hwplib.util.compoundFile.writer.StreamWriter;
 import kr.dogfoot.hwplib.writer.bodytext.paragraph.control.ForControl;
 import kr.dogfoot.hwplib.writer.bodytext.paragraph.memo.ForMemo;
@@ -23,8 +25,9 @@ public class ForParagraph {
         ForParaHeader.write(p.getHeader(), sw);
 
         sw.upRecordLevel();
-
-        ForParaText.write(p, sw);
+        if (emptyText(p) == false) {
+            ForParaText.write(p, sw);
+        }
         ForParaCharShape.write(p.getCharShape(), sw);
         ForParaLineSeq.write(p.getLineSeg(), sw);
         ForParaRangeTag.write(p.getRangeTag(), sw);
@@ -32,6 +35,23 @@ public class ForParagraph {
         controls(p, sw);
 
         sw.downRecordLevel();
+    }
+
+    private static boolean emptyText(Paragraph p) {
+        if (p.getHeader().getCharacterCount() <= 1) {
+            ParaText paraText = p.getText();
+            if (paraText == null) {
+                return true;
+            }
+
+            if (paraText.getCharList().size() <= 1) {
+                HWPChar hwpChar = paraText.getCharList().get(0);
+                if (hwpChar.getCode() == 0xd) {
+                    return true;
+                }
+            }
+        }
+        return false;
     }
 
     /**

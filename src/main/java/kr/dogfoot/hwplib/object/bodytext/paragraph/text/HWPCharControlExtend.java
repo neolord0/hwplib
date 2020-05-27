@@ -69,4 +69,76 @@ public class HWPCharControlExtend extends HWPChar {
         }
         this.addition = addition;
     }
+
+    public boolean isSectionDefine() {
+        if (getCode() == 0x0002
+                && addition != null
+                && addition[3] == 's'
+                && addition[2] == 'e'
+                && addition[1] == 'c'
+                && addition[0] == 'd') {
+            return true;
+        }
+        return false;
+    }
+
+    public boolean isColumnDefine() {
+        if (getCode() == 0x0002
+                && addition != null
+                && addition[3] == 'c'
+                && addition[2] == 'o'
+                && addition[1] == 'l'
+                && addition[0] == 'd') {
+            return true;
+        }
+       return false;
+    }
+
+    public boolean isTable() {
+        if (getCode() == 0x000b
+                && addition != null
+                && addition[3] == 't'
+                && addition[2] == 'b'
+                && addition[1] == 'l'
+                && addition[0] == ' ') {
+            return true;
+        }
+        return false;
+    }
+
+    public boolean isGSO() {
+        if (getCode() == 0x000b
+                && addition != null
+                && addition[3] == 'g'
+                && addition[2] == 's'
+                && addition[1] == 'o'
+                && addition[0] == ' ') {
+            return true;
+        }
+        return false;
+    }
+
+    public boolean isHyperlinkStart() {
+        if (getCode() == 0x0003
+                && addition != null
+                && addition[3] == '%'
+                && addition[2] == 'h'
+                && addition[1] == 'l'
+                && addition[0] == 'k') {
+            return true;
+        }
+        return false;
+    }
+
+    public boolean isHyperlinkEnd() {
+        if (getCode() == 0x0004 && addition != null
+                && addition[3] == '%'
+                && addition[2] == 'h'
+                && addition[1] == 'l'
+                && addition[0] == 'k') {
+            return true;
+        }
+        return false;
+    }
+
 }

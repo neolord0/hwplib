@@ -190,7 +190,7 @@ public class ParaText {
      */
     private void processEndOfParagraph() {
         for (HWPChar ch : charList) {
-            if (ch.getCode() == 13/*para break*/) {
+            if (ch.getCode() == 0x0d/*para break*/) {
                 charList.remove(ch);
                 break;
             }
@@ -287,6 +287,7 @@ public class ParaText {
         HWPCharControlExtend chExtend = addNewExtendControlChar();
         chExtend.setCode((short) 0x0004);
         byte[] addition = new byte[12];
+        addition[3] = '%';
         addition[2] = 'h';
         addition[1] = 'l';
         addition[0] = 'k';

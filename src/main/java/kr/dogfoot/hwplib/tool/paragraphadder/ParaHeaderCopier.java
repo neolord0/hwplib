@@ -15,7 +15,8 @@ public class ParaHeaderCopier {
         target.getControlMask().setValue(source.getControlMask().getValue());
         target.setParaShapeId(docInfoAdder.forParaShape().processById(source.getParaShapeId()));
         target.setStyleId((short) docInfoAdder.forStyle().processById(source.getStyleId()));
-        target.getDivideSort().setValue(source.getDivideSort().getValue());
+        // target.getDivideSort().setValue((short) 0);
+               target.getDivideSort().setValue(source.getDivideSort().getValue());
         target.setCharShapeCount(source.getCharShapeCount());
         target.setRangeTagCount(source.getRangeTagCount());
         target.setLineAlignCount(source.getLineAlignCount());

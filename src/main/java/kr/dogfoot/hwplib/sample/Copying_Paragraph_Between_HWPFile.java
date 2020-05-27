@@ -21,19 +21,25 @@ public class Copying_Paragraph_Between_HWPFile {
 
             ParagraphListInterface targetFirstSection = targetHWPFile.getBodyText().getSectionList().get(0);
             {
-                Paragraph sourceParagraph = sourceHWPFile.getBodyText().getSectionList().get(0).getParagraph(5);
+                Paragraph sourceParagraph = sourceHWPFile.getBodyText().getSectionList().get(0).getParagraph(0);
 
                 ParagraphAdder paraAdder = new ParagraphAdder(targetHWPFile, targetFirstSection);
                 paraAdder.add(sourceHWPFile, sourceParagraph);
             }
             {
-                Paragraph sourceParagraph = sourceHWPFile.getBodyText().getSectionList().get(0).getParagraph(6);
+                Paragraph sourceParagraph = sourceHWPFile.getBodyText().getSectionList().get(0).getParagraph(1);
+
+                ParagraphAdder paraAdder = new ParagraphAdder(targetHWPFile, targetFirstSection);
+                paraAdder.add(sourceHWPFile, sourceParagraph);
+            }
+            {
+                Paragraph sourceParagraph = sourceHWPFile.getBodyText().getSectionList().get(0).getParagraph(5);
 
                 ParagraphAdder paraAdder = new ParagraphAdder(targetHWPFile, targetFirstSection);
                 paraAdder.add(sourceHWPFile, sourceParagraph);
             }
 
-           HWPWriter.toFile(targetHWPFile, "sample_hwp" + File.separator +"test-target-add-paragraph.hwp");
+            HWPWriter.toFile(targetHWPFile, "sample_hwp" + File.separator +"test-target-add-paragraph.hwp");
         }
-    }
+   }
 }

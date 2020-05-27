@@ -12,7 +12,7 @@
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="htmltohwp" target="8" />
-      <module name="hwplib" target="1.5" />
+      <module name="hwplib" target="6" />
     </bytecodeTargetLevel>
   </component>
 </project>
