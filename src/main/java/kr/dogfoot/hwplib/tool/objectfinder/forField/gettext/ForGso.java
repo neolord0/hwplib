@@ -83,6 +83,9 @@ public class ForGso {
      */
     private static String textBox(TextBox textBox, ControlType fieldType,
                                   String fieldName, TextExtractMethod temInField) throws UnsupportedEncodingException {
+        if (textBox == null) {
+            return null;
+        }
         return ForParagraphList.getFieldText(textBox.getParagraphList(), fieldType, fieldName, temInField);
     }
 
