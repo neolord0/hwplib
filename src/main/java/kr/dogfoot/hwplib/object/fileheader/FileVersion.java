@@ -41,6 +41,13 @@ public class FileVersion {
         rr = (short) (version & 0xff);
     }
 
+    public void setVersion(short mm, short nn, short pp, short rr) {
+        this.mm = mm;
+        this.nn = nn;
+        this.pp = pp;
+        this.rr = rr;
+    }
+
     public long getVersion() {
         long version = 0;
         version += (mm & 0xff) << 24;
