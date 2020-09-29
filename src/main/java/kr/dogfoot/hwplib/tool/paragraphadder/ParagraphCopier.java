@@ -3,8 +3,10 @@ package kr.dogfoot.hwplib.tool.paragraphadder;
 import kr.dogfoot.hwplib.object.bodytext.control.Control;
 import kr.dogfoot.hwplib.object.bodytext.control.ControlTable;
 import kr.dogfoot.hwplib.object.bodytext.control.ControlType;
+import kr.dogfoot.hwplib.object.bodytext.control.gso.GsoControl;
 import kr.dogfoot.hwplib.object.bodytext.paragraph.Paragraph;
 import kr.dogfoot.hwplib.object.bodytext.paragraph.ParagraphList;
+import kr.dogfoot.hwplib.tool.paragraphadder.control.GsoCopier;
 import kr.dogfoot.hwplib.tool.paragraphadder.control.TableCopier;
 import kr.dogfoot.hwplib.tool.paragraphadder.docinfo.DocInfoAdder;
 
@@ -90,6 +92,7 @@ public class ParagraphCopier {
                     TableCopier.copy((ControlTable) c, (ControlTable) target.addNewControl(ControlType.Table), docInfoAdder);
                     break;
                 case Gso:
+                    GsoCopier.copy((GsoControl) c, (GsoControl) target.addNewGsoControl(((GsoControl) c).getGsoType()), docInfoAdder);
                     break;
                 case Equation:
                     break;
