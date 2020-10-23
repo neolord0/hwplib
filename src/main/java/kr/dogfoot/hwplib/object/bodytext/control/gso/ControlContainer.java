@@ -1,5 +1,7 @@
 package kr.dogfoot.hwplib.object.bodytext.control.gso;
 
+import kr.dogfoot.hwplib.object.bodytext.control.Control;
+import kr.dogfoot.hwplib.object.bodytext.control.FactoryForControl;
 import kr.dogfoot.hwplib.object.bodytext.control.ctrlheader.CtrlHeaderGso;
 import kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponent.ShapeComponentContainer;
 
@@ -35,6 +37,12 @@ public class ControlContainer extends GsoControl {
         setGsoId(GsoControlType.Container.getId());
 
         childControlList = new ArrayList<GsoControl>();
+    }
+
+    public GsoControl addNewChildControl(GsoControlType gsoType) {
+        GsoControl gc = FactoryForControl.createGso(gsoType.getId(), new CtrlHeaderGso());
+        childControlList.add(gc);
+        return gc;
     }
 
     /**
