@@ -27,9 +27,13 @@
     <dependency>
         <groupId>kr.dogfoot</groupId>
         <artifactId>hwplib</artifactId>
-        <version>1.0</version>
+        <version>1.0.2</version>
     </dependency>
     ```
+
+2020.10.23
+=========================================================================================  
+* 메이븐 저장소에 1.0.2 버전 등록
 
 
 2020.8.31
