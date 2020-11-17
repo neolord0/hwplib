@@ -120,9 +120,8 @@ public class ForParagraph {
                     cm.setHasLineBreak(true);
                     break;
                 case 11:
-                    cm.setHasGsoTable(true);
-                    break;
                 case 13:
+                    cm.setHasGsoTable(true);
                     break;
                 case 15:
                     cm.setHasHiddenComment(true);

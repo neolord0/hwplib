@@ -207,10 +207,22 @@ public class GsoCopier {
 
     private static void pictureEffect(PictureEffect source, PictureEffect target) {
         target.getProperty().setValue(source.getProperty().getValue());
-        shadowEffect(source.getShadowEffect(), target.getShadowEffect());
-        neonEffect(source.getNeonEffect(), target.getNeonEffect());
-        softEdgeEffect(source.getSoftEdgeEffect(), target.getSoftEdgeEffect());
-        reflectionEffect(source.getReflectionEffect(), target.getReflectionEffect());
+        if (source.getProperty().hasShadowEffect()) {
+            target.createShadowEffect();
+            shadowEffect(source.getShadowEffect(), target.getShadowEffect());
+        }
+        if (source.getProperty().hasNeonEffect()) {
+            target.createNeonEffect();
+            neonEffect(source.getNeonEffect(), target.getNeonEffect());
+        }
+        if (source.getProperty().hasSoftBorderEffect()) {
+            target.createSoftEdgeEffect();
+            softEdgeEffect(source.getSoftEdgeEffect(), target.getSoftEdgeEffect());
+        }
+        if (source.getProperty().hasReflectionEffect()) {
+            target.createReflectionEffect();
+            reflectionEffect(source.getReflectionEffect(), target.getReflectionEffect());
+        }
     }
 
     private static void shadowEffect(ShadowEffect source, ShadowEffect target) {

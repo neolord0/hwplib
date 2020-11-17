@@ -1,6 +1,7 @@
 package kr.dogfoot.hwplib.tool.paragraphadder.docinfo;
 
 import kr.dogfoot.hwplib.object.docinfo.Style;
+import kr.dogfoot.hwplib.util.StringUtil;
 
 /**
  * DocInfo에 Style을 복사하는 기능을 포함하는 클레스
@@ -35,8 +36,8 @@ public class StyleAdder {
     }
 
     private boolean equal(Style source, Style target, int sourceId, int targetId) {
-        return source.getHangulName().equals(target.getHangulName())
-                && source.getEnglishName().equals(target.getEnglishName())
+        return StringUtil.equals(source.getHangulName(), target.getHangulName())
+                && StringUtil.equals(source.getEnglishName(), target.getEnglishName())
                 && source.getProeprty().getValue() == target.getProeprty().getValue()
                 && equalNextStyleId(source.getNextStyleId(), target.getNextStyleId(), sourceId, targetId)
                 && source.getLanguageId() == target.getLanguageId()

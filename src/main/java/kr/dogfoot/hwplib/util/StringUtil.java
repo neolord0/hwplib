@@ -32,4 +32,12 @@ public class StringUtil {
         }
         return new String(hexChars);
     }
+
+    public static boolean equals(String str1, String str2) {
+        if (str1 == null) {
+            return str2 == null;
+        } else {
+            return str1.equals(str2);
+        }
+    }
 }

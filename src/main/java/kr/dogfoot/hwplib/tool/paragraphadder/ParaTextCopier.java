@@ -22,7 +22,8 @@ public class ParaTextCopier {
                     copyInlineChar((HWPCharControlInline) hwpChar, target.addNewInlineControlChar());
                     break;
                 case ControlExtend:
-                    if (((HWPCharControlExtend) hwpChar).isTable()) {
+                    if (((HWPCharControlExtend) hwpChar).isTable() ||
+                            ((HWPCharControlExtend) hwpChar).isGSO()) {
                         copyExtendChar((HWPCharControlExtend) hwpChar, target.addNewExtendControlChar());
                     }
                     break;

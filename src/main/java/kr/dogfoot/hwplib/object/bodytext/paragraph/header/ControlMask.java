@@ -165,6 +165,24 @@ public class ControlMask {
     }
 
     /**
+     * 그림 객체를 가졌는지 여부를 반환한다. (12 bit)
+     *
+     * @return 그림 객체를 가졌는지 여부
+     */
+    public boolean hasPicture() {
+        return BitFlag.get(value, 12);
+    }
+
+    /**
+     * 그림 객체를 가졌는지 여부를 설정한다. (12 bit)
+     *
+     * @param hasPicture 그림 객체를 가졌는지 여부
+     */
+    public void setHasPicture(boolean hasPicture) {
+        value = BitFlag.set(value, 12, hasPicture);
+    }
+
+    /**
      * 문단 나누기를 가졌는지 여부를 반환한다. (13 bit)
      *
      * @return 문단 나누기를 가졌는지 여부

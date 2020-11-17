@@ -1,6 +1,7 @@
 package kr.dogfoot.hwplib.tool.paragraphadder.docinfo;
 
 import kr.dogfoot.hwplib.object.docinfo.BinData;
+import sun.jvm.hotspot.memory.Generation;
 
 /**
  * DocInfo에 BinData를 복사하는 기능을 포함하는 클레스
@@ -29,7 +30,7 @@ public class BinDataAdder {
      * @return target한글 파일의 BinData ID
      */
     public int processById(int sourceID) {
-        BinData source = docInfoAdder.getSourceHWPFile().getDocInfo().getBinDataList().get(sourceID);
+        BinData source = docInfoAdder.getSourceHWPFile().getDocInfo().getBinDataList().get(sourceID - 1);
         return addAndCopy(source);
     }
 
@@ -40,13 +41,18 @@ public class BinDataAdder {
      * @return target한글 파일의 BinData ID
      */
     private int addAndCopy(BinData source) {
-        BinData target = docInfoAdder.getTargetHWPFile().getDocInfo().addNewBinData();
-        target.getProperty().setValue(source.getProperty().getValue());
-        target.setAbsolutePathForLink(source.getAbsolutePathForLink());
-        target.setRelativePathForLink(source.getRelativePathForLink());
-        target.setBinDataID(ForEmbeddedBinaryData.addAndCopy(source.getBinDataID(), docInfoAdder));
-        target.setExtensionForEmbedding(source.getExtensionForEmbedding());
+        int binDataID = ForEmbeddedBinaryData.addAndCopy(source.getBinDataID(), source.getExtensionForEmbedding(),  docInfoAdder);
+        if (binDataID > 0) {
+            BinData target = docInfoAdder.getTargetHWPFile().getDocInfo().addNewBinData();
+            target.getProperty().setValue(source.getProperty().getValue());
+            target.setAbsolutePathForLink(source.getAbsolutePathForLink());
+            target.setRelativePathForLink(source.getRelativePathForLink());
+            target.setBinDataID(binDataID);
+            target.setExtensionForEmbedding(source.getExtensionForEmbedding());
 
-        return docInfoAdder.getTargetHWPFile().getDocInfo().getBinDataList().size() - 1;
+            return docInfoAdder.getTargetHWPFile().getDocInfo().getBinDataList().size();
+        } else {
+            return -1;
+        }
     }
 }
