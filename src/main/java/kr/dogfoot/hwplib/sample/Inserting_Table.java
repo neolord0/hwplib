@@ -17,14 +17,12 @@ import kr.dogfoot.hwplib.object.bodytext.paragraph.lineseg.LineSegItem;
 import kr.dogfoot.hwplib.object.bodytext.paragraph.lineseg.ParaLineSeg;
 import kr.dogfoot.hwplib.object.bodytext.paragraph.text.ParaText;
 import kr.dogfoot.hwplib.object.docinfo.BorderFill;
-import kr.dogfoot.hwplib.object.docinfo.ParaShape;
 import kr.dogfoot.hwplib.object.docinfo.borderfill.BackSlashDiagonalShape;
 import kr.dogfoot.hwplib.object.docinfo.borderfill.BorderThickness;
 import kr.dogfoot.hwplib.object.docinfo.borderfill.BorderType;
 import kr.dogfoot.hwplib.object.docinfo.borderfill.SlashDiagonalShape;
 import kr.dogfoot.hwplib.object.docinfo.borderfill.fillinfo.PatternFill;
 import kr.dogfoot.hwplib.object.docinfo.borderfill.fillinfo.PatternType;
-import kr.dogfoot.hwplib.object.docinfo.parashape.Alignment;
 import kr.dogfoot.hwplib.reader.HWPReader;
 import kr.dogfoot.hwplib.writer.HWPWriter;
 
@@ -143,7 +141,7 @@ public class Inserting_Table {
         bf.getBottomBorder().getColor().setValue(0x0);
         bf.setDiagonalSort(BorderType.None);
         bf.setDiagonalThickness(BorderThickness.MM0_5);
-		bf.getDiagonalColor().setValue(0x0);
+        bf.getDiagonalColor().setValue(0x0);
 
         bf.getFillInfo().getType().setPatternFill(true);
         bf.getFillInfo().createPatternFill();
@@ -182,7 +180,7 @@ public class Inserting_Table {
         bf.getBottomBorder().getColor().setValue(0x0);
         bf.setDiagonalSort(BorderType.None);
         bf.setDiagonalThickness(BorderThickness.MM0_5);
-		bf.getDiagonalColor().setValue(0x0);
+        bf.getDiagonalColor().setValue(0x0);
 
         bf.getFillInfo().getType().setPatternFill(true);
         bf.getFillInfo().createPatternFill();
@@ -203,7 +201,7 @@ public class Inserting_Table {
     private void addLeftTopCell() {
         cell = row.addNewCell();
         setListHeaderForCell(0, 0);
-        setParagraphForCell("왼쪽 위 셀왼쪽 위 셀왼쪽 위 셀왼쪽 위 셀왼쪽 위 셀왼쪽 위 셀왼쪽 위 셀왼쪽 위 셀왼쪽 위 셀왼쪽 위 셀왼쪽 위 셀왼쪽 위 셀왼쪽 위 셀왼쪽 위 셀왼쪽 위 셀왼쪽 위 셀왼쪽 위 셀왼쪽 위 셀");
+        setParagraphForCell("왼쪽 위 셀");
     }
 
     private void setListHeaderForCell(int colIndex, int rowIndex) {
@@ -234,52 +232,25 @@ public class Inserting_Table {
         setParaHeader(p);
         setParaText(p, text);
         setParaCharShape(p);
-     //   setParaLineSeg(p);
+        setParaLineSeg(p);
     }
 
     private void setParaHeader(Paragraph p) {
         ParaHeader ph = p.getHeader();
         ph.setLastInList(true);
-
-        ParaShape sourceParaShape = hwpFile.getDocInfo().getParaShapeList().get(1);
-        ParaShape paraShape = addAndCopyParaShape(sourceParaShape);
-        paraShape.getProperty1().setAlignment(Alignment.Center);
-        int shapeId = hwpFile.getDocInfo().getParaShapeList().size() - 1;
-        ph.setParaShapeId(shapeId);
-
+        // 셀의 문단 모양을 이미 만들어진 문단 모양으로 사용함
+        ph.setParaShapeId(1);
         // 셀의 스타일을이미 만들어진 스타일으로 사용함
         ph.setStyleId((short) 1);
-		ph.getDivideSort().setDivideSection(false);
+        ph.getDivideSort().setDivideSection(false);
         ph.getDivideSort().setDivideMultiColumn(false);
         ph.getDivideSort().setDividePage(false);
         ph.getDivideSort().setDivideColumn(false);
         ph.setCharShapeCount(1);
         ph.setRangeTagCount(0);
-        ph.setLineAlignCount(0);
+        ph.setLineAlignCount(1);
         ph.setInstanceID(0);
         ph.setIsMergedByTrack(0);
-    }
-
-    private ParaShape addAndCopyParaShape(ParaShape source) {
-        ParaShape target = hwpFile.getDocInfo().addNewParaShape();
-        target.getProperty1().setValue(source.getProperty1().getValue());
-        target.setLeftMargin(source.getLeftMargin());
-        target.setRightMargin(source.getRightMargin());
-        target.setIndent(source.getIndent());
-        target.setTopParaSpace(source.getTopParaSpace());
-        target.setBottomParaSpace(source.getBottomParaSpace());
-        target.setLineSpace(source.getLineSpace());
-        target.setTabDefId(source.getTabDefId());
-        target.setParaHeadId(source.getParaHeadId());
-        target.setBorderFillId(source.getBorderFillId());
-        target.setLeftBorderSpace(source.getLeftBorderSpace());
-        target.setRightBorderSpace(source.getRightBorderSpace());
-        target.setTopBorderSpace(source.getTopBorderSpace());
-        target.setBottomBorderSpace(source.getBottomBorderSpace());
-        target.getProperty2().setValue(source.getProperty2().getValue());
-        target.getProperty3().setValue(source.getProperty3().getValue());
-        target.setLineSpace2(source.getLineSpace2());
-        return target;
     }
 
     private void setParaText(Paragraph p, String text2) {
@@ -302,7 +273,6 @@ public class Inserting_Table {
     }
 
 
-    /*
     private void setParaLineSeg(Paragraph p) {
         p.createLineSeg();
 
@@ -320,8 +290,6 @@ public class Inserting_Table {
         lsi.getTag().setFirstSegmentAtLine(true);
         lsi.getTag().setLastSegmentAtLine(true);
     }
-
-     */
 
     private int ptToLineHeight(double pt) {
         return (int) (pt * 100.0f);
