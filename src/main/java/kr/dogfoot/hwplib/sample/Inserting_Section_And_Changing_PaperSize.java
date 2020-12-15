@@ -3,16 +3,13 @@ package kr.dogfoot.hwplib.sample;
 import kr.dogfoot.hwplib.object.HWPFile;
 import kr.dogfoot.hwplib.object.bodytext.Section;
 import kr.dogfoot.hwplib.object.bodytext.control.ControlSectionDefine;
-import kr.dogfoot.hwplib.object.bodytext.paragraph.Paragraph;
 import kr.dogfoot.hwplib.reader.HWPReader;
+import kr.dogfoot.hwplib.tool.blankfilemaker.EmptyParagraphAdder;
 import kr.dogfoot.hwplib.writer.HWPWriter;
 
 import java.io.File;
 
-/**
- * 페이지 크기를 변경하는 샢플 프로그램.
- */
-public class Changing_PaperSize {
+public class Inserting_Section_And_Changing_PaperSize {
     private static class Size {
         public long cx;
         public long cy;
@@ -23,27 +20,25 @@ public class Changing_PaperSize {
         }
     }
 
-	public static void main(String[] args) throws Exception {
+
+    public static void main(String[] args) throws Exception {
         String filename = "sample_hwp" + File.separator + "test-blank.hwp";
 
         HWPFile hwpFile = HWPReader.fromFile(filename);
         if (hwpFile != null) {
-            ControlSectionDefine csd = getSectionDefineControl(hwpFile);
+            Section section = hwpFile.getBodyText().addNewSection();
+            EmptyParagraphAdder.add(section);
             Size paperSize = getPaperSize();
 
+            ControlSectionDefine csd = (ControlSectionDefine) section.getParagraph(0).getControlList().get(0);
             csd.getPageDef().setPaperWidth(paperSize.cx);
             csd.getPageDef().setPaperHeight(paperSize.cy);
 
-            String writePath = "sample_hwp" + File.separator + "test-change-paper-size.hwp";
-            HWPWriter.toFile(hwpFile, writePath);
         }
-    }
 
-    private static ControlSectionDefine getSectionDefineControl(HWPFile hwpFile) {
-        Section s = hwpFile.getBodyText().getSectionList().get(0);
-        Paragraph firstParagraph = s.getParagraph(0);
+        String writePath = "sample_hwp" + File.separator + "test-inserting-section-and-changing-papersize.hwp";
+        HWPWriter.toFile(hwpFile, writePath);
 
-        return (ControlSectionDefine) firstParagraph.getControlList().get(0);
     }
 
     private static Size getPaperSize() {
