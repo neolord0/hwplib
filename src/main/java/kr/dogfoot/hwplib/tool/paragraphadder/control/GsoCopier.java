@@ -69,7 +69,10 @@ public class GsoCopier {
     }
 
     private static void rectangle(ControlRectangle source, ControlRectangle target, DocInfoAdder docInfoAdder) {
-        textBox(source.getTextBox(), target.getTextBox(), docInfoAdder);
+        if (source.getTextBox() != null) {
+            target.createTextBox();
+            textBox(source.getTextBox(), target.getTextBox(), docInfoAdder);
+        }
         shapeComponentRectangle(source.getShapeComponentRectangle(), target.getShapeComponentRectangle());
     }
 
@@ -103,7 +106,10 @@ public class GsoCopier {
     }
 
     private static void ellipse(ControlEllipse source, ControlEllipse target, DocInfoAdder docInfoAdder) {
-        textBox(source.getTextBox(), target.getTextBox(), docInfoAdder);
+        if (source.getTextBox() != null) {
+            target.createTextBox();
+            textBox(source.getTextBox(), target.getTextBox(), docInfoAdder);
+        }
         shapeComponentEllipse(source.getShapeComponentEllipse(), target.getShapeComponentEllipse());
     }
 
@@ -126,8 +132,11 @@ public class GsoCopier {
     }
 
     private static void arc(ControlArc source, ControlArc target, DocInfoAdder docInfoAdder) {
-        textBox(source.getTextBox(), target.getTextBox(), docInfoAdder);
-        shapeComponentArc(source.getShapeComponentArc(), target.getShapeComponentArc());
+        if (source.getTextBox() != null) {
+            target.createTextBox();
+            textBox(source.getTextBox(), target.getTextBox(), docInfoAdder);
+            shapeComponentArc(source.getShapeComponentArc(), target.getShapeComponentArc());
+        }
     }
 
     private static void shapeComponentArc(ShapeComponentArc source, ShapeComponentArc target) {
@@ -141,7 +150,10 @@ public class GsoCopier {
     }
 
     private static void polygon(ControlPolygon source, ControlPolygon target, DocInfoAdder docInfoAdder) {
-        textBox(source.getTextBox(), target.getTextBox(), docInfoAdder);
+        if (source.getTextBox() != null) {
+            target.createTextBox();
+            textBox(source.getTextBox(), target.getTextBox(), docInfoAdder);
+        }
         shapeComponentPolygon(source.getShapeComponentPolygon(), target.getShapeComponentPolygon());
     }
 
@@ -154,7 +166,10 @@ public class GsoCopier {
     }
 
     private static void curve(ControlCurve source, ControlCurve target, DocInfoAdder docInfoAdder) {
-        textBox(source.getTextBox(), target.getTextBox(), docInfoAdder);
+        if  (source.getTextBox() != null) {
+            target.createTextBox();
+            textBox(source.getTextBox(), target.getTextBox(), docInfoAdder);
+        }
         shapeComponentCurve(source.getShapeComponentCurve(), target.getShapeComponentCurve());
     }
 
