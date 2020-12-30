@@ -126,4 +126,8 @@ public class PageHideHeaderProperty {
     public void setHidePageNumber(boolean hidePageNumber) {
         value = BitFlag.set(value, 4, hidePageNumber);
     }
+
+    public void copy(PageHideHeaderProperty from) {
+        value = from.value;
+    }
 }

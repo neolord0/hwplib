@@ -256,4 +256,8 @@ public class SectionDefineHeaderProperty {
     public void setApplyWongoji(boolean applyWongoji) {
         value = BitFlag.set(value, 22, applyWongoji);
     }
+
+    public void copy(SectionDefineHeaderProperty from) {
+        value = from.value;
+    }
 }

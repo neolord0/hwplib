@@ -125,4 +125,12 @@ public class ShapeComponentLine {
     public void setStartedRightOrBottom(boolean startedRightOrBottom) {
         this.startedRightOrBottom = startedRightOrBottom;
     }
+
+    public void copy(ShapeComponentLine from) {
+        startX = from.startX;
+        startY = from.startY;
+        endX = from.endX;
+        endY = from.endY;
+        startedRightOrBottom = from.startedRightOrBottom;
+    }
 }

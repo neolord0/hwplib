@@ -35,6 +35,8 @@ public class ForControlIndexMark {
             throws IOException {
         header.setKeyword1(sr.readUTF16LEString());
         header.setKeyword2(sr.readUTF16LEString());
-        sr.skip(4);
+        if (sr.isEndOfRecord() == false) {
+            sr.skipToEndRecord();
+        }
     }
 }

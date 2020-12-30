@@ -176,4 +176,8 @@ public class CharSpaces {
             array[index] = charSpace;
         }
     }
+
+    public void copy(CharSpaces from) {
+        System.arraycopy(from.array, 0, array, 0, from.array.length);
+    }
 }

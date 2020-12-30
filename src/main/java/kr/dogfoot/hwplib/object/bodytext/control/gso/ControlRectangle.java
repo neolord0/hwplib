@@ -1,5 +1,6 @@
 package kr.dogfoot.hwplib.object.bodytext.control.gso;
 
+import kr.dogfoot.hwplib.object.bodytext.control.Control;
 import kr.dogfoot.hwplib.object.bodytext.control.ctrlheader.CtrlHeaderGso;
 import kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponenteach.ShapeComponentRectangle;
 import kr.dogfoot.hwplib.object.bodytext.control.gso.textbox.TextBox;
@@ -69,5 +70,19 @@ public class ControlRectangle extends GsoControl {
      */
     public ShapeComponentRectangle getShapeComponentRectangle() {
         return shapeComponentRectangle;
+    }
+
+    @Override
+    public Control clone() {
+        ControlRectangle cloned = new ControlRectangle();
+        cloned.copyGsoControlPart(this);
+
+        if (textBox != null) {
+            cloned.createTextBox();
+            cloned.textBox.copy(textBox);
+        }
+
+        cloned.shapeComponentRectangle.copy(shapeComponentRectangle);
+        return cloned;
     }
 }

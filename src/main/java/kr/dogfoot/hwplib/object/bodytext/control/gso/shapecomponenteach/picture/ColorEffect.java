@@ -56,4 +56,11 @@ public class ColorEffect {
     public void setValue(float value) {
         this.value = value;
     }
+
+    public ColorEffect clone() {
+        ColorEffect cloned = new ColorEffect();
+        cloned.sort = sort;
+        cloned.value = value;
+        return cloned;
+    }
 }

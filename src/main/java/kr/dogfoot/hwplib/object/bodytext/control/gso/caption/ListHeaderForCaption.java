@@ -130,4 +130,13 @@ public class ListHeaderForCaption {
     public void setTextWidth(long textWidth) {
         this.textWidth = textWidth;
     }
+
+    public void copy(ListHeaderForCaption from) {
+        paraCount = from.paraCount;
+        property.copy(from.property);
+        captionProperty.copy(from.captionProperty);
+        captionWidth = from.captionWidth;
+        spaceBetweenCaptionAndFrame = from.spaceBetweenCaptionAndFrame;
+        textWidth = from.textWidth;
+    }
 }

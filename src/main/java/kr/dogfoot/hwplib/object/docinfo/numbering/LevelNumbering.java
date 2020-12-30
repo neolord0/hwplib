@@ -70,6 +70,12 @@ public class LevelNumbering {
     public void setStartNumber(long startNumber) {
         this.startNumber = startNumber;
     }
+
+    public void copy(LevelNumbering from) {
+        paragraphHeadInfo.copy(from.paragraphHeadInfo);
+        numberFormat = from.numberFormat;
+        startNumber = from.startNumber;
+    }
 }
 
 

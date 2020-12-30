@@ -23,4 +23,11 @@ public class ControlOverlappingLetter extends Control {
     public CtrlHeaderOverlappingLetter getHeader() {
         return (CtrlHeaderOverlappingLetter) header;
     }
+
+    @Override
+    public Control clone() {
+        ControlOverlappingLetter cloned = new ControlOverlappingLetter();
+        cloned.copyControlPart(this);
+        return cloned;
+    }
 }

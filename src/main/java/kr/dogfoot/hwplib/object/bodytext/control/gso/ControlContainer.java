@@ -62,4 +62,16 @@ public class ControlContainer extends GsoControl {
     public ArrayList<GsoControl> getChildControlList() {
         return childControlList;
     }
+
+    @Override
+    public Control clone() {
+        ControlContainer cloned = new ControlContainer();
+        cloned.copyGsoControlPart(this);
+
+        for (GsoControl childControl : childControlList) {
+            cloned.childControlList.add((GsoControl) (childControl.clone()));
+        }
+
+        return cloned;
+    }
 }

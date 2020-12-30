@@ -55,4 +55,12 @@ public class ControlFootnote extends Control {
     public ParagraphList getParagraphList() {
         return paragraphList;
     }
+
+    @Override
+    public Control clone() {
+        ControlFootnote cloned = new ControlFootnote();
+        cloned.copyControlPart(this);
+        cloned.listHeader.copy(listHeader);
+        return cloned;
+    }
 }

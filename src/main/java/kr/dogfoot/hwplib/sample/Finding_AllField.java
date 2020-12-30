@@ -15,7 +15,7 @@ import java.util.ArrayList;
  */
 public class Finding_AllField {
     public static void main(String[] args) throws Exception {
-        HWPFile hwpFile = HWPReader.fromFile("sample_hwp" + File.separator + "test-find-allfield.hwp");
+        HWPFile hwpFile = HWPReader.fromFile("sample_hwp" + File.separator + "finding-all-field.hwp");
         if (hwpFile != null) {
             ArrayList<String> result = FieldFinder.getAllClickHereText(hwpFile,
                     "필드A", TextExtractMethod.OnlyMainParagraph);

@@ -22,7 +22,7 @@ public class Inserting_Section_And_Changing_PaperSize {
 
 
     public static void main(String[] args) throws Exception {
-        String filename = "sample_hwp" + File.separator + "test-blank.hwp";
+        String filename = "sample_hwp" + File.separator + "blank.hwp";
 
         HWPFile hwpFile = HWPReader.fromFile(filename);
         if (hwpFile != null) {
@@ -36,9 +36,8 @@ public class Inserting_Section_And_Changing_PaperSize {
 
         }
 
-        String writePath = "sample_hwp" + File.separator + "test-inserting-section-and-changing-papersize.hwp";
+        String writePath = "sample_hwp" + File.separator + "result-inserting-section-and-changing-papersize.hwp";
         HWPWriter.toFile(hwpFile, writePath);
-
     }
 
     private static Size getPaperSize() {

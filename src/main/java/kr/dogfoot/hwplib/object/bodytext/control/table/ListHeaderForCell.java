@@ -334,4 +334,22 @@ public class ListHeaderForCell {
     public void setFieldName(String fieldName) {
         this.fieldName = fieldName;
     }
+
+    public void copy(ListHeaderForCell from) {
+        paraCount = from.paraCount;
+        property.copy(from.property);
+        colIndex = from.colIndex;
+        rowIndex = from.rowIndex;
+        colSpan = from.colSpan;
+        rowSpan = from.rowSpan;
+        width = from.width;
+        height = from.height;
+        leftMargin = from.leftMargin;
+        rightMargin = from.rightMargin;
+        topMargin = from.topMargin;
+        bottomMargin = from.bottomMargin;
+        borderFillId = from.borderFillId;
+        textWidth = from.textWidth;
+        fieldName = from.fieldName;
+    }
 }

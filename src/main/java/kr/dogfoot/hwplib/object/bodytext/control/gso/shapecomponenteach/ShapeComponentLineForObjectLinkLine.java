@@ -123,4 +123,17 @@ public class ShapeComponentLineForObjectLinkLine {
     public void setUnknown(byte[] unknown) {
         this.unknown = unknown;
     }
+
+    public void copy(ShapeComponentLineForObjectLinkLine from) {
+        startX = from.startX;
+        startY = from.startY;
+        endX = from.endX;
+        endY = from.endY;
+
+        if (from.unknown != null) {
+            unknown = from.unknown.clone();
+        } else {
+            unknown = null;
+        }
+    }
 }

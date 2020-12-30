@@ -11,7 +11,7 @@ import kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponent.ShapeCompone
  *
  * @author neolord
  */
-public class GsoControl extends Control {
+public abstract class GsoControl extends Control {
     /**
      * 캡션 정보
      */
@@ -108,5 +108,16 @@ public class GsoControl extends Control {
      */
     public ShapeComponent getShapeComponent() {
         return shapeComponent;
+    }
+
+    public void copyGsoControlPart(GsoControl from) {
+        copyControlPart(from);
+
+        if (from.caption != null) {
+            createCaption();
+            caption.copy(from.caption);
+        }
+
+        shapeComponent.copy(from.shapeComponent);
     }
 }

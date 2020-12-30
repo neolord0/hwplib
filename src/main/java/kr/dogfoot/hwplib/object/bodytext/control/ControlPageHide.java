@@ -23,4 +23,11 @@ public class ControlPageHide extends Control {
     public CtrlHeaderPageHide getHeader() {
         return (CtrlHeaderPageHide) header;
     }
+
+    @Override
+    public Control clone() {
+        ControlPageHide cloned = new ControlPageHide();
+        cloned.copyControlPart(this);
+        return cloned;
+    }
 }

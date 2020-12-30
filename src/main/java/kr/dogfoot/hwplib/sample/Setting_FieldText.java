@@ -16,7 +16,7 @@ import java.util.ArrayList;
 public class Setting_FieldText {
 
     public static void main(String[] args) throws Exception {
-        HWPFile hwpFile = HWPReader.fromFile("sample_hwp" + File.separator + "test-필드설정.hwp");
+        HWPFile hwpFile = HWPReader.fromFile("sample_hwp" + File.separator + "test-setting-field.hwp");
         if (hwpFile != null) {
             {
                 ArrayList<String> textList = new ArrayList<String>();
@@ -36,7 +36,7 @@ public class Setting_FieldText {
                 System.out.println("필드2 설정경과  = " + sfr);
             }
 
-            HWPWriter.toFile(hwpFile, "sample_hwp" + File.separator + "test-필드설정_saved.hwp");
+            HWPWriter.toFile(hwpFile, "sample_hwp" + File.separator + "result-setting-field.hwp");
         }
     }
 

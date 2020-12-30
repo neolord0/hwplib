@@ -48,4 +48,18 @@ public class HWPCharControlInline extends HWPChar {
         }
         this.addition = addition;
     }
+
+
+    public HWPChar clone() {
+        HWPCharControlInline cloned = new HWPCharControlInline();
+        cloned.code = code;
+
+        if (addition != null) {
+            cloned.addition = addition.clone();
+        } else {
+            cloned.addition = null;
+        }
+
+        return cloned;
+    }
 }

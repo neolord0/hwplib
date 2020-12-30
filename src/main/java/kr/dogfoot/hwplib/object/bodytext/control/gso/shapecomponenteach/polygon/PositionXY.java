@@ -56,4 +56,17 @@ public class PositionXY {
     public void setY(long y) {
         this.y = y;
     }
+
+    public PositionXY clone() {
+        PositionXY cloned = new PositionXY();
+        cloned.copy(this);
+        return cloned;
+    }
+
+    public void copy(PositionXY from) {
+        x = from.x;
+        y = from.y;
+    }
 }
+
+

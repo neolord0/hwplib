@@ -1,5 +1,7 @@
 package kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponent.renderingnfo;
 
+import kr.dogfoot.hwplib.object.bodytext.Section;
+
 import java.util.ArrayList;
 
 /**
@@ -52,5 +54,15 @@ public class RenderingInfo {
      */
     public ArrayList<ScaleRotateMatrixPair> getScaleRotateMatrixPairList() {
         return scaleRotateMatrixPairList;
+    }
+
+    public void copy(RenderingInfo from) {
+        translationMatrix.copy(from.translationMatrix);
+
+        scaleRotateMatrixPairList.clear();
+        for (ScaleRotateMatrixPair matrixPair : from.scaleRotateMatrixPairList) {
+            scaleRotateMatrixPairList.add(matrixPair.clone());
+        }
+
     }
 }

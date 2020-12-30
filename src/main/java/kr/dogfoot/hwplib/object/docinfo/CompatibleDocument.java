@@ -33,4 +33,10 @@ public class CompatibleDocument {
     public void setTargetProgream(CompatibleDocumentSort targetProgream) {
         this.targetProgream = targetProgream;
     }
+
+    public CompatibleDocument clone() {
+        CompatibleDocument cloned = new CompatibleDocument();
+        cloned.targetProgream = targetProgream;
+        return cloned;
+    }
 }

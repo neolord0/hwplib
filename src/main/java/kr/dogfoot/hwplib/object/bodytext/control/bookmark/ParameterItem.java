@@ -299,6 +299,13 @@ public class ParameterItem {
     }
 
     /**
+     * 파라미터 아이템 값(파라미터 셋) 객체를 삭제한다.
+     */
+    public void deleteValue_ParameterSet() {
+        value_ParameterSet = null;
+    }
+
+    /**
      * 파라미터 아이템 값(파라미터 배열)의 원소 개수를 반환한다.
      *
      * @return 파라미터 아이템 값(파라미터 배열)의 원소 개수
@@ -338,6 +345,13 @@ public class ParameterItem {
     }
 
     /**
+     * 파라미터 아이템 값(파라미터 배열)을 삭제한다.
+     */
+    public void deleteValue_ParameterArray() {
+        value_ParameterArray = null;
+    }
+
+    /**
      * 파라미터 아이템 값(binData id)을 반환한다.
      *
      * @return 파라미터 아이템 값(binData id)
@@ -353,5 +367,42 @@ public class ParameterItem {
      */
     public void setValue_binData(int value_binData) {
         this.value_binData = value_binData;
+    }
+
+    public ParameterItem clone() {
+        ParameterItem cloned = new ParameterItem();
+        cloned.copy(this);
+        return cloned;
+    }
+
+    public void copy(ParameterItem from) {
+        id = from.id;
+        type = from.type;
+        value_BSTR = from.value_BSTR;
+        value_I1 = from.value_I1;
+        value_I2 = from.value_I2;
+        value_I4 = from.value_I4;
+        value_I = from.value_I;
+        value_UI1 = from.value_UI1;
+        value_UI2 = from.value_UI2;
+        value_UI4 = from.value_UI4;
+        value_UI = from.value_UI;
+
+        if (from.value_ParameterSet != null) {
+            createValue_ParameterSet();
+            value_ParameterSet.copy(from.value_ParameterSet);
+        } else {
+            value_ParameterSet = null;
+        }
+
+        if (from.value_ParameterArray != null) {
+            int count = from.value_ParameterArray.length;
+            createValue_ParameterArray(count);
+            for (int index = 0; index < count; index++) {
+                value_ParameterArray[index].copy(from.value_ParameterArray[index]);
+            }
+        }
+
+        value_binData = from.value_binData;
     }
 }

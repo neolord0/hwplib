@@ -50,4 +50,11 @@ public class Bullet {
     public void setBulletChar(String bulletChar) {
         this.bulletChar = bulletChar;
     }
+
+    public Bullet clone() {
+        Bullet cloned = new Bullet();
+        cloned.paragraphHeadInfo.copy(paragraphHeadInfo);
+        cloned.bulletChar = bulletChar;
+        return cloned;
+    }
 }

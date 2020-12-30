@@ -252,4 +252,26 @@ public class Table {
     public ArrayList<ZoneInfo> getZoneInfoList() {
         return zoneInfoList;
     }
+
+    public void copy(Table from) {
+        property.copy(from.property);
+        rowCount = from.rowCount;
+        columnCount = from.columnCount;
+        cellSpacing = from.cellSpacing;
+        leftInnerMargin = from.leftInnerMargin;
+        rightInnerMargin = from.rightInnerMargin;
+        topInnerMargin = from.topInnerMargin;
+        bottomInnerMargin = from.bottomInnerMargin;
+
+        for (Integer integer : from.cellCountOfRowList) {
+            cellCountOfRowList.add(integer);
+        }
+
+        borderFillId = from.borderFillId;
+
+        zoneInfoList.clear();
+        for (ZoneInfo zoneInfo : from.zoneInfoList) {
+            zoneInfoList.add(zoneInfo.clone());
+        }
+    }
 }

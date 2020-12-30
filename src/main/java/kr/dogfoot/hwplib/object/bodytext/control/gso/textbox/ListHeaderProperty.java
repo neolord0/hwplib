@@ -92,4 +92,8 @@ public class ListHeaderProperty {
             TextVerticalAlignment textVerticalAlignment) {
         value = BitFlag.set(value, 5, 6, textVerticalAlignment.getValue());
     }
+
+    public void copy(ListHeaderProperty from) {
+        value = from.value;
+    }
 }

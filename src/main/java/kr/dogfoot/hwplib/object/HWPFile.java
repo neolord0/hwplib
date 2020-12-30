@@ -73,4 +73,17 @@ public class HWPFile {
     public BinData getBinData() {
         return binData;
     }
+
+    public HWPFile clone(boolean deepCopyImage) {
+        HWPFile cloned = new HWPFile();
+        cloned.copy(this, deepCopyImage);
+        return cloned;
+    }
+
+    public void copy(HWPFile from, boolean deepCopyImage) {
+        fileHeader.copy(from.fileHeader);
+        docInfo.copy(from.docInfo);
+        bodyText.copy(from.bodyText);
+        binData.copy(from.binData, deepCopyImage);
+    }
 }

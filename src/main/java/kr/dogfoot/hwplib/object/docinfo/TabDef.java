@@ -56,4 +56,16 @@ public class TabDef {
     public ArrayList<TabInfo> getTabInfoList() {
         return tabInfoList;
     }
+
+    public TabDef clone() {
+        TabDef cloned = new TabDef();
+        cloned.property.copy(property);
+
+        cloned.tabInfoList.clear();;
+        for (TabInfo tabInfo : tabInfoList) {
+            cloned.tabInfoList.add(tabInfo.clone());
+        }
+
+        return cloned;
+    }
 }

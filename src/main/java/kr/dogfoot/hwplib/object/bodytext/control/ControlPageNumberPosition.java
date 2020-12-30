@@ -23,4 +23,11 @@ public class ControlPageNumberPosition extends Control {
     public CtrlHeaderPageNumberPosition getHeader() {
         return (CtrlHeaderPageNumberPosition) header;
     }
+
+    @Override
+    public Control clone() {
+        ControlPageNumberPosition cloned = new ControlPageNumberPosition();
+        cloned.copyControlPart(this);
+        return cloned;
+    }
 }

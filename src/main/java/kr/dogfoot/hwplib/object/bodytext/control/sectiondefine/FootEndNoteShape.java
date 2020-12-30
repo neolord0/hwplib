@@ -284,4 +284,20 @@ public class FootEndNoteShape {
     public void setUnknown(long unknown) {
         this.unknown = unknown;
     }
+
+    public void copy(FootEndNoteShape from) {
+        property.copy(from.property);
+        userSymbol = from.userSymbol;
+        beforeDecorativeLetter = from.beforeDecorativeLetter;
+        afterDecorativeLetter = from.afterDecorativeLetter;
+        startNumber = from.startNumber;
+        divideLineLength = from.divideLineLength;
+        divideLineTopMargin = from.divideLineTopMargin;
+        divideLineBottomMargin = from.divideLineBottomMargin;
+        betweenNotesMargin = from.betweenNotesMargin;
+        divideLineSort = from.divideLineSort;
+        divideLineThickness = from.divideLineThickness;
+        divideLineColor.copy(from.divideLineColor);
+        unknown = from.unknown;
+    }
 }

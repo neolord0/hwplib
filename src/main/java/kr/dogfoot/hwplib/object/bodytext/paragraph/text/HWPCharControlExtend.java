@@ -141,4 +141,16 @@ public class HWPCharControlExtend extends HWPChar {
         return false;
     }
 
+    public HWPChar clone() {
+        HWPCharControlExtend cloned = new HWPCharControlExtend();
+        cloned.code = code;
+
+        if (addition != null) {
+            cloned.addition = addition.clone();
+        } else {
+            cloned.addition = null;
+        }
+
+        return cloned;
+    }
 }

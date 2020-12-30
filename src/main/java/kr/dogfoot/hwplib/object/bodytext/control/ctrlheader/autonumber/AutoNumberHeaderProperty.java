@@ -91,4 +91,8 @@ public class AutoNumberHeaderProperty {
     public void setSuperScript(boolean superScript) {
         value = BitFlag.set(value, 12, superScript);
     }
+
+    public void copy(AutoNumberHeaderProperty from) {
+        value = from.value;
+    }
 }

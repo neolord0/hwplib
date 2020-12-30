@@ -199,4 +199,8 @@ public class BorderFillProperty {
     public void setHasCenterLine(boolean hasCenterLine) {
         value = BitFlag.set(value, 13, hasCenterLine);
     }
+
+    public void copy(BorderFillProperty from) {
+        value = from.value;
+    }
 }

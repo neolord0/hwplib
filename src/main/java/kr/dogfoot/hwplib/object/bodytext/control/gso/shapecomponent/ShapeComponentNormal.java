@@ -32,6 +32,7 @@ public class ShapeComponentNormal extends ShapeComponent {
         shadowInfo = null;
     }
 
+
     /**
      * 테두리 선 정보 객체를 생성한다.
      */
@@ -99,5 +100,33 @@ public class ShapeComponentNormal extends ShapeComponent {
      */
     public ShadowInfo getShadowInfo() {
         return shadowInfo;
+    }
+
+
+    @Override
+    public void copy(ShapeComponent from) {
+        copyShapeComponent(from);
+        ShapeComponentNormal from2 = (ShapeComponentNormal) from;
+
+        if (from2.lineInfo != null) {
+            createLineInfo();
+            lineInfo.copy(from2.lineInfo);
+        } else {
+            lineInfo = null;
+        }
+
+        if (from2.fillInfo != null) {
+            createFillInfo();
+            fillInfo.copy(from2.fillInfo);
+        } else {
+            fillInfo = null;
+        }
+
+        if (from2.shadowInfo != null) {
+            createShadowInfo();
+            shadowInfo.copy(from2.shadowInfo);
+        } else {
+            shadowInfo = null;
+        }
     }
 }

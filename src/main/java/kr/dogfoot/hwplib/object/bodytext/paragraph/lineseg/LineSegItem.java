@@ -9,7 +9,7 @@ public class LineSegItem {
     /**
      * 텍스트 시작 위치
      */
-    private long textStartPositon;
+    private long textStartPosition;
     /**
      * 줄의 세로 위치
      */
@@ -55,17 +55,17 @@ public class LineSegItem {
      *
      * @return 텍스트 시작 위치
      */
-    public long getTextStartPositon() {
-        return textStartPositon;
+    public long getTextStartPosition() {
+        return textStartPosition;
     }
 
     /**
      * 텍스트 시작 위치를 설정한다.
      *
-     * @param textStartPositon 텍스트 시작 위치
+     * @param textStartPosition 텍스트 시작 위치
      */
-    public void setTextStartPositon(long textStartPositon) {
-        this.textStartPositon = textStartPositon;
+    public void setTextStartPosition(long textStartPosition) {
+        this.textStartPosition = textStartPosition;
     }
 
     /**
@@ -202,5 +202,19 @@ public class LineSegItem {
      */
     public LineSegItemTag getTag() {
         return tag;
+    }
+
+    public LineSegItem clone() {
+        LineSegItem cloned = new LineSegItem();
+        cloned.textStartPosition = textStartPosition;
+        cloned.lineVerticalPosition = lineVerticalPosition;
+        cloned.lineHeight = lineHeight;
+        cloned.textPartHeight = textPartHeight;
+        cloned.distanceBaseLineToLineVerticalPosition = distanceBaseLineToLineVerticalPosition;
+        cloned.lineSpace = lineSpace;
+        cloned.startPositionFromColumn = startPositionFromColumn;
+        cloned.segmentWidth = segmentWidth;
+        cloned.tag.copy(tag);
+        return cloned;
     }
 }

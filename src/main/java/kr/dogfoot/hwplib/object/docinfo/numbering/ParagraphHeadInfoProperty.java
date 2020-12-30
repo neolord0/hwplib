@@ -116,4 +116,8 @@ public class ParagraphHeadInfoProperty {
             value = BitFlag.set(value, 4, true);
         }
     }
+
+    public void copy(ParagraphHeadInfoProperty from) {
+        value = from.value;
+    }
 }

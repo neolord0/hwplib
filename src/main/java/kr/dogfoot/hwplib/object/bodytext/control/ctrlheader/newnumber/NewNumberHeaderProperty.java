@@ -55,4 +55,9 @@ public class NewNumberHeaderProperty {
     public void setNumberSort(NumberSort numberSort) {
         value = BitFlag.set(value, 0, 3, numberSort.getValue());
     }
+
+    public void copy(NewNumberHeaderProperty from) {
+        value = from.value;
+    }
+
 }

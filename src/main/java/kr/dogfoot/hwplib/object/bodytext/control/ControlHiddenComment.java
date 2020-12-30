@@ -1,6 +1,7 @@
 package kr.dogfoot.hwplib.object.bodytext.control;
 
 import kr.dogfoot.hwplib.object.bodytext.control.ctrlheader.CtrlHeader;
+import kr.dogfoot.hwplib.object.bodytext.control.ctrlheader.CtrlHeaderDefault;
 import kr.dogfoot.hwplib.object.bodytext.control.hiddencomment.ListHeaderForHiddenComment;
 import kr.dogfoot.hwplib.object.bodytext.paragraph.ParagraphList;
 
@@ -23,7 +24,7 @@ public class ControlHiddenComment extends Control {
      * 생성자
      */
     public ControlHiddenComment() {
-        super(new CtrlHeader(ControlType.HiddenComment.getCtrlId()));
+        super(new CtrlHeaderDefault(ControlType.HiddenComment.getCtrlId()));
 
         listHeader = new ListHeaderForHiddenComment();
         paragraphList = new ParagraphList();
@@ -54,5 +55,14 @@ public class ControlHiddenComment extends Control {
      */
     public ParagraphList getParagraphList() {
         return paragraphList;
+    }
+
+    @Override
+    public Control clone() {
+        ControlHiddenComment cloned = new ControlHiddenComment();
+        cloned.copyControlPart(this);
+        cloned.listHeader.copy(listHeader);
+        cloned.paragraphList.copy(paragraphList);
+        return cloned;
     }
 }

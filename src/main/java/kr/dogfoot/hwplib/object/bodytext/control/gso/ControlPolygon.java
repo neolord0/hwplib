@@ -1,5 +1,6 @@
 package kr.dogfoot.hwplib.object.bodytext.control.gso;
 
+import kr.dogfoot.hwplib.object.bodytext.control.Control;
 import kr.dogfoot.hwplib.object.bodytext.control.ctrlheader.CtrlHeaderGso;
 import kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponenteach.ShapeComponentPolygon;
 import kr.dogfoot.hwplib.object.bodytext.control.gso.textbox.TextBox;
@@ -69,5 +70,19 @@ public class ControlPolygon extends GsoControl {
      */
     public ShapeComponentPolygon getShapeComponentPolygon() {
         return shapeComponentPolygon;
+    }
+
+    @Override
+    public Control clone() {
+        ControlPolygon cloned = new ControlPolygon();
+        cloned.copyGsoControlPart(cloned);
+
+        if (textBox != null) {
+            cloned.createTextBox();
+            cloned.textBox.copy(textBox);
+        }
+
+        cloned.shapeComponentPolygon.copy(shapeComponentPolygon);
+        return cloned;
     }
 }

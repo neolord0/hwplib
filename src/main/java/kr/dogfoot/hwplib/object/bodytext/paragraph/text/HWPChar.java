@@ -9,7 +9,7 @@ public abstract class HWPChar {
     /**
      * 믄자 코드
      */
-    private short code;
+    protected short code;
 
     /**
      * 글자의 종류을 반환한다.
@@ -86,4 +86,5 @@ public abstract class HWPChar {
         this.code = code;
     }
 
+    public abstract HWPChar clone();
 }

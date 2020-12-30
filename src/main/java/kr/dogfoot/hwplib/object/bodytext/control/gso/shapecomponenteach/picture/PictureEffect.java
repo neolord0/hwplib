@@ -134,4 +134,36 @@ public class PictureEffect {
     public ReflectionEffect getReflectionEffect() {
         return reflectionEffect;
     }
+
+    public void copy(PictureEffect from) {
+        property.copy(from.property);
+
+        if (from.shadowEffect != null) {
+            createShadowEffect();
+            shadowEffect.copy(from.shadowEffect);
+        } else {
+            shadowEffect = null;
+        }
+
+        if (from.neonEffect != null) {
+            createNeonEffect();
+            neonEffect.copy(from.neonEffect);
+        } else {
+            neonEffect = null;
+        }
+
+        if (from.softEdgeEffect != null) {
+            createSoftEdgeEffect();
+            softEdgeEffect.copy(from.softEdgeEffect);
+        } else {
+            softEdgeEffect = null;
+        }
+
+        if (from.reflectionEffect != null) {
+            createReflectionEffect();
+            reflectionEffect.copy(from.reflectionEffect);
+        } else {
+            reflectionEffect = null;
+        }
+    }
 }

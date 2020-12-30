@@ -140,4 +140,22 @@ public class ControlSectionDefine extends Control {
     public ArrayList<BatangPageInfo> getBatangPageInfoList() {
         return batangPageInfoList;
     }
+
+    @Override
+    public Control clone() {
+        ControlSectionDefine cloned = new ControlSectionDefine();
+        cloned.copyControlPart(this);
+        cloned.pageDef.copy(pageDef);
+        cloned.footNoteShape.copy(footNoteShape);
+        cloned.endNoteShape.copy(endNoteShape);
+        cloned.bothPageBorderFill.copy(bothPageBorderFill);
+        cloned.evenPageBorderFill.copy(evenPageBorderFill);
+        cloned.oddPageBorderFill.copy(oddPageBorderFill);
+
+        for (BatangPageInfo batangPageInfo : batangPageInfoList) {
+            cloned.batangPageInfoList.add(batangPageInfo.clone());
+        }
+
+        return cloned;
+    }
 }

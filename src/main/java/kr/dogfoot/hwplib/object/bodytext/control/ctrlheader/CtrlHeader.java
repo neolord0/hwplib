@@ -1,11 +1,13 @@
 package kr.dogfoot.hwplib.object.bodytext.control.ctrlheader;
 
+import kr.dogfoot.hwplib.object.bodytext.control.ControlHeader;
+
 /**
  * 컨트롤 헤더 객체들을 위한 부모 클래스
  *
  * @author neolord
  */
-public class CtrlHeader {
+public abstract class CtrlHeader {
     /**
      * 컨트롤 아이디
      */
@@ -28,4 +30,6 @@ public class CtrlHeader {
     public long getCtrlId() {
         return ctrlId;
     }
+
+    public abstract void copy(CtrlHeader from);
 }

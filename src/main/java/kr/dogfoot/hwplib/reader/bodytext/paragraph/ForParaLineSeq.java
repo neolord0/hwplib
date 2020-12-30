@@ -44,7 +44,7 @@ public class ForParaLineSeq {
      */
     private static void paraLineSeqItem(LineSegItem plsi, StreamReader sr)
             throws IOException {
-        plsi.setTextStartPositon(sr.readUInt4());
+        plsi.setTextStartPosition(sr.readUInt4());
         plsi.setLineVerticalPosition(sr.readSInt4());
         plsi.setLineHeight(sr.readSInt4());
         plsi.setTextPartHeight(sr.readSInt4());

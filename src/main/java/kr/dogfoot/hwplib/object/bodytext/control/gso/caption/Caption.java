@@ -42,4 +42,9 @@ public class Caption {
     public ParagraphList getParagraphList() {
         return paragraphList;
     }
+
+    public void copy(Caption from) {
+        listHeader.copy(from.listHeader);
+        paragraphList.copy(from.paragraphList);
+    }
 }

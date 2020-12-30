@@ -63,10 +63,10 @@ public class HtmlToTableExample {
     }
 
     // 빈 문서를 활용, 빈 문서의 경로
-    public static final String hwpBlankPath = "sample_hwp" + File.separator + "test-blank.hwp";
+    public static final String hwpBlankPath = "sample_hwp" + File.separator + "blank.hwp";
 
     // 저장할 파일 경로
-    public static final String hwpOutputPath = "sample_hwp" + File.separator + "test-htmltohwp.hwp";
+    public static final String hwpOutputPath = "sample_hwp" + File.separator + "result-htmltohwp.hwp";
 
     private HWPFile hwpFile;
 

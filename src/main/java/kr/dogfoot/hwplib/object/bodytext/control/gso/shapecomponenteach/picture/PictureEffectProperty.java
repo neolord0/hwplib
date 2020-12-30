@@ -108,4 +108,8 @@ public class PictureEffectProperty {
     public void setHasReflectionEffect(boolean hasReflectionEffect) {
         value = BitFlag.set(value, 3, hasReflectionEffect);
     }
+
+    public void copy(PictureEffectProperty from) {
+        value = from.value;
+    }
 }

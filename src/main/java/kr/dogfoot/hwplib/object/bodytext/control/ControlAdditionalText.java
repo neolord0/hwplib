@@ -23,4 +23,10 @@ public class ControlAdditionalText extends Control {
     public CtrlHeaderAdditionalText getHeader() {
         return (CtrlHeaderAdditionalText) header;
     }
+
+    public Control clone() {
+        ControlAdditionalText cloned = new ControlAdditionalText();
+        cloned.copyControlPart(this);
+        return cloned;
+    }
 }

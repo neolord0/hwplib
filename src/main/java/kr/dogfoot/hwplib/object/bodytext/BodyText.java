@@ -40,4 +40,11 @@ public class BodyText {
     public ArrayList<Section> getSectionList() {
         return sectionList;
     }
+
+    public void copy(BodyText from) {
+        sectionList.clear();
+        for (Section section : from.sectionList) {
+            sectionList.add(section.clone());
+        }
+    }
 }

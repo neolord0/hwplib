@@ -25,7 +25,7 @@ public class Inserting_HyperLink {
                 insertHyperLink(hwpFile.getBodyText().getSectionList().get(0).getParagraph(index));
             }
 
-            String writePath = "sample_hwp" + File.separator + "test-inserting-hyperlink.hwp";
+            String writePath = "sample_hwp" + File.separator + "result-inserting-hyperlink.hwp";
             HWPWriter.toFile(hwpFile, writePath);
         }
     }

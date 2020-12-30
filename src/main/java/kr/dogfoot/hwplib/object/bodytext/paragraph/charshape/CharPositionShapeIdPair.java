@@ -17,6 +17,12 @@ public class CharPositionShapeIdPair {
 
     /**
      * 생성자
+     */
+    public CharPositionShapeIdPair() {
+    }
+
+    /**
+     * 생성자
      *
      * @param position 글자 모양이 바뀌는 시작 위치
      * @param shapeId  글자 모양 ID
@@ -60,5 +66,12 @@ public class CharPositionShapeIdPair {
      */
     public void setShapeId(long shapeId) {
         this.shapeId = shapeId;
+    }
+
+    public CharPositionShapeIdPair clone() {
+        CharPositionShapeIdPair cloned = new CharPositionShapeIdPair();
+        cloned.position = position;
+        cloned.shapeId = shapeId;
+        return cloned;
     }
 }

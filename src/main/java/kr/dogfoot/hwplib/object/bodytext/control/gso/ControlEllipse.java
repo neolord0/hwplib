@@ -1,5 +1,6 @@
 package kr.dogfoot.hwplib.object.bodytext.control.gso;
 
+import kr.dogfoot.hwplib.object.bodytext.control.Control;
 import kr.dogfoot.hwplib.object.bodytext.control.ctrlheader.CtrlHeaderGso;
 import kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponenteach.ShapeComponentEllipse;
 import kr.dogfoot.hwplib.object.bodytext.control.gso.textbox.TextBox;
@@ -69,5 +70,19 @@ public class ControlEllipse extends GsoControl {
      */
     public ShapeComponentEllipse getShapeComponentEllipse() {
         return shapeComponentEllipse;
+    }
+
+    @Override
+    public Control clone() {
+        ControlEllipse cloned = new ControlEllipse();
+        cloned.copyGsoControlPart(this);
+
+        if (textBox != null) {
+            cloned.createTextBox();
+            cloned.textBox.copy(textBox);
+        }
+
+        cloned.shapeComponentEllipse.copy(shapeComponentEllipse);
+        return cloned;
     }
 }

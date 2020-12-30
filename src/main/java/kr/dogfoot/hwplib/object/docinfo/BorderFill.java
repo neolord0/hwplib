@@ -7,6 +7,8 @@ import kr.dogfoot.hwplib.object.docinfo.borderfill.EachBorder;
 import kr.dogfoot.hwplib.object.docinfo.borderfill.fillinfo.FillInfo;
 import kr.dogfoot.hwplib.object.etc.Color4Byte;
 
+import javax.swing.border.Border;
+
 /**
  * 테두리/배경의 모양을 나타내는 레코드
  *
@@ -160,5 +162,19 @@ public class BorderFill {
      */
     public FillInfo getFillInfo() {
         return fillInfo;
+    }
+
+    public BorderFill clone() {
+        BorderFill cloned = new BorderFill();
+        cloned.property.copy(property);
+        cloned.leftBorder.copy(leftBorder);
+        cloned.rightBorder.copy(rightBorder);
+        cloned.topBorder.copy(topBorder);
+        cloned.bottomBorder.copy(bottomBorder);
+        cloned.diagonalSort = diagonalSort;
+        cloned.diagonalThickness = diagonalThickness;
+        cloned.diagonalColor.copy(diagonalColor);
+        cloned.fillInfo.copy(fillInfo);
+        return cloned;
     }
 }

@@ -55,4 +55,13 @@ public class ControlEndnote extends Control {
     public ParagraphList getParagraphList() {
         return paragraphList;
     }
+
+    @Override
+    public Control clone() {
+        ControlEndnote cloned = new ControlEndnote();
+        cloned.copyControlPart(this);
+        cloned.listHeader.copy(listHeader);
+        cloned.paragraphList.copy(paragraphList);
+        return cloned;
+    }
 }

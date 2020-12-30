@@ -68,4 +68,21 @@ public class ControlEquation extends Control {
     public EQEdit getEQEdit() {
         return eqEdit;
     }
+
+    @Override
+    public Control clone() {
+        ControlEquation cloned = new ControlEquation();
+        cloned.copyControlPart(this);
+
+        if (caption != null) {
+            cloned.createCaption();
+            cloned.caption.copy(caption);
+        } else {
+            cloned = null;
+        }
+
+        cloned.eqEdit.copy(eqEdit);
+
+        return cloned;
+    }
 }

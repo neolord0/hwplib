@@ -1,6 +1,7 @@
 package kr.dogfoot.hwplib.object.docinfo.tabdef;
 
 import kr.dogfoot.hwplib.object.docinfo.borderfill.BorderType;
+import org.apache.poi.ss.formula.functions.T;
 
 /**
  * 탭 정보에 대한 객체
@@ -79,5 +80,13 @@ public class TabInfo {
      */
     public void setFillSort(BorderType fillSort) {
         this.fillSort = fillSort;
+    }
+
+    public TabInfo clone() {
+        TabInfo cloned = new TabInfo();
+        cloned.position = position;
+        cloned.tabSort = tabSort;
+        cloned.fillSort = fillSort;
+        return cloned;
     }
 }

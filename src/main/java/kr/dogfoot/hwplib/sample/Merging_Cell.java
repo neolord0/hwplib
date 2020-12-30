@@ -15,7 +15,7 @@ import java.io.File;
  */
 public class Merging_Cell {
     public static void main(String[] args) throws Exception {
-        String filename = "sample_hwp" + File.separator + "test-merge-cell.hwp";
+        String filename = "sample_hwp" + File.separator + "merging-cell.hwp";
 
         HWPFile hwpFile = HWPReader.fromFile(filename);
         if (hwpFile != null) {
@@ -25,7 +25,7 @@ public class Merging_Cell {
                 TableCellMerger.mergeCell(table, 2, 2, 4, 3);
             }
 
-            String writePath = "sample_hwp" + File.separator + "test-merge-cell-2.hwp";
+            String writePath = "sample_hwp" + File.separator + "result-merging-cell.hwp";
             HWPWriter.toFile(hwpFile, writePath);
         }
     }

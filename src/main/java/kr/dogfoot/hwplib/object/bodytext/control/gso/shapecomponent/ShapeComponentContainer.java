@@ -37,4 +37,16 @@ public class ShapeComponentContainer extends ShapeComponent {
     public ArrayList<Long> getChildControlIdList() {
         return childControlIdList;
     }
+
+    @Override
+    public void copy(ShapeComponent from) {
+        copyShapeComponent(from);
+        ShapeComponentContainer from2 = (ShapeComponentContainer) from;
+
+        childControlIdList.clear();
+        for (Long childControlId : from2.childControlIdList) {
+            childControlIdList.add(childControlId);
+        }
+    }
+
 }

@@ -42,4 +42,11 @@ public class Cell {
     public ParagraphList getParagraphList() {
         return paragraphList;
     }
+
+    public Cell clone() {
+        Cell cloned = new Cell();
+        cloned.listHeader.copy(listHeader);
+        cloned.paragraphList.copy(paragraphList);
+        return cloned;
+    }
 }

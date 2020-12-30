@@ -83,4 +83,15 @@ public class ColorWithEffect {
     public ArrayList<ColorEffect> getColorEffectList() {
         return colorEffectList;
     }
+
+    public void copy(ColorWithEffect from) {
+        type = from.type;
+        color = from.color.clone();
+
+        colorEffectList.clear();
+        for (ColorEffect colorEffect : from.colorEffectList) {
+            colorEffectList.add(colorEffect.clone());
+        }
+
+    }
 }

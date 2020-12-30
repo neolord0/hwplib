@@ -50,4 +50,9 @@ public class ListHeaderForFootnodeEndnote {
     public ListHeaderProperty getProperty() {
         return property;
     }
+
+    public void copy(ListHeaderForFootnodeEndnote from) {
+        paraCount = from.paraCount;
+        property.copy(from.property);
+    }
 }

@@ -78,4 +78,10 @@ public class CaretPosition {
     public void setPositionInParagraph(long positionInParagraph) {
         this.positionInParagraph = positionInParagraph;
     }
+
+    public void copy(CaretPosition from) {
+        listID = from.listID;
+        paragraphID = from.paragraphID;
+        positionInParagraph = from.positionInParagraph;
+    }
 }

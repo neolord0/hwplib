@@ -1,5 +1,6 @@
 package kr.dogfoot.hwplib.object.bodytext.control.gso;
 
+import kr.dogfoot.hwplib.object.bodytext.control.Control;
 import kr.dogfoot.hwplib.object.bodytext.control.ctrlheader.CtrlHeaderGso;
 import kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponenteach.ShapeComponentPicture;
 
@@ -42,4 +43,11 @@ public class ControlPicture extends GsoControl {
         return shapeComponentPicture;
     }
 
+    @Override
+    public Control clone() {
+        ControlPicture cloned = new ControlPicture();
+        cloned.copyGsoControlPart(this);
+        cloned.shapeComponentPicture.copy(shapeComponentPicture);
+        return cloned;
+    }
 }

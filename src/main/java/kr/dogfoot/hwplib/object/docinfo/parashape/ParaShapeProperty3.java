@@ -54,4 +54,8 @@ public class ParaShapeProperty3 {
     public void setLineSpaceSort(LineSpaceSort lineSpaceSort) {
         value = BitFlag.set(value, 0, 4, lineSpaceSort.getValue());
     }
+
+    public void copy(ParaShapeProperty3 from) {
+        value = from.value;
+    }
 }

@@ -17,7 +17,7 @@ import java.io.File;
  */
 public class Removing_Table_Row {
     public static void main(String[] args) throws Exception {
-        String filename = "sample_hwp" + File.separator + "test-removerow.hwp";
+        String filename = "sample_hwp" + File.separator + "removing-row.hwp";
 
         HWPFile hwpFile = HWPReader.fromFile(filename);
         if (hwpFile != null) {
@@ -27,7 +27,7 @@ public class Removing_Table_Row {
             removeCellCountOfRow(table);
             adjustCellRowIndex(table);
 
-            String writePath = filename.substring(0, 11) + "ed-" + filename.substring(11);
+            String writePath = "sample_hwp" + File.separator + "result-removing-row.hwp";
             HWPWriter.toFile(hwpFile, writePath);
         }
     }

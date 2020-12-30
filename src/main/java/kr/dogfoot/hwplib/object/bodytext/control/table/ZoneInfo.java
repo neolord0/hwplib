@@ -122,4 +122,14 @@ public class ZoneInfo {
     public void setBorderFillId(int borderFillId) {
         this.borderFillId = borderFillId;
     }
+
+    public ZoneInfo clone() {
+        ZoneInfo cloned = new ZoneInfo();
+        cloned.startColumn = startColumn;
+        cloned.startRow = startRow;
+        cloned.endColumn = endColumn;
+        cloned.endRow = endRow;
+        cloned.borderFillId = borderFillId;
+        return cloned;
+    }
 }

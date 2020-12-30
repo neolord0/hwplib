@@ -108,4 +108,8 @@ public class DivideSort {
     public void setDivideColumn(boolean divideColumn) {
         value = BitFlag.set(value, 3, divideColumn);
     }
+
+    public void copy(DivideSort from) {
+        value = from.value;
+    }
 }

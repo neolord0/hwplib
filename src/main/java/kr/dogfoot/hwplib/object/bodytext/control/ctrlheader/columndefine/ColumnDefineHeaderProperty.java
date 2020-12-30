@@ -108,4 +108,8 @@ public class ColumnDefineHeaderProperty {
     public void setSameWidth(boolean sameWidth) {
         value = BitFlag.set(value, 12, sameWidth);
     }
+
+    public void copy(ColumnDefineHeaderProperty from) {
+        value = from.value;
+    }
 }

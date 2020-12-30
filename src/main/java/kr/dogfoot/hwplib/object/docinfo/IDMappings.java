@@ -408,4 +408,25 @@ public class IDMappings {
     public void setTrackChangeAuthorCount(int trackChangeAuthorCount) {
         this.trackChangeAuthorCount = trackChangeAuthorCount;
     }
+
+    public void copy(IDMappings from) {
+        binDataCount = from.binDataCount;
+        hangulFaceNameCount = from.hangulFaceNameCount;
+        englishFaceNameCount = from.englishFaceNameCount;
+        hanjaFaceNameCount = from.hanjaFaceNameCount;
+        japaneseFaceNameCount = from.japaneseFaceNameCount;
+        etcFaceNameCount = from.etcFaceNameCount;
+        symbolFaceNameCount = from.symbolFaceNameCount;
+        userFaceNameCount = from.userFaceNameCount;
+        borderFillCount = from.borderFillCount;
+        charShapeCount = from.charShapeCount;
+        tabDefCount = from.tabDefCount;
+        numberingCount = from.numberingCount;
+        bulletCount = from.bulletCount;
+        paraShapeCount = from.paraShapeCount;
+        styleCount = from.styleCount;
+        memoShapeCount = from.memoShapeCount;
+        trackChangeCount = from.trackChangeCount;
+        trackChangeAuthorCount = from.trackChangeAuthorCount;
+    }
 }

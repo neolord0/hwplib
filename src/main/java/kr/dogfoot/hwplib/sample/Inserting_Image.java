@@ -34,19 +34,19 @@ import java.io.InputStream;
  */
 public class Inserting_Image {
     public static void main(String[] args) throws Exception {
-        String filename = "sample_hwp" + File.separator + "test-blank.hwp";
+        String filename = "sample_hwp" + File.separator + "blank.hwp";
 
         HWPFile hwpFile = HWPReader.fromFile(filename);
         if (hwpFile != null) {
             Inserting_Image tii = new Inserting_Image();
             tii.insertShapeWithImage(hwpFile);
 
-            String writePath = "sample_hwp" + File.separator + "test-insert-image.hwp";
+            String writePath = "sample_hwp" + File.separator + "result-insert-image.hwp";
             HWPWriter.toFile(hwpFile, writePath);
         }
     }
 
-    private final String imageFilePath = "sample_hwp" + File.separator + "sample.jpg";
+    private final String imageFilePath = "sample_hwp" + File.separator + "image" + File.separator + "sample.jpg";
     private final String imageFileExt = "jpg";
     private final BinDataCompress compressMethod = BinDataCompress.ByStroageDefault;
 

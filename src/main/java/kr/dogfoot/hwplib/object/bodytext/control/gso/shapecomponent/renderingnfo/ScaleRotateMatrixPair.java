@@ -40,4 +40,12 @@ public class ScaleRotateMatrixPair {
     public Matrix getRotateMatrix() {
         return rotateMatrix;
     }
+
+    public ScaleRotateMatrixPair clone() {
+        ScaleRotateMatrixPair cloned = new ScaleRotateMatrixPair();
+        cloned.scaleMatrix.copy(scaleMatrix);
+        cloned.rotateMatrix.copy(rotateMatrix);
+        return cloned;
+    }
+
 }

@@ -41,4 +41,11 @@ public class ShapeComponentPolygon {
     public ArrayList<PositionXY> getPositionList() {
         return positionList;
     }
+
+    public void copy(ShapeComponentPolygon from) {
+        positionList.clear();
+        for (PositionXY positionXY : from.positionList) {
+            positionList.add(positionXY.clone());
+        }
+    }
 }

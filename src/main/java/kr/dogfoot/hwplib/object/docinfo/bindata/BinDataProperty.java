@@ -90,4 +90,8 @@ public class BinDataProperty {
     public void setState(BinDataState state) {
         value = BitFlag.set(value, 8, 9, state.getValue());
     }
+
+    public void copy(BinDataProperty from) {
+        value = from.value;
+    }
 }

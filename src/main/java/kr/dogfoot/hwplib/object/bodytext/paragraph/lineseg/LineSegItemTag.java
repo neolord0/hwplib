@@ -198,4 +198,8 @@ public class LineSegItemTag {
     public void setBit31(boolean bit31) {
         value = BitFlag.set(value, 31, bit31);
     }
+
+    public void copy(LineSegItemTag from) {
+        value = from.value;
+    }
 }

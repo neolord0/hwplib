@@ -1,6 +1,7 @@
 package kr.dogfoot.hwplib.util.compoundFile.reader;
 
 import kr.dogfoot.hwplib.object.RecordHeader;
+import kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponent.renderingnfo.ScaleRotateMatrixPair;
 import kr.dogfoot.hwplib.object.docinfo.DocInfo;
 import kr.dogfoot.hwplib.object.fileheader.FileVersion;
 import kr.dogfoot.hwplib.util.binary.BitFlag;

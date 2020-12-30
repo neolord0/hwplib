@@ -1,5 +1,7 @@
 package kr.dogfoot.hwplib.object.bodytext.paragraph.text;
 
+import kr.dogfoot.hwplib.object.bodytext.paragraph.Paragraph;
+
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 
@@ -298,5 +300,13 @@ public class ParaText {
             e.printStackTrace();
         }
         processEndOfParagraph();
+    }
+
+    public ParaText clone() {
+        ParaText cloned = new ParaText();
+        for (HWPChar hwpChar : charList) {
+            cloned.charList.add(hwpChar.clone());
+        }
+        return cloned;
     }
 }

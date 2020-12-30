@@ -224,4 +224,17 @@ public class PageDef {
     public PageDefProperty getProperty() {
         return property;
     }
+
+    public void copy(PageDef from) {
+        paperWidth = from.paperWidth;
+        paperHeight = from.paperHeight;
+        leftMargin = from.leftMargin;
+        rightMargin = from.rightMargin;
+        topMargin = from.topMargin;
+        bottomMargin = from.bottomMargin;
+        headerMargin = from.headerMargin;
+        footerMargin = from.footerMargin;
+        gutterMargin = from.gutterMargin;
+        property.copy(from.property);
+    }
 }

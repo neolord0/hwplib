@@ -148,4 +148,8 @@ public class ListHeaderPropertyForCell {
     public void setEditableAtFormMode(boolean editableAtFormMode) {
         value = BitFlag.set(value, 19, editableAtFormMode);
     }
+
+    public void copy(ListHeaderPropertyForCell from) {
+        value = from.value;
+    }
 }

@@ -116,4 +116,12 @@ public class ShadowInfo {
     public void setTransparnet(short transparnet) {
         this.transparnet = transparnet;
     }
+
+    public void copy(ShadowInfo from) {
+        type = from.type;
+        color.copy(from.color);
+        offsetX = from.offsetX;
+        offsetY = from.offsetY;
+        transparnet = from.transparnet;
+    }
 }

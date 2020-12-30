@@ -144,4 +144,13 @@ public class StartNumber {
     public void setEquation(int equation) {
         this.equation = equation;
     }
+
+    public void copy(StartNumber from) {
+        page = from.page;
+        footnote = from.footnote;
+        endnote = from.endnote;
+        picture = from.picture;
+        table = from.table;
+        equation = from.equation;
+    }
 }

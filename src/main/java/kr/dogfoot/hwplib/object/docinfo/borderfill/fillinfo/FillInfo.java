@@ -107,4 +107,28 @@ public class FillInfo {
     public ImageFill getImageFill() {
         return imageFill;
     }
+
+    public void copy(FillInfo from) {
+        type.copy(from.type);
+
+        if (from.patternFill != null) {
+            createPatternFill();
+            patternFill.copy(from.patternFill);
+        } else {
+            deletePatternFill();
+        }
+
+        if (from.gradientFill != null) {
+            createGradientFill();
+            gradientFill.copy(from.gradientFill);
+        } else {
+            deleteGradientFill();
+        }
+        if (from.imageFill != null) {
+            createImageFill();
+            imageFill.copy(from.imageFill);
+        } else {
+            deleteImageFill();
+        }
+    }
 }

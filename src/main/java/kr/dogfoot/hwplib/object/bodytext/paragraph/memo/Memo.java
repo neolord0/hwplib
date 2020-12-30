@@ -51,4 +51,12 @@ public class Memo {
     public ParagraphList getParagraphList() {
         return paragraphList;
     }
+
+    public Memo clone() {
+        Memo cloned = new Memo();
+        cloned.memoList.copy(memoList);
+        cloned.listHeader.copy(listHeader);
+        cloned.paragraphList.copy(paragraphList);
+        return cloned;
+    }
 }

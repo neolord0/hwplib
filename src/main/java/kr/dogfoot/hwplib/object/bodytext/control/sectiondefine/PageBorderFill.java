@@ -136,4 +136,13 @@ public class PageBorderFill {
     public void setBorderFillId(int borderFillId) {
         this.borderFillId = borderFillId;
     }
+
+    public void copy(PageBorderFill from) {
+        property.copy(from.property);
+        leftGap = from.leftGap;
+        rightGap = from.rightGap;
+        topGap = from.topGap;
+        bottomGap = from.bottomGap;
+        borderFillId = from.borderFillId;
+    }
 }

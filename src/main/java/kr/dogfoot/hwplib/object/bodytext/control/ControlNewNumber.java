@@ -23,4 +23,11 @@ public class ControlNewNumber extends Control {
     public CtrlHeaderNewNumber getHeader() {
         return (CtrlHeaderNewNumber) header;
     }
+
+    @Override
+    public Control clone() {
+        ControlNewNumber cloned = new ControlNewNumber();
+        cloned.copyControlPart(this);
+        return cloned;
+    }
 }

@@ -311,4 +311,8 @@ public class CharShapeProperty {
     public void setKerning(boolean kerning) {
         value = BitFlag.set(value, 30, kerning);
     }
+
+    public void copy(CharShapeProperty from) {
+        value = from.value;
+    }
 }

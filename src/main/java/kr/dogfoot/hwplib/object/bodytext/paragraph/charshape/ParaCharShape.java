@@ -1,5 +1,7 @@
 package kr.dogfoot.hwplib.object.bodytext.paragraph.charshape;
 
+import kr.dogfoot.hwplib.object.docinfo.ParaShape;
+
 import java.util.ArrayList;
 
 /**
@@ -40,5 +42,15 @@ public class ParaCharShape {
      */
     public ArrayList<CharPositionShapeIdPair> getPositonShapeIdPairList() {
         return positionShapeIdPairList;
+    }
+
+    public ParaCharShape clone() {
+        ParaCharShape cloned = new ParaCharShape();
+
+        for (CharPositionShapeIdPair charPositionShapeIdPair : positionShapeIdPairList) {
+            cloned.positionShapeIdPairList.add(charPositionShapeIdPair.clone());
+        }
+
+        return cloned;
     }
 }

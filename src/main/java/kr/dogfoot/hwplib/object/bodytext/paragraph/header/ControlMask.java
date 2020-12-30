@@ -380,4 +380,8 @@ public class ControlMask {
     public void setHasFixWidthBlank(boolean hasFixWidthBlank) {
         value = BitFlag.set(value, 31, hasFixWidthBlank);
     }
+
+    public void copy(ControlMask from) {
+        value = from.value;
+    }
 }

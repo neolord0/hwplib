@@ -180,4 +180,15 @@ public class EQEdit {
     public void setFontName(String fontName) {
         this.fontName = fontName;
     }
+
+    public void copy(EQEdit from) {
+        property =  from.property;
+        script = from.script;
+        letterSize = from.letterSize;
+        letterColor.copy(from.letterColor);
+        baseLine = from.baseLine;
+        unknown = from.unknown;
+        versionInfo = from.versionInfo;
+        fontName = from.fontName;
+    }
 }

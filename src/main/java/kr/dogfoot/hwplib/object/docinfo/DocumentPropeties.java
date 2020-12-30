@@ -65,4 +65,10 @@ public class DocumentPropeties {
     public CaretPosition getCaretPosition() {
         return caretPosition;
     }
+
+    public void copy(DocumentPropeties from) {
+        sectionCount = from.sectionCount;
+        startNumber.copy(from.startNumber);
+        caretPosition.copy(from.caretPosition);
+    }
 }

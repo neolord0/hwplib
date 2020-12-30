@@ -176,4 +176,8 @@ public class FaceNameIds {
             array[index] = faceNameID;
         }
     }
+
+    public void copy(FaceNameIds from) {
+        System.arraycopy(from.array, 0, array, 0, from.array.length);
+    }
 }

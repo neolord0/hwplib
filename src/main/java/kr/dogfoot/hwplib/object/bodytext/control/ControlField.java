@@ -12,17 +12,10 @@ import kr.dogfoot.hwplib.object.bodytext.control.ctrlheader.CtrlHeaderField;
  */
 public class ControlField extends Control {
     /**
-     * 임의 데이터 객체
-     */
-    private CtrlData ctrlData;
-
-    /**
      * 생성자
      */
     public ControlField() {
         super(new CtrlHeaderField());
-
-        ctrlData = null;
     }
 
     /**
@@ -32,8 +25,6 @@ public class ControlField extends Control {
      */
     public ControlField(long ctrlId) {
         super(new CtrlHeaderField(ctrlId));
-
-        ctrlData = null;
     }
 
     /**
@@ -43,22 +34,6 @@ public class ControlField extends Control {
      */
     public CtrlHeaderField getHeader() {
         return (CtrlHeaderField) header;
-    }
-
-    /**
-     * 임의 데이터 객체를 생성한다.
-     */
-    public void createCtrlData() {
-        ctrlData = new CtrlData();
-    }
-
-    /**
-     * 임의 데이터 객체를 반환한다.
-     *
-     * @return 임의 데이터 객체
-     */
-    public CtrlData getCtrlData() {
-        return ctrlData;
     }
 
     /**
@@ -77,5 +52,12 @@ public class ControlField extends Control {
             }
         }
         return null;
+    }
+
+    @Override
+    public Control clone() {
+        ControlField cloned = new ControlField();
+        cloned.copyControlPart(this);
+        return cloned;
     }
 }

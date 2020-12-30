@@ -132,4 +132,8 @@ public class FieldHeaderProperty {
     public void setModifiedContent(boolean modifiedContent) {
         value = BitFlag.set(value, 15, modifiedContent);
     }
+
+    public void copy(FieldHeaderProperty from) {
+        value = from.value;
+    }
 }

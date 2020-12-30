@@ -73,4 +73,8 @@ public class TableProperty {
     public void setAutoRepeatTitleRow(boolean autoRepeatTitleRow) {
         value = BitFlag.set(value, 2, autoRepeatTitleRow);
     }
+
+    public void copy(TableProperty from) {
+        value = from.value;
+    }
 }

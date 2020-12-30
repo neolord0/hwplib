@@ -91,4 +91,8 @@ public class ShapeComponentEllipseProperty {
     public void setArcSort(short arcSort) {
         value = BitFlag.set(value, 2, 9, arcSort);
     }
+
+    public void copy(ShapeComponentEllipseProperty from) {
+        value = from.value;
+    }
 }

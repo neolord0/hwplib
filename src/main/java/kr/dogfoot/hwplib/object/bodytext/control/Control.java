@@ -2,6 +2,7 @@ package kr.dogfoot.hwplib.object.bodytext.control;
 
 import kr.dogfoot.hwplib.object.bodytext.control.bookmark.CtrlData;
 import kr.dogfoot.hwplib.object.bodytext.control.ctrlheader.CtrlHeader;
+import kr.dogfoot.hwplib.object.bodytext.control.gso.ControlArc;
 
 /**
  * 컨트롤에 대한 추상 객체
@@ -16,7 +17,7 @@ public abstract class Control {
     /**
      * 컨트롤 데이터
      */
-    private CtrlData ctrlData;
+    protected CtrlData ctrlData;
 
     /**
      * 생성자
@@ -53,6 +54,9 @@ public abstract class Control {
         ctrlData = new CtrlData();
     }
 
+    public void deleteCtrlData() {
+        ctrlData = null;
+    }
     /**
      * 컨트롤 데이터(??)를 반환한다.
      *
@@ -71,4 +75,20 @@ public abstract class Control {
         this.ctrlData = new CtrlData();
     }
 
+    public abstract Control clone();
+
+    public void copyControlPart(Control from) {
+        if (from.header != null) {
+            header.copy(from.header);
+        } else {
+            from.header = null;
+        }
+
+        if (from.ctrlData != null) {
+            createCtrlData();
+            ctrlData.copy(from.ctrlData);
+        } else {
+            ctrlData = null;
+        }
+    }
 }

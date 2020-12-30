@@ -202,4 +202,16 @@ public class ListHeaderForTextBox {
     public void setFieldName(String fieldName) {
         this.fieldName = fieldName;
     }
+
+    public void copy(ListHeaderForTextBox from) {
+        paraCount = from.paraCount;
+        property.copy(from.property);
+        leftMargin = from.leftMargin;
+        rightMargin = from.rightMargin;
+        topMargin = from.topMargin;
+        bottomMargin = from.bottomMargin;
+        textWidth = from.textWidth;
+        editableAtFormMode = from.editableAtFormMode;
+        fieldName = from.fieldName;
+    }
 }

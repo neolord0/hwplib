@@ -55,4 +55,13 @@ public class ControlFooter extends Control {
     public ParagraphList getParagraphList() {
         return paragraphList;
     }
+
+    @Override
+    public Control clone() {
+        ControlFooter cloned = new ControlFooter();
+        cloned.copyControlPart(this);
+        cloned.listHeader.copy(listHeader);
+        cloned.paragraphList.copy(paragraphList);
+        return cloned;
+    }
 }

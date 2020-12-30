@@ -80,4 +80,16 @@ public class EmbeddedBinaryData {
     public void setCompressMethod(BinDataCompress compressMethod) {
         this.compressMethod = compressMethod;
     }
+
+    public EmbeddedBinaryData clone(boolean deepCopyImage) {
+        EmbeddedBinaryData cloned = new EmbeddedBinaryData();
+        cloned.name = name;
+        if (deepCopyImage) {
+            cloned.data = data.clone();
+        } else {
+            cloned.data = data;
+        }
+        cloned.compressMethod = compressMethod;
+        return cloned;
+    }
 }

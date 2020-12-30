@@ -34,4 +34,8 @@ public class SoftEdgeEffect {
     public void setRadius(float radius) {
         this.radius = radius;
     }
+
+    public void copy(SoftEdgeEffect from) {
+        radius = from.radius;
+    }
 }

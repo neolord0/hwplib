@@ -8,7 +8,7 @@ import kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponent.renderingnfo
  *
  * @author neolord
  */
-public class ShapeComponent {
+public abstract class ShapeComponent {
     /**
      * 개체 컨트롤 Id
      */
@@ -343,4 +343,22 @@ public class ShapeComponent {
         pair.getRotateMatrix().setValue(5, 0.0f);
     }
 
+    public abstract void copy(ShapeComponent from);
+    
+    public void copyShapeComponent(ShapeComponent from) {
+        gsoId = from.gsoId;
+        offsetX = from.offsetX;
+        offsetY = from.offsetY;
+        groupingCount = from.groupingCount;
+        localFileVersion = from.localFileVersion;
+        widthAtCreate = from.widthAtCreate;
+        heightAtCreate = from.heightAtCreate;
+        widthAtCurrent = from.widthAtCurrent;
+        heightAtCurrent = from.heightAtCurrent;
+        property = from.property;
+        rotateAngle = from.rotateAngle;
+        rotateXCenter = from.rotateXCenter;
+        rotateYCenter = from.rotateYCenter;
+        renderingInfo.copy(from.renderingInfo);
+    }
 }

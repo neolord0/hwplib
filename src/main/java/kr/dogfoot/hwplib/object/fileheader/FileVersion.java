@@ -118,4 +118,11 @@ public class FileVersion {
         sb.append(mm).append(".").append(nn).append(".").append(pp).append(".").append(rr).append(".");
         return sb.toString();
     }
+
+    public void copy(FileVersion from) {
+        mm = from.mm;
+        nn = from.nn;
+        pp = from.pp;
+        rr = from.rr;
+    }
 }

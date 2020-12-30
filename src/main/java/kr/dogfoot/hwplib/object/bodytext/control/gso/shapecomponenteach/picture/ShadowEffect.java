@@ -268,4 +268,19 @@ public class ShadowEffect {
     public ColorWithEffect getColor() {
         return color;
     }
+
+    public void copy(ShadowEffect from) {
+        style = from.style;
+        transparency = from.transparency;
+        cloudy = from.cloudy;
+        direction = from.direction;
+        distance = from.distance;
+        sort = from.sort;
+        tiltAngleX = from.tiltAngleX;
+        tiltAngleY = from.tiltAngleY;
+        zoomRateX = from.zoomRateX;
+        zoomRateY = from.zoomRateY;
+        rotateWithShape = from.rotateWithShape;
+        color.copy(from.color);
+    }
 }

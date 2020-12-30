@@ -90,4 +90,8 @@ public class FaceNameProperty {
     public void setHasBaseFont(boolean hasBaseFont) {
         value = BitFlag.set(value, 5, hasBaseFont);
     }
+
+    public void copy(FaceNameProperty from) {
+        value = from.value;
+    }
 }

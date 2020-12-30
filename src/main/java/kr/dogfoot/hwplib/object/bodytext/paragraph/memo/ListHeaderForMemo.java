@@ -94,4 +94,11 @@ public class ListHeaderForMemo {
     public void setTextHeight(long textHeight) {
         this.textHeight = textHeight;
     }
+
+    public void copy(ListHeaderForMemo from) {
+        paraCount = from.paraCount;
+        property.copy(from.property);
+        textWidth =  from.textWidth;
+        textHeight = from.textHeight;
+    }
 }

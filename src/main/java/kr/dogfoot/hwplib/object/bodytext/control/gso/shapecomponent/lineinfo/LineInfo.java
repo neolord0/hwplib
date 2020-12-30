@@ -86,4 +86,11 @@ public class LineInfo {
     public void setOutlineStyle(OutlineStyle outlineStyle) {
         this.outlineStyle = outlineStyle;
     }
+
+    public void copy(LineInfo from) {
+        color.copy(from.color);
+        thickness = from.thickness;
+        property.copy(from.property);
+        outlineStyle = from.outlineStyle;
+    }
 }

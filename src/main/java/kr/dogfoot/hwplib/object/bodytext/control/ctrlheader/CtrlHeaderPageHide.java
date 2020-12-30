@@ -31,4 +31,14 @@ public class CtrlHeaderPageHide extends CtrlHeader {
     public PageHideHeaderProperty getProperty() {
         return property;
     }
+
+    public void copy(CtrlHeaderPageHide from) {
+        property.copy(from.property);
+    }
+
+    @Override
+    public void copy(CtrlHeader from) {
+        CtrlHeaderPageHide from2 = (CtrlHeaderPageHide) from;
+        property.copy(from2.property);
+    }
 }

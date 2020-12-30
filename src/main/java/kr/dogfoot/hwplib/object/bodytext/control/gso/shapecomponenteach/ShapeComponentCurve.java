@@ -65,4 +65,16 @@ public class ShapeComponentCurve {
     public ArrayList<CurveSegmentType> getSegmentTypeList() {
         return segmentTypeList;
     }
+
+    public void copy(ShapeComponentCurve from) {
+        positionList.clear();;
+        for (PositionXY positionXY : from.positionList) {
+            positionList.add(positionXY.clone());
+        }
+
+        segmentTypeList.clear();
+        for (CurveSegmentType curveSegmentType : from.segmentTypeList) {
+            segmentTypeList.add(curveSegmentType);
+        }
+    }
 }

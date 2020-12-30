@@ -23,4 +23,11 @@ public class ControlAutoNumber extends Control {
     public CtrlHeaderAutoNumber getHeader() {
         return (CtrlHeaderAutoNumber) header;
     }
+
+    @Override
+    public Control clone() {
+        ControlAutoNumber cloned = new ControlAutoNumber();
+        cloned.copyControlPart(this);
+        return cloned;
+    }
 }

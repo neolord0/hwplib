@@ -70,4 +70,10 @@ public class NeonEffect {
     public ColorWithEffect getColor() {
         return color;
     }
+
+    public void copy(NeonEffect from) {
+        transparency = from.transparency;
+        radius = from.radius;
+        color.copy(from.color);
+    }
 }

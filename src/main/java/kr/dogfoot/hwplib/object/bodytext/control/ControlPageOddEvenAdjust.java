@@ -21,4 +21,11 @@ public class ControlPageOddEvenAdjust extends Control {
     public CtrlHeaderPageOddEvenAdjust getHeader() {
         return (CtrlHeaderPageOddEvenAdjust) header;
     }
+
+    @Override
+    public Control clone() {
+        ControlPageOddEvenAdjust cloned = new ControlPageOddEvenAdjust();
+        cloned.copyControlPart(this);
+        return cloned;
+    }
 }

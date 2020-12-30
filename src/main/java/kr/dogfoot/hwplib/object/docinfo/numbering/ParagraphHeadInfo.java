@@ -92,4 +92,11 @@ public class ParagraphHeadInfo {
     public void setCharShapeID(long charShapeID) {
         this.charShapeID = charShapeID;
     }
+
+    public void copy(ParagraphHeadInfo from) {
+        property.copy(from.property);
+        correctionValueForWidth = from.correctionValueForWidth;
+        distanceFromBody = from.distanceFromBody;
+        charShapeID = from.charShapeID;
+    }
 }

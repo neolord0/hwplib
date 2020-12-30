@@ -13,7 +13,7 @@ import java.io.File;
  */
 public class SimpleEditing_HWPFile {
     public static void main(String[] args) throws Exception {
-        String filename = "sample_hwp" + File.separator + "test-blank.hwp";
+        String filename = "sample_hwp" + File.separator + "blank.hwp";
 
         HWPFile hwpFile = HWPReader.fromFile(filename);
         if (hwpFile != null) {
@@ -21,7 +21,7 @@ public class SimpleEditing_HWPFile {
             Paragraph firstParagraph = s.getParagraph(0);
             firstParagraph.getText().addString("이것은 추가된 문자열입니다.");
 
-            String writePath = filename.substring(0, 11) + "ed-" + filename.substring(11);
+            String writePath = filename.substring(0, 11) + "result-editing-" + filename.substring(11);
             HWPWriter.toFile(hwpFile, writePath);
         }
     }

@@ -9,18 +9,21 @@
 	- Apache-POI 라이브러리 - 한글 파일의 하부 구조인 Microsoft Compound File의 부분의 파싱.
 	- 한글과컴퓨터에서 공개한  '한글 문서 파일 구조 5.0' 문서 ( http://www.hancom.com/etc/hwpDownload.do?gnb0=269&gnb1=271&gnb0=101&gnb1=140 )
 
-* 이 라이브러리에서 할 수 있는 일.(kr.dogfoot.hwplib.sample 패키지 참조)
-	- 한글 파일을 읽어서 객체로 생성 (TestReadingHWPFile 참고)
-	- 만들어진 객체를 파일로 저장 (TestReWritingHWPFile 참고)
-	- 한글 파일에서 텍스트 추출(TestExtractingText 참고)
-	- 특정 필드의 텍스트 추출  (TestGettingClickHereFieldText 참고)
-	- 특정 필드의 텍스트 설정 (TestSetClickHereFieldText 참고)
-	- 조건에 맞는 컨트롤 찾기 (TestFindControl 참고)
-	- 다른 파일의 내용(문단)을 추가하기 (TestParagraphAdder 참고)
-	- 표의 셀 병합하기 (TestMergingCell 참고)
-	- 기타  설정 : 페이지 크기 변경 (TestChangePaperSize 참고), 이미지 주가(TestInsertImage 참고), 폰트 크기, 밑줄 등의  글자모양 설정(TestMakingCharShape 참고), 표 컨트롤 생성 (TestMakingTable 참고)...
+* 이 라이브러리에서 할 수 있는 일.(kr.dogfoot.hwplib.sample 패키지에 샘플 참고.)
+	- 한글 파일을 읽어서 객체로 생성 : Reading_HWP_FromFile, Reading_HWP_FromURL ...
+	- 만들어진 객체를 파일로 저장 : Rewriting_HWPFile, SimpleEditing_HWPFile ...
+	- 한글 파일에서 텍스트 추출 : Extracting_Text, Extracting_Text_From_Big_File ...
+	- 필드 텍스트 추출/설정 : Getting_ClickHere_FieldText, Setting_ClickHere_FieldText, Finding_AllField, Setting_FieldText 
+	- 조건에 맞는 컨트롤 찾기 : Finding_Control
+	- 다른 파일의 내용(문단)을 추가하기. 파일 합치기 : Adding_Paragraph_Between_HWPFile ...
+    - 표 컨트롤 조작 : 삽입(Inserting_Table), 셀 합치기(Merging_Cell), 행 삭제(Removing_Table_Row) ...
+    - 기타 컨트롤 조작 : 이미지 삽입(Inserting_Image), 하이퍼링크 삽입(Inserting_HyperLink) ....
+	- 기타 설정 : 페이지 크기 변경 (Changing_PaperSize),  폰트 크기, 밑줄 등의  글자모양 설정(Inserting_CharShape 참고)  ...
 
-* 이 라이브러리는 이미지 파일, PDF 파일, HTML 파일로 변환 기능은 아직 지원하지 않습니다. (문의가 많이 들어옴)
+* 이 라이브러리는 다음의 기능을 아직(??) 지원하지 않습니다.
+    - 암호화된 HWP 파일에 대한 읽고 쓰기 
+    - 이미지 파일, PDF 파일, HTML 파일로 변환  
+    - 특정 페이지 내용 가져오기 나 전체 페이지 수를 구하기.
 
 * 메이븐 레파지토리 설정
     ```{.xml}
@@ -30,6 +33,11 @@
         <version>1.0.2</version>
     </dependency>
     ```
+
+2020.12.30
+=========================================================================================  
+* 문단 붙이기을 위한 HWPFile 객체 복사 기능 추가
+* sample/Adding_Paragraph_Between_Cloned_HWPFile 참고..
 
 2020.11.17
 =========================================================================================  

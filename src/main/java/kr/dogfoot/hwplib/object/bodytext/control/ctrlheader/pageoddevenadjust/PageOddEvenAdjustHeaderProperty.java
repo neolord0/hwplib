@@ -55,4 +55,8 @@ public class PageOddEvenAdjustHeaderProperty {
     public void setOldEvenPage(OddEvenPage oldEvenPage) {
         value = BitFlag.set(value, 0, 1, oldEvenPage.getValue());
     }
+
+    public void copy(PageOddEvenAdjustHeaderProperty from) {
+        value = from.value;
+    }
 }

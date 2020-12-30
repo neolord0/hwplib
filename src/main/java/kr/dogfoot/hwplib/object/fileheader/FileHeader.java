@@ -304,4 +304,20 @@ public class FileHeader {
     public void setCCLDocument(boolean isCCLDocument) {
         this.isCCLDocument = isCCLDocument;
     }
+
+    public void copy(FileHeader from) {
+        version.copy(from.version);
+        compressed = from.compressed;
+        hasPassword = from.hasPassword;
+        isDeploymentDocument = from.isDeploymentDocument;
+        saveScript = from.saveScript;
+        isDRMDocument = from.isDRMDocument;
+        hasXMLTemplate = from.hasXMLTemplate;
+        hasDocumentHistory = from.hasDocumentHistory;
+        hasSignature = from.hasSignature;
+        encryptPublicCertification = from.encryptPublicCertification;
+        savePrepareSignature = from.savePrepareSignature;
+        isPublicCertificationDRMDocument = from.isPublicCertificationDRMDocument;
+        isCCLDocument = from.isCCLDocument;
+    }
 }

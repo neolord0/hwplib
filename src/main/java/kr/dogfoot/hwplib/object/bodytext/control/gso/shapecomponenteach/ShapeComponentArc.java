@@ -168,4 +168,14 @@ public class ShapeComponentArc {
     public void setAxis2Y(int axis2Y) {
         this.axis2Y = axis2Y;
     }
+
+    public void copy(ShapeComponentArc from) {
+        arcBorder = from.arcBorder;
+        centerX = from.centerX;
+        centerY = from.centerY;
+        axis1X = from.axis1X;
+        axis1Y = from.axis1Y;
+        axis2X = from.axis2X;
+        axis2Y = from.axis2Y;
+    }
 }

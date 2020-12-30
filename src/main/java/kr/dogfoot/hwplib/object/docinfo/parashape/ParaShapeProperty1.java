@@ -347,4 +347,8 @@ public class ParaShapeProperty1 {
     public void setParaTailShape(boolean paraTailShape) {
         value = BitFlag.set(value, 30, paraTailShape);
     }
+
+    public void copy(ParaShapeProperty1 from) {
+        value = from.value;
+    }
 }

@@ -55,4 +55,13 @@ public class ControlHeader extends Control {
     public ParagraphList getParagraphList() {
         return paragraphList;
     }
+
+    @Override
+    public Control clone() {
+        ControlHeader cloned = new ControlHeader();
+        cloned.copyControlPart(this);
+        cloned.listHeader.copy(listHeader);
+        cloned.paragraphList.copy(paragraphList);
+        return cloned;
+    }
 }

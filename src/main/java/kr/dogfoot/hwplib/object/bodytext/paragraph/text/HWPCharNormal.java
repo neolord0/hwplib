@@ -10,11 +10,6 @@ import java.nio.charset.StandardCharsets;
  */
 public class HWPCharNormal extends HWPChar {
     /**
-     * 글자 코드
-     */
-    private short code;
-
-    /**
      * 생성자
      */
     public HWPCharNormal() {
@@ -28,24 +23,6 @@ public class HWPCharNormal extends HWPChar {
     @Override
     public HWPCharType getType() {
         return HWPCharType.Normal;
-    }
-
-    /**
-     * 글자 코드를 반환한다.
-     *
-     * @return 글자 코드
-     */
-    public short getCode() {
-        return code;
-    }
-
-    /**
-     * 글자 코드를 설정한다.
-     *
-     * @param code 글자 코드
-     */
-    public void setCode(short code) {
-        this.code = code;
     }
 
     /**
@@ -71,5 +48,11 @@ public class HWPCharNormal extends HWPChar {
         ch[0] = (byte) (code & 0xff);
         ch[1] = (byte) ((code >> 8) & 0xff);
         return new String(ch, 0, 2, StandardCharsets.UTF_16LE);
+    }
+
+    public HWPChar clone() {
+        HWPCharNormal cloned = new HWPCharNormal();
+        cloned.code = code;
+        return cloned;
     }
 }

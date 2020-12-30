@@ -29,7 +29,7 @@ public class UnknownRecord {
      * @param header 레코드 헤더
      */
     public UnknownRecord(RecordHeader header) {
-        this.header = header.copy();
+        this.header = header.clone();
     }
 
     /**
@@ -47,7 +47,7 @@ public class UnknownRecord {
      * @param header 레코드 헤더
      */
     public void setHeader(RecordHeader header) {
-        this.header = header.copy();
+        this.header = header.clone();
     }
 
     /**
@@ -67,4 +67,16 @@ public class UnknownRecord {
     public void setBody(byte[] body) {
         this.body = body;
     }
+
+    public UnknownRecord clone() {
+        UnknownRecord cloned = new UnknownRecord();
+        if (header != null) {
+            cloned.header = this.header.clone();
+        }
+        if (body != null) {
+            cloned.body = this.body.clone();
+        }
+        return cloned;
+    }
+
 }

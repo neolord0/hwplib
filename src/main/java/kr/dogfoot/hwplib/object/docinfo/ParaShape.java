@@ -388,4 +388,27 @@ public class ParaShape {
     public void setUnknown(long unknown) {
         this.unknown = unknown;
     }
+
+    public ParaShape clone() {
+        ParaShape cloned = new ParaShape();
+        cloned.property1.copy(property1);
+        cloned.leftMargin = leftMargin;
+        cloned.rightMargin = rightMargin;
+        cloned.indent = indent;
+        cloned.topParaSpace = topParaSpace;
+        cloned.bottomParaSpace = bottomParaSpace;
+        cloned.lineSpace = lineSpace;
+        cloned.tabDefId = tabDefId;
+        cloned.paraHeadId = paraHeadId;
+        cloned.borderFillId = borderFillId;
+        cloned.leftBorderSpace = leftBorderSpace;
+        cloned.rightBorderSpace = rightBorderSpace;
+        cloned.topBorderSpace = topBorderSpace;
+        cloned.bottomBorderSpace = bottomBorderSpace;
+        cloned.property2.copy(property2);
+        cloned.property3.copy(property3);
+        cloned.lineSpace2 = lineSpace2;
+        cloned.unknown = unknown;
+        return cloned;
+    }
 }

@@ -51,6 +51,7 @@ public class ControlTable extends Control {
         rowList = new ArrayList<Row>();
     }
 
+
     /**
      * 그리기 객체 용 컨트롤 헤더를 반환한다.
      *
@@ -110,5 +111,26 @@ public class ControlTable extends Control {
      */
     public ArrayList<Row> getRowList() {
         return rowList;
+    }
+
+    @Override
+    public Control clone() {
+        ControlTable cloned = new ControlTable();
+        cloned.copyControlPart(this);
+
+        if (caption != null) {
+            cloned.createCaption();
+            cloned.caption.copy(caption);
+        } else {
+            cloned.caption = null;
+        }
+
+        cloned.table.copy(table);
+
+        for (Row row : rowList) {
+            cloned.rowList.add(row.clone());
+        }
+
+        return cloned;
     }
 }

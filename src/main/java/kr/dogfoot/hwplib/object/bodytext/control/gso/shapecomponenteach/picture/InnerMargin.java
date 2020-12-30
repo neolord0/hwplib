@@ -100,4 +100,11 @@ public class InnerMargin {
     public void setBottom(int bottom) {
         this.bottom = bottom;
     }
+
+    public void copy(InnerMargin from) {
+        left = from.left;
+        right = from.right;
+        top = from.top;
+        bottom = from.bottom;
+    }
 }

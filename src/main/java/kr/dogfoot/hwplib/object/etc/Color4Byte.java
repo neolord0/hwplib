@@ -108,4 +108,14 @@ public class Color4Byte {
     public void setA(short a) {
         value = BitFlag.set(value, 24, 31, a);
     }
+
+    public Color4Byte clone() {
+        Color4Byte cloned = new Color4Byte();
+        cloned.copy(this);
+        return cloned;
+    }
+
+    public void copy(Color4Byte from) {
+        value = from.value;
+    }
 }

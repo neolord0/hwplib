@@ -110,4 +110,8 @@ public class ShapeComponentOLEProperty {
     public void setObjectSort(ObjectSort objectSort) {
         value = BitFlag.set(value, 16, 21, objectSort.getValue());
     }
+
+    public void copy(ShapeComponentOLEProperty from) {
+        value = from.value;
+    }
 }

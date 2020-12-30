@@ -116,4 +116,8 @@ public class PageBorderFillProperty {
     public void setFillArea(FillArea fillArea) {
         value = BitFlag.set(value, 3, 4, fillArea.getValue());
     }
+
+    public void copy(PageBorderFillProperty from) {
+        value = from.value;
+    }
 }

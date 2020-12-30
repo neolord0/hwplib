@@ -280,4 +280,54 @@ public class Paragraph {
     public ArrayList<Memo> getMemoList() {
         return memoList;
     }
+
+    public Paragraph clone() {
+        Paragraph cloned = new Paragraph();
+
+        cloned.header.copy(header);
+
+        if (text != null) {
+            cloned.text = text.clone();
+        } else {
+            cloned.text = null;
+        }
+
+        if (charShape != null) {
+            cloned.charShape = charShape.clone();
+        } else {
+            cloned.charShape = null;
+        }
+
+        if (lineSeg != null) {
+            cloned.lineSeg = lineSeg.clone();
+        } else {
+            cloned.lineSeg = null;
+        }
+
+        if (rangeTag != null) {
+            cloned.rangeTag = rangeTag.clone();
+        } else {
+            cloned.rangeTag = null;
+        }
+
+        if (controlList != null) {
+            cloned.controlList = new ArrayList<Control>();
+            for (Control control : controlList) {
+                cloned.controlList.add(control.clone());
+            }
+        } else {
+            cloned.controlList = null;
+        }
+
+        if (memoList != null) {
+            cloned.memoList = new ArrayList<Memo>();
+            for (Memo memo : memoList) {
+                cloned.memoList.add(memo.clone());
+            }
+        } else {
+            cloned.memoList = null;
+        }
+
+        return cloned;
+    }
 }

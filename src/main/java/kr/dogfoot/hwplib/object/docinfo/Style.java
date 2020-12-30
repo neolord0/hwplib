@@ -160,4 +160,16 @@ public class Style {
     public void setCharShapeId(int charShapeId) {
         this.charShapeId = charShapeId;
     }
+
+    public Style clone() {
+        Style cloned = new Style();
+        cloned.hangulName = hangulName;
+        cloned.englishName = englishName;
+        cloned.proeprty.copy(proeprty);
+        cloned.nextStyleId = nextStyleId;
+        cloned.languageId = languageId;
+        cloned.paraShapeId = paraShapeId;
+        cloned.charShapeId = charShapeId;
+        return cloned;
+    }
 }

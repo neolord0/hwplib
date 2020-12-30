@@ -42,4 +42,10 @@ public class HWPCharControlChar extends HWPChar {
             setCode((short) 0);
         }
     }
+
+    public HWPChar clone() {
+        HWPCharControlChar cloned = new HWPCharControlChar();
+        cloned.code = code;
+        return cloned;
+    }
 }

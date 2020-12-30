@@ -1,7 +1,6 @@
 package kr.dogfoot.hwplib.tool.paragraphadder.docinfo;
 
 import kr.dogfoot.hwplib.object.docinfo.BinData;
-import sun.jvm.hotspot.memory.Generation;
 
 /**
  * DocInfo에 BinData를 복사하는 기능을 포함하는 클레스

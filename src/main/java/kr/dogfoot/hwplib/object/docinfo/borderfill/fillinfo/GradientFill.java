@@ -196,4 +196,24 @@ public class GradientFill {
     public void setBlurringCenter(short blurringCenter) {
         this.blurringCenter = blurringCenter;
     }
+
+    public void copy(GradientFill from) {
+        gradientType =  from.gradientType;
+        startAngle = from.startAngle;
+        centerX = from.centerX;
+        centerY = from.centerY;
+        blurringDegree = from.blurringDegree;
+
+        changePointList.clear();
+        for (Integer integer : from.changePointList) {
+            changePointList.add(new Integer(integer.intValue()));
+        }
+
+        colorList.clear();
+        for (Color4Byte color4Byte : from.colorList) {
+            colorList.add(color4Byte.clone());
+        }
+
+        blurringCenter = from.blurringCenter;
+    }
 }

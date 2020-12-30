@@ -90,4 +90,8 @@ public class FillType {
     public void setGradientFill(boolean gradientFill) {
         value = BitFlag.set(value, 2, gradientFill);
     }
+
+    public void copy(FillType from) {
+        value = from.value;
+    }
 }

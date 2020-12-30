@@ -80,4 +80,8 @@ public class PageDefProperty {
     public void setMakingBookMethod(MakingBookMethod makingBookMethod) {
         value = BitFlag.set(value, 1, 2, makingBookMethod.getValue());
     }
+
+    public void copy(PageDefProperty from) {
+        value = from.value;
+    }
 }

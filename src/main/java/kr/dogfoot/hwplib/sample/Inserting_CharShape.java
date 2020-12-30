@@ -25,14 +25,14 @@ import java.io.UnsupportedEncodingException;
  */
 public class Inserting_CharShape {
     public static void main(String[] args) throws Exception {
-        String filename = "sample_hwp" + File.separator + "test-blank.hwp";
+        String filename = "sample_hwp" + File.separator + "blank.hwp";
 
         HWPFile hwpFile = HWPReader.fromFile(filename);
         if (hwpFile != null) {
             Inserting_CharShape tmcs = new Inserting_CharShape();
             tmcs.test(hwpFile);
 
-            String writePath = "sample_hwp" + File.separator + "test-making-charshape.hwp";
+            String writePath = "sample_hwp" + File.separator + "result-inserting-charshape.hwp";
             HWPWriter.toFile(hwpFile, writePath);
         }
     }
@@ -199,7 +199,7 @@ public class Inserting_CharShape {
         ParaLineSeg pls = p.getLineSeg();
         LineSegItem lsi = pls.addNewLineSegItem();
 
-        lsi.setTextStartPositon(0);
+        lsi.setTextStartPosition(0);
         lsi.setLineVerticalPosition(0);
         lsi.setLineHeight(ptToLineHeight(11.0));
         lsi.setTextPartHeight(ptToLineHeight(11.0));

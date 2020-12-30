@@ -48,7 +48,7 @@ public class CtrlHeaderGso extends CtrlHeader {
     /**
      * 오브젝트의 바깥 아래쪽 여백
      */
-    private int OutterMarginBottom;
+    private int outterMarginBottom;
     /**
      * 문서 내 각 개체에 대한 고유 아이디
      */
@@ -241,7 +241,7 @@ public class CtrlHeaderGso extends CtrlHeader {
      * @return 오브젝트의 바깥 아래쪽 여백
      */
     public int getOutterMarginBottom() {
-        return OutterMarginBottom;
+        return outterMarginBottom;
     }
 
     /**
@@ -250,7 +250,7 @@ public class CtrlHeaderGso extends CtrlHeader {
      * @param outterMarginBottom 오브젝트의 바깥 아래쪽 여백
      */
     public void setOutterMarginBottom(int outterMarginBottom) {
-        OutterMarginBottom = outterMarginBottom;
+        this.outterMarginBottom = outterMarginBottom;
     }
 
     /**
@@ -305,5 +305,23 @@ public class CtrlHeaderGso extends CtrlHeader {
      */
     public void setExplanation(String explanation) {
         this.explanation = explanation;
+    }
+
+    @Override
+    public void copy(CtrlHeader from) {
+        CtrlHeaderGso from2 = (CtrlHeaderGso) from;
+        property.copy(from2.property);
+        yOffset = from2.yOffset;
+        xOffset = from2.xOffset;
+        width = from2.width;
+        height = from2.height;
+        zOrder = from2.zOrder;
+        outterMarginLeft = from2.outterMarginLeft;
+        outterMarginRight = from2.outterMarginRight;
+        outterMarginTop = from2.outterMarginTop;
+        outterMarginBottom = from2.outterMarginBottom;
+        instanceId = from2.instanceId;
+        preventPageDivide = from2.preventPageDivide;
+        explanation = from2.explanation;
     }
 }

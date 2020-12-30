@@ -84,7 +84,7 @@ public class RecordHeader {
      *
      * @return 새로 생성된 레코드 헤더 객체
      */
-    public RecordHeader copy() {
+    public RecordHeader clone() {
         RecordHeader rh = new RecordHeader();
         rh.tagID = this.tagID;
         rh.level = this.level;

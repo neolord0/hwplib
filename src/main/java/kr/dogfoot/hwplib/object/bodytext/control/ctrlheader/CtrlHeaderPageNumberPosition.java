@@ -119,4 +119,22 @@ public class CtrlHeaderPageNumberPosition extends CtrlHeader {
     public void setAfterDecorationLetter(String afterDecorationLetter) {
         this.afterDecorationLetter = afterDecorationLetter;
     }
+
+    public void copy(CtrlHeaderPageNumberPosition from) {
+        property.copy(from.property);
+        number = from.number;
+        userSymbol = from.userSymbol;
+        beforeDecorationLetter = from.beforeDecorationLetter;
+        afterDecorationLetter = from.afterDecorationLetter;
+    }
+
+    @Override
+    public void copy(CtrlHeader from) {
+        CtrlHeaderPageNumberPosition from2 = (CtrlHeaderPageNumberPosition) from;
+        property.copy(from2.property);
+        number = from2.number;
+        userSymbol = from2.userSymbol;
+        beforeDecorationLetter = from2.beforeDecorationLetter;
+        afterDecorationLetter = from2.afterDecorationLetter;
+    }
 }

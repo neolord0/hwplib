@@ -176,4 +176,8 @@ public class RelativeSizes {
             array[index] = relativeSize;
         }
     }
+
+    public void copy(RelativeSizes from) {
+        System.arraycopy(from.array, 0, array, 0, from.array.length);
+    }
 }

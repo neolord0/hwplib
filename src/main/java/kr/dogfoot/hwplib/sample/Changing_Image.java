@@ -17,13 +17,13 @@ import java.io.IOException;
  */
 public class Changing_Image {
     public static void main(String[] args) throws Exception {
-        String filename = "sample_hwp" + File.separator + "test-change-image.hwp";
+        String filename = "sample_hwp" + File.separator + "changing-image.hwp";
 
         HWPFile hwpFile = HWPReader.fromFile(filename);
 
         processAllImages(hwpFile);
 
-        String filename2 = "sample_hwp" + File.separator + "edit_test-change-image.hwp";
+        String filename2 = "sample_hwp" + File.separator + "result-changing-image.hwp";
         HWPWriter.toFile(hwpFile, filename2);
     }
 

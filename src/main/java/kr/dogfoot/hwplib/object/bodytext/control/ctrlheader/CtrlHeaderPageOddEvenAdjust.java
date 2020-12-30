@@ -31,4 +31,14 @@ public class CtrlHeaderPageOddEvenAdjust extends CtrlHeader {
     public PageOddEvenAdjustHeaderProperty getProperty() {
         return property;
     }
+
+    public void copy(CtrlHeaderPageOddEvenAdjust from) {
+        property.copy(from.property);
+    }
+
+    @Override
+    public void copy(CtrlHeader from) {
+        CtrlHeaderPageOddEvenAdjust from2 = (CtrlHeaderPageOddEvenAdjust) from;
+        property.copy(from2.property);
+    }
 }

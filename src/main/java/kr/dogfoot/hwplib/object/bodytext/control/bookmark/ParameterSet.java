@@ -97,4 +97,12 @@ public class ParameterSet {
         pi.setValue_BSTR(fieldName);
         return ps;
     }
+
+    public void copy(ParameterSet from) {
+        id = from.id;
+
+        for (ParameterItem parameterItem : from.parameterItemList) {
+            parameterItemList.add(parameterItem.clone());
+        }
+    }
 }

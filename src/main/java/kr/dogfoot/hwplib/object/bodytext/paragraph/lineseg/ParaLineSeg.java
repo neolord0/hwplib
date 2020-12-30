@@ -1,5 +1,7 @@
 package kr.dogfoot.hwplib.object.bodytext.paragraph.lineseg;
 
+import kr.dogfoot.hwplib.object.bodytext.paragraph.charshape.ParaCharShape;
+
 import java.util.ArrayList;
 
 /**
@@ -38,5 +40,15 @@ public class ParaLineSeg {
      */
     public ArrayList<LineSegItem> getLineSegItemList() {
         return lineSegItemList;
+    }
+
+    public ParaLineSeg clone() {
+        ParaLineSeg cloned = new ParaLineSeg();
+
+        for (LineSegItem lineSegItem : lineSegItemList) {
+            cloned.lineSegItemList.add(lineSegItem.clone());
+        }
+
+        return cloned;
     }
 }

@@ -26,4 +26,8 @@ public class CtrlData {
     public ParameterSet getParameterSet() {
         return parameterSet;
     }
+
+    public void copy(CtrlData from) {
+        parameterSet.copy(from.parameterSet);
+    }
 }

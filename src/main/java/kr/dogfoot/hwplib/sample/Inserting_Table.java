@@ -35,13 +35,13 @@ import java.io.UnsupportedEncodingException;
 public class Inserting_Table {
 
     public static void main(String[] args) throws Exception {
-        String filename = "sample_hwp" + File.separator + "test-blank.hwp";
+        String filename = "sample_hwp" + File.separator + "blank.hwp";
 
         HWPFile hwpFile = HWPReader.fromFile(filename);
         if (hwpFile != null) {
             Inserting_Table tmt = new Inserting_Table();
             tmt.makeTable(hwpFile);
-            String writePath = "sample_hwp" + File.separator + "test-making-table.hwp";
+            String writePath = "sample_hwp" + File.separator + "result-inserting-table.hwp";
             HWPWriter.toFile(hwpFile, writePath);
         }
 
@@ -279,7 +279,7 @@ public class Inserting_Table {
         ParaLineSeg pls = p.getLineSeg();
         LineSegItem lsi = pls.addNewLineSegItem();
 
-        lsi.setTextStartPositon(0);
+        lsi.setTextStartPosition(0);
         lsi.setLineVerticalPosition(0);
         lsi.setLineHeight(ptToLineHeight(10.0));
         lsi.setTextPartHeight(ptToLineHeight(10.0));

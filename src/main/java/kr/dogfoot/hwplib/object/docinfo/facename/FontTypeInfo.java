@@ -232,4 +232,17 @@ public class FontTypeInfo {
     public void setxHeight(short xHeight) {
         this.xHeight = xHeight;
     }
+
+    public void copy(FontTypeInfo from) {
+        fontType = from.fontType;
+        serifType = from.serifType;
+        thickness = from.thickness;
+        ratio = from.ratio;
+        contrast = from.contrast;
+        strokeDeviation = from.strokeDeviation;
+        characterStrokeType = from.characterStrokeType;
+        characterShape = from.characterShape;
+        middleLine = from.middleLine;
+        xHeight = from.xHeight;
+    }
 }

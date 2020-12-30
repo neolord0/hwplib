@@ -180,4 +180,8 @@ public class LineInfoProperty {
     public void setFillEndArrow(boolean fillEndArrow) {
         value = BitFlag.set(value, 31, fillEndArrow);
     }
+
+    public void copy(LineInfoProperty from) {
+        value = from.value;
+    }
 }

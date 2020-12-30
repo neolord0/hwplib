@@ -1,5 +1,6 @@
 package kr.dogfoot.hwplib.object.bodytext.control.gso;
 
+import kr.dogfoot.hwplib.object.bodytext.control.Control;
 import kr.dogfoot.hwplib.object.bodytext.control.ctrlheader.CtrlHeaderGso;
 import kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponenteach.ShapeComponentCurve;
 import kr.dogfoot.hwplib.object.bodytext.control.gso.textbox.TextBox;
@@ -69,5 +70,19 @@ public class ControlCurve extends GsoControl {
      */
     public ShapeComponentCurve getShapeComponentCurve() {
         return shapeComponentCurve;
+    }
+
+    @Override
+    public Control clone() {
+        ControlCurve cloned = new ControlCurve();
+        cloned.copyGsoControlPart(this);
+
+        if (textBox != null) {
+            cloned.createTextBox();
+            cloned.textBox.copy(textBox);
+        }
+
+        cloned.shapeComponentCurve.copy(shapeComponentCurve);
+        return cloned;
     }
 }

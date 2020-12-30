@@ -64,4 +64,10 @@ public class PatternFill {
     public void setPatternType(PatternType patternType) {
         this.patternType = patternType;
     }
+
+    public void copy(PatternFill from) {
+        backColor.copy(from.backColor);
+        patternColor.copy(from.patternColor);
+        patternType = from.patternType;
+    }
 }

@@ -72,4 +72,8 @@ public class TabDefProperty {
     public void setAutoTabAtParagraphRightEnd(boolean autoTabAtParagraphRightEnd) {
         value = BitFlag.set(value, 1, autoTabAtParagraphRightEnd);
     }
+
+    public void copy(TabDefProperty from) {
+        value = from.value;
+    }
 }

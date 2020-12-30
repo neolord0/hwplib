@@ -73,4 +73,8 @@ public class PageNumberPositionHeaderProperty {
     public void setNumberPosition(NumberPosition numberPosition) {
         value = BitFlag.set(value, 8, 11, numberPosition.getValue());
     }
+
+    public void copy(PageNumberPositionHeaderProperty from) {
+        value = from.value;
+    }
 }

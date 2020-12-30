@@ -126,4 +126,14 @@ public class CtrlHeaderEndnote extends CtrlHeader {
     public void setInstanceId(long instanceId) {
         this.instanceId = instanceId;
     }
+
+    @Override
+    public void copy(CtrlHeader from) {
+        CtrlHeaderEndnote from2 = (CtrlHeaderEndnote) from;
+        number = from2.number;
+        beforeDecorationLetter = from2.beforeDecorationLetter;
+        afterDecorationLetter = from2.afterDecorationLetter;
+        numberShape = from2.numberShape;
+        instanceId = from2.instanceId;
+    }
 }

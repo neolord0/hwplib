@@ -71,7 +71,7 @@ public class ForParaLineSeq {
      */
     private static void lineSegItem(LineSegItem lsi, StreamWriter sw)
             throws IOException {
-        sw.writeUInt4(lsi.getTextStartPositon());
+        sw.writeUInt4(lsi.getTextStartPosition());
         sw.writeSInt4(lsi.getLineVerticalPosition());
         sw.writeSInt4(lsi.getLineHeight());
         sw.writeSInt4(lsi.getTextPartHeight());

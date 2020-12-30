@@ -336,4 +336,22 @@ public class ShapeComponentEllipse {
     public void setEndY2(int endY2) {
         this.endY2 = endY2;
     }
+
+    public void copy(ShapeComponentEllipse from) {
+        property.copy(from.property);
+        centerX = from.centerX;
+        centerY = from.centerY;
+        axis1X = from.axis1X;
+        axis1Y = from.axis1Y;
+        axis2X = from.axis2X;
+        axis2Y = from.axis2Y;
+        startX = from.startX;
+        startY = from.startY;
+        endX = from.endX;
+        endY = from.endY;
+        startX2 = from.startX2;
+        startY2 = from.startY2;
+        endX2 = from.endX2;
+        endY2 = from.endY2;
+    }
 }

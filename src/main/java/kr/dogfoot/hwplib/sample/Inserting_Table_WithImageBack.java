@@ -36,7 +36,7 @@ import java.io.*;
 public class Inserting_Table_WithImageBack {
 
     public static void main(String[] args) throws Exception {
-        String filename = "sample_hwp" + File.separator + "test-blank.hwp";
+        String filename = "sample_hwp" + File.separator + "blank.hwp";
 
         HWPFile hwpFile = HWPReader.fromFile(filename);
         if (hwpFile != null) {
@@ -44,13 +44,13 @@ public class Inserting_Table_WithImageBack {
             tmt.addBinData();
             tmt.addBinDataInDocInfo();
             tmt.makeTable();
-            String writePath = "sample_hwp" + File.separator + "test-making-table-with-imageback.hwp";
+            String writePath = "sample_hwp" + File.separator + "result-inserting-table-with-imageback.hwp";
             HWPWriter.toFile(hwpFile, writePath);
         }
 
     }
 
-    private final String imageFilePath = "sample_hwp" + File.separator + "sample.jpg";
+    private final String imageFilePath = "sample_hwp" + File.separator + "image" + File.separator + "sample.jpg";
     private final String imageFileExt = "jpg";
     private final BinDataCompress compressMethod = BinDataCompress.ByStroageDefault;
 
@@ -357,7 +357,7 @@ public class Inserting_Table_WithImageBack {
         ParaLineSeg pls = p.getLineSeg();
         LineSegItem lsi = pls.addNewLineSegItem();
 
-        lsi.setTextStartPositon(0);
+        lsi.setTextStartPosition(0);
         lsi.setLineVerticalPosition(0);
         lsi.setLineHeight(ptToLineHeight(10.0));
         lsi.setTextPartHeight(ptToLineHeight(10.0));

@@ -16,7 +16,7 @@ public class ParaLineSegCopier {
     }
 
     private static void copyLineSegItem(LineSegItem source, LineSegItem target) {
-        target.setTextStartPositon(source.getTextStartPositon());
+        target.setTextStartPosition(source.getTextStartPosition());
         target.setLineVerticalPosition(source.getLineVerticalPosition());
         target.setLineHeight(source.getLineHeight());
         target.setTextPartHeight(source.getTextPartHeight());

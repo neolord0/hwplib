@@ -130,4 +130,22 @@ public class CtrlHeaderOverlappingLetter extends CtrlHeader {
     public ArrayList<Long> getCharShapeIdList() {
         return charShapeIdList;
     }
+
+    @Override
+    public void copy(CtrlHeader from) {
+        CtrlHeaderOverlappingLetter from2 = (CtrlHeaderOverlappingLetter) from;
+        overlappingLetterList.clear();
+        for (String str : from2.overlappingLetterList) {
+            overlappingLetterList.add(str);
+        }
+
+        borderType = from2.borderType;
+        internalFontSize = from2.internalFontSize;
+        expendInsideLetter = from2.expendInsideLetter;
+
+        charShapeIdList.clear();
+        for (Long lng : from2.charShapeIdList) {
+            charShapeIdList.add(lng);
+        }
+    }
 }

@@ -104,4 +104,17 @@ public class RangeTagItem {
         }
         this.data = data;
     }
+
+    public RangeTagItem clone() {
+        RangeTagItem cloned = new RangeTagItem();
+        cloned.rangeStart = rangeStart;
+        cloned.rangeEnd = rangeEnd;
+        cloned.sort = sort;
+        if (data != null) {
+            cloned.data = data.clone();
+        } else {
+            cloned.data = null;
+        }
+        return cloned;
+    }
 }

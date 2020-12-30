@@ -44,7 +44,7 @@ public class Finding_Control {
     }
 
     public static void main(String[] args) throws Exception {
-        String filename = "sample_hwp" + File.separator + "test-컨트롤 찾기.hwp";
+        String filename = "sample_hwp" + File.separator + "finding-control.hwp";
 
         HWPFile hwpFile = HWPReader.fromFile(filename);
         if (hwpFile != null) {

@@ -674,4 +674,115 @@ public class DocInfo {
     public ArrayList<UnknownRecord> getTrackChangeAuthorList() {
         return trackChangeAuthorList;
     }
+
+    public void copy(DocInfo from) {
+        documentProperties.copy(from.documentProperties);
+        idMappings.copy(from.idMappings);
+
+        binDataList.clear();
+        for (BinData binData : from.binDataList) {
+            binDataList.add(binData.clone());
+        }
+
+        copyFaceNameList(from.hangulFaceNameList, hangulFaceNameList);
+        copyFaceNameList(from.englishFaceNameList, englishFaceNameList);
+        copyFaceNameList(from.hanjaFaceNameList,  hanjaFaceNameList);
+        copyFaceNameList(from.japaneseFaceNameList, japaneseFaceNameList);
+        copyFaceNameList(from.etcFaceNameList, etcFaceNameList);
+        copyFaceNameList(from.symbolFaceNameList, symbolFaceNameList);
+        copyFaceNameList(from.userFaceNameList, userFaceNameList);
+
+        borderFillList.clear();
+        for (BorderFill borderFill : from.borderFillList) {
+            borderFillList.add(borderFill.clone());
+        }
+
+        charShapeList.clear();
+        for (CharShape charShape : from.charShapeList) {
+            charShapeList.add(charShape.clone());
+        }
+
+        tabDefList.clear();
+        for (TabDef tabDef : from.tabDefList) {
+            tabDefList.add(tabDef.clone());
+        }
+
+        numberingList.clear();
+        for (Numbering numbering : from.numberingList) {
+            numberingList.add(numbering.clone());
+        }
+
+        bulletList.clear();
+        for (Bullet bullet : from.bulletList) {
+            bulletList.add(bullet.clone());
+        }
+
+        paraShapeList.clear();
+        for (ParaShape paraShape : from.paraShapeList) {
+            paraShapeList.add(paraShape.clone());
+        }
+
+        styleList.clear();
+        for (Style style : from.styleList) {
+            styleList.add(style.clone());
+        }
+
+        if (from.docData != null) {
+            docData = from.docData.clone();
+        } else {
+            docData = null;
+        }
+
+        if (from.distributeDocData != null) {
+            distributeDocData = from.distributeDocData.clone();
+        } else {
+            distributeDocData = null;
+        }
+
+        if (from.compatibleDocument != null) {
+            compatibleDocument = from.compatibleDocument.clone();
+        } else {
+            compatibleDocument = null;
+        }
+
+        if (from.layoutCompatibility != null) {
+            layoutCompatibility = from.layoutCompatibility.clone();
+        } else {
+            layoutCompatibility = null;
+        }
+
+        if (from.trackChange != null) {
+            trackChange = from.trackChange.clone();
+        } else {
+            trackChange = null;
+        }
+
+        memoShapeList.clear();
+        for (UnknownRecord unknownRecord : from.memoShapeList) {
+            memoShapeList.add(unknownRecord.clone());
+        }
+
+        if (from.forbiddenChar != null) {
+            forbiddenChar = from.forbiddenChar.clone();
+        } else {
+            forbiddenChar = null;
+        }
+
+        trackChange2List.clear();
+        for (UnknownRecord unknownRecord : from.trackChange2List) {
+            trackChange2List.add(unknownRecord.clone());
+        }
+
+        trackChangeAuthorList.clear();
+        for (UnknownRecord unknownRecord : from.trackChangeAuthorList) {
+            trackChangeAuthorList.add(unknownRecord.clone());
+        }
+    }
+
+    private void copyFaceNameList(ArrayList<FaceName> from, ArrayList<FaceName> to) {
+        to.clear();
+        for (FaceName faceName : from) {
+            to.add(faceName.clone());
+        }
+    }
 }

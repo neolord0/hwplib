@@ -50,4 +50,9 @@ public class ListHeaderForHiddenComment {
     public ListHeaderProperty getProperty() {
         return property;
     }
+
+    public void copy(ListHeaderForHiddenComment from) {
+        paraCount = from.paraCount;
+        property.copy(from.property);
+    }
 }

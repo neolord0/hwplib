@@ -119,4 +119,16 @@ public class CtrlHeaderAutoNumber extends CtrlHeader {
     public void setAfterDecorationLetter(String afterDecorationLetter) {
         this.afterDecorationLetter = afterDecorationLetter;
     }
+
+
+    @Override
+    public void copy(CtrlHeader from) {
+        CtrlHeaderAutoNumber from2 = (CtrlHeaderAutoNumber) from;
+        property.copy(from2.property);
+        number = from2.number;
+        userSymbol = from2.userSymbol;
+        beforeDecorationLetter = from2.beforeDecorationLetter;
+        afterDecorationLetter = from2.afterDecorationLetter;
+
+    }
 }

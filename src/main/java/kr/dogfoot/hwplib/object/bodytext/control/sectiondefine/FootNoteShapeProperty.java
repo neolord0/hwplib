@@ -146,4 +146,9 @@ public class FootNoteShapeProperty {
     public void setContinueFromText(boolean continueFromText) {
         value = BitFlag.set(value, 13, continueFromText);
     }
+
+    public void copy(FootNoteShapeProperty from) {
+        value = from.value;
+
+    }
 }

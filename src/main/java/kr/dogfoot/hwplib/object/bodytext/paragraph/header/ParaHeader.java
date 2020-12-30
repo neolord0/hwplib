@@ -238,4 +238,18 @@ public class ParaHeader {
     public void setIsMergedByTrack(int isMergedByTrack) {
         this.isMergedByTrack = isMergedByTrack;
     }
+
+    public void copy(ParaHeader from) {
+        lastInList = from.lastInList;
+        characterCount = from.characterCount;
+        controlMask.copy(from.controlMask);
+        paraShapeId = from.paraShapeId;
+        styleId = from.styleId;
+        divideSort.copy(from.divideSort);
+        charShapeCount = from.charShapeCount;
+        rangeTagCount = from.rangeTagCount;
+        lineAlignCount = from.lineAlignCount;
+        instanceID = from.instanceID;
+        isMergedByTrack = from.isMergedByTrack;
+    }
 }

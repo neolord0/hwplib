@@ -320,4 +320,21 @@ public class ReflectionEffect {
     public void setOffsetDirection(float offsetDirection) {
         this.offsetDirection = offsetDirection;
     }
+
+    public void copy(ReflectionEffect from) {
+        style = from.style;
+        radius = from.radius;
+        direction = from.direction;
+        distance = from.distance;
+        tiltAngleX = from.tiltAngleX;
+        tiltAngleY = from.tiltAngleY;
+        zoomRateX = from.zoomRateX;
+        zoomRateY = from.zoomRateY;
+        rotationStyle = from.rotationStyle;
+        startTransparency = from.startTransparency;
+        startPosition = from.startPosition;
+        endTransparency = from.endTransparency;
+        endPosition = from.endPosition;
+        offsetDirection = from.offsetDirection;
+    }
 }

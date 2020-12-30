@@ -72,4 +72,8 @@ public class ListHeaderCaptionProperty {
     public void setIncludeMargin(boolean includeMargin) {
         value = BitFlag.set(value, 2, includeMargin);
     }
+
+    public void copy(ListHeaderCaptionProperty from) {
+        value = from.value;
+    }
 }

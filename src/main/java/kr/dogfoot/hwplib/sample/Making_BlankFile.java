@@ -15,7 +15,7 @@ public class Making_BlankFile {
     public static void main(String[] args) throws Exception {
         HWPFile hwpFile = BlankFileMaker.make();
         if (hwpFile != null) {
-            String writePath = "sample_hwp" + File.separator + "test-made-blank.hwp";
+            String writePath = "sample_hwp" + File.separator + "result-making-blankfile.hwp";
             HWPWriter.toFile(hwpFile, writePath);
         }
     }

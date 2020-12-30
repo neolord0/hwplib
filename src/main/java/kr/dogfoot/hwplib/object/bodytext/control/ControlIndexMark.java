@@ -23,4 +23,11 @@ public class ControlIndexMark extends Control {
     public CtrlHeaderIndexMark getHeader() {
         return (CtrlHeaderIndexMark) header;
     }
+
+    @Override
+    public Control clone() {
+        ControlIndexMark cloned = new ControlIndexMark();
+        cloned.copyControlPart(this);
+        return cloned;
+    }
 }

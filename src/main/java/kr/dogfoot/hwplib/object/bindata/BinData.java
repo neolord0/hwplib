@@ -55,4 +55,11 @@ public class BinData {
         ebd.setData(data);
         ebd.setCompressMethod(compressMethod);
     }
+
+    public void copy(BinData from, boolean deepCopyImage) {
+        embeddedBinaryDataList.clear();
+        for (EmbeddedBinaryData embeddedBinaryData : from.embeddedBinaryDataList) {
+            embeddedBinaryDataList.add(embeddedBinaryData.clone(deepCopyImage));
+        }
+    }
 }

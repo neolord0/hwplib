@@ -70,4 +70,16 @@ public class Numbering {
     public void setStartNumber(int startNumber) {
         this.startNumber = startNumber;
     }
+
+    public Numbering clone() {
+        Numbering cloned = new Numbering();
+
+        for (int index = 0; index < 0; index++) {
+            cloned.levelNumberingList.get(index).copy(levelNumberingList.get(index));
+        }
+
+        cloned.startNumber = startNumber;
+
+        return cloned;
+    }
 }

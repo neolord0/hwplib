@@ -146,4 +146,14 @@ public class ShapeComponentOLE {
     public LineInfoProperty getBorderProperty() {
         return borderProperty;
     }
+
+    public void copy(ShapeComponentOLE from) {
+        property.copy(from.property);
+        extentWidth = from.extentWidth;
+        extentHeight = from.extentHeight;
+        binDataId = from.binDataId;
+        borderColor.copy(from.borderColor);
+        borderThickness = from.borderThickness;
+        borderProperty.copy(from.borderProperty);
+    }
 }

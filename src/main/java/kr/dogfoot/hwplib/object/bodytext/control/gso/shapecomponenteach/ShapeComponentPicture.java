@@ -343,4 +343,25 @@ public class ShapeComponentPicture {
     public void setImageHeight(long imageHeight) {
         this.imageHeight = imageHeight;
     }
+
+    public void copy(ShapeComponentPicture from) {
+        borderColor.copy(from.borderColor);
+        borderThickness = from.borderThickness;
+        borderProperty.copy(from.borderProperty);
+        leftTop.copy(from.leftTop);
+        rightTop.copy(from.rightTop);
+        leftBottom.copy(from.leftBottom);
+        rightBottom.copy(from.rightBottom);
+        leftAfterCutting = from.leftAfterCutting;
+        topAfterCutting = from.topAfterCutting;
+        rightAfterCutting = from.rightAfterCutting;
+        bottomAfterCutting = from.bottomAfterCutting;
+        innerMargin.copy(from.innerMargin);
+        pictureInfo.copy(from.pictureInfo);
+        borderTransparency = from.borderTransparency;
+        instanceId = from.instanceId;
+        pictureEffect.copy(from.pictureEffect);
+        imageWidth = from.imageWidth;
+        imageHeight = from.imageHeight;
+    }
 }

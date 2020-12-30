@@ -48,4 +48,9 @@ public class ImageFill {
     public PictureInfo getPictureInfo() {
         return pictureInfo;
     }
+
+    public void copy(ImageFill from) {
+        imageFillType = from.imageFillType;
+        pictureInfo.copy(from.pictureInfo);
+    }
 }

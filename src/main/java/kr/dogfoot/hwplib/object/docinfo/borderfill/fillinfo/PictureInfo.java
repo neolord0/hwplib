@@ -101,4 +101,11 @@ public class PictureInfo {
     public void setBinItemID(int binItemID) {
         this.binItemID = binItemID;
     }
+
+    public void copy(PictureInfo from) {
+        brightness = from.brightness;
+        contrast = from.contrast;
+        effect = from.effect;
+        binItemID = from.binItemID;
+    }
 }

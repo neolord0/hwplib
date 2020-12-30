@@ -54,4 +54,8 @@ public class StyleProperty {
     public void setStyleSort(StyleSort styleSort) {
         value = BitFlag.set(value, 0, 2, styleSort.getValue());
     }
+
+    public void copy(StyleProperty from) {
+        value = from.value;
+    }
 }

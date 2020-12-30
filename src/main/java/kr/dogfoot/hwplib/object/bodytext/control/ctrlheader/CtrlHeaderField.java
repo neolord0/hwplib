@@ -137,4 +137,15 @@ public class CtrlHeaderField extends CtrlHeader {
     public void setMemoIndex(int memoIndex) {
         this.memoIndex = memoIndex;
     }
+
+    @Override
+    public void copy(CtrlHeader from) {
+        CtrlHeaderField from2 = (CtrlHeaderField) from;
+        property.copy(from2.property);
+        etcProperty = from2.etcProperty;
+        command = from2.command;
+        instanceId = from2.instanceId;
+        memoIndex = from2.memoIndex;
+    }
+
 }

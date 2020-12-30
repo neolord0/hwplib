@@ -164,4 +164,20 @@ public class CtrlHeaderColumnDefine extends CtrlHeader {
     public Color4Byte getDivideLineColor() {
         return divideLineColor;
     }
+
+    @Override
+    public void copy(CtrlHeader from) {
+        CtrlHeaderColumnDefine from2 = (CtrlHeaderColumnDefine) from;
+        property.copy(from2.property);
+        gapBetweenColumn = from2.gapBetweenColumn;
+        property2 = from2.property2;
+
+        for (ColumnInfo columnInfo : from2.columnInfoList) {
+            columnInfoList.add(columnInfo.clone());
+        }
+
+        divideLineSort = from2.divideLineSort;
+        divideLineThickness = from2.divideLineThickness;
+        divideLineColor.copy(from2.divideLineColor);
+    }
 }

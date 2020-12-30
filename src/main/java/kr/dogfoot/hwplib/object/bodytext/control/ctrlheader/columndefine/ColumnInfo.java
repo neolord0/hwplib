@@ -56,4 +56,11 @@ public class ColumnInfo {
     public void setGap(int gap) {
         this.gap = gap;
     }
+
+    public ColumnInfo clone() {
+        ColumnInfo cloned = new ColumnInfo();
+        cloned.width = width;
+        cloned.gap = gap;
+        return cloned;
+    }
 }

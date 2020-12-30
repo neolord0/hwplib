@@ -23,4 +23,11 @@ public class ControlColumnDefine extends Control {
     public CtrlHeaderColumnDefine getHeader() {
         return (CtrlHeaderColumnDefine) header;
     }
+
+    @Override
+    public Control clone() {
+        ControlColumnDefine cloned = new ControlColumnDefine();
+        cloned.copyControlPart(this);
+        return cloned;
+    }
 }

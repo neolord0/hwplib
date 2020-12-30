@@ -176,4 +176,8 @@ public class CharOffsets {
             array[index] = charOffset;
         }
     }
+
+    public void copy(CharOffsets from) {
+        System.arraycopy(from.array, 0, array, 0, from.array.length);
+    }
 }

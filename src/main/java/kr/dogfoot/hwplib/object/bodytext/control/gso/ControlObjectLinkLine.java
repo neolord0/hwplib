@@ -1,5 +1,6 @@
 package kr.dogfoot.hwplib.object.bodytext.control.gso;
 
+import kr.dogfoot.hwplib.object.bodytext.control.Control;
 import kr.dogfoot.hwplib.object.bodytext.control.ctrlheader.CtrlHeaderGso;
 import kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponenteach.ShapeComponentLineForObjectLinkLine;
 
@@ -40,5 +41,13 @@ public class ControlObjectLinkLine extends GsoControl {
      */
     public ShapeComponentLineForObjectLinkLine getShapeComponentLine() {
         return shapeComponentLine;
+    }
+
+    @Override
+    public Control clone() {
+        ControlObjectLinkLine cloned =  new ControlObjectLinkLine();
+        cloned.copyGsoControlPart(this);
+        cloned.shapeComponentLine.copy(shapeComponentLine);
+        return cloned;
     }
 }

@@ -116,4 +116,14 @@ public class BinData {
     public void setExtensionForEmbedding(String extensionForEmbedding) {
         this.extensionForEmbedding = extensionForEmbedding;
     }
+
+    public BinData clone() {
+        BinData cloned = new BinData();
+        cloned.property.copy(property);
+        cloned.absolutePathForLink = absolutePathForLink;
+        cloned.relativePathForLink = relativePathForLink;
+        cloned.binDataID = binDataID;
+        cloned.extensionForEmbedding = extensionForEmbedding;
+        return cloned;
+    }
 }

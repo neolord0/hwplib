@@ -1,5 +1,7 @@
 package kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponenteach;
 
+import java.awt.dnd.DropTarget;
+
 /**
  * 사각형 개체 속성 레코드
  *
@@ -209,5 +211,17 @@ public class ShapeComponentRectangle {
      */
     public void setY4(int y4) {
         this.y4 = y4;
+    }
+
+    public void copy(ShapeComponentRectangle from) {
+        roundRate = from.roundRate;
+        x1 = from.x1;
+        y1 = from.y1;
+        x2 = from.x2;
+        y2 = from.y2;
+        x3 = from.x3;
+        y3 = from.y3;
+        x4 = from.x4;
+        y4 = from.y4;
     }
 }

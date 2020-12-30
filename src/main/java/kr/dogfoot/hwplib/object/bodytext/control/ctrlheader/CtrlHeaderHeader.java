@@ -60,4 +60,11 @@ public class CtrlHeaderHeader extends CtrlHeader {
     public void setCreateIndex(int createIndex) {
         this.createIndex = createIndex;
     }
+
+    @Override
+    public void copy(CtrlHeader from) {
+        CtrlHeaderHeader from2 = (CtrlHeaderHeader) from;
+        applyPage = from2.applyPage;
+        createIndex = from2.createIndex;
+    }
 }

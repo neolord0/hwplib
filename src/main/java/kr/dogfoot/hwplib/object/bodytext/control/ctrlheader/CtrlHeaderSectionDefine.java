@@ -250,4 +250,20 @@ public class CtrlHeaderSectionDefine extends CtrlHeader {
     public void setDefaultLanguage(int defaultLanguage) {
         this.defaultLanguage = defaultLanguage;
     }
+
+    @Override
+    public void copy(CtrlHeader from) {
+        CtrlHeaderSectionDefine from2 = (CtrlHeaderSectionDefine) from;
+        property.copy(from2.property);
+        columnGap = from2.columnGap;
+        verticalLineAlign = from2.verticalLineAlign;
+        horizontalLineAlign = from2.horizontalLineAlign;
+        defaultTabGap = from2.defaultTabGap;
+        numberParaShapeId = from2.numberParaShapeId;
+        pageStartNumber = from2.pageStartNumber;
+        imageStartNumber = from2.imageStartNumber;
+        tableStartNumber = from2.tableStartNumber;
+        equationStartNumber = from2.equationStartNumber;
+        defaultLanguage = from2.defaultLanguage;
+    }
 }

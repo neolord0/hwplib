@@ -122,4 +122,14 @@ public class LayoutCompatibility {
     public void setFieldLevelFormat(long fieldLevelFormat) {
         this.fieldLevelFormat = fieldLevelFormat;
     }
+
+    public LayoutCompatibility clone() {
+        LayoutCompatibility cloned = new LayoutCompatibility();
+        cloned.letterLevelFormat = letterLevelFormat;
+        cloned.paragraphLevelFormat = paragraphLevelFormat;
+        cloned.sectionLevelFormat = sectionLevelFormat;
+        cloned.objectLevelFormat = objectLevelFormat;
+        cloned.fieldLevelFormat = fieldLevelFormat;
+        return cloned;
+    }
 }

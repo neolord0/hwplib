@@ -176,4 +176,8 @@ public class Ratios {
             array[index] = ratio;
         }
     }
+
+    public void copy(Ratios from) {
+        System.arraycopy(from.array, 0, array, 0, from.array.length);
+    }
 }

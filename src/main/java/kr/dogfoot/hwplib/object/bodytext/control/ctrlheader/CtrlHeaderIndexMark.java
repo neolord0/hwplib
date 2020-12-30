@@ -59,4 +59,11 @@ public class CtrlHeaderIndexMark extends CtrlHeader {
     public void setKeyword2(String keyword2) {
         this.keyword2 = keyword2;
     }
+
+    @Override
+    public void copy(CtrlHeader from) {
+        CtrlHeaderIndexMark from2 = (CtrlHeaderIndexMark) from;
+        keyword1 = from2.keyword1;
+        keyword2 = from2.keyword2;
+    }
 }

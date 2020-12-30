@@ -257,4 +257,24 @@ public class CharShape {
     public Color4Byte getStrikeLineColor() {
         return strikeLineColor;
     }
+
+    public CharShape clone() {
+        CharShape cloned = new CharShape();
+        cloned.faceNameIds.copy(faceNameIds);
+        cloned.ratios.copy(ratios);
+        cloned.charSpaces.copy(charSpaces);
+        cloned.relativeSizes.copy(relativeSizes);
+        cloned.charOffsets.copy(charOffsets);
+        cloned.baseSize = baseSize;
+        cloned.property.copy(property);
+        cloned.shadowGap1 = shadowGap1;
+        cloned.shadowGap2 = shadowGap2;
+        cloned.charColor.copy(charColor);
+        cloned.underLineColor.copy(underLineColor);
+        cloned.shadeColor.copy(shadeColor);
+        cloned.shadowColor.copy(shadeColor);
+        cloned.borderFillId = borderFillId;
+        cloned.strikeLineColor.copy(strikeLineColor);
+        return cloned;
+    }
 }

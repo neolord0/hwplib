@@ -14,4 +14,8 @@ public class CtrlHeaderBookmark extends CtrlHeader {
     public CtrlHeaderBookmark() {
         super(ControlType.Bookmark.getCtrlId());
     }
+
+    @Override
+    public void copy(CtrlHeader from) {
+    }
 }

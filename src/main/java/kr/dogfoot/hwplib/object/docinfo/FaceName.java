@@ -133,4 +133,14 @@ public class FaceName {
         this.baseFontName = baseFontName;
     }
 
+    public FaceName clone() {
+        FaceName cloned = new FaceName();
+        cloned.property.copy(property);
+        cloned.name = name;
+        cloned.substituteFontType = substituteFontType;
+        cloned.substituteFontName = substituteFontName;
+        cloned.fontTypeInfo.copy(fontTypeInfo);
+        cloned.baseFontName = baseFontName;
+        return cloned;
+    }
 }

@@ -35,4 +35,8 @@ public class MemoList {
     public void setMemoIndex(long memoIndex) {
         this.memoIndex = memoIndex;
     }
+
+    public void copy(MemoList from) {
+        memoIndex = from.memoIndex;
+    }
 }

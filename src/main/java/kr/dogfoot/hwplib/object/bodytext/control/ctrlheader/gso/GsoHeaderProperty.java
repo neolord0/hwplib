@@ -288,4 +288,9 @@ public class GsoHeaderProperty {
     public void setObjectNumberSort(ObjectNumberSort objectNumberSort) {
         value = BitFlag.set(value, 26, 28, objectNumberSort.getValue());
     }
+
+    public void copy(GsoHeaderProperty from) {
+        value = from.value;
+    }
+
 }

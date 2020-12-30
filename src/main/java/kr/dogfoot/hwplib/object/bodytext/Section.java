@@ -2,6 +2,7 @@ package kr.dogfoot.hwplib.object.bodytext;
 
 import kr.dogfoot.hwplib.object.bodytext.control.sectiondefine.BatangPageInfo;
 import kr.dogfoot.hwplib.object.bodytext.paragraph.Paragraph;
+import kr.dogfoot.hwplib.object.docinfo.ParaShape;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -83,5 +84,22 @@ public class Section implements ParagraphListInterface {
      */
     public BatangPageInfo getLastBatangPageInfo() {
         return lastBatangPageInfo;
+    }
+
+    public Section clone() {
+        Section cloned = new Section();
+
+        cloned.paragraphList.clear();
+        for (Paragraph paragraph : paragraphList) {
+            cloned.paragraphList.add(paragraph.clone());
+        }
+
+        if (lastBatangPageInfo != null) {
+            cloned.lastBatangPageInfo = lastBatangPageInfo.clone();
+        } else {
+            cloned.lastBatangPageInfo = null;
+        }
+
+        return cloned;
     }
 }

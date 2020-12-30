@@ -1,5 +1,6 @@
 package kr.dogfoot.hwplib.object.bodytext.control.ctrlheader;
 
+import kr.dogfoot.hwplib.object.bodytext.control.ControlHeader;
 import kr.dogfoot.hwplib.object.bodytext.control.ControlType;
 import kr.dogfoot.hwplib.object.bodytext.control.ctrlheader.additionaltext.AdditionalTextPosition;
 import kr.dogfoot.hwplib.object.docinfo.parashape.Alignment;
@@ -170,5 +171,17 @@ public class CtrlHeaderAdditionalText extends CtrlHeader {
      */
     public void setAlignment(Alignment alignment) {
         this.alignment = alignment;
+    }
+
+    @Override
+    public void copy(CtrlHeader from) {
+        CtrlHeaderAdditionalText from2 = (CtrlHeaderAdditionalText) from;
+        mainText = from2.mainText;
+        subText = from2.subText;
+        position = from2.position;
+        fsizeratio = from2.fsizeratio;
+        option = from2.option;
+        styleId = from2.styleId;
+        alignment = from2.alignment;
     }
 }

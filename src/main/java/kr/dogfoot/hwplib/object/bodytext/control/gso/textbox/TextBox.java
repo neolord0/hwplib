@@ -42,4 +42,9 @@ public class TextBox {
     public ParagraphList getParagraphList() {
         return paragraphList;
     }
+
+    public void copy(TextBox from) {
+        listHeader.copy(from.listHeader);
+        paragraphList.copy(from.paragraphList);
+    }
 }

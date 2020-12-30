@@ -91,4 +91,8 @@ public class ParaShapeProperty2 {
     public void setAutoAdjustGapHangulNumber(boolean autoAdjustGapHangulNumber) {
         value = BitFlag.set(value, 5, autoAdjustGapHangulNumber);
     }
+
+    public void copy(ParaShapeProperty2 from) {
+        value = from.value;
+    }
 }

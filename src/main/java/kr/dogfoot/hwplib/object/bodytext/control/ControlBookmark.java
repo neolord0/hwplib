@@ -10,17 +10,10 @@ import kr.dogfoot.hwplib.object.bodytext.control.ctrlheader.CtrlHeaderBookmark;
  */
 public class ControlBookmark extends Control {
     /**
-     * 임의 데이터 객체
-     */
-    private CtrlData ctrlData;
-
-    /**
      * 생성자
      */
     public ControlBookmark() {
         super(new CtrlHeaderBookmark());
-
-        ctrlData = null;
     }
 
     /**
@@ -32,19 +25,10 @@ public class ControlBookmark extends Control {
         return (CtrlHeaderBookmark) header;
     }
 
-    /**
-     * 임의 데이터 객체를 생성한다.
-     */
-    public void createCtrlData() {
-        ctrlData = new CtrlData();
-    }
-
-    /**
-     * 임의 데이터 객체를 반환한다.
-     *
-     * @return 임의 데이터 객체
-     */
-    public CtrlData getCtrlData() {
-        return ctrlData;
+    @Override
+    public Control clone() {
+        ControlBookmark cloned = new ControlBookmark();
+        cloned.copyControlPart(this);
+        return cloned;
     }
 }

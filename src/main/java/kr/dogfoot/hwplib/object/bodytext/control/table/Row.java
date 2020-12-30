@@ -39,4 +39,13 @@ public class Row {
     public ArrayList<Cell> getCellList() {
         return cellList;
     }
+
+    public Row clone() {
+        Row cloned = new Row();
+        for (Cell cell : cellList) {
+            cloned.cellList.add(cell.clone());
+        }
+        return cloned;
+    }
+
 }

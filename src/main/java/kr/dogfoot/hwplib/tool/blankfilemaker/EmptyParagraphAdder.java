@@ -1,11 +1,6 @@
 package kr.dogfoot.hwplib.tool.blankfilemaker;
 
 import kr.dogfoot.hwplib.object.bodytext.Section;
-import kr.dogfoot.hwplib.object.bodytext.control.Control;
-import kr.dogfoot.hwplib.object.bodytext.control.ControlColumnDefine;
-import kr.dogfoot.hwplib.object.bodytext.control.ControlSectionDefine;
-import kr.dogfoot.hwplib.object.bodytext.control.ControlType;
-import kr.dogfoot.hwplib.object.bodytext.control.ctrlheader.columndefine.ColumnDefineHeaderProperty;
 import kr.dogfoot.hwplib.object.bodytext.paragraph.Paragraph;
 import kr.dogfoot.hwplib.object.bodytext.paragraph.charshape.ParaCharShape;
 import kr.dogfoot.hwplib.object.bodytext.paragraph.header.ParaHeader;
@@ -13,7 +8,6 @@ import kr.dogfoot.hwplib.object.bodytext.paragraph.lineseg.LineSegItem;
 import kr.dogfoot.hwplib.object.bodytext.paragraph.lineseg.ParaLineSeg;
 import kr.dogfoot.hwplib.object.bodytext.paragraph.text.HWPCharControlChar;
 import kr.dogfoot.hwplib.object.bodytext.paragraph.text.ParaText;
-import kr.dogfoot.hwplib.object.docinfo.CharShape;
 
 public class EmptyParagraphAdder {
     public static void add(Section section) {
@@ -61,7 +55,7 @@ public class EmptyParagraphAdder {
         paragraph.createLineSeg();
         ParaLineSeg lineSeg = paragraph.getLineSeg();
         LineSegItem item = lineSeg.addNewLineSegItem();
-        item.setTextStartPositon(0);
+        item.setTextStartPosition(0);
         item.setLineVerticalPosition(0);
         item.setLineHeight(1000);
         item.setTextPartHeight(1000);

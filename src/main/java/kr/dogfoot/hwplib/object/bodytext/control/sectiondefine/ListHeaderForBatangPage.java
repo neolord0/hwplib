@@ -95,4 +95,10 @@ public class ListHeaderForBatangPage {
         this.textHeight = textHeight;
     }
 
+    public void copy(ListHeaderForBatangPage from) {
+        paraCount = from.paraCount;
+        property.copy(from.property);
+        textWidth = from.textWidth;
+        textHeight = from.textHeight;
+    }
 }

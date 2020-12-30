@@ -1,5 +1,7 @@
 package kr.dogfoot.hwplib.object.bodytext.paragraph.rangetag;
 
+import kr.dogfoot.hwplib.object.bodytext.paragraph.lineseg.ParaLineSeg;
+
 import java.util.ArrayList;
 
 /**
@@ -38,5 +40,15 @@ public class ParaRangeTag {
      */
     public ArrayList<RangeTagItem> getRangeTagItemList() {
         return rangeTagItemList;
+    }
+
+    public ParaRangeTag clone() {
+        ParaRangeTag cloned = new ParaRangeTag();
+
+        for (RangeTagItem rangeTagItem : rangeTagItemList) {
+            cloned.rangeTagItemList.add(rangeTagItem.clone());
+        }
+
+        return cloned;
     }
 }

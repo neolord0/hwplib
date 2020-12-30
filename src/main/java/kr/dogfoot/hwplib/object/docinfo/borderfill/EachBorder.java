@@ -72,4 +72,10 @@ public class EachBorder {
     public Color4Byte getColor() {
         return color;
     }
+
+    public void copy(EachBorder from) {
+        type = from.type;
+        thickness = from.thickness;
+        color.copy(from.color);
+    }
 }
