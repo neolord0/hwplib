@@ -259,6 +259,9 @@ public class ControlFinder {
      * @param rectangle 사각형 컨트롤
      */
     private void forRectangle(ControlRectangle rectangle) {
+        if (rectangle.getTextBox() == null) {
+            return;
+        }
         forParagraphList(rectangle.getTextBox().getParagraphList());
     }
 
@@ -268,6 +271,9 @@ public class ControlFinder {
      * @param ellipse 타원 컨트롤
      */
     private void forEllipse(ControlEllipse ellipse) {
+        if (ellipse.getTextBox() == null) {
+            return;
+        }
         forParagraphList(ellipse.getTextBox().getParagraphList());
     }
 
@@ -277,6 +283,9 @@ public class ControlFinder {
      * @param arc 호 컨트롤
      */
     private void forArc(ControlArc arc) {
+        if (arc.getTextBox() == null) {
+            return;
+        }
         forParagraphList(arc.getTextBox().getParagraphList());
     }
 
@@ -286,6 +295,9 @@ public class ControlFinder {
      * @param polygon 다각형 컨트롤
      */
     private void forPolygon(ControlPolygon polygon) {
+        if (polygon.getTextBox() == null) {
+            return;
+        }
         forParagraphList(polygon.getTextBox().getParagraphList());
     }
 
@@ -295,6 +307,9 @@ public class ControlFinder {
      * @param curve 곡선 컨트롤
      */
     private void forCurve(ControlCurve curve) {
+        if (curve.getTextBox() == null) {
+            return;
+        }
         forParagraphList(curve.getTextBox().getParagraphList());
     }
 
