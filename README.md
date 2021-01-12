@@ -3,8 +3,8 @@
 
 한글과 컴퓨터(한컴)에서 만든 워드프로세서 "한글"의 파일에 대한 라이브러리입니다.
 
-이 라이브러리는 개발자의 순수한 재능 기부 차원에서 개발하고 있습니다. 맘 편하니 받아서 사용하시면 됩니다. 
-이 프로젝트는 jetbrains에서 개발툴(https://www.jetbrains.com/?from=macos)을 지원 받았습니다.
+이 라이브러리는 개발자의 순수한 재능 기부 차원에서 개발하고 있습니다. 맘 편하니 받아서 사용하시면 됩니다. <br/>
+이 프로젝트는 jetbrains에서 개발툴을 지원 받았습니다. https://www.jetbrains.com/?from=macos
 
 * 사용한 라이브러리나 문서 
 	- Apache-POI 라이브러리 - 한글 파일의 하부 구조인 Microsoft Compound File의 부분의 파싱.
