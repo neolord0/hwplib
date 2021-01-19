@@ -309,4 +309,25 @@ public class ParaText {
         }
         return cloned;
     }
+
+    public int getCharLength() {
+        int length = 0;
+        for (HWPChar hwpChar : charList) {
+            switch (hwpChar.getType()) {
+                case Normal:
+                    length += 1;
+                    break;
+                case ControlChar:
+                    length += 1;
+                    break;
+                case ControlInline:
+                    length += 8;
+                    break;
+                case ControlExtend:
+                    length += 8;
+                    break;
+            }
+        }
+        return length;
+    }
 }

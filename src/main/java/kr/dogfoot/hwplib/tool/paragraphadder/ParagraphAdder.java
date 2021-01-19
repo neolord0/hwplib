@@ -59,4 +59,9 @@ public class ParagraphAdder {
             copyer.copy(p, targetParagraph);
         }
     }
+
+    public void merge(Paragraph targetParagraph, HWPFile hwpFile, Paragraph p) throws Exception {
+        ParagraphMerger merger = new ParagraphMerger(new DocInfoAdder(hwpFile, targetHWPFile));
+        merger.merge(p, targetParagraph);
+    }
 }

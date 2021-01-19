@@ -62,6 +62,14 @@ public class Section implements ParagraphListInterface {
     }
 
     /**
+     *  index 번째의 문단을 삭제한다.
+     * @param index 삭제할 문단의 순번
+     */
+    public void deleteParagraph(int index) {
+        paragraphList.remove(index);
+    }
+
+    /**
      * Iterator<Paragraph> 객체를 반환한다.
      *
      * @return Iterator<Paragraph> 객체

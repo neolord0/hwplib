@@ -29,4 +29,12 @@ public interface ParagraphListInterface extends Iterable<Paragraph> {
      * @return index 번째의 문단
      */
     Paragraph getParagraph(int index);
+
+    /**
+     *  index 번째의 문단을 삭제한다.
+     * @param index 삭제할 문단의 순번
+     */
+    void deleteParagraph(int index);
 }
+
+
