@@ -77,6 +77,12 @@ public class ForParagraphList {
                             normalText(ch, sb);
                         }
                         break;
+                    case ControlChar:
+                    case ControlInline:
+                        if (tem.withControlChar()) {
+                            controlText(ch, sb);
+                        }
+                        break;
                     case ControlExtend:
                         if (startIndex <= charIndex && charIndex <= endIndex) {
                             if (tem == TextExtractMethod.InsertControlTextBetweenParagraphText) {
@@ -120,6 +126,12 @@ public class ForParagraphList {
                     case Normal:
                         normalText(ch, sb);
                         break;
+                    case ControlChar:
+                    case ControlInline:
+                        if (tem.withControlChar()) {
+                            controlText(ch, sb);
+                        }
+                        break;
                     case ControlExtend:
                         if (tem == TextExtractMethod.InsertControlTextBetweenParagraphText) {
                             sb.append("\n");
@@ -148,6 +160,20 @@ public class ForParagraphList {
      */
     private static void normalText(HWPChar ch, StringBuffer sb) throws UnsupportedEncodingException {
         sb.append(((HWPCharNormal) ch).getCh());
+    }
+
+    private static void controlText(HWPChar ch, StringBuffer sb) {
+        switch (ch.getCode()) {
+            case 9:
+                sb.append("\t");
+                break;
+            case 10:
+                sb.append("\r\n");
+                break;
+            case 24:
+                sb.append("_");
+                break;
+        }
     }
 
     /**
