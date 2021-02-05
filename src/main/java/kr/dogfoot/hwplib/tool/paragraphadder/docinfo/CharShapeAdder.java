@@ -16,12 +16,23 @@ public class CharShapeAdder {
     }
 
     public int processById(int sourceId) {
-        CharShape source = docInfoAdder.getSourceHWPFile().getDocInfo().getCharShapeList().get(sourceId);
-        int index = findFromTarget(source);
-        if (index == -1) {
-            index = addAndCopy(source);
+        CharShape source;
+        // id == index
+        try {
+            source = docInfoAdder.getSourceHWPFile().getDocInfo().getCharShapeList().get(sourceId);
+        } catch (Exception e) {
+            source = null;
         }
-        return index;
+        if (source == null) {
+            return sourceId;
+        }
+
+        int id = findFromTarget(source);
+        if (id == -1) {
+            id = addAndCopy(source);
+        }
+
+        return id;
     }
 
     private int findFromTarget(CharShape source) {
@@ -190,9 +201,27 @@ public class CharShapeAdder {
     }
 
     public boolean equalById(int sourceId, int targetId) {
-        CharShape source = docInfoAdder.getSourceHWPFile().getDocInfo().getCharShapeList().get(sourceId);
-        CharShape target = docInfoAdder.getTargetHWPFile().getDocInfo().getCharShapeList().get(targetId);
+        CharShape source;
+        CharShape target;
 
-        return equal(source, target);
+        try {
+            source = docInfoAdder.getSourceHWPFile().getDocInfo().getCharShapeList().get(sourceId - 1);
+        } catch (Exception e) {
+            source = null;
+        }
+
+        try {
+            target = docInfoAdder.getTargetHWPFile().getDocInfo().getCharShapeList().get(targetId - 1);
+        } catch (Exception e) {
+            target = null;
+        }
+
+        if  (source == null && target == null) {
+            return sourceId == targetId;
+        } else if (source == null || target == null) {
+            return false;
+        } else {
+            return equal(source, target);
+        }
     }
 }

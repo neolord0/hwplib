@@ -17,12 +17,13 @@ public class NumberingAdder {
     }
 
     public int processById(int sourceId) {
-        Numbering source = docInfoAdder.getSourceHWPFile().getDocInfo().getNumberingList().get(sourceId);
-        int index = findFromTarget(source);
-        if (index == -1) {
-            index = addAndCopy(source);
+        // id == index + 1
+        Numbering source = docInfoAdder.getSourceHWPFile().getDocInfo().getNumberingList().get(sourceId - 1);
+        int id = findFromTarget(source);
+        if (id == -1) {
+            id = addAndCopy(source);
         }
-        return index;
+        return id;
     }
 
     private int findFromTarget(Numbering source) {
@@ -30,7 +31,7 @@ public class NumberingAdder {
         for (int index = 0; index < count; index++) {
             Numbering target = docInfoAdder.getTargetHWPFile().getDocInfo().getNumberingList().get(index);
             if (equal(source, target)) {
-                return index;
+                return index + 1;
             }
         }
         return -1;
@@ -78,7 +79,7 @@ public class NumberingAdder {
         }
         target.setStartNumber(source.getStartNumber());
 
-        return docInfoAdder.getTargetHWPFile().getDocInfo().getNumberingList().size() - 1;
+        return docInfoAdder.getTargetHWPFile().getDocInfo().getNumberingList().size();
     }
 
     private void copyLevelNumbering(LevelNumbering source, LevelNumbering target) {
@@ -95,8 +96,8 @@ public class NumberingAdder {
     }
 
     public boolean equalById(int sourceId, int targetId) {
-        Numbering source = docInfoAdder.getSourceHWPFile().getDocInfo().getNumberingList().get(sourceId);
-        Numbering target = docInfoAdder.getTargetHWPFile().getDocInfo().getNumberingList().get(targetId);
+        Numbering source = docInfoAdder.getSourceHWPFile().getDocInfo().getNumberingList().get(sourceId - 1);
+        Numbering target = docInfoAdder.getTargetHWPFile().getDocInfo().getNumberingList().get(targetId - 1);
 
         return equal(source, target);
     }
