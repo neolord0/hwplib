@@ -34,6 +34,13 @@ public class ParaText {
         return nc;
     }
 
+    public HWPCharNormal insertNewNormalChar(int position) {
+        HWPCharNormal nc = new HWPCharNormal();
+        charList.add(position, nc);
+        return nc;
+    }
+
+
     /**
      * 새로운 [문자 컨트롤 Character]를 생성하고 리스트에 추가한다.
      *
@@ -166,6 +173,22 @@ public class ParaText {
         }
         processEndOfParagraph();
     }
+
+    /**
+     * 문자열을 추가한다.
+     *
+     * @param str 추가할 문자열
+     * @throws UnsupportedEncodingException
+     */
+    public void insertString(int position, String str) throws UnsupportedEncodingException {
+        int len = str.length();
+        for (int index = 0; index < len; index++) {
+            HWPCharNormal ch = insertNewNormalChar(position + index);
+            ch.setCode((short) str.codePointAt(index));
+        }
+        processEndOfParagraph();
+    }
+
 
     /**
      * 구역 정의 컨트롤를 추가하기 위한  확장 컨트롤 문자를 추가한다.

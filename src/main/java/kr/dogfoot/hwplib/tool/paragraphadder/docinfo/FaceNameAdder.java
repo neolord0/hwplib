@@ -2,6 +2,7 @@ package kr.dogfoot.hwplib.tool.paragraphadder.docinfo;
 
 import kr.dogfoot.hwplib.object.docinfo.FaceName;
 import kr.dogfoot.hwplib.object.docinfo.facename.FontTypeInfo;
+import kr.dogfoot.hwplib.util.StringUtil;
 
 import java.util.ArrayList;
 
@@ -48,7 +49,7 @@ public class FaceNameAdder {
                 && source.getSubstituteFontType() == target.getSubstituteFontType()
                 && equalNullableString(source.getSubstituteFontName(), target.getSubstituteFontName())
                 && equalFontTypeInfo(source.getFontTypeInfo(), target.getFontTypeInfo())
-                && source.getBaseFontName().equals(target.getBaseFontName());
+                && StringUtil.equals(source.getBaseFontName(), target.getBaseFontName());
     }
 
     private boolean equalNullableString(String source, String target) {
