@@ -3,9 +3,12 @@ package kr.dogfoot.hwplib.sample;
 import kr.dogfoot.hwplib.object.HWPFile;
 import kr.dogfoot.hwplib.reader.HWPReader;
 import kr.dogfoot.hwplib.tool.textextractor.TextExtractMethod;
+import kr.dogfoot.hwplib.tool.textextractor.TextExtractOption;
 import kr.dogfoot.hwplib.tool.textextractor.TextExtractor;
+import org.apache.poi.ss.formula.functions.T;
 
 import java.io.File;
+import java.util.TimeZone;
 
 
 /**
@@ -44,11 +47,16 @@ public class Extracting_Text {
 
     private static void test(String filename)
             throws Exception {
-        TextExtractMethod tem = TextExtractMethod.InsertControlTextBetweenParagraphText;
         HWPFile hwpFile = HWPReader.fromFile(fullPath(filename));
         System.out.println(filename + "  읽기 성공 !!");
         System.out.println();
-        String hwpText = TextExtractor.extract(hwpFile, tem);
+
+        TextExtractOption option = new TextExtractOption();
+        option.setMethod(TextExtractMethod.InsertControlTextBetweenParagraphText);
+        option.setWithControlChar(false);
+        option.setAppendEndingLF(true);
+
+        String hwpText = TextExtractor.extract(hwpFile, option);
         System.out.println(hwpText);
         System.out.println("========================================================");
     }

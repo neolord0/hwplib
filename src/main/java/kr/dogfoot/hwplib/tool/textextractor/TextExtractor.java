@@ -20,10 +20,22 @@ public class TextExtractor {
      * @throws UnsupportedEncodingException
      */
     public static String extract(HWPFile hwpFile, TextExtractMethod tem) throws UnsupportedEncodingException {
-        StringBuffer sb = new StringBuffer();
-        for (Section s : hwpFile.getBodyText().getSectionList()) {
-            ForParagraphList.extract(s, tem, sb);
-        }
-        return sb.toString();
+        return extract(hwpFile, new TextExtractOption(tem));
+    }
+
+    /**
+     * 텍스트틀 추출한다.
+     *
+     * @param hwpFile 한글 파일 객체
+     * @param option  추출 옵션
+     * @return 추출된 문자열
+     * @throws UnsupportedEncodingException
+     */
+   public static String extract(HWPFile hwpFile, TextExtractOption option) throws UnsupportedEncodingException {
+       StringBuffer sb = new StringBuffer();
+       for (Section s : hwpFile.getBodyText().getSectionList()) {
+            ForParagraphList.extract(s, option, sb);
+       }
+       return sb.toString();
     }
 }

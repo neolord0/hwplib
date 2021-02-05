@@ -21,30 +21,43 @@ public class ForGso {
      */
     public static void extract(GsoControl gc, TextExtractMethod tem,
                                StringBuffer sb) throws UnsupportedEncodingException {
+        extract(gc, new TextExtractOption(tem), sb);
+    }
+
+    /**
+     * 그리기 개체에서 텍스트를 추출한다.
+     *
+     * @param gc     그리기 개체 컨트롤
+     * @param option 추출 옵션
+     * @param sb     추출된 텍스트를 저정할 StringBuffer 객체
+     * @throws UnsupportedEncodingException
+     */
+    public static void extract(GsoControl gc, TextExtractOption option,
+                               StringBuffer sb) throws UnsupportedEncodingException {
         switch (gc.getGsoType()) {
             case Line:
                 break;
             case Rectangle:
-                rectangle((ControlRectangle) gc, tem, sb);
+                rectangle((ControlRectangle) gc, option, sb);
                 break;
             case Ellipse:
-                ellipse((ControlEllipse) gc, tem, sb);
+                ellipse((ControlEllipse) gc, option, sb);
                 break;
             case Arc:
-                arc((ControlArc) gc, tem, sb);
+                arc((ControlArc) gc, option, sb);
                 break;
             case Polygon:
-                polygon((ControlPolygon) gc, tem, sb);
+                polygon((ControlPolygon) gc, option, sb);
                 break;
             case Curve:
-                curve((ControlCurve) gc, tem, sb);
+                curve((ControlCurve) gc, option, sb);
                 break;
             case Picture:
                 break;
             case OLE:
                 break;
             case Container:
-                container((ControlContainer) gc, tem, sb);
+                container((ControlContainer) gc, option, sb);
                 break;
             default:
                 break;
@@ -55,27 +68,27 @@ public class ForGso {
      * 사각형 개체에서 텍스트를 추출한다.
      *
      * @param rectangle 사각형 개체
-     * @param tem       텍스트 추출 방법
+     * @param option    추출 옵션
      * @param sb        추출된 텍스트를 저정할 StringBuffer 객체
      * @throws UnsupportedEncodingException
      */
     private static void rectangle(ControlRectangle rectangle,
-                                  TextExtractMethod tem, StringBuffer sb) throws UnsupportedEncodingException {
-        textBox(rectangle.getTextBox(), tem, sb);
+                                  TextExtractOption option, StringBuffer sb) throws UnsupportedEncodingException {
+        textBox(rectangle.getTextBox(), option, sb);
     }
 
     /**
      * 글상자 객체에서 텍스트를 추출한다.
      *
      * @param textBox 글상자 객체
-     * @param tem     텍스트 추출 방법
+     * @param option  추출 옵션
      * @param sb      추출된 텍스트를 저정할 StringBuffer 객체
      * @throws UnsupportedEncodingException
      */
-    private static void textBox(TextBox textBox, TextExtractMethod tem,
+    private static void textBox(TextBox textBox, TextExtractOption option,
                                 StringBuffer sb) throws UnsupportedEncodingException {
         if (textBox != null) {
-            ForParagraphList.extract(textBox.getParagraphList(), tem, sb);
+            ForParagraphList.extract(textBox.getParagraphList(), option, sb);
         }
     }
 
@@ -83,66 +96,66 @@ public class ForGso {
      * 타원 개체에서 텍스트를 추출한다.
      *
      * @param ellipse 타원 개체
-     * @param tem     텍스트 추출 방법
+     * @param option  추출 옵션
      * @param sb      추출된 텍스트를 저정할 StringBuffer 객체
      * @throws UnsupportedEncodingException
      */
-    private static void ellipse(ControlEllipse ellipse, TextExtractMethod tem,
+    private static void ellipse(ControlEllipse ellipse, TextExtractOption option,
                                 StringBuffer sb) throws UnsupportedEncodingException {
-        textBox(ellipse.getTextBox(), tem, sb);
+        textBox(ellipse.getTextBox(), option, sb);
     }
 
     /**
      * 호 개체에서 텍스트를 추출한다.
      *
-     * @param arc 호 개체
-     * @param tem 텍스트 추출 방법
-     * @param sb  추출된 텍스트를 저정할 StringBuffer 객체
+     * @param arc    호 개체
+     * @param option 추출 옵션
+     * @param sb     추출된 텍스트를 저정할 StringBuffer 객체
      * @throws UnsupportedEncodingException
      */
-    private static void arc(ControlArc arc, TextExtractMethod tem,
+    private static void arc(ControlArc arc, TextExtractOption option,
                             StringBuffer sb) throws UnsupportedEncodingException {
-        textBox(arc.getTextBox(), tem, sb);
+        textBox(arc.getTextBox(), option, sb);
     }
 
     /**
      * 다각형 개체에서 텍스트를 추출한다.
      *
      * @param polygon 다각형 개체
-     * @param tem     텍스트 추출 방법
+     * @param option  추출 옵션
      * @param sb      추출된 텍스트를 저정할 StringBuffer 객체
      * @throws UnsupportedEncodingException
      */
-    private static void polygon(ControlPolygon polygon, TextExtractMethod tem,
+    private static void polygon(ControlPolygon polygon, TextExtractOption option,
                                 StringBuffer sb) throws UnsupportedEncodingException {
-        textBox(polygon.getTextBox(), tem, sb);
+        textBox(polygon.getTextBox(), option, sb);
     }
 
     /**
      * 곡선 개체에서 텍스트를 추출한다.
      *
-     * @param curve 곡선 개체
-     * @param tem   텍스트 추출 방법
-     * @param sb    추출된 텍스트를 저정할 StringBuffer 객체
+     * @param curve  곡선 개체
+     * @param option 추출 옵션
+     * @param sb     추출된 텍스트를 저정할 StringBuffer 객체
      * @throws UnsupportedEncodingException
      */
-    private static void curve(ControlCurve curve, TextExtractMethod tem,
+    private static void curve(ControlCurve curve, TextExtractOption option,
                               StringBuffer sb) throws UnsupportedEncodingException {
-        textBox(curve.getTextBox(), tem, sb);
+        textBox(curve.getTextBox(), option, sb);
     }
 
     /**
      * 묶음 개체에서 텍스트를 추출한다.
      *
      * @param container 묶음 개체
-     * @param tem       텍스트 추출 방법
+     * @param option    추출 옵션
      * @param sb        추출된 텍스트를 저정할 StringBuffer 객체
      * @throws UnsupportedEncodingException
      */
     private static void container(ControlContainer container,
-                                  TextExtractMethod tem, StringBuffer sb) throws UnsupportedEncodingException {
+                                  TextExtractOption option, StringBuffer sb) throws UnsupportedEncodingException {
         for (GsoControl child : container.getChildControlList()) {
-            extract(child, tem, sb);
+            extract(child, option, sb);
         }
     }
 }

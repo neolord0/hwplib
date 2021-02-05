@@ -25,12 +25,29 @@ public class ForParagraphList {
      * @throws UnsupportedEncodingException
      */
     public static void extract(ParagraphListInterface paragraphList,
-                               TextExtractMethod tem, StringBuffer sb) throws UnsupportedEncodingException {
+                               TextExtractMethod tem,
+                               StringBuffer sb) throws UnsupportedEncodingException {
+        extract(paragraphList, new TextExtractOption(tem), sb);
+    }
+
+    /**
+     * 문단 리스트에서 텍스트를 추출한다.
+     *
+     * @param paragraphList 문단 리스트
+     * @param option        추출 옵션
+     * @param sb            추출된 텍스트를 저정할 StringBuffer 객체
+     * @throws UnsupportedEncodingException
+     */
+    public static void extract(ParagraphListInterface paragraphList,
+                               TextExtractOption option,
+                               StringBuffer sb) throws UnsupportedEncodingException {
         if (paragraphList == null) {
             return;
         }
         for (Paragraph p : paragraphList) {
-            paragraph(p, tem, sb);
+            paragraph(p,
+                    option,
+                    sb);
         }
     }
 
@@ -45,9 +62,28 @@ public class ForParagraphList {
      */
     public static void extract(Paragraph p, int startIndex,
                                TextExtractMethod tem, StringBuffer sb) throws UnsupportedEncodingException {
+        extract(p, startIndex,
+                new TextExtractOption(tem),
+                sb);
+     }
+
+    /**
+     * startIndex 순번 부터 끝 순번 까지의 문단의 텍스트를 추출한다.
+     *
+     * @param p          문단
+     * @param startIndex 시작 순번
+     * @param option     추출 옵션
+     * @param sb         추출된 텍스트를 저정할 StringBuffer 객체
+     * @throws UnsupportedEncodingException
+     */
+    public static void extract(Paragraph p, int startIndex,
+                               TextExtractOption option,
+                               StringBuffer sb) throws UnsupportedEncodingException {
         ParaText pt = p.getText();
         if (pt != null) {
-            extract(p, startIndex, pt.getCharList().size() - 1, tem, sb);
+            extract(p, startIndex, pt.getCharList().size() - 1,
+                    option,
+                    sb);
         }
     }
 
@@ -62,7 +98,25 @@ public class ForParagraphList {
      * @throws UnsupportedEncodingException
      */
     public static void extract(Paragraph p, int startIndex, int endIndex,
-                               TextExtractMethod tem, StringBuffer sb) throws UnsupportedEncodingException {
+                               TextExtractMethod tem,  StringBuffer sb) throws UnsupportedEncodingException {
+        extract(p, startIndex, endIndex,
+                new TextExtractOption(tem),
+                sb);
+    }
+
+    /**
+     * startIndex 순번 부터 endIndex 순번 까지의 문단의 텍스트를 추출한다.
+     *
+     * @param p          문단
+     * @param startIndex 시작 순번
+     * @param endIndex   끝 순번
+     * @param option     추출 옵션
+     * @param sb         추출된 텍스트를 저정할 StringBuffer 객체
+     * @throws UnsupportedEncodingException
+     */
+    public static void extract(Paragraph p, int startIndex, int endIndex,
+                               TextExtractOption option,
+                               StringBuffer sb) throws UnsupportedEncodingException {
         ArrayList<Control> controlList = new ArrayList<Control>();
         ParaText pt = p.getText();
         if (pt != null) {
@@ -79,16 +133,16 @@ public class ForParagraphList {
                         break;
                     case ControlChar:
                     case ControlInline:
-                        if (tem.withControlChar()) {
+                        if (option.isWithControlChar()) {
                             controlText(ch, sb);
                         }
                         break;
                     case ControlExtend:
                         if (startIndex <= charIndex && charIndex <= endIndex) {
-                            if (tem == TextExtractMethod.InsertControlTextBetweenParagraphText) {
+                            if (option.getMethod() == TextExtractMethod.InsertControlTextBetweenParagraphText) {
                                 sb.append("\n");
                                 ForControl.extract(
-                                        p.getControlList().get(controlIndex), tem,
+                                        p.getControlList().get(controlIndex), option,
                                         sb);
                             } else {
                                 controlList.add(p.getControlList()
@@ -101,10 +155,15 @@ public class ForParagraphList {
                         break;
                 }
             }
+
+            if (option.isAppendEndingLF()) {
+                sb.append("\n");
+            }
         }
-        if (tem == TextExtractMethod.AppendControlTextAfterParagraphText) {
-            sb.append("\n");
-            controls(controlList, tem, sb);
+
+
+        if (option.getMethod() == TextExtractMethod.AppendControlTextAfterParagraphText) {
+            controls(controlList, option, sb);
         }
     }
 
@@ -116,8 +175,23 @@ public class ForParagraphList {
      * @param sb  추출된 텍스트를 저정할 StringBuffer 객체
      * @throws UnsupportedEncodingException
      */
-    public static void paragraph(Paragraph p, TextExtractMethod tem,
-                                  StringBuffer sb) throws UnsupportedEncodingException {
+    public static void paragraph(Paragraph p,
+                                 TextExtractMethod tem,
+                                 StringBuffer sb) throws UnsupportedEncodingException {
+        paragraph(p,
+                new TextExtractOption(tem),
+                sb);
+    }
+
+    /**
+     * 문단의 텍스트를 추출한다.
+     *
+     * @param p         문단
+     * @param option    추출 옵션
+     * @param sb        추출된 텍스트를 저정할 StringBuffer 객체
+     * @throws UnsupportedEncodingException
+     */
+    public static void paragraph(Paragraph p, TextExtractOption option, StringBuffer sb) throws UnsupportedEncodingException {
         ParaText pt = p.getText();
         if (pt != null) {
             int controlIndex = 0;
@@ -128,15 +202,15 @@ public class ForParagraphList {
                         break;
                     case ControlChar:
                     case ControlInline:
-                        if (tem.withControlChar()) {
+                        if (option.isWithControlChar()) {
                             controlText(ch, sb);
                         }
                         break;
                     case ControlExtend:
-                        if (tem == TextExtractMethod.InsertControlTextBetweenParagraphText) {
+                        if (option.getMethod() == TextExtractMethod.InsertControlTextBetweenParagraphText) {
                             sb.append("\n");
                             ForControl.extract(
-                                    p.getControlList().get(controlIndex), tem, sb);
+                                    p.getControlList().get(controlIndex), option, sb);
                             controlIndex++;
                         }
                         break;
@@ -144,10 +218,12 @@ public class ForParagraphList {
                         break;
                 }
             }
-            sb.append("\n");
+            if (option.isAppendEndingLF()) {
+                sb.append("\n");
+            }
         }
-        if (tem == TextExtractMethod.AppendControlTextAfterParagraphText) {
-            controls(p.getControlList(), tem, sb);
+        if (option.getMethod() == TextExtractMethod.AppendControlTextAfterParagraphText) {
+            controls(p.getControlList(), option, sb);
         }
     }
 
@@ -180,15 +256,15 @@ public class ForParagraphList {
      * 컨트롤 리스트에 포함된 컨트롤에서 텍스트를 추출한다.
      *
      * @param controlList 컨트롤 리스트
-     * @param tem         텍스트 추출 방법
+     * @param option      추출 옵션
      * @param sb          추출된 텍스트를 저정할 StringBuffer 객체
      * @throws UnsupportedEncodingException
      */
     private static void controls(ArrayList<Control> controlList,
-                                 TextExtractMethod tem, StringBuffer sb) throws UnsupportedEncodingException {
+                                 TextExtractOption option, StringBuffer sb) throws UnsupportedEncodingException {
         if (controlList != null) {
             for (Control c : controlList) {
-                ForControl.extract(c, tem, sb);
+                ForControl.extract(c, option, sb);
             }
         }
     }
