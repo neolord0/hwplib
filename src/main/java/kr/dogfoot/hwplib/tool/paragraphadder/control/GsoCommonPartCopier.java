@@ -22,7 +22,10 @@ import java.util.ArrayList;
 
 public class GsoCommonPartCopier {
     public static void copy(GsoControl source, GsoControl target, DocInfoAdder docInfoAdder) {
-        ctrlHeader(source.getHeader(), target.getHeader());
+        // in container == null
+        if (source.getHeader() != null) {
+            ctrlHeader(source.getHeader(), target.getHeader());
+        }
         ctrlData(source, target, docInfoAdder);
         caption(source, target, docInfoAdder);
         if (source.getGsoType() == GsoControlType.Container) {

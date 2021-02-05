@@ -40,7 +40,7 @@ public class ControlContainer extends GsoControl {
     }
 
     public GsoControl addNewChildControl(GsoControlType gsoType) {
-        GsoControl gc = FactoryForControl.createGso(gsoType.getId(), new CtrlHeaderGso());
+        GsoControl gc = FactoryForControl.createGso(gsoType.getId(), null);
         childControlList.add(gc);
         return gc;
     }

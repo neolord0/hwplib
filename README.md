@@ -41,6 +41,7 @@
 * 이슈 123 : kr.dogfoot.hwplib.tool.paragraphadder.docinfo.FaceNameAdder의 equal() 함수 내의 Null 체크 
 * 이슈 124 : bullet 복사 부분 수정 
 * 이슈 125 : numbering 복사 부분 수정
+* 이슈 126 : 묶음(Container) 안에 컨트롤 복사시 오류 수정
 
 2021.2.5
 =========================================================================================  
