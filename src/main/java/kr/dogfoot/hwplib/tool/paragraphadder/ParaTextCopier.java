@@ -24,7 +24,8 @@ public class ParaTextCopier {
                     break;
                 case ControlExtend:
                     if (((HWPCharControlExtend) hwpChar).isTable() ||
-                            ((HWPCharControlExtend) hwpChar).isGSO()) {
+                            ((HWPCharControlExtend) hwpChar).isGSO() ||
+                            ((HWPCharControlExtend) hwpChar).isEquation()) {
                         copyExtendChar((HWPCharControlExtend) hwpChar, target.addNewExtendControlChar());
                     } else {
                         notCopiedCharacterSize += 8;
