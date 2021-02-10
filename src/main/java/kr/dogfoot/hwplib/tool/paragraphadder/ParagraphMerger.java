@@ -1,6 +1,7 @@
 package kr.dogfoot.hwplib.tool.paragraphadder;
 
 import kr.dogfoot.hwplib.object.bodytext.control.Control;
+import kr.dogfoot.hwplib.object.bodytext.control.ControlEquation;
 import kr.dogfoot.hwplib.object.bodytext.control.ControlTable;
 import kr.dogfoot.hwplib.object.bodytext.control.ControlType;
 import kr.dogfoot.hwplib.object.bodytext.control.gso.GsoControl;
@@ -8,6 +9,7 @@ import kr.dogfoot.hwplib.object.bodytext.paragraph.Paragraph;
 import kr.dogfoot.hwplib.object.bodytext.paragraph.charshape.CharPositionShapeIdPair;
 import kr.dogfoot.hwplib.object.bodytext.paragraph.text.HWPChar;
 import kr.dogfoot.hwplib.object.bodytext.paragraph.text.HWPCharType;
+import kr.dogfoot.hwplib.tool.paragraphadder.control.EquationCopier;
 import kr.dogfoot.hwplib.tool.paragraphadder.control.GsoCopier;
 import kr.dogfoot.hwplib.tool.paragraphadder.control.TableCopier;
 import kr.dogfoot.hwplib.tool.paragraphadder.docinfo.DocInfoAdder;
@@ -73,9 +75,10 @@ public class ParagraphMerger {
                 case ColumnDefine:
                     hasColumnDefine = true;
                     break;
-                    /*
                 case Equation:
+                    EquationCopier.copy((ControlEquation) c, (ControlEquation) target.addNewControl(ControlType.Equation), docInfoAdder);
                     break;
+                    /*
                 case Header:
                     break;
                 case Footer:

@@ -118,6 +118,18 @@ public class HWPCharControlExtend extends HWPChar {
         return false;
     }
 
+    public boolean isEquation() {
+        if (getCode() == 0x000b
+                && addition != null
+                && addition[3] == 'e'
+                && addition[2] == 'q'
+                && addition[1] == 'e'
+                && addition[0] == 'd') {
+            return true;
+        }
+        return false;
+    }
+
     public boolean isHyperlinkStart() {
         if (getCode() == 0x0003
                 && addition != null
