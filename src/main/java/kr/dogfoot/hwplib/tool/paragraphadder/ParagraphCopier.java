@@ -1,13 +1,11 @@
 package kr.dogfoot.hwplib.tool.paragraphadder;
 
-import kr.dogfoot.hwplib.object.bodytext.control.Control;
-import kr.dogfoot.hwplib.object.bodytext.control.ControlEquation;
-import kr.dogfoot.hwplib.object.bodytext.control.ControlTable;
-import kr.dogfoot.hwplib.object.bodytext.control.ControlType;
+import kr.dogfoot.hwplib.object.bodytext.control.*;
 import kr.dogfoot.hwplib.object.bodytext.control.gso.GsoControl;
 import kr.dogfoot.hwplib.object.bodytext.paragraph.Paragraph;
 import kr.dogfoot.hwplib.object.bodytext.paragraph.ParagraphList;
 import kr.dogfoot.hwplib.tool.paragraphadder.control.EquationCopier;
+import kr.dogfoot.hwplib.tool.paragraphadder.control.FieldCopier;
 import kr.dogfoot.hwplib.tool.paragraphadder.control.GsoCopier;
 import kr.dogfoot.hwplib.tool.paragraphadder.control.TableCopier;
 import kr.dogfoot.hwplib.tool.paragraphadder.docinfo.DocInfoAdder;
@@ -89,112 +87,52 @@ public class ParagraphCopier {
             return;
         }
         for (Control c : source.getControlList()) {
-            switch (c.getType()) {
-                case Table:
-                    TableCopier.copy((ControlTable) c, (ControlTable) target.addNewControl(ControlType.Table), docInfoAdder);
-                    break;
-                case Gso:
-                    GsoCopier.copy((GsoControl) c, (GsoControl) target.addNewGsoControl(((GsoControl) c).getGsoType()), docInfoAdder);
-                    break;
-                case Equation:
-                    EquationCopier.copy((ControlEquation) c, (ControlEquation) target.addNewControl(ControlType.Equation), docInfoAdder);
-                    break;
-                case SectionDefine:
-                    break;
-                case ColumnDefine:
-                    break;
-                case Header:
-                    break;
-                case Footer:
-                    break;
-                case Footnote:
-                    break;
-                case Endnote:
-                    break;
-                case AutoNumber:
-                    break;
-                case NewNumber:
-                    break;
-                case PageHide:
-                    break;
-                case PageOddEvenAdjust:
-                    break;
-                case PageNumberPositon:
-                    break;
-                case IndexMark:
-                    break;
-                case Bookmark:
-                    break;
-                case OverlappingLetter:
-                    break;
-                case AdditionalText:
-                    break;
-                case HiddenComment:
-                    break;
-                case FIELD_UNKNOWN:
-                    break;
-                case FIELD_DATE:
-                    break;
-                case FIELD_DOCDATE:
-                    break;
-                case FIELD_PATH:
-                    break;
-                case FIELD_BOOKMARK:
-                    break;
-                case FIELD_MAILMERGE:
-                    break;
-                case FIELD_CROSSREF:
-                    break;
-                case FIELD_FORMULA:
-                    break;
-                case FIELD_CLICKHERE:
-                    break;
-                case FIELD_SUMMARY:
-                    break;
-                case FIELD_USERINFO:
-                    break;
-                case FIELD_HYPERLINK:
-                    break;
-                case FIELD_REVISION_SIGN:
-                    break;
-                case FIELD_REVISION_DELETE:
-                    break;
-                case FIELD_REVISION_ATTACH:
-                    break;
-                case FIELD_REVISION_CLIPPING:
-                    break;
-                case FIELD_REVISION_THINKING:
-                    break;
-                case FIELD_REVISION_PRAISE:
-                    break;
-                case FIELD_REVISION_LINE:
-                    break;
-                case FIELD_REVISION_SIMPLECHANGE:
-                    break;
-                case FIELD_REVISION_HYPERLINK:
-                    break;
-                case FIELD_REVISION_LINEATTACH:
-                    break;
-                case FIELD_REVISION_LINELINK:
-                    break;
-                case FIELD_REVISION_LINETRANSFER:
-                    break;
-                case FIELD_REVISION_RIGHTMOVE:
-                    break;
-                case FIELD_REVISION_LEFTMOVE:
-                    break;
-                case FIELD_REVISION_TRANSFER:
-                    break;
-                case FIELD_REVISION_SIMPLEINSERT:
-                    break;
-                case FIELD_REVISION_SPLIT:
-                    break;
-                case FIELD_REVISION_CHANGE:
-                    break;
-                case FIELD_MEMO:
-                    break;
-                case FIELD_PRIVATE_INFO_SECURITY:
-                    break;
+            if (c.isField()) {
+                FieldCopier.copy((ControlField) c, (ControlField) target.addNewControl(((ControlField) c).getHeader().getCtrlId()), docInfoAdder);
+            } else {
+                switch (c.getType()) {
+                    case Table:
+                        TableCopier.copy((ControlTable) c, (ControlTable) target.addNewControl(ControlType.Table), docInfoAdder);
+                        break;
+                    case Gso:
+                        GsoCopier.copy((GsoControl) c, (GsoControl) target.addNewGsoControl(((GsoControl) c).getGsoType()), docInfoAdder);
+                        break;
+                    case Equation:
+                        EquationCopier.copy((ControlEquation) c, (ControlEquation) target.addNewControl(ControlType.Equation), docInfoAdder);
+                        break;
+                    case SectionDefine:
+                        break;
+                    case ColumnDefine:
+                        break;
+                    case Header:
+                        break;
+                    case Footer:
+                        break;
+                    case Footnote:
+                        break;
+                    case Endnote:
+                        break;
+                    case AutoNumber:
+                        break;
+                    case NewNumber:
+                        break;
+                    case PageHide:
+                        break;
+                    case PageOddEvenAdjust:
+                        break;
+                    case PageNumberPositon:
+                        break;
+                    case IndexMark:
+                        break;
+                    case Bookmark:
+                        break;
+                    case OverlappingLetter:
+                        break;
+                    case AdditionalText:
+                        break;
+                    case HiddenComment:
+                        break;
+                }
             }
         }
     }

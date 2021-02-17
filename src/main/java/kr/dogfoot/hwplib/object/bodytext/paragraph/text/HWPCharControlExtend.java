@@ -1,5 +1,8 @@
 package kr.dogfoot.hwplib.object.bodytext.paragraph.text;
 
+import kr.dogfoot.hwplib.object.bodytext.control.ControlType;
+import kr.dogfoot.hwplib.object.bodytext.control.ctrlheader.CtrlID;
+
 /**
  * 확장 컨트롤 Character
  *
@@ -149,6 +152,15 @@ public class HWPCharControlExtend extends HWPChar {
                 && addition[1] == 'l'
                 && addition[0] == 'k') {
             return true;
+        }
+        return false;
+    }
+
+    public boolean isFieldStart() {
+        if (getCode() == 0x0003
+                && addition != null) {
+            long ctrlID = CtrlID.make((char) addition[3], (char) addition[2], (char) addition[1], (char) addition[0]);
+            return ControlType.isField(ctrlID);
         }
         return false;
     }

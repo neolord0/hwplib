@@ -57,6 +57,7 @@
                 <version>2.3.2</version>
                 <configuration>
                     <excludes>
+                        <exclude>**/sample/htmltohwp/**</exclude>
                         <exclude>**/sample/**</exclude>
                         <exclude>**/*.iml</exclude>
                         <exclude>**/*.hwp</exclude>
