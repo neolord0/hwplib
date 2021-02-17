@@ -13,13 +13,6 @@ import kr.dogfoot.hwplib.object.bodytext.control.ctrlheader.CtrlHeaderField;
 public class ControlField extends Control {
     /**
      * 생성자
-     */
-    public ControlField() {
-        super(new CtrlHeaderField());
-    }
-
-    /**
-     * 생성자
      *
      * @param ctrlId : ctrl header의 ctrl-id.
      */
@@ -56,7 +49,7 @@ public class ControlField extends Control {
 
     @Override
     public Control clone() {
-        ControlField cloned = new ControlField();
+        ControlField cloned = new ControlField(this.header.getCtrlId());
         cloned.copyControlPart(this);
         return cloned;
     }
