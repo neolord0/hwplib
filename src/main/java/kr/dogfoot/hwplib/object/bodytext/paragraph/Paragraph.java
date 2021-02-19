@@ -161,6 +161,8 @@ public class Paragraph {
         return rangeTag;
     }
 
+
+
     /**
      * type에 해당하는 새로운 컨트롤을 생성하고 리스트에 추가한다.
      *
@@ -234,6 +236,9 @@ public class Paragraph {
         return controlList;
     }
 
+    public void createControlList() {
+        controlList = new ArrayList<>();
+    }
     /**
      * 컨트롤 리스트에서 컨트롤의 순번을 반환한다.
      *
@@ -330,4 +335,5 @@ public class Paragraph {
 
         return cloned;
     }
+
 }

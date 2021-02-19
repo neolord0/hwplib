@@ -12,7 +12,9 @@ import kr.dogfoot.hwplib.tool.objectfinder.SetFieldResult;
 import kr.dogfoot.hwplib.tool.objectfinder.TextBuffer;
 import kr.dogfoot.hwplib.tool.objectfinder.forField.gettext.ForControl;
 import kr.dogfoot.hwplib.tool.objectfinder.forField.gettext.ForControlWithAllField;
+import kr.dogfoot.hwplib.tool.paragraphadder.ParaTextSetter;
 import kr.dogfoot.hwplib.tool.textextractor.TextExtractMethod;
+import sun.jvm.hotspot.ui.tree.CStringTreeNodeAdapter;
 
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
@@ -146,7 +148,7 @@ public class ForParagraphList {
         StringBuffer sb = new StringBuffer();
         for (int paraIndex = position.startParaIndex; paraIndex <= position.endParaIndex; paraIndex++) {
             int startCharIndex = (paraIndex == position.startParaIndex) ? position.startCharIndex : 0;
-            int endCharIndex = (paraIndex == position.endParaIndex) ? position.endCharIndex : paragraphList.getParagraph(paraIndex).getText().getCharList().size();
+            int endCharIndex = (paraIndex == position.endParaIndex) ? position.endCharIndex : (paragraphList.getParagraph(paraIndex).getText() == null) ? 0 : paragraphList.getParagraph(paraIndex).getText().getCharList().size();
             kr.dogfoot.hwplib.tool.textextractor.ForParagraphList.extract(paragraphList.getParagraph(paraIndex), startCharIndex, endCharIndex, temInField, sb);
         }
         return sb.toString();
@@ -258,18 +260,23 @@ public class ForParagraphList {
      * @param text          텍스트
      */
     private static void changeText(ParagraphListInterface paragraphList, FindPosition position, String text) throws UnsupportedEncodingException {
-        Paragraph startPara = paragraphList.getParagraph(position.startParaIndex);
-        Paragraph endPara = paragraphList.getParagraph(position.endParaIndex);
-        deleteParaTextFrom(startPara, position.startCharIndex + 1);
-        deleteParaTextTo(endPara, position.endCharIndex - 1);
-        startPara.getText().addString(text);
-        mergeParagraph(startPara, endPara);
-        paragraphList.deleteParagraph(position.endParaIndex);
+        if (position.startParaIndex != position.endParaIndex) {
+            Paragraph startPara = paragraphList.getParagraph(position.startParaIndex);
+            Paragraph endPara = paragraphList.getParagraph(position.endParaIndex);
+            deleteParaTextFrom(startPara, position.startCharIndex + 1);
+            deleteParaTextTo(endPara, position.endCharIndex - 1);
+            startPara.getText().addString(text);
+            mergeParagraph(startPara, endPara);
+            paragraphList.deleteParagraph(position.endParaIndex);
 
-        if (position.endParaIndex - position.startParaIndex >= 2) {
-            for (int deleteIndex = 0; deleteIndex < position.endParaIndex - position.startParaIndex - 1; deleteIndex++) {
-                paragraphList.deleteParagraph(position.startParaIndex + 1);
+            if (position.endParaIndex - position.startParaIndex >= 2) {
+                for (int deleteIndex = 0; deleteIndex < position.endParaIndex - position.startParaIndex - 1; deleteIndex++) {
+                    paragraphList.deleteParagraph(position.startParaIndex + 1);
+                }
             }
+        } else {
+            Paragraph para = paragraphList.getParagraph(position.startParaIndex);
+            ParaTextSetter.changeText(para, position.startCharIndex + 1, position.endCharIndex - 1, text);
         }
     }
 
@@ -363,15 +370,33 @@ public class ForParagraphList {
         para1.getText().getCharList().remove(para1.getText().getCharList().size() - 1);
         para1CharSize -= 1;
 
-        for (HWPChar hwpChar : para2.getText().getCharList()) {
-            para1.getText().getCharList().add(hwpChar);
+
+        if (para2.getText() != null && para2.getText().getCharList().size() > 0) {
+            if (para1.getText() == null) {
+                para1.createText();
+            }
+            for (HWPChar hwpChar : para2.getText().getCharList()) {
+                para1.getText().getCharList().add(hwpChar);
+            }
         }
-        for (Control control : para2.getControlList()) {
-            para1.getControlList().add(control);
+
+        if (para2.getControlList() != null && para2.getControlList().size() > 0) {
+            if (para1.getControlList() == null) {
+                para1.createControlList();
+            }
+            for (Control control : para2.getControlList()) {
+                para1.getControlList().add(control);
+            }
         }
-        for (CharPositionShapeIdPair cpsip : para2.getCharShape().getPositonShapeIdPairList()) {
-            cpsip.setPosition(cpsip.getPosition() + para1CharSize);
-            para1.getCharShape().getPositonShapeIdPairList().add(cpsip);
+
+        if (para2.getCharShape() != null && para2.getCharShape().getPositonShapeIdPairList().size() > 0) {
+            if (para1.getCharShape() == null) {
+                para1.createCharShape();
+            }
+            for (CharPositionShapeIdPair cpsip : para2.getCharShape().getPositonShapeIdPairList()) {
+                cpsip.setPosition(cpsip.getPosition() + para1CharSize);
+                para1.getCharShape().getPositonShapeIdPairList().add(cpsip);
+            }
         }
     }
 

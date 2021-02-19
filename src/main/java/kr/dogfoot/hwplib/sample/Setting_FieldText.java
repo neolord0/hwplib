@@ -16,12 +16,12 @@ import java.util.ArrayList;
 public class Setting_FieldText {
 
     public static void main(String[] args) throws Exception {
-        HWPFile hwpFile = HWPReader.fromFile("sample_hwp" + File.separator + "test-setting-field.hwp");
+        HWPFile hwpFile = HWPReader.fromFile("sample_hwp" + File.separator + "setting-fields.hwp");
         if (hwpFile != null) {
             {
                 ArrayList<String> textList = new ArrayList<String>();
                 textList.add("필드1 값1\n2줄\n3줄\n");
-                textList.add("필드1 값1\n2줄\n3줄");
+                textList.add("필드1 값2\n2줄\n3줄");
                 textList.add("필드1 값3");
                 textList.add("필드1 값4");
                 SetFieldResult sfr = FieldFinder.setFieldText(hwpFile, ControlType.FIELD_CLICKHERE, "필드1", textList);
