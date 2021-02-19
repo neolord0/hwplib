@@ -48,4 +48,9 @@ public class HWPCharControlChar extends HWPChar {
         cloned.code = code;
         return cloned;
     }
+
+    @Override
+    public int getCharSize() {
+        return 1;
+    }
 }

@@ -5,11 +5,13 @@ import kr.dogfoot.hwplib.object.bodytext.control.Control;
 import kr.dogfoot.hwplib.object.bodytext.control.ControlField;
 import kr.dogfoot.hwplib.object.bodytext.control.ControlType;
 import kr.dogfoot.hwplib.object.bodytext.paragraph.Paragraph;
+import kr.dogfoot.hwplib.object.bodytext.paragraph.charshape.CharPositionShapeIdPair;
+import kr.dogfoot.hwplib.object.bodytext.paragraph.text.HWPChar;
+import kr.dogfoot.hwplib.object.bodytext.paragraph.text.HWPCharType;
 import kr.dogfoot.hwplib.tool.objectfinder.SetFieldResult;
 import kr.dogfoot.hwplib.tool.objectfinder.TextBuffer;
 import kr.dogfoot.hwplib.tool.objectfinder.forField.gettext.ForControl;
 import kr.dogfoot.hwplib.tool.objectfinder.forField.gettext.ForControlWithAllField;
-import kr.dogfoot.hwplib.tool.paragraphadder.ParaTextSetter;
 import kr.dogfoot.hwplib.tool.textextractor.TextExtractMethod;
 
 import java.io.UnsupportedEncodingException;
@@ -36,119 +38,118 @@ public class ForParagraphList {
         if (paragraphList == null) {
             return null;
         }
-        ControlField cf = null;
-        StringBuffer sb = new StringBuffer();
-        int startFieldIndex = -1;
-        int endFieldIndex = -1;
-        for (Paragraph p : paragraphList) {
-            if (cf == null) {
-                cf = findField(p, fieldType, fieldName);
-                if (cf != null) {
-                    int indexOfControl = p.getControlIndex(cf);
-                    startFieldIndex = p.getText().getCharIndexFromExtendCharIndex(indexOfControl);
-                    endFieldIndex = p.getText().getInlineCharIndex(startFieldIndex + 1, (short) 0x04);
-                    if (endFieldIndex != -1) {
-                        getParaText(p, startFieldIndex + 1, endFieldIndex - 1, temInField, sb);
-                        return sb.toString();
-                    } else {
-                        getParaText(p, startFieldIndex + 1, temInField, sb);
-                    }
-                }
-            } else {
-                sb.append("\n");
-                if (p.getText() != null) {
-                    endFieldIndex = p.getText().getInlineCharIndex(0, (short) 0x04);
-                    if (endFieldIndex != -1) {
-                        getParaText(p, 0, endFieldIndex - 1, temInField, sb);
-                    } else {
-                        getParaText(p, 0, temInField, sb);
-                    }
-                }
-            }
-            if (endFieldIndex != -1) {
-                break;
+        ArrayList<FindPosition> results = getFieldStartPosition(paragraphList, fieldType, fieldName, false);
+        if (results.size() > 0) {
+            if (getFieldEndPosition(paragraphList, results.get(0))) {
+                return getText(paragraphList, results.get(0), temInField);
             }
         }
-        if (cf == null) {
-            return getFieldTextForControl(paragraphList, fieldType, fieldName, temInField);
-        }
-        return sb.toString();
+        return getFieldTextForControl(paragraphList, fieldType, fieldName, temInField);
     }
 
     /**
-     * 문단리스트에서 이름이 같은 모든 필드 객체의 텍스트를 찾아 텍스트를 리스트에 추가한다.
+     * 문단리스트에서 필드 객체의 시작 위치를 반환한다.
      *
      * @param paragraphList 문단리스트
      * @param fieldType     필드 타입
      * @param fieldName     필드 이름
-     * @param temInField    필드 안에 텍스트의 텍스트 추출 방법
-     * @param textList      반환할 필드 텍스트 리스트
+     * @param allField      이름이 같은 모든 필드를 찾을 것인지 여부
+     * @return 찾은 필드의 위치 리스트
+     * @throws UnsupportedEncodingException
      */
-    public static void getAllFieldText(ParagraphListInterface paragraphList, ControlType fieldType, String fieldName, TextExtractMethod temInField, ArrayList<String> textList) throws UnsupportedEncodingException {
-        if (paragraphList == null) {
-            return;
-        }
-        ControlField startField = null;
-        StringBuffer sb = new StringBuffer();
-        int startFieldIndex = -1;
-        int endFieldIndex = -1;
-        for (Paragraph p : paragraphList) {
-            if (startField == null) {
-                startField = findField(p, fieldType, fieldName);
-                if (startField != null) {
-                    int indexOfControl = p.getControlIndex(startField);
-                    startFieldIndex = p.getText().getCharIndexFromExtendCharIndex(indexOfControl);
-                    endFieldIndex = p.getText().getInlineCharIndex(startFieldIndex + 1, (short) 0x04);
-                    if (endFieldIndex != -1) {
-                        getParaText(p, startFieldIndex + 1, endFieldIndex - 1, temInField, sb);
-
-                        textList.add(sb.toString());
-                        sb.setLength(0);
-                        startField = null;
-                    } else {
-                        getParaText(p, startFieldIndex + 1, temInField, sb);
-                    }
-                }
-            } else {
-                sb.append("\n");
-                if (p.getText() != null) {
-                    endFieldIndex = p.getText().getInlineCharIndex(0, (short) 0x04);
-                    if (endFieldIndex != -1) {
-                        getParaText(p, 0, endFieldIndex - 1, temInField, sb);
-
-                        textList.add(sb.toString());
-                        sb.setLength(0);
-                        startField = null;
-                    } else {
-                        getParaText(p, 0, temInField, sb);
-                    }
+    private static ArrayList<FindPosition> getFieldStartPosition(ParagraphListInterface paragraphList, ControlType fieldType, String fieldName, boolean allField) {
+        ArrayList<FindPosition> results = new ArrayList<>();
+        int paraCount = paragraphList.getParagraphCount();
+        for (int paraIndex = 0; paraIndex < paraCount; paraIndex++) {
+            Paragraph p = paragraphList.getParagraph(paraIndex);
+            int fieldCharIndex = findFieldCharIndex(p, fieldType, fieldName);
+            if (fieldCharIndex != -1) {
+                results.add(new FindPosition(paraIndex, fieldCharIndex));
+                if (allField == false) {
+                    return results;
                 }
             }
         }
-        getAllFieldTextForControl(paragraphList, fieldType, fieldName, temInField, textList);
+        return results;
     }
 
     /**
-     * 문단에 포함된 필드 컨트롤을 찾는다.
+     * 문단내에서 필드 객체의 위치를 반환한다.
      *
-     * @param p         문단
-     * @param fieldType 필드 타입
-     * @param fieldName 필드 이름
-     * @return 필드 컨트롤
+     * @param p 문단
+     * @param fieldType     필드 타입
+     * @param fieldName     필드 이름
+     * @return 찾은 필드의 문단 내부의 위치
+     * @throws UnsupportedEncodingException
      */
-    private static ControlField findField(Paragraph p, ControlType fieldType, String fieldName) {
+    private static int findFieldCharIndex(Paragraph p, ControlType fieldType, String fieldName) {
         if (p.getControlList() == null) {
-            return null;
+            return -1;
         }
-        for (Control c : p.getControlList()) {
+        int ctrlCount = p.getControlList().size();
+        for (int ctrlIndex = 0; ctrlIndex < ctrlCount; ctrlIndex++) {
+            Control c = p.getControlList().get(ctrlIndex);
             if (c.getType() == fieldType) {
                 ControlField cf = (ControlField) c;
                 if (cf.getName() != null && cf.getName().equals(fieldName)) {
-                    return cf;
+                    return p.getText().getCharIndexFromExtendCharIndex(ctrlIndex);
                 }
             }
         }
-        return null;
+        return -1;
+    }
+
+    /**
+     * 문단 리스트에서 position에서 시작된 필드의 끝 위치를 반환한다.
+     *
+     * @param paragraphList 문단 리스트
+     * @param position      찾을 필드의 위치
+     * @return 필드 끝을 찾았는지 여부
+     * @throws UnsupportedEncodingException
+     */
+    private static boolean getFieldEndPosition(ParagraphListInterface paragraphList, FindPosition position) {
+        int depth = 0;
+        int paraCount = paragraphList.getParagraphCount();
+        for (int paraIndex = position.startParaIndex; paraIndex < paraCount; paraIndex++) {
+            Paragraph p = paragraphList.getParagraph(paraIndex);
+            if (p.getText() != null) {
+                int startIndex = (paraIndex == position.startParaIndex) ? position.startCharIndex + 1 : 0;
+                int charCount = p.getText().getCharList().size();
+                for (int charIndex = startIndex; charIndex < charCount; charIndex++) {
+                    HWPChar hwpChar = p.getText().getCharList().get(charIndex);
+                    if (hwpChar.getCode() == 0x3/*field start*/) {
+                        depth++;
+                    } else if (hwpChar.getCode() == 0x4/*field end*/) {
+                        if (depth == 0) {
+                            position.endPosition(paraIndex, charIndex);
+                            return true;
+                        } else {
+                            depth--;
+                        }
+                    }
+                }
+            }
+        }
+        return false;
+    }
+
+    /**
+     * 문단 리스트에서 position 위치에 있는 문자열을 반환한다.
+     *
+     * @param paragraphList 문단 리스트
+     * @param position      위치
+     * @param temInField    필드 안에 텍스트의 텍스트 추출 방법
+     * @return 필드 끝을 찾았는지 여부
+     * @throws UnsupportedEncodingException
+     */
+    private static String getText(ParagraphListInterface paragraphList, FindPosition position, TextExtractMethod temInField) throws UnsupportedEncodingException {
+        StringBuffer sb = new StringBuffer();
+        for (int paraIndex = position.startParaIndex; paraIndex <= position.endParaIndex; paraIndex++) {
+            int startCharIndex = (paraIndex == position.startParaIndex) ? position.startCharIndex : 0;
+            int endCharIndex = (paraIndex == position.endParaIndex) ? position.endCharIndex : paragraphList.getParagraph(paraIndex).getText().getCharList().size();
+            kr.dogfoot.hwplib.tool.textextractor.ForParagraphList.extract(paragraphList.getParagraph(paraIndex), startCharIndex, endCharIndex, temInField, sb);
+        }
+        return sb.toString();
     }
 
     /**
@@ -177,6 +178,30 @@ public class ForParagraphList {
         return null;
     }
 
+    //------------------------------------------------------------------------------------------------------------------
+
+    /**
+     * 문단리스트에서 이름이 같은 모든 필드 객체의 텍스트를 찾아 텍스트를 리스트에 추가한다.
+     *
+     * @param paragraphList 문단리스트
+     * @param fieldType     필드 타입
+     * @param fieldName     필드 이름
+     * @param temInField    필드 안에 텍스트의 텍스트 추출 방법
+     * @param textList      반환할 필드 텍스트 리스트
+     */
+    public static void getAllFieldText(ParagraphListInterface paragraphList, ControlType fieldType, String fieldName, TextExtractMethod temInField, ArrayList<String> textList) throws UnsupportedEncodingException {
+        if (paragraphList == null) {
+            return;
+        }
+        ArrayList<FindPosition> results = getFieldStartPosition(paragraphList, fieldType, fieldName, true);
+        for (FindPosition result : results) {
+            if (getFieldEndPosition(paragraphList, result)) {
+                textList.add(getText(paragraphList, result, temInField));
+            }
+        }
+        getAllFieldTextForControl(paragraphList, fieldType, fieldName, temInField, textList);
+    }
+
     /**
      * 문단 리스트에 포함된 컨트롤에서 이름이 같은 모든 필드 객체의 텍스트를 찾아 텍스트를 리스트에 추가한다.
      *
@@ -198,35 +223,6 @@ public class ForParagraphList {
     }
 
     /**
-     * startIndex 순번 부터 endIndex 순번 까지의 문단의 텍스트를 반환한다.
-     *
-     * @param p          문단
-     * @param startIndex 시작 순번
-     * @param endIndex   끝 순번
-     * @param temInField 필드 안에 텍스트의 텍스트 추출 방법
-     * @param sb         필드 텍스트가 저장될 StringBuffer
-     * @throws UnsupportedEncodingException
-     */
-    private static void getParaText(Paragraph p, int startIndex, int endIndex, TextExtractMethod temInField,
-                                    StringBuffer sb) throws UnsupportedEncodingException {
-        kr.dogfoot.hwplib.tool.textextractor.ForParagraphList.extract(p, startIndex, endIndex, temInField, sb);
-    }
-
-    /**
-     * startIndex 순번 부터 끝 까지의 문단의 텍스트를 반환한다.
-     *
-     * @param p          문단
-     * @param startIndex 시작 순번
-     * @param temInField 필드 안에 텍스트의 텍스트 추출 방법
-     * @param sb         필드 텍스트가 저장될 StringBuffer
-     * @throws UnsupportedEncodingException
-     */
-    private static void getParaText(Paragraph p, int startIndex, TextExtractMethod temInField, StringBuffer sb)
-            throws UnsupportedEncodingException {
-        kr.dogfoot.hwplib.tool.textextractor.ForParagraphList.extract(p, startIndex, temInField, sb);
-    }
-
-    /**
      * 문단리스트에 포함된 필드 객체의 텍스트를 설정한다.
      *
      * @param paragraphList 문단 리스트
@@ -236,55 +232,192 @@ public class ForParagraphList {
      * @return 필드 설정 결과값
      */
     public static SetFieldResult setFieldText(ParagraphListInterface paragraphList, ControlType fieldType,
-                                              String fieldName, TextBuffer textBuffer) {
+                                              String fieldName, TextBuffer textBuffer) throws UnsupportedEncodingException {
         if (paragraphList == null) {
             return SetFieldResult.InProcess;
         }
-        ControlField cf = null;
-        int startFieldIndex = -1;
-        int endFieldIndex = -1;
-        for (Paragraph p : paragraphList) {
-            cf = findField(p, fieldType, fieldName);
-            if (cf != null) {
-                int indexOfControl = p.getControlIndex(cf);
-                startFieldIndex = p.getText().getCharIndexFromExtendCharIndex(indexOfControl);
-                endFieldIndex = p.getText().getInlineCharIndex(startFieldIndex + 1, (short) 0x04);
-                if (endFieldIndex != -1) {
-                    if (textBuffer.hasNext() == true) {
-                        ParaTextSetter.changeText(p, startFieldIndex + 1, endFieldIndex - 1, textBuffer.nextText());
-                    } else {
-                        return SetFieldResult.NotEnoughText;
-                    }
+
+        ArrayList<FindPosition> results = getFieldStartPosition(paragraphList, fieldType, fieldName, true);
+        for (FindPosition result : results) {
+            if (getFieldEndPosition(paragraphList, result)) {
+                if (textBuffer.hasNext()) {
+                    changeText(paragraphList, result, textBuffer.nextText());
+                } else {
+                    return SetFieldResult.NotEnoughText;
+                }
+            }
+        }
+        return setFieldTextForControls(paragraphList, fieldType, fieldName, textBuffer);
+    }
+
+    /**
+     * 문단 리스트에 특정 위치에 문자열을 변경한다.
+     *
+     * @param paragraphList 문단 리스트
+     * @param position      문단 내의 위치
+     * @param text          텍스트
+     */
+    private static void changeText(ParagraphListInterface paragraphList, FindPosition position, String text) throws UnsupportedEncodingException {
+        Paragraph startPara = paragraphList.getParagraph(position.startParaIndex);
+        Paragraph endPara = paragraphList.getParagraph(position.endParaIndex);
+        deleteParaTextFrom(startPara, position.startCharIndex + 1);
+        deleteParaTextTo(endPara, position.endCharIndex - 1);
+        startPara.getText().addString(text);
+        mergeParagraph(startPara, endPara);
+        paragraphList.deleteParagraph(position.endParaIndex);
+
+        if (position.endParaIndex - position.startParaIndex >= 2) {
+            for (int deleteIndex = 0; deleteIndex < position.endParaIndex - position.startParaIndex - 1; deleteIndex++) {
+                paragraphList.deleteParagraph(position.startParaIndex + 1);
+            }
+        }
+    }
+
+    /**
+     * 문단에 텍스트를 from 위치부터 삭제한다.
+     *
+     * @param p     문단
+     * @param from  삭제할 시작 위치
+     */
+    private static void deleteParaTextFrom(Paragraph p, int from) {
+        int leftCtrlCount = 0;
+        int leftCharSize = 0;
+        if (p.getText() != null) {
+            for (int charIndex = 0; charIndex < from; charIndex++) {
+                HWPChar hwpChar = p.getText().getCharList().get(charIndex);
+                if (hwpChar.getType() == HWPCharType.ControlExtend) {
+                    leftCtrlCount++;
+                }
+                leftCharSize += hwpChar.getCharSize();
+            }
+            int deleteCharCount = p.getText().getCharList().size() - from - 1;
+            for(int index = 0; index < deleteCharCount; index++) {
+                p.getText().getCharList().remove(from);
+            }
+        }
+        if (p.getControlList() != null) {
+            int deleteCtrlCount = p.getControlList().size() - leftCtrlCount;
+            for (int index = 0; index < deleteCtrlCount; index++) {
+                p.getControlList().remove(leftCtrlCount);
+            }
+        }
+
+        ArrayList<CharPositionShapeIdPair> deleting = new ArrayList<>();
+        for (CharPositionShapeIdPair cpsip : p.getCharShape().getPositonShapeIdPairList()) {
+            if (cpsip.getPosition() > leftCharSize) {
+                deleting.add(cpsip);
+            }
+        }
+        for (CharPositionShapeIdPair cpsip : deleting) {
+            p.getCharShape().getPositonShapeIdPairList().remove(cpsip);
+        }
+    }
+
+    /**
+     * 문단에 텍스트를 to 위치까지 삭제한다.
+     *
+     * @param p     문단
+     * @param to    삭제할 끝 위치
+     */
+    private static void deleteParaTextTo(Paragraph p, int to) {
+        int deleteCtrlCount = 0;
+        int deleteCharSize = 0;
+        if (p.getText() != null) {
+            for (int charIndex = 0; charIndex < to - 1; charIndex++) {
+                HWPChar hwpChar = p.getText().getCharList().get(charIndex);
+                if (hwpChar.getType() == HWPCharType.ControlExtend) {
+                    deleteCtrlCount++;
                 }
             }
 
-            if (setFieldTextForControls(p, fieldType, fieldName, textBuffer) == SetFieldResult.NotEnoughText) {
-                return SetFieldResult.NotEnoughText;
+            for (int index = 0; index < to + 1; index++) {
+                deleteCharSize += p.getText().getCharList().get(0).getCharSize();
+                p.getText().getCharList().remove(0);
             }
         }
-        return SetFieldResult.InProcess;
+        if (p.getControlList() != null) {
+            for (int index = 0; index < deleteCtrlCount; index++) {
+                p.getControlList().remove(0);
+            }
+        }
+
+        for (CharPositionShapeIdPair cpsip : p.getCharShape().getPositonShapeIdPairList()) {
+            if (cpsip.getPosition() != 0) {
+                if (cpsip.getPosition() < to + 1) {
+                    p.getCharShape().getPositonShapeIdPairList().remove(cpsip);
+                } else {
+                    cpsip.setPosition(cpsip.getPosition() - deleteCharSize);
+                }
+            }
+        }
+    }
+
+    /**
+     * 문단 para1 끝에 문단 para2을 병합한다.
+     *
+     * @param para1    문단1
+     * @param para2    문단2
+     */
+    private static void mergeParagraph(Paragraph para1, Paragraph para2) {
+        int para1CharSize = para1.getText().getCharSize();
+        para1.getText().getCharList().remove(para1.getText().getCharList().size() - 1);
+        para1CharSize -= 1;
+
+        for (HWPChar hwpChar : para2.getText().getCharList()) {
+            para1.getText().getCharList().add(hwpChar);
+        }
+        for (Control control : para2.getControlList()) {
+            para1.getControlList().add(control);
+        }
+        for (CharPositionShapeIdPair cpsip : para2.getCharShape().getPositonShapeIdPairList()) {
+            cpsip.setPosition(cpsip.getPosition() + para1CharSize);
+            para1.getCharShape().getPositonShapeIdPairList().add(cpsip);
+        }
     }
 
     /**
      * 문단에 포함된 컨트롤에서 필드 객체의 텍스트를 설정한다.
      *
-     * @param p          문단
-     * @param fieldType  필드 타입
-     * @param fieldName  필드 이름
-     * @param textBuffer 텍스트 버퍼
+     * @param paragraphList 문단
+     * @param fieldType     필드 타입
+     * @param fieldName     필드 이름
+     * @param textBuffer    텍스트 버퍼
      * @return 필드 설정 결과값
      */
-    private static SetFieldResult setFieldTextForControls(Paragraph p, ControlType fieldType, String fieldName,
-                                                          TextBuffer textBuffer) {
-        ArrayList<Control> controlList = p.getControlList();
-        if (controlList != null) {
-            for (Control c : controlList) {
-                if (kr.dogfoot.hwplib.tool.objectfinder.forField.settext.ForControl.setFieldText(c, fieldType,
-                        fieldName, textBuffer) == SetFieldResult.NotEnoughText) {
-                    return SetFieldResult.NotEnoughText;
+    private static SetFieldResult setFieldTextForControls(ParagraphListInterface paragraphList, ControlType fieldType, String fieldName,
+                                                          TextBuffer textBuffer) throws UnsupportedEncodingException {
+        for (Paragraph p : paragraphList) {
+            ArrayList<Control> controlList = p.getControlList();
+            if (controlList != null) {
+                for (Control c : controlList) {
+                    if (kr.dogfoot.hwplib.tool.objectfinder.forField.settext.ForControl.setFieldText(c, fieldType,
+                            fieldName, textBuffer) == SetFieldResult.NotEnoughText) {
+                        return SetFieldResult.NotEnoughText;
+                    }
                 }
             }
         }
         return SetFieldResult.InProcess;
+    }
+
+    private static class FindPosition {
+        int startParaIndex;
+        int startCharIndex;
+        int endParaIndex;
+        int endCharIndex;
+
+        public FindPosition(int startParaIndex, int startCharIndex) {
+            this.startParaIndex = startParaIndex;
+            this.startCharIndex = startCharIndex;
+        }
+
+        public void endPosition(int endParaIndex,int endCharIndex) {
+            this.endParaIndex = endParaIndex;
+            this.endCharIndex = endCharIndex;
+        }
+
+        public String toString() {
+            return startParaIndex + ":" + startCharIndex + " ~ " + endParaIndex + ":" + endCharIndex;
+        }
     }
 }

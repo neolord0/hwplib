@@ -180,13 +180,17 @@ public class ParaText {
      * @param str 추가할 문자열
      * @throws UnsupportedEncodingException
      */
-    public void insertString(int position, String str) throws UnsupportedEncodingException {
+    public int insertString(int position, String str) throws UnsupportedEncodingException {
+        int oldCharSize = getCharSize();
+
         int len = str.length();
         for (int index = 0; index < len; index++) {
             HWPCharNormal ch = insertNewNormalChar(position + index);
             ch.setCode((short) str.codePointAt(index));
         }
         processEndOfParagraph();
+
+        return getCharSize() - oldCharSize;
     }
 
 
@@ -333,23 +337,10 @@ public class ParaText {
         return cloned;
     }
 
-    public int getCharLength() {
+    public int getCharSize() {
         int length = 0;
         for (HWPChar hwpChar : charList) {
-            switch (hwpChar.getType()) {
-                case Normal:
-                    length += 1;
-                    break;
-                case ControlChar:
-                    length += 1;
-                    break;
-                case ControlInline:
-                    length += 8;
-                    break;
-                case ControlExtend:
-                    length += 8;
-                    break;
-            }
+            length += hwpChar.getCharSize();
         }
         return length;
     }

@@ -64,7 +64,7 @@ public class FieldFinder {
      * @return 필드 설정 결과값
      * @throws Exception
      */
-    public static SetFieldResult setClickHereText(HWPFile hwpFile, String fieldName, ArrayList<String> textList) {
+    public static SetFieldResult setClickHereText(HWPFile hwpFile, String fieldName, ArrayList<String> textList) throws UnsupportedEncodingException {
         if (textList.size() == 0) {
             return SetFieldResult.ETCError;
         }
@@ -132,7 +132,7 @@ public class FieldFinder {
      * @return 필드 설정 결과값
      */
     public static SetFieldResult setFieldText(HWPFile hwpFile, ControlType fieldType, String fieldName,
-                                              ArrayList<String> textList) {
+                                              ArrayList<String> textList) throws UnsupportedEncodingException {
         if (fieldType.isField() == false || textList.size() == 0) {
             return SetFieldResult.ETCError;
         }

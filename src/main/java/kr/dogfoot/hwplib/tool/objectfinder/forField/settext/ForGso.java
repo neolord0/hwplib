@@ -7,6 +7,8 @@ import kr.dogfoot.hwplib.tool.objectfinder.SetFieldResult;
 import kr.dogfoot.hwplib.tool.objectfinder.TextBuffer;
 import kr.dogfoot.hwplib.tool.objectfinder.forField.ForParagraphList;
 
+import java.io.UnsupportedEncodingException;
+
 /**
  * 그리기 개체에 포함된 필드의 텍스트를 설정하는 기능을 포함한 클래스
  *
@@ -23,7 +25,7 @@ public class ForGso {
      * @return 필드 설정 결과값
      */
     public static SetFieldResult setFieldText(GsoControl gc, ControlType fieldType, String fieldName,
-                                              TextBuffer textBuffer) {
+                                              TextBuffer textBuffer) throws UnsupportedEncodingException {
         switch (gc.getGsoType()) {
             case Line:
                 break;
@@ -59,7 +61,7 @@ public class ForGso {
      * @return 필드 설정 결과값
      */
     private static SetFieldResult rectangle(ControlRectangle rectangle, ControlType fieldType, String fieldName,
-                                            TextBuffer textBuffer) {
+                                            TextBuffer textBuffer) throws UnsupportedEncodingException {
         return textBox(rectangle.getTextBox(), fieldType, fieldName, textBuffer);
     }
 
@@ -73,7 +75,7 @@ public class ForGso {
      * @return 필드 설정 결과값
      */
     private static SetFieldResult textBox(TextBox textBox, ControlType fieldType, String fieldName,
-                                          TextBuffer textBuffer) {
+                                          TextBuffer textBuffer) throws UnsupportedEncodingException {
         if (textBox == null) {
             return SetFieldResult.InProcess;
         }
@@ -90,7 +92,7 @@ public class ForGso {
      * @return 필드 설정 결과값
      */
     private static SetFieldResult ellipse(ControlEllipse ellipse, ControlType fieldType, String fieldName,
-                                          TextBuffer textBuffer) {
+                                          TextBuffer textBuffer) throws UnsupportedEncodingException {
         return textBox(ellipse.getTextBox(), fieldType, fieldName, textBuffer);
     }
 
@@ -103,7 +105,7 @@ public class ForGso {
      * @param textBuffer 텍스트 버퍼
      * @return 필드 설정 결과값
      */
-    private static SetFieldResult arc(ControlArc arc, ControlType fieldType, String fieldName, TextBuffer textBuffer) {
+    private static SetFieldResult arc(ControlArc arc, ControlType fieldType, String fieldName, TextBuffer textBuffer) throws UnsupportedEncodingException {
         return textBox(arc.getTextBox(), fieldType, fieldName, textBuffer);
     }
 
@@ -117,7 +119,7 @@ public class ForGso {
      * @return 필드 설정 결과값
      */
     private static SetFieldResult polygon(ControlPolygon polygon, ControlType fieldType, String fieldName,
-                                          TextBuffer textBuffer) {
+                                          TextBuffer textBuffer) throws UnsupportedEncodingException {
         return textBox(polygon.getTextBox(), fieldType, fieldName, textBuffer);
     }
 
@@ -131,7 +133,7 @@ public class ForGso {
      * @return 필드 설정 결과값
      */
     private static SetFieldResult curve(ControlCurve curve, ControlType fieldType, String fieldName,
-                                        TextBuffer textBuffer) {
+                                        TextBuffer textBuffer) throws UnsupportedEncodingException {
         return textBox(curve.getTextBox(), fieldType, fieldName, textBuffer);
     }
 
@@ -145,7 +147,7 @@ public class ForGso {
      * @return 필드 설정 결과값
      */
     private static SetFieldResult container(ControlContainer container, ControlType fieldType, String fieldName,
-                                            TextBuffer textBuffer) {
+                                            TextBuffer textBuffer) throws UnsupportedEncodingException {
         for (GsoControl child : container.getChildControlList()) {
             if (setFieldText(child, fieldType, fieldName, textBuffer) == SetFieldResult.NotEnoughText) {
                 return SetFieldResult.NotEnoughText;

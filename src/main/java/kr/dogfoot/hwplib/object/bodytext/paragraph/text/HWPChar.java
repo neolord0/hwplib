@@ -87,4 +87,5 @@ public abstract class HWPChar {
     }
 
     public abstract HWPChar clone();
+    public abstract int getCharSize();
 }

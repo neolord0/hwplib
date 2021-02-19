@@ -62,4 +62,9 @@ public class HWPCharControlInline extends HWPChar {
 
         return cloned;
     }
+
+    @Override
+    public int getCharSize() {
+        return 8;
+    }
 }

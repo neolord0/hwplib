@@ -8,6 +8,8 @@ import kr.dogfoot.hwplib.tool.objectfinder.SetFieldResult;
 import kr.dogfoot.hwplib.tool.objectfinder.TextBuffer;
 import kr.dogfoot.hwplib.tool.objectfinder.forField.ForParagraphList;
 
+import java.io.UnsupportedEncodingException;
+
 /**
  * 컨트롤에 포함된 필드의 텍스트를 설정하는 기능을 포함한 클래스
  *
@@ -24,7 +26,7 @@ public class ForControl {
      * @return 필드 설정 결과값
      */
     public static SetFieldResult setFieldText(Control c, ControlType fieldType, String fieldName,
-                                              TextBuffer textBuffer) {
+                                              TextBuffer textBuffer) throws UnsupportedEncodingException {
         if (c.isField()) {
         } else {
             switch (c.getType()) {
@@ -83,7 +85,7 @@ public class ForControl {
      * @return 필드 설정 결과값
      */
     private static SetFieldResult table(ControlTable table, ControlType fieldType, String fieldName,
-                                        TextBuffer textBuffer) {
+                                        TextBuffer textBuffer) throws UnsupportedEncodingException {
         for (Row r : table.getRowList()) {
             for (Cell c : r.getCellList()) {
                 if (ForParagraphList.setFieldText(c.getParagraphList(), fieldType, fieldName,
@@ -105,7 +107,7 @@ public class ForControl {
      * @return 필드 설정 결과값
      */
     private static SetFieldResult header(ControlHeader header, ControlType fieldType, String fieldName,
-                                         TextBuffer textBuffer) {
+                                         TextBuffer textBuffer) throws UnsupportedEncodingException {
         return ForParagraphList.setFieldText(header.getParagraphList(), fieldType, fieldName, textBuffer);
     }
 
@@ -119,7 +121,7 @@ public class ForControl {
      * @return 필드 설정 결과값
      */
     private static SetFieldResult footer(ControlFooter footer, ControlType fieldType, String fieldName,
-                                         TextBuffer textBuffer) {
+                                         TextBuffer textBuffer) throws UnsupportedEncodingException {
         return ForParagraphList.setFieldText(footer.getParagraphList(), fieldType, fieldName, textBuffer);
     }
 
@@ -133,7 +135,7 @@ public class ForControl {
      * @return 필드 설정 결과값
      */
     private static SetFieldResult footnote(ControlFootnote footnote, ControlType fieldType, String fieldName,
-                                           TextBuffer textBuffer) {
+                                           TextBuffer textBuffer) throws UnsupportedEncodingException {
         return ForParagraphList.setFieldText(footnote.getParagraphList(), fieldType, fieldName, textBuffer);
     }
 
@@ -147,7 +149,7 @@ public class ForControl {
      * @return 필드 설정 결과값
      */
     private static SetFieldResult endnote(ControlEndnote endnote, ControlType fieldType, String fieldName,
-                                          TextBuffer textBuffer) {
+                                          TextBuffer textBuffer) throws UnsupportedEncodingException {
         return ForParagraphList.setFieldText(endnote.getParagraphList(), fieldType, fieldName, textBuffer);
     }
 
@@ -161,7 +163,7 @@ public class ForControl {
      * @return 필드 설정 결과값
      */
     private static SetFieldResult hiddenComment(ControlHiddenComment hiddenComment, ControlType fieldType,
-                                                String fieldName, TextBuffer textBuffer) {
+                                                String fieldName, TextBuffer textBuffer) throws UnsupportedEncodingException {
         return ForParagraphList.setFieldText(hiddenComment.getParagraphList(), fieldType, fieldName, textBuffer);
     }
 }

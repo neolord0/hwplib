@@ -69,21 +69,9 @@ public class ForParagraph {
         if (t != null) {
             int charCount = 0;
             for (HWPChar ch : t.getCharList()) {
-                switch (ch.getType()) {
-                    case Normal:
-                        charCount += 1;
-                        break;
-                    case ControlChar:
-                        charCount += 1;
-                        break;
-                    case ControlExtend:
-                        charCount += 8;
-                        break;
-                    case ControlInline:
-                        charCount += 8;
-                        break;
-                }
+                charCount += ch.getCharSize();
             }
+
             h.setCharacterCount(charCount);
         } else {
             h.setCharacterCount(1);

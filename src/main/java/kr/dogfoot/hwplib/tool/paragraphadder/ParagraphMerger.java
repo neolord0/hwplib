@@ -186,7 +186,7 @@ public class ParagraphMerger {
         if (target.getText() == null) {
             count = 0;
         } else {
-            count = target.getText().getCharLength();
+            count = target.getText().getCharSize();
         }
 
         int start = 0;

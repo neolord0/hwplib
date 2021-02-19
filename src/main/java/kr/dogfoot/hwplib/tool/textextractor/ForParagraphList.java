@@ -161,7 +161,6 @@ public class ForParagraphList {
             }
         }
 
-
         if (option.getMethod() == TextExtractMethod.AppendControlTextAfterParagraphText) {
             controls(controlList, option, sb);
         }

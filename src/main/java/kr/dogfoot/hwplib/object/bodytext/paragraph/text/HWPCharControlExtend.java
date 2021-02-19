@@ -1,5 +1,6 @@
 package kr.dogfoot.hwplib.object.bodytext.paragraph.text;
 
+
 import kr.dogfoot.hwplib.object.bodytext.control.ControlType;
 import kr.dogfoot.hwplib.object.bodytext.control.ctrlheader.CtrlID;
 
@@ -176,5 +177,10 @@ public class HWPCharControlExtend extends HWPChar {
         }
 
         return cloned;
+    }
+
+    @Override
+    public int getCharSize() {
+        return 8;
     }
 }
