@@ -170,19 +170,22 @@ public class HWPReader {
     private void binData() throws Exception {
         if (cfr.isChildStorage("BinData")) {
             cfr.moveChildStorage("BinData");
-            int id = 1;
             Set<String> ss = cfr.listChildNames();
             Iterator<String> it = ss.iterator();
             while (it.hasNext()) {
                 String name = it.next();
+                int id = nameToID(name);
                 BinDataCompress compressMethod = getCompressMethod(id);
                 hwpFile.getBinData().addNewEmbeddedBinaryData(name, readEmbededBinaryData(name, compressMethod),
                         compressMethod);
-
-                id++;
             }
             cfr.moveParentStorage();
         }
+    }
+
+    private int nameToID(String name) {
+        String id = name.substring(3, 7);
+        return Integer.parseInt(id);
     }
 
     private BinDataCompress getCompressMethod(int id) {
@@ -201,8 +204,8 @@ public class HWPReader {
     /**
      * BinData 스토리지 아래에 스트림을 읽는다.
      *
-     * @param name  스트림 이름
-     * @param index 스트림 인덱스
+     * @param name           스트림 이름
+     * @param compressMethod 압축 방법
      * @return 스트림에 저장된 데이타
      * @throws Exception
      */
