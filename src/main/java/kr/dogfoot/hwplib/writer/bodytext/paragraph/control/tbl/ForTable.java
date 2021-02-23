@@ -23,7 +23,10 @@ public class ForTable {
      * @throws IOException
      */
     public static void write(Table t, StreamWriter sw) throws IOException {
-        recordHeader(t, sw);
+        int size = recordHeader(t, sw);
+        if (size > 4095) {
+            sw.writeUInt4(size);
+        }
 
         sw.writeUInt4(t.getProperty().getValue());
         sw.writeUInt2(t.getRowCount());
@@ -51,9 +54,11 @@ public class ForTable {
      * @param sw 스트림 라이터
      * @throws IOException
      */
-    private static void recordHeader(Table t, StreamWriter sw)
+    private static int recordHeader(Table t, StreamWriter sw)
             throws IOException {
-        sw.writeRecordHeader(HWPTag.TABLE, getSize(t, sw.getFileVersion()));
+        int size = getSize(t, sw.getFileVersion());
+        sw.writeRecordHeader(HWPTag.TABLE, size);
+        return size;
     }
 
     /**

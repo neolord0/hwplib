@@ -14,7 +14,6 @@ import kr.dogfoot.hwplib.tool.objectfinder.forField.gettext.ForControl;
 import kr.dogfoot.hwplib.tool.objectfinder.forField.gettext.ForControlWithAllField;
 import kr.dogfoot.hwplib.tool.paragraphadder.ParaTextSetter;
 import kr.dogfoot.hwplib.tool.textextractor.TextExtractMethod;
-import sun.jvm.hotspot.ui.tree.CStringTreeNodeAdapter;
 
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
