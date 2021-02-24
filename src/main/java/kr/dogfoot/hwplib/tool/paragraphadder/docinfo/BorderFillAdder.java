@@ -73,14 +73,8 @@ public class BorderFillAdder {
     }
 
     public boolean equalById(int sourceId, int targetId) {
-        System.out.println(sourceId + " " + docInfoAdder.getSourceHWPFile().getDocInfo().getBorderFillList().size());
-        System.out.println(targetId + " " + docInfoAdder.getTargetHWPFile().getDocInfo().getBorderFillList().size());
         BorderFill source = docInfoAdder.getSourceHWPFile().getDocInfo().getBorderFillList().get(sourceId - 1);
         BorderFill target = docInfoAdder.getTargetHWPFile().getDocInfo().getBorderFillList().get(targetId - 1);
-        if (source == null || target == null)  {
-            System.out.println("null");
-            return false;
-        }
         return equal(source, target);
     }
 }
