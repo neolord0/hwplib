@@ -20,10 +20,6 @@ public class ForTable {
      * @throws IOException
      */
     public static void read(Table table, StreamReader sr) throws IOException {
-        long extendedSize = 0;
-        if (sr.getCurrentRecordHeader().getSize() == 4095) {
-            extendedSize = sr.readUInt4();
-        }
         table.getProperty().setValue(sr.readUInt4());
 
         table.setRowCount(sr.readUInt2());

@@ -28,10 +28,6 @@ public class ForParaLineSeq {
 
 
         recordHeader(pls, sw);
-        long size = getSize(pls);
-        if (size > 4095) {
-            sw.writeUInt4(size);
-        }
 
         for (LineSegItem lsi : pls.getLineSegItemList()) {
             lineSegItem(lsi, sw);
@@ -48,8 +44,7 @@ public class ForParaLineSeq {
     private static void recordHeader(ParaLineSeg pls, StreamWriter sw)
             throws IOException {
         long size = getSize(pls);
-        size = (size > 4095) ? 4095 : size;
-        sw.writeRecordHeader(HWPTag.PARA_LINE_SEG, (int) size);
+        sw.writeRecordHeader(HWPTag.PARA_LINE_SEG,  size);
     }
 
     /**

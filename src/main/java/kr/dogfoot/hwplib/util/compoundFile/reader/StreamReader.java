@@ -162,6 +162,9 @@ public abstract class StreamReader {
         header.setTagID((short) BitFlag.get(value, 0, 9));
         header.setLevel((short) BitFlag.get(value, 10, 19));
         header.setSize((short) BitFlag.get(value, 20, 31));
+        if (header.getSize() == 4095) {
+            header.setSize(readUInt4());
+        }
         readAfterHeader = 0;
         return header;
     }

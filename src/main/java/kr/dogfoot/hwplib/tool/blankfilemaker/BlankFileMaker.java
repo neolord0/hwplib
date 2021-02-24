@@ -1,9 +1,7 @@
 package kr.dogfoot.hwplib.tool.blankfilemaker;
 
 import kr.dogfoot.hwplib.object.HWPFile;
-import kr.dogfoot.hwplib.object.bodytext.BodyText;
 import kr.dogfoot.hwplib.object.bodytext.Section;
-import kr.dogfoot.hwplib.object.bodytext.paragraph.Paragraph;
 import kr.dogfoot.hwplib.object.docinfo.DocInfo;
 import kr.dogfoot.hwplib.object.docinfo.DocumentPropeties;
 import kr.dogfoot.hwplib.object.docinfo.LayoutCompatibility;
@@ -21,6 +19,7 @@ public class BlankFileMaker {
         setDocumentProperties(docInfo.getDocumentProperties());
 
         FaceNameAdder.add(docInfo);
+        BorderFillAdder.add(docInfo);
         CharShapeAdder.add(docInfo);
         TabDefAdder.add(docInfo);
         NumberingAdder.add(docInfo);

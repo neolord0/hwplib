@@ -26,10 +26,7 @@ public class ForParaText {
             return;
         }
 
-        long size = p.getHeader().getCharacterCount() * 2;
-        recordHeader(size, sw);
-
-        realRecordSize(size, sw);
+        recordHeader(p, sw);
 
         for (HWPChar hc : p.getText().getCharList()) {
             hwpChar(hc, sw);
@@ -39,31 +36,14 @@ public class ForParaText {
     /**
      * 문단의 텍스트 레코드의 레코드 헤더를 쓴다.
      *
-     * @param size 실제 계산된 레코드 크기
+     * @param p    문단
      * @param sw   스트림 라이터
      * @throws IOException
      */
-    private static void recordHeader(long size, StreamWriter sw)
+    private static void recordHeader(Paragraph p, StreamWriter sw)
             throws IOException {
-        if (size > 4095) {
-            sw.writeRecordHeader(HWPTag.PARA_TEXT, 4095);
-        } else {
-            sw.writeRecordHeader(HWPTag.PARA_TEXT, (int) size);
-        }
-    }
-
-    /**
-     * 레코드의 크기가 4095보다 클 경우 실제 크기를 쓴다.
-     *
-     * @param size 실제 계산된 레코드 크기
-     * @param sw   스트림 라이터
-     * @throws IOException
-     */
-    private static void realRecordSize(long size, StreamWriter sw)
-            throws IOException {
-        if (size > 4095) {
-            sw.writeUInt4(size);
-        }
+        long size = p.getHeader().getCharacterCount() * 2;
+        sw.writeRecordHeader(HWPTag.PARA_TEXT, (int) size);
     }
 
     /**

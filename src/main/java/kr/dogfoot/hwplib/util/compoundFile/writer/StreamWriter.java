@@ -256,12 +256,16 @@ public class StreamWriter {
      * @param size  레코드의 크기
      * @throws IOException
      */
-    public void writeRecordHeader(int tagID, int size) throws IOException {
+    public void writeRecordHeader(int tagID, long size) throws IOException {
         long header = 0;
         header = BitFlag.set(header, 0, 9, tagID);
         header = BitFlag.set(header, 10, 19, currentRecordLevel);
-        header = BitFlag.set(header, 20, 31, Math.min(size, 4095));
+        header = BitFlag.set(header, 20, 31, Math.min((int) size, 4095));
         writeUInt4(header);
+
+        if (size >= 4095) {
+            writeUInt4(size);
+        }
     }
 
     /**
