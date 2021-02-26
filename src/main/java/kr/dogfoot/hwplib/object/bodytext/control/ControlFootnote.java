@@ -61,6 +61,7 @@ public class ControlFootnote extends Control {
         ControlFootnote cloned = new ControlFootnote();
         cloned.copyControlPart(this);
         cloned.listHeader.copy(listHeader);
+        cloned.paragraphList.copy(paragraphList);
         return cloned;
     }
 }

@@ -75,7 +75,7 @@ public class ControlPolygon extends GsoControl {
     @Override
     public Control clone() {
         ControlPolygon cloned = new ControlPolygon();
-        cloned.copyGsoControlPart(cloned);
+        cloned.copyGsoControlPart(this);
 
         if (textBox != null) {
             cloned.createTextBox();
