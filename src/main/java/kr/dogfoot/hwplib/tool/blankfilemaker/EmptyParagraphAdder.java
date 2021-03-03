@@ -41,8 +41,6 @@ public class EmptyParagraphAdder {
         paraText.addExtendCharForSectionDefine();
         ;
         paraText.addExtendCharForColumnDefine();
-        HWPCharControlChar controlChar = paraText.addNewCharControlChar();
-        controlChar.setCode((short) 13);
     }
 
     private static void charShape(Paragraph paragraph) {

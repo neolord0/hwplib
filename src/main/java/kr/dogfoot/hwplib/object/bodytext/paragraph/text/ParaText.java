@@ -224,6 +224,7 @@ public class ParaText {
                 break;
             }
         }
+
         HWPCharNormal ch2 = addNewNormalChar();
         ch2.setCode((short) 0x0d);
     }
@@ -328,6 +329,48 @@ public class ParaText {
         }
         processEndOfParagraph();
     }
+
+    /**
+     * 머리말을 위한 확장 컨트롤 문자를 추가한다.
+     */
+    public void addExtendCharForHeader() {
+        HWPCharControlExtend chExtend = addNewExtendControlChar();
+        chExtend.setCode((short) 0x0010);
+        byte[] addition = new byte[12];
+        addition[3] = 'h';
+        addition[2] = 'e';
+        addition[1] = 'a';
+        addition[0] = 'd';
+        try {
+            chExtend.setAddition(addition);
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+
+        processEndOfParagraph();
+    }
+
+    /**
+     * 머리말을 위한 확장 컨트롤 문자를 추가한다.
+     */
+    public void addExtendCharForFooter() {
+        HWPCharControlExtend chExtend = addNewExtendControlChar();
+        chExtend.setCode((short) 0x0010);
+        byte[] addition = new byte[12];
+        addition[3] = 'f';
+        addition[2] = 'o';
+        addition[1] = 'o';
+        addition[0] = 't';
+        try {
+            chExtend.setAddition(addition);
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        processEndOfParagraph();
+    }
+
 
     public ParaText clone() {
         ParaText cloned = new ParaText();

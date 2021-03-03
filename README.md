@@ -35,10 +35,17 @@
     </dependency>
     ```
 
+
+2021.3.3
+=========================================================================================  
+* 겹침문자 등에서 한글 고유에 특수문자를 읽고 쓸 때, 코드 변환 오류 수정
+* 객체 복사시 오류 수정
+* 머리글/꼬리글 예제 추가  sample/Inserting_HeaderFooter.java
+
 2021.2.24
 =========================================================================================  
 * 4095 바이트 보다 큰 레코드 읽고 쓰기 오류 수정
-* 빈 파일 만들기(kr.dogfoot.hwplib.tool.blankfilemaker.BlankFileMaker)에서 빠진 BorderFill 객체 생성. 
+* 빈 파일 만들기(kr.dogfoot.hwplib.tool.blankfilemaker.BlankFileMaker)에서 빠진 BorderFill 객체 생성.
 
 
 2021.2.18
