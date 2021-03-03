@@ -20,7 +20,7 @@ public class ForBullet {
      */
     public static void read(Bullet b, StreamReader sr) throws IOException {
         ForNumbering.paragraphHeadInfo(b.getParagraphHeadInfo(), sr);
-        b.setBulletChar(sr.readWChar());
+        b.getBulletChar().setBytes(sr.readWChar());
         unknownBytes(sr);
     }
 

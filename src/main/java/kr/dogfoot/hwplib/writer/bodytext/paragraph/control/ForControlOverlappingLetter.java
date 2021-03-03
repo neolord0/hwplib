@@ -2,6 +2,7 @@ package kr.dogfoot.hwplib.writer.bodytext.paragraph.control;
 
 import kr.dogfoot.hwplib.object.bodytext.control.ControlOverlappingLetter;
 import kr.dogfoot.hwplib.object.bodytext.control.ctrlheader.CtrlHeaderOverlappingLetter;
+import kr.dogfoot.hwplib.object.etc.HWPString;
 import kr.dogfoot.hwplib.object.etc.HWPTag;
 import kr.dogfoot.hwplib.util.compoundFile.writer.StreamWriter;
 
@@ -89,8 +90,8 @@ public class ForControlOverlappingLetter {
     private static void overlappingLetters(CtrlHeaderOverlappingLetter h,
                                            StreamWriter sw) throws IOException {
         sw.writeUInt2(h.getOverlappingLetterList().size());
-        for (String letter : h.getOverlappingLetterList()) {
-            sw.writeWChar(letter);
+        for (HWPString letter : h.getOverlappingLetterList()) {
+            sw.writeWChar(letter.getBytes());
         }
     }
 

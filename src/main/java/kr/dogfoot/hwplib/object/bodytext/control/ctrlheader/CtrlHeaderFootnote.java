@@ -2,6 +2,7 @@ package kr.dogfoot.hwplib.object.bodytext.control.ctrlheader;
 
 import kr.dogfoot.hwplib.object.bodytext.control.ControlType;
 import kr.dogfoot.hwplib.object.bodytext.control.sectiondefine.NumberShape;
+import kr.dogfoot.hwplib.object.etc.HWPString;
 
 /**
  * 각주(Foot Note) 컨트롤을 위한 컨트롤 헤더 레코드
@@ -16,11 +17,11 @@ public class CtrlHeaderFootnote extends CtrlHeader {
     /**
      * 앞 장식 문자
      */
-    private String beforeDecorationLetter;
+    private HWPString beforeDecorationLetter;
     /**
      * 뒤 장식 문자
      */
-    private String afterDecorationLetter;
+    private HWPString afterDecorationLetter;
     /**
      * 번호 모양
      */
@@ -35,6 +36,8 @@ public class CtrlHeaderFootnote extends CtrlHeader {
      */
     public CtrlHeaderFootnote() {
         super(ControlType.Footnote.getCtrlId());
+        beforeDecorationLetter = new HWPString();
+        afterDecorationLetter = new HWPString();
     }
 
     /**
@@ -60,35 +63,18 @@ public class CtrlHeaderFootnote extends CtrlHeader {
      *
      * @return 앞 장식 문자
      */
-    public String getBeforeDecorationLetter() {
+    public HWPString getBeforeDecorationLetter() {
         return beforeDecorationLetter;
     }
 
-    /**
-     * 앞 장식 문자를 설정한다.
-     *
-     * @param beforeDecorationLetter 앞 장식 문자
-     */
-    public void setBeforeDecorationLetter(String beforeDecorationLetter) {
-        this.beforeDecorationLetter = beforeDecorationLetter;
-    }
 
     /**
      * 뒤 장식 문자를 반환한다.
      *
      * @return 뒤 장식 문자
      */
-    public String getAfterDecorationLetter() {
+    public HWPString getAfterDecorationLetter() {
         return afterDecorationLetter;
-    }
-
-    /**
-     * 뒤 장식 문자를 설정한다.
-     *
-     * @param afterDecorationLetter 뒤 장식 문자
-     */
-    public void setAfterDecorationLetter(String afterDecorationLetter) {
-        this.afterDecorationLetter = afterDecorationLetter;
     }
 
     /**
@@ -131,8 +117,8 @@ public class CtrlHeaderFootnote extends CtrlHeader {
     public void copy(CtrlHeader from) {
         CtrlHeaderFootnote from2 = (CtrlHeaderFootnote) from;
         number = from2.number;
-        beforeDecorationLetter = from2.beforeDecorationLetter;
-        afterDecorationLetter = from2.afterDecorationLetter;
+        beforeDecorationLetter.copy(from2.beforeDecorationLetter);
+        afterDecorationLetter.copy(from2.afterDecorationLetter);
         numberShape = from2.numberShape;
         instanceId = from2.instanceId;
     }

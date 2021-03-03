@@ -47,7 +47,7 @@ public class ForControlField {
 
         sw.writeUInt4(h.getProperty().getValue());
         sw.writeUInt1(h.getEtcProperty());
-        sw.writeUTF16LEString(h.getCommand());
+        sw.writeHWPString(h.getCommand());
         sw.writeUInt4(h.getInstanceId());
 
         if (h.getCtrlId() == ControlType.FIELD_UNKNOWN.getCtrlId()) {
@@ -78,7 +78,7 @@ public class ForControlField {
     private static int getSize(CtrlHeaderField h) {
         int size = 0;
         size += 9;
-        size += StringUtil.getUTF16LEStringSize(h.getCommand());
+        size += h.getCommand().getWCharsSize();
         size += 8;
         return size;
     }

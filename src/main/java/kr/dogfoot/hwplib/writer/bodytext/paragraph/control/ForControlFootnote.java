@@ -47,8 +47,8 @@ public class ForControlFootnote {
         sw.writeUInt4(h.getCtrlId());
 
         sw.writeUInt4(h.getNumber());
-        sw.writeWChar(h.getBeforeDecorationLetter());
-        sw.writeWChar(h.getAfterDecorationLetter());
+        sw.writeWChar(h.getBeforeDecorationLetter().getBytes());
+        sw.writeWChar(h.getAfterDecorationLetter().getBytes());
         sw.writeUInt4(h.getNumberShape().getValue());
         sw.writeUInt4(h.getInstanceId());
 

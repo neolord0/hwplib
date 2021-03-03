@@ -23,7 +23,7 @@ public class ForBullet {
         recordHeader(sw);
 
         ForNumbering.paragraphHeadInfo(b.getParagraphHeadInfo(), sw);
-        sw.writeWChar(b.getBulletChar());
+        sw.writeWChar(b.getBulletChar().getBytes());
         sw.writeZero(9);
     }
 

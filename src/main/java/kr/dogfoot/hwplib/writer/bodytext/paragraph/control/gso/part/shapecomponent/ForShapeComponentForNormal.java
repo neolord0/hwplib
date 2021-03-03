@@ -128,7 +128,7 @@ public class ForShapeComponentForNormal {
             sw.writeSInt4(si.getOffsetX());
             sw.writeSInt4(si.getOffsetY());
             sw.writeZero(5);
-            sw.writeUInt1(si.getTransparnet());
+            sw.writeUInt1(si.getTransparent());
         }
     }
 

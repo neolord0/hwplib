@@ -25,7 +25,7 @@ public class EquationCopier {
         target.setOutterMarginBottom(source.getOutterMarginBottom());
         target.setInstanceId(source.getInstanceId());
         target.setPreventPageDivide(source.isPreventPageDivide());
-        target.setExplanation(source.getExplanation());
+        target.getExplanation().copy(source.getExplanation());
     }
 
     private static void caption(ControlEquation source, ControlEquation target, DocInfoAdder docInfoAdder) {
@@ -37,12 +37,12 @@ public class EquationCopier {
 
     private static void eqEdit(EQEdit source, EQEdit target, DocInfoAdder docInfoAdder) {
         target.setProperty(source.getProperty());
-        target.setScript(source.getScript());
+        target.getScript().copy(source.getScript());
         target.setLetterSize(source.getLetterSize());
         target.getLetterColor().setValue(source.getLetterColor().getValue());
         target.setBaseLine(source.getBaseLine());
         target.setUnknown(source.getUnknown());
-        target.setVersionInfo(source.getVersionInfo());
-        target.setFontName(source.getFontName());
+        target.getVersionInfo().copy(source.getVersionInfo());
+        target.getFontName().copy(source.getFontName());
     }
 }

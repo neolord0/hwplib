@@ -35,8 +35,8 @@ public class ForControlAutoNumber {
             throws IOException {
         h.getProperty().setValue(sr.readUInt4());
         h.setNumber(sr.readUInt2());
-        h.setUserSymbol(sr.readWChar());
-        h.setBeforeDecorationLetter(sr.readWChar());
-        h.setAfterDecorationLetter(sr.readWChar());
+        h.getUserSymbol().setBytes(sr.readWChar());
+        h.getBeforeDecorationLetter().setBytes(sr.readWChar());
+        h.getAfterDecorationLetter().setBytes(sr.readWChar());
     }
 }

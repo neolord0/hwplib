@@ -27,7 +27,7 @@ public class ShadowInfo {
     /**
      * 투명도
      */
-    private short transparnet;
+    private short transparent;
 
     /**
      * 생성자
@@ -104,17 +104,17 @@ public class ShadowInfo {
      *
      * @return 투명도
      */
-    public short getTransparnet() {
-        return transparnet;
+    public short getTransparent() {
+        return transparent;
     }
 
     /**
      * 투명도를 설정한다.
      *
-     * @param transparnet 투명도
+     * @param transparent 투명도
      */
-    public void setTransparnet(short transparnet) {
-        this.transparnet = transparnet;
+    public void setTransparent(short transparent) {
+        this.transparent = transparent;
     }
 
     public void copy(ShadowInfo from) {
@@ -122,6 +122,6 @@ public class ShadowInfo {
         color.copy(from.color);
         offsetX = from.offsetX;
         offsetY = from.offsetY;
-        transparnet = from.transparnet;
+        transparent = from.transparent;
     }
 }

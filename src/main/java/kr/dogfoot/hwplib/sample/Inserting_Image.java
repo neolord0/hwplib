@@ -41,7 +41,7 @@ public class Inserting_Image {
             Inserting_Image tii = new Inserting_Image();
             tii.insertShapeWithImage(hwpFile);
 
-            String writePath = "sample_hwp" + File.separator + "result-insert-image.hwp";
+            String writePath = "sample_hwp" + File.separator + "result-inserting-image.hwp";
             HWPWriter.toFile(hwpFile, writePath);
         }
     }
@@ -155,7 +155,7 @@ public class Inserting_Image {
         hdr.setOutterMarginBottom(0);
         hdr.setInstanceId(instanceID);
         hdr.setPreventPageDivide(false);
-        hdr.setExplanation(null);
+        hdr.getExplanation().setBytes(null);
     }
 
     private int fromMM(int mm) {
@@ -213,7 +213,7 @@ public class Inserting_Image {
         si.getColor().setValue(0xc4c4c4);
         si.setOffsetX(283);
         si.setOffsetY(283);
-        si.setTransparnet((short) 0);
+        si.setTransparent((short) 0);
 
         sc.setMatrixsNormal();
     }

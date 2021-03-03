@@ -23,9 +23,9 @@ public class ForFootEndNoteShape {
     public static void read(FootEndNoteShape fens, StreamReader sr)
             throws IOException {
         fens.getProperty().setValue(sr.readUInt4());
-        fens.setUserSymbol(sr.readWChar());
-        fens.setBeforeDecorativeLetter(sr.readWChar());
-        fens.setAfterDecorativeLetter(sr.readWChar());
+        fens.getUserSymbol().setBytes(sr.readWChar());
+        fens.getBeforeDecorativeLetter().setBytes(sr.readWChar());
+        fens.getAfterDecorativeLetter().setBytes(sr.readWChar());
         fens.setStartNumber(sr.readUInt2());
         fens.setDivideLineLength(sr.readUInt4());
         fens.setDivideLineTopMargin(sr.readUInt2());

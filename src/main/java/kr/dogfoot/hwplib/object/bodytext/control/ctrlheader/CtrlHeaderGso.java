@@ -2,6 +2,7 @@ package kr.dogfoot.hwplib.object.bodytext.control.ctrlheader;
 
 import kr.dogfoot.hwplib.object.bodytext.control.ControlType;
 import kr.dogfoot.hwplib.object.bodytext.control.ctrlheader.gso.GsoHeaderProperty;
+import kr.dogfoot.hwplib.object.etc.HWPString;
 
 /**
  * 그리기 개체을 위한 컨트롤 헤더 레코드
@@ -60,7 +61,7 @@ public class CtrlHeaderGso extends CtrlHeader {
     /**
      * 개체 설명문
      */
-    private String explanation;
+    private HWPString explanation;
 
     /**
      * 생성자
@@ -69,6 +70,7 @@ public class CtrlHeaderGso extends CtrlHeader {
         super(ControlType.Gso.getCtrlId());
 
         property = new GsoHeaderProperty();
+        explanation = new HWPString();
     }
 
     /**
@@ -80,6 +82,7 @@ public class CtrlHeaderGso extends CtrlHeader {
         super(controlType.getCtrlId());
 
         property = new GsoHeaderProperty();
+        explanation = new HWPString();
     }
 
     /**
@@ -294,17 +297,8 @@ public class CtrlHeaderGso extends CtrlHeader {
      *
      * @return 개체 설명문
      */
-    public String getExplanation() {
+    public HWPString getExplanation() {
         return explanation;
-    }
-
-    /**
-     * 개체 설명문을 설정한다.
-     *
-     * @param explanation 개체 설명문
-     */
-    public void setExplanation(String explanation) {
-        this.explanation = explanation;
     }
 
     @Override
@@ -322,6 +316,6 @@ public class CtrlHeaderGso extends CtrlHeader {
         outterMarginBottom = from2.outterMarginBottom;
         instanceId = from2.instanceId;
         preventPageDivide = from2.preventPageDivide;
-        explanation = from2.explanation;
+        explanation.copy(from2.explanation);
     }
 }

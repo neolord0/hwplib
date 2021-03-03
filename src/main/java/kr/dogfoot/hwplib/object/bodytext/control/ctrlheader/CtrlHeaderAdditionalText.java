@@ -4,6 +4,7 @@ import kr.dogfoot.hwplib.object.bodytext.control.ControlHeader;
 import kr.dogfoot.hwplib.object.bodytext.control.ControlType;
 import kr.dogfoot.hwplib.object.bodytext.control.ctrlheader.additionaltext.AdditionalTextPosition;
 import kr.dogfoot.hwplib.object.docinfo.parashape.Alignment;
+import kr.dogfoot.hwplib.object.etc.HWPString;
 
 /**
  * 덧말 컨트롤을 위한 컨트롤 헤더 레코드
@@ -14,11 +15,11 @@ public class CtrlHeaderAdditionalText extends CtrlHeader {
     /**
      * main text
      */
-    private String mainText;
+    private HWPString mainText;
     /**
      * sub text
      */
-    private String subText;
+    private HWPString subText;
     /**
      * 덧말 위치
      */
@@ -45,6 +46,8 @@ public class CtrlHeaderAdditionalText extends CtrlHeader {
      */
     public CtrlHeaderAdditionalText() {
         super(ControlType.AdditionalText.getCtrlId());
+        mainText = new HWPString();
+        subText = new HWPString();
     }
 
     /**
@@ -52,17 +55,8 @@ public class CtrlHeaderAdditionalText extends CtrlHeader {
      *
      * @return main text
      */
-    public String getMainText() {
+    public HWPString getMainText() {
         return mainText;
-    }
-
-    /**
-     * main text를 설정한다.
-     *
-     * @param mainText main text
-     */
-    public void setMainText(String mainText) {
-        this.mainText = mainText;
     }
 
     /**
@@ -70,17 +64,8 @@ public class CtrlHeaderAdditionalText extends CtrlHeader {
      *
      * @return sub text
      */
-    public String getSubText() {
+    public HWPString getSubText() {
         return subText;
-    }
-
-    /**
-     * sub text를 설정한다.
-     *
-     * @param subText sub text
-     */
-    public void setSubText(String subText) {
-        this.subText = subText;
     }
 
     /**
@@ -176,8 +161,8 @@ public class CtrlHeaderAdditionalText extends CtrlHeader {
     @Override
     public void copy(CtrlHeader from) {
         CtrlHeaderAdditionalText from2 = (CtrlHeaderAdditionalText) from;
-        mainText = from2.mainText;
-        subText = from2.subText;
+        mainText.copy(from2.mainText);
+        subText.copy(from2.subText);
         position = from2.position;
         fsizeratio = from2.fsizeratio;
         option = from2.option;

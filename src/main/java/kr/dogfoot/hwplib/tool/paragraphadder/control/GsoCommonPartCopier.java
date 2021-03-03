@@ -48,7 +48,7 @@ public class GsoCommonPartCopier {
         target.setOutterMarginBottom(source.getOutterMarginBottom());
         target.setInstanceId(source.getInstanceId());
         target.setPreventPageDivide(source.isPreventPageDivide());
-        target.setExplanation(source.getExplanation());
+        target.getExplanation().copy(source.getExplanation());
     }
 
     private static void ctrlData(GsoControl source, GsoControl target, DocInfoAdder docInfoAdder) {
@@ -163,7 +163,7 @@ public class GsoCommonPartCopier {
         target.getColor().setValue(source.getColor().getValue());
         target.setOffsetX(source.getOffsetX());
         target.setOffsetY(source.getOffsetY());
-        target.setTransparnet(source.getTransparnet());
+        target.setTransparent(source.getTransparent());
     }
 
     private static void shapeComponentGroup(ShapeComponentContainer source, ShapeComponentContainer target) {

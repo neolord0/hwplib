@@ -37,9 +37,8 @@ public class ForControlAdditionalText {
             throws IOException {
         recordHeader(h, sw);
         sw.writeUInt4(h.getCtrlId());
-
-        sw.writeUTF16LEString(h.getMainText());
-        sw.writeUTF16LEString(h.getSubText());
+        sw.writeHWPString(h.getMainText());
+        sw.writeHWPString(h.getSubText());
         sw.writeUInt4(h.getPosition().getValue());
         sw.writeUInt4(h.getFsizeratio());
         sw.writeUInt4(h.getOption());
@@ -68,8 +67,8 @@ public class ForControlAdditionalText {
     private static int getSize(CtrlHeaderAdditionalText h) {
         int size = 0;
         size += 4;
-        size += StringUtil.getUTF16LEStringSize(h.getMainText());
-        size += StringUtil.getUTF16LEStringSize(h.getSubText());
+        size += h.getMainText().getWCharsSize();
+        size += h.getSubText().getWCharsSize();
         size += 20;
         return size;
     }

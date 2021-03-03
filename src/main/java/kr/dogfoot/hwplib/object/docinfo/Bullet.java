@@ -1,6 +1,7 @@
 package kr.dogfoot.hwplib.object.docinfo;
 
 import kr.dogfoot.hwplib.object.docinfo.numbering.ParagraphHeadInfo;
+import kr.dogfoot.hwplib.object.etc.HWPString;
 
 /**
  * 글머리표에 대한 레코드
@@ -15,13 +16,14 @@ public class Bullet {
     /**
      * 글머리표 문자
      */
-    private String bulletChar;
+    private HWPString bulletChar;
 
     /**
      * 생성자
      */
     public Bullet() {
         paragraphHeadInfo = new ParagraphHeadInfo();
+        bulletChar = new HWPString();
     }
 
     /**
@@ -38,23 +40,14 @@ public class Bullet {
      *
      * @return 글머리표 문자
      */
-    public String getBulletChar() {
+    public HWPString getBulletChar() {
         return bulletChar;
-    }
-
-    /**
-     * 글머리표 문자를 설정한다.
-     *
-     * @param bulletChar 글머리표 문자
-     */
-    public void setBulletChar(String bulletChar) {
-        this.bulletChar = bulletChar;
     }
 
     public Bullet clone() {
         Bullet cloned = new Bullet();
         cloned.paragraphHeadInfo.copy(paragraphHeadInfo);
-        cloned.bulletChar = bulletChar;
+        cloned.bulletChar.copy(bulletChar);
         return cloned;
     }
 }

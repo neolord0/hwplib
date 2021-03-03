@@ -40,7 +40,7 @@ public class ForControlField {
             throws IOException {
         h.getProperty().setValue(sr.readUInt4());
         h.setEtcProperty(sr.readUInt1());
-        h.setCommand(sr.readUTF16LEString());
+        h.getCommand().setBytes(sr.readHWPString());
         h.setInstanceId(sr.readUInt4());
 
         if (sr.isEndOfRecord() == false

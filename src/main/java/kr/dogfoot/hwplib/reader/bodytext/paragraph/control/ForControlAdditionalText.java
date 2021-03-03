@@ -35,8 +35,8 @@ public class ForControlAdditionalText {
      */
     private static void ctrlHeader(CtrlHeaderAdditionalText h, StreamReader sr)
             throws IOException {
-        h.setMainText(sr.readUTF16LEString());
-        h.setSubText(sr.readUTF16LEString());
+        h.getMainText().setBytes(sr.readHWPString());
+        h.getSubText().setBytes(sr.readHWPString());
         h.setPosition(AdditionalTextPosition.valueOf((byte) sr.readUInt4()));
         h.setFsizeratio(sr.readUInt4());
         h.setOption(sr.readUInt4());

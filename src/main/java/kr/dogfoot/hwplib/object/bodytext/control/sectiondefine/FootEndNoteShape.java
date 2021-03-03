@@ -3,6 +3,7 @@ package kr.dogfoot.hwplib.object.bodytext.control.sectiondefine;
 import kr.dogfoot.hwplib.object.docinfo.borderfill.BorderThickness;
 import kr.dogfoot.hwplib.object.docinfo.borderfill.BorderType;
 import kr.dogfoot.hwplib.object.etc.Color4Byte;
+import kr.dogfoot.hwplib.object.etc.HWPString;
 
 /**
  * 미주/각주 모양 정보에 대한 레코드
@@ -17,15 +18,15 @@ public class FootEndNoteShape {
     /**
      * 사용자 기호
      */
-    private String userSymbol;
+    private HWPString userSymbol;
     /**
      * 앞 장식 문자
      */
-    private String beforeDecorativeLetter;
+    private HWPString beforeDecorativeLetter;
     /**
      * 뒤 장식 문자
      */
-    private String afterDecorativeLetter;
+    private HWPString afterDecorativeLetter;
     /**
      * 시작 번호
      */
@@ -68,6 +69,9 @@ public class FootEndNoteShape {
      */
     public FootEndNoteShape() {
         property = new FootNoteShapeProperty();
+        userSymbol = new HWPString();
+        beforeDecorativeLetter = new HWPString();
+        afterDecorativeLetter = new HWPString();
         divideLineColor = new Color4Byte();
     }
 
@@ -85,17 +89,8 @@ public class FootEndNoteShape {
      *
      * @return 사용자 기호
      */
-    public String getUserSymbol() {
+    public HWPString getUserSymbol() {
         return userSymbol;
-    }
-
-    /**
-     * 사용자 기호를 설정한다.
-     *
-     * @param userSymbol 사용자 기호
-     */
-    public void setUserSymbol(String userSymbol) {
-        this.userSymbol = userSymbol;
     }
 
     /**
@@ -103,17 +98,8 @@ public class FootEndNoteShape {
      *
      * @return 앞 장식 문자
      */
-    public String getBeforeDecorativeLetter() {
+    public HWPString getBeforeDecorativeLetter() {
         return beforeDecorativeLetter;
-    }
-
-    /**
-     * 앞 장식 문자를 설정한다.
-     *
-     * @param beforeDecorativeLetter 앞 장식 문자
-     */
-    public void setBeforeDecorativeLetter(String beforeDecorativeLetter) {
-        this.beforeDecorativeLetter = beforeDecorativeLetter;
     }
 
     /**
@@ -121,17 +107,8 @@ public class FootEndNoteShape {
      *
      * @return 뒤 장식 문자
      */
-    public String getAfterDecorativeLetter() {
+    public HWPString getAfterDecorativeLetter() {
         return afterDecorativeLetter;
-    }
-
-    /**
-     * 뒤 장식 문자를 설정한다.
-     *
-     * @param afterDecorativeLetter 뒤 장식 문자
-     */
-    public void setAfterDecorativeLetter(String afterDecorativeLetter) {
-        this.afterDecorativeLetter = afterDecorativeLetter;
     }
 
     /**
@@ -287,9 +264,9 @@ public class FootEndNoteShape {
 
     public void copy(FootEndNoteShape from) {
         property.copy(from.property);
-        userSymbol = from.userSymbol;
-        beforeDecorativeLetter = from.beforeDecorativeLetter;
-        afterDecorativeLetter = from.afterDecorativeLetter;
+        userSymbol.copy(from.userSymbol);
+        beforeDecorativeLetter.copy(from.beforeDecorativeLetter);
+        afterDecorativeLetter.copy(from.afterDecorativeLetter);
         startNumber = from.startNumber;
         divideLineLength = from.divideLineLength;
         divideLineTopMargin = from.divideLineTopMargin;

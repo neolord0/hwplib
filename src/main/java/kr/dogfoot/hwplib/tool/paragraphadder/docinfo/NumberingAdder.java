@@ -84,7 +84,7 @@ public class NumberingAdder {
 
     private void copyLevelNumbering(LevelNumbering source, LevelNumbering target) {
         copyParagraphHeadInfo(source.getParagraphHeadInfo(), target.getParagraphHeadInfo());
-        target.setNumberFormat(source.getNumberFormat());
+        target.getNumberFormat().copy(source.getNumberFormat());
         target.setStartNumber(source.getStartNumber());
     }
 

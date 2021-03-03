@@ -39,7 +39,7 @@ public class BulletAdder {
 
     private boolean equal(Bullet source, Bullet target) {
         return equalParagraphHeadInfo(source.getParagraphHeadInfo(), target.getParagraphHeadInfo())
-                && StringUtil.equals(source.getBulletChar(), target.getBulletChar());
+                && source.getBulletChar().equals(target.getBulletChar());
     }
 
     private boolean equalParagraphHeadInfo(ParagraphHeadInfo source, ParagraphHeadInfo target) {
@@ -52,7 +52,7 @@ public class BulletAdder {
     private int addAndCopy(Bullet source) {
         Bullet target = docInfoAdder.getTargetHWPFile().getDocInfo().addNewBullet();
         copyParagraphHeadInfo(source.getParagraphHeadInfo(), target.getParagraphHeadInfo());
-        target.setBulletChar(source.getBulletChar());
+        target.getBulletChar().copy(source.getBulletChar());
 
         return docInfoAdder.getTargetHWPFile().getDocInfo().getBulletList().size();
     }

@@ -35,8 +35,8 @@ public class ForControlPageNumberPosition {
                                    StreamReader sr) throws IOException {
         header.getProperty().setValue(sr.readUInt4());
         header.setNumber(sr.readUInt2());
-        header.setUserSymbol(sr.readWChar());
-        header.setBeforeDecorationLetter(sr.readWChar());
-        header.setAfterDecorationLetter(sr.readWChar());
+        header.getUserSymbol().setBytes(sr.readWChar());
+        header.getBeforeDecorationLetter().setBytes(sr.readWChar());
+        header.getAfterDecorationLetter().setBytes(sr.readWChar());
     }
 }

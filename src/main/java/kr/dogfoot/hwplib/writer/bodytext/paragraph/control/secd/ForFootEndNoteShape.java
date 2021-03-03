@@ -28,9 +28,9 @@ public class ForFootEndNoteShape {
         recordHeader(sw);
 
         sw.writeUInt4(fens.getProperty().getValue());
-        sw.writeWChar(fens.getUserSymbol());
-        sw.writeWChar(fens.getBeforeDecorativeLetter());
-        sw.writeWChar(fens.getAfterDecorativeLetter());
+        sw.writeWChar(fens.getUserSymbol().getBytes());
+        sw.writeWChar(fens.getBeforeDecorativeLetter().getBytes());
+        sw.writeWChar(fens.getAfterDecorativeLetter().getBytes());
         sw.writeUInt2(fens.getStartNumber());
         sw.writeUInt4(fens.getDivideLineLength());
         sw.writeUInt2(fens.getDivideLineTopMargin());

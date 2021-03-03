@@ -2,6 +2,7 @@ package kr.dogfoot.hwplib.object.bodytext.control.ctrlheader;
 
 import kr.dogfoot.hwplib.object.bodytext.control.ControlType;
 import kr.dogfoot.hwplib.object.bodytext.control.ctrlheader.autonumber.AutoNumberHeaderProperty;
+import kr.dogfoot.hwplib.object.etc.HWPString;
 
 /**
  * 자동번호 컨트롤을 위한 컨트롤 헤더 레코드
@@ -20,15 +21,15 @@ public class CtrlHeaderAutoNumber extends CtrlHeader {
     /**
      * 사용자 기호
      */
-    private String userSymbol;
+    private HWPString userSymbol;
     /**
      * 앞 장식 문자
      */
-    private String beforeDecorationLetter;
+    private HWPString beforeDecorationLetter;
     /**
      * 뒤 장식 문자
      */
-    private String afterDecorationLetter;
+    private HWPString afterDecorationLetter;
 
     /**
      * 생성자
@@ -37,6 +38,9 @@ public class CtrlHeaderAutoNumber extends CtrlHeader {
         super(ControlType.AutoNumber.getCtrlId());
 
         property = new AutoNumberHeaderProperty();
+        userSymbol = new HWPString();
+        beforeDecorationLetter = new HWPString();
+        afterDecorationLetter = new HWPString();
     }
 
     /**
@@ -71,17 +75,8 @@ public class CtrlHeaderAutoNumber extends CtrlHeader {
      *
      * @return 사용자 기호
      */
-    public String getUserSymbol() {
+    public HWPString getUserSymbol() {
         return userSymbol;
-    }
-
-    /**
-     * 사용자 기호를 설정한다.
-     *
-     * @param userSymbol 사용자 기호
-     */
-    public void setUserSymbol(String userSymbol) {
-        this.userSymbol = userSymbol;
     }
 
     /**
@@ -89,17 +84,8 @@ public class CtrlHeaderAutoNumber extends CtrlHeader {
      *
      * @return 앞 장식 문자
      */
-    public String getBeforeDecorationLetter() {
+    public HWPString getBeforeDecorationLetter() {
         return beforeDecorationLetter;
-    }
-
-    /**
-     * 앞 장식 문자를 설정한다.
-     *
-     * @param beforeDecorationLetter 앞 장식 문자
-     */
-    public void setBeforeDecorationLetter(String beforeDecorationLetter) {
-        this.beforeDecorationLetter = beforeDecorationLetter;
     }
 
     /**
@@ -107,28 +93,18 @@ public class CtrlHeaderAutoNumber extends CtrlHeader {
      *
      * @return 뒤 장식 문자
      */
-    public String getAfterDecorationLetter() {
+    public HWPString getAfterDecorationLetter() {
         return afterDecorationLetter;
     }
-
-    /**
-     * 뒤 장식 문자를 설정한다.
-     *
-     * @param afterDecorationLetter 뒤 장식 문자
-     */
-    public void setAfterDecorationLetter(String afterDecorationLetter) {
-        this.afterDecorationLetter = afterDecorationLetter;
-    }
-
 
     @Override
     public void copy(CtrlHeader from) {
         CtrlHeaderAutoNumber from2 = (CtrlHeaderAutoNumber) from;
         property.copy(from2.property);
         number = from2.number;
-        userSymbol = from2.userSymbol;
-        beforeDecorationLetter = from2.beforeDecorationLetter;
-        afterDecorationLetter = from2.afterDecorationLetter;
+        userSymbol.copy(from2.userSymbol);
+        beforeDecorationLetter.copy(from2.beforeDecorationLetter);
+        afterDecorationLetter.copy(from2.afterDecorationLetter);
 
     }
 }

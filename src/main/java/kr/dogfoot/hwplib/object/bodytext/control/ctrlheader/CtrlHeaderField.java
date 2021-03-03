@@ -2,6 +2,7 @@ package kr.dogfoot.hwplib.object.bodytext.control.ctrlheader;
 
 import kr.dogfoot.hwplib.object.bodytext.control.ControlType;
 import kr.dogfoot.hwplib.object.bodytext.control.ctrlheader.field.FieldHeaderProperty;
+import kr.dogfoot.hwplib.object.etc.HWPString;
 
 /**
  * 필드 컨트롤를 위한 컨트롤 헤더 레코드
@@ -20,7 +21,7 @@ public class CtrlHeaderField extends CtrlHeader {
     /**
      * command
      */
-    private String command;
+    private HWPString command;
     /**
      * id(문서 내 고유 아이디)
      */
@@ -46,6 +47,7 @@ public class CtrlHeaderField extends CtrlHeader {
         super(ctrlId);
 
         property = new FieldHeaderProperty();
+        command = new HWPString();
     }
 
     /**
@@ -89,17 +91,8 @@ public class CtrlHeaderField extends CtrlHeader {
      *
      * @return 필드 command
      */
-    public String getCommand() {
+    public HWPString getCommand() {
         return command;
-    }
-
-    /**
-     * 필드 command를 설정한다.
-     *
-     * @param command 필드 command
-     */
-    public void setCommand(String command) {
-        this.command = command;
     }
 
     /**
@@ -143,9 +136,8 @@ public class CtrlHeaderField extends CtrlHeader {
         CtrlHeaderField from2 = (CtrlHeaderField) from;
         property.copy(from2.property);
         etcProperty = from2.etcProperty;
-        command = from2.command;
+        command.copy(from2.command);
         instanceId = from2.instanceId;
         memoIndex = from2.memoIndex;
     }
-
 }

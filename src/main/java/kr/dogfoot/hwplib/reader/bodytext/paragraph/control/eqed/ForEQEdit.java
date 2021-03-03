@@ -20,7 +20,7 @@ public class ForEQEdit {
      */
     public static void read(EQEdit eqEdit, StreamReader sr) throws IOException {
         eqEdit.setProperty(sr.readUInt4());
-        eqEdit.setScript(sr.readUTF16LEString());
+        eqEdit.getScript().setBytes(sr.readHWPString());
         eqEdit.setLetterSize(sr.readUInt4());
         eqEdit.getLetterColor().setValue(sr.readUInt4());
 
@@ -33,11 +33,11 @@ public class ForEQEdit {
         }
 
         if (sr.isEndOfRecord() == false) {
-            eqEdit.setVersionInfo(sr.readUTF16LEString());
+            eqEdit.getVersionInfo().setBytes(sr.readHWPString());
         }
 
         if (sr.isEndOfRecord() == false) {
-            eqEdit.setFontName(sr.readUTF16LEString());
+            eqEdit.getFontName().setBytes(sr.readHWPString());
         }
     }
 

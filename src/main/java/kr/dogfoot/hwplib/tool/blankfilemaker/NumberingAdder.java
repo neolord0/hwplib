@@ -16,7 +16,7 @@ public class NumberingAdder {
             levelNumbering.getParagraphHeadInfo().setCorrectionValueForWidth(0);
             levelNumbering.getParagraphHeadInfo().setDistanceFromBody(50);
             levelNumbering.getParagraphHeadInfo().setCharShapeID(-1);
-            levelNumbering.setNumberFormat("^1.");
+            levelNumbering.getNumberFormat().fromUTF16LEString("^1.");
             levelNumbering.setStartNumber(1);
         } catch (Exception e) {
             e.printStackTrace();
@@ -28,7 +28,7 @@ public class NumberingAdder {
             levelNumbering.getParagraphHeadInfo().setCorrectionValueForWidth(0);
             levelNumbering.getParagraphHeadInfo().setDistanceFromBody(50);
             levelNumbering.getParagraphHeadInfo().setCharShapeID(-1);
-            levelNumbering.setNumberFormat("^2.");
+            levelNumbering.getNumberFormat().fromUTF16LEString("^2.");
             levelNumbering.setStartNumber(1);
         } catch (Exception e) {
             e.printStackTrace();
@@ -40,7 +40,7 @@ public class NumberingAdder {
             levelNumbering.getParagraphHeadInfo().setCorrectionValueForWidth(0);
             levelNumbering.getParagraphHeadInfo().setDistanceFromBody(50);
             levelNumbering.getParagraphHeadInfo().setCharShapeID(-1);
-            levelNumbering.setNumberFormat("^3)");
+            levelNumbering.getNumberFormat().fromUTF16LEString("^3)");
             levelNumbering.setStartNumber(1);
         } catch (Exception e) {
             e.printStackTrace();
@@ -52,7 +52,7 @@ public class NumberingAdder {
             levelNumbering.getParagraphHeadInfo().setCorrectionValueForWidth(0);
             levelNumbering.getParagraphHeadInfo().setDistanceFromBody(50);
             levelNumbering.getParagraphHeadInfo().setCharShapeID(-1);
-            levelNumbering.setNumberFormat("^4)");
+            levelNumbering.getNumberFormat().fromUTF16LEString("^4)");
             levelNumbering.setStartNumber(1);
         } catch (Exception e) {
             e.printStackTrace();
@@ -64,7 +64,7 @@ public class NumberingAdder {
             levelNumbering.getParagraphHeadInfo().setCorrectionValueForWidth(0);
             levelNumbering.getParagraphHeadInfo().setDistanceFromBody(50);
             levelNumbering.getParagraphHeadInfo().setCharShapeID(-1);
-            levelNumbering.setNumberFormat("(^5)");
+            levelNumbering.getNumberFormat().fromUTF16LEString("(^5)");
             levelNumbering.setStartNumber(1);
         } catch (Exception e) {
             e.printStackTrace();
@@ -76,7 +76,7 @@ public class NumberingAdder {
             levelNumbering.getParagraphHeadInfo().setCorrectionValueForWidth(0);
             levelNumbering.getParagraphHeadInfo().setDistanceFromBody(50);
             levelNumbering.getParagraphHeadInfo().setCharShapeID(-1);
-            levelNumbering.setNumberFormat("(^6)");
+            levelNumbering.getNumberFormat().fromUTF16LEString("(^6)");
             levelNumbering.setStartNumber(1);
         } catch (Exception e) {
             e.printStackTrace();
@@ -88,7 +88,7 @@ public class NumberingAdder {
             levelNumbering.getParagraphHeadInfo().setCorrectionValueForWidth(0);
             levelNumbering.getParagraphHeadInfo().setDistanceFromBody(50);
             levelNumbering.getParagraphHeadInfo().setCharShapeID(-1);
-            levelNumbering.setNumberFormat("^7");
+            levelNumbering.getNumberFormat().fromUTF16LEString("^7");
             levelNumbering.setStartNumber(1);
         } catch (Exception e) {
             e.printStackTrace();
@@ -100,7 +100,7 @@ public class NumberingAdder {
             levelNumbering.getParagraphHeadInfo().setCorrectionValueForWidth(0);
             levelNumbering.getParagraphHeadInfo().setDistanceFromBody(0);
             levelNumbering.getParagraphHeadInfo().setCharShapeID(0);
-            levelNumbering.setNumberFormat(null);
+            levelNumbering.getNumberFormat().fromUTF16LEString(null);
             levelNumbering.setStartNumber(0);
         } catch (Exception e) {
             e.printStackTrace();
@@ -112,7 +112,7 @@ public class NumberingAdder {
             levelNumbering.getParagraphHeadInfo().setCorrectionValueForWidth(0);
             levelNumbering.getParagraphHeadInfo().setDistanceFromBody(0);
             levelNumbering.getParagraphHeadInfo().setCharShapeID(0);
-            levelNumbering.setNumberFormat(null);
+            levelNumbering.getNumberFormat().fromUTF16LEString(null);
             levelNumbering.setStartNumber(0);
         } catch (Exception e) {
             e.printStackTrace();
@@ -124,7 +124,7 @@ public class NumberingAdder {
             levelNumbering.getParagraphHeadInfo().setCorrectionValueForWidth(0);
             levelNumbering.getParagraphHeadInfo().setDistanceFromBody(0);
             levelNumbering.getParagraphHeadInfo().setCharShapeID(0);
-            levelNumbering.setNumberFormat(null);
+            levelNumbering.getNumberFormat().fromUTF16LEString(null);
             levelNumbering.setStartNumber(0);
         } catch (Exception e) {
             e.printStackTrace();

@@ -1,6 +1,7 @@
 package kr.dogfoot.hwplib.object.bodytext.control.ctrlheader;
 
 import kr.dogfoot.hwplib.object.bodytext.control.ControlType;
+import kr.dogfoot.hwplib.object.etc.HWPString;
 
 import java.util.ArrayList;
 
@@ -13,7 +14,7 @@ public class CtrlHeaderOverlappingLetter extends CtrlHeader {
     /**
      * 겹침 글자 리스트
      */
-    private ArrayList<String> overlappingLetterList;
+    private ArrayList<HWPString> overlappingLetterList;
     /**
      * 테두리 타입
      */
@@ -37,7 +38,7 @@ public class CtrlHeaderOverlappingLetter extends CtrlHeader {
     public CtrlHeaderOverlappingLetter() {
         super(ControlType.OverlappingLetter.getCtrlId());
 
-        overlappingLetterList = new ArrayList<String>();
+        overlappingLetterList = new ArrayList<HWPString>();
         charShapeIdList = new ArrayList<Long>();
     }
 
@@ -46,7 +47,7 @@ public class CtrlHeaderOverlappingLetter extends CtrlHeader {
      *
      * @param overlappingLetter 겹쳐지는 글자
      */
-    public void addOverlappingLetter(String overlappingLetter) {
+    public void addOverlappingLetter(HWPString overlappingLetter) {
         overlappingLetterList.add(overlappingLetter);
     }
 
@@ -55,7 +56,7 @@ public class CtrlHeaderOverlappingLetter extends CtrlHeader {
      *
      * @return 겹침 글자 리스트
      */
-    public ArrayList<String> getOverlappingLetterList() {
+    public ArrayList<HWPString> getOverlappingLetterList() {
         return overlappingLetterList;
     }
 
@@ -135,8 +136,8 @@ public class CtrlHeaderOverlappingLetter extends CtrlHeader {
     public void copy(CtrlHeader from) {
         CtrlHeaderOverlappingLetter from2 = (CtrlHeaderOverlappingLetter) from;
         overlappingLetterList.clear();
-        for (String str : from2.overlappingLetterList) {
-            overlappingLetterList.add(str);
+        for (HWPString str : from2.overlappingLetterList) {
+            overlappingLetterList.add(str.clone());
         }
 
         borderType = from2.borderType;

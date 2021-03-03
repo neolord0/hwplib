@@ -1,5 +1,7 @@
 package kr.dogfoot.hwplib.object.docinfo.numbering;
 
+import kr.dogfoot.hwplib.object.etc.HWPString;
+
 /**
  * 각 수준(1~7)에 해당하는 문단 번호 정보
  *
@@ -13,7 +15,7 @@ public class LevelNumbering {
     /**
      * 번호 형식
      */
-    private String numberFormat;
+    private HWPString numberFormat;
     /**
      * 수준별 시작번호 (5.0.2.5 이상)
      */
@@ -24,6 +26,7 @@ public class LevelNumbering {
      */
     public LevelNumbering() {
         paragraphHeadInfo = new ParagraphHeadInfo();
+        numberFormat = new HWPString();
     }
 
     /**
@@ -40,17 +43,8 @@ public class LevelNumbering {
      *
      * @return 번호 형식
      */
-    public String getNumberFormat() {
+    public HWPString getNumberFormat() {
         return numberFormat;
-    }
-
-    /**
-     * 번호 형식을 설정한다.
-     *
-     * @param numberFormat 번호 형식
-     */
-    public void setNumberFormat(String numberFormat) {
-        this.numberFormat = numberFormat;
     }
 
     /**
@@ -73,7 +67,7 @@ public class LevelNumbering {
 
     public void copy(LevelNumbering from) {
         paragraphHeadInfo.copy(from.paragraphHeadInfo);
-        numberFormat = from.numberFormat;
+        numberFormat.copy(from.numberFormat);
         startNumber = from.startNumber;
     }
 }

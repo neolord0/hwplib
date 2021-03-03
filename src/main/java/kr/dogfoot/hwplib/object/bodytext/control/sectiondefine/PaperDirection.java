@@ -9,7 +9,7 @@ public enum PaperDirection {
     /**
      * 좁게
      */
-    Potrait((byte) 0),
+    Portrait((byte) 0),
     /**
      * 넓게
      */
@@ -50,6 +50,6 @@ public enum PaperDirection {
                 return pd;
             }
         }
-        return Potrait;
+        return Portrait;
     }
 }

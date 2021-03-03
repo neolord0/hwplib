@@ -37,7 +37,7 @@ public class ForCtrlHeaderGso {
             header.setPreventPageDivide(BitFlag.get(temp, 0));
         }
         if (sr.getCurrentRecordHeader().getSize() > sr.getCurrentPositionAfterHeader()) {
-            header.setExplanation(sr.readUTF16LEString());
+            header.getExplanation().setBytes(sr.readHWPString());
         }
     }
 }

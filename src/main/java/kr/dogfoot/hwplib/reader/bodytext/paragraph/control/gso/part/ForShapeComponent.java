@@ -170,7 +170,7 @@ public class ForShapeComponent {
         si.setOffsetX(sr.readSInt4());
         si.setOffsetY(sr.readSInt4());
         sr.skip(5);
-        si.setTransparnet(sr.readUInt1());
+        si.setTransparent(sr.readUInt1());
     }
 
     /**

@@ -1,6 +1,7 @@
 package kr.dogfoot.hwplib.object.bodytext.control.equation;
 
 import kr.dogfoot.hwplib.object.etc.Color4Byte;
+import kr.dogfoot.hwplib.object.etc.HWPString;
 
 /**
  * 수식 컨트롤의 수식 정보를 나타내는 레코드
@@ -15,7 +16,7 @@ public class EQEdit {
     /**
      * 한글 수식 스크립트
      */
-    private String script;
+    private HWPString script;
     /**
      * 수식 글자 크기
      */
@@ -35,17 +36,20 @@ public class EQEdit {
     /**
      * 버전 정보
      */
-    private String versionInfo;
+    private HWPString versionInfo;
     /**
      * 폰트 이름
      */
-    private String fontName;
+    private HWPString fontName;
 
     /**
      * 생성자
      */
     public EQEdit() {
+        script = new HWPString();
         letterColor = new Color4Byte();
+        versionInfo = new HWPString();
+        fontName = new HWPString();
     }
 
     /**
@@ -71,17 +75,8 @@ public class EQEdit {
      *
      * @return 한글 수식 스크립트
      */
-    public String getScript() {
+    public HWPString getScript() {
         return script;
-    }
-
-    /**
-     * 한글 수식 스크립트를 설정한다.
-     *
-     * @param script 한글 수식 스크립트
-     */
-    public void setScript(String script) {
-        this.script = script;
     }
 
     /**
@@ -150,17 +145,8 @@ public class EQEdit {
      *
      * @return 버전 정보
      */
-    public String getVersionInfo() {
+    public HWPString getVersionInfo() {
         return versionInfo;
-    }
-
-    /**
-     * 버전 정보를 설정한다.
-     *
-     * @param versionInfo 버전 정보
-     */
-    public void setVersionInfo(String versionInfo) {
-        this.versionInfo = versionInfo;
     }
 
     /**
@@ -168,27 +154,18 @@ public class EQEdit {
      *
      * @return 폰트 이름
      */
-    public String getFontName() {
+    public HWPString getFontName() {
         return fontName;
-    }
-
-    /**
-     * 폰트 이름을 설정한다.
-     *
-     * @param fontName 폰트 이름
-     */
-    public void setFontName(String fontName) {
-        this.fontName = fontName;
     }
 
     public void copy(EQEdit from) {
         property =  from.property;
-        script = from.script;
+        script.copy(from.script);
         letterSize = from.letterSize;
         letterColor.copy(from.letterColor);
         baseLine = from.baseLine;
         unknown = from.unknown;
-        versionInfo = from.versionInfo;
-        fontName = from.fontName;
+        versionInfo.copy(from.versionInfo);
+        fontName.copy(from.fontName);
     }
 }

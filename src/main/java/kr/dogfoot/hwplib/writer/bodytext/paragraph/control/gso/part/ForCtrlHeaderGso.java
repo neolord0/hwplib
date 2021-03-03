@@ -40,7 +40,7 @@ public class ForCtrlHeaderGso {
         int temp = 0;
         temp = BitFlag.set(temp, 0, h.isPreventPageDivide());
         sw.writeSInt4(temp);
-        sw.writeUTF16LEString(h.getExplanation());
+        sw.writeHWPString(h.getExplanation());
     }
 
     /**
@@ -64,7 +64,7 @@ public class ForCtrlHeaderGso {
     private static int getSize(CtrlHeaderGso h) {
         int size = 0;
         size += 44;
-        size += StringUtil.getUTF16LEStringSize(h.getExplanation());
+        size += h.getExplanation().getWCharsSize();
         return size;
     }
 }

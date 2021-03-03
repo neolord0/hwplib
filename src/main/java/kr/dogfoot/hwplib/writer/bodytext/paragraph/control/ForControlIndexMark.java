@@ -38,8 +38,8 @@ public class ForControlIndexMark {
         recordHeader(h, sw);
         sw.writeUInt4(h.getCtrlId());
 
-        sw.writeUTF16LEString(h.getKeyword1());
-        sw.writeUTF16LEString(h.getKeyword2());
+        sw.writeHWPString(h.getKeyword1());
+        sw.writeHWPString(h.getKeyword2());
     }
 
     /**
@@ -63,8 +63,8 @@ public class ForControlIndexMark {
     private static int getSize(CtrlHeaderIndexMark h) {
         int size = 0;
         size += 4;
-        size += StringUtil.getUTF16LEStringSize(h.getKeyword1());
-        size += StringUtil.getUTF16LEStringSize(h.getKeyword2());
+        size += h.getKeyword1().getWCharsSize();
+        size += h.getKeyword2().getWCharsSize();
         return size;
     }
 }

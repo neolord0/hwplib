@@ -60,7 +60,7 @@ public class ForNumbering {
         int size = 0;
         for (int level = 1; level <= 7; level++) {
             LevelNumbering ln = n.getLevelNumbering(level);
-            size += 12 + StringUtil.getUTF16LEStringSize(ln.getNumberFormat());
+            size += 12 + ln.getNumberFormat().getWCharsSize();
         }
         size += 2;
         if (version.isOver(5, 0, 2, 5)) {
@@ -68,7 +68,7 @@ public class ForNumbering {
 
             for (int level = 8; level <=10; level++) {
                 LevelNumbering ln = n.getLevelNumbering(level);
-                size += 12 + StringUtil.getUTF16LEStringSize(ln.getNumberFormat());
+                size += 12 + ln.getNumberFormat().getWCharsSize();
             }
             size += 4 * 3;
         }
@@ -99,7 +99,7 @@ public class ForNumbering {
     private static void levelNumbering(LevelNumbering ln, StreamWriter sw)
             throws IOException {
         paragraphHeadInfo(ln.getParagraphHeadInfo(), sw);
-        sw.writeUTF16LEString(ln.getNumberFormat());
+        sw.writeHWPString(ln.getNumberFormat());
     }
 
     /**

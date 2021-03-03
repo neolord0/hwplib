@@ -39,9 +39,9 @@ public class ForControlPageNumberPosition {
 
         sw.writeUInt4(h.getProperty().getValue());
         sw.writeUInt2(h.getNumber());
-        sw.writeWChar(h.getUserSymbol());
-        sw.writeWChar(h.getBeforeDecorationLetter());
-        sw.writeWChar(h.getAfterDecorationLetter());
+        sw.writeWChar(h.getUserSymbol().getBytes());
+        sw.writeWChar(h.getBeforeDecorationLetter().getBytes());
+        sw.writeWChar(h.getAfterDecorationLetter().getBytes());
     }
 
     /**

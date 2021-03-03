@@ -1,6 +1,7 @@
 package kr.dogfoot.hwplib.object.bodytext.control.ctrlheader;
 
 import kr.dogfoot.hwplib.object.bodytext.control.ControlType;
+import kr.dogfoot.hwplib.object.etc.HWPString;
 
 /**
  * 찾아보기 표식 컨트롤을 위한 컨트롤 헤더 레코드
@@ -11,17 +12,19 @@ public class CtrlHeaderIndexMark extends CtrlHeader {
     /**
      * 키워드 1
      */
-    private String keyword1;
+    private HWPString keyword1;
     /**
      * 키워드 2
      */
-    private String keyword2;
+    private HWPString keyword2;
 
     /**
      * 생성자
      */
     public CtrlHeaderIndexMark() {
         super(ControlType.IndexMark.getCtrlId());
+        keyword1 = new HWPString();
+        keyword2 = new HWPString();
     }
 
     /**
@@ -29,17 +32,8 @@ public class CtrlHeaderIndexMark extends CtrlHeader {
      *
      * @return 키워드 1
      */
-    public String getKeyword1() {
+    public HWPString getKeyword1() {
         return keyword1;
-    }
-
-    /**
-     * 키워드 1를 설정한다.
-     *
-     * @param keyword1 키워드 1
-     */
-    public void setKeyword1(String keyword1) {
-        this.keyword1 = keyword1;
     }
 
     /**
@@ -47,23 +41,14 @@ public class CtrlHeaderIndexMark extends CtrlHeader {
      *
      * @return 키워드 2
      */
-    public String getKeyword2() {
+    public HWPString getKeyword2() {
         return keyword2;
-    }
-
-    /**
-     * 키워드 2을 설정한다.
-     *
-     * @param keyword2 키워드 2
-     */
-    public void setKeyword2(String keyword2) {
-        this.keyword2 = keyword2;
     }
 
     @Override
     public void copy(CtrlHeader from) {
         CtrlHeaderIndexMark from2 = (CtrlHeaderIndexMark) from;
-        keyword1 = from2.keyword1;
-        keyword2 = from2.keyword2;
+        keyword1.copy(from2.keyword1);
+        keyword2.copy(from2.keyword2);
     }
 }

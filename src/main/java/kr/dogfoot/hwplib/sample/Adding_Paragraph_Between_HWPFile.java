@@ -39,7 +39,7 @@ public class Adding_Paragraph_Between_HWPFile {
                 paraAdder.add(sourceHWPFile, sourceParagraph);
             }
 
-            HWPWriter.toFile(targetHWPFile, "sample_hwp" + File.separator +"result-add-paragraph.hwp");
+            HWPWriter.toFile(targetHWPFile, "sample_hwp" + File.separator +"result-adding-paragraph.hwp");
         }
    }
 }

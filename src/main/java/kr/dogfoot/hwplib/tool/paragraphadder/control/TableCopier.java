@@ -28,7 +28,7 @@ public class TableCopier {
         target.setOutterMarginBottom(source.getOutterMarginBottom());
         target.setInstanceId(source.getInstanceId());
         target.setPreventPageDivide(source.isPreventPageDivide());
-        target.setExplanation(source.getExplanation());
+        target.getExplanation().copy(source.getExplanation());
     }
 
     private static void caption(ControlTable source, ControlTable target, DocInfoAdder docInfoAdder) {

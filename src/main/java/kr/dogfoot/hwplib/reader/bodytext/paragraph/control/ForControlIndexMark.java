@@ -33,8 +33,8 @@ public class ForControlIndexMark {
      */
     private static void ctrlHeader(CtrlHeaderIndexMark header, StreamReader sr)
             throws IOException {
-        header.setKeyword1(sr.readUTF16LEString());
-        header.setKeyword2(sr.readUTF16LEString());
+        header.getKeyword1().setBytes(sr.readHWPString());
+        header.getKeyword2().setBytes(sr.readHWPString());
         if (sr.isEndOfRecord() == false) {
             sr.skipToEndRecord();
         }

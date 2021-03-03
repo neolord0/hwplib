@@ -56,8 +56,8 @@ public class ForControlEndnote {
     private void ctrlHeader() throws IOException {
         CtrlHeaderEndnote h = en.getHeader();
         h.setNumber(sr.readUInt4());
-        h.setBeforeDecorationLetter(sr.readWChar());
-        h.setAfterDecorationLetter(sr.readWChar());
+        h.getBeforeDecorationLetter().setBytes(sr.readWChar());;
+        h.getAfterDecorationLetter().setBytes(sr.readWChar());
         h.setNumberShape(NumberShape.valueOf((short) sr.readUInt4()));
 
         if (sr.isEndOfRecord() == false) {

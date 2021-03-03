@@ -44,7 +44,7 @@ public class PageDefProperty {
      */
     public PaperDirection getPaperDirection() {
         if (BitFlag.get(value, 0) == false) {
-            return PaperDirection.Potrait;
+            return PaperDirection.Portrait;
         } else {
             return PaperDirection.Landscape;
         }
@@ -56,7 +56,7 @@ public class PageDefProperty {
      * @param paperDirection 용지 방향
      */
     public void setPaperDirection(PaperDirection paperDirection) {
-        if (paperDirection == PaperDirection.Potrait) {
+        if (paperDirection == PaperDirection.Portrait) {
             value = BitFlag.set(value, 0, false);
         } else {
             value = BitFlag.set(value, 0, true);

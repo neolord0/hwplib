@@ -2,6 +2,7 @@ package kr.dogfoot.hwplib.reader.bodytext.paragraph.control;
 
 import kr.dogfoot.hwplib.object.bodytext.control.ControlOverlappingLetter;
 import kr.dogfoot.hwplib.object.bodytext.control.ctrlheader.CtrlHeaderOverlappingLetter;
+import kr.dogfoot.hwplib.object.etc.HWPString;
 import kr.dogfoot.hwplib.util.compoundFile.reader.StreamReader;
 
 import java.io.IOException;
@@ -55,7 +56,8 @@ public class ForControlOverlappingLetter {
                                            StreamReader sr) throws IOException {
         int count = sr.readUInt2();
         for (int index = 0; index < count; index++) {
-            String letter = sr.readWChar();
+            HWPString letter = new HWPString();
+            letter.setBytes(sr.readWChar());
             header.addOverlappingLetter(letter);
         }
     }

@@ -38,6 +38,6 @@ public class Inserting_HyperLink {
         paragraph.getText().addString("로 가는 링크입니다.");
 
         ControlField field = (ControlField) paragraph.addNewControl(ControlType.FIELD_HYPERLINK.getCtrlId());
-        field.getHeader().setCommand("https\\://www.dogfoot.kr/aaa.jsp\\?aaa=bb&ccc=dd" + ";1;0;0;");
+        field.getHeader().getCommand().fromUTF16LEString("https\\://www.dogfoot.kr/aaa.jsp\\?aaa=bb&ccc=dd" + ";1;0;0;");
    }
 }

@@ -58,7 +58,7 @@ public class ForNumbering {
     private static void levelNumbering(LevelNumbering ln, StreamReader sr)
             throws IOException {
         paragraphHeadInfo(ln.getParagraphHeadInfo(), sr);
-        ln.setNumberFormat(sr.readUTF16LEString());
+        ln.getNumberFormat().setBytes(sr.readHWPString());
     }
 
 

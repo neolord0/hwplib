@@ -52,9 +52,9 @@ public class SectionDefineAdder {
 
     private static void footNoteShape(FootEndNoteShape footNoteShape) {
         footNoteShape.getProperty().setValue(0);
-        footNoteShape.setUserSymbol("\u0000");
-        footNoteShape.setBeforeDecorativeLetter("\u0000");
-        footNoteShape.setAfterDecorativeLetter(")");
+        footNoteShape.getUserSymbol().fromUTF16LEString("\u0000");
+        footNoteShape.getBeforeDecorativeLetter().fromUTF16LEString("\u0000");
+        footNoteShape.getAfterDecorativeLetter().fromUTF16LEString(")");
         footNoteShape.setStartNumber(1);
         footNoteShape.setDivideLineLength(-1);
         footNoteShape.setDivideLineTopMargin(850);
@@ -68,9 +68,9 @@ public class SectionDefineAdder {
 
     private static void endNoteShape(FootEndNoteShape endNoteShape) {
         endNoteShape.getProperty().setValue(0);
-        endNoteShape.setUserSymbol("\u0000");
-        endNoteShape.setBeforeDecorativeLetter("\u0000");
-        endNoteShape.setAfterDecorativeLetter(")");
+        endNoteShape.getUserSymbol().fromUTF16LEString("\u0000");
+        endNoteShape.getBeforeDecorativeLetter().fromUTF16LEString("\u0000");
+        endNoteShape.getAfterDecorativeLetter().fromUTF16LEString(")");
         endNoteShape.setStartNumber(1);
         endNoteShape.setDivideLineLength(14692344);
         endNoteShape.setDivideLineTopMargin(850);
