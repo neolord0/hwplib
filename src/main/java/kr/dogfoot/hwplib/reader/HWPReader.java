@@ -185,7 +185,8 @@ public class HWPReader {
 
     private int nameToID(String name) {
         String id = name.substring(3, 7);
-        return Integer.parseInt(id);
+
+        return Integer.parseInt(id, 16);
     }
 
     private BinDataCompress getCompressMethod(int id) {
