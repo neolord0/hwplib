@@ -1,7 +1,9 @@
 package kr.dogfoot.hwplib.object.docinfo.charshape;
 
+import kr.dogfoot.hwplib.object.docinfo.borderfill.BorderType;
+
 /**
- * 문자선 밑줄 종류
+ * 문자선(밑줄 or 취소선) 종류
  *
  * @author neolord
  */
@@ -49,7 +51,7 @@ public enum BorderType2 {
     /**
      * 가는선 + 굵은선 + 가는선 3중선
      */
-    ThinThickThn((byte) 10),
+    ThinThickThin((byte) 10),
     /**
      * 물결
      */
@@ -111,5 +113,45 @@ public enum BorderType2 {
             }
         }
         return Solid;
+    }
+
+    public BorderType toBorderType() {
+        switch (this) {
+            case Solid:
+                return BorderType.Solid;
+            case Dash:
+                return BorderType.Dash;
+            case Dot:
+                return BorderType.Dot;
+            case DashDot:
+                return BorderType.DashDot;
+            case DashDotDot:
+                return BorderType.DashDotDot;
+            case LongDash:
+                return BorderType.LongDash;
+            case CircleDot:
+                return BorderType.CircleDot;
+            case Double:
+                return BorderType.Double;
+            case ThinThick:
+                return BorderType.ThinThick;
+            case ThickThin:
+                return BorderType.ThickThin;
+            case ThinThickThin:
+                return BorderType.ThinThickThin;
+            case Wave:
+                return BorderType.Wave;
+            case DoubleWave:
+                return BorderType.DoubleWave;
+            case Thick3D:
+                return BorderType.Thick3D;
+            case Thick3DReverseLighting:
+                return BorderType.Thick3DReverseLighting;
+            case Solid3D:
+                return BorderType.Solid3D;
+            case Solid3DReverseLighting:
+                return BorderType.Solid3DReverseLighting;
+        }
+        return BorderType.None;
     }
 }

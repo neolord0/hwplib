@@ -53,7 +53,7 @@ public enum BorderType {
     /**
      * 가는선 + 굵은선 + 가는선 3중선
      */
-    ThinThickThn((byte) 11),
+    ThinThickThin((byte) 11),
     /**
      * 물결
      */

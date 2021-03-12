@@ -123,7 +123,7 @@ public class Inserting_CharShape {
         cs.getProperty().setStrikeLine(false);
         cs.getProperty().setEmphasisSort(EmphasisSort.None);
         cs.getProperty().setUsingSpaceAppropriateForFont(false);
-        cs.getProperty().setStrikeLineShape(BorderType.None);
+        cs.getProperty().setStrikeLineShape(BorderType2.Solid);
         cs.getProperty().setKerning(false);
 
         cs.setShadowGap1((byte) 0);

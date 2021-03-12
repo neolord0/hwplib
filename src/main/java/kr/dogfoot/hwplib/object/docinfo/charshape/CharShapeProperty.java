@@ -1,6 +1,5 @@
 package kr.dogfoot.hwplib.object.docinfo.charshape;
 
-import kr.dogfoot.hwplib.object.docinfo.borderfill.BorderType;
 import kr.dogfoot.hwplib.util.binary.BitFlag;
 
 /**
@@ -281,8 +280,8 @@ public class CharShapeProperty {
      *
      * @return 취소선의 모양
      */
-    public BorderType getStrikeLineShape() {
-        return BorderType.valueOf((byte) BitFlag.get(value, 26, 29));
+    public BorderType2 getStrikeLineShape() {
+        return BorderType2.valueOf((byte) BitFlag.get(value, 26, 29));
     }
 
     /**
@@ -290,7 +289,7 @@ public class CharShapeProperty {
      *
      * @param strikeLineShape 취소선의 모양
      */
-    public void setStrikeLineShape(BorderType strikeLineShape) {
+    public void setStrikeLineShape(BorderType2 strikeLineShape) {
         value = BitFlag.set(value, 26, 29, strikeLineShape.getValue());
     }
 
