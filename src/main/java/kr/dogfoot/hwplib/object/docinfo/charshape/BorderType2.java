@@ -1,13 +1,11 @@
 package kr.dogfoot.hwplib.object.docinfo.charshape;
 
-import kr.dogfoot.hwplib.object.docinfo.borderfill.BorderType;
-
 /**
- * 문자선(밑줄 및 취소선) 종류
+ * 문자선 밑줄 종류
  *
  * @author neolord
  */
-public enum CharLineType {
+public enum BorderType2 {
     /**
      * 실선
      */
@@ -87,7 +85,7 @@ public enum CharLineType {
      *
      * @param value 파일에 저장되는 정수값
      */
-    CharLineType(byte value) {
+    BorderType2(byte value) {
         this.value = value;
     }
 
@@ -106,8 +104,8 @@ public enum CharLineType {
      * @param value 파일에 저장되는 정수값
      * @return enum 값
      */
-    public static CharLineType valueOf(byte value) {
-        for (CharLineType bt : values()) {
+    public static BorderType2 valueOf(byte value) {
+        for (BorderType2 bt : values()) {
             if (bt.value == value) {
                 return bt;
             }

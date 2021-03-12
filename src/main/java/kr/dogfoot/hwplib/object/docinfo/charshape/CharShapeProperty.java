@@ -97,8 +97,8 @@ public class CharShapeProperty {
      *
      * @return 밑줄의 모양
      */
-    public CharLineType getUnderLineShape() {
-        return CharLineType.valueOf((byte) BitFlag.get(value, 4, 7));
+    public BorderType2 getUnderLineShape() {
+        return BorderType2.valueOf((byte) BitFlag.get(value, 4, 7));
     }
 
     /**
@@ -106,7 +106,7 @@ public class CharShapeProperty {
      *
      * @param underLineShape 밑줄의 모양
      */
-    public void setUnderLineShape(CharLineType underLineShape) {
+    public void setUnderLineShape(BorderType2 underLineShape) {
         value = BitFlag.set(value, 4, 7, underLineShape.getValue());
     }
 
@@ -281,8 +281,8 @@ public class CharShapeProperty {
      *
      * @return 취소선의 모양
      */
-    public CharLineType getStrikeLineShape() {
-        return CharLineType.valueOf((byte) BitFlag.get(value, 26, 29));
+    public BorderType getStrikeLineShape() {
+        return BorderType.valueOf((byte) BitFlag.get(value, 26, 29));
     }
 
     /**
@@ -290,7 +290,7 @@ public class CharShapeProperty {
      *
      * @param strikeLineShape 취소선의 모양
      */
-    public void setStrikeLineShape(CharLineType strikeLineShape) {
+    public void setStrikeLineShape(BorderType strikeLineShape) {
         value = BitFlag.set(value, 26, 29, strikeLineShape.getValue());
     }
 

@@ -55,27 +55,27 @@ public class ForDocInfo {
         bullet();
         paraShape();
         style();
+        memoShape();
+        trackChangeAuthor();
+        trackChange2();
 
         sw.downRecordLevel();
 
         docData();
-
-        sw.upRecordLevel();
-
         forbiddenChar();
-
-        sw.downRecordLevel();
-
-        distributeDocData();
         compatibleDocument();
 
         sw.upRecordLevel();
 
         layoutCompatibility();
+
+        sw.downRecordLevel();
+
+        distributeDocData();
+
+        sw.upRecordLevel();
+
         trackChange();
-        memoShape();
-        trackChange2();
-        trackChangeAuthor();
 
         sw.downRecordLevel();
     }

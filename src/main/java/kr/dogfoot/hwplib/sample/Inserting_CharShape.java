@@ -10,10 +10,7 @@ import kr.dogfoot.hwplib.object.bodytext.paragraph.text.ParaText;
 import kr.dogfoot.hwplib.object.docinfo.CharShape;
 import kr.dogfoot.hwplib.object.docinfo.FaceName;
 import kr.dogfoot.hwplib.object.docinfo.borderfill.BorderType;
-import kr.dogfoot.hwplib.object.docinfo.charshape.EmphasisSort;
-import kr.dogfoot.hwplib.object.docinfo.charshape.OutterLineSort;
-import kr.dogfoot.hwplib.object.docinfo.charshape.ShadowSort;
-import kr.dogfoot.hwplib.object.docinfo.charshape.UnderLineSort;
+import kr.dogfoot.hwplib.object.docinfo.charshape.*;
 import kr.dogfoot.hwplib.reader.HWPReader;
 import kr.dogfoot.hwplib.writer.HWPWriter;
 
@@ -116,6 +113,7 @@ public class Inserting_CharShape {
         cs.getProperty().setItalic(false);
         cs.getProperty().setBold(bold);
         cs.getProperty().setUnderLineSort(UnderLineSort.None);
+        cs.getProperty().setUnderLineShape(BorderType2.Solid);
         cs.getProperty().setOutterLineSort(OutterLineSort.None);
         cs.getProperty().setShadowSort(ShadowSort.None);
         cs.getProperty().setEmboss(false);
