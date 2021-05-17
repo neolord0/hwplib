@@ -141,7 +141,7 @@ public class Inserting_Table_WithImageBack {
         ctrlHeader.getProperty().setWidthCriterion(WidthCriterion.Absolute);
         ctrlHeader.getProperty().setHeightCriterion(HeightCriterion.Absolute);
         ctrlHeader.getProperty().setProtectSize(false);
-        ctrlHeader.getProperty().setTextFlowMethod(TextFlowMethod.Tight);
+        ctrlHeader.getProperty().setTextFlowMethod(TextFlowMethod.FitWithText);
         ctrlHeader.getProperty().setTextHorzArrange(TextHorzArrange.BothSides);
         ctrlHeader.getProperty().setObjectNumberSort(ObjectNumberSort.Table);
         ctrlHeader.setxOffset(mmToHwp(20.0));

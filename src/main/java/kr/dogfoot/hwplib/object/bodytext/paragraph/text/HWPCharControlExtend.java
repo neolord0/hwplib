@@ -76,11 +76,18 @@ public class HWPCharControlExtend extends HWPChar {
 
     public boolean isSectionDefine() {
         if (getCode() == 0x0002
-                && addition != null
-                && addition[3] == 's'
-                && addition[2] == 'e'
-                && addition[1] == 'c'
-                && addition[0] == 'd') {
+                && hasAddition('s', 'e', 'c', 'd')) {
+            return true;
+        }
+        return false;
+    }
+
+    private boolean hasAddition(char byte1, char byte2, char byte3, char byte4) {
+        if (addition != null
+                && addition[3] == byte1
+                && addition[2] == byte2
+                && addition[1] == byte3
+                && addition[0] == byte4) {
             return true;
         }
         return false;
@@ -88,11 +95,7 @@ public class HWPCharControlExtend extends HWPChar {
 
     public boolean isColumnDefine() {
         if (getCode() == 0x0002
-                && addition != null
-                && addition[3] == 'c'
-                && addition[2] == 'o'
-                && addition[1] == 'l'
-                && addition[0] == 'd') {
+                && hasAddition('c', 'o', 'l', 'd')) {
             return true;
         }
        return false;
@@ -100,11 +103,7 @@ public class HWPCharControlExtend extends HWPChar {
 
     public boolean isTable() {
         if (getCode() == 0x000b
-                && addition != null
-                && addition[3] == 't'
-                && addition[2] == 'b'
-                && addition[1] == 'l'
-                && addition[0] == ' ') {
+                && hasAddition('t', 'b', 'l', ' ')) {
             return true;
         }
         return false;
@@ -112,11 +111,7 @@ public class HWPCharControlExtend extends HWPChar {
 
     public boolean isGSO() {
         if (getCode() == 0x000b
-                && addition != null
-                && addition[3] == 'g'
-                && addition[2] == 's'
-                && addition[1] == 'o'
-                && addition[0] == ' ') {
+                && hasAddition('g', 's', 'o', ' ')) {
             return true;
         }
         return false;
@@ -124,11 +119,7 @@ public class HWPCharControlExtend extends HWPChar {
 
     public boolean isEquation() {
         if (getCode() == 0x000b
-                && addition != null
-                && addition[3] == 'e'
-                && addition[2] == 'q'
-                && addition[1] == 'e'
-                && addition[0] == 'd') {
+                && hasAddition('e', 'q', 'e', 'd')) {
             return true;
         }
         return false;
@@ -136,22 +127,15 @@ public class HWPCharControlExtend extends HWPChar {
 
     public boolean isHyperlinkStart() {
         if (getCode() == 0x0003
-                && addition != null
-                && addition[3] == '%'
-                && addition[2] == 'h'
-                && addition[1] == 'l'
-                && addition[0] == 'k') {
+                && hasAddition('%', 'h', 'l', 'k')) {
             return true;
         }
         return false;
     }
 
     public boolean isHyperlinkEnd() {
-        if (getCode() == 0x0004 && addition != null
-                && addition[3] == '%'
-                && addition[2] == 'h'
-                && addition[1] == 'l'
-                && addition[0] == 'k') {
+        if (getCode() == 0x0004
+                && hasAddition('%', 'h', 'l', 'k')) {
             return true;
         }
         return false;
@@ -162,6 +146,14 @@ public class HWPCharControlExtend extends HWPChar {
                 && addition != null) {
             long ctrlID = CtrlID.make((char) addition[3], (char) addition[2], (char) addition[1], (char) addition[0]);
             return ControlType.isField(ctrlID);
+        }
+        return false;
+    }
+
+    public boolean isOverlappingLetter() {
+        if (getCode() == 0x0017
+                && hasAddition('t', 'c', 'p', 's')) {
+            return true;
         }
         return false;
     }

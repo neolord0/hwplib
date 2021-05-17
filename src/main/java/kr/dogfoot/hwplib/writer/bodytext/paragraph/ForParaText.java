@@ -82,7 +82,7 @@ public class ForParaText {
      */
     private static void normal(HWPCharNormal hc, StreamWriter sw)
             throws UnsupportedEncodingException, IOException {
-        sw.writeSInt2(hc.getCode());
+        sw.writeUInt2(hc.getCode());
     }
 
     /**
@@ -94,7 +94,7 @@ public class ForParaText {
      */
     private static void controlChar(HWPCharControlChar hc, StreamWriter sw)
             throws IOException {
-        sw.writeSInt2(hc.getCode());
+        sw.writeUInt2(hc.getCode());
     }
 
     /**
@@ -106,9 +106,9 @@ public class ForParaText {
      */
     private static void controlInline(HWPCharControlInline hc, StreamWriter sw)
             throws IOException {
-        sw.writeSInt2(hc.getCode());
+        sw.writeUInt2(hc.getCode());
         sw.writeBytes(hc.getAddition());
-        sw.writeSInt2(hc.getCode());
+        sw.writeUInt2(hc.getCode());
     }
 
     /**
@@ -120,8 +120,8 @@ public class ForParaText {
      */
     private static void controlExtend(HWPCharControlExtend hc, StreamWriter sw)
             throws IOException {
-        sw.writeSInt2(hc.getCode());
+        sw.writeUInt2(hc.getCode());
         sw.writeBytes(hc.getAddition());
-        sw.writeSInt2(hc.getCode());
+        sw.writeUInt2(hc.getCode());
     }
 }

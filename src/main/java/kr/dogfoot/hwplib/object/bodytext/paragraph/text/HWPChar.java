@@ -9,7 +9,7 @@ public abstract class HWPChar {
     /**
      * 믄자 코드
      */
-    protected short code;
+    protected int code;
 
     /**
      * 글자의 종류을 반환한다.
@@ -73,7 +73,7 @@ public abstract class HWPChar {
      *
      * @return 문자 코드
      */
-    public short getCode() {
+    public int getCode() {
         return code;
     }
 
@@ -82,10 +82,27 @@ public abstract class HWPChar {
      *
      * @param code 문자 코드
      */
-    public void setCode(short code) {
+    public void setCode(int code) {
         this.code = code;
     }
 
     public abstract HWPChar clone();
     public abstract int getCharSize();
+
+    public boolean isSpace() {
+        return code == 32;
+    }
+
+    public boolean isHangul() {
+        return (0x0ac00 <= code && code <= 0xd7af) ||
+                (0x3131 <= code && code <= 0x318E);
+    }
+
+    public boolean isLineBreak() {
+        return code == 10;
+    }
+
+    public boolean isParaBreak() {
+        return code == 13;
+    }
 }

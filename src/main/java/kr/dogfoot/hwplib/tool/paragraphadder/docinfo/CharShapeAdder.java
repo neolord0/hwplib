@@ -144,7 +144,11 @@ public class CharShapeAdder {
         target.getUnderLineColor().setValue(source.getUnderLineColor().getValue());
         target.getShadeColor().setValue(source.getShadeColor().getValue());
         target.getShadowColor().setValue(source.getShadowColor().getValue());
-        target.setBorderFillId(docInfoAdder.forBorderFill().processById(source.getBorderFillId()));
+        if (source.getBorderFillId() == 0) {
+            target.setBorderFillId(0);
+        } else {
+            target.setBorderFillId(docInfoAdder.forBorderFill().processById(source.getBorderFillId()));
+        }
         target.getStrikeLineColor().setValue(source.getStrikeLineColor().getValue());
 
         return docInfoAdder.getTargetHWPFile().getDocInfo().getCharShapeList().size() - 1;

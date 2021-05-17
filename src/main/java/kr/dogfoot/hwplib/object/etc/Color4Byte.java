@@ -19,6 +19,20 @@ public class Color4Byte {
     public Color4Byte() {
     }
 
+    public Color4Byte(int r, int g, int b, int a) {
+        setR((short) r);
+        setG((short) g);
+        setB((short) b);
+        setA((short) a);
+    }
+
+    public Color4Byte(int r, int g, int b) {
+        setR((short) r);
+        setG((short) g);
+        setB((short) b);
+        setA((short) 0);
+    }
+
     /**
      * unsigned 4 byte color 값을 반환한다.
      *

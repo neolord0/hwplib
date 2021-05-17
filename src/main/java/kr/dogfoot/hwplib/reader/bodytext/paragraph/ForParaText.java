@@ -40,7 +40,7 @@ public class ForParaText {
      */
     private static int hwpChar(ParaText paraText, StreamReader sr)
             throws Exception {
-        short code = sr.readSInt2();
+        int code = sr.readUInt2();
         switch (HWPChar.type(code)) {
             case Normal:
                 paraText.addNewNormalChar().setCode(code);

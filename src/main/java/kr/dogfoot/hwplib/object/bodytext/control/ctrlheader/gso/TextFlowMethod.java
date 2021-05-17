@@ -7,29 +7,21 @@ package kr.dogfoot.hwplib.object.bodytext.control.ctrlheader.gso;
  */
 public enum TextFlowMethod {
     /**
-     * bound rect를 따라
+     * 어울림
      */
-    Square((byte) 0),
+    FitWithText((byte) 0),
     /**
-     * 오브젝트의 outline을 따라
+     * 자리 차치
      */
-    Tight((byte) 1),
+    TakePlace((byte)1),
     /**
-     * 오브젝트 내부의 빈 공간까지
+     * 글 뒤로
      */
-    Through((byte) 2),
+    BehindText((byte) 2),
     /**
-     * 좌, 우에는 텍스트를 배치하지 않음
+     * 글 앞으로
      */
-    TopAndBottom((byte) 3),
-    /**
-     * 글과 겹치게 하여 글 뒤로
-     */
-    BehindText((byte) 4),
-    /**
-     * 글과 겹치게 하여 글 앞으로
-     */
-    InFrontOfText((byte) 5);
+    InFrontOfText((byte) 3);
 
     /**
      * 파일에 저장되는 정수값
@@ -66,6 +58,6 @@ public enum TextFlowMethod {
                 return tfm;
             }
         }
-        return Square;
+        return FitWithText;
     }
 }

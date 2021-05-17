@@ -17,11 +17,7 @@ public enum LineSpaceSort {
     /**
      * 여백만 지정
      */
-    OnlyMargin((byte) 2),
-    /**
-     * 최소
-     */
-    Minimum((byte) 3);
+    OnlyMargin((byte) 2);
 
     /**
      * 파일에 저장되는 정수값

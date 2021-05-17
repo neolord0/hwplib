@@ -23,10 +23,12 @@ public class ParaTextCopier {
                     copyInlineChar((HWPCharControlInline) hwpChar, target.addNewInlineControlChar());
                     break;
                 case ControlExtend:
-                    if (((HWPCharControlExtend) hwpChar).isTable() ||
-                            ((HWPCharControlExtend) hwpChar).isGSO() ||
-                            ((HWPCharControlExtend) hwpChar).isEquation() ||
-                            ((HWPCharControlExtend) hwpChar).isFieldStart()) {
+                    HWPCharControlExtend extendChar = (HWPCharControlExtend) hwpChar;
+                    if (extendChar.isGSO() ||
+                            extendChar.isTable() ||
+                            extendChar.isEquation() ||
+                            extendChar.isFieldStart() ||
+                            extendChar.isOverlappingLetter()) {
                         copyExtendChar((HWPCharControlExtend) hwpChar, target.addNewExtendControlChar());
                     } else {
                         notCopiedCharacterSize += 8;

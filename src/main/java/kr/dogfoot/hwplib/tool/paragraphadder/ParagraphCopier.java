@@ -4,10 +4,7 @@ import kr.dogfoot.hwplib.object.bodytext.control.*;
 import kr.dogfoot.hwplib.object.bodytext.control.gso.GsoControl;
 import kr.dogfoot.hwplib.object.bodytext.paragraph.Paragraph;
 import kr.dogfoot.hwplib.object.bodytext.paragraph.ParagraphList;
-import kr.dogfoot.hwplib.tool.paragraphadder.control.EquationCopier;
-import kr.dogfoot.hwplib.tool.paragraphadder.control.FieldCopier;
-import kr.dogfoot.hwplib.tool.paragraphadder.control.GsoCopier;
-import kr.dogfoot.hwplib.tool.paragraphadder.control.TableCopier;
+import kr.dogfoot.hwplib.tool.paragraphadder.control.*;
 import kr.dogfoot.hwplib.tool.paragraphadder.docinfo.DocInfoAdder;
 
 /**
@@ -127,6 +124,7 @@ public class ParagraphCopier {
                     case Bookmark:
                         break;
                     case OverlappingLetter:
+                        OverlappingLetterCopier.copy((ControlOverlappingLetter) c, (ControlOverlappingLetter) target.addNewControl(ControlType.OverlappingLetter), docInfoAdder);  // 신규 추가
                         break;
                     case AdditionalText:
                         break;

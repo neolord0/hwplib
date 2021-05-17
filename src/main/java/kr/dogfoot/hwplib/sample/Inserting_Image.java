@@ -140,7 +140,7 @@ public class Inserting_Image {
         prop.setWidthCriterion(WidthCriterion.Absolute);
         prop.setHeightCriterion(HeightCriterion.Absolute);
         prop.setProtectSize(false);
-        prop.setTextFlowMethod(TextFlowMethod.TopAndBottom);
+        prop.setTextFlowMethod(TextFlowMethod.FitWithText);
         prop.setTextHorzArrange(TextHorzArrange.BothSides);
         prop.setObjectNumberSort(ObjectNumberSort.Figure);
 

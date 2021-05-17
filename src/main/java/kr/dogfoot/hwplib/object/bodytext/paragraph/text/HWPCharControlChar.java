@@ -15,6 +15,9 @@ public class HWPCharControlChar extends HWPChar {
     public HWPCharControlChar() {
     }
 
+    public HWPCharControlChar(int code) {
+        this.code = code;
+    }
     /**
      * 글자의 종류을 반환한다.
      *
@@ -35,11 +38,11 @@ public class HWPCharControlChar extends HWPChar {
         byte[] b = ch.getBytes(StandardCharsets.UTF_16LE);
 
         if (b.length >= 2) {
-            setCode((short) (((b[1] & 0xFF) << 8) | (b[0] & 0xFF)));
+            setCode((((b[1] & 0xFF) << 8) | (b[0] & 0xFF)));
         } else if (b.length == 1) {
-            setCode((short) (b[0] & 0xFF));
+            setCode((b[0] & 0xFF));
         } else {
-            setCode((short) 0);
+            setCode(0);
         }
     }
 

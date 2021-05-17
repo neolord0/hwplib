@@ -15,6 +15,10 @@ public class HWPCharNormal extends HWPChar {
     public HWPCharNormal() {
     }
 
+    public HWPCharNormal(int code) {
+        this.code = code;
+    }
+
     /**
      * 글자의 종류을 반환한다.
      *
@@ -32,7 +36,7 @@ public class HWPCharNormal extends HWPChar {
      * @throws UnsupportedEncodingException
      */
     public String getCh() throws UnsupportedEncodingException {
-        return shortToString(code);
+        return intToString(code);
     }
 
     /**
@@ -40,10 +44,8 @@ public class HWPCharNormal extends HWPChar {
      *
      * @param code 2 byte 문자코드
      * @return 변환된 문자열
-     * @throws UnsupportedEncodingException
      */
-    private String shortToString(short code)
-            throws UnsupportedEncodingException {
+    private String intToString(int code) {
         byte[] ch = new byte[2];
         ch[0] = (byte) (code & 0xff);
         ch[1] = (byte) ((code >> 8) & 0xff);
