@@ -63,6 +63,11 @@ public class ParagraphList implements ParagraphListInterface {
         paragraphList.remove(index);
     }
 
+    @Override
+    public Paragraph[] getParagraphs() {
+        return paragraphList.toArray(Paragraph.Zero_Array);
+    }
+
     /**
      * Iterator<Paragraph> 객체를 반환한다.
      *

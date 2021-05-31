@@ -28,7 +28,8 @@ public class ParaTextCopier {
                             extendChar.isTable() ||
                             extendChar.isEquation() ||
                             extendChar.isFieldStart() ||
-                            extendChar.isOverlappingLetter()) {
+                            extendChar.isOverlappingLetter() ||
+                            extendChar.isColumnDefine()) {
                         copyExtendChar((HWPCharControlExtend) hwpChar, target.addNewExtendControlChar());
                     } else {
                         notCopiedCharacterSize += 8;

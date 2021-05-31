@@ -44,6 +44,7 @@ public class ForControlColumnDefine {
             h.setGapBetweenColumn(sr.readUInt2());
             h.setProperty2(sr.readUInt2());
         } else {
+            h.setProperty2(sr.readUInt2());
             columnInfos(h, sr);
         }
 

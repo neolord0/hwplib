@@ -35,6 +35,12 @@ public interface ParagraphListInterface extends Iterable<Paragraph> {
      * @param index 삭제할 문단의 순번
      */
     void deleteParagraph(int index);
+
+    /**
+     * 문단 배열을 리턴한다.
+     * @return 문단 배열
+     */
+    Paragraph[] getParagraphs();
 }
 
 

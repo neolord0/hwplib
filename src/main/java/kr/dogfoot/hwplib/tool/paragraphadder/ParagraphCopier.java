@@ -100,6 +100,7 @@ public class ParagraphCopier {
                     case SectionDefine:
                         break;
                     case ColumnDefine:
+                        ColumnDefineCopier.copy((ControlColumnDefine) c, (ControlColumnDefine) target.addNewControl(ControlType.ColumnDefine), docInfoAdder);
                         break;
                     case Header:
                         break;

@@ -22,6 +22,7 @@ import java.util.ArrayList;
  * @author neolord
  */
 public class Paragraph {
+    public static final Paragraph[] Zero_Array = new Paragraph[0];
     /**
      * 헤더
      */
