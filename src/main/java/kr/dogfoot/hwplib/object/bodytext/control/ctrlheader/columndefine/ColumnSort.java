@@ -17,7 +17,7 @@ public enum ColumnSort {
     /**
      * 평행 다단
      */
-    Parallel((byte) 1);
+    Parallel((byte) 2);
 
     /**
      * 파일에 저장되는 정수값
