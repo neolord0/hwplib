@@ -22,7 +22,6 @@ public class SectionDefineAdder {
         pageBorderFill(sectionDefine.getOddPageBorderFill());
     }
 
-
     private static void header(CtrlHeaderSectionDefine header) {
         header.getProperty().setValue(0);
         header.setColumnGap(1134);
@@ -87,8 +86,7 @@ public class SectionDefineAdder {
         pageBorderFill.setLeftGap(1417);
         pageBorderFill.setRightGap(1417);
         pageBorderFill.setTopGap(1417);
-        pageBorderFill.setBorderFillId(1417);
+        pageBorderFill.setBottomGap(1417);
         pageBorderFill.setBorderFillId(1);
     }
-
 }

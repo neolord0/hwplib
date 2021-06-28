@@ -31,9 +31,7 @@ public class BlankFileMaker {
         Section section = hwpFile.getBodyText().addNewSection();
         EmptyParagraphAdder.add(section);
         return hwpFile;
-
     }
-
 
     private static void setFileHeader(FileHeader fileHeader) {
         fileHeader.getVersion().setVersion((short) 5, (short) 0, (short) 3, (short) 4);
