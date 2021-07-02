@@ -2,6 +2,7 @@ package kr.dogfoot.hwplib.tool.textextractor;
 
 import kr.dogfoot.hwplib.object.HWPFile;
 import kr.dogfoot.hwplib.object.bodytext.Section;
+import kr.dogfoot.hwplib.tool.textextractor.paraHead.ParaHeadMaker;
 
 import java.io.UnsupportedEncodingException;
 
@@ -33,8 +34,11 @@ public class TextExtractor {
      */
    public static String extract(HWPFile hwpFile, TextExtractOption option) throws UnsupportedEncodingException {
        StringBuffer sb = new StringBuffer();
+       ParaHeadMaker paraHeadMaker = new ParaHeadMaker(hwpFile);
        for (Section s : hwpFile.getBodyText().getSectionList()) {
-            ForParagraphList.extract(s, option, sb);
+           paraHeadMaker.startSection(s);
+           ForParagraphList.extract(s, option, paraHeadMaker, sb);
+           paraHeadMaker.endSection();
        }
        return sb.toString();
     }

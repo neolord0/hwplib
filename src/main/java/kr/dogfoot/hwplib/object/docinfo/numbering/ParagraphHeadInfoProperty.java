@@ -117,6 +117,19 @@ public class ParagraphHeadInfoProperty {
         }
     }
 
+    /**
+     * 문단 번호 형식를 반환한다. (5~9 bit)
+     *
+     * @return 문단 번호 형식
+     */
+    public ParagraphNumberFormat getParagraphNumberFormat() {
+        return ParagraphNumberFormat.valueOf((byte) BitFlag.get(value, 5, 9));
+    }
+
+    public void setParagraphNumberFormat(ParagraphNumberFormat paragraphNumberFormat) {
+        value = BitFlag.set(value, 5, 9, paragraphNumberFormat.getValue());
+    }
+
     public void copy(ParagraphHeadInfoProperty from) {
         value = from.value;
     }

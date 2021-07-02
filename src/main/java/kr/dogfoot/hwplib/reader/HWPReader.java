@@ -9,6 +9,7 @@ import kr.dogfoot.hwplib.reader.bodytext.ForSection;
 import kr.dogfoot.hwplib.reader.docinfo.ForDocInfo;
 import kr.dogfoot.hwplib.tool.textextractor.TextExtractMethod;
 import kr.dogfoot.hwplib.tool.textextractor.TextExtractorListener;
+import kr.dogfoot.hwplib.tool.textextractor.paraHead.ParaHeadMaker;
 import kr.dogfoot.hwplib.util.compoundFile.reader.CompoundFileReader;
 import kr.dogfoot.hwplib.util.compoundFile.reader.StreamReader;
 

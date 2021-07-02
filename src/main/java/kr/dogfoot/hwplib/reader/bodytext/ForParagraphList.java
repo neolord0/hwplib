@@ -52,7 +52,8 @@ public class ForParagraphList {
                 break;
             }
 
-            kr.dogfoot.hwplib.tool.textextractor.ForParagraphList.paragraph(para, tem, sb);
+            kr.dogfoot.hwplib.tool.textextractor.ForParagraphList.
+                    paragraph(para, tem, null, sb);
             listener.paragraphText(sb.toString());
             sb.setLength(0);
         }

@@ -1,11 +1,15 @@
 package kr.dogfoot.hwplib.tool.textextractor;
 
+import kr.dogfoot.hwplib.object.HWPFile;
 import kr.dogfoot.hwplib.object.bodytext.ParagraphListInterface;
 import kr.dogfoot.hwplib.object.bodytext.control.Control;
 import kr.dogfoot.hwplib.object.bodytext.paragraph.Paragraph;
 import kr.dogfoot.hwplib.object.bodytext.paragraph.text.HWPChar;
 import kr.dogfoot.hwplib.object.bodytext.paragraph.text.HWPCharNormal;
 import kr.dogfoot.hwplib.object.bodytext.paragraph.text.ParaText;
+import kr.dogfoot.hwplib.tool.textextractor.paraHead.ParaHeadMaker;
+import kr.dogfoot.hwplib.tool.textextractor.paraHead.ParaHeadNumber;
+import kr.dogfoot.hwplib.tool.textextractor.paraHead.ParaNumber;
 
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
@@ -19,27 +23,34 @@ public class ForParagraphList {
     /**
      * 문단 리스트에서 텍스트를 추출한다.
      *
-     * @param paragraphList 문단 리스트
-     * @param tem           텍스트 추출 방법
-     * @param sb            추출된 텍스트를 저정할 StringBuffer 객체
+     * @param paragraphList     문단 리스트
+     * @param tem               텍스트 추출 방법
+     * @param paraHeadMaker     문단 번호/글머리표 생성기
+     * @param sb                추출된 텍스트를 저정할 StringBuffer 객체
      * @throws UnsupportedEncodingException
      */
     public static void extract(ParagraphListInterface paragraphList,
                                TextExtractMethod tem,
+                               ParaHeadMaker paraHeadMaker,
                                StringBuffer sb) throws UnsupportedEncodingException {
-        extract(paragraphList, new TextExtractOption(tem), sb);
+        extract(paragraphList,
+                new TextExtractOption(tem),
+                paraHeadMaker,
+                sb);
     }
 
     /**
      * 문단 리스트에서 텍스트를 추출한다.
      *
-     * @param paragraphList 문단 리스트
-     * @param option        추출 옵션
-     * @param sb            추출된 텍스트를 저정할 StringBuffer 객체
+     * @param paragraphList     문단 리스트
+     * @param option            추출 옵션
+     * @param paraHeadMaker     문단 번호/글머리표 생성기
+     * @param sb                추출된 텍스트를 저정할 StringBuffer 객체
      * @throws UnsupportedEncodingException
      */
     public static void extract(ParagraphListInterface paragraphList,
                                TextExtractOption option,
+                               ParaHeadMaker paraHeadMaker,
                                StringBuffer sb) throws UnsupportedEncodingException {
         if (paragraphList == null) {
             return;
@@ -47,6 +58,7 @@ public class ForParagraphList {
         for (Paragraph p : paragraphList) {
             paragraph(p,
                     option,
+                    paraHeadMaker,
                     sb);
         }
     }
@@ -54,35 +66,48 @@ public class ForParagraphList {
     /**
      * startIndex 순번 부터 끝 순번 까지의 문단의 텍스트를 추출한다.
      *
-     * @param p          문단
-     * @param startIndex 시작 순번
-     * @param tem        텍스트 추출 방법
-     * @param sb         추출된 텍스트를 저정할 StringBuffer 객체
+     * @param p                 문단
+     * @param startIndex        시작 순번
+     * @param tem               텍스트 추출 방법
+     * @param paraHeadMaker     문단 번호/글머리표 생성기
+     * @param sb                추출된 텍스트를 저정할 StringBuffer 객체
      * @throws UnsupportedEncodingException
      */
-    public static void extract(Paragraph p, int startIndex,
-                               TextExtractMethod tem, StringBuffer sb) throws UnsupportedEncodingException {
-        extract(p, startIndex,
+    public static void extract(Paragraph p,
+                               int startIndex,
+                               TextExtractMethod tem,
+                               ParaHeadMaker paraHeadMaker,
+                               StringBuffer sb) throws UnsupportedEncodingException {
+
+        extract(p,
+                startIndex,
                 new TextExtractOption(tem),
+                paraHeadMaker,
                 sb);
      }
 
     /**
      * startIndex 순번 부터 끝 순번 까지의 문단의 텍스트를 추출한다.
      *
-     * @param p          문단
-     * @param startIndex 시작 순번
-     * @param option     추출 옵션
-     * @param sb         추출된 텍스트를 저정할 StringBuffer 객체
+     * @param p                 문단
+     * @param startIndex        시작 순번
+     * @param option            추출 옵션
+     * @param paraHeadMaker     문단 번호/글머리표 생성기
+     * @param sb                추출된 텍스트를 저정할 StringBuffer 객체
      * @throws UnsupportedEncodingException
      */
-    public static void extract(Paragraph p, int startIndex,
+    public static void extract(Paragraph p,
+                               int startIndex,
                                TextExtractOption option,
+                               ParaHeadMaker paraHeadMaker,
                                StringBuffer sb) throws UnsupportedEncodingException {
         ParaText pt = p.getText();
         if (pt != null) {
-            extract(p, startIndex, pt.getCharList().size() - 1,
+            extract(p,
+                    startIndex,
+                    pt.getCharList().size() - 1,
                     option,
+                    paraHeadMaker,
                     sb);
         }
     }
@@ -90,33 +115,46 @@ public class ForParagraphList {
     /**
      * startIndex 순번 부터 endIndex 순번 까지의 문단의 텍스트를 추출한다.
      *
-     * @param p          문단
-     * @param startIndex 시작 순번
-     * @param endIndex   끝 순번
-     * @param tem        텍스트 추출 방법
-     * @param sb         추출된 텍스트를 저정할 StringBuffer 객체
+     * @param p                 문단
+     * @param startIndex        시작 순번
+     * @param endIndex          끝 순번
+     * @param tem               텍스트 추출 방법
+     * @param paraHeadMaker     문단 번호/글머리표 생성기
+     * @param sb                추출된 텍스트를 저정할 StringBuffer 객체
      * @throws UnsupportedEncodingException
      */
-    public static void extract(Paragraph p, int startIndex, int endIndex,
-                               TextExtractMethod tem,  StringBuffer sb) throws UnsupportedEncodingException {
-        extract(p, startIndex, endIndex,
+    public static void extract(Paragraph p,
+                               int startIndex,
+                               int endIndex,
+                               TextExtractMethod tem,
+                               ParaHeadMaker paraHeadMaker,
+                               StringBuffer sb) throws UnsupportedEncodingException {
+        extract(p,
+                startIndex,
+                endIndex,
                 new TextExtractOption(tem),
+                paraHeadMaker,
                 sb);
     }
 
     /**
      * startIndex 순번 부터 endIndex 순번 까지의 문단의 텍스트를 추출한다.
      *
-     * @param p          문단
-     * @param startIndex 시작 순번
-     * @param endIndex   끝 순번
-     * @param option     추출 옵션
-     * @param sb         추출된 텍스트를 저정할 StringBuffer 객체
+     * @param p                 문단
+     * @param startIndex        시작 순번
+     * @param endIndex          끝 순번
+     * @param option            추출 옵션
+     * @param paraHeadMaker     문단 번호/글머리표 생성기
+     * @param sb                추출된 텍스트를 저정할 StringBuffer 객체
      * @throws UnsupportedEncodingException
      */
-    public static void extract(Paragraph p, int startIndex, int endIndex,
+    public static void extract(Paragraph p,
+                               int startIndex,
+                               int endIndex,
                                TextExtractOption option,
+                               ParaHeadMaker paraHeadMaker,
                                StringBuffer sb) throws UnsupportedEncodingException {
+
         ArrayList<Control> controlList = new ArrayList<Control>();
         ParaText pt = p.getText();
         if (pt != null) {
@@ -141,8 +179,9 @@ public class ForParagraphList {
                         if (startIndex <= charIndex && charIndex <= endIndex) {
                             if (option.getMethod() == TextExtractMethod.InsertControlTextBetweenParagraphText) {
                                 sb.append("\n");
-                                ForControl.extract(
-                                        p.getControlList().get(controlIndex), option,
+                                ForControl.extract(p.getControlList().get(controlIndex),
+                                        option,
+                                        paraHeadMaker,
                                         sb);
                             } else {
                                 controlList.add(p.getControlList()
@@ -162,35 +201,46 @@ public class ForParagraphList {
         }
 
         if (option.getMethod() == TextExtractMethod.AppendControlTextAfterParagraphText) {
-            controls(controlList, option, sb);
+            controls(controlList, option, paraHeadMaker, sb);
         }
     }
 
     /**
      * 문단의 텍스트를 추출한다.
      *
-     * @param p   문단
-     * @param tem 텍스트 추출 방법
-     * @param sb  추출된 텍스트를 저정할 StringBuffer 객체
+     * @param p                 문단
+     * @param tem               텍스트 추출 방법
+     * @param paraHeadMaker     문단 번호/글머리표 생성기
+     * @param sb                추출된 텍스트를 저정할 StringBuffer 객체
      * @throws UnsupportedEncodingException
      */
     public static void paragraph(Paragraph p,
                                  TextExtractMethod tem,
+                                 ParaHeadMaker paraHeadMaker,
                                  StringBuffer sb) throws UnsupportedEncodingException {
         paragraph(p,
                 new TextExtractOption(tem),
+                paraHeadMaker,
                 sb);
     }
 
     /**
      * 문단의 텍스트를 추출한다.
      *
-     * @param p         문단
-     * @param option    추출 옵션
-     * @param sb        추출된 텍스트를 저정할 StringBuffer 객체
+     * @param p                 문단
+     * @param option            추출 옵션
+     * @param paraHeadMaker     문단 번호 생성기
+     * @param sb                추출된 텍스트를 저정할 StringBuffer 객체
      * @throws UnsupportedEncodingException
      */
-    public static void paragraph(Paragraph p, TextExtractOption option, StringBuffer sb) throws UnsupportedEncodingException {
+    public static void paragraph(Paragraph p,
+                                 TextExtractOption option,
+                                 ParaHeadMaker paraHeadMaker,
+                                 StringBuffer sb) throws UnsupportedEncodingException {
+        if (option.isInsertParaHead() == true && paraHeadMaker != null) {
+            sb.append(paraHeadMaker.paraHeadString(p)).append(" ");
+        }
+
         ParaText pt = p.getText();
         if (pt != null) {
             int controlIndex = 0;
@@ -208,8 +258,10 @@ public class ForParagraphList {
                     case ControlExtend:
                         if (option.getMethod() == TextExtractMethod.InsertControlTextBetweenParagraphText) {
                             sb.append("\n");
-                            ForControl.extract(
-                                    p.getControlList().get(controlIndex), option, sb);
+                            ForControl.extract(p.getControlList().get(controlIndex),
+                                    option,
+                                    paraHeadMaker,
+                                    sb);
                             controlIndex++;
                         }
                         break;
@@ -222,7 +274,7 @@ public class ForParagraphList {
             }
         }
         if (option.getMethod() == TextExtractMethod.AppendControlTextAfterParagraphText) {
-            controls(p.getControlList(), option, sb);
+            controls(p.getControlList(), option, paraHeadMaker, sb);
         }
     }
 
@@ -254,16 +306,20 @@ public class ForParagraphList {
     /**
      * 컨트롤 리스트에 포함된 컨트롤에서 텍스트를 추출한다.
      *
-     * @param controlList 컨트롤 리스트
-     * @param option      추출 옵션
-     * @param sb          추출된 텍스트를 저정할 StringBuffer 객체
+     * @param controlList       컨트롤 리스트
+     * @param option            추출 옵션
+     * @param paraHeadMaker     문단 번호 생성기
+     * @param sb                추출된 텍스트를 저정할 StringBuffer 객체
      * @throws UnsupportedEncodingException
      */
     private static void controls(ArrayList<Control> controlList,
-                                 TextExtractOption option, StringBuffer sb) throws UnsupportedEncodingException {
+                                 TextExtractOption option,
+                                 ParaHeadMaker paraHeadMaker,
+                                 StringBuffer sb) throws UnsupportedEncodingException {
+
         if (controlList != null) {
             for (Control c : controlList) {
-                ForControl.extract(c, option, sb);
+                ForControl.extract(c, option, paraHeadMaker, sb);
             }
         }
     }
