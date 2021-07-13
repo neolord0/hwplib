@@ -63,6 +63,47 @@ public class ForParagraphList {
         }
     }
 
+
+    public static void extract(ParagraphListInterface paragraphList,
+                                int startParaIndex,
+                                int startCharIndex,
+                                int endParaIndex,
+                                int endCharIndex,
+                                TextExtractOption option,
+                                StringBuffer sb) throws UnsupportedEncodingException {
+        if (startParaIndex == endParaIndex) {
+            ForParagraphList.extract(paragraphList.getParagraph(startParaIndex),
+                    startCharIndex, endCharIndex, option, null, sb);
+        } else {
+            ForParagraphList.extract(paragraphList.getParagraph(startParaIndex),
+                    startCharIndex, option, null, sb);
+            if (startParaIndex + 1 < endParaIndex) {
+                for (int paraIndex = startParaIndex + 1; paraIndex <= endParaIndex - 1; paraIndex++) {
+                    ForParagraphList.extract(paragraphList.getParagraph(paraIndex), -1, 0xffff, option, null, sb);
+                }
+            }
+
+            ForParagraphList.extract(paragraphList.getParagraph(endParaIndex),
+                    -1, endCharIndex, option, null, sb);
+        }
+    }
+
+    public static void extract(ParagraphListInterface paragraphList,
+                               int startParaIndex,
+                               int startCharIndex,
+                               int endParaIndex,
+                               int endCharIndex,
+                               TextExtractMethod tem,
+                               StringBuffer sb) throws UnsupportedEncodingException {
+        extract(paragraphList,
+                startParaIndex,
+                startCharIndex,
+                endParaIndex,
+                endCharIndex,
+                new TextExtractOption(tem),
+                sb);
+    }
+
     /**
      * startIndex 순번 부터 끝 순번 까지의 문단의 텍스트를 추출한다.
      *
