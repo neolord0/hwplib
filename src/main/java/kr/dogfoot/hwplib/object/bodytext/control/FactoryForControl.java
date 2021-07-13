@@ -2,6 +2,7 @@ package kr.dogfoot.hwplib.object.bodytext.control;
 
 import kr.dogfoot.hwplib.object.bodytext.control.ctrlheader.CtrlHeaderGso;
 import kr.dogfoot.hwplib.object.bodytext.control.gso.*;
+import org.apache.poi.ss.usermodel.Header;
 
 /**
  * 컨트롤을 생성하는 객체
@@ -58,6 +59,10 @@ public class FactoryForControl {
         return null;
     }
 
+    public static ControlForm createFormControl(CtrlHeaderGso header) {
+        return new ControlForm(header);
+    }
+
     /**
      * 그리기 객체 아이디(gsoId)에 해당되는 그리기 객체 컨트롤를 새로 생성한다.
      *
@@ -89,4 +94,5 @@ public class FactoryForControl {
         }
         return null;
     }
+
 }

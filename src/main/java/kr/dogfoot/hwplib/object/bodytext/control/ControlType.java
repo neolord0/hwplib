@@ -85,6 +85,11 @@ public enum ControlType {
      * 숨은 설명
      */
     HiddenComment(CtrlID.make('t', 'c', 'm', 't')),
+    /**
+     * 양식 개체
+     */
+    Form(CtrlID.make('f', 'o', 'r', 'm')),
+
 
     FIELD_UNKNOWN(CtrlID.make('%', 'u', 'n', 'k')),
     FIELD_DATE(CtrlID.make('%', 'd', 't', 'e')),

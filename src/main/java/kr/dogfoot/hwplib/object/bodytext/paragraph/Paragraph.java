@@ -1,6 +1,7 @@
 package kr.dogfoot.hwplib.object.bodytext.paragraph;
 
 import kr.dogfoot.hwplib.object.bodytext.control.Control;
+import kr.dogfoot.hwplib.object.bodytext.control.ControlForm;
 import kr.dogfoot.hwplib.object.bodytext.control.ControlType;
 import kr.dogfoot.hwplib.object.bodytext.control.FactoryForControl;
 import kr.dogfoot.hwplib.object.bodytext.control.ctrlheader.CtrlHeaderGso;
@@ -211,6 +212,14 @@ public class Paragraph {
         return addNewGsoControl(gsoType.getId(), header);
     }
 
+    public ControlForm addNewFormControl(CtrlHeaderGso header) {
+        if (controlList == null) {
+            controlList = new ArrayList<Control>();
+        }
+        ControlForm fc = FactoryForControl.createFormControl(header);
+        controlList.add(fc);
+        return fc;
+    }
     /**
      * gsoid에 해당하는 새로운 GSO 컨트롤(그리기 객체)를 생성하고 리스트에 추가한다. 새로 생성한 GSO 컨트롤의 헤더를 header로
      * 설정한다.

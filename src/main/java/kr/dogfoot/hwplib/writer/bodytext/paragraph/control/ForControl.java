@@ -3,6 +3,7 @@ package kr.dogfoot.hwplib.writer.bodytext.paragraph.control;
 import kr.dogfoot.hwplib.object.bodytext.control.*;
 import kr.dogfoot.hwplib.object.bodytext.control.gso.GsoControl;
 import kr.dogfoot.hwplib.util.compoundFile.writer.StreamWriter;
+import kr.dogfoot.hwplib.writer.bodytext.paragraph.control.form.ForControlForm;
 import kr.dogfoot.hwplib.writer.bodytext.paragraph.control.gso.ForGsoControl;
 
 /**
@@ -77,6 +78,9 @@ public class ForControl {
                 break;
             case HiddenComment: // 숨은 설명
                 ForControlHiddenComment.write((ControlHiddenComment) c, sw);
+                break;
+            case Form:      // 양식 개체
+                ForControlForm.write((ControlForm) c, sw);
                 break;
             case Gso:
                 ForGsoControl.write((GsoControl) c, sw);

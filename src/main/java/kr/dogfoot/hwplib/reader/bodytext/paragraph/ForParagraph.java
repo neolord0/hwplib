@@ -2,9 +2,11 @@ package kr.dogfoot.hwplib.reader.bodytext.paragraph;
 
 import kr.dogfoot.hwplib.object.bodytext.control.Control;
 import kr.dogfoot.hwplib.object.bodytext.control.ControlType;
+import kr.dogfoot.hwplib.object.bodytext.control.ctrlheader.CtrlID;
 import kr.dogfoot.hwplib.object.bodytext.paragraph.Paragraph;
 import kr.dogfoot.hwplib.object.etc.HWPTag;
 import kr.dogfoot.hwplib.reader.bodytext.paragraph.control.ForControl;
+import kr.dogfoot.hwplib.reader.bodytext.paragraph.control.form.ForFormControl;
 import kr.dogfoot.hwplib.reader.bodytext.paragraph.control.gso.ForGsoControl;
 import kr.dogfoot.hwplib.reader.bodytext.paragraph.memo.ForMemo;
 import kr.dogfoot.hwplib.util.compoundFile.reader.StreamReader;
@@ -170,9 +172,15 @@ public class ForParagraph {
      */
     private void control() throws Exception {
         long id = sr.readUInt4();
+
+        char[] ret = CtrlID.make(id);
+
         if (id == ControlType.Gso.getCtrlId()) {
             ForGsoControl fgc = new ForGsoControl();
             fgc.read(paragraph, sr);
+        } else if (id == ControlType.Form.getCtrlId()) {
+            ForFormControl ffc = new ForFormControl();
+            ffc.read(paragraph, sr);
         } else {
             Control c = paragraph.addNewControl(id);
             ForControl.read(c, sr);
