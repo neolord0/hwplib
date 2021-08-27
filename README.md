@@ -32,7 +32,6 @@ http://hwplib.dogfoot.kr:8080/webviewer/
     <dependency>
         <groupId>kr.dogfoot</groupId>
         <artifactId>hwplib</artifactId>
-        <version>1.0.3</version>
     </dependency>
     ```
 
