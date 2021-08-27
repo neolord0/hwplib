@@ -24,7 +24,12 @@ public class TableCellMerger {
      * @return 병합 성공 여부
      */
     public static boolean mergeCell(ControlTable table, int startRow, int startCol, int rowSpan, int colSpan) {
-        TableCellMerger merger = new TableCellMerger(table, startRow, startCol, rowSpan, colSpan);
+        TableCellMerger merger = new TableCellMerger(table, startRow, startCol, rowSpan, colSpan, true);
+        return merger.merge();
+    }
+
+    public static boolean mergeCellWithoutCheck(ControlTable table, int startRow, int startCol, int rowSpan, int colSpan) {
+        TableCellMerger merger = new TableCellMerger(table, startRow, startCol, rowSpan, colSpan, false);
         return merger.merge();
     }
 
@@ -48,6 +53,10 @@ public class TableCellMerger {
      * 열의 span
      */
     private int colSpan;
+    /**
+     * 병합할 수 있는 지 체크한다.
+     */
+    private boolean check;
 
     /**
      * 생성자
@@ -58,12 +67,13 @@ public class TableCellMerger {
      * @param rowSpan  행의 span
      * @param colSpan  열의 span
      */
-    private TableCellMerger(ControlTable table, int startRow, int startCol, int rowSpan, int colSpan) {
+    private TableCellMerger(ControlTable table, int startRow, int startCol, int rowSpan, int colSpan, boolean check) {
         this.table = table;
         this.startRow = startRow;
         this.startCol = startCol;
         this.rowSpan = rowSpan;
         this.colSpan = colSpan;
+        this.check = check;
     }
 
     /**
@@ -72,7 +82,13 @@ public class TableCellMerger {
      * @return 병합 성공 여부
      */
     private boolean merge() {
-        if (possible()) {
+        boolean possible;
+        if (check == false) {
+            possible = true;
+        } else {
+            possible = possible();
+        }
+        if (possible) {
             resetMergedCell();
             removeRestCell();
             resetCellCountOfRow();
@@ -236,7 +252,7 @@ public class TableCellMerger {
         Row row = table.getRowList().get(startRow);
         for (Cell cell : row.getCellList()) {
             ListHeaderForCell lhc = cell.getListHeader();
-            if (lhc.getColSpan() >= startCol && lhc.getColIndex() + lhc.getColSpan() - 1 <= getEndCol()) {
+            if (startCol <= lhc.getColIndex() && lhc.getColIndex() <= getEndCol()) {
                 width += lhc.getWidth();
             }
         }

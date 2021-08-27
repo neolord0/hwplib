@@ -153,6 +153,12 @@ public class ForParagraphList {
         return sb.toString();
     }
 
+
+    private static void deleteSegItmes(FindPosition result) {
+
+    }
+
+
     /**
      * 문단 리스트에 포함된 컨트롤에서 필드 객체의 텍스트를 찾아 반환한다.
      *
@@ -198,6 +204,7 @@ public class ForParagraphList {
         for (FindPosition result : results) {
             if (getFieldEndPosition(paragraphList, result)) {
                 textList.add(getText(paragraphList, result, temInField));
+                deleteSegItmes(result);
             }
         }
         getAllFieldTextForControl(paragraphList, fieldType, fieldName, temInField, textList);
@@ -243,6 +250,7 @@ public class ForParagraphList {
             if (getFieldEndPosition(paragraphList, result)) {
                 if (textBuffer.hasNext()) {
                     changeText(paragraphList, result, textBuffer.nextText());
+                    deleteLineSeg(paragraphList, result);
                 } else {
                     return SetFieldResult.NotEnoughText;
                 }
@@ -250,6 +258,7 @@ public class ForParagraphList {
         }
         return setFieldTextForControls(paragraphList, fieldType, fieldName, textBuffer);
     }
+
 
     /**
      * 문단 리스트에 특정 위치에 문자열을 변경한다.
@@ -276,6 +285,12 @@ public class ForParagraphList {
         } else {
             Paragraph para = paragraphList.getParagraph(position.startParaIndex);
             ParaTextSetter.changeText(para, position.startCharIndex + 1, position.endCharIndex - 1, text);
+        }
+    }
+
+    private static void deleteLineSeg(ParagraphListInterface paragraphList, FindPosition result) {
+        for (int paraIndex = result.startParaIndex; paraIndex <= result.endParaIndex; paraIndex++) {
+            paragraphList.getParagraph(paraIndex).deleteLineSeg();;
         }
     }
 

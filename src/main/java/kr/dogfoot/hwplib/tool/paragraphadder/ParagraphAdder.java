@@ -60,6 +60,15 @@ public class ParagraphAdder {
         }
     }
 
+    public void add(HWPFile hwpFile, ParagraphListInterface paragraphListInterface) throws Exception {
+        ParagraphCopier copyer = new ParagraphCopier(new DocInfoAdder(hwpFile, targetHWPFile));
+        for (Paragraph p : paragraphListInterface) {
+            Paragraph targetParagraph = targetParaList.addNewParagraph();
+            copyer.copy(p, targetParagraph);
+        }
+    }
+
+
     public void merge(Paragraph targetParagraph, HWPFile hwpFile, Paragraph p) throws Exception {
         ParagraphMerger merger = new ParagraphMerger(new DocInfoAdder(hwpFile, targetHWPFile));
         merger.merge(p, targetParagraph);

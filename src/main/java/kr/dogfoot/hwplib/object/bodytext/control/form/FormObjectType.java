@@ -10,7 +10,7 @@ public enum FormObjectType {
     /**
      * 양식개체_선택상자
      */
-    CheckButton(CtrlID.make('+', 'c', 'b', 't')),
+    CheckBox(CtrlID.make('+', 'c', 'b', 't')),
     /**
      * 양식개체_목록상자
      */

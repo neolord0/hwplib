@@ -1,4 +1,4 @@
-package kr.dogfoot.hwplib.tool.objectfinder.fieldfiner;
+package kr.dogfoot.hwplib.tool.objectfinder.fieldform;
 
 import kr.dogfoot.hwplib.object.HWPFile;
 import kr.dogfoot.hwplib.object.bodytext.ParagraphListInterface;
@@ -11,9 +11,9 @@ import kr.dogfoot.hwplib.object.bodytext.paragraph.text.HWPChar;
 
 import java.util.ArrayList;
 
-public class FieldFinder {
-    public static ArrayList<FieldData> findAll(HWPFile hwpFile) {
-        ArrayList<FieldData> result = new ArrayList();
+public class FieldFormFinder {
+    public static Result findAll(HWPFile hwpFile) {
+        Result result = new Result();
 
         for (Section section : hwpFile.getBodyText().getSectionList()) {
             findInParagraphList(section, result);
@@ -22,13 +22,13 @@ public class FieldFinder {
         return result;
     }
 
-    public static void findInParagraphList(ParagraphListInterface paragraphList, ArrayList<FieldData> result) {
+    public static void findInParagraphList(ParagraphListInterface paragraphList, Result result) {
         ArrayList<FieldData> resultInParagraphList = new ArrayList<>();
         getFieldStartPosition(paragraphList, resultInParagraphList);
         for (FieldData fieldData : resultInParagraphList) {
             getFieldEndPosition(paragraphList, fieldData);
         }
-        result.addAll(resultInParagraphList);
+        result.addAllFieldData(resultInParagraphList);
 
         for (Paragraph paragraph : paragraphList) {
             if (paragraph.getControlList() != null) {
@@ -41,7 +41,7 @@ public class FieldFinder {
     private static void getFieldStartPosition(ParagraphListInterface paragraphList, ArrayList<FieldData> result) {
         int paraCount = paragraphList.getParagraphCount();
         for (int paraIndex = 0; paraIndex < paraCount; paraIndex++) {
-            findStartingField(paragraphList, paraIndex,  result);
+            findStartingField(paragraphList, paraIndex, result);
         }
     }
 
@@ -58,22 +58,22 @@ public class FieldFinder {
                 ControlField field = (ControlField) c;
 
                 FieldData fieldData = new FieldData(field.getName(),
-                        (field.getType() == ControlType.FIELD_CLICKHERE) ? FieldType.ClickHere : FieldType.ETC,
+                        (field.getType() == ControlType.FIELD_CLICKHERE) ? FieldData.FieldType.ClickHere : FieldData.FieldType.ETC,
                         paragraphList);
                 fieldData.setStartPosition(paraIndex, p.getText().getCharIndexFromExtendCharIndex(ctrlIndex));
 
                 results.add(fieldData);
             }
-       }
+        }
     }
 
     private static void getFieldEndPosition(ParagraphListInterface paragraphList, FieldData fieldData) {
         int depth = 0;
         int paraCount = paragraphList.getParagraphCount();
-        for (int paraIndex = fieldData.startParaIndex; paraIndex < paraCount; paraIndex++) {
+        for (int paraIndex = fieldData.getStartParaIndex(); paraIndex < paraCount; paraIndex++) {
             Paragraph p = paragraphList.getParagraph(paraIndex);
             if (p.getText() != null) {
-                int startIndex = (paraIndex == fieldData.startParaIndex) ? fieldData.startCharIndex + 1 : 0;
+                int startIndex = (paraIndex == fieldData.getStartParaIndex()) ? fieldData.getStartCharIndex() + 1 : 0;
                 int charCount = p.getText().getCharList().size();
                 for (int charIndex = startIndex; charIndex < charCount; charIndex++) {
                     HWPChar hwpChar = p.getText().getCharList().get(charIndex);
@@ -92,70 +92,33 @@ public class FieldFinder {
         }
     }
 
-    public static class FieldData {
-        private String name;
-        private FieldType type;
+    public static class Result {
+        private ArrayList<FieldData> fieldDataList;
+        private ArrayList<FormData> formDataList;
 
-        private ParagraphListInterface paragraphList;
-        private int startParaIndex;
-        private int startCharIndex;
-        private int endParaIndex;
-        private int endCharIndex;
-
-        public FieldData(String name, FieldType type, ParagraphListInterface paragraphList) {
-            this.name = name;
-            this.type = type;
-            this.paragraphList = paragraphList;
-
-            startParaIndex = -1;
-            startCharIndex = -1;
-            endParaIndex = -1;
-            endCharIndex = -1;
+        public Result() {
+            fieldDataList = new ArrayList<>();
+            formDataList = new ArrayList<>();
         }
 
-        public String getName() {
-            return name;
+        public void addFieldData(FieldData fieldData) {
+            fieldDataList.add(fieldData);
         }
 
-        public FieldType getType() {
-            return type;
+        public void addAllFieldData(ArrayList<FieldData> fieldDataList) {
+            this.fieldDataList.addAll(fieldDataList);
         }
 
-        public ParagraphListInterface getParagraphList() {
-            return paragraphList;
+        public ArrayList<FieldData> getFieldDataList() {
+            return fieldDataList;
         }
 
-        public int getStartParaIndex() {
-            return startParaIndex;
+        public void addFormData(FormData formData) {
+            formDataList.add(formData);
         }
 
-        public int getStartCharIndex() {
-            return startCharIndex;
+        public ArrayList<FormData> getFormDataList() {
+            return formDataList;
         }
-
-        public void setStartPosition(int startParaIndex, int startCharIndex) {
-            this.startParaIndex = startParaIndex;
-            this.startCharIndex = startCharIndex;
-        }
-
-        public int getEndParaIndex() {
-            return endParaIndex;
-        }
-
-        public int getEndCharIndex() {
-            return endCharIndex;
-        }
-
-        public void setEndPosition(int endParaIndex, int endCharIndex) {
-            this.endParaIndex = endParaIndex;
-            this.endCharIndex = endCharIndex;
-        }
-    }
-
-    public enum FieldType {
-        ClickHere,
-        Cell,
-        Gso,
-        ETC,
     }
 }

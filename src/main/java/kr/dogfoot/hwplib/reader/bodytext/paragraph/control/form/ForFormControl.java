@@ -5,12 +5,15 @@ import kr.dogfoot.hwplib.object.bodytext.control.ControlType;
 import kr.dogfoot.hwplib.object.bodytext.control.ctrlheader.CtrlHeaderGso;
 import kr.dogfoot.hwplib.object.bodytext.control.form.FormObject;
 import kr.dogfoot.hwplib.object.bodytext.control.form.FormObjectType;
+import kr.dogfoot.hwplib.object.bodytext.control.form.properties.PropertyNormal;
+import kr.dogfoot.hwplib.object.bodytext.control.form.properties.PropertySet;
 import kr.dogfoot.hwplib.object.bodytext.paragraph.Paragraph;
 import kr.dogfoot.hwplib.object.etc.HWPTag;
 import kr.dogfoot.hwplib.reader.bodytext.paragraph.control.gso.part.ForCtrlHeaderGso;
 import kr.dogfoot.hwplib.util.compoundFile.reader.StreamReader;
 
 import java.io.IOException;
+import java.nio.charset.StandardCharsets;
 
 public class ForFormControl {
     public static void read(Paragraph paragraph, StreamReader sr) throws Exception {
@@ -33,7 +36,9 @@ public class ForFormControl {
             long id2 = sr.readUInt4();
             formObject.setType(FormObjectType.fromUint4(id));
             sr.skip(4);
-            formObject.getProperties().setBytes(sr.readHWPString());
+
+            String propertiesString = new String(sr.readHWPString(), StandardCharsets.UTF_16LE);
+            formObject.getProperties().parse(propertiesString);
         }
     }
 }

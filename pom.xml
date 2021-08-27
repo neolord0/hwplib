@@ -6,7 +6,7 @@
     <groupId>kr.dogfoot</groupId>
     <artifactId>hwplib</artifactId>
     <packaging>jar</packaging>
-    <version>1.0.4</version>
+    <version>1.0.5</version>
 
     <name>HWP Library</name>
     <description>The hwp library is a library that can read and write hwp files used in the word processor developed by Hancom.</description>

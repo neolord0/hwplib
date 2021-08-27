@@ -13,8 +13,10 @@ import kr.dogfoot.hwplib.tool.textextractor.paraHead.ParaHeadMaker;
 import kr.dogfoot.hwplib.util.compoundFile.reader.CompoundFileReader;
 import kr.dogfoot.hwplib.util.compoundFile.reader.StreamReader;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.InputStream;
+import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.Iterator;
 import java.util.Set;
@@ -34,6 +36,30 @@ public class HWPReader {
      */
     public static HWPFile fromFile(String filepath) throws Exception {
         return fromInputStream(new FileInputStream(filepath));
+    }
+
+    /**
+     * hwp 파일을 읽는다.
+     *
+     * @param  file hwp파일
+     * @return HWPFile 객체
+     * @throws Exception
+     */
+    public static HWPFile fromFile(File file) throws Exception {
+        HWPReader r = new HWPReader();
+        r.hwpFile = new HWPFile();
+        r.cfr = new CompoundFileReader(file);
+
+        r.fileHeader();
+        if (r.hasPassword()) {
+            throw new Exception("Files with passwords are not supported.");
+        }
+        r.docInfo();
+        r.bodyText();
+        r.binData();
+
+        r.cfr.close();
+        return r.hwpFile;
     }
 
     /**
