@@ -63,6 +63,13 @@ public class ParagraphList implements ParagraphListInterface {
         paragraphList.remove(index);
     }
 
+    /**
+     *  모든 문단을 삭제한다.
+     */
+    public void deleteAllParagraphs() {
+        paragraphList.clear();
+    }
+
     @Override
     public Paragraph[] getParagraphs() {
         return paragraphList.toArray(Paragraph.Zero_Array);

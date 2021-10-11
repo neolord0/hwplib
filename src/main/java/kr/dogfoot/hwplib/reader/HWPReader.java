@@ -9,14 +9,14 @@ import kr.dogfoot.hwplib.reader.bodytext.ForSection;
 import kr.dogfoot.hwplib.reader.docinfo.ForDocInfo;
 import kr.dogfoot.hwplib.tool.textextractor.TextExtractMethod;
 import kr.dogfoot.hwplib.tool.textextractor.TextExtractorListener;
-import kr.dogfoot.hwplib.tool.textextractor.paraHead.ParaHeadMaker;
 import kr.dogfoot.hwplib.util.compoundFile.reader.CompoundFileReader;
 import kr.dogfoot.hwplib.util.compoundFile.reader.StreamReader;
 
+import javax.xml.bind.DatatypeConverter;
+import java.io.ByteArrayInputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.InputStream;
-import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.Iterator;
 import java.util.Set;
@@ -95,6 +95,12 @@ public class HWPReader {
 
         r.cfr.close();
         return r.hwpFile;
+    }
+
+    public static HWPFile fromBase64String(String base64) throws Exception {
+        byte[] binary = DatatypeConverter.parseBase64Binary(base64);
+        ByteArrayInputStream byteArrayInputStream = new ByteArrayInputStream(binary);
+        return HWPReader.fromInputStream(byteArrayInputStream);
     }
 
     /**
