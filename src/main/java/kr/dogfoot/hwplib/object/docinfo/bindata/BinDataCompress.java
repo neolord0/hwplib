@@ -9,7 +9,7 @@ public enum BinDataCompress {
     /**
      * 스토리지의 디폴트 모드 따라감
      */
-    ByStroageDefault((byte) 0),
+    ByStorageDefault((byte) 0),
     /**
      * 무조건 압축
      */
@@ -54,6 +54,6 @@ public enum BinDataCompress {
                 return bdc;
             }
         }
-        return ByStroageDefault;
+        return ByStorageDefault;
     }
 }
