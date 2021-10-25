@@ -52,7 +52,7 @@ public class Inserting_Table_WithImageBack {
 
     private final String imageFilePath = "sample_hwp" + File.separator + "image" + File.separator + "sample.jpg";
     private final String imageFileExt = "jpg";
-    private final BinDataCompress compressMethod = BinDataCompress.ByStroageDefault;
+    private final BinDataCompress compressMethod = BinDataCompress.ByStorageDefault;
 
     private HWPFile hwpFile;
     private ControlTable table;
@@ -103,7 +103,7 @@ public class Inserting_Table_WithImageBack {
         BinData bd = new BinData();
         bd.getProperty().setType(BinDataType.Embedding);
         bd.getProperty().setCompress(compressMethod);
-        bd.getProperty().setState(BinDataState.NotAcceess);
+        bd.getProperty().setState(BinDataState.NotAccess);
         bd.setBinDataID(streamIndex);
         bd.setExtensionForEmbedding(imageFileExt);
         hwpFile.getDocInfo().getBinDataList().add(bd);

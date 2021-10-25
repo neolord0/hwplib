@@ -213,7 +213,7 @@ public class HWPWriter {
      */
     private boolean isCompressBinData(BinDataCompress compressMethod) {
         switch (compressMethod) {
-            case ByStroageDefault:
+            case ByStorageDefault:
                 return isCompressed();
             case Compress:
                 return true;

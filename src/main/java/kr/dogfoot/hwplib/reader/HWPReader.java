@@ -232,7 +232,7 @@ public class HWPReader {
         if (binData != null) {
             return binData.getProperty().getCompress();
         }
-        return BinDataCompress.ByStroageDefault;
+        return BinDataCompress.ByStorageDefault;
     }
 
     /**
@@ -259,7 +259,7 @@ public class HWPReader {
      */
     private boolean isCompressBinData(BinDataCompress compressMethod) {
         switch (compressMethod) {
-            case ByStroageDefault:
+            case ByStorageDefault:
                 return isCompressed();
             case Compress:
                 return true;

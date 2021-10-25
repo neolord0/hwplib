@@ -48,7 +48,7 @@ public class Inserting_Image {
 
     private final String imageFilePath = "sample_hwp" + File.separator + "image" + File.separator + "sample.jpg";
     private final String imageFileExt = "jpg";
-    private final BinDataCompress compressMethod = BinDataCompress.ByStroageDefault;
+    private final BinDataCompress compressMethod = BinDataCompress.ByStorageDefault;
 
     private int instanceID = 0x5bb840e1;
     private HWPFile hwpFile;
@@ -100,7 +100,7 @@ public class Inserting_Image {
         BinData bd = new BinData();
         bd.getProperty().setType(BinDataType.Embedding);
         bd.getProperty().setCompress(compressMethod);
-        bd.getProperty().setState(BinDataState.NotAcceess);
+        bd.getProperty().setState(BinDataState.NotAccess);
         bd.setBinDataID(streamIndex);
         bd.setExtensionForEmbedding(imageFileExt);
         hwpFile.getDocInfo().getBinDataList().add(bd);
