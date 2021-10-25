@@ -9,7 +9,7 @@ public enum BinDataState {
     /**
      * 아직 access 된 적이 없는 상태
      */
-    NotAcceess((byte) 0),
+    NotAccess((byte) 0),
     /**
      * access에 성공하여 파일을 찾은 상태
      */
@@ -58,6 +58,6 @@ public enum BinDataState {
                 return bds;
             }
         }
-        return NotAcceess;
+        return NotAccess;
     }
 }
