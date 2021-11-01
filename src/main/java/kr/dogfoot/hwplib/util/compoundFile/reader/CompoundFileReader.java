@@ -1,10 +1,10 @@
 package kr.dogfoot.hwplib.util.compoundFile.reader;
 
 import kr.dogfoot.hwplib.object.fileheader.FileVersion;
-import org.apache.poi.poifs.filesystem.DirectoryEntry;
-import org.apache.poi.poifs.filesystem.DocumentEntry;
-import org.apache.poi.poifs.filesystem.Entry;
-import org.apache.poi.poifs.filesystem.POIFSFileSystem;
+import kr.dogfoot.hwplib.org.apache.poi.poifs.filesystem.DirectoryEntry;
+import kr.dogfoot.hwplib.org.apache.poi.poifs.filesystem.DocumentEntry;
+import kr.dogfoot.hwplib.org.apache.poi.poifs.filesystem.Entry;
+import kr.dogfoot.hwplib.org.apache.poi.poifs.filesystem.POIFSFileSystem;
 
 import java.io.File;
 import java.io.FileNotFoundException;

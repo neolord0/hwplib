@@ -1,8 +1,8 @@
 package kr.dogfoot.hwplib.util.compoundFile.reader;
 
 import kr.dogfoot.hwplib.object.fileheader.FileVersion;
-import org.apache.poi.poifs.filesystem.DocumentEntry;
-import org.apache.poi.poifs.filesystem.DocumentInputStream;
+import kr.dogfoot.hwplib.org.apache.poi.poifs.filesystem.DocumentEntry;
+import kr.dogfoot.hwplib.org.apache.poi.poifs.filesystem.DocumentInputStream;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;

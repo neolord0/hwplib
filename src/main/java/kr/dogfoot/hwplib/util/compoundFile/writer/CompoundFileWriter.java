@@ -1,8 +1,8 @@
 package kr.dogfoot.hwplib.util.compoundFile.writer;
 
 import kr.dogfoot.hwplib.object.fileheader.FileVersion;
-import org.apache.poi.poifs.filesystem.DirectoryEntry;
-import org.apache.poi.poifs.filesystem.POIFSFileSystem;
+import kr.dogfoot.hwplib.org.apache.poi.poifs.filesystem.DirectoryEntry;
+import kr.dogfoot.hwplib.org.apache.poi.poifs.filesystem.POIFSFileSystem;
 
 import java.io.FileOutputStream;
 import java.io.IOException;

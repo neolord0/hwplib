@@ -1,7 +1,5 @@
 package kr.dogfoot.hwplib.object.etc;
 
-import org.apache.poi.util.ArrayUtil;
-
 import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
 

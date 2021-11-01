@@ -1,7 +1,6 @@
 package kr.dogfoot.hwplib.object.docinfo.tabdef;
 
 import kr.dogfoot.hwplib.object.docinfo.borderfill.BorderType;
-import org.apache.poi.ss.formula.functions.T;
 
 /**
  * 탭 정보에 대한 객체

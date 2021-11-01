@@ -1,7 +1,5 @@
 package kr.dogfoot.hwplib.tool.textextractor;
 
-import org.apache.poi.ss.formula.functions.T;
-
 public class TextExtractOption {
     private TextExtractMethod method;
 

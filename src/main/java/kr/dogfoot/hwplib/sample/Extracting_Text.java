@@ -5,10 +5,8 @@ import kr.dogfoot.hwplib.reader.HWPReader;
 import kr.dogfoot.hwplib.tool.textextractor.TextExtractMethod;
 import kr.dogfoot.hwplib.tool.textextractor.TextExtractOption;
 import kr.dogfoot.hwplib.tool.textextractor.TextExtractor;
-import org.apache.poi.ss.formula.functions.T;
 
 import java.io.File;
-import java.util.TimeZone;
 
 
 /**

@@ -2,7 +2,6 @@ package kr.dogfoot.hwplib.object.bodytext.control;
 
 import kr.dogfoot.hwplib.object.bodytext.control.ctrlheader.CtrlHeaderGso;
 import kr.dogfoot.hwplib.object.bodytext.control.gso.*;
-import org.apache.poi.ss.usermodel.Header;
 
 /**
  * 컨트롤을 생성하는 객체

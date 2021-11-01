@@ -5,7 +5,6 @@ import kr.dogfoot.hwplib.object.bodytext.control.gso.GsoControl;
 import kr.dogfoot.hwplib.object.bodytext.control.table.Cell;
 import kr.dogfoot.hwplib.object.bodytext.control.table.Row;
 import kr.dogfoot.hwplib.tool.textextractor.paraHead.ParaHeadMaker;
-import org.apache.poi.ss.formula.functions.T;
 
 import java.io.UnsupportedEncodingException;
 
