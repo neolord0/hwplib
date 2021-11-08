@@ -2,6 +2,7 @@ package kr.dogfoot.hwplib.reader.bodytext.paragraph.control.gso;
 
 import kr.dogfoot.hwplib.object.RecordHeader;
 import kr.dogfoot.hwplib.object.bodytext.control.gso.ControlOLE;
+import kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponenteach.ShapeComponentLineForObjectLinkLine;
 import kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponenteach.ShapeComponentOLE;
 import kr.dogfoot.hwplib.object.etc.HWPTag;
 import kr.dogfoot.hwplib.util.compoundFile.reader.StreamReader;
@@ -44,5 +45,24 @@ public class ForControlOLE {
         sco.getBorderColor().setValue(sr.readUInt4());
         sco.setBorderThickness(sr.readSInt4());
         sco.getBorderProperty().setValue(sr.readUInt4());
+        unknownData(sco, sr);
+    }
+
+    /**
+     * 알 수 없는 데이터 블럭을 읽는다.
+     *
+     * @param sco OLE 개체 속성 레코드
+     * @param sr  스트림 리더
+     * @throws IOException
+     */
+    private static void unknownData(ShapeComponentOLE sco,
+                                    StreamReader sr) throws IOException {
+        int unknownSize = (int) (sr.getCurrentRecordHeader().getSize() - sr
+                .getCurrentPositionAfterHeader());
+        if (unknownSize > 0) {
+            byte[] unknown = new byte[unknownSize];
+            sr.readBytes(unknown);
+            sco.setUnknown(unknown);
+        }
     }
 }

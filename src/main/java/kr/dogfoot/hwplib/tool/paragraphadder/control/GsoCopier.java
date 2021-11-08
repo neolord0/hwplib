@@ -306,6 +306,7 @@ public class GsoCopier {
         targetSCO.getBorderColor().setValue(sourceSCO.getBorderColor().getValue());
         targetSCO.setBorderThickness(sourceSCO.getBorderThickness());
         targetSCO.getBorderProperty().setValue(sourceSCO.getBorderProperty().getValue());
+        targetSCO.setUnknown(sourceSCO.getUnknown());
     }
 
     private static void container(ControlContainer source, ControlContainer target, DocInfoAdder docInfoAdder) {

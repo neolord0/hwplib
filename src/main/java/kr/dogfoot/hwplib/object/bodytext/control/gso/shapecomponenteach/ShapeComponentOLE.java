@@ -38,6 +38,10 @@ public class ShapeComponentOLE {
      * 테두리 속성
      */
     private LineInfoProperty borderProperty;
+    /**
+     * 알 수 없는 데이터
+     */
+    private byte[] unknown;
 
     /**
      * 생성자
@@ -139,6 +143,24 @@ public class ShapeComponentOLE {
     }
 
     /**
+     * 알 수 없는 데이터를 반환한다.
+     *
+     * @return 알 수 없는 데이터
+     */
+    public byte[] getUnknown() {
+        return unknown;
+    }
+
+    /**
+     * 알 수 없는 데이터를 설정한다.
+     *
+     * @param unknown
+     */
+    public void setUnknown(byte[] unknown) {
+        this.unknown = unknown;
+    }
+
+    /**
      * 테두리 속성 객체를 반환한다.
      *
      * @return 테두리 속성 객체
@@ -155,5 +177,11 @@ public class ShapeComponentOLE {
         borderColor.copy(from.borderColor);
         borderThickness = from.borderThickness;
         borderProperty.copy(from.borderProperty);
+
+        if (from.unknown != null) {
+            unknown = from.unknown.clone();
+        } else {
+            unknown = null;
+        }
     }
 }

@@ -38,7 +38,7 @@ public class ForControlOLE {
      */
     private static void shapeComponentOLE(ShapeComponentOLE sco, StreamWriter sw)
             throws IOException {
-        recordHeader(sw);
+        recordHeader(sw, sco);
 
         sw.writeUInt4(sco.getProperty().getValue());
         sw.writeSInt4(sco.getExtentWidth());
@@ -47,15 +47,26 @@ public class ForControlOLE {
         sw.writeUInt4(sco.getBorderColor().getValue());
         sw.writeSInt4(sco.getBorderThickness());
         sw.writeUInt4(sco.getBorderProperty().getValue());
+        if (sco.getUnknown() != null) {
+            sw.writeBytes(sco.getUnknown());
+        }
     }
 
     /**
      * OLE 개체 속성 레코드의 레코드 헤더를 쓴다.
      *
      * @param sw 스트림 라이터
+     * @param sco
      * @throws IOException
      */
-    private static void recordHeader(StreamWriter sw) throws IOException {
-        sw.writeRecordHeader(HWPTag.SHAPE_COMPONENT_OLE, 26);
+    private static void recordHeader(StreamWriter sw, ShapeComponentOLE sco) throws IOException {
+        sw.writeRecordHeader(HWPTag.SHAPE_COMPONENT_OLE, getSize(sco));
+    }
+
+    private static long getSize(ShapeComponentOLE sco) {
+        if (sco.getUnknown() != null) {
+            return 26 + sco.getUnknown().length;
+        }
+        return 26;
     }
 }
