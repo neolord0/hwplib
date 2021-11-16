@@ -7,18 +7,13 @@ import kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponent.ShapeCompone
 import kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponent.ShapeComponentContainer;
 import kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponent.ShapeComponentNormal;
 import kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponent.lineinfo.LineInfo;
-import kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponent.lineinfo.LineInfoProperty;
-import kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponent.lineinfo.OutlineStyle;
 import kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponent.renderingnfo.Matrix;
 import kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponent.renderingnfo.RenderingInfo;
 import kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponent.renderingnfo.ScaleRotateMatrixPair;
 import kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponent.shadowinfo.ShadowInfo;
-import kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponent.shadowinfo.ShadowType;
 import kr.dogfoot.hwplib.object.docinfo.borderfill.fillinfo.*;
 import kr.dogfoot.hwplib.object.etc.Color4Byte;
 import kr.dogfoot.hwplib.tool.paragraphadder.docinfo.DocInfoAdder;
-
-import java.util.ArrayList;
 
 public class GsoCommonPartCopier {
     public static void copy(GsoControl source, GsoControl target, DocInfoAdder docInfoAdder) {
@@ -169,13 +164,13 @@ public class GsoCommonPartCopier {
     private static void shapeComponentGroup(ShapeComponentContainer source, ShapeComponentContainer target) {
         shapeComponent(source, target);
 
-        for (Long childControlId :  source.getChildControlIdList()) {
+        for (Long childControlId : source.getChildControlIdList()) {
             target.addChildControlId(childControlId);
         }
     }
 
     private static void renderingInfo(RenderingInfo source, RenderingInfo target) {
-        matrix(source.getTranslationMatrix() ,target.getTranslationMatrix());
+        matrix(source.getTranslationMatrix(), target.getTranslationMatrix());
 
         for (ScaleRotateMatrixPair sourceMatrixPair : source.getScaleRotateMatrixPairList()) {
             ScaleRotateMatrixPair targetMatrixPair = target.addNewScaleRotateMatrixPair();

@@ -8,8 +8,6 @@ import kr.dogfoot.hwplib.object.bodytext.paragraph.text.HWPChar;
 import kr.dogfoot.hwplib.object.bodytext.paragraph.text.ParaText;
 import kr.dogfoot.hwplib.writer.autosetter.control.ForControl;
 
-import java.io.UnsupportedEncodingException;
-
 /**
  * 문단 객체를 쓰기 전에 자동 설정하기 위한 객체
  *

@@ -15,6 +15,7 @@ public class ParaHeadNumber {
     private static String[] circledHanjaNumber;
     private static String[] sibGanHangul;
     private static String[] sibGanHanja;
+
     static {
         setCircledNumbers();
         setCircledUppercaseAlphabets();
@@ -29,7 +30,6 @@ public class ParaHeadNumber {
         setSibGanHangul();
         setSibGanHanja();
     }
-
 
     private static void setCircledNumbers() {
         String chars = "①②③④⑤⑥⑦⑧⑨⑩⑪⑫⑬⑭⑮⑯⑰⑱⑲⑳";
@@ -139,7 +139,6 @@ public class ParaHeadNumber {
         }
     }
 
-
     public static String toString(int value, ParagraphNumberFormat format) {
         switch (format) {
             case Number:
@@ -183,14 +182,14 @@ public class ParaHeadNumber {
     private static String romanNumber(int value, boolean uppercase) {
         String[] roman;
         if (uppercase) {
-            roman = new String[] { "M", "CM", "D", "CD", "C", "XC", "L", "XL",
-                    "X", "IX", "V", "IV", "I" };
+            roman = new String[]{"M", "CM", "D", "CD", "C", "XC", "L", "XL",
+                    "X", "IX", "V", "IV", "I"};
         } else {
-            roman = new String[] { "m", "cm", "d", "cd", "c", "xc", "l", "xl",
-                    "x", "ix", "v", "iv", "i" };
+            roman = new String[]{"m", "cm", "d", "cd", "c", "xc", "l", "xl",
+                    "x", "ix", "v", "iv", "i"};
         }
 
-        int[] decimal = { 1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1 };
+        int[] decimal = {1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1};
         String romanNumber = "";
         for (int i = 0; i < 13; i++) {
             while (value >= decimal[i]) {
@@ -200,7 +199,6 @@ public class ParaHeadNumber {
         }
         return romanNumber;
     }
-
 
     private static String circledNumber(int value) {
         return circledNumbers[(value - 1) % 20];
@@ -227,22 +225,22 @@ public class ParaHeadNumber {
     }
 
     private static String circledHangul(int value) {
-        return circledHangul[(value -1) % 14];
+        return circledHangul[(value - 1) % 14];
     }
 
     private static String hangulJamo(int value) {
-        return hangulJamo[(value -1) % 14];
+        return hangulJamo[(value - 1) % 14];
     }
 
     private static String circledHangulJamo(int value) {
-        return circledHangulJamo[(value -1) % 14];
+        return circledHangulJamo[(value - 1) % 14];
     }
 
     private static String hangulNumber(int value) {
         int value2 = ((value - 1) % 99 + 1);
         if (value2 <= 10) {
             return hangulNumber[value2 - 1];
-        } else if (value2 <= 19){
+        } else if (value2 <= 19) {
             return hangulNumber[9] + hangulNumber[(value2 - 1) % 10];
         } else {
             if (value2 % 10 == 0) {
@@ -257,7 +255,7 @@ public class ParaHeadNumber {
         int value2 = ((value - 1) % 99 + 1);
         if (value2 <= 10) {
             return hanjaNumber[value2 - 1];
-        } else if (value2 <= 19){
+        } else if (value2 <= 19) {
             return hanjaNumber[9] + hanjaNumber[(value2 - 1) % 10];
         } else {
             if (value2 % 10 == 0) {
@@ -269,7 +267,7 @@ public class ParaHeadNumber {
     }
 
     private static String circledHanjaNumber(int value) {
-        return circledHanjaNumber[(value -1) % 10];
+        return circledHanjaNumber[(value - 1) % 10];
     }
 
     private static String sibGanHangul(int value) {

@@ -3,8 +3,6 @@ package kr.dogfoot.hwplib.reader.bodytext;
 import kr.dogfoot.hwplib.object.bodytext.Section;
 import kr.dogfoot.hwplib.object.bodytext.control.sectiondefine.BatangPageInfo;
 import kr.dogfoot.hwplib.reader.bodytext.paragraph.control.secd.ForBatangPageInfo;
-import kr.dogfoot.hwplib.tool.textextractor.TextExtractMethod;
-import kr.dogfoot.hwplib.tool.textextractor.TextExtractorListener;
 import kr.dogfoot.hwplib.util.compoundFile.reader.StreamReader;
 
 /**

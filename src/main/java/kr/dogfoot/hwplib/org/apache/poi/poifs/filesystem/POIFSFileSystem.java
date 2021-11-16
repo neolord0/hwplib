@@ -1,4 +1,3 @@
-
 /* ====================================================================
    Licensed to the Apache Software Foundation (ASF) under one or more
    contributor license agreements.  See the NOTICE file distributed with
@@ -19,24 +18,8 @@
 
 package kr.dogfoot.hwplib.org.apache.poi.poifs.filesystem;
 
-import java.io.ByteArrayOutputStream;
-import java.io.Closeable;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
-import java.nio.ByteBuffer;
-import java.nio.channels.Channels;
-import java.nio.channels.FileChannel;
-import java.nio.channels.ReadableByteChannel;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Iterator;
-import java.util.List;
-
 import kr.dogfoot.hwplib.org.apache.commons.math3.util.ArithmeticUtils;
+import kr.dogfoot.hwplib.org.apache.poi.EmptyFileException;
 import kr.dogfoot.hwplib.org.apache.poi.poifs.common.POIFSBigBlockSize;
 import kr.dogfoot.hwplib.org.apache.poi.poifs.common.POIFSConstants;
 import kr.dogfoot.hwplib.org.apache.poi.poifs.dev.POIFSViewable;
@@ -50,9 +33,18 @@ import kr.dogfoot.hwplib.org.apache.poi.poifs.storage.BATBlock;
 import kr.dogfoot.hwplib.org.apache.poi.poifs.storage.HeaderBlock;
 import kr.dogfoot.hwplib.org.apache.poi.util.IOUtils;
 import kr.dogfoot.hwplib.org.apache.poi.util.Internal;
-import kr.dogfoot.hwplib.org.apache.poi.util.POILogger;
-import kr.dogfoot.hwplib.org.apache.poi.EmptyFileException;
 import kr.dogfoot.hwplib.org.apache.poi.util.POILogFactory;
+import kr.dogfoot.hwplib.org.apache.poi.util.POILogger;
+
+import java.io.*;
+import java.nio.ByteBuffer;
+import java.nio.channels.Channels;
+import java.nio.channels.FileChannel;
+import java.nio.channels.ReadableByteChannel;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Iterator;
+import java.util.List;
 
 /**
  * <p>This is the main class of the POIFS system; it manages the entire
@@ -112,7 +104,7 @@ public class POIFSFileSystem extends BlockStore
     protected void createNewDataSource() {
         // Data needs to initially hold just the header block,
         //  a single bat block, and an empty properties section
-        long blockSize = ArithmeticUtils.mulAndCheck((long)bigBlockSize.getBigBlockSize(), (long)3);
+        long blockSize = ArithmeticUtils.mulAndCheck((long) bigBlockSize.getBigBlockSize(), (long) 3);
         _data = new ByteArrayBackedDataSource(IOUtils.safelyAllocate(blockSize, MAX_RECORD_LENGTH));
     }
 
@@ -408,7 +400,7 @@ public class POIFSFileSystem extends BlockStore
         // Ensure there's a spot in the file for it
         ByteBuffer buffer = ByteBuffer.allocate(bigBlockSize.getBigBlockSize());
         // Header isn't in BATs
-        long writeTo = ArithmeticUtils.mulAndCheck((1 + (long)offset), (long)bigBlockSize.getBigBlockSize());
+        long writeTo = ArithmeticUtils.mulAndCheck((1 + (long) offset), (long) bigBlockSize.getBigBlockSize());
         _data.write(buffer, writeTo);
         // All done
         return newBAT;

@@ -2,7 +2,6 @@ package kr.dogfoot.hwplib.tool.paragraphadder.docinfo;
 
 import kr.dogfoot.hwplib.object.docinfo.Bullet;
 import kr.dogfoot.hwplib.object.docinfo.numbering.ParagraphHeadInfo;
-import kr.dogfoot.hwplib.util.StringUtil;
 
 /**
  * DocInfo에 Bullet을 복사하는 기능을 포함하는 클레스

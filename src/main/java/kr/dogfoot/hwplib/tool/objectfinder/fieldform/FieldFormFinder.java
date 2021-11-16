@@ -13,39 +13,63 @@ import java.util.ArrayList;
 
 public class FieldFormFinder {
     public static Result findAll(HWPFile hwpFile) {
+        return find(hwpFile, new Option(null, false, true, true, true, true));
+    }
+
+    public static Result find(HWPFile hwpFile, Option option) {
         Result result = new Result();
 
         for (Section section : hwpFile.getBodyText().getSectionList()) {
-            findInParagraphList(section, result);
+            try {
+                findInParagraphList(section, result, option);
+            } catch (StopFindException e) {
+                break;
+            }
         }
 
         return result;
     }
 
-    public static void findInParagraphList(ParagraphListInterface paragraphList, Result result) {
-        ArrayList<FieldData> resultInParagraphList = new ArrayList<>();
-        getFieldStartPosition(paragraphList, resultInParagraphList);
-        for (FieldData fieldData : resultInParagraphList) {
-            getFieldEndPosition(paragraphList, fieldData);
+    public static void findInParagraphList(ParagraphListInterface paragraphList, Result result, Option option) throws StopFindException {
+        StopFindException exception = null;
+
+        if (option.nameToFind() != null && option.onlyFirst() && result.added()) {
+            throw new StopFindException();
         }
-        result.addAllFieldData(resultInParagraphList);
+
+        if (option.findField()) {
+            ArrayList<FieldData> resultInParagraphList = new ArrayList<>();
+            try {
+                getFieldStartPosition(paragraphList, resultInParagraphList, option);
+            } catch (StopFindException e) {
+                exception = e;
+            }
+            for (FieldData fieldData : resultInParagraphList) {
+                getFieldEndPosition(paragraphList, fieldData);
+            }
+            result.addAllFieldData(resultInParagraphList);
+        }
+
+        if (exception != null) {
+            throw exception;
+        }
 
         for (Paragraph paragraph : paragraphList) {
             if (paragraph.getControlList() != null) {
-                ForControl.findInControlList(paragraph.getControlList(), result);
+                ForControl.findInControlList(paragraph.getControlList(), result, option);
             }
         }
     }
 
 
-    private static void getFieldStartPosition(ParagraphListInterface paragraphList, ArrayList<FieldData> result) {
+    private static void getFieldStartPosition(ParagraphListInterface paragraphList, ArrayList<FieldData> result, Option option) throws StopFindException {
         int paraCount = paragraphList.getParagraphCount();
         for (int paraIndex = 0; paraIndex < paraCount; paraIndex++) {
-            findStartingField(paragraphList, paraIndex, result);
+            findStartingField(paragraphList, paraIndex, result, option);
         }
     }
 
-    private static void findStartingField(ParagraphListInterface paragraphList, int paraIndex, ArrayList<FieldData> results) {
+    private static void findStartingField(ParagraphListInterface paragraphList, int paraIndex, ArrayList<FieldData> results, Option option) throws StopFindException {
         Paragraph p = paragraphList.getParagraph(paraIndex);
         if (p.getControlList() == null) {
             return;
@@ -56,15 +80,27 @@ public class FieldFormFinder {
             Control c = p.getControlList().get(ctrlIndex);
             if (c.isField()) {
                 ControlField field = (ControlField) c;
-
-                FieldData fieldData = new FieldData(field.getName(),
-                        (field.getType() == ControlType.FIELD_CLICKHERE) ? FieldData.FieldType.ClickHere : FieldData.FieldType.ETC,
-                        paragraphList);
-                fieldData.setStartPosition(paraIndex, p.getText().getCharIndexFromExtendCharIndex(ctrlIndex));
-
-                results.add(fieldData);
+                if (option.nameToFind() != null) {
+                    if (option.nameToFind().equals(field.getName())) {
+                        addStartingField(paragraphList, paraIndex, results, p, ctrlIndex, field);
+                        if (option.onlyFirst()) {
+                            throw new StopFindException();
+                        }
+                    }
+                } else {
+                    addStartingField(paragraphList, paraIndex, results, p, ctrlIndex, field);
+                }
             }
         }
+    }
+
+    private static void addStartingField(ParagraphListInterface paragraphList, int paraIndex, ArrayList<FieldData> results, Paragraph p, int ctrlIndex, ControlField field) {
+        FieldData fieldData = new FieldData(field.getName(),
+                (field.getType() == ControlType.FIELD_CLICKHERE) ? FieldType.ClickHere : FieldType.ETC,
+                paragraphList);
+        fieldData.setStartPosition(paraIndex, p.getText().getCharIndexFromExtendCharIndex(ctrlIndex));
+
+        results.add(fieldData);
     }
 
     private static void getFieldEndPosition(ParagraphListInterface paragraphList, FieldData fieldData) {
@@ -95,18 +131,26 @@ public class FieldFormFinder {
     public static class Result {
         private ArrayList<FieldData> fieldDataList;
         private ArrayList<FormData> formDataList;
+        private boolean added;
 
         public Result() {
             fieldDataList = new ArrayList<>();
             formDataList = new ArrayList<>();
+            added = false;
         }
 
         public void addFieldData(FieldData fieldData) {
             fieldDataList.add(fieldData);
+            if (fieldData != null) {
+                added = true;
+            }
         }
 
         public void addAllFieldData(ArrayList<FieldData> fieldDataList) {
             this.fieldDataList.addAll(fieldDataList);
+            if (fieldDataList.size() > 0) {
+                added = true;
+            }
         }
 
         public ArrayList<FieldData> getFieldDataList() {
@@ -115,10 +159,87 @@ public class FieldFormFinder {
 
         public void addFormData(FormData formData) {
             formDataList.add(formData);
+            if (formData != null) {
+                added = true;
+            }
         }
 
         public ArrayList<FormData> getFormDataList() {
             return formDataList;
         }
+
+        public boolean added() {
+            return added;
+        }
+    }
+
+    public static class Option {
+        private String nameToFind;
+        private boolean onlyFirst;
+
+        private boolean findField;
+        private boolean findGso;
+        private boolean findCell;
+        private boolean findForm;
+
+        public Option(String nameToFind, boolean onlyFirst, boolean findField, boolean findGso, boolean findCell, boolean findForm) {
+            this.nameToFind = nameToFind;
+            this.onlyFirst = onlyFirst;
+            this.findField = findField;
+            this.findGso = findGso;
+            this.findCell = findCell;
+            this.findForm = findForm;
+        }
+
+        public String nameToFind() {
+            return nameToFind;
+        }
+
+        public void nameToFind(String nameToFind) {
+            this.nameToFind = nameToFind;
+        }
+
+        public boolean onlyFirst() {
+            return onlyFirst;
+        }
+
+        public void onlyFirst(boolean onlyFirst) {
+            this.onlyFirst = onlyFirst;
+        }
+
+        public boolean findField() {
+            return findField;
+        }
+
+        public void findField(boolean findField) {
+            this.findField = findField;
+        }
+
+        public boolean findGso() {
+            return findGso;
+        }
+
+        public void findGso(boolean findGso) {
+            this.findGso = findGso;
+        }
+
+        public boolean findCell() {
+            return findCell;
+        }
+
+        public void findCell(boolean findCell) {
+            this.findCell = findCell;
+        }
+
+        public boolean findForm() {
+            return findForm;
+        }
+
+        public void findForm(boolean findForm) {
+            this.findForm = findForm;
+        }
+    }
+
+    public static class StopFindException extends Exception {
     }
 }

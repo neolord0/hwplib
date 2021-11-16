@@ -1,4 +1,3 @@
-
 /* ====================================================================
    Licensed to the Apache Software Foundation (ASF) under one or more
    contributor license agreements.  See the NOTICE file distributed with
@@ -15,13 +14,14 @@
    See the License for the specific language governing permissions and
    limitations under the License.
 ==================================================================== */
-        
+
 
 package kr.dogfoot.hwplib.org.apache.poi.util;
 
 import kr.dogfoot.hwplib.org.apache.poi.util.LittleEndian.BufferUnderrunException;
 
-import java.io.*;
+import java.io.IOException;
+import java.io.InputStream;
 
 /**
  * representation of an integer (32-bit) field at a fixed location
@@ -31,9 +31,8 @@ import java.io.*;
  */
 
 public class IntegerField
-    implements FixedField
-{
-    private int       _value;
+        implements FixedField {
+    private int _value;
     private final int _offset;
 
     /**
@@ -41,16 +40,13 @@ public class IntegerField
      * byte array
      *
      * @param offset of the field within its byte array
-     *
-     * @exception ArrayIndexOutOfBoundsException if the offset is
-     *            negative
+     * @throws ArrayIndexOutOfBoundsException if the offset is
+     *                                        negative
      */
 
     public IntegerField(final int offset)
-        throws ArrayIndexOutOfBoundsException
-    {
-        if (offset < 0)
-        {
+            throws ArrayIndexOutOfBoundsException {
+        if (offset < 0) {
             throw new ArrayIndexOutOfBoundsException("negative offset");
         }
         _offset = offset;
@@ -61,15 +57,13 @@ public class IntegerField
      * byte array and initialize its value
      *
      * @param offset of the field within its byte array
-     * @param value the initial value
-     *
-     * @exception ArrayIndexOutOfBoundsException if the offset is
-     *            negative
+     * @param value  the initial value
+     * @throws ArrayIndexOutOfBoundsException if the offset is
+     *                                        negative
      */
 
     public IntegerField(final int offset, final int value)
-        throws ArrayIndexOutOfBoundsException
-    {
+            throws ArrayIndexOutOfBoundsException {
         this(offset);
         set(value);
     }
@@ -79,15 +73,13 @@ public class IntegerField
      * byte array and initialize its value from its byte array
      *
      * @param offset of the field within its byte array
-     * @param data the byte array to read the value from
-     *
-     * @exception ArrayIndexOutOfBoundsException if the offset is not
-     *            within the range of 0..(data.length - 1)
+     * @param data   the byte array to read the value from
+     * @throws ArrayIndexOutOfBoundsException if the offset is not
+     *                                        within the range of 0..(data.length - 1)
      */
 
-    public IntegerField(final int offset, final byte [] data)
-        throws ArrayIndexOutOfBoundsException
-    {
+    public IntegerField(final int offset, final byte[] data)
+            throws ArrayIndexOutOfBoundsException {
         this(offset);
         readFromBytes(data);
     }
@@ -98,16 +90,14 @@ public class IntegerField
      * array
      *
      * @param offset of the field within its byte array
-     * @param value the initial value
-     * @param data the byte array to write the value to
-     *
-     * @exception ArrayIndexOutOfBoundsException if the offset is
-     *            negative or too large
+     * @param value  the initial value
+     * @param data   the byte array to write the value to
+     * @throws ArrayIndexOutOfBoundsException if the offset is
+     *                                        negative or too large
      */
 
-    public IntegerField(final int offset, final int value, final byte [] data)
-        throws ArrayIndexOutOfBoundsException
-    {
+    public IntegerField(final int offset, final int value, final byte[] data)
+            throws ArrayIndexOutOfBoundsException {
         this(offset);
         set(value, data);
     }
@@ -118,8 +108,7 @@ public class IntegerField
      * @return current value
      */
 
-    public int get()
-    {
+    public int get() {
         return _value;
     }
 
@@ -129,8 +118,7 @@ public class IntegerField
      * @param value to be set
      */
 
-    public void set(final int value)
-    {
+    public void set(final int value) {
         _value = value;
     }
 
@@ -139,15 +127,13 @@ public class IntegerField
      * array
      *
      * @param value to be set
-     * @param data the byte array to write the value to
-     *
-     * @exception ArrayIndexOutOfBoundsException if the offset is too
-     *            large
+     * @param data  the byte array to write the value to
+     * @throws ArrayIndexOutOfBoundsException if the offset is too
+     *                                        large
      */
 
-    public void set(final int value, final byte [] data)
-        throws ArrayIndexOutOfBoundsException
-    {
+    public void set(final int value, final byte[] data)
+            throws ArrayIndexOutOfBoundsException {
         _value = value;
         writeToBytes(data);
     }
@@ -158,14 +144,12 @@ public class IntegerField
      * set the value from its offset into an array of bytes
      *
      * @param data the byte array from which the value is to be read
-     *
-     * @exception ArrayIndexOutOfBoundsException if the offset is too
-     *            large
+     * @throws ArrayIndexOutOfBoundsException if the offset is too
+     *                                        large
      */
 
-    public void readFromBytes(final byte [] data)
-        throws ArrayIndexOutOfBoundsException
-    {
+    public void readFromBytes(final byte[] data)
+            throws ArrayIndexOutOfBoundsException {
         _value = LittleEndian.getInt(data, _offset);
     }
 
@@ -174,16 +158,14 @@ public class IntegerField
      *
      * @param stream the InputStream from which the value is to be
      *               read
-     *
-     * @exception BufferUnderrunException if there is not enough data
-     *            available from the InputStream
-     * @exception IOException if an IOException is thrown from reading
-     *            the InputStream
+     * @throws BufferUnderrunException if there is not enough data
+     *                                 available from the InputStream
+     * @throws IOException             if an IOException is thrown from reading
+     *                                 the InputStream
      */
 
     public void readFromStream(final InputStream stream)
-        throws IOException
-    {
+            throws IOException {
         _value = LittleEndian.readInt(stream);
     }
 
@@ -193,14 +175,12 @@ public class IntegerField
      *
      * @param data the array of bytes to which the value is to be
      *             written
-     *
-     * @exception ArrayIndexOutOfBoundsException if the offset is too
-     *            large
+     * @throws ArrayIndexOutOfBoundsException if the offset is too
+     *                                        large
      */
 
-    public void writeToBytes(final byte [] data)
-        throws ArrayIndexOutOfBoundsException
-    {
+    public void writeToBytes(final byte[] data)
+            throws ArrayIndexOutOfBoundsException {
         LittleEndian.putInt(data, _offset, _value);
     }
 
@@ -210,8 +190,7 @@ public class IntegerField
      * @return the value as a String
      */
 
-    public String toString()
-    {
+    public String toString() {
         return String.valueOf(_value);
     }
 

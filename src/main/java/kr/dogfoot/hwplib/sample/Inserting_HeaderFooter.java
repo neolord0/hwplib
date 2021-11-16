@@ -6,8 +6,6 @@ import kr.dogfoot.hwplib.object.bodytext.control.ControlHeader;
 import kr.dogfoot.hwplib.object.bodytext.control.ControlType;
 import kr.dogfoot.hwplib.object.bodytext.control.ctrlheader.header.HeaderFooterApplyPage;
 import kr.dogfoot.hwplib.object.bodytext.paragraph.Paragraph;
-import kr.dogfoot.hwplib.object.bodytext.paragraph.text.HWPChar;
-import kr.dogfoot.hwplib.object.bodytext.paragraph.text.HWPCharControlChar;
 import kr.dogfoot.hwplib.tool.blankfilemaker.BlankFileMaker;
 import kr.dogfoot.hwplib.writer.HWPWriter;
 
@@ -45,7 +43,6 @@ public class Inserting_HeaderFooter {
         paragraph.createCharShape();
         paragraph.getCharShape().addParaCharShape(0, 2);
     }
-
 
 
     private static void insertFooter(Paragraph para) throws UnsupportedEncodingException {

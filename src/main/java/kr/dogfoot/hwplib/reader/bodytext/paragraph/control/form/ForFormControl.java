@@ -5,8 +5,6 @@ import kr.dogfoot.hwplib.object.bodytext.control.ControlType;
 import kr.dogfoot.hwplib.object.bodytext.control.ctrlheader.CtrlHeaderGso;
 import kr.dogfoot.hwplib.object.bodytext.control.form.FormObject;
 import kr.dogfoot.hwplib.object.bodytext.control.form.FormObjectType;
-import kr.dogfoot.hwplib.object.bodytext.control.form.properties.PropertyNormal;
-import kr.dogfoot.hwplib.object.bodytext.control.form.properties.PropertySet;
 import kr.dogfoot.hwplib.object.bodytext.paragraph.Paragraph;
 import kr.dogfoot.hwplib.object.etc.HWPTag;
 import kr.dogfoot.hwplib.reader.bodytext.paragraph.control.gso.part.ForCtrlHeaderGso;

@@ -1,6 +1,5 @@
 package kr.dogfoot.hwplib.object.bodytext.control;
 
-import kr.dogfoot.hwplib.object.bodytext.control.bookmark.CtrlData;
 import kr.dogfoot.hwplib.object.bodytext.control.ctrlheader.CtrlHeaderBookmark;
 
 /**

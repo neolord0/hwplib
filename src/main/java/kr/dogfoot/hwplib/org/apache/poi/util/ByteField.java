@@ -1,4 +1,3 @@
-
 /* ====================================================================
    Licensed to the Apache Software Foundation (ASF) under one or more
    contributor license agreements.  See the NOTICE file distributed with
@@ -15,12 +14,13 @@
    See the License for the specific language governing permissions and
    limitations under the License.
 ==================================================================== */
-        
+
 
 package kr.dogfoot.hwplib.org.apache.poi.util;
 
 
-import java.io.*;
+import java.io.IOException;
+import java.io.InputStream;
 import java.nio.BufferUnderflowException;
 
 /**
@@ -31,24 +31,21 @@ import java.nio.BufferUnderflowException;
  */
 
 public class ByteField
-    implements FixedField
-{
+        implements FixedField {
     private static final byte _default_value = 0;
-    private byte              _value;
-    private final int         _offset;
+    private byte _value;
+    private final int _offset;
 
     /**
      * construct the ByteField with its offset into its containing
      * byte array and a default value of 0
      *
      * @param offset of the field within its byte array
-     *
-     * @exception ArrayIndexOutOfBoundsException if offset is negative
+     * @throws ArrayIndexOutOfBoundsException if offset is negative
      */
 
     public ByteField(final int offset)
-        throws ArrayIndexOutOfBoundsException
-    {
+            throws ArrayIndexOutOfBoundsException {
         this(offset, _default_value);
     }
 
@@ -57,18 +54,15 @@ public class ByteField
      * byte array and initialize its value
      *
      * @param offset of the field within its byte array
-     * @param value the initial value
-     *
-     * @exception ArrayIndexOutOfBoundsException if offset is negative
+     * @param value  the initial value
+     * @throws ArrayIndexOutOfBoundsException if offset is negative
      */
 
     public ByteField(final int offset, final byte value)
-        throws ArrayIndexOutOfBoundsException
-    {
-        if (offset < 0)
-        {
+            throws ArrayIndexOutOfBoundsException {
+        if (offset < 0) {
             throw new ArrayIndexOutOfBoundsException(
-                "offset cannot be negative");
+                    "offset cannot be negative");
         }
         _offset = offset;
         set(value);
@@ -79,15 +73,13 @@ public class ByteField
      * byte array and initialize its value from its byte array
      *
      * @param offset of the field within its byte array
-     * @param data the byte array to read the value from
-     *
-     * @exception ArrayIndexOutOfBoundsException if the offset is not
-     *            within the range of 0..(data.length - 1)
+     * @param data   the byte array to read the value from
+     * @throws ArrayIndexOutOfBoundsException if the offset is not
+     *                                        within the range of 0..(data.length - 1)
      */
 
-    public ByteField(final int offset, final byte [] data)
-        throws ArrayIndexOutOfBoundsException
-    {
+    public ByteField(final int offset, final byte[] data)
+            throws ArrayIndexOutOfBoundsException {
         this(offset);
         readFromBytes(data);
     }
@@ -98,16 +90,14 @@ public class ByteField
      * byte array
      *
      * @param offset of the field within its byte array
-     * @param value the initial value
-     * @param data the byte array to write the value to
-     *
-     * @exception ArrayIndexOutOfBoundsException if the offset is not
-     *            within the range of 0..(data.length - 1)
+     * @param value  the initial value
+     * @param data   the byte array to write the value to
+     * @throws ArrayIndexOutOfBoundsException if the offset is not
+     *                                        within the range of 0..(data.length - 1)
      */
 
-    public ByteField(final int offset, final byte value, final byte [] data)
-        throws ArrayIndexOutOfBoundsException
-    {
+    public ByteField(final int offset, final byte value, final byte[] data)
+            throws ArrayIndexOutOfBoundsException {
         this(offset, value);
         writeToBytes(data);
     }
@@ -118,8 +108,7 @@ public class ByteField
      * @return current value
      */
 
-    public byte get()
-    {
+    public byte get() {
         return _value;
     }
 
@@ -129,8 +118,7 @@ public class ByteField
      * @param value to be set
      */
 
-    public void set(final byte value)
-    {
+    public void set(final byte value) {
         _value = value;
     }
 
@@ -138,15 +126,13 @@ public class ByteField
      * set the ByteField's current value and write it to a byte array
      *
      * @param value to be set
-     * @param data the byte array to write the value to
-     *
-     * @exception ArrayIndexOutOfBoundsException if the offset is out
-     *            of the byte array's range
+     * @param data  the byte array to write the value to
+     * @throws ArrayIndexOutOfBoundsException if the offset is out
+     *                                        of the byte array's range
      */
 
-    public void set(final byte value, final byte [] data)
-        throws ArrayIndexOutOfBoundsException
-    {
+    public void set(final byte value, final byte[] data)
+            throws ArrayIndexOutOfBoundsException {
         set(value);
         writeToBytes(data);
     }
@@ -157,15 +143,13 @@ public class ByteField
      * set the value from its offset into an array of bytes
      *
      * @param data the byte array from which the value is to be read
-     *
-     * @exception ArrayIndexOutOfBoundsException if the offset is out
-     *            of range of the bte array
+     * @throws ArrayIndexOutOfBoundsException if the offset is out
+     *                                        of range of the bte array
      */
 
-    public void readFromBytes(final byte [] data)
-        throws ArrayIndexOutOfBoundsException
-    {
-        _value = data[ _offset ];
+    public void readFromBytes(final byte[] data)
+            throws ArrayIndexOutOfBoundsException {
+        _value = data[_offset];
     }
 
     /**
@@ -173,21 +157,19 @@ public class ByteField
      *
      * @param stream the InputStream from which the value is to be
      *               read
-     *
-     * @exception BufferUnderrunException if there is not enough data
-     *            available from the InputStream
-     * @exception IOException if an IOException is thrown from reading
-     *            the InputStream
+     * @throws BufferUnderrunException if there is not enough data
+     *                                 available from the InputStream
+     * @throws IOException             if an IOException is thrown from reading
+     *                                 the InputStream
      */
 
     public void readFromStream(final InputStream stream)
-        throws IOException
-    {
-    	// TODO - are these ~Field used / necessary
-    	int ib = stream.read();
-    	if (ib < 0) {
-    		throw new BufferUnderflowException();
-    	}
+            throws IOException {
+        // TODO - are these ~Field used / necessary
+        int ib = stream.read();
+        if (ib < 0) {
+            throw new BufferUnderflowException();
+        }
         _value = (byte) ib;
     }
 
@@ -197,15 +179,13 @@ public class ByteField
      *
      * @param data the array of bytes to which the value is to be
      *             written
-     *
-     * @exception ArrayIndexOutOfBoundsException if the offset is out
-     *            of the byte array's range
+     * @throws ArrayIndexOutOfBoundsException if the offset is out
+     *                                        of the byte array's range
      */
 
-    public void writeToBytes(final byte [] data)
-        throws ArrayIndexOutOfBoundsException
-    {
-        data[ _offset ] = _value;
+    public void writeToBytes(final byte[] data)
+            throws ArrayIndexOutOfBoundsException {
+        data[_offset] = _value;
     }
 
     /**
@@ -214,8 +194,7 @@ public class ByteField
      * @return the value as a String
      */
 
-    public String toString()
-    {
+    public String toString() {
         return String.valueOf(_value);
     }
 

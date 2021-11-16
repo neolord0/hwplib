@@ -50,8 +50,8 @@ public class Removing_Table_Row {
         for (int rowIndex = 0; rowIndex < rowCount; rowIndex++) {
             if (rowIndex > 0) {
                 Row row = table.getRowList().get(rowIndex);
-                for(Cell cell : row.getCellList()) {
-                   cell.getListHeader().setRowIndex(cell.getListHeader().getRowIndex() - 1);
+                for (Cell cell : row.getCellList()) {
+                    cell.getListHeader().setRowIndex(cell.getListHeader().getRowIndex() - 1);
                 }
             }
         }

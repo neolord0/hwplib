@@ -17,24 +17,16 @@
 
 package kr.dogfoot.hwplib.org.apache.poi.util;
 
-import java.io.ByteArrayOutputStream;
-import java.io.Closeable;
-import java.io.EOFException;
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
-import java.io.PushbackInputStream;
+import kr.dogfoot.hwplib.org.apache.poi.EmptyFileException;
+
+import java.io.*;
 import java.nio.ByteBuffer;
 import java.nio.channels.ReadableByteChannel;
 import java.util.zip.CRC32;
 import java.util.zip.Checksum;
 
-import kr.dogfoot.hwplib.org.apache.poi.EmptyFileException;
-
 public final class IOUtils {
-    private static final POILogger logger = POILogFactory.getLogger( IOUtils.class );
+    private static final POILogger logger = POILogFactory.getLogger(IOUtils.class);
 
     /**
      * The default buffer size to use for the skip() methods.
@@ -55,14 +47,14 @@ public final class IOUtils {
     /**
      * If this value is set to > 0, {@link #safelyAllocate(long, int)} will ignore the
      * maximum record length parameter.
-     *
+     * <p>
      * This is designed to allow users to bypass the hard-coded maximum record lengths
      * if they are willing to accept the risk of allocating memory up to the size specified.
-     *
+     * <p>
      * It also allows to impose a lower limit than used for very memory constrained systems.
-     *
+     * <p>
      * Note: This is an per-allocation limit and does not allow to limit overall sum of allocations!
-     *
+     * <p>
      * Use -1 for using the limits specified per record-type.
      *
      * @param maxOverride The maximum number of bytes that should be possible to be allocated in one step.
@@ -75,9 +67,10 @@ public final class IOUtils {
 
     /**
      * Peeks at the first 8 bytes of the stream. Returns those bytes, but
-     *  with the stream unaffected. Requires a stream that supports mark/reset,
-     *  or a PushbackInputStream. If the stream has &gt;0 but &lt;8 bytes,
-     *  remaining bytes will be zero.
+     * with the stream unaffected. Requires a stream that supports mark/reset,
+     * or a PushbackInputStream. If the stream has &gt;0 but &lt;8 bytes,
+     * remaining bytes will be zero.
+     *
      * @throws EmptyFileException if the stream is empty
      */
     public static byte[] peekFirst8Bytes(InputStream stream) throws IOException, EmptyFileException {
@@ -85,16 +78,17 @@ public final class IOUtils {
     }
 
     private static void checkByteSizeLimit(int length) {
-        if(BYTE_ARRAY_MAX_OVERRIDE != -1 && length > BYTE_ARRAY_MAX_OVERRIDE) {
+        if (BYTE_ARRAY_MAX_OVERRIDE != -1 && length > BYTE_ARRAY_MAX_OVERRIDE) {
             throwRFE(length, BYTE_ARRAY_MAX_OVERRIDE);
         }
     }
 
     /**
      * Peeks at the first N bytes of the stream. Returns those bytes, but
-     *  with the stream unaffected. Requires a stream that supports mark/reset,
-     *  or a PushbackInputStream. If the stream has &gt;0 but &lt;N bytes,
-     *  remaining bytes will be zero.
+     * with the stream unaffected. Requires a stream that supports mark/reset,
+     * or a PushbackInputStream. If the stream has &gt;0 but &lt;N bytes,
+     * remaining bytes will be zero.
+     *
      * @throws EmptyFileException if the stream is empty
      */
     public static byte[] peekFirstNBytes(InputStream stream, int limit) throws IOException, EmptyFileException {
@@ -110,11 +104,11 @@ public final class IOUtils {
         }
 
         if (readBytes < limit) {
-            bos.write(new byte[limit-readBytes]);
+            bos.write(new byte[limit - readBytes]);
         }
         byte[] peekedBytes = bos.toByteArray();
-        if(stream instanceof PushbackInputStream) {
-            PushbackInputStream pin = (PushbackInputStream)stream;
+        if (stream instanceof PushbackInputStream) {
+            PushbackInputStream pin = (PushbackInputStream) stream;
             pin.unread(peekedBytes, 0, readBytes);
         } else {
             stream.reset();
@@ -151,12 +145,12 @@ public final class IOUtils {
     /**
      * Reads up to {@code length} bytes from the input stream, and returns the bytes read.
      *
-     * @param stream The byte stream of data to read.
-     * @param length The maximum length to read, use {@link Integer#MAX_VALUE} to read the stream
-     *               until EOF
+     * @param stream    The byte stream of data to read.
+     * @param length    The maximum length to read, use {@link Integer#MAX_VALUE} to read the stream
+     *                  until EOF
      * @param maxLength if the input is equal to/longer than {@code maxLength} bytes,
- *                   then throw an {@link IOException} complaining about the length.
-*                    use {@link Integer#MAX_VALUE} to disable the check
+     *                  then throw an {@link IOException} complaining about the length.
+     *                  use {@link Integer#MAX_VALUE} to disable the check
      * @return A byte array with the read bytes.
      * @throws IOException If reading data fails or EOF is encountered too early for the given length.
      */
@@ -164,21 +158,21 @@ public final class IOUtils {
         if (length < 0L || maxLength < 0L) {
             throw new RecordFormatException("Can't allocate an array of length < 0");
         }
-        if (length > (long)Integer.MAX_VALUE) {
-            throw new RecordFormatException("Can't allocate an array > "+Integer.MAX_VALUE);
+        if (length > (long) Integer.MAX_VALUE) {
+            throw new RecordFormatException("Can't allocate an array > " + Integer.MAX_VALUE);
         }
         if ((length != Integer.MAX_VALUE) || (maxLength != Integer.MAX_VALUE)) {
             checkLength(length, maxLength);
         }
 
-        final int len = Math.min((int)length, maxLength);
+        final int len = Math.min((int) length, maxLength);
         ByteArrayOutputStream baos = new ByteArrayOutputStream(len == Integer.MAX_VALUE ? 4096 : len);
 
         byte[] buffer = new byte[4096];
         int totalBytes = 0, readBytes;
         do {
-            readBytes = stream.read(buffer, 0, Math.min(buffer.length, len-totalBytes));
-            totalBytes += Math.max(readBytes,0);
+            readBytes = stream.read(buffer, 0, Math.min(buffer.length, len - totalBytes));
+            totalBytes += Math.max(readBytes, 0);
             if (readBytes > 0) {
                 baos.write(buffer, 0, readBytes);
             }
@@ -187,11 +181,11 @@ public final class IOUtils {
         } while (totalBytes < len && readBytes > -1);
 
         if (maxLength != Integer.MAX_VALUE && totalBytes == maxLength) {
-            throw new IOException("MaxLength ("+maxLength+") reached - stream seems to be invalid.");
+            throw new IOException("MaxLength (" + maxLength + ") reached - stream seems to be invalid.");
         }
 
         if (len != Integer.MAX_VALUE && totalBytes < len) {
-            throw new EOFException("unexpected EOF - expected len: "+len+" - actual len: "+totalBytes);
+            throw new EOFException("unexpected EOF - expected len: " + len + " - actual len: " + totalBytes);
         }
 
         return baos.toByteArray();
@@ -210,11 +204,11 @@ public final class IOUtils {
 
     /**
      * Returns an array (that shouldn't be written to!) of the
-     *  ByteBuffer. Will be of the requested length, or possibly
-     *  longer if that's easier.
+     * ByteBuffer. Will be of the requested length, or possibly
+     * longer if that's easier.
      */
     public static byte[] toByteArray(ByteBuffer buffer, int length) {
-        if(buffer.hasArray() && buffer.arrayOffset() == 0) {
+        if (buffer.hasArray() && buffer.arrayOffset() == 0) {
             // The backing array should work out fine for us
             return buffer.array();
         }
@@ -241,8 +235,8 @@ public final class IOUtils {
      * number of bytes read. If the end of the file isn't reached before <tt>len</tt>
      * bytes have been read, will return <tt>len</tt> bytes.</p>
      *
-     * @param in the stream from which the data is read.
-     * @param b the buffer into which the data is read.
+     * @param in  the stream from which the data is read.
+     * @param b   the buffer into which the data is read.
      * @param off the start offset in array <tt>b</tt> at which the data is written.
      * @param len the maximum number of bytes to read.
      */
@@ -293,7 +287,6 @@ public final class IOUtils {
      * @param inp The {@link InputStream} which provides the data
      * @param out The {@link OutputStream} to write the data to
      * @return the amount of bytes copied
-     *
      * @throws IOException If copying the data fails.
      */
     public static long copy(InputStream inp, OutputStream out) throws IOException {
@@ -304,11 +297,10 @@ public final class IOUtils {
      * Copies all the data from the given InputStream to the OutputStream. It
      * leaves both streams open, so you will still need to close them once done.
      *
-     * @param inp The {@link InputStream} which provides the data
-     * @param out The {@link OutputStream} to write the data to
+     * @param inp   The {@link InputStream} which provides the data
+     * @param out   The {@link OutputStream} to write the data to
      * @param limit limit the copied bytes - use {@code -1} for no limit
      * @return the amount of bytes copied
-     *
      * @throws IOException If copying the data fails.
      */
     public static long copy(InputStream inp, OutputStream out, long limit) throws IOException {
@@ -316,7 +308,7 @@ public final class IOUtils {
         long totalCount = 0;
         int readBytes = -1;
         do {
-            int todoBytes = (int)((limit < 0) ? buff.length : Math.min(limit-totalCount, buff.length));
+            int todoBytes = (int) ((limit < 0) ? buff.length : Math.min(limit - totalCount, buff.length));
             if (todoBytes > 0) {
                 readBytes = inp.read(buff, 0, todoBytes);
                 if (readBytes > 0) {
@@ -333,16 +325,15 @@ public final class IOUtils {
      * Copy the contents of the stream to a new file.
      *
      * @param srcStream The {@link InputStream} which provides the data
-     * @param destFile The file where the data should be stored
+     * @param destFile  The file where the data should be stored
      * @return the amount of bytes copied
-     *
      * @throws IOException If the target directory does not exist and cannot be created
-     *      or if copying the data fails.
+     *                     or if copying the data fails.
      */
     public static long copy(InputStream srcStream, File destFile) throws IOException {
         File destDirectory = destFile.getParentFile();
         if (!(destDirectory.exists() || destDirectory.mkdirs())) {
-            throw new RuntimeException("Can't create destination directory: "+destDirectory);
+            throw new RuntimeException("Can't create destination directory: " + destDirectory);
         }
         try (OutputStream destStream = new FileOutputStream(destFile)) {
             return IOUtils.copy(srcStream, destStream);
@@ -360,7 +351,7 @@ public final class IOUtils {
 
     /**
      * Calculate checksum on all the data read from input stream.
-     *
+     * <p>
      * This should be more efficient than the equivalent code
      * {@code IOUtils.calculateChecksum(IOUtils.toByteArray(stream))}
      */
@@ -381,20 +372,19 @@ public final class IOUtils {
      * Quietly (no exceptions) close Closable resource. In case of error it will
      * be printed to {@link IOUtils} class logger.
      *
-     * @param closeable
-     *            resource to close
+     * @param closeable resource to close
      */
-    public static void closeQuietly( final Closeable closeable ) {
+    public static void closeQuietly(final Closeable closeable) {
         // no need to log a NullPointerException here
-        if(closeable == null) {
+        if (closeable == null) {
             return;
         }
 
         try {
             closeable.close();
-        } catch ( Exception exc ) {
-            logger.log( POILogger.ERROR, "Unable to close resource: " + exc,
-                    exc );
+        } catch (Exception exc) {
+            logger.log(POILogger.ERROR, "Unable to close resource: " + exc,
+                    exc);
         }
     }
 
@@ -416,19 +406,18 @@ public final class IOUtils {
      * the end of the file is reached after some bytes are read, returns the
      * number of bytes read. If the end of the file isn't reached before <tt>len</tt>
      * bytes have been read, will return <tt>len</tt> bytes.</p>
-
+     *
      * </p>
      * <p>
      * Copied nearly verbatim from commons-io 41a3e9c
      * </p>
      *
-     * @param input byte stream to skip
+     * @param input  byte stream to skip
      * @param toSkip number of bytes to skip.
      * @return number of bytes actually skipped.
      * @throws IOException              if there is a problem reading the file
      * @throws IllegalArgumentException if toSkip is negative
      * @see InputStream#skip(long)
-     *
      */
     public static long skipFully(final InputStream input, final long toSkip) throws IOException {
         if (toSkip < 0) {
@@ -463,17 +452,17 @@ public final class IOUtils {
     public static byte[] safelyAllocate(long length, int maxLength) {
         safelyAllocateCheck(length, maxLength);
 
-        checkByteSizeLimit((int)length);
+        checkByteSizeLimit((int) length);
 
-        return new byte[(int)length];
+        return new byte[(int) length];
     }
 
     public static void safelyAllocateCheck(long length, int maxLength) {
         if (length < 0L) {
             throw new RecordFormatException("Can't allocate an array of length < 0, but had " + length + " and " + maxLength);
         }
-        if (length > (long)Integer.MAX_VALUE) {
-            throw new RecordFormatException("Can't allocate an array > "+Integer.MAX_VALUE);
+        if (length > (long) Integer.MAX_VALUE) {
+            throw new RecordFormatException("Can't allocate an array > " + Integer.MAX_VALUE);
         }
         checkLength(length, maxLength);
     }
@@ -495,10 +484,10 @@ public final class IOUtils {
     }
 
     private static void throwRFE(long length, int maxLength) {
-        throw new RecordFormatException("Tried to allocate an array of length "+length +
-                ", but "+ maxLength+" is the maximum for this record type.\n" +
+        throw new RecordFormatException("Tried to allocate an array of length " + length +
+                ", but " + maxLength + " is the maximum for this record type.\n" +
                 "If the file is not corrupt, please open an issue on bugzilla to request \n" +
-                "increasing the maximum allowable size for this record type.\n"+
+                "increasing the maximum allowable size for this record type.\n" +
                 "As a temporary workaround, consider setting a higher override value with " +
                 "IOUtils.setByteArrayMaxOverride()");
 

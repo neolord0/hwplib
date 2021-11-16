@@ -40,7 +40,7 @@ public class BinDataAdder {
      * @return target한글 파일의 BinData ID
      */
     private int addAndCopy(BinData source) {
-        int binDataID = ForEmbeddedBinaryData.addAndCopy(source.getBinDataID(), source.getExtensionForEmbedding(),  docInfoAdder);
+        int binDataID = ForEmbeddedBinaryData.addAndCopy(source.getBinDataID(), source.getExtensionForEmbedding(), docInfoAdder);
         if (binDataID > 0) {
             BinData target = docInfoAdder.getTargetHWPFile().getDocInfo().addNewBinData();
             target.getProperty().setValue(source.getProperty().getValue());

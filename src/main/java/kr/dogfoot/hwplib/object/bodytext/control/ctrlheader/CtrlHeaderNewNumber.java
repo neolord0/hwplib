@@ -53,6 +53,7 @@ public class CtrlHeaderNewNumber extends CtrlHeader {
     public void setNumber(int number) {
         this.number = number;
     }
+
     @Override
     public void copy(CtrlHeader from) {
         CtrlHeaderNewNumber from2 = (CtrlHeaderNewNumber) from;

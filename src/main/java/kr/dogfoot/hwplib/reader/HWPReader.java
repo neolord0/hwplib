@@ -41,7 +41,7 @@ public class HWPReader {
     /**
      * hwp 파일을 읽는다.
      *
-     * @param  file hwp파일
+     * @param file hwp파일
      * @return HWPFile 객체
      * @throws Exception
      */
@@ -276,7 +276,7 @@ public class HWPReader {
      * @param filepath hwp파일의 경로
      * @param listener 텍스트 추출 리스너
      * @param tem      추출 방법
-     *     @throws Exception
+     * @throws Exception
      */
     public static void forExtractText(String filepath, TextExtractorListener listener, TextExtractMethod tem) throws Exception {
         forExtractText(new FileInputStream(filepath), listener, tem);
@@ -285,7 +285,7 @@ public class HWPReader {
     /**
      * 텍스트를 추출하기 위해 hwp 파일을 읽는다.
      *
-     * @param is hwp파일을 가리키는 Input Stream ㅒ객체
+     * @param is       hwp파일을 가리키는 Input Stream ㅒ객체
      * @param listener 텍스트 추출 리스너
      * @param tem      추출 방법
      * @throws Exception
@@ -325,8 +325,8 @@ public class HWPReader {
      * 텍스트를 추출하기 위해 hwp 파일의 섹션 부분을 읽는다.
      *
      * @param sectionIndex 섹션 인덱스
-     * @param listener 텍스트 추출 리스너
-     * @param tem      추출 방법
+     * @param listener     텍스트 추출 리스너
+     * @param tem          추출 방법
      * @throws Exception
      */
     private void extractSectionText(int sectionIndex, TextExtractorListener listener, TextExtractMethod tem) throws Exception {

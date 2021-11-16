@@ -10,8 +10,6 @@ import kr.dogfoot.hwplib.object.docinfo.ParaShape;
 import kr.dogfoot.hwplib.object.docinfo.numbering.LevelNumbering;
 import kr.dogfoot.hwplib.util.StringUtil;
 
-import java.util.Stack;
-
 public class ParaHeadMaker {
     private HWPFile hwpFile;
     private ControlSectionDefine sectionDefine;
@@ -48,7 +46,7 @@ public class ParaHeadMaker {
                 return numbering(outlineNumber,
                         sectionDefine.getHeader().getNumberParaShapeId(),
                         paraShape.getProperty1().getParaLevel());
-           case Numbering:
+            case Numbering:
                 return numbering(
                         paraNumber,
                         paraShape.getParaHeadId(),

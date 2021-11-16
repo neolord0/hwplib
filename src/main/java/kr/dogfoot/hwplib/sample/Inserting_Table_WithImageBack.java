@@ -31,7 +31,10 @@ import kr.dogfoot.hwplib.object.docinfo.borderfill.fillinfo.PatternType;
 import kr.dogfoot.hwplib.reader.HWPReader;
 import kr.dogfoot.hwplib.writer.HWPWriter;
 
-import java.io.*;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
 
 public class Inserting_Table_WithImageBack {
 
@@ -107,7 +110,7 @@ public class Inserting_Table_WithImageBack {
         bd.setBinDataID(streamIndex);
         bd.setExtensionForEmbedding(imageFileExt);
         hwpFile.getDocInfo().getBinDataList().add(bd);
-        binDataID =  hwpFile.getDocInfo().getBinDataList().size();
+        binDataID = hwpFile.getDocInfo().getBinDataList().size();
     }
 
     private void makeTable() {

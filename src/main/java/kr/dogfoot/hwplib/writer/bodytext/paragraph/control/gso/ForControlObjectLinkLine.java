@@ -11,8 +11,8 @@ public class ForControlObjectLinkLine {
     /**
      * 객체 연결선 컨트롤의 나머지 부분을 쓴다.
      *
-     * @param oll   객체 연결선 컨트롤
-     * @param sw    스트림 라이터
+     * @param oll 객체 연결선 컨트롤
+     * @param sw  스트림 라이터
      * @throws IOException
      */
     public static void writeRest(ControlObjectLinkLine oll, StreamWriter sw) throws IOException {
@@ -26,8 +26,8 @@ public class ForControlObjectLinkLine {
     /**
      * 선 개체 속성 레코드를 쓴다.
      *
-     * @param scl   선 개체 속성 레코드
-     * @param sw    스트림 라이터
+     * @param scl 선 개체 속성 레코드
+     * @param sw  스트림 라이터
      * @throws IOException
      */
     private static void shapeComponentLine(

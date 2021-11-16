@@ -27,14 +27,14 @@ package kr.dogfoot.hwplib.org.apache.poi.util;
 public class NullLogger implements POILogger {
     @Override
     public void initialize(final String cat) {
-       // do nothing
+        // do nothing
     }
 
     /**
      * Log a message
      *
      * @param level One of DEBUG, INFO, WARN, ERROR, FATAL
-     * @param obj1 The object to log.
+     * @param obj1  The object to log.
      */
 
     @Override
@@ -45,8 +45,8 @@ public class NullLogger implements POILogger {
     /**
      * Log a message
      *
-     * @param level One of DEBUG, INFO, WARN, ERROR, FATAL
-     * @param obj1 The object to log.  This is converted to a string.
+     * @param level     One of DEBUG, INFO, WARN, ERROR, FATAL
+     * @param obj1      The object to log.  This is converted to a string.
      * @param exception An exception to be logged
      */
     @Override
@@ -59,14 +59,14 @@ public class NullLogger implements POILogger {
      * If the last parameter is a {@link Throwable} it is logged specially.
      *
      * @param level One of DEBUG, INFO, WARN, ERROR, FATAL
-     * @param objs the objects to place in the message
+     * @param objs  the objects to place in the message
      */
     @Override
     public void log(int level, Object... objs) {
         // do nothing
     }
 
-    
+
     /**
      * Check if a logger is enabled to log at the specified level
      *
@@ -74,7 +74,7 @@ public class NullLogger implements POILogger {
      */
     @Override
     public boolean check(final int level) {
-       return false;
+        return false;
     }
 }
 

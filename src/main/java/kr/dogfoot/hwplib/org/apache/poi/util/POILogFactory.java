@@ -1,4 +1,3 @@
-
 /* ====================================================================
    Licensed to the Apache Software Foundation (ASF) under one or more
    contributor license agreements.  See the NOTICE file distributed with
@@ -35,29 +34,29 @@ public final class POILogFactory {
     /**
      * Map of POILogger instances, with classes as keys
      */
-    private static final Map<String,POILogger> _loggers = new HashMap<>();
+    private static final Map<String, POILogger> _loggers = new HashMap<>();
 
     /**
      * A common instance of NullLogger, as it does nothing
-     *  we only need the one
+     * we only need the one
      */
     private static final POILogger _nullLogger = new NullLogger();
     /**
      * The name of the class to use. Initialised the
-     *  first time we need it
+     * first time we need it
      */
     static String _loggerClassName;
 
     /**
      * Construct a POILogFactory.
      */
-    private POILogFactory() {}
+    private POILogFactory() {
+    }
 
     /**
      * Get a logger, based on a class name
      *
      * @param theclass the class whose name defines the log
-     *
      * @return a POILogger for the specified class
      */
     public static POILogger getLogger(final Class<?> theclass) {
@@ -68,7 +67,6 @@ public final class POILogFactory {
      * Get a logger, based on a String
      *
      * @param cat the String that defines the log
-     *
      * @return a POILogger for the specified class
      */
     public static POILogger getLogger(final String cat) {
@@ -77,24 +75,24 @@ public final class POILogFactory {
         // Don't look it up until we're first asked, so
         //  that our users can set the system property
         //  between class loading and first use
-        if(_loggerClassName == null) {
-        	try {
-        		_loggerClassName = System.getProperty("org.apache.poi.util.POILogger");
-        	} catch(Exception e) {
+        if (_loggerClassName == null) {
+            try {
+                _loggerClassName = System.getProperty("org.apache.poi.util.POILogger");
+            } catch (Exception e) {
                 // ignore any exception here
             }
 
-        	// Use the default logger if none specified,
-        	//  or none could be fetched
-        	if(_loggerClassName == null) {
+            // Use the default logger if none specified,
+            //  or none could be fetched
+            if (_loggerClassName == null) {
                 _loggerClassName = _nullLogger.getClass().getName();
-        	}
+            }
         }
 
         // Short circuit for the null logger, which
         //  ignores all categories
-        if(_loggerClassName.equals(_nullLogger.getClass().getName())) {
-        	return _nullLogger;
+        if (_loggerClassName.equals(_nullLogger.getClass().getName())) {
+            return _nullLogger;
         }
 
 
@@ -105,10 +103,10 @@ public final class POILogFactory {
             try {
                 @SuppressWarnings("unchecked")
                 Class<? extends POILogger> loggerClass =
-                    (Class<? extends POILogger>) Class.forName(_loggerClassName);
+                        (Class<? extends POILogger>) Class.forName(_loggerClassName);
                 logger = loggerClass.getConstructor().newInstance();
                 logger.initialize(cat);
-            } catch(Exception e) {
+            } catch (Exception e) {
                 // Give up and use the null logger
                 logger = _nullLogger;
                 _loggerClassName = _nullLogger.getClass().getName();

@@ -4,11 +4,7 @@ import kr.dogfoot.hwplib.object.HWPFile;
 import kr.dogfoot.hwplib.object.bodytext.Section;
 import kr.dogfoot.hwplib.object.bodytext.control.ControlField;
 import kr.dogfoot.hwplib.object.bodytext.control.ControlType;
-import kr.dogfoot.hwplib.object.bodytext.control.bookmark.ParameterItem;
-import kr.dogfoot.hwplib.object.bodytext.control.bookmark.ParameterSet;
-import kr.dogfoot.hwplib.object.bodytext.control.bookmark.ParameterType;
 import kr.dogfoot.hwplib.object.bodytext.paragraph.Paragraph;
-import kr.dogfoot.hwplib.reader.HWPReader;
 import kr.dogfoot.hwplib.tool.blankfilemaker.BlankFileMaker;
 import kr.dogfoot.hwplib.writer.HWPWriter;
 
@@ -39,5 +35,5 @@ public class Inserting_HyperLink {
 
         ControlField field = (ControlField) paragraph.addNewControl(ControlType.FIELD_HYPERLINK.getCtrlId());
         field.getHeader().getCommand().fromUTF16LEString("https\\://www.dogfoot.kr/aaa.jsp\\?aaa=bb&ccc=dd" + ";1;0;0;");
-   }
+    }
 }

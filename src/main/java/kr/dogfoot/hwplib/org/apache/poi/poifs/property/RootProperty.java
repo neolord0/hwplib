@@ -24,10 +24,9 @@ import kr.dogfoot.hwplib.org.apache.poi.poifs.common.POIFSConstants;
  * Root property
  */
 public final class RootProperty extends DirectoryProperty {
-   private static final String NAME = "Root Entry";
+    private static final String NAME = "Root Entry";
 
-    RootProperty()
-    {
+    RootProperty() {
         super(NAME);
 
         // overrides
@@ -39,11 +38,11 @@ public final class RootProperty extends DirectoryProperty {
     /**
      * reader constructor
      *
-     * @param index index number
-     * @param array byte data
+     * @param index  index number
+     * @param array  byte data
      * @param offset offset into byte data
      */
-    RootProperty(final int index, final byte [] array, final int offset) {
+    RootProperty(final int index, final byte[] array, final int offset) {
         super(index, array, offset);
     }
 
@@ -52,8 +51,7 @@ public final class RootProperty extends DirectoryProperty {
      *
      * @param size size in terms of small blocks
      */
-    public void setSize(int size)
-    {
+    public void setSize(int size) {
         final int BLOCK_SHIFT = 6;
         final int _block_size = 1 << BLOCK_SHIFT;
         super.setSize(ArithmeticUtils.mulAndCheck(size, _block_size));
@@ -61,7 +59,7 @@ public final class RootProperty extends DirectoryProperty {
 
     /**
      * Returns the fixed name "Root Entry", as the
-     *  raw property doesn't have a real name set
+     * raw property doesn't have a real name set
      */
     @Override
     public String getName() {

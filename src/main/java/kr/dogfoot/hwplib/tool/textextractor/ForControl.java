@@ -17,10 +17,10 @@ public class ForControl {
     /**
      * 컨트롤에서 텍스트를 추출한다.
      *
-     * @param c                 컨트롤
-     * @param tem               텍스트 추출 방법
-     * @param paraHeadMaker     문단 번호/글머리표 생성기
-     * @param sb                추출된 텍스트를 저정할 StringBuffer 객체
+     * @param c             컨트롤
+     * @param tem           텍스트 추출 방법
+     * @param paraHeadMaker 문단 번호/글머리표 생성기
+     * @param sb            추출된 텍스트를 저정할 StringBuffer 객체
      * @throws UnsupportedEncodingException
      */
     public static void extract(Control c,
@@ -33,10 +33,10 @@ public class ForControl {
     /**
      * 컨트롤에서 텍스트를 추출한다.
      *
-     * @param c                 컨트롤
-     * @param option            추출 옵션
-     * @param paraHeadMaker     문단 번호/글머리표 생성기
-     * @param sb                추출된 텍스트를 저정할 StringBuffer 객체
+     * @param c             컨트롤
+     * @param option        추출 옵션
+     * @param paraHeadMaker 문단 번호/글머리표 생성기
+     * @param sb            추출된 텍스트를 저정할 StringBuffer 객체
      * @throws UnsupportedEncodingException
      */
     public static void extract(Control c,
@@ -102,10 +102,10 @@ public class ForControl {
     /**
      * 표 컨트롤에서 텍스트를 추출한다
      *
-     * @param table             표 컨트롤
-     * @param option            추출 옵션
-     * @param paraHeadMaker     문단 번호/글머리표 생성기
-     * @param sb                추출된 텍스트를 저정할 StringBuffer 객체
+     * @param table         표 컨트롤
+     * @param option        추출 옵션
+     * @param paraHeadMaker 문단 번호/글머리표 생성기
+     * @param sb            추출된 텍스트를 저정할 StringBuffer 객체
      * @throws UnsupportedEncodingException
      */
     private static void table(ControlTable table,
@@ -132,10 +132,10 @@ public class ForControl {
     /**
      * 머리말 컨트롤에서 텍스트를 추출한다.
      *
-     * @param header            머리말 컨트롤
-     * @param option            추출 옵션
-     * @param paraHeadMaker     문단 번호/글머리표 생성기
-     * @param sb                추출된 텍스트를 저정할 StringBuffer 객체
+     * @param header        머리말 컨트롤
+     * @param option        추출 옵션
+     * @param paraHeadMaker 문단 번호/글머리표 생성기
+     * @param sb            추출된 텍스트를 저정할 StringBuffer 객체
      * @throws UnsupportedEncodingException
      */
     private static void header(ControlHeader header,
@@ -148,10 +148,10 @@ public class ForControl {
     /**
      * 꼬리말 컨트롤에서 텍스트를 추출한다.
      *
-     * @param footer            꼬리말 컨트롤
-     * @param option            추출 옵션
-     * @param paraHeadMaker     문단 번호/글머리표 생성기
-     * @param sb                추출된 텍스트를 저정할 StringBuffer 객체
+     * @param footer        꼬리말 컨트롤
+     * @param option        추출 옵션
+     * @param paraHeadMaker 문단 번호/글머리표 생성기
+     * @param sb            추출된 텍스트를 저정할 StringBuffer 객체
      * @throws UnsupportedEncodingException
      */
     private static void footer(ControlFooter footer,
@@ -164,10 +164,10 @@ public class ForControl {
     /**
      * 각주 컨트롤에서 텍스트를 추출한다.
      *
-     * @param footnote          각주 컨트롤
-     * @param option            추출 옵션
-     * @param paraHeadMaker     문단 번호/글머리표 생성기
-     * @param sb                추출된 텍스트를 저정할 StringBuffer 객체
+     * @param footnote      각주 컨트롤
+     * @param option        추출 옵션
+     * @param paraHeadMaker 문단 번호/글머리표 생성기
+     * @param sb            추출된 텍스트를 저정할 StringBuffer 객체
      * @throws UnsupportedEncodingException
      */
     private static void footnote(ControlFootnote footnote,
@@ -180,10 +180,10 @@ public class ForControl {
     /**
      * 미주 컨트롤에서 텍스트를 추출한다.
      *
-     * @param endnote           미주 컨트롤
-     * @param option            추출 옵션
-     * @param paraHeadMaker     문단 번호/글머리표 생성기
-     * @param sb                추출된 텍스트를 저정할 StringBuffer 객체
+     * @param endnote       미주 컨트롤
+     * @param option        추출 옵션
+     * @param paraHeadMaker 문단 번호/글머리표 생성기
+     * @param sb            추출된 텍스트를 저정할 StringBuffer 객체
      * @throws UnsupportedEncodingException
      */
     private static void endnote(ControlEndnote endnote,
@@ -208,10 +208,10 @@ public class ForControl {
     /**
      * 숨은 설명 컨트롤에서 텍스트를 추출한다.
      *
-     * @param hiddenComment     숨은 설명 컨트롤
-     * @param option            추출 옵션
-     * @param paraHeadMaker     문단 번호/글머리표 생성기
-     * @param sb                추출된 텍스트를 저정할 StringBuffer 객체
+     * @param hiddenComment 숨은 설명 컨트롤
+     * @param option        추출 옵션
+     * @param paraHeadMaker 문단 번호/글머리표 생성기
+     * @param sb            추출된 텍스트를 저정할 StringBuffer 객체
      * @throws UnsupportedEncodingException
      */
     private static void hiddenComment(ControlHiddenComment hiddenComment,

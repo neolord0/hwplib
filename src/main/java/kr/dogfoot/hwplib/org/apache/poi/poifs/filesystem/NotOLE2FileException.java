@@ -14,17 +14,17 @@
    See the License for the specific language governing permissions and
    limitations under the License.
 ==================================================================== */
-        
+
 package kr.dogfoot.hwplib.org.apache.poi.poifs.filesystem;
 
 import java.io.IOException;
 
 /**
  * This exception is thrown when we try to open a file that doesn't
- *  seem to actually be an OLE2 file after all
+ * seem to actually be an OLE2 file after all
  */
 public class NotOLE2FileException extends IOException {
-	public NotOLE2FileException(String s) {
-		super(s);
-	}
+    public NotOLE2FileException(String s) {
+        super(s);
+    }
 }

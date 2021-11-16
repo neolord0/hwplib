@@ -35,9 +35,10 @@ public class ForParagraphList {
 
     /**
      * 문단 리스트에서 텍스트를 추출한다.
-     * @param sr 스트림 리더
+     *
+     * @param sr       스트림 리더
      * @param listener 텍스트 추출 리스너
-     * @param tem 추출 방법
+     * @param tem      추출 방법
      * @throws Exception
      */
     public static void extractText(StreamReader sr, TextExtractorListener listener, TextExtractMethod tem) throws Exception {

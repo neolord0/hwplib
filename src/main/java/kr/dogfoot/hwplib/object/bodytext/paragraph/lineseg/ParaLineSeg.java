@@ -1,7 +1,5 @@
 package kr.dogfoot.hwplib.object.bodytext.paragraph.lineseg;
 
-import kr.dogfoot.hwplib.object.bodytext.paragraph.charshape.ParaCharShape;
-
 import java.util.ArrayList;
 
 /**

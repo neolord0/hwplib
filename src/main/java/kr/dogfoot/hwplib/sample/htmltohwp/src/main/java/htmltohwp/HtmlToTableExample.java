@@ -43,7 +43,6 @@ import javax.swing.*;
 import java.awt.*;
 import java.io.File;
 import java.io.UnsupportedEncodingException;
-import java.net.URISyntaxException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.List;
@@ -54,7 +53,6 @@ import java.util.*;
  * 설명 :
  * 본 예제는 Jsoup를 활용하여 HTML 파일을 읽어, 한글 표로 만드는 과정을 보여줍니다.
  * 입력 방식은 FileSystem이나, 활용하실 서비스에 맞게 JSON 혹은 XML등으로 변환하시면 되겠습니다.
- *
  */
 
 public class HtmlToTableExample {
@@ -93,7 +91,7 @@ public class HtmlToTableExample {
             Map<String, List<List<TableCellDTO>>> tableMap = parseTable(doc);
             if (hwpFile != null) {
                 // 테이블 그리기 시작.
-                for(String tableID : tableMap.keySet()){
+                for (String tableID : tableMap.keySet()) {
                     makeTable(tableMap.get(tableID));
                 }
 
@@ -107,15 +105,14 @@ public class HtmlToTableExample {
     }
 
     /**
-     *
      * @param doc : HTML 내용을 Parse한 최상위 Document
      * @return Table 구조가 담긴 Map<String, List<List<TableCellDTO>>>
      */
-    private Map<String, List<List<TableCellDTO>>> parseTable(Document doc){
+    private Map<String, List<List<TableCellDTO>>> parseTable(Document doc) {
         int idtable = 1;
         Map<String, List<List<TableCellDTO>>> tableMap = new HashMap<String, List<List<TableCellDTO>>>();
         Elements table = doc.select("table");
-        for(Element e : table){
+        for (Element e : table) {
             String tableID = String.format("Table%d", idtable);
             List<List<TableCellDTO>> parseData = parseList(e);
             tableMap.put(tableID, parseData);
@@ -124,7 +121,6 @@ public class HtmlToTableExample {
     }
 
     /**
-     *
      * @param table
      * @return 정렬된 테이블 정보 List<List<TableCellDTO>>
      */
@@ -148,7 +144,7 @@ public class HtmlToTableExample {
             for (Element e : cells) {
                 String style = e.attr("style");
                 // display:none 인(안보이는) 요소는 건너뜁니다.
-                if(!(style.contains("display") && style.contains("none"))){
+                if (!(style.contains("display") && style.contains("none"))) {
                     int rowSpan;
                     try {
                         // rowspan을 가져옵니다.
@@ -174,7 +170,7 @@ public class HtmlToTableExample {
                             // span이 된 영역은 span수 만큼 공간을 차지하므로 빈 영역을 찾기 위함입니다.
                             // 영역을 찾지못하면 cell의 index를 늘리고 다음 빈 영역을 찾습니다.
                             tmp = rowDataList.get(i).get(colCount);
-                            if(tmp == null)
+                            if (tmp == null)
                                 break;
                             colCount++;
                         } catch (Exception ex) {
@@ -193,14 +189,14 @@ public class HtmlToTableExample {
 
                             // 셀 자체에 고유한 너비나 높이가 있다면 가져오고, 아니면 0값을 넣어 후에 자동으로 조정되게 합니다.
                             double width, height;
-                            try{
+                            try {
                                 width = Double.parseDouble(e.attr("width"));
-                            }catch(Exception ex){
+                            } catch (Exception ex) {
                                 width = 0;
                             }
-                            try{
+                            try {
                                 height = Double.parseDouble(e.attr("height"));
-                            }catch(Exception ex){
+                            } catch (Exception ex) {
                                 height = 0;
                             }
                             TableCellDTO cellDTO = new TableCellDTO();
@@ -225,7 +221,7 @@ public class HtmlToTableExample {
             TreeMap<Integer, TableCellDTO> tm = new TreeMap<Integer, TableCellDTO>(m);
             Iterator<Integer> iteratorKey = tm.keySet().iterator();
             List<TableCellDTO> subList = new ArrayList<TableCellDTO>();
-            while(iteratorKey.hasNext()) {
+            while (iteratorKey.hasNext()) {
                 Integer key = iteratorKey.next();
                 subList.add(tm.get(key));
             }
@@ -248,6 +244,7 @@ public class HtmlToTableExample {
      * 첫 섹션, 첫 번째 문단에 테이블을 생성합니다.
      * 동적으로 i번째 문단에 테이블을 생성하시려면 그 만큼 문단이 필요합니다.
      * 이 예제는 하나의 테이블만 그리기 위해 첫 번째로 고정합니다.
+     *
      * @return
      */
     private ControlTable createTableControlAtFirstParagraph() {
@@ -439,11 +436,12 @@ public class HtmlToTableExample {
     private Font font = new Font(fontName, fontStyle, fontSize);
     private JLabel label = new JLabel();
     private FontMetrics fm = label.getFontMetrics(font);
-    private int autoWidth(String text){
+
+    private int autoWidth(String text) {
         return SwingUtilities.computeStringWidth(fm, text);
     }
 
-    private int autoHeight(){
+    private int autoHeight() {
         return fm.getHeight();
     }
 
@@ -495,6 +493,7 @@ public class HtmlToTableExample {
 
     /**
      * 폰트 pt 사이즈를 줄 높이 사이즈로 변환 합니다.
+     *
      * @param pt
      * @return int
      */
@@ -504,6 +503,7 @@ public class HtmlToTableExample {
 
     /**
      * mm를 Hwp에 포맷에 맞게 변환 합니다.
+     *
      * @param mm
      * @return long
      */
@@ -513,6 +513,7 @@ public class HtmlToTableExample {
 
     /**
      * px값을 mm로 변환합니다.
+     *
      * @param px
      * @return double
      */
@@ -522,6 +523,7 @@ public class HtmlToTableExample {
 
     /**
      * 기본 pt사이즈를 지정합니다.
+     *
      * @param pt
      * @return int
      */
@@ -531,6 +533,7 @@ public class HtmlToTableExample {
 
     /**
      * HTML의 HexColor값을 RGB로 변환하기 위한 메소드 입니다.
+     *
      * @param colorStr
      * @return RGBColor
      */

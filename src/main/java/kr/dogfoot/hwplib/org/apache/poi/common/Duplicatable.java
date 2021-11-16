@@ -25,13 +25,13 @@ package kr.dogfoot.hwplib.org.apache.poi.common;
  * might need to be replaced by the parent copy operation.
  *
  * @param <T> the implementing class itself
- *
  * @see <a href="https://www.artima.com/intv/bloch.html#part13">Copy Constructor versus Cloning</a>
  */
 public interface Duplicatable {
     // Providing a generics interface Duplicatable<T extends Duplicatable<T>> pushes too many
     // changes to the implementing classes and the benefit of providing a subtype-specific copy method
     // is not sufficient
+
     /**
      * @return a deep copy of the implementing class / instance
      */

@@ -16,18 +16,17 @@
  */
 package kr.dogfoot.hwplib.org.apache.commons.math3.util;
 
-import java.math.BigInteger;
-
 import kr.dogfoot.hwplib.org.apache.commons.math3.exception.MathArithmeticException;
 
 /**
  * Some useful, arithmetics related, additions to the built-in functions in
  * {@link Math}.
- *
  */
 public final class ArithmeticUtils {
 
-    /** Private constructor. */
+    /**
+     * Private constructor.
+     */
     private ArithmeticUtils() {
         super();
     }
@@ -39,15 +38,15 @@ public final class ArithmeticUtils {
      * @param y Factor.
      * @return the product {@code x * y}.
      * @throws MathArithmeticException if the result can not be
-     * represented as an {@code int}.
+     *                                 represented as an {@code int}.
      * @since 1.1
      */
     public static int mulAndCheck(int x, int y) throws MathArithmeticException {
-        long m = ((long)x) * ((long)y);
+        long m = ((long) x) * ((long) y);
         if (m < Integer.MIN_VALUE || m > Integer.MAX_VALUE) {
             throw new MathArithmeticException();
         }
-        return (int)m;
+        return (int) m;
     }
 
     /**
@@ -57,7 +56,7 @@ public final class ArithmeticUtils {
      * @param b Factor.
      * @return the product {@code a * b}.
      * @throws MathArithmeticException if the result can not be represented
-     * as a {@code long}.
+     *                                 as a {@code long}.
      * @since 1.2
      */
     public static long mulAndCheck(long a, long b) throws MathArithmeticException {

@@ -17,9 +17,8 @@
 
 package kr.dogfoot.hwplib.org.apache.poi.poifs.property;
 
-import java.util.Iterator;
-
 import java.io.IOException;
+import java.util.Iterator;
 
 /**
  * Behavior for parent (directory) properties
@@ -39,13 +38,12 @@ public interface Parent extends Child, Iterable<Property> {
      * Add a new child to the collection of children
      *
      * @param property the new child to be added; must not be null
-     *
-     * @exception IOException if the Parent already has a child with
-     *                        the same name
+     * @throws IOException if the Parent already has a child with
+     *                     the same name
      */
 
     public void addChild(final Property property)
-        throws IOException;
+            throws IOException;
 
     /**
      * Set the previous Child

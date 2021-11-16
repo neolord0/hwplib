@@ -45,7 +45,7 @@ public class ControlObjectLinkLine extends GsoControl {
 
     @Override
     public Control clone() {
-        ControlObjectLinkLine cloned =  new ControlObjectLinkLine();
+        ControlObjectLinkLine cloned = new ControlObjectLinkLine();
         cloned.copyGsoControlPart(this);
         cloned.shapeComponentLine.copy(shapeComponentLine);
         return cloned;

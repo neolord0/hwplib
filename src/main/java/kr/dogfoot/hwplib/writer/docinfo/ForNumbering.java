@@ -5,7 +5,6 @@ import kr.dogfoot.hwplib.object.docinfo.numbering.LevelNumbering;
 import kr.dogfoot.hwplib.object.docinfo.numbering.ParagraphHeadInfo;
 import kr.dogfoot.hwplib.object.etc.HWPTag;
 import kr.dogfoot.hwplib.object.fileheader.FileVersion;
-import kr.dogfoot.hwplib.util.StringUtil;
 import kr.dogfoot.hwplib.util.compoundFile.writer.StreamWriter;
 
 import java.io.IOException;
@@ -66,7 +65,7 @@ public class ForNumbering {
         if (version.isOver(5, 0, 2, 5)) {
             size += 4 * 7;
 
-            for (int level = 8; level <=10; level++) {
+            for (int level = 8; level <= 10; level++) {
                 LevelNumbering ln = n.getLevelNumbering(level);
                 size += 12 + ln.getNumberFormat().getWCharsSize();
             }

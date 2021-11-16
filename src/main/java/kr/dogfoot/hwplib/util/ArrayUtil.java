@@ -11,7 +11,7 @@ public class ArrayUtil {
     /**
      * <p>Checks if an array of primitive bytes is empty or {@code null}.
      *
-     * @param array  the array to test
+     * @param array the array to test
      * @return {@code true} if the array is empty or {@code null}
      * @since 2.1
      */
@@ -25,7 +25,7 @@ public class ArrayUtil {
     /**
      * <p>Checks if an array of primitive chars is empty or {@code null}.
      *
-     * @param array  the array to test
+     * @param array the array to test
      * @return {@code true} if the array is empty or {@code null}
      * @since 2.1
      */
@@ -36,7 +36,7 @@ public class ArrayUtil {
     /**
      * <p>Checks if an array of primitive doubles is empty or {@code null}.
      *
-     * @param array  the array to test
+     * @param array the array to test
      * @return {@code true} if the array is empty or {@code null}
      * @since 2.1
      */
@@ -47,7 +47,7 @@ public class ArrayUtil {
     /**
      * <p>Checks if an array of primitive floats is empty or {@code null}.
      *
-     * @param array  the array to test
+     * @param array the array to test
      * @return {@code true} if the array is empty or {@code null}
      * @since 2.1
      */
@@ -58,7 +58,7 @@ public class ArrayUtil {
     /**
      * <p>Checks if an array of primitive ints is empty or {@code null}.
      *
-     * @param array  the array to test
+     * @param array the array to test
      * @return {@code true} if the array is empty or {@code null}
      * @since 2.1
      */
@@ -67,11 +67,10 @@ public class ArrayUtil {
     }
 
 
-
     /**
      * <p>Checks if an array of primitive longs is empty or {@code null}.
      *
-     * @param array  the array to test
+     * @param array the array to test
      * @return {@code true} if the array is empty or {@code null}
      * @since 2.1
      */
@@ -80,10 +79,11 @@ public class ArrayUtil {
     }
 
     // ----------------------------------------------------------------------
+
     /**
      * <p>Checks if an array of Objects is empty or {@code null}.
      *
-     * @param array  the array to test
+     * @param array the array to test
      * @return {@code true} if the array is empty or {@code null}
      * @since 2.1
      */
@@ -94,7 +94,7 @@ public class ArrayUtil {
     /**
      * <p>Checks if an array of primitive shorts is empty or {@code null}.
      *
-     * @param array  the array to test
+     * @param array the array to test
      * @return {@code true} if the array is empty or {@code null}
      * @since 2.1
      */
@@ -112,7 +112,7 @@ public class ArrayUtil {
     /**
      * <p>Checks if an array of primitive booleans is not empty and not {@code null}.
      *
-     * @param array  the array to test
+     * @param array the array to test
      * @return {@code true} if the array is not empty and not {@code null}
      * @since 2.5
      */
@@ -123,7 +123,7 @@ public class ArrayUtil {
     /**
      * <p>Checks if an array of primitive bytes is not empty and not {@code null}.
      *
-     * @param array  the array to test
+     * @param array the array to test
      * @return {@code true} if the array is not empty and not {@code null}
      * @since 2.5
      */
@@ -134,7 +134,7 @@ public class ArrayUtil {
     /**
      * <p>Checks if an array of primitive chars is not empty and not {@code null}.
      *
-     * @param array  the array to test
+     * @param array the array to test
      * @return {@code true} if the array is not empty and not {@code null}
      * @since 2.5
      */
@@ -145,7 +145,7 @@ public class ArrayUtil {
     /**
      * <p>Checks if an array of primitive doubles is not empty and not {@code null}.
      *
-     * @param array  the array to test
+     * @param array the array to test
      * @return {@code true} if the array is not empty and not {@code null}
      * @since 2.5
      */
@@ -156,7 +156,7 @@ public class ArrayUtil {
     /**
      * <p>Checks if an array of primitive floats is not empty and not {@code null}.
      *
-     * @param array  the array to test
+     * @param array the array to test
      * @return {@code true} if the array is not empty and not {@code null}
      * @since 2.5
      */
@@ -167,7 +167,7 @@ public class ArrayUtil {
     /**
      * <p>Checks if an array of primitive ints is not empty and not {@code null}.
      *
-     * @param array  the array to test
+     * @param array the array to test
      * @return {@code true} if the array is not empty and not {@code null}
      * @since 2.5
      */
@@ -178,7 +178,7 @@ public class ArrayUtil {
     /**
      * <p>Checks if an array of primitive longs is not empty and not {@code null}.
      *
-     * @param array  the array to test
+     * @param array the array to test
      * @return {@code true} if the array is not empty and not {@code null}
      * @since 2.5
      */
@@ -189,7 +189,7 @@ public class ArrayUtil {
     /**
      * <p>Checks if an array of primitive shorts is not empty and not {@code null}.
      *
-     * @param array  the array to test
+     * @param array the array to test
      * @return {@code true} if the array is not empty and not {@code null}
      * @since 2.5
      */
@@ -198,11 +198,12 @@ public class ArrayUtil {
     }
 
     // ----------------------------------------------------------------------
+
     /**
      * <p>Checks if an array of Objects is not empty and not {@code null}.
      *
-     * @param <T> the component type of the array
-     * @param array  the array to test
+     * @param <T>   the component type of the array
+     * @param array the array to test
      * @return {@code true} if the array is not empty and not {@code null}
      * @since 2.5
      */

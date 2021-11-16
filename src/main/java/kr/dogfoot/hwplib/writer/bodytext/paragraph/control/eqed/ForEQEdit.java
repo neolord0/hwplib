@@ -2,7 +2,6 @@ package kr.dogfoot.hwplib.writer.bodytext.paragraph.control.eqed;
 
 import kr.dogfoot.hwplib.object.bodytext.control.equation.EQEdit;
 import kr.dogfoot.hwplib.object.etc.HWPTag;
-import kr.dogfoot.hwplib.util.StringUtil;
 import kr.dogfoot.hwplib.util.compoundFile.writer.StreamWriter;
 
 import java.io.IOException;

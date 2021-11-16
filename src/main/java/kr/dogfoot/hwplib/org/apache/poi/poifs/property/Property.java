@@ -17,19 +17,19 @@
 
 package kr.dogfoot.hwplib.org.apache.poi.poifs.property;
 
+import kr.dogfoot.hwplib.org.apache.poi.hpsf.ClassID;
+import kr.dogfoot.hwplib.org.apache.poi.poifs.common.POIFSConstants;
+import kr.dogfoot.hwplib.org.apache.poi.poifs.dev.POIFSViewable;
+import kr.dogfoot.hwplib.org.apache.poi.util.ByteField;
+import kr.dogfoot.hwplib.org.apache.poi.util.IntegerField;
+import kr.dogfoot.hwplib.org.apache.poi.util.LittleEndianConsts;
+import kr.dogfoot.hwplib.org.apache.poi.util.ShortField;
+
 import java.io.IOException;
 import java.io.OutputStream;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.Iterator;
-
-import kr.dogfoot.hwplib.org.apache.poi.poifs.common.POIFSConstants;
-import kr.dogfoot.hwplib.org.apache.poi.poifs.dev.POIFSViewable;
-import kr.dogfoot.hwplib.org.apache.poi.util.ByteField;
-import kr.dogfoot.hwplib.org.apache.poi.util.IntegerField;
-import kr.dogfoot.hwplib.org.apache.poi.util.ShortField;
-import kr.dogfoot.hwplib.org.apache.poi.hpsf.ClassID;
-import kr.dogfoot.hwplib.org.apache.poi.util.LittleEndianConsts;
 
 /**
  * This abstract base class is the ancestor of all classes
@@ -39,77 +39,76 @@ import kr.dogfoot.hwplib.org.apache.poi.util.LittleEndianConsts;
  */
 
 public abstract class Property implements Child, POIFSViewable {
-    static final private byte   _default_fill             = ( byte ) 0x00;
-    static final private int    _name_size_offset         = 0x40;
-    static final private int    _max_name_length          =
-        (_name_size_offset / LittleEndianConsts.SHORT_SIZE) - 1;
-    static final protected int  _NO_INDEX                 = -1;
+    static final private byte _default_fill = (byte) 0x00;
+    static final private int _name_size_offset = 0x40;
+    static final private int _max_name_length =
+            (_name_size_offset / LittleEndianConsts.SHORT_SIZE) - 1;
+    static final protected int _NO_INDEX = -1;
 
     // useful offsets
-    static final private int    _node_color_offset        = 0x43;
-    static final private int    _previous_property_offset = 0x44;
-    static final private int    _next_property_offset     = 0x48;
-    static final private int    _child_property_offset    = 0x4C;
-    static final private int    _storage_clsid_offset     = 0x50;
-    static final private int    _user_flags_offset        = 0x60;
-    static final private int    _seconds_1_offset         = 0x64;
-    static final private int    _days_1_offset            = 0x68;
-    static final private int    _seconds_2_offset         = 0x6C;
-    static final private int    _days_2_offset            = 0x70;
-    static final private int    _start_block_offset       = 0x74;
-    static final private int    _size_offset              = 0x78;
+    static final private int _node_color_offset = 0x43;
+    static final private int _previous_property_offset = 0x44;
+    static final private int _next_property_offset = 0x48;
+    static final private int _child_property_offset = 0x4C;
+    static final private int _storage_clsid_offset = 0x50;
+    static final private int _user_flags_offset = 0x60;
+    static final private int _seconds_1_offset = 0x64;
+    static final private int _days_1_offset = 0x68;
+    static final private int _seconds_2_offset = 0x6C;
+    static final private int _days_2_offset = 0x70;
+    static final private int _start_block_offset = 0x74;
+    static final private int _size_offset = 0x78;
 
     // node colors
-    static final protected byte _NODE_BLACK               = 1;
-    static final protected byte _NODE_RED                 = 0;
+    static final protected byte _NODE_BLACK = 1;
+    static final protected byte _NODE_RED = 0;
 
     // documents must be at least this size to be stored in big blocks
-    static final private int    _big_block_minimum_bytes  = POIFSConstants.BIG_BLOCK_MINIMUM_DOCUMENT_SIZE;
-    private String              _name;
+    static final private int _big_block_minimum_bytes = POIFSConstants.BIG_BLOCK_MINIMUM_DOCUMENT_SIZE;
+    private String _name;
     private ShortField _name_size;
     private ByteField _property_type;
-    private ByteField           _node_color;
+    private ByteField _node_color;
     private IntegerField _previous_property;
-    private IntegerField        _next_property;
-    private IntegerField        _child_property;
-    private ClassID             _storage_clsid;
-    private IntegerField        _user_flags;
-    private IntegerField        _seconds_1;
-    private IntegerField        _days_1;
-    private IntegerField        _seconds_2;
-    private IntegerField        _days_2;
-    private IntegerField        _start_block;
-    private IntegerField        _size;
-    private byte[]              _raw_data;
-    private int                 _index;
-    private Child               _next_child;
-    private Child               _previous_child;
+    private IntegerField _next_property;
+    private IntegerField _child_property;
+    private ClassID _storage_clsid;
+    private IntegerField _user_flags;
+    private IntegerField _seconds_1;
+    private IntegerField _days_1;
+    private IntegerField _seconds_2;
+    private IntegerField _days_2;
+    private IntegerField _start_block;
+    private IntegerField _size;
+    private byte[] _raw_data;
+    private int _index;
+    private Child _next_child;
+    private Child _previous_child;
 
-    protected Property()
-    {
-        _raw_data = new byte[ POIFSConstants.PROPERTY_SIZE ];
+    protected Property() {
+        _raw_data = new byte[POIFSConstants.PROPERTY_SIZE];
         Arrays.fill(_raw_data, _default_fill);
-        _name_size         = new ShortField(_name_size_offset);
-        _property_type     =
-            new ByteField(PropertyConstants.PROPERTY_TYPE_OFFSET);
-        _node_color        = new ByteField(_node_color_offset);
+        _name_size = new ShortField(_name_size_offset);
+        _property_type =
+                new ByteField(PropertyConstants.PROPERTY_TYPE_OFFSET);
+        _node_color = new ByteField(_node_color_offset);
         _previous_property = new IntegerField(_previous_property_offset,
-                                              _NO_INDEX, _raw_data);
-        _next_property     = new IntegerField(_next_property_offset,
-                                              _NO_INDEX, _raw_data);
-        _child_property    = new IntegerField(_child_property_offset,
-                                              _NO_INDEX, _raw_data);
-        _storage_clsid     = new ClassID(_raw_data,_storage_clsid_offset);
-        _user_flags        = new IntegerField(_user_flags_offset, 0, _raw_data);
-        _seconds_1         = new IntegerField(_seconds_1_offset, 0,
-                                              _raw_data);
-        _days_1            = new IntegerField(_days_1_offset, 0, _raw_data);
-        _seconds_2         = new IntegerField(_seconds_2_offset, 0,
-                                              _raw_data);
-        _days_2            = new IntegerField(_days_2_offset, 0, _raw_data);
-        _start_block       = new IntegerField(_start_block_offset);
-        _size              = new IntegerField(_size_offset, 0, _raw_data);
-        _index             = _NO_INDEX;
+                _NO_INDEX, _raw_data);
+        _next_property = new IntegerField(_next_property_offset,
+                _NO_INDEX, _raw_data);
+        _child_property = new IntegerField(_child_property_offset,
+                _NO_INDEX, _raw_data);
+        _storage_clsid = new ClassID(_raw_data, _storage_clsid_offset);
+        _user_flags = new IntegerField(_user_flags_offset, 0, _raw_data);
+        _seconds_1 = new IntegerField(_seconds_1_offset, 0,
+                _raw_data);
+        _days_1 = new IntegerField(_days_1_offset, 0, _raw_data);
+        _seconds_2 = new IntegerField(_seconds_2_offset, 0,
+                _raw_data);
+        _days_2 = new IntegerField(_days_2_offset, 0, _raw_data);
+        _start_block = new IntegerField(_start_block_offset);
+        _size = new IntegerField(_size_offset, 0, _raw_data);
+        _index = _NO_INDEX;
         setName("");
         setNextChild(null);
         setPreviousChild(null);
@@ -118,55 +117,50 @@ public abstract class Property implements Child, POIFSViewable {
     /**
      * Constructor from byte data
      *
-     * @param index index number
-     * @param array byte data
+     * @param index  index number
+     * @param array  byte data
      * @param offset offset into byte data
      */
-    protected Property(int index, byte [] array, int offset)
-    {
-        _raw_data = new byte[ POIFSConstants.PROPERTY_SIZE ];
+    protected Property(int index, byte[] array, int offset) {
+        _raw_data = new byte[POIFSConstants.PROPERTY_SIZE];
         System.arraycopy(array, offset, _raw_data, 0,
-                         POIFSConstants.PROPERTY_SIZE);
-        _name_size         = new ShortField(_name_size_offset, _raw_data);
-        _property_type     =
-            new ByteField(PropertyConstants.PROPERTY_TYPE_OFFSET, _raw_data);
-        _node_color        = new ByteField(_node_color_offset, _raw_data);
+                POIFSConstants.PROPERTY_SIZE);
+        _name_size = new ShortField(_name_size_offset, _raw_data);
+        _property_type =
+                new ByteField(PropertyConstants.PROPERTY_TYPE_OFFSET, _raw_data);
+        _node_color = new ByteField(_node_color_offset, _raw_data);
         _previous_property = new IntegerField(_previous_property_offset,
-                                              _raw_data);
-        _next_property     = new IntegerField(_next_property_offset,
-                                              _raw_data);
-        _child_property    = new IntegerField(_child_property_offset,
-                                              _raw_data);
-        _storage_clsid     = new ClassID(_raw_data,_storage_clsid_offset);
-        _user_flags        = new IntegerField(_user_flags_offset, 0, _raw_data);
-        _seconds_1         = new IntegerField(_seconds_1_offset, _raw_data);
-        _days_1            = new IntegerField(_days_1_offset, _raw_data);
-        _seconds_2         = new IntegerField(_seconds_2_offset, _raw_data);
-        _days_2            = new IntegerField(_days_2_offset, _raw_data);
-        _start_block       = new IntegerField(_start_block_offset, _raw_data);
-        _size              = new IntegerField(_size_offset, _raw_data);
-        _index             = index;
+                _raw_data);
+        _next_property = new IntegerField(_next_property_offset,
+                _raw_data);
+        _child_property = new IntegerField(_child_property_offset,
+                _raw_data);
+        _storage_clsid = new ClassID(_raw_data, _storage_clsid_offset);
+        _user_flags = new IntegerField(_user_flags_offset, 0, _raw_data);
+        _seconds_1 = new IntegerField(_seconds_1_offset, _raw_data);
+        _days_1 = new IntegerField(_days_1_offset, _raw_data);
+        _seconds_2 = new IntegerField(_seconds_2_offset, _raw_data);
+        _days_2 = new IntegerField(_days_2_offset, _raw_data);
+        _start_block = new IntegerField(_start_block_offset, _raw_data);
+        _size = new IntegerField(_size_offset, _raw_data);
+        _index = index;
         int name_length = (_name_size.get() / LittleEndianConsts.SHORT_SIZE)
-                          - 1;
+                - 1;
 
-        if (name_length < 1)
-        {
+        if (name_length < 1) {
             _name = "";
-        }
-        else
-        {
-            char[] char_array  = new char[ name_length ];
-            int    name_offset = 0;
+        } else {
+            char[] char_array = new char[name_length];
+            int name_offset = 0;
 
-            for (int j = 0; j < name_length; j++)
-            {
-                char_array[ j ] = ( char ) new ShortField(name_offset,
-                                                          _raw_data).get();
-                name_offset     += LittleEndianConsts.SHORT_SIZE;
+            for (int j = 0; j < name_length; j++) {
+                char_array[j] = (char) new ShortField(name_offset,
+                        _raw_data).get();
+                name_offset += LittleEndianConsts.SHORT_SIZE;
             }
             _name = new String(char_array, 0, name_length);
         }
-        _next_child     = null;
+        _next_child = null;
         _previous_child = null;
     }
 
@@ -175,13 +169,11 @@ public abstract class Property implements Child, POIFSViewable {
      *
      * @param stream the OutputStream to which the data should be
      *               written.
-     *
-     * @exception IOException on problems writing to the specified
-     *            stream.
+     * @throws IOException on problems writing to the specified
+     *                     stream.
      */
     public void writeData(OutputStream stream)
-        throws IOException
-    {
+            throws IOException {
         stream.write(_raw_data);
     }
 
@@ -191,16 +183,14 @@ public abstract class Property implements Child, POIFSViewable {
      *
      * @param startBlock the start block index
      */
-    public void setStartBlock(int startBlock)
-    {
+    public void setStartBlock(int startBlock) {
         _start_block.set(startBlock, _raw_data);
     }
 
     /**
      * @return the start block
      */
-    public int getStartBlock()
-    {
+    public int getStartBlock() {
         return _start_block.get();
     }
 
@@ -209,8 +199,7 @@ public abstract class Property implements Child, POIFSViewable {
      *
      * @return size in bytes
      */
-    public int getSize()
-    {
+    public int getSize() {
         return _size.get();
     }
 
@@ -220,8 +209,7 @@ public abstract class Property implements Child, POIFSViewable {
      *
      * @return true if the size is less than _big_block_minimum_bytes
      */
-    public boolean shouldUseSmallBlocks()
-    {
+    public boolean shouldUseSmallBlocks() {
         return Property.isSmall(_size.get());
     }
 
@@ -229,12 +217,10 @@ public abstract class Property implements Child, POIFSViewable {
      * does the length indicate a small document?
      *
      * @param length length in bytes
-     *
      * @return true if the length is less than
-     *         _big_block_minimum_bytes
+     * _big_block_minimum_bytes
      */
-    public static boolean isSmall(int length)
-    {
+    public static boolean isSmall(int length) {
         return length < _big_block_minimum_bytes;
     }
 
@@ -243,8 +229,7 @@ public abstract class Property implements Child, POIFSViewable {
      *
      * @return property name as String
      */
-    public String getName()
-    {
+    public String getName() {
         return _name;
     }
 
@@ -255,11 +240,11 @@ public abstract class Property implements Child, POIFSViewable {
 
     /**
      * Sets the storage clsid, which is the Class ID of a COM object which
-     *   reads and writes this stream
+     * reads and writes this stream
+     *
      * @return storage Class ID for this property stream
      */
-    public ClassID getStorageClsid()
-    {
+    public ClassID getStorageClsid() {
         return _storage_clsid;
     }
 
@@ -268,53 +253,50 @@ public abstract class Property implements Child, POIFSViewable {
      *
      * @param name the new name
      */
-    protected void setName(String name)
-    {
+    protected void setName(String name) {
         char[] char_array = name.toCharArray();
-        int    limit      = Math.min(char_array.length, _max_name_length);
+        int limit = Math.min(char_array.length, _max_name_length);
 
         _name = new String(char_array, 0, limit);
         short offset = 0;
-        int   j      = 0;
+        int j = 0;
 
-        for (; j < limit; j++)
-        {
-            new ShortField(offset, ( short ) char_array[ j ], _raw_data);
+        for (; j < limit; j++) {
+            new ShortField(offset, (short) char_array[j], _raw_data);
             offset += LittleEndianConsts.SHORT_SIZE;
         }
-        for (; j < _max_name_length + 1; j++)
-        {
-            new ShortField(offset, ( short ) 0, _raw_data);
+        for (; j < _max_name_length + 1; j++) {
+            new ShortField(offset, (short) 0, _raw_data);
             offset += LittleEndianConsts.SHORT_SIZE;
         }
 
         // double the count, and include the null at the end
         _name_size
-            .set(( short ) ((limit + 1)
-                            * LittleEndianConsts.SHORT_SIZE), _raw_data);
+                .set((short) ((limit + 1)
+                        * LittleEndianConsts.SHORT_SIZE), _raw_data);
     }
 
     /**
      * Sets the storage class ID for this property stream. This is the Class ID
-     *   of the COM object which can read and write this property stream
+     * of the COM object which can read and write this property stream
+     *
      * @param clsidStorage Storage Class ID
      */
-    public void setStorageClsid( ClassID clsidStorage)
-    {
+    public void setStorageClsid(ClassID clsidStorage) {
         _storage_clsid = clsidStorage;
-        if( clsidStorage == null) {
-            Arrays.fill( _raw_data, _storage_clsid_offset, _storage_clsid_offset + ClassID.LENGTH, (byte) 0);
+        if (clsidStorage == null) {
+            Arrays.fill(_raw_data, _storage_clsid_offset, _storage_clsid_offset + ClassID.LENGTH, (byte) 0);
         } else {
-            clsidStorage.write( _raw_data, _storage_clsid_offset);
+            clsidStorage.write(_raw_data, _storage_clsid_offset);
         }
     }
+
     /**
      * Set the property type. Makes no attempt to validate the value.
      *
      * @param propertyType the property type (root, file, directory)
      */
-    protected void setPropertyType(byte propertyType)
-    {
+    protected void setPropertyType(byte propertyType) {
         _property_type.set(propertyType, _raw_data);
     }
 
@@ -323,8 +305,7 @@ public abstract class Property implements Child, POIFSViewable {
      *
      * @param nodeColor the node color (red or black)
      */
-    protected void setNodeColor(byte nodeColor)
-    {
+    protected void setNodeColor(byte nodeColor) {
         _node_color.set(nodeColor, _raw_data);
     }
 
@@ -333,8 +314,7 @@ public abstract class Property implements Child, POIFSViewable {
      *
      * @param child the child property's index in the Property Table
      */
-    protected void setChildProperty(int child)
-    {
+    protected void setChildProperty(int child) {
         _child_property.set(child, _raw_data);
     }
 
@@ -343,8 +323,7 @@ public abstract class Property implements Child, POIFSViewable {
      *
      * @return child property index
      */
-    protected int getChildIndex()
-    {
+    protected int getChildIndex() {
         return _child_property.get();
     }
 
@@ -353,8 +332,7 @@ public abstract class Property implements Child, POIFSViewable {
      *
      * @param size the size of the document, in bytes
      */
-    protected void setSize(int size)
-    {
+    protected void setSize(int size) {
         _size.set(size, _raw_data);
     }
 
@@ -364,8 +342,7 @@ public abstract class Property implements Child, POIFSViewable {
      * @param index this Property's index within its containing
      *              Property Table
      */
-    protected void setIndex(int index)
-    {
+    protected void setIndex(int index) {
         _index = index;
     }
 
@@ -374,8 +351,7 @@ public abstract class Property implements Child, POIFSViewable {
      *
      * @return the index of this Property within its Property Table
      */
-    protected int getIndex()
-    {
+    protected int getIndex() {
         return _index;
     }
 
@@ -390,8 +366,7 @@ public abstract class Property implements Child, POIFSViewable {
      *
      * @return index of next sibling
      */
-    int getNextChildIndex()
-    {
+    int getNextChildIndex() {
         return _next_property.get();
     }
 
@@ -400,8 +375,7 @@ public abstract class Property implements Child, POIFSViewable {
      *
      * @return index of previous sibling
      */
-    int getPreviousChildIndex()
-    {
+    int getPreviousChildIndex() {
         return _previous_property.get();
     }
 
@@ -409,11 +383,9 @@ public abstract class Property implements Child, POIFSViewable {
      * determine whether the specified index is valid
      *
      * @param index value to be checked
-     *
      * @return true if the index is valid
      */
-    static boolean isValidIndex(int index)
-    {
+    static boolean isValidIndex(int index) {
         return index != _NO_INDEX;
     }
 
@@ -422,8 +394,7 @@ public abstract class Property implements Child, POIFSViewable {
      *
      * @return the next Child; may return null
      */
-    public Child getNextChild()
-    {
+    public Child getNextChild() {
         return _next_child;
     }
 
@@ -432,8 +403,7 @@ public abstract class Property implements Child, POIFSViewable {
      *
      * @return the previous Child; may return null
      */
-    public Child getPreviousChild()
-    {
+    public Child getPreviousChild() {
         return _previous_child;
     }
 
@@ -443,12 +413,11 @@ public abstract class Property implements Child, POIFSViewable {
      * @param child the new 'next' child; may be null, which has the
      *              effect of saying there is no 'next' child
      */
-    public void setNextChild(Child child)
-    {
+    public void setNextChild(Child child) {
         _next_child = child;
         _next_property.set((child == null) ? _NO_INDEX
-                                           : (( Property ) child)
-                                               .getIndex(), _raw_data);
+                : ((Property) child)
+                .getIndex(), _raw_data);
     }
 
     /**
@@ -457,12 +426,11 @@ public abstract class Property implements Child, POIFSViewable {
      * @param child the new 'previous' child; may be null, which has
      *              the effect of saying there is no 'previous' child
      */
-    public void setPreviousChild(Child child)
-    {
+    public void setPreviousChild(Child child) {
         _previous_child = child;
         _previous_property.set((child == null) ? _NO_INDEX
-                                               : (( Property ) child)
-                                                   .getIndex(), _raw_data);
+                : ((Property) child)
+                .getIndex(), _raw_data);
     }
 
     /**
@@ -471,23 +439,22 @@ public abstract class Property implements Child, POIFSViewable {
      *
      * @return an array of Object; may not be null, but may be empty
      */
-    public Object [] getViewableArray()
-    {
-        Object[] results = new Object[ 6 ];
+    public Object[] getViewableArray() {
+        Object[] results = new Object[6];
 
-        results[ 0 ] = "Name          = \"" + getName() + "\"";
-        results[ 1 ] = "Property Type = " + _property_type.get();
-        results[ 2 ] = "Node Color    = " + _node_color.get();
+        results[0] = "Name          = \"" + getName() + "\"";
+        results[1] = "Property Type = " + _property_type.get();
+        results[2] = "Node Color    = " + _node_color.get();
         long time = _days_1.get();
 
-        time         <<= 32;
-        time         += _seconds_1.get() & 0x0000FFFFL;
-        results[ 3 ] = "Time 1        = " + time;
-        time         = _days_2.get();
-        time         <<= 32;
-        time         += _seconds_2.get() & 0x0000FFFFL;
-        results[ 4 ] = "Time 2        = " + time;
-        results[ 5 ] = "Size          = " + getSize();
+        time <<= 32;
+        time += _seconds_1.get() & 0x0000FFFFL;
+        results[3] = "Time 1        = " + time;
+        time = _days_2.get();
+        time <<= 32;
+        time += _seconds_2.get() & 0x0000FFFFL;
+        results[4] = "Time 2        = " + time;
+        results[5] = "Size          = " + getSize();
         return results;
     }
 
@@ -498,8 +465,7 @@ public abstract class Property implements Child, POIFSViewable {
      * @return an Iterator; may not be null, but may have an empty
      * back end store
      */
-    public Iterator<Object> getViewableIterator()
-    {
+    public Iterator<Object> getViewableIterator() {
         return Collections.emptyList().iterator();
     }
 
@@ -508,10 +474,9 @@ public abstract class Property implements Child, POIFSViewable {
      * getViewableIterator
      *
      * @return true if a viewer should call getViewableArray, false if
-     *         a viewer should call getViewableIterator
+     * a viewer should call getViewableIterator
      */
-    public boolean preferArray()
-    {
+    public boolean preferArray() {
         return true;
     }
 

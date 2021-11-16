@@ -1,7 +1,5 @@
 package htmltohwp;
 
-import lombok.Getter;
-import lombok.Setter;
 import lombok.ToString;
 
 @ToString
@@ -11,6 +9,7 @@ public class RGBColor {
         setG(g);
         setB(b);
     }
+
     private short r, g, b;
 
     public short getR() {

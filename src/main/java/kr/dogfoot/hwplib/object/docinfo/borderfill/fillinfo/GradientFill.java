@@ -198,7 +198,7 @@ public class GradientFill {
     }
 
     public void copy(GradientFill from) {
-        gradientType =  from.gradientType;
+        gradientType = from.gradientType;
         startAngle = from.startAngle;
         centerX = from.centerX;
         centerY = from.centerY;

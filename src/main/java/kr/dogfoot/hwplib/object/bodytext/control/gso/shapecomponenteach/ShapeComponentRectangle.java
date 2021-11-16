@@ -1,7 +1,5 @@
 package kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponenteach;
 
-import java.awt.dnd.DropTarget;
-
 /**
  * 사각형 개체 속성 레코드
  *

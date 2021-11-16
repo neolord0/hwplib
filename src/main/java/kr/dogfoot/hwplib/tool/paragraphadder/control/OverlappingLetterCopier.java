@@ -22,11 +22,11 @@ public class OverlappingLetterCopier {
         target.setExpendInsideLetter(source.getExpendInsideLetter());
         target.setInternalFontSize(source.getInternalFontSize());
 
-        for(HWPString s : source.getOverlappingLetterList()) {
+        for (HWPString s : source.getOverlappingLetterList()) {
             target.addOverlappingLetter(s.clone());
         }
 
-        for(Long charShapeId : source.getCharShapeIdList()) {
+        for (Long charShapeId : source.getCharShapeIdList()) {
             target.addCharShapeId(docInfoAdder.forCharShape().processById(charShapeId.intValue()));
         }
     }

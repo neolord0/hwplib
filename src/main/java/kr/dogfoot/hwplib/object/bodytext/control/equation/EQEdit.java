@@ -159,7 +159,7 @@ public class EQEdit {
     }
 
     public void copy(EQEdit from) {
-        property =  from.property;
+        property = from.property;
         script.copy(from.script);
         letterSize = from.letterSize;
         letterColor.copy(from.letterColor);

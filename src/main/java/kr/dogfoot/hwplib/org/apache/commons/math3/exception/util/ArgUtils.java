@@ -16,19 +16,19 @@
  */
 package kr.dogfoot.hwplib.org.apache.commons.math3.exception.util;
 
-import java.util.List;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Utility class for transforming the list of arguments passed to
  * constructors of exceptions.
- *
  */
 public class ArgUtils {
     /**
      * Class contains only static methods.
      */
-    private ArgUtils() {}
+    private ArgUtils() {
+    }
 
     /**
      * Transform a multidimensional array into a one-dimensional list.

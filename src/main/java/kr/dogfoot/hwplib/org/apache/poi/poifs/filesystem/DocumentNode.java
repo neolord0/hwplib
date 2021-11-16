@@ -1,4 +1,3 @@
-
 /* ====================================================================
    Licensed to the Apache Software Foundation (ASF) under one or more
    contributor license agreements.  See the NOTICE file distributed with
@@ -15,24 +14,23 @@
    See the License for the specific language governing permissions and
    limitations under the License.
 ==================================================================== */
-        
+
 
 package kr.dogfoot.hwplib.org.apache.poi.poifs.filesystem;
+
+import kr.dogfoot.hwplib.org.apache.poi.poifs.dev.POIFSViewable;
+import kr.dogfoot.hwplib.org.apache.poi.poifs.property.DocumentProperty;
 
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-import kr.dogfoot.hwplib.org.apache.poi.poifs.dev.POIFSViewable;
-import kr.dogfoot.hwplib.org.apache.poi.poifs.property.DocumentProperty;
-
 /**
  * Simple implementation of DocumentEntry for OPOIFS
  */
 public class DocumentNode
-    extends EntryNode
-    implements DocumentEntry, POIFSViewable
-{
+        extends EntryNode
+        implements DocumentEntry, POIFSViewable {
 
     // underlying POIFSDocument instance
     private POIFSDocument _document;
@@ -42,11 +40,10 @@ public class DocumentNode
      * is intended strictly for the internal use of this package
      *
      * @param property the DocumentProperty for this DocumentEntry
-     * @param parent the parent of this entry
+     * @param parent   the parent of this entry
      */
 
-    DocumentNode(final DocumentProperty property, final DirectoryNode parent)
-    {
+    DocumentNode(final DocumentProperty property, final DirectoryNode parent) {
         super(property, parent);
         _document = property.getDocument();
     }
@@ -56,8 +53,7 @@ public class DocumentNode
      *
      * @return the internal POIFSDocument
      */
-    POIFSDocument getDocument()
-    {
+    POIFSDocument getDocument() {
         return _document;
     }
 
@@ -69,8 +65,7 @@ public class DocumentNode
      * @return size in bytes
      */
 
-    public int getSize()
-    {
+    public int getSize() {
         return getProperty().getSize();
     }
 
@@ -84,8 +79,7 @@ public class DocumentNode
      */
 
     @Override
-    public boolean isDocumentEntry()
-    {
+    public boolean isDocumentEntry() {
         return true;
     }
 
@@ -97,12 +91,11 @@ public class DocumentNode
      * deletion of the underlying store.
      *
      * @return true if it's ok to delete the underlying store, else
-     *         false
+     * false
      */
 
     @Override
-    protected boolean isDeleteOK()
-    {
+    protected boolean isDeleteOK() {
         return true;
     }
 
@@ -116,9 +109,8 @@ public class DocumentNode
      * @return an array of Object; may not be null, but may be empty
      */
 
-    public Object [] getViewableArray()
-    {
-        return new Object[ 0 ];
+    public Object[] getViewableArray() {
+        return new Object[0];
     }
 
     /**
@@ -129,8 +121,7 @@ public class DocumentNode
      * back end store
      */
 
-    public Iterator<Object> getViewableIterator()
-    {
+    public Iterator<Object> getViewableIterator() {
         List<Object> components = new ArrayList<>();
 
         components.add(getProperty());
@@ -145,11 +136,10 @@ public class DocumentNode
      * getViewableIterator
      *
      * @return true if a viewer should call getViewableArray, false if
-     *         a viewer should call getViewableIterator
+     * a viewer should call getViewableIterator
      */
 
-    public boolean preferArray()
-    {
+    public boolean preferArray() {
         return false;
     }
 
@@ -160,8 +150,7 @@ public class DocumentNode
      * @return short description
      */
 
-    public String getShortDescription()
-    {
+    public String getShortDescription() {
         return getName();
     }
 

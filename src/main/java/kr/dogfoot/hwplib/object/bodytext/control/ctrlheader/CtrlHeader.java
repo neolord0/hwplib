@@ -1,7 +1,5 @@
 package kr.dogfoot.hwplib.object.bodytext.control.ctrlheader;
 
-import kr.dogfoot.hwplib.object.bodytext.control.ControlHeader;
-
 /**
  * 컨트롤 헤더 객체들을 위한 부모 클래스
  *

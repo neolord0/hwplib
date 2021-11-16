@@ -13,7 +13,7 @@ public enum TextFlowMethod {
     /**
      * 자리 차치
      */
-    TakePlace((byte)1),
+    TakePlace((byte) 1),
     /**
      * 글 뒤로
      */

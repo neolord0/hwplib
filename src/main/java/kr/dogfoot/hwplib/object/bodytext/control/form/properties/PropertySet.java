@@ -35,7 +35,7 @@ public class PropertySet extends Property {
     }
 
     public void parse(String data) {
-        while(data.length() > 0) {
+        while (data.length() > 0) {
             int position = data.indexOf(":");
             String name = data.substring(0, position);
             data = data.substring(position + 1);
@@ -52,7 +52,7 @@ public class PropertySet extends Property {
                 data = data.substring(length + 1);
 
                 addNewPropertySet(name).parse(setData);
-            } else if(type.equals("wstring")) {
+            } else if (type.equals("wstring")) {
                 position = data.indexOf(":");
                 int length = Integer.parseInt(data.substring(0, position));
                 data = data.substring(position + 1);
@@ -61,7 +61,7 @@ public class PropertySet extends Property {
                 data = data.substring(length + 1);
 
                 addNewNormalProperty(name, type).setValue(value);
-          } else {
+            } else {
                 position = data.indexOf(" ");
                 String value = data.substring(0, position);
                 data = data.substring(position + 1);

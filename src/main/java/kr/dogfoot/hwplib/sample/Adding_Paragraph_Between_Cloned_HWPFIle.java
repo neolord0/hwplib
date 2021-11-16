@@ -18,10 +18,10 @@ public class Adding_Paragraph_Between_Cloned_HWPFIle {
         HWPFile clonedTargetHWPFile = targetHWPFile.clone(false);
 
         addHWPFile(targetHWPFile, "sample_hwp" + File.separator + "source.hwp");
-        HWPWriter.toFile(targetHWPFile, "sample_hwp" + File.separator +"result-adding-paragraph.hwp");
+        HWPWriter.toFile(targetHWPFile, "sample_hwp" + File.separator + "result-adding-paragraph.hwp");
 
         addHWPFile(clonedTargetHWPFile, "sample_hwp" + File.separator + "merging-cell.hwp");
-        HWPWriter.toFile(clonedTargetHWPFile, "sample_hwp" + File.separator +"result-adding-paragraph-to-cloned-hwpfile.hwp");
+        HWPWriter.toFile(clonedTargetHWPFile, "sample_hwp" + File.separator + "result-adding-paragraph-to-cloned-hwpfile.hwp");
     }
 
     private static void addHWPFile(HWPFile targetHWPFile, String sourceHWPFilePath) throws Exception {

@@ -21,7 +21,7 @@ public class ColumnDefineCopier {
         target.setGapBetweenColumn(source.getGapBetweenColumn());
         target.setProperty2(source.getProperty2());
 
-        for(ColumnInfo info : source.getColumnInfoList()) {
+        for (ColumnInfo info : source.getColumnInfoList()) {
             ColumnInfo ci = target.addNewColumnInfo();
             ci.setGap(info.getGap());
             ci.setWidth(info.getWidth());

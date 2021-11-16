@@ -1,4 +1,3 @@
-
 /* ====================================================================
    Licensed to the Apache Software Foundation (ASF) under one or more
    contributor license agreements.  See the NOTICE file distributed with
@@ -15,7 +14,7 @@
    See the License for the specific language governing permissions and
    limitations under the License.
 ==================================================================== */
-        
+
 
 package kr.dogfoot.hwplib.org.apache.poi.util;
 
@@ -28,9 +27,9 @@ package kr.dogfoot.hwplib.org.apache.poi.util;
 
 public interface LittleEndianConsts {
     // sizes of various numbers in this environment
-    int BYTE_SIZE   = 1;
-    int SHORT_SIZE  = 2;
-    int INT_SIZE    = 4;
-    int LONG_SIZE   = 8;
+    int BYTE_SIZE = 1;
+    int SHORT_SIZE = 2;
+    int INT_SIZE = 4;
+    int LONG_SIZE = 8;
     int DOUBLE_SIZE = 8;
 }   // end public interface LittleEndianConsts

@@ -1,7 +1,5 @@
 package kr.dogfoot.hwplib.object.bodytext.paragraph.rangetag;
 
-import kr.dogfoot.hwplib.object.bodytext.paragraph.lineseg.ParaLineSeg;
-
 import java.util.ArrayList;
 
 /**

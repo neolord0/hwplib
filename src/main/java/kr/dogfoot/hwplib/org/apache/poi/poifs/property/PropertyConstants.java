@@ -1,4 +1,3 @@
-
 /* ====================================================================
    Licensed to the Apache Software Foundation (ASF) under one or more
    contributor license agreements.  See the NOTICE file distributed with
@@ -15,7 +14,7 @@
    See the License for the specific language governing permissions and
    limitations under the License.
 ==================================================================== */
-        
+
 
 package kr.dogfoot.hwplib.org.apache.poi.poifs.property;
 
@@ -23,12 +22,11 @@ package kr.dogfoot.hwplib.org.apache.poi.poifs.property;
  * Interface PropertyConstants
  */
 
-public interface PropertyConstants
-{
-    public static final int  PROPERTY_TYPE_OFFSET = 0x42;
+public interface PropertyConstants {
+    public static final int PROPERTY_TYPE_OFFSET = 0x42;
 
     // the property types
-    public static final byte DIRECTORY_TYPE       = 1;
-    public static final byte DOCUMENT_TYPE        = 2;
-    public static final byte ROOT_TYPE            = 5;
+    public static final byte DIRECTORY_TYPE = 1;
+    public static final byte DOCUMENT_TYPE = 2;
+    public static final byte ROOT_TYPE = 5;
 }

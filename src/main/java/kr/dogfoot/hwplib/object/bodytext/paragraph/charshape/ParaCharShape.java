@@ -1,7 +1,5 @@
 package kr.dogfoot.hwplib.object.bodytext.paragraph.charshape;
 
-import kr.dogfoot.hwplib.object.docinfo.ParaShape;
-
 import java.util.ArrayList;
 
 /**

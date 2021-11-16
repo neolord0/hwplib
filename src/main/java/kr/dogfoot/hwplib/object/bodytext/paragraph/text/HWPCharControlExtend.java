@@ -98,7 +98,7 @@ public class HWPCharControlExtend extends HWPChar {
                 && hasAddition('c', 'o', 'l', 'd')) {
             return true;
         }
-       return false;
+        return false;
     }
 
     public boolean isTable() {

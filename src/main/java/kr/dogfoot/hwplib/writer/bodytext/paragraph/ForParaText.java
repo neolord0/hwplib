@@ -36,8 +36,8 @@ public class ForParaText {
     /**
      * 문단의 텍스트 레코드의 레코드 헤더를 쓴다.
      *
-     * @param p    문단
-     * @param sw   스트림 라이터
+     * @param p  문단
+     * @param sw 스트림 라이터
      * @throws IOException
      */
     private static void recordHeader(Paragraph p, StreamWriter sw)

@@ -248,6 +248,7 @@ public class FootEndNoteShape {
 
     /**
      * 알수 없는 4byte를 반환한다.
+     *
      * @return 알수 없는 4byte
      */
     public long getUnknown() {
@@ -256,6 +257,7 @@ public class FootEndNoteShape {
 
     /**
      * 알수 없는 4byte를 설정한다.
+     *
      * @param unknown 알수 없는 4byte
      */
     public void setUnknown(long unknown) {

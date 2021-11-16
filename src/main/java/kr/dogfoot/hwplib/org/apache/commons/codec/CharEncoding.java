@@ -19,7 +19,7 @@ package kr.dogfoot.hwplib.org.apache.commons.codec;
 
 /**
  * Character encoding names required of every implementation of the Java platform.
- *
+ * <p>
  * From the Java documentation <a
  * href="http://download.oracle.com/javase/7/docs/api/java/nio/charset/Charset.html">Standard charsets</a>:
  * <p>
@@ -43,7 +43,7 @@ package kr.dogfoot.hwplib.org.apache.commons.codec;
  * Sixteen-bit Unicode Transformation Format, byte order specified by a mandatory initial byte-order mark (either order
  * accepted on input, big-endian used on output.)</p></li>
  * </ul>
- *
+ * <p>
  * This perhaps would best belong in the [lang] project. Even if a similar interface is defined in [lang], it is not
  * foreseen that [codec] would be made to depend on [lang].
  *

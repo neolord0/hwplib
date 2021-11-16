@@ -41,7 +41,7 @@ public class Cloning_HWPFile {
         HWPFile hwpFile = HWPReader.fromFile(fullPath(filename));
         if (hwpFile != null) {
             HWPFile clonedHWPFile = hwpFile.clone(false);
-            String filename2 =  "result-clone-" + filename;
+            String filename2 = "result-clone-" + filename;
             HWPWriter.toFile(clonedHWPFile, fullPath(filename2));
             System.out.println(filename + " ok !!!");
         }

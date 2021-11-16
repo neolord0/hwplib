@@ -1,7 +1,6 @@
 package kr.dogfoot.hwplib.object.bodytext.control.sectiondefine;
 
 import kr.dogfoot.hwplib.object.bodytext.paragraph.ParagraphList;
-import kr.dogfoot.hwplib.object.docinfo.BorderFill;
 
 /**
  * 바탕 페이지 정보를 나타내는 객체
@@ -51,5 +50,3 @@ public class BatangPageInfo {
         return cloned;
     }
 }
-
-

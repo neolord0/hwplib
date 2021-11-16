@@ -17,78 +17,161 @@
 
 package kr.dogfoot.hwplib.org.apache.poi.hpsf;
 
-import java.util.Arrays;
-
 import kr.dogfoot.hwplib.org.apache.commons.codec.binary.Hex;
 import kr.dogfoot.hwplib.org.apache.poi.common.Duplicatable;
 import kr.dogfoot.hwplib.org.apache.poi.util.LittleEndianInput;
 import kr.dogfoot.hwplib.org.apache.poi.util.LittleEndianOutput;
+
+import java.util.Arrays;
 
 /**
  * Represents a class ID (16 bytes). Unlike other little-endian
  * type the {@link ClassID} is not just 16 bytes stored in the wrong
  * order. Instead, it is a double word (4 bytes) followed by two
  * words (2 bytes each) followed by 8 bytes.<p>
- *
+ * <p>
  * The ClassID (or CLSID) is a UUID - see RFC 4122
  */
 public class ClassID implements Duplicatable {
-    /** @deprecated use enum {@link ClassIDPredefined} */ @Deprecated
-    public static final ClassID OLE10_PACKAGE  = ClassIDPredefined.OLE_V1_PACKAGE.getClassID();
-    /** @deprecated use enum {@link ClassIDPredefined} */ @Deprecated
-    public static final ClassID PPT_SHOW       = ClassIDPredefined.POWERPOINT_V8.getClassID();
-    /** @deprecated use enum {@link ClassIDPredefined} */ @Deprecated
-    public static final ClassID XLS_WORKBOOK   = ClassIDPredefined.EXCEL_V7_WORKBOOK.getClassID();
-    /** @deprecated use enum {@link ClassIDPredefined} */ @Deprecated
-    public static final ClassID TXT_ONLY       = ClassIDPredefined.TXT_ONLY.getClassID();
-    /** @deprecated use enum {@link ClassIDPredefined} */ @Deprecated
-    public static final ClassID EXCEL_V3       = ClassIDPredefined.EXCEL_V3.getClassID();
-    /** @deprecated use enum {@link ClassIDPredefined} */ @Deprecated
+    /**
+     * @deprecated use enum {@link ClassIDPredefined}
+     */
+    @Deprecated
+    public static final ClassID OLE10_PACKAGE = ClassIDPredefined.OLE_V1_PACKAGE.getClassID();
+    /**
+     * @deprecated use enum {@link ClassIDPredefined}
+     */
+    @Deprecated
+    public static final ClassID PPT_SHOW = ClassIDPredefined.POWERPOINT_V8.getClassID();
+    /**
+     * @deprecated use enum {@link ClassIDPredefined}
+     */
+    @Deprecated
+    public static final ClassID XLS_WORKBOOK = ClassIDPredefined.EXCEL_V7_WORKBOOK.getClassID();
+    /**
+     * @deprecated use enum {@link ClassIDPredefined}
+     */
+    @Deprecated
+    public static final ClassID TXT_ONLY = ClassIDPredefined.TXT_ONLY.getClassID();
+    /**
+     * @deprecated use enum {@link ClassIDPredefined}
+     */
+    @Deprecated
+    public static final ClassID EXCEL_V3 = ClassIDPredefined.EXCEL_V3.getClassID();
+    /**
+     * @deprecated use enum {@link ClassIDPredefined}
+     */
+    @Deprecated
     public static final ClassID EXCEL_V3_CHART = ClassIDPredefined.EXCEL_V3_CHART.getClassID();
-    /** @deprecated use enum {@link ClassIDPredefined} */ @Deprecated
+    /**
+     * @deprecated use enum {@link ClassIDPredefined}
+     */
+    @Deprecated
     public static final ClassID EXCEL_V3_MACRO = ClassIDPredefined.EXCEL_V3_MACRO.getClassID();
-    /** @deprecated use enum {@link ClassIDPredefined} */ @Deprecated
-    public static final ClassID EXCEL95        = ClassIDPredefined.EXCEL_V7.getClassID();
-    /** @deprecated use enum {@link ClassIDPredefined} */ @Deprecated
-    public static final ClassID EXCEL95_CHART  = ClassIDPredefined.EXCEL_V7_CHART.getClassID();
-    /** @deprecated use enum {@link ClassIDPredefined} */ @Deprecated
-    public static final ClassID EXCEL97        = ClassIDPredefined.EXCEL_V8.getClassID();
-    /** @deprecated use enum {@link ClassIDPredefined} */ @Deprecated
-    public static final ClassID EXCEL97_CHART  = ClassIDPredefined.EXCEL_V8_CHART.getClassID();
-    /** @deprecated use enum {@link ClassIDPredefined} */ @Deprecated
-    public static final ClassID EXCEL2003      = ClassIDPredefined.EXCEL_V11.getClassID();
-    /** @deprecated use enum {@link ClassIDPredefined} */ @Deprecated
-    public static final ClassID EXCEL2007      = ClassIDPredefined.EXCEL_V12.getClassID();
-    /** @deprecated use enum {@link ClassIDPredefined} */ @Deprecated
-    public static final ClassID EXCEL2007_MACRO= ClassIDPredefined.EXCEL_V12_MACRO.getClassID();
-    /** @deprecated use enum {@link ClassIDPredefined} */ @Deprecated
+    /**
+     * @deprecated use enum {@link ClassIDPredefined}
+     */
+    @Deprecated
+    public static final ClassID EXCEL95 = ClassIDPredefined.EXCEL_V7.getClassID();
+    /**
+     * @deprecated use enum {@link ClassIDPredefined}
+     */
+    @Deprecated
+    public static final ClassID EXCEL95_CHART = ClassIDPredefined.EXCEL_V7_CHART.getClassID();
+    /**
+     * @deprecated use enum {@link ClassIDPredefined}
+     */
+    @Deprecated
+    public static final ClassID EXCEL97 = ClassIDPredefined.EXCEL_V8.getClassID();
+    /**
+     * @deprecated use enum {@link ClassIDPredefined}
+     */
+    @Deprecated
+    public static final ClassID EXCEL97_CHART = ClassIDPredefined.EXCEL_V8_CHART.getClassID();
+    /**
+     * @deprecated use enum {@link ClassIDPredefined}
+     */
+    @Deprecated
+    public static final ClassID EXCEL2003 = ClassIDPredefined.EXCEL_V11.getClassID();
+    /**
+     * @deprecated use enum {@link ClassIDPredefined}
+     */
+    @Deprecated
+    public static final ClassID EXCEL2007 = ClassIDPredefined.EXCEL_V12.getClassID();
+    /**
+     * @deprecated use enum {@link ClassIDPredefined}
+     */
+    @Deprecated
+    public static final ClassID EXCEL2007_MACRO = ClassIDPredefined.EXCEL_V12_MACRO.getClassID();
+    /**
+     * @deprecated use enum {@link ClassIDPredefined}
+     */
+    @Deprecated
     public static final ClassID EXCEL2007_XLSB = ClassIDPredefined.EXCEL_V12_XLSB.getClassID();
-    /** @deprecated use enum {@link ClassIDPredefined} */ @Deprecated
-    public static final ClassID EXCEL2010      = ClassIDPredefined.EXCEL_V14.getClassID();
-    /** @deprecated use enum {@link ClassIDPredefined} */ @Deprecated
-    public static final ClassID EXCEL2010_CHART= ClassIDPredefined.EXCEL_V14_CHART.getClassID();
-    /** @deprecated use enum {@link ClassIDPredefined} */ @Deprecated
-    public static final ClassID EXCEL2010_ODS  = ClassIDPredefined.EXCEL_V14_ODS.getClassID();
-    /** @deprecated use enum {@link ClassIDPredefined} */ @Deprecated
-    public static final ClassID WORD95         = ClassIDPredefined.WORD_V7.getClassID();
-    /** @deprecated use enum {@link ClassIDPredefined} */ @Deprecated
-    public static final ClassID WORD97         = ClassIDPredefined.WORD_V8.getClassID();
-    /** @deprecated use enum {@link ClassIDPredefined} */ @Deprecated
-    public static final ClassID WORD2007       = ClassIDPredefined.WORD_V12.getClassID();
-    /** @deprecated use enum {@link ClassIDPredefined} */ @Deprecated
+    /**
+     * @deprecated use enum {@link ClassIDPredefined}
+     */
+    @Deprecated
+    public static final ClassID EXCEL2010 = ClassIDPredefined.EXCEL_V14.getClassID();
+    /**
+     * @deprecated use enum {@link ClassIDPredefined}
+     */
+    @Deprecated
+    public static final ClassID EXCEL2010_CHART = ClassIDPredefined.EXCEL_V14_CHART.getClassID();
+    /**
+     * @deprecated use enum {@link ClassIDPredefined}
+     */
+    @Deprecated
+    public static final ClassID EXCEL2010_ODS = ClassIDPredefined.EXCEL_V14_ODS.getClassID();
+    /**
+     * @deprecated use enum {@link ClassIDPredefined}
+     */
+    @Deprecated
+    public static final ClassID WORD95 = ClassIDPredefined.WORD_V7.getClassID();
+    /**
+     * @deprecated use enum {@link ClassIDPredefined}
+     */
+    @Deprecated
+    public static final ClassID WORD97 = ClassIDPredefined.WORD_V8.getClassID();
+    /**
+     * @deprecated use enum {@link ClassIDPredefined}
+     */
+    @Deprecated
+    public static final ClassID WORD2007 = ClassIDPredefined.WORD_V12.getClassID();
+    /**
+     * @deprecated use enum {@link ClassIDPredefined}
+     */
+    @Deprecated
     public static final ClassID WORD2007_MACRO = ClassIDPredefined.WORD_V12_MACRO.getClassID();
-    /** @deprecated use enum {@link ClassIDPredefined} */ @Deprecated
-    public static final ClassID POWERPOINT97   = ClassIDPredefined.POWERPOINT_V8.getClassID();
-    /** @deprecated use enum {@link ClassIDPredefined} */ @Deprecated
-    public static final ClassID POWERPOINT95   = ClassIDPredefined.POWERPOINT_V7.getClassID();
-    /** @deprecated use enum {@link ClassIDPredefined} */ @Deprecated
+    /**
+     * @deprecated use enum {@link ClassIDPredefined}
+     */
+    @Deprecated
+    public static final ClassID POWERPOINT97 = ClassIDPredefined.POWERPOINT_V8.getClassID();
+    /**
+     * @deprecated use enum {@link ClassIDPredefined}
+     */
+    @Deprecated
+    public static final ClassID POWERPOINT95 = ClassIDPredefined.POWERPOINT_V7.getClassID();
+    /**
+     * @deprecated use enum {@link ClassIDPredefined}
+     */
+    @Deprecated
     public static final ClassID POWERPOINT2007 = ClassIDPredefined.POWERPOINT_V12.getClassID();
-    /** @deprecated use enum {@link ClassIDPredefined} */ @Deprecated
+    /**
+     * @deprecated use enum {@link ClassIDPredefined}
+     */
+    @Deprecated
     public static final ClassID POWERPOINT2007_MACRO = ClassIDPredefined.POWERPOINT_V12_MACRO.getClassID();
-    /** @deprecated use enum {@link ClassIDPredefined} */ @Deprecated
-    public static final ClassID EQUATION30     = ClassIDPredefined.EQUATION_V3.getClassID();
+    /**
+     * @deprecated use enum {@link ClassIDPredefined}
+     */
+    @Deprecated
+    public static final ClassID EQUATION30 = ClassIDPredefined.EQUATION_V3.getClassID();
 
-    /** The number of bytes occupied by this object in the byte stream. */
+    /**
+     * The number of bytes occupied by this object in the byte stream.
+     */
     public static final int LENGTH = 16;
 
     /**
@@ -99,7 +182,7 @@ public class ClassID implements Duplicatable {
     /**
      * Creates a {@link ClassID} and reads its value from a byte array.
      *
-     * @param src The byte array to read from.
+     * @param src    The byte array to read from.
      * @param offset The offset of the first byte to read.
      */
     public ClassID(final byte[] src, final int offset) {
@@ -111,7 +194,7 @@ public class ClassID implements Duplicatable {
      * Creates a {@link ClassID} and initializes its value with 0x00 bytes.
      */
     public ClassID() {
-        Arrays.fill(bytes, (byte)0);
+        Arrays.fill(bytes, (byte) 0);
     }
 
     /**
@@ -130,13 +213,14 @@ public class ClassID implements Duplicatable {
      */
     public ClassID(String externalForm) {
         String clsStr = externalForm.replaceAll("[{}-]", "");
-        for (int i=0; i<clsStr.length(); i+=2) {
-        	bytes[i/2] = (byte)Integer.parseInt(clsStr.substring(i, i+2), 16);
+        for (int i = 0; i < clsStr.length(); i += 2) {
+            bytes[i / 2] = (byte) Integer.parseInt(clsStr.substring(i, i + 2), 16);
         }
     }
 
     /**
      * Reads the ClassID from the input
+     *
      * @param lei the input (stream)
      */
     public ClassID(LittleEndianInput lei) {
@@ -153,7 +237,6 @@ public class ClassID implements Duplicatable {
     }
 
 
-
     /**
      * Gets the bytes making out the class ID. They are returned in correct order, i.e. big-endian.
      *
@@ -164,23 +247,21 @@ public class ClassID implements Duplicatable {
     }
 
 
-
     /**
      * Sets the bytes making out the class ID.
      *
      * @param bytes The bytes making out the class ID in big-endian format. They
-     * are copied without their order being changed.
+     *              are copied without their order being changed.
      */
     public void setBytes(final byte[] bytes) {
         System.arraycopy(bytes, 0, this.bytes, 0, LENGTH);
     }
 
 
-
     /**
      * Reads the class ID's value from a byte array by turning little-endian into big-endian.
      *
-     * @param src The byte array to read from
+     * @param src    The byte array to read from
      * @param offset The offset within the {@code src} byte array
      * @return A byte array containing the class ID.
      */
@@ -208,20 +289,18 @@ public class ClassID implements Duplicatable {
     /**
      * Writes the class ID to a byte array in the little-endian format.
      *
-     * @param dst The byte array to write to.
-     *
+     * @param dst    The byte array to write to.
      * @param offset The offset within the {@code dst} byte array.
-     *
-     * @exception ArrayStoreException if there is not enough room for the class
-     * ID 16 bytes in the byte array after the {@code offset} position.
+     * @throws ArrayStoreException if there is not enough room for the class
+     *                             ID 16 bytes in the byte array after the {@code offset} position.
      */
     public void write(final byte[] dst, final int offset)
-    throws ArrayStoreException {
+            throws ArrayStoreException {
         /* Check array size: */
         if (dst.length < LENGTH) {
             throw new ArrayStoreException
-                ("Destination byte[] must have room for at least 16 bytes, " +
-                 "but has a length of only " + dst.length + ".");
+                    ("Destination byte[] must have room for at least 16 bytes, " +
+                            "but has a length of only " + dst.length + ".");
         }
 
         /* Write double word. */
@@ -261,7 +340,7 @@ public class ClassID implements Duplicatable {
      */
     @Override
     public boolean equals(final Object o) {
-        return (o instanceof ClassID) && Arrays.equals(bytes, ((ClassID)o).bytes);
+        return (o instanceof ClassID) && Arrays.equals(bytes, ((ClassID) o).bytes);
     }
 
     /**
@@ -274,23 +353,23 @@ public class ClassID implements Duplicatable {
      */
     public boolean equalsInverted(ClassID o) {
         return
-            o.bytes[0] == bytes[3] &&
-            o.bytes[1] == bytes[2] &&
-            o.bytes[2] == bytes[1] &&
-            o.bytes[3] == bytes[0] &&
-            o.bytes[4] == bytes[5] &&
-            o.bytes[5] == bytes[4] &&
-            o.bytes[6] == bytes[7] &&
-            o.bytes[7] == bytes[6] &&
-            o.bytes[8] == bytes[8] &&
-            o.bytes[9] == bytes[9] &&
-            o.bytes[10] == bytes[10] &&
-            o.bytes[11] == bytes[11] &&
-            o.bytes[12] == bytes[12] &&
-            o.bytes[13] == bytes[13] &&
-            o.bytes[14] == bytes[14] &&
-            o.bytes[15] == bytes[15]
-        ;
+                o.bytes[0] == bytes[3] &&
+                        o.bytes[1] == bytes[2] &&
+                        o.bytes[2] == bytes[1] &&
+                        o.bytes[3] == bytes[0] &&
+                        o.bytes[4] == bytes[5] &&
+                        o.bytes[5] == bytes[4] &&
+                        o.bytes[6] == bytes[7] &&
+                        o.bytes[7] == bytes[6] &&
+                        o.bytes[8] == bytes[8] &&
+                        o.bytes[9] == bytes[9] &&
+                        o.bytes[10] == bytes[10] &&
+                        o.bytes[11] == bytes[11] &&
+                        o.bytes[12] == bytes[12] &&
+                        o.bytes[13] == bytes[13] &&
+                        o.bytes[14] == bytes[14] &&
+                        o.bytes[15] == bytes[15]
+                ;
     }
 
 
@@ -311,10 +390,10 @@ public class ClassID implements Duplicatable {
     @Override
     public String toString() {
         String hex = Hex.encodeHexString(bytes, false);
-        return  "{" + hex.substring(0,8) +
-                "-" + hex.substring(8,12) +
-                "-" + hex.substring(12,16) +
-                "-" + hex.substring(16,20) +
+        return "{" + hex.substring(0, 8) +
+                "-" + hex.substring(8, 12) +
+                "-" + hex.substring(12, 16) +
+                "-" + hex.substring(16, 20) +
                 "-" + hex.substring(20) + "}";
     }
 

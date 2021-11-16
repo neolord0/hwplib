@@ -18,6 +18,7 @@ public class HWPCharControlChar extends HWPChar {
     public HWPCharControlChar(int code) {
         this.code = code;
     }
+
     /**
      * 글자의 종류을 반환한다.
      *

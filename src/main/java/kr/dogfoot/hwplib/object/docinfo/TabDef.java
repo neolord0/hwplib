@@ -61,7 +61,7 @@ public class TabDef {
         TabDef cloned = new TabDef();
         cloned.property.copy(property);
 
-        cloned.tabInfoList.clear();;
+        cloned.tabInfoList.clear();
         for (TabInfo tabInfo : tabInfoList) {
             cloned.tabInfoList.add(tabInfo.clone());
         }

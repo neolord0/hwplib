@@ -18,16 +18,15 @@
 package kr.dogfoot.hwplib.org.apache.poi.util;
 
 
-
 import java.io.File;
 import java.io.IOException;
 
 /**
  * Interface used by the {@link TempFile} utility class to create temporary files.
- * 
+ * <p>
  * Classes that implement a TempFileCreationStrategy attempt to handle the cleanup
  * of temporary files.
- * 
+ * <p>
  * Examples include:
  * <ul>
  *   <li>{@link DefaultTempFileCreationStrategy} deletes temporary files when
@@ -60,7 +59,6 @@ import java.io.IOException;
  *       creating regular (unregistered) files in the temp directory.
  *   </li>
  * </ul>
- * 
  */
 public interface TempFileCreationStrategy {
     /**
@@ -68,22 +66,17 @@ public interface TempFileCreationStrategy {
      *
      * @param prefix The prefix to be used to generate the name of the temporary file.
      * @param suffix The suffix to be used to generate the name of the temporary file.
-     * 
      * @return The path to the newly created and empty temporary file.
-     * 
      * @throws IOException If no temporary file could be created.
      */
     File createTempFile(String prefix, String suffix) throws IOException;
-    
+
     /**
      * Creates a new and empty temporary directory.
      *
      * @param prefix The directory name to be used to generate the name of the temporary directory.
-     * 
      * @return The path to the newly created and empty temporary directory.
-     * 
      * @throws IOException If no temporary directory could be created.
-     * 
      * @since POI 3.15 beta 3.
      */
     File createTempDirectory(String prefix) throws IOException;

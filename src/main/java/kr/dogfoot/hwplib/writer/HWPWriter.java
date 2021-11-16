@@ -12,7 +12,6 @@ import kr.dogfoot.hwplib.writer.autosetter.InstanceID;
 import kr.dogfoot.hwplib.writer.bodytext.ForSection;
 import kr.dogfoot.hwplib.writer.docinfo.ForDocInfo;
 
-import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
 
@@ -48,8 +47,8 @@ public class HWPWriter {
     /**
      * 한글 파일 객체를 파일로 쓴다.
      *
-     * @param hwpFile  한글 파일 객체
-     * @param os 출력 스트림
+     * @param hwpFile 한글 파일 객체
+     * @param os      출력 스트림
      * @throws Exception
      */
     public static void toStream(HWPFile hwpFile, OutputStream os) throws Exception {

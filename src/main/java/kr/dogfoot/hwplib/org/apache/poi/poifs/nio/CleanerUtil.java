@@ -29,17 +29,14 @@ import java.security.AccessController;
 import java.security.PrivilegedAction;
 import java.util.Objects;
 
-import static java.lang.invoke.MethodHandles.constant;
-import static java.lang.invoke.MethodHandles.dropArguments;
-import static java.lang.invoke.MethodHandles.filterReturnValue;
-import static java.lang.invoke.MethodHandles.guardWithTest;
+import static java.lang.invoke.MethodHandles.*;
 import static java.lang.invoke.MethodType.methodType;
 
 /**
  * This is taken from Hadoop at https://issues.apache.org/jira/browse/HADOOP-12760 and
  * https://github.com/apache/hadoop/blob/trunk/hadoop-common-project/hadoop-common/src/main/java/org/apache/hadoop/util/CleanerUtil.java
  * Unfortunately this is not available in some general utility library yet, but hopefully will be at some point.
- *
+ * <p>
  * sun.misc.Cleaner has moved in OpenJDK 9 and
  * sun.misc.Unsafe#invokeCleaner(ByteBuffer) is the replacement.
  * This class is a hack to use sun.misc.Cleaner in Java 8 and
@@ -49,7 +46,8 @@ import static java.lang.invoke.MethodType.methodType;
 public final class CleanerUtil {
 
     // Prevent instantiation
-    private CleanerUtil(){}
+    private CleanerUtil() {
+    }
 
     /**
      * <code>true</code>, if this platform supports unmapping mmapped files.
@@ -67,6 +65,7 @@ public final class CleanerUtil {
 
     /**
      * Reference to a BufferCleaner that does unmapping.
+     *
      * @return {@code null} if not supported.
      */
     public static BufferCleaner getCleaner() {
@@ -137,7 +136,7 @@ public final class CleanerUtil {
                 final MethodHandle cleanMethod = lookup.findVirtual(
                         cleanerClass, "clean", methodType(void.class));
                 final MethodHandle nonNullTest = lookup.findStatic(Objects.class,
-                        "nonNull", methodType(boolean.class, Object.class))
+                                "nonNull", methodType(boolean.class, Object.class))
                         .asType(methodType(boolean.class, cleanerClass));
                 final MethodHandle noop = dropArguments(
                         constant(Void.class, null).asType(methodType(void.class)),

@@ -46,7 +46,7 @@ public class BorderFillAdder {
         bf.getDiagonalColor().setValue(0);
 
         bf.getFillInfo().getType().setPatternFill(true);
-        bf.getFillInfo().createPatternFill();;
+        bf.getFillInfo().createPatternFill();
         PatternFill pf = bf.getFillInfo().getPatternFill();
         pf.getBackColor().setValue(-1);
         pf.getPatternColor().setValue(-16777216);

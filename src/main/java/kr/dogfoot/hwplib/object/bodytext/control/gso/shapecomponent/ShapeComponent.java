@@ -344,7 +344,7 @@ public abstract class ShapeComponent {
     }
 
     public abstract void copy(ShapeComponent from);
-    
+
     public void copyShapeComponent(ShapeComponent from) {
         gsoId = from.gsoId;
         offsetX = from.offsetX;

@@ -55,7 +55,7 @@ public class ForControlOLE {
     /**
      * OLE 개체 속성 레코드의 레코드 헤더를 쓴다.
      *
-     * @param sw 스트림 라이터
+     * @param sw  스트림 라이터
      * @param sco
      * @throws IOException
      */

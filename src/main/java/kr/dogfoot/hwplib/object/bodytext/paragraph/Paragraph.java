@@ -164,7 +164,6 @@ public class Paragraph {
     }
 
 
-
     /**
      * type에 해당하는 새로운 컨트롤을 생성하고 리스트에 추가한다.
      *
@@ -220,6 +219,7 @@ public class Paragraph {
         controlList.add(fc);
         return fc;
     }
+
     /**
      * gsoid에 해당하는 새로운 GSO 컨트롤(그리기 객체)를 생성하고 리스트에 추가한다. 새로 생성한 GSO 컨트롤의 헤더를 header로
      * 설정한다.
@@ -249,6 +249,7 @@ public class Paragraph {
     public void createControlList() {
         controlList = new ArrayList<>();
     }
+
     /**
      * 컨트롤 리스트에서 컨트롤의 순번을 반환한다.
      *
@@ -345,5 +346,4 @@ public class Paragraph {
 
         return cloned;
     }
-
 }

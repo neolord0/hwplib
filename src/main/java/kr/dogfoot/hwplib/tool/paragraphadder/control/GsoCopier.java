@@ -1,24 +1,14 @@
 package kr.dogfoot.hwplib.tool.paragraphadder.control;
 
 import kr.dogfoot.hwplib.object.bodytext.control.gso.*;
-import kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponent.ShapeComponent;
-import kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponent.lineinfo.LineInfoProperty;
 import kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponenteach.*;
-import kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponenteach.arc.ArcBorder;
 import kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponenteach.curve.CurveSegmentType;
-import kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponenteach.ellipse.ShapeComponentEllipseProperty;
-import kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponenteach.ole.ShapeComponentOLEProperty;
 import kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponenteach.picture.*;
 import kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponenteach.polygon.PositionXY;
 import kr.dogfoot.hwplib.object.bodytext.control.gso.textbox.ListHeaderForTextBox;
-import kr.dogfoot.hwplib.object.bodytext.control.gso.textbox.ListHeaderProperty;
 import kr.dogfoot.hwplib.object.bodytext.control.gso.textbox.TextBox;
-import kr.dogfoot.hwplib.object.docinfo.borderfill.fillinfo.PictureInfo;
-import kr.dogfoot.hwplib.object.etc.Color4Byte;
 import kr.dogfoot.hwplib.tool.paragraphadder.ParagraphCopier;
 import kr.dogfoot.hwplib.tool.paragraphadder.docinfo.DocInfoAdder;
-
-import java.util.ArrayList;
 
 public class GsoCopier {
     public static void copy(GsoControl source, GsoControl target, DocInfoAdder docInfoAdder) {
@@ -166,7 +156,7 @@ public class GsoCopier {
     }
 
     private static void curve(ControlCurve source, ControlCurve target, DocInfoAdder docInfoAdder) {
-        if  (source.getTextBox() != null) {
+        if (source.getTextBox() != null) {
             target.createTextBox();
             textBox(source.getTextBox(), target.getTextBox(), docInfoAdder);
         }

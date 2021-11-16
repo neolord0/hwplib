@@ -27,13 +27,14 @@ package kr.dogfoot.hwplib.org.apache.poi.util;
 public interface POILogger {
 
     int DEBUG = 1;
-    int INFO  = 3;
-    int WARN  = 5;
+    int INFO = 3;
+    int WARN = 5;
     int ERROR = 7;
     int FATAL = 9;
 
     /**
      * Initialize the Logger - belongs to the SPI, called from the POILogFactory
+     *
      * @param cat the String that defines the log
      */
     void initialize(String cat);
@@ -42,7 +43,7 @@ public interface POILogger {
      * Log a message - belongs to the SPI, usually not called from user code
      *
      * @param level One of DEBUG, INFO, WARN, ERROR, FATAL
-     * @param obj1 The object to log.  This is converted to a string.
+     * @param obj1  The object to log.  This is converted to a string.
      */
     @Internal
     void _log(int level, Object obj1);
@@ -50,8 +51,8 @@ public interface POILogger {
     /**
      * Log a message - belongs to the SPI, usually not called from user code
      *
-     * @param level One of DEBUG, INFO, WARN, ERROR, FATAL
-     * @param obj1 The object to log.  This is converted to a string.
+     * @param level     One of DEBUG, INFO, WARN, ERROR, FATAL
+     * @param obj1      The object to log.  This is converted to a string.
      * @param exception An exception to be logged
      */
     @Internal
@@ -62,7 +63,7 @@ public interface POILogger {
      * Check if a logger is enabled to log at the specified level
      * This allows code to avoid building strings or evaluating functions in
      * the arguments to log.
-     * 
+     * <p>
      * An example:
      * <code><pre>
      * if (logger.check(POILogger.INFO)) {
@@ -74,29 +75,29 @@ public interface POILogger {
      */
     boolean check(int level);
 
-   /**
+    /**
      * Log a message. Lazily appends Object parameters together.
      * If the last parameter is a {@link Throwable} it is logged specially.
      *
      * @param level One of DEBUG, INFO, WARN, ERROR, FATAL
-     * @param objs the objects to place in the message
+     * @param objs  the objects to place in the message
      */
     default void log(int level, Object... objs) {
         if (!check(level)) return;
         StringBuilder sb = new StringBuilder(32);
         Throwable lastEx = null;
-        for (int i=0; i<objs.length; i++) {
-            if (i == objs.length-1 && objs[i] instanceof Throwable) {
-                lastEx = (Throwable)objs[i];
+        for (int i = 0; i < objs.length; i++) {
+            if (i == objs.length - 1 && objs[i] instanceof Throwable) {
+                lastEx = (Throwable) objs[i];
             } else {
                 sb.append(objs[i]);
             }
         }
-        
+
         String msg = sb.toString();
         // log forging escape
         msg = msg.replaceAll("[\r\n]+", " ");
-        
+
         if (lastEx == null) {
             _log(level, msg);
         } else {

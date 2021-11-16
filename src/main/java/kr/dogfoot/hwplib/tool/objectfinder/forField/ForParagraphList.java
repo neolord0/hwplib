@@ -5,9 +5,7 @@ import kr.dogfoot.hwplib.object.bodytext.control.Control;
 import kr.dogfoot.hwplib.object.bodytext.control.ControlField;
 import kr.dogfoot.hwplib.object.bodytext.control.ControlType;
 import kr.dogfoot.hwplib.object.bodytext.paragraph.Paragraph;
-import kr.dogfoot.hwplib.object.bodytext.paragraph.charshape.CharPositionShapeIdPair;
 import kr.dogfoot.hwplib.object.bodytext.paragraph.text.HWPChar;
-import kr.dogfoot.hwplib.object.bodytext.paragraph.text.HWPCharType;
 import kr.dogfoot.hwplib.tool.objectfinder.SetFieldResult;
 import kr.dogfoot.hwplib.tool.objectfinder.TextBuffer;
 import kr.dogfoot.hwplib.tool.objectfinder.forField.gettext.ForControl;
@@ -77,9 +75,9 @@ public class ForParagraphList {
     /**
      * 문단내에서 필드 객체의 위치를 반환한다.
      *
-     * @param p 문단
-     * @param fieldType     필드 타입
-     * @param fieldName     필드 이름
+     * @param p         문단
+     * @param fieldType 필드 타입
+     * @param fieldName 필드 이름
      * @return 찾은 필드의 문단 내부의 위치
      * @throws UnsupportedEncodingException
      */
@@ -153,12 +151,6 @@ public class ForParagraphList {
         return sb.toString();
     }
 
-
-    private static void deleteSegItmes(FindPosition result) {
-
-    }
-
-
     /**
      * 문단 리스트에 포함된 컨트롤에서 필드 객체의 텍스트를 찾아 반환한다.
      *
@@ -204,7 +196,6 @@ public class ForParagraphList {
         for (FindPosition result : results) {
             if (getFieldEndPosition(paragraphList, result)) {
                 textList.add(getText(paragraphList, result, temInField));
-                deleteSegItmes(result);
             }
         }
         getAllFieldTextForControl(paragraphList, fieldType, fieldName, temInField, textList);
@@ -270,13 +261,15 @@ public class ForParagraphList {
     private static void changeText(ParagraphListInterface paragraphList, FindPosition position, String text) throws UnsupportedEncodingException {
         if (position.startParaIndex != position.endParaIndex) {
             Paragraph startPara = paragraphList.getParagraph(position.startParaIndex);
-            Paragraph endPara = paragraphList.getParagraph(position.endParaIndex);
-            deleteParaTextFrom(startPara, position.startCharIndex + 1);
-            deleteParaTextTo(endPara, position.endCharIndex - 1);
+            ParaTextSetter.deleteParaTextFrom(startPara, position.startCharIndex + 1);
             startPara.getText().addString(text);
-            mergeParagraph(startPara, endPara);
-            paragraphList.deleteParagraph(position.endParaIndex);
 
+            Paragraph endPara = paragraphList.getParagraph(position.endParaIndex);
+            ParaTextSetter.deleteParaTextTo(endPara, position.endCharIndex - 1);
+
+            ParaTextSetter.mergeParagraph(startPara, endPara);
+
+            paragraphList.deleteParagraph(position.endParaIndex);
             if (position.endParaIndex - position.startParaIndex >= 2) {
                 for (int deleteIndex = 0; deleteIndex < position.endParaIndex - position.startParaIndex - 1; deleteIndex++) {
                     paragraphList.deleteParagraph(position.startParaIndex + 1);
@@ -290,127 +283,7 @@ public class ForParagraphList {
 
     private static void deleteLineSeg(ParagraphListInterface paragraphList, FindPosition result) {
         for (int paraIndex = result.startParaIndex; paraIndex <= result.endParaIndex; paraIndex++) {
-            paragraphList.getParagraph(paraIndex).deleteLineSeg();;
-        }
-    }
-
-    /**
-     * 문단에 텍스트를 from 위치부터 삭제한다.
-     *
-     * @param p     문단
-     * @param from  삭제할 시작 위치
-     */
-    private static void deleteParaTextFrom(Paragraph p, int from) {
-        int leftCtrlCount = 0;
-        int leftCharSize = 0;
-        if (p.getText() != null) {
-            for (int charIndex = 0; charIndex < from; charIndex++) {
-                HWPChar hwpChar = p.getText().getCharList().get(charIndex);
-                if (hwpChar.getType() == HWPCharType.ControlExtend) {
-                    leftCtrlCount++;
-                }
-                leftCharSize += hwpChar.getCharSize();
-            }
-            int deleteCharCount = p.getText().getCharList().size() - from - 1;
-            for(int index = 0; index < deleteCharCount; index++) {
-                p.getText().getCharList().remove(from);
-            }
-        }
-        if (p.getControlList() != null) {
-            int deleteCtrlCount = p.getControlList().size() - leftCtrlCount;
-            for (int index = 0; index < deleteCtrlCount; index++) {
-                p.getControlList().remove(leftCtrlCount);
-            }
-        }
-
-        ArrayList<CharPositionShapeIdPair> deleting = new ArrayList<>();
-        for (CharPositionShapeIdPair cpsip : p.getCharShape().getPositonShapeIdPairList()) {
-            if (cpsip.getPosition() > leftCharSize) {
-                deleting.add(cpsip);
-            }
-        }
-        for (CharPositionShapeIdPair cpsip : deleting) {
-            p.getCharShape().getPositonShapeIdPairList().remove(cpsip);
-        }
-    }
-
-    /**
-     * 문단에 텍스트를 to 위치까지 삭제한다.
-     *
-     * @param p     문단
-     * @param to    삭제할 끝 위치
-     */
-    private static void deleteParaTextTo(Paragraph p, int to) {
-        int deleteCtrlCount = 0;
-        int deleteCharSize = 0;
-        if (p.getText() != null) {
-            for (int charIndex = 0; charIndex < to - 1; charIndex++) {
-                HWPChar hwpChar = p.getText().getCharList().get(charIndex);
-                if (hwpChar.getType() == HWPCharType.ControlExtend) {
-                    deleteCtrlCount++;
-                }
-            }
-
-            for (int index = 0; index < to + 1; index++) {
-                deleteCharSize += p.getText().getCharList().get(0).getCharSize();
-                p.getText().getCharList().remove(0);
-            }
-        }
-        if (p.getControlList() != null) {
-            for (int index = 0; index < deleteCtrlCount; index++) {
-                p.getControlList().remove(0);
-            }
-        }
-
-        for (CharPositionShapeIdPair cpsip : p.getCharShape().getPositonShapeIdPairList()) {
-            if (cpsip.getPosition() != 0) {
-                if (cpsip.getPosition() < to + 1) {
-                    p.getCharShape().getPositonShapeIdPairList().remove(cpsip);
-                } else {
-                    cpsip.setPosition(cpsip.getPosition() - deleteCharSize);
-                }
-            }
-        }
-    }
-
-    /**
-     * 문단 para1 끝에 문단 para2을 병합한다.
-     *
-     * @param para1    문단1
-     * @param para2    문단2
-     */
-    private static void mergeParagraph(Paragraph para1, Paragraph para2) {
-        int para1CharSize = para1.getText().getCharSize();
-        para1.getText().getCharList().remove(para1.getText().getCharList().size() - 1);
-        para1CharSize -= 1;
-
-
-        if (para2.getText() != null && para2.getText().getCharList().size() > 0) {
-            if (para1.getText() == null) {
-                para1.createText();
-            }
-            for (HWPChar hwpChar : para2.getText().getCharList()) {
-                para1.getText().getCharList().add(hwpChar);
-            }
-        }
-
-        if (para2.getControlList() != null && para2.getControlList().size() > 0) {
-            if (para1.getControlList() == null) {
-                para1.createControlList();
-            }
-            for (Control control : para2.getControlList()) {
-                para1.getControlList().add(control);
-            }
-        }
-
-        if (para2.getCharShape() != null && para2.getCharShape().getPositonShapeIdPairList().size() > 0) {
-            if (para1.getCharShape() == null) {
-                para1.createCharShape();
-            }
-            for (CharPositionShapeIdPair cpsip : para2.getCharShape().getPositonShapeIdPairList()) {
-                cpsip.setPosition(cpsip.getPosition() + para1CharSize);
-                para1.getCharShape().getPositonShapeIdPairList().add(cpsip);
-            }
+            paragraphList.getParagraph(paraIndex).deleteLineSeg();
         }
     }
 
@@ -450,7 +323,7 @@ public class ForParagraphList {
             this.startCharIndex = startCharIndex;
         }
 
-        public void endPosition(int endParaIndex,int endCharIndex) {
+        public void endPosition(int endParaIndex, int endCharIndex) {
             this.endParaIndex = endParaIndex;
             this.endCharIndex = endCharIndex;
         }

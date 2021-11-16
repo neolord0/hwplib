@@ -1,4 +1,3 @@
-
 /* ====================================================================
    Licensed to the Apache Software Foundation (ASF) under one or more
    contributor license agreements.  See the NOTICE file distributed with
@@ -15,7 +14,7 @@
    See the License for the specific language governing permissions and
    limitations under the License.
 ==================================================================== */
-        
+
 
 package kr.dogfoot.hwplib.org.apache.poi.poifs.property;
 
@@ -35,8 +34,7 @@ public class DocumentProperty extends Property {
      * @param size POIFSDocument size
      */
 
-    public DocumentProperty(final String name, final int size)
-    {
+    public DocumentProperty(final String name, final int size) {
         super();
         _document = null;
         setName(name);
@@ -48,13 +46,12 @@ public class DocumentProperty extends Property {
     /**
      * reader constructor
      *
-     * @param index index number
-     * @param array byte data
+     * @param index  index number
+     * @param array  byte data
      * @param offset offset into byte data
      */
-    protected DocumentProperty(final int index, final byte [] array,
-                               final int offset)
-    {
+    protected DocumentProperty(final int index, final byte[] array,
+                               final int offset) {
         super(index, array, offset);
         _document = null;
     }
@@ -64,8 +61,7 @@ public class DocumentProperty extends Property {
      *
      * @param doc the associated POIFSDocument
      */
-    public void setDocument(POIFSDocument doc)
-    {
+    public void setDocument(POIFSDocument doc) {
         _document = doc;
     }
 
@@ -74,8 +70,7 @@ public class DocumentProperty extends Property {
      *
      * @return the associated document
      */
-    public POIFSDocument getDocument()
-    {
+    public POIFSDocument getDocument() {
         return _document;
     }
 
@@ -86,16 +81,14 @@ public class DocumentProperty extends Property {
      *
      * @return true if this property should use small blocks
      */
-    public boolean shouldUseSmallBlocks()
-    {
+    public boolean shouldUseSmallBlocks() {
         return super.shouldUseSmallBlocks();
     }
 
     /**
      * @return true if a directory type Property
      */
-    public boolean isDirectory()
-    {
+    public boolean isDirectory() {
         return false;
     }
 
@@ -103,17 +96,15 @@ public class DocumentProperty extends Property {
      * Perform whatever activities need to be performed prior to
      * writing
      */
-    protected void preWrite()
-    {
+    protected void preWrite() {
 
         // do nothing
     }
-    
+
     /**
      * Update the size of the property's data
      */
-    public void updateSize(int size)
-    {
+    public void updateSize(int size) {
         setSize(size);
     }
 

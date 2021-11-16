@@ -187,7 +187,7 @@ public class Inserting_Image {
         li.getProperty().setStartArrowSize(LineArrowSize.MiddleMiddle);
         li.getProperty().setEndArrowShape(LineArrowShape.None);
         li.getProperty().setEndArrowSize(LineArrowSize.MiddleMiddle);
-		li.getProperty().setFillStartArrow(true);
+        li.getProperty().setFillStartArrow(true);
         li.getProperty().setFillEndArrow(true);
         li.getProperty().setLineType(LineType.None);
         li.setOutlineStyle(OutlineStyle.Normal);

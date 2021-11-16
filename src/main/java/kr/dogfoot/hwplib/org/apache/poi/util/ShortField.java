@@ -1,4 +1,3 @@
-
 /* ====================================================================
    Licensed to the Apache Software Foundation (ASF) under one or more
    contributor license agreements.  See the NOTICE file distributed with
@@ -15,12 +14,13 @@
    See the License for the specific language governing permissions and
    limitations under the License.
 ==================================================================== */
-        
+
 
 package kr.dogfoot.hwplib.org.apache.poi.util;
 
 
-import java.io.*;
+import java.io.IOException;
+import java.io.InputStream;
 
 /**
  * representation of a short (16-bit) field at a fixed location within
@@ -30,9 +30,8 @@ import java.io.*;
  */
 
 public class ShortField
-    implements FixedField
-{
-    private short     _value;
+        implements FixedField {
+    private short _value;
     private final int _offset;
 
     /**
@@ -40,17 +39,14 @@ public class ShortField
      * byte array
      *
      * @param offset of the field within its byte array
-     *
-     * @exception ArrayIndexOutOfBoundsException if offset is negative
+     * @throws ArrayIndexOutOfBoundsException if offset is negative
      */
 
     public ShortField(final int offset)
-        throws ArrayIndexOutOfBoundsException
-    {
-        if (offset < 0)
-        {
+            throws ArrayIndexOutOfBoundsException {
+        if (offset < 0) {
             throw new ArrayIndexOutOfBoundsException("Illegal offset: "
-                                                     + offset);
+                    + offset);
         }
         _offset = offset;
     }
@@ -60,14 +56,12 @@ public class ShortField
      * byte array and initialize its value
      *
      * @param offset of the field within its byte array
-     * @param value the initial value
-     *
-     * @exception ArrayIndexOutOfBoundsException if offset is negative
+     * @param value  the initial value
+     * @throws ArrayIndexOutOfBoundsException if offset is negative
      */
 
     public ShortField(final int offset, final short value)
-        throws ArrayIndexOutOfBoundsException
-    {
+            throws ArrayIndexOutOfBoundsException {
         this(offset);
         set(value);
     }
@@ -77,15 +71,13 @@ public class ShortField
      * byte array and initialize its value from its byte array
      *
      * @param offset of the field within its byte array
-     * @param data the byte array to read the value from
-     *
-     * @exception ArrayIndexOutOfBoundsException if the offset is not
-     *            within the range of 0..(data.length - 1)
+     * @param data   the byte array to read the value from
+     * @throws ArrayIndexOutOfBoundsException if the offset is not
+     *                                        within the range of 0..(data.length - 1)
      */
 
-    public ShortField(final int offset, final byte [] data)
-        throws ArrayIndexOutOfBoundsException
-    {
+    public ShortField(final int offset, final byte[] data)
+            throws ArrayIndexOutOfBoundsException {
         this(offset);
         readFromBytes(data);
     }
@@ -96,15 +88,13 @@ public class ShortField
      * byte array
      *
      * @param offset of the field within its byte array
-     * @param value the initial value
-     * @param data the byte array to write the value to
-     *
-     * @exception ArrayIndexOutOfBoundsException if offset is negative
+     * @param value  the initial value
+     * @param data   the byte array to write the value to
+     * @throws ArrayIndexOutOfBoundsException if offset is negative
      */
 
-    public ShortField(final int offset, final short value, final byte [] data)
-        throws ArrayIndexOutOfBoundsException
-    {
+    public ShortField(final int offset, final short value, final byte[] data)
+            throws ArrayIndexOutOfBoundsException {
         this(offset);
         set(value, data);
     }
@@ -115,8 +105,7 @@ public class ShortField
      * @return current value
      */
 
-    public short get()
-    {
+    public short get() {
         return _value;
     }
 
@@ -126,8 +115,7 @@ public class ShortField
      * @param value to be set
      */
 
-    public void set(final short value)
-    {
+    public void set(final short value) {
         _value = value;
     }
 
@@ -135,15 +123,13 @@ public class ShortField
      * set the ShortField's current value and write it to a byte array
      *
      * @param value to be set
-     * @param data the byte array to write the value to
-     *
-     * @exception ArrayIndexOutOfBoundsException if the offset is out
-     *            of range
+     * @param data  the byte array to write the value to
+     * @throws ArrayIndexOutOfBoundsException if the offset is out
+     *                                        of range
      */
 
-    public void set(final short value, final byte [] data)
-        throws ArrayIndexOutOfBoundsException
-    {
+    public void set(final short value, final byte[] data)
+            throws ArrayIndexOutOfBoundsException {
         _value = value;
         writeToBytes(data);
     }
@@ -154,14 +140,12 @@ public class ShortField
      * set the value from its offset into an array of bytes
      *
      * @param data the byte array from which the value is to be read
-     *
-     * @exception ArrayIndexOutOfBoundsException if the offset is out
-     *            of range
+     * @throws ArrayIndexOutOfBoundsException if the offset is out
+     *                                        of range
      */
 
-    public void readFromBytes(final byte [] data)
-        throws ArrayIndexOutOfBoundsException
-    {
+    public void readFromBytes(final byte[] data)
+            throws ArrayIndexOutOfBoundsException {
         _value = LittleEndian.getShort(data, _offset);
     }
 
@@ -170,16 +154,14 @@ public class ShortField
      *
      * @param stream the InputStream from which the value is to be
      *               read
-     *
-     * @exception BufferUnderrunException if there is not enough data
-     *            available from the InputStream
-     * @exception IOException if an IOException is thrown from reading
-     *            the InputStream
+     * @throws BufferUnderrunException if there is not enough data
+     *                                 available from the InputStream
+     * @throws IOException             if an IOException is thrown from reading
+     *                                 the InputStream
      */
 
     public void readFromStream(final InputStream stream)
-        throws IOException
-    {
+            throws IOException {
         _value = LittleEndian.readShort(stream);
     }
 
@@ -189,14 +171,12 @@ public class ShortField
      *
      * @param data the array of bytes to which the value is to be
      *             written
-     *
-     * @exception ArrayIndexOutOfBoundsException if the offset is out
-     *            of range
+     * @throws ArrayIndexOutOfBoundsException if the offset is out
+     *                                        of range
      */
 
-    public void writeToBytes(final byte [] data)
-        throws ArrayIndexOutOfBoundsException
-    {
+    public void writeToBytes(final byte[] data)
+            throws ArrayIndexOutOfBoundsException {
         LittleEndian.putShort(data, _offset, _value);
     }
 
@@ -206,8 +186,7 @@ public class ShortField
      * @return the value as a String
      */
 
-    public String toString()
-    {
+    public String toString() {
         return String.valueOf(_value);
     }
 

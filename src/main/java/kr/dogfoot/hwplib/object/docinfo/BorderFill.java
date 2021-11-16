@@ -7,8 +7,6 @@ import kr.dogfoot.hwplib.object.docinfo.borderfill.EachBorder;
 import kr.dogfoot.hwplib.object.docinfo.borderfill.fillinfo.FillInfo;
 import kr.dogfoot.hwplib.object.etc.Color4Byte;
 
-import javax.swing.border.Border;
-
 /**
  * 테두리/배경의 모양을 나타내는 레코드
  *

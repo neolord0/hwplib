@@ -18,8 +18,6 @@
 
 package kr.dogfoot.hwplib.org.apache.poi.util;
 
-import kr.dogfoot.hwplib.org.apache.poi.util.SuppressForbidden;
-
 import java.nio.charset.Charset;
 import java.util.Calendar;
 import java.util.Locale;
@@ -32,7 +30,7 @@ import java.util.TimeZone;
  * the locale/time zone specific handling of certain office documents -
  * maybe for different time zones / locales ... - shouldn't affect
  * other java components.
- *
+ * <p>
  * The settings are saved in a {@link ThreadLocal},
  * so they only apply to the current thread and can't be set globally.
  */
@@ -42,10 +40,9 @@ public final class LocaleUtil {
     }
 
 
-
     /**
      * Excel doesn't store TimeZone information in the file, so if in doubt,
-     *  use UTC to perform calculations
+     * use UTC to perform calculations
      */
     public static final TimeZone TIMEZONE_UTC = TimeZone.getTimeZone("UTC");
 
@@ -139,7 +136,7 @@ public final class LocaleUtil {
      */
     public static Calendar getLocaleCalendar(int year, int month, int day, int hour, int minute, int second) {
         Calendar cal = getLocaleCalendar();
-        cal.set(year,  month, day, hour, minute, second);
+        cal.set(year, month, day, hour, minute, second);
         cal.clear(Calendar.MILLISECOND);
         return cal;
     }

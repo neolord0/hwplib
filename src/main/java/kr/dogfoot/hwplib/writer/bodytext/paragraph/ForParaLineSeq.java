@@ -44,7 +44,7 @@ public class ForParaLineSeq {
     private static void recordHeader(ParaLineSeg pls, StreamWriter sw)
             throws IOException {
         long size = getSize(pls);
-        sw.writeRecordHeader(HWPTag.PARA_LINE_SEG,  size);
+        sw.writeRecordHeader(HWPTag.PARA_LINE_SEG, size);
     }
 
     /**

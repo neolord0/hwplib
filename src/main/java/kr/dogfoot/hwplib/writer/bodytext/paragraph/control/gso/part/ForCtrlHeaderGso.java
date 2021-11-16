@@ -2,7 +2,6 @@ package kr.dogfoot.hwplib.writer.bodytext.paragraph.control.gso.part;
 
 import kr.dogfoot.hwplib.object.bodytext.control.ctrlheader.CtrlHeaderGso;
 import kr.dogfoot.hwplib.object.etc.HWPTag;
-import kr.dogfoot.hwplib.util.StringUtil;
 import kr.dogfoot.hwplib.util.binary.BitFlag;
 import kr.dogfoot.hwplib.util.compoundFile.writer.StreamWriter;
 

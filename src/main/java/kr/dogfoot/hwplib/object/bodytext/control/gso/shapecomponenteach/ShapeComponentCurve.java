@@ -67,7 +67,8 @@ public class ShapeComponentCurve {
     }
 
     public void copy(ShapeComponentCurve from) {
-        positionList.clear();;
+        positionList.clear();
+
         for (PositionXY positionXY : from.positionList) {
             positionList.add(positionXY.clone());
         }

@@ -1,7 +1,5 @@
 package kr.dogfoot.hwplib.object.bodytext.control.form.properties;
 
-import kr.dogfoot.hwplib.object.etc.HWPString;
-
 public abstract class Property {
     private String name;
 

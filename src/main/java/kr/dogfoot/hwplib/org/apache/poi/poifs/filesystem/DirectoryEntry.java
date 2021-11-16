@@ -1,4 +1,3 @@
-
 /* ====================================================================
    Licensed to the Apache Software Foundation (ASF) under one or more
    contributor license agreements.  See the NOTICE file distributed with
@@ -19,13 +18,13 @@
 
 package kr.dogfoot.hwplib.org.apache.poi.poifs.filesystem;
 
+import kr.dogfoot.hwplib.org.apache.poi.hpsf.ClassID;
+
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Iterator;
 import java.util.Set;
-
-import kr.dogfoot.hwplib.org.apache.poi.hpsf.ClassID;
 
 /**
  * This interface defines methods specific to Directory objects
@@ -35,8 +34,7 @@ import kr.dogfoot.hwplib.org.apache.poi.hpsf.ClassID;
  */
 
 public interface DirectoryEntry
-    extends Entry, Iterable<Entry>
-{
+        extends Entry, Iterable<Entry> {
 
     /**
      * get an iterator of the Entry instances contained directly in
@@ -44,21 +42,21 @@ public interface DirectoryEntry
      * etc.)
      *
      * @return iterator; never null, but hasNext() may return false
-     *         immediately (i.e., this DirectoryEntry is empty). All
-     *         objects retrieved by next() are guaranteed to be
-     *         implementations of Entry.
+     * immediately (i.e., this DirectoryEntry is empty). All
+     * objects retrieved by next() are guaranteed to be
+     * implementations of Entry.
      */
 
     public Iterator<Entry> getEntries();
-    
+
     /**
      * get the names of all the Entries contained directly in this
      * instance (in other words, names of children only; no grandchildren
      * etc).
      *
      * @return the names of all the entries that may be retrieved with
-     *         getEntry(String), which may be empty (if this 
-     *         DirectoryEntry is empty)
+     * getEntry(String), which may be empty (if this
+     * DirectoryEntry is empty)
      */
     public Set<String> getEntryNames();
 
@@ -75,7 +73,7 @@ public interface DirectoryEntry
      * this DirectoryEntry
      *
      * @return number of immediately (no grandchildren etc.) contained
-     *         Entry instances
+     * Entry instances
      */
 
     public int getEntryCount();
@@ -84,67 +82,59 @@ public interface DirectoryEntry
      * Checks if entry with specified name present
      */
 
-    public boolean hasEntry( final String name );
+    public boolean hasEntry(final String name);
 
     /**
      * get a specified Entry by name
      *
      * @param name the name of the Entry to obtain.
-     *
      * @return the specified Entry, if it is directly contained in
-     *         this DirectoryEntry
-     *
-     * @exception FileNotFoundException if no Entry with the specified
-     *            name exists in this DirectoryEntry
+     * this DirectoryEntry
+     * @throws FileNotFoundException if no Entry with the specified
+     *                               name exists in this DirectoryEntry
      */
 
     public Entry getEntry(final String name)
-        throws FileNotFoundException;
+            throws FileNotFoundException;
 
     /**
      * create a new DocumentEntry
      *
-     * @param name the name of the new DocumentEntry
+     * @param name   the name of the new DocumentEntry
      * @param stream the InputStream from which to create the new
      *               DocumentEntry
-     *
      * @return the new DocumentEntry
-     *
-     * @exception IOException
+     * @throws IOException
      */
 
     public DocumentEntry createDocument(final String name,
                                         final InputStream stream)
-        throws IOException;
+            throws IOException;
 
     /**
      * create a new DocumentEntry; the data will be provided later
      *
-     * @param name the name of the new DocumentEntry
-     * @param size the size of the new DocumentEntry
+     * @param name   the name of the new DocumentEntry
+     * @param size   the size of the new DocumentEntry
      * @param writer the writer of the new DocumentEntry
-     *
      * @return the new DocumentEntry
-     *
-     * @exception IOException
+     * @throws IOException
      */
 
     public DocumentEntry createDocument(final String name, final int size,
                                         final POIFSWriterListener writer)
-        throws IOException;
+            throws IOException;
 
     /**
      * create a new DirectoryEntry
      *
      * @param name the name of the new DirectoryEntry
-     *
      * @return the new DirectoryEntry
-     *
-     * @exception IOException
+     * @throws IOException
      */
 
     public DirectoryEntry createDirectory(final String name)
-        throws IOException;
+            throws IOException;
 
     /**
      * Gets the storage clsid of the directory entry

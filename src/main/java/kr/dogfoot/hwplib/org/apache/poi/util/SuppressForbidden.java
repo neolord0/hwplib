@@ -28,6 +28,8 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.CLASS)
 @Target({ElementType.METHOD, ElementType.TYPE})
 public @interface SuppressForbidden {
-    /** A reason for suppressing should always be given. */
+    /**
+     * A reason for suppressing should always be given.
+     */
     String value() default "";
 }

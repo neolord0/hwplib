@@ -1,4 +1,3 @@
-
 /* ====================================================================
    Licensed to the Apache Software Foundation (ASF) under one or more
    contributor license agreements.  See the NOTICE file distributed with
@@ -15,13 +14,14 @@
    See the License for the specific language governing permissions and
    limitations under the License.
 ==================================================================== */
-        
+
 
 package kr.dogfoot.hwplib.org.apache.poi.util;
 
 import kr.dogfoot.hwplib.org.apache.poi.util.LittleEndian.BufferUnderrunException;
 
-import java.io.*;
+import java.io.IOException;
+import java.io.InputStream;
 
 /**
  * behavior of a field at a fixed location within a byte array
@@ -29,35 +29,32 @@ import java.io.*;
  * @author Marc Johnson (mjohnson at apache dot org
  */
 
-public interface FixedField
-{
+public interface FixedField {
 
     /**
      * set the value from its offset into an array of bytes
      *
      * @param data the byte array from which the value is to be read
-     *
-     * @exception ArrayIndexOutOfBoundsException if the offset is out
-     *            of the array's valid index range
+     * @throws ArrayIndexOutOfBoundsException if the offset is out
+     *                                        of the array's valid index range
      */
 
-    void readFromBytes(byte [] data)
-        throws ArrayIndexOutOfBoundsException;
+    void readFromBytes(byte[] data)
+            throws ArrayIndexOutOfBoundsException;
 
     /**
      * set the value from an InputStream
      *
      * @param stream the InputStream from which the value is to be
      *               read
-     *
-     * @exception BufferUnderrunException if there is not enough data
-     *            available from the InputStream
-     * @exception IOException if an IOException is thrown from reading
-     *            the InputStream
+     * @throws BufferUnderrunException if there is not enough data
+     *                                 available from the InputStream
+     * @throws IOException             if an IOException is thrown from reading
+     *                                 the InputStream
      */
 
     void readFromStream(InputStream stream)
-        throws IOException;
+            throws IOException;
 
     /**
      * write the value out to an array of bytes at the appropriate
@@ -65,13 +62,12 @@ public interface FixedField
      *
      * @param data the array of bytes to which the value is to be
      *             written
-     *
-     * @exception ArrayIndexOutOfBoundsException if the offset is out
-     *            of the array's valid index range
+     * @throws ArrayIndexOutOfBoundsException if the offset is out
+     *                                        of the array's valid index range
      */
 
-    void writeToBytes(byte [] data)
-        throws ArrayIndexOutOfBoundsException;
+    void writeToBytes(byte[] data)
+            throws ArrayIndexOutOfBoundsException;
 
     /**
      * return the value as a String

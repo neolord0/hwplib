@@ -1,7 +1,6 @@
 package kr.dogfoot.hwplib.object.bodytext.paragraph;
 
 import kr.dogfoot.hwplib.object.bodytext.ParagraphListInterface;
-import kr.dogfoot.hwplib.object.bodytext.paragraph.rangetag.ParaRangeTag;
 
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
@@ -56,7 +55,8 @@ public class ParagraphList implements ParagraphListInterface {
     }
 
     /**
-     *  index 번째의 문단을 삭제한다.
+     * index 번째의 문단을 삭제한다.
+     *
      * @param index 삭제할 문단의 순번
      */
     public void deleteParagraph(int index) {
@@ -64,7 +64,7 @@ public class ParagraphList implements ParagraphListInterface {
     }
 
     /**
-     *  모든 문단을 삭제한다.
+     * 모든 문단을 삭제한다.
      */
     public void deleteAllParagraphs() {
         paragraphList.clear();

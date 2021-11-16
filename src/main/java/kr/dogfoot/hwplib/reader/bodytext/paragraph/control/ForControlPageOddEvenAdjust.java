@@ -1,6 +1,5 @@
 package kr.dogfoot.hwplib.reader.bodytext.paragraph.control;
 
-import kr.dogfoot.hwplib.object.bodytext.control.ControlPageHide;
 import kr.dogfoot.hwplib.object.bodytext.control.ControlPageOddEvenAdjust;
 import kr.dogfoot.hwplib.util.compoundFile.reader.StreamReader;
 

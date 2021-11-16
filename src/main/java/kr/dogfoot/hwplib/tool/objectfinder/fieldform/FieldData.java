@@ -1,6 +1,7 @@
 package kr.dogfoot.hwplib.tool.objectfinder.fieldform;
 
 import kr.dogfoot.hwplib.object.bodytext.ParagraphListInterface;
+import kr.dogfoot.hwplib.object.bodytext.paragraph.Paragraph;
 
 public class FieldData {
     private String name;
@@ -39,6 +40,10 @@ public class FieldData {
         return startParaIndex;
     }
 
+    public Paragraph getStartParagraph() {
+        return paragraphList.getParagraph(startParaIndex);
+    }
+
     public int getStartCharIndex() {
         return startCharIndex;
     }
@@ -52,6 +57,10 @@ public class FieldData {
         return endParaIndex;
     }
 
+    public Paragraph getEndParagraph() {
+        return paragraphList.getParagraph(endParaIndex);
+    }
+
     public int getEndCharIndex() {
         return endCharIndex;
     }
@@ -59,12 +68,5 @@ public class FieldData {
     public void setEndPosition(int endParaIndex, int endCharIndex) {
         this.endParaIndex = endParaIndex;
         this.endCharIndex = endCharIndex;
-    }
-
-    public enum FieldType {
-        ClickHere,
-        Cell,
-        Gso,
-        ETC,
     }
 }

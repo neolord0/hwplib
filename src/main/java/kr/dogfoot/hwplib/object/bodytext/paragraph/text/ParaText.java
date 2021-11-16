@@ -1,7 +1,5 @@
 package kr.dogfoot.hwplib.object.bodytext.paragraph.text;
 
-import kr.dogfoot.hwplib.object.bodytext.paragraph.Paragraph;
-
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 

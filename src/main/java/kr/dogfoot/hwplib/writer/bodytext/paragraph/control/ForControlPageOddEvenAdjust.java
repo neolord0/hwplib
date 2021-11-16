@@ -16,8 +16,8 @@ public class ForControlPageOddEvenAdjust {
     /**
      * 홀/짝수 조정(페이지 번호 제어) 컨트롤을 쓴다.
      *
-     * @param pgoea  홀/짝수 조정(페이지 번호 제어) 컨트롤
-     * @param sw 스트림 라이터
+     * @param pgoea 홀/짝수 조정(페이지 번호 제어) 컨트롤
+     * @param sw    스트림 라이터
      * @throws IOException
      */
     public static void write(ControlPageOddEvenAdjust pgoea, StreamWriter sw) throws IOException {
@@ -27,7 +27,7 @@ public class ForControlPageOddEvenAdjust {
     /**
      * 홀/짝수 조정(페이지 번호 제어) 컨트롤의 컨트롤 헤더 레코드를 쓴다.
      *
-     * @param h 홀/짝수 조정(페이지 번호 제어) 컨트롤의 컨트롤 헤더 레코드
+     * @param h  홀/짝수 조정(페이지 번호 제어) 컨트롤의 컨트롤 헤더 레코드
      * @param sw 스트림 라이터
      * @throws IOException
      */

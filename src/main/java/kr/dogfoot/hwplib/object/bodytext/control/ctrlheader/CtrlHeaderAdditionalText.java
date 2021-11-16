@@ -1,6 +1,5 @@
 package kr.dogfoot.hwplib.object.bodytext.control.ctrlheader;
 
-import kr.dogfoot.hwplib.object.bodytext.control.ControlHeader;
 import kr.dogfoot.hwplib.object.bodytext.control.ControlType;
 import kr.dogfoot.hwplib.object.bodytext.control.ctrlheader.additionaltext.AdditionalTextPosition;
 import kr.dogfoot.hwplib.object.docinfo.parashape.Alignment;

@@ -32,14 +32,14 @@ public class TextExtractor {
      * @return 추출된 문자열
      * @throws UnsupportedEncodingException
      */
-   public static String extract(HWPFile hwpFile, TextExtractOption option) throws UnsupportedEncodingException {
-       StringBuffer sb = new StringBuffer();
-       ParaHeadMaker paraHeadMaker = new ParaHeadMaker(hwpFile);
-       for (Section s : hwpFile.getBodyText().getSectionList()) {
-           paraHeadMaker.startSection(s);
-           ForParagraphList.extract(s, option, paraHeadMaker, sb);
-           paraHeadMaker.endSection();
-       }
-       return sb.toString();
+    public static String extract(HWPFile hwpFile, TextExtractOption option) throws UnsupportedEncodingException {
+        StringBuffer sb = new StringBuffer();
+        ParaHeadMaker paraHeadMaker = new ParaHeadMaker(hwpFile);
+        for (Section s : hwpFile.getBodyText().getSectionList()) {
+            paraHeadMaker.startSection(s);
+            ForParagraphList.extract(s, option, paraHeadMaker, sb);
+            paraHeadMaker.endSection();
+        }
+        return sb.toString();
     }
 }

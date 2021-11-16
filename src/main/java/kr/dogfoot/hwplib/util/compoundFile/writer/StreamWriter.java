@@ -290,7 +290,7 @@ public class StreamWriter {
         if (value == null || value.getBytes() == null) {
             writeUInt2(0);
         } else {
-            writeUInt2(value.getBytes().length  / 2);
+            writeUInt2(value.getBytes().length / 2);
             if (value.getBytes().length > 0) {
                 writeBytes(value.getBytes());
             }
@@ -318,7 +318,6 @@ public class StreamWriter {
     }
 
      */
-
     public void writeWChar(byte[] value) throws IOException {
         if (value != null && value.length >= 2) {
             os.write(value, 0, 2);

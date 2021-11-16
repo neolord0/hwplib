@@ -1,4 +1,3 @@
-
 /* ====================================================================
    Licensed to the Apache Software Foundation (ASF) under one or more
    contributor license agreements.  See the NOTICE file distributed with
@@ -15,7 +14,7 @@
    See the License for the specific language governing permissions and
    limitations under the License.
 ==================================================================== */
-        
+
 
 package kr.dogfoot.hwplib.org.apache.poi.poifs.filesystem;
 
@@ -27,8 +26,7 @@ package kr.dogfoot.hwplib.org.apache.poi.poifs.filesystem;
  * @author Marc Johnson (mjohnson at apache dot org)
  */
 
-public interface Entry
-{
+public interface Entry {
 
     /**
      * get the name of the Entry
@@ -66,10 +64,10 @@ public interface Entry
     /**
      * Delete this Entry. This operation should succeed, but there are
      * special circumstances when it will not:
-     *
+     * <p>
      * If this Entry is the root of the Entry tree, it cannot be
      * deleted, as there is no way to create another one.
-     *
+     * <p>
      * If this Entry is a directory, it cannot be deleted unless it is
      * empty.
      *
@@ -80,15 +78,14 @@ public interface Entry
 
     /**
      * Rename this Entry. This operation will fail if:
-     *
+     * <p>
      * There is a sibling Entry (i.e., an Entry whose parent is the
      * same as this Entry's parent) with the same name.
-     *
+     * <p>
      * This Entry is the root of the Entry tree. Its name is dictated
      * by the Filesystem and many not be changed.
      *
      * @param newName the new name for this Entry
-     *
      * @return true if the operation succeeded, else false
      */
 

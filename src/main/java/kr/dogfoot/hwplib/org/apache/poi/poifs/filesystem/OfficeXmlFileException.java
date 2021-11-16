@@ -14,18 +14,18 @@
    See the License for the specific language governing permissions and
    limitations under the License.
 ==================================================================== */
-        
+
 package kr.dogfoot.hwplib.org.apache.poi.poifs.filesystem;
 
 import kr.dogfoot.hwplib.org.apache.poi.UnsupportedFileFormatException;
 
 /**
  * This exception is thrown when we try to open a file that's actually
- *  an Office 2007+ XML file, rather than an OLE2 file (which is what
- *  POIFS works with)
+ * an Office 2007+ XML file, rather than an OLE2 file (which is what
+ * POIFS works with)
  */
 public class OfficeXmlFileException extends UnsupportedFileFormatException {
-	public OfficeXmlFileException(String s) {
-		super(s);
-	}
+    public OfficeXmlFileException(String s) {
+        super(s);
+    }
 }

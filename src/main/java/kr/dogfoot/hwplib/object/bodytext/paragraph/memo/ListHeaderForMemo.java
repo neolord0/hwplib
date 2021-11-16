@@ -98,7 +98,7 @@ public class ListHeaderForMemo {
     public void copy(ListHeaderForMemo from) {
         paraCount = from.paraCount;
         property.copy(from.property);
-        textWidth =  from.textWidth;
+        textWidth = from.textWidth;
         textHeight = from.textHeight;
     }
 }

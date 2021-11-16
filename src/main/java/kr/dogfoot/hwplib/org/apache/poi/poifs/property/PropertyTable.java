@@ -17,22 +17,22 @@
 
 package kr.dogfoot.hwplib.org.apache.poi.poifs.property;
 
+import kr.dogfoot.hwplib.org.apache.poi.poifs.common.POIFSBigBlockSize;
+import kr.dogfoot.hwplib.org.apache.poi.poifs.common.POIFSConstants;
+import kr.dogfoot.hwplib.org.apache.poi.poifs.filesystem.BATManaged;
+import kr.dogfoot.hwplib.org.apache.poi.poifs.filesystem.POIFSFileSystem;
+import kr.dogfoot.hwplib.org.apache.poi.poifs.filesystem.POIFSStream;
+import kr.dogfoot.hwplib.org.apache.poi.poifs.storage.HeaderBlock;
+import kr.dogfoot.hwplib.org.apache.poi.util.IOUtils;
+import kr.dogfoot.hwplib.org.apache.poi.util.POILogFactory;
+import kr.dogfoot.hwplib.org.apache.poi.util.POILogger;
+
 import java.io.IOException;
 import java.io.OutputStream;
 import java.nio.ByteBuffer;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Stack;
-
-import kr.dogfoot.hwplib.org.apache.poi.poifs.common.POIFSBigBlockSize;
-import kr.dogfoot.hwplib.org.apache.poi.poifs.common.POIFSConstants;
-import kr.dogfoot.hwplib.org.apache.poi.poifs.storage.HeaderBlock;
-import kr.dogfoot.hwplib.org.apache.poi.util.IOUtils;
-import kr.dogfoot.hwplib.org.apache.poi.util.POILogger;
-import kr.dogfoot.hwplib.org.apache.poi.poifs.filesystem.BATManaged;
-import kr.dogfoot.hwplib.org.apache.poi.poifs.filesystem.POIFSFileSystem;
-import kr.dogfoot.hwplib.org.apache.poi.poifs.filesystem.POIFSStream;
-import kr.dogfoot.hwplib.org.apache.poi.util.POILogFactory;
 
 /**
  * This class embodies the Property Table for a {@link POIFSFileSystem};
@@ -42,7 +42,7 @@ import kr.dogfoot.hwplib.org.apache.poi.util.POILogFactory;
  */
 public final class PropertyTable implements BATManaged {
     private static final POILogger _logger =
-       POILogFactory.getLogger(PropertyTable.class);
+            POILogFactory.getLogger(PropertyTable.class);
 
     //arbitrarily selected; may need to increase
     private static final int MAX_RECORD_LENGTH = 100_000;
@@ -51,8 +51,7 @@ public final class PropertyTable implements BATManaged {
     private final List<Property> _properties = new ArrayList<>();
     private final POIFSBigBlockSize _bigBigBlockSize;
 
-    public PropertyTable(HeaderBlock headerBlock)
-    {
+    public PropertyTable(HeaderBlock headerBlock) {
         _header_block = headerBlock;
         _bigBigBlockSize = headerBlock.getBigBlockSize();
         addProperty(new RootProperty());
@@ -64,22 +63,21 @@ public final class PropertyTable implements BATManaged {
      * properties thoroughly
      *
      * @param headerBlock the header block of the file
-     * @param filesystem the filesystem to read from
-     *
-     * @exception IOException if anything goes wrong (which should be
-     *            a result of the input being NFG)
+     * @param filesystem  the filesystem to read from
+     * @throws IOException if anything goes wrong (which should be
+     *                     a result of the input being NFG)
      */
     public PropertyTable(final HeaderBlock headerBlock, final POIFSFileSystem filesystem)
-    throws IOException {
+            throws IOException {
         this(
-              headerBlock,
-              new POIFSStream(filesystem, headerBlock.getPropertyStart())
+                headerBlock,
+                new POIFSStream(filesystem, headerBlock.getPropertyStart())
         );
     }
 
     /* only invoked locally and from the junit tests */
     PropertyTable(final HeaderBlock headerBlock, final Iterable<ByteBuffer> dataSource)
-    throws IOException {
+            throws IOException {
         _header_block = headerBlock;
         _bigBigBlockSize = headerBlock.getBigBlockSize();
 
@@ -108,7 +106,7 @@ public final class PropertyTable implements BATManaged {
             PropertyFactory.convertToProperties(data, _properties);
         }
 
-        populatePropertyTree( (DirectoryProperty)_properties.get(0));
+        populatePropertyTree((DirectoryProperty) _properties.get(0));
     }
 
 
@@ -137,7 +135,7 @@ public final class PropertyTable implements BATManaged {
      */
     public RootProperty getRoot() {
         // it's always the first element in the List
-        return ( RootProperty ) _properties.get(0);
+        return (RootProperty) _properties.get(0);
     }
 
     /**
@@ -160,29 +158,28 @@ public final class PropertyTable implements BATManaged {
     }
 
 
-
     /**
      * Return the number of BigBlock's this instance uses
      *
      * @return count of BigBlock instances
      */
     public int countBlocks() {
-       long rawSize = _properties.size() * (long) POIFSConstants.PROPERTY_SIZE;
-       int blkSize = _bigBigBlockSize.getBigBlockSize();
-       int numBlocks = (int)(rawSize / blkSize);
-       if ((rawSize % blkSize) != 0) {
-           numBlocks++;
-       }
-       return numBlocks;
+        long rawSize = _properties.size() * (long) POIFSConstants.PROPERTY_SIZE;
+        int blkSize = _bigBigBlockSize.getBigBlockSize();
+        int numBlocks = (int) (rawSize / blkSize);
+        if ((rawSize % blkSize) != 0) {
+            numBlocks++;
+        }
+        return numBlocks;
     }
- 
+
     /**
      * Prepare to be written
      */
     public void preWrite() {
         List<Property> pList = new ArrayList<>();
         // give each property its index
-        int i=0;
+        int i = 0;
         for (Property p : _properties) {
             // only handle non-null properties 
             if (p == null) continue;
@@ -192,24 +189,24 @@ public final class PropertyTable implements BATManaged {
 
         // prepare each property for writing
         for (Property p : pList) p.preWrite();
-    }    
-    
+    }
+
     /**
      * Writes the properties out into the given low-level stream
      */
     public void write(POIFSStream stream) throws IOException {
-       OutputStream os = stream.getOutputStream();
-       for(Property property : _properties) {
-          if(property != null) {
-             property.writeData(os);
-          }
-       }
-       os.close();
-       
-       // Update the start position if needed
-       if(getStartBlock() != stream.getStartBlock()) {
-          setStartBlock(stream.getStartBlock());
-       }
+        OutputStream os = stream.getOutputStream();
+        for (Property property : _properties) {
+            if (property != null) {
+                property.writeData(os);
+            }
+        }
+        os.close();
+
+        // Update the start position if needed
+        if (getStartBlock() != stream.getStartBlock()) {
+            setStartBlock(stream.getStartBlock());
+        }
     }
 
     private void populatePropertyTree(DirectoryProperty root) throws IOException {
@@ -231,7 +228,7 @@ public final class PropertyTable implements BATManaged {
 
             root.addChild(property);
             if (property.isDirectory()) {
-                populatePropertyTree(( DirectoryProperty ) property);
+                populatePropertyTree((DirectoryProperty) property);
             }
             index = property.getPreviousChildIndex();
             if (isValidIndex(index)) {
@@ -245,11 +242,11 @@ public final class PropertyTable implements BATManaged {
     }
 
     private boolean isValidIndex(int index) {
-        if (! Property.isValidIndex(index))
+        if (!Property.isValidIndex(index))
             return false;
         if (index < 0 || index >= _properties.size()) {
             _logger.log(POILogger.WARN, "Property index " + index +
-                    "outside the valid range 0.."+_properties.size());
+                    "outside the valid range 0.." + _properties.size());
             return false;
         }
         return true;

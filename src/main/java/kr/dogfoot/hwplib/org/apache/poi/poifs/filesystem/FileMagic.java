@@ -17,96 +17,128 @@
 
 package kr.dogfoot.hwplib.org.apache.poi.poifs.filesystem;
 
-import static kr.dogfoot.hwplib.org.apache.poi.poifs.common.POIFSConstants.OOXML_FILE_HEADER;
-import static kr.dogfoot.hwplib.org.apache.poi.poifs.common.POIFSConstants.RAW_XML_FILE_HEADER;
-
-import java.io.BufferedInputStream;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.util.Arrays;
-
 import kr.dogfoot.hwplib.org.apache.poi.poifs.storage.HeaderBlockConstants;
 import kr.dogfoot.hwplib.org.apache.poi.util.IOUtils;
-import kr.dogfoot.hwplib.org.apache.poi.util.LocaleUtil;
 import kr.dogfoot.hwplib.org.apache.poi.util.LittleEndian;
+import kr.dogfoot.hwplib.org.apache.poi.util.LocaleUtil;
+
+import java.io.*;
+import java.util.Arrays;
+
+import static kr.dogfoot.hwplib.org.apache.poi.poifs.common.POIFSConstants.OOXML_FILE_HEADER;
+import static kr.dogfoot.hwplib.org.apache.poi.poifs.common.POIFSConstants.RAW_XML_FILE_HEADER;
 
 /**
  * The file magic number, i.e. the file identification based on the first bytes
  * of the file
  */
 public enum FileMagic {
-    /** OLE2 / BIFF8+ stream used for Office 97 and higher documents */
+    /**
+     * OLE2 / BIFF8+ stream used for Office 97 and higher documents
+     */
     OLE2(HeaderBlockConstants._signature),
-    /** OOXML / ZIP stream */
+    /**
+     * OOXML / ZIP stream
+     */
     OOXML(OOXML_FILE_HEADER),
-    /** XML file */
+    /**
+     * XML file
+     */
     XML(RAW_XML_FILE_HEADER),
-    /** BIFF2 raw stream - for Excel 2 */
+    /**
+     * BIFF2 raw stream - for Excel 2
+     */
     BIFF2(new byte[]{
-        0x09, 0x00, // sid=0x0009
-        0x04, 0x00, // size=0x0004
-        0x00, 0x00, // unused
-        '?', 0x00  // '?' = multiple values
+            0x09, 0x00, // sid=0x0009
+            0x04, 0x00, // size=0x0004
+            0x00, 0x00, // unused
+            '?', 0x00  // '?' = multiple values
     }),
-    /** BIFF3 raw stream - for Excel 3 */
+    /**
+     * BIFF3 raw stream - for Excel 3
+     */
     BIFF3(new byte[]{
-        0x09, 0x02, // sid=0x0209
-        0x06, 0x00, // size=0x0006
-        0x00, 0x00, // unused
-        '?', 0x00  // '?' = multiple values
+            0x09, 0x02, // sid=0x0209
+            0x06, 0x00, // size=0x0006
+            0x00, 0x00, // unused
+            '?', 0x00  // '?' = multiple values
     }),
-    /** BIFF4 raw stream - for Excel 4 */
+    /**
+     * BIFF4 raw stream - for Excel 4
+     */
     BIFF4(new byte[]{
-        0x09, 0x04, // sid=0x0409
-        0x06, 0x00, // size=0x0006
-        0x00, 0x00, // unused
-        '?', 0x00  // '? = multiple values
-    },new byte[]{
-        0x09, 0x04, // sid=0x0409
-        0x06, 0x00, // size=0x0006
-        0x00, 0x00, // unused
-        0x00, 0x01
+            0x09, 0x04, // sid=0x0409
+            0x06, 0x00, // size=0x0006
+            0x00, 0x00, // unused
+            '?', 0x00  // '? = multiple values
+    }, new byte[]{
+            0x09, 0x04, // sid=0x0409
+            0x06, 0x00, // size=0x0006
+            0x00, 0x00, // unused
+            0x00, 0x01
     }),
-    /** Old MS Write raw stream */
+    /**
+     * Old MS Write raw stream
+     */
     MSWRITE(
-        new byte[]{0x31, (byte)0xbe, 0x00, 0x00 },
-        new byte[]{0x32, (byte)0xbe, 0x00, 0x00 }),
-    /** RTF document */
+            new byte[]{0x31, (byte) 0xbe, 0x00, 0x00},
+            new byte[]{0x32, (byte) 0xbe, 0x00, 0x00}),
+    /**
+     * RTF document
+     */
     RTF("{\\rtf"),
-    /** PDF document */
+    /**
+     * PDF document
+     */
     PDF("%PDF"),
-    /** Some different HTML documents */
+    /**
+     * Some different HTML documents
+     */
     HTML("<!DOCTYP",
-         "<html","\n\r<html","\r\n<html","\r<html","\n<html",
-         "<HTML","\r\n<HTML","\n\r<HTML","\r<HTML","\n<HTML"),
-    WORD2(new byte[]{ (byte)0xdb, (byte)0xa5, 0x2d, 0x00}),
-    /** JPEG image */
+            "<html", "\n\r<html", "\r\n<html", "\r<html", "\n<html",
+            "<HTML", "\r\n<HTML", "\n\r<HTML", "\r<HTML", "\n<HTML"),
+    WORD2(new byte[]{(byte) 0xdb, (byte) 0xa5, 0x2d, 0x00}),
+    /**
+     * JPEG image
+     */
     JPEG(
-        new byte[]{ (byte)0xFF, (byte)0xD8, (byte)0xFF, (byte)0xDB },
-        new byte[]{ (byte)0xFF, (byte)0xD8, (byte)0xFF, (byte)0xE0, '?', '?', 'J', 'F', 'I', 'F', 0x00, 0x01 },
-        new byte[]{ (byte)0xFF, (byte)0xD8, (byte)0xFF, (byte)0xEE },
-        new byte[]{ (byte)0xFF, (byte)0xD8, (byte)0xFF, (byte)0xE1, '?', '?', 'E', 'x', 'i', 'f', 0x00, 0x00 }),
-    /** GIF image */
-    GIF("GIF87a","GIF89a"),
-    /** PNG Image */
-    PNG(new byte[]{ (byte)0x89, 'P', 'N', 'G', 0x0D, 0x0A, 0x1A, 0x0A }),
-    /** TIFF Image */
-    TIFF("II*\u0000", "MM\u0000*" ),
-    /** WMF image with a placeable header */
-    WMF(new byte[]{ (byte)0xD7, (byte)0xCD, (byte)0xC6, (byte)0x9A }),
-    /** EMF image */
+            new byte[]{(byte) 0xFF, (byte) 0xD8, (byte) 0xFF, (byte) 0xDB},
+            new byte[]{(byte) 0xFF, (byte) 0xD8, (byte) 0xFF, (byte) 0xE0, '?', '?', 'J', 'F', 'I', 'F', 0x00, 0x01},
+            new byte[]{(byte) 0xFF, (byte) 0xD8, (byte) 0xFF, (byte) 0xEE},
+            new byte[]{(byte) 0xFF, (byte) 0xD8, (byte) 0xFF, (byte) 0xE1, '?', '?', 'E', 'x', 'i', 'f', 0x00, 0x00}),
+    /**
+     * GIF image
+     */
+    GIF("GIF87a", "GIF89a"),
+    /**
+     * PNG Image
+     */
+    PNG(new byte[]{(byte) 0x89, 'P', 'N', 'G', 0x0D, 0x0A, 0x1A, 0x0A}),
+    /**
+     * TIFF Image
+     */
+    TIFF("II*\u0000", "MM\u0000*"),
+    /**
+     * WMF image with a placeable header
+     */
+    WMF(new byte[]{(byte) 0xD7, (byte) 0xCD, (byte) 0xC6, (byte) 0x9A}),
+    /**
+     * EMF image
+     */
     EMF(new byte[]{
-        1, 0, 0, 0,
-        '?', '?', '?', '?', '?', '?', '?', '?', '?', '?', '?', '?', '?', '?', '?', '?', '?', '?',
-        '?', '?', '?', '?', '?', '?', '?', '?', '?', '?', '?', '?', '?', '?', '?', '?', '?', '?',
-        ' ', 'E', 'M', 'F'
+            1, 0, 0, 0,
+            '?', '?', '?', '?', '?', '?', '?', '?', '?', '?', '?', '?', '?', '?', '?', '?', '?', '?',
+            '?', '?', '?', '?', '?', '?', '?', '?', '?', '?', '?', '?', '?', '?', '?', '?', '?', '?',
+            ' ', 'E', 'M', 'F'
     }),
-    /** BMP image */
-    BMP(new byte[]{'B','M'}),
+    /**
+     * BMP image
+     */
+    BMP(new byte[]{'B', 'M'}),
     // keep UNKNOWN always as last enum!
-    /** UNKNOWN magic */
+    /**
+     * UNKNOWN magic
+     */
     UNKNOWN(new byte[0]);
 
     // update this if a longer pattern is added
@@ -125,7 +157,7 @@ public enum FileMagic {
 
     FileMagic(String... magic) {
         this.magic = new byte[magic.length][];
-        int i=0;
+        int i = 0;
         for (String s : magic) {
             this.magic[i++] = s.getBytes(LocaleUtil.CHARSET_1252);
         }
@@ -136,7 +168,7 @@ public enum FileMagic {
             for (byte[] ma : fm.magic) {
                 // don't try to match if the given byte-array is too short
                 // for this pattern anyway
-                if(magic.length < ma.length) {
+                if (magic.length < ma.length) {
                     continue;
                 }
 
@@ -149,7 +181,7 @@ public enum FileMagic {
     }
 
     private static boolean findMagic(byte[] expected, byte[] actual) {
-        int i=0;
+        int i = 0;
         for (byte expectedByte : expected) {
             if (actual[i++] != expectedByte && expectedByte != '?') {
                 return false;
@@ -161,9 +193,9 @@ public enum FileMagic {
 
     /**
      * Get the file magic of the supplied {@link File}<p>
-     *
+     * <p>
      * Even if this method returns {@link FileMagic#UNKNOWN} it could potentially mean,
-     *  that the ZIP stream has leading junk bytes
+     * that the ZIP stream has leading junk bytes
      *
      * @param inp a file to be identified
      */
@@ -172,7 +204,7 @@ public enum FileMagic {
             // read as many bytes as possible, up to the required number of bytes
             byte[] data = new byte[MAX_PATTERN_LENGTH];
             int read = IOUtils.readFully(fis, data, 0, MAX_PATTERN_LENGTH);
-            if(read == -1) {
+            if (read == -1) {
                 return FileMagic.UNKNOWN;
             }
 
@@ -186,14 +218,14 @@ public enum FileMagic {
 
     /**
      * Get the file magic of the supplied InputStream (which MUST
-     *  support mark and reset).<p>
-     *
+     * support mark and reset).<p>
+     * <p>
      * If unsure if your InputStream does support mark / reset,
-     *  use {@link #prepareToCheckMagic(InputStream)} to wrap it and make
-     *  sure to always use that, and not the original!<p>
-     *
+     * use {@link #prepareToCheckMagic(InputStream)} to wrap it and make
+     * sure to always use that, and not the original!<p>
+     * <p>
      * Even if this method returns {@link FileMagic#UNKNOWN} it could potentially mean,
-     *  that the ZIP stream has leading junk bytes
+     * that the ZIP stream has leading junk bytes
      *
      * @param inp An InputStream which supports either mark/reset
      */

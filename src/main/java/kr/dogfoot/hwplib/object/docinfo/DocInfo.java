@@ -686,7 +686,7 @@ public class DocInfo {
 
         copyFaceNameList(from.hangulFaceNameList, hangulFaceNameList);
         copyFaceNameList(from.englishFaceNameList, englishFaceNameList);
-        copyFaceNameList(from.hanjaFaceNameList,  hanjaFaceNameList);
+        copyFaceNameList(from.hanjaFaceNameList, hanjaFaceNameList);
         copyFaceNameList(from.japaneseFaceNameList, japaneseFaceNameList);
         copyFaceNameList(from.etcFaceNameList, etcFaceNameList);
         copyFaceNameList(from.symbolFaceNameList, symbolFaceNameList);

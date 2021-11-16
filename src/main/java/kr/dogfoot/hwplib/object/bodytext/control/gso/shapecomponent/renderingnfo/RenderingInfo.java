@@ -1,7 +1,5 @@
 package kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponent.renderingnfo;
 
-import kr.dogfoot.hwplib.object.bodytext.Section;
-
 import java.util.ArrayList;
 
 /**

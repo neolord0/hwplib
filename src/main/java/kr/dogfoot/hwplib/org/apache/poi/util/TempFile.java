@@ -24,12 +24,16 @@ import java.io.IOException;
  * Interface for creating temporary files. Collects them all into one directory by default.
  */
 public final class TempFile {
-    /** The strategy used by {@link #createTempFile(String, String)} to create the temporary files. */
+    /**
+     * The strategy used by {@link #createTempFile(String, String)} to create the temporary files.
+     */
     private static TempFileCreationStrategy strategy = new DefaultTempFileCreationStrategy();
 
-    /** Define a constant for this property as it is sometimes mistypes as "tempdir" otherwise */
+    /**
+     * Define a constant for this property as it is sometimes mistypes as "tempdir" otherwise
+     */
     public static final String JAVA_IO_TMPDIR = "java.io.tmpdir";
-    
+
     private TempFile() {
         // no instances of this class
     }
@@ -38,7 +42,6 @@ public final class TempFile {
      * Configures the strategy used by {@link #createTempFile(String, String)} to create the temporary files.
      *
      * @param strategy The new strategy to be used to create the temporary files.
-     * 
      * @throws IllegalArgumentException When the given strategy is <code>null</code>.
      */
     public static void setTempFileCreationStrategy(TempFileCreationStrategy strategy) {
@@ -47,7 +50,7 @@ public final class TempFile {
         }
         TempFile.strategy = strategy;
     }
-    
+
     /**
      * Creates a new and empty temporary file. By default, files are collected into one directory and are
      * deleted on exit from the VM, although they can be kept by defining the system property
@@ -57,15 +60,13 @@ public final class TempFile {
      *
      * @param prefix The prefix to be used to generate the name of the temporary file.
      * @param suffix The suffix to be used to generate the name of the temporary file.
-     * 
      * @return The path to the newly created and empty temporary file.
-     * 
      * @throws IOException If no temporary file could be created.
      */
     public static File createTempFile(String prefix, String suffix) throws IOException {
         return strategy.createTempFile(prefix, suffix);
     }
-    
+
     public static File createTempDirectory(String name) throws IOException {
         return strategy.createTempDirectory(name);
     }

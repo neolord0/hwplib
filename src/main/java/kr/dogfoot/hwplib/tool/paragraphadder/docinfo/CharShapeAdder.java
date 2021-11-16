@@ -220,7 +220,7 @@ public class CharShapeAdder {
             target = null;
         }
 
-        if  (source == null && target == null) {
+        if (source == null && target == null) {
             return sourceId == targetId;
         } else if (source == null || target == null) {
             return false;

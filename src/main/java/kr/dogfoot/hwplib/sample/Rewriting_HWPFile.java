@@ -44,7 +44,7 @@ public class Rewriting_HWPFile {
     private static void test(String filename) throws Exception {
         HWPFile hwpFile = HWPReader.fromFile(fullPath(filename));
         if (hwpFile != null) {
-            String filename2 =  "result-rewrite-" + filename;
+            String filename2 = "result-rewrite-" + filename;
             HWPWriter.toFile(hwpFile, fullPath(filename2));
         }
     }

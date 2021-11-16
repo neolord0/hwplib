@@ -12,89 +12,117 @@ import kr.dogfoot.hwplib.object.bodytext.control.table.Cell;
 import kr.dogfoot.hwplib.object.bodytext.control.table.Row;
 import kr.dogfoot.hwplib.object.bodytext.paragraph.ParagraphList;
 
-import java.text.Normalizer;
 import java.util.ArrayList;
 
 public class ForControl {
-    public static void findInControlList(ArrayList<Control> controlList, FieldFormFinder.Result result) {
+    public static void findInControlList(ArrayList<Control> controlList, FieldFormFinder.Result result, FieldFormFinder.Option option) throws FieldFormFinder.StopFindException {
+        if (option.nameToFind() != null && option.onlyFirst() && result.added()) {
+            throw new FieldFormFinder.StopFindException();
+        }
+
         for (Control control : controlList) {
-            findInControl(control, result);
+            findInControl(control, result, option);
         }
     }
 
-    private static void findInControl(Control control, FieldFormFinder.Result result) {
+    private static void findInControl(Control control, FieldFormFinder.Result result, FieldFormFinder.Option option) throws FieldFormFinder.StopFindException {
         switch (control.getType()) {
             case Table:
-                findInTable((ControlTable) control, result);
+                findInTable((ControlTable) control, result, option);
                 break;
             case Gso:
-                findInGso((GsoControl) control, result);
+                findInGso((GsoControl) control, result, option);
                 break;
             case Form:
-                findInForm((ControlForm) control, result);
+                if (option.findForm()) {
+                    findInForm((ControlForm) control, result, option);
+                }
                 break;
         }
     }
 
-    private static void findInTable(ControlTable table, FieldFormFinder.Result result) {
+    private static void findInTable(ControlTable table, FieldFormFinder.Result result, FieldFormFinder.Option option) throws FieldFormFinder.StopFindException {
         for (Row row : table.getRowList()) {
             for (Cell cell : row.getCellList()) {
-                String fieldName = cell.getListHeader().getFieldName();
-                if (fieldName != null && fieldName.length() > 0) {
-                    result.addFieldData(fieldDataForAllParagraphs(fieldName, FieldData.FieldType.Cell, cell.getParagraphList()));
+                if (option.findCell()) {
+                    String fieldName = cell.getListHeader().getFieldName();
+                    if (fieldName != null && fieldName.length() > 0) {
+                        if (option.nameToFind() != null) {
+                            if (option.nameToFind().equals(fieldName)) {
+                                result.addFieldData(fieldDataForAllParagraphs(fieldName, FieldType.Cell, cell.getParagraphList()));
+                                if (option.onlyFirst()) {
+                                    throw new FieldFormFinder.StopFindException();
+                                }
+                            }
+                        } else {
+                            result.addFieldData(fieldDataForAllParagraphs(fieldName, FieldType.Cell, cell.getParagraphList()));
+                        }
+                    }
                 }
 
-                FieldFormFinder.findInParagraphList(cell.getParagraphList(), result);
+                FieldFormFinder.findInParagraphList(cell.getParagraphList(), result, option);
             }
         }
     }
 
-    private static FieldData fieldDataForAllParagraphs(String fieldName, FieldData.FieldType fieldType, ParagraphList paragraphList) {
+    private static FieldData fieldDataForAllParagraphs(String fieldName, FieldType fieldType, ParagraphList paragraphList) {
         FieldData fieldData = new FieldData(fieldName, fieldType, paragraphList);
-        fieldData.setStartPosition(0, -1);
+        fieldData.setStartPosition(0, 0);
         fieldData.setEndPosition(paragraphList.getParagraphCount() - 1, 0xffff);
         return fieldData;
     }
 
-    private static void findInGso(GsoControl control, FieldFormFinder.Result result) {
+    private static void findInGso(GsoControl control, FieldFormFinder.Result result, FieldFormFinder.Option option) throws FieldFormFinder.StopFindException {
         switch (control.getGsoType()) {
             case Rectangle:
-                findInTextBox(((ControlRectangle) control).getTextBox(), result);
+                findInTextBox(((ControlRectangle) control).getTextBox(), result, option);
                 break;
             case Ellipse:
-                findInTextBox(((ControlEllipse) control).getTextBox(), result);
+                findInTextBox(((ControlEllipse) control).getTextBox(), result, option);
                 break;
             case Arc:
-                findInTextBox(((ControlArc) control).getTextBox(), result);
+                findInTextBox(((ControlArc) control).getTextBox(), result, option);
                 break;
             case Polygon:
-                findInTextBox(((ControlPolygon) control).getTextBox(), result);
+                findInTextBox(((ControlPolygon) control).getTextBox(), result, option);
                 break;
             case Curve:
-                findInTextBox(((ControlCurve) control).getTextBox(), result);
+                findInTextBox(((ControlCurve) control).getTextBox(), result, option);
                 break;
             case Container:
-                findInContainer((ControlContainer) control ,result);
+                findInContainer((ControlContainer) control, result, option);
                 break;
         }
     }
 
-    private static void findInTextBox(TextBox textBox, FieldFormFinder.Result result) {
-        String fieldName = textBox.getListHeader().getFieldName();
-        if (fieldName != null && fieldName.length() > 0) {
-            result.addFieldData(fieldDataForAllParagraphs(fieldName, FieldData.FieldType.Gso, textBox.getParagraphList()));
+    private static void findInTextBox(TextBox textBox, FieldFormFinder.Result result, FieldFormFinder.Option option) throws FieldFormFinder.StopFindException {
+        if (option.findGso()) {
+            String fieldName = textBox.getListHeader().getFieldName();
+            if (fieldName != null && fieldName.length() > 0) {
+                if (option.nameToFind() != null) {
+                    if (option.nameToFind().equals(fieldName)) {
+                        result.addFieldData(fieldDataForAllParagraphs(fieldName, FieldType.Gso, textBox.getParagraphList()));
+                        if (option.onlyFirst()) {
+                            throw new FieldFormFinder.StopFindException();
+                        }
+                    }
+                } else {
+                    result.addFieldData(fieldDataForAllParagraphs(fieldName, FieldType.Gso, textBox.getParagraphList()));
+                }
+
+            }
         }
 
-        FieldFormFinder.findInParagraphList(textBox.getParagraphList(), result);
+        FieldFormFinder.findInParagraphList(textBox.getParagraphList(), result, option);
     }
 
-    private static void findInContainer(ControlContainer container, FieldFormFinder.Result result) {
+    private static void findInContainer(ControlContainer container, FieldFormFinder.Result result, FieldFormFinder.Option option) throws FieldFormFinder.StopFindException {
         for (Control childControl : container.getChildControlList()) {
-            findInControl(childControl, result);
+            findInControl(childControl, result, option);
         }
     }
 
-    private static void findInForm(ControlForm form, FieldFormFinder.Result result) {
+    private static void findInForm(ControlForm form, FieldFormFinder.Result result, FieldFormFinder.Option option) throws FieldFormFinder.StopFindException {
         if (form.getFormObject().getType() == FormObjectType.RadioButton ||
                 form.getFormObject().getType() == FormObjectType.CheckBox) {
             PropertySet commonSet = (PropertySet) form.getFormObject().getProperties().getProperty("CommonSet");
@@ -103,9 +131,16 @@ public class ForControl {
             PropertySet buttonSet = (PropertySet) form.getFormObject().getProperties().getProperty("ButtonSet");
             PropertyNormal value = (PropertyNormal) buttonSet.getProperty("Value");
 
-            result.addFormData(new FormData(name.getValue(), form.getFormObject().getType(), value.getValue()));
+            if (option.nameToFind() != null) {
+                if (option.nameToFind().equals(name.getValue())) {
+                    result.addFormData(new FormData(name.getValue(), form.getFormObject().getType(), value.getValue()));
+                    if (option.onlyFirst()) {
+                        throw new FieldFormFinder.StopFindException();
+                    }
+                }
+            } else {
+                result.addFormData(new FormData(name.getValue(), form.getFormObject().getType(), value.getValue()));
+            }
         }
     }
 }
-
-

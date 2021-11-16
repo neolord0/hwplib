@@ -14,7 +14,7 @@ import java.util.ArrayList;
  */
 public class Setting_ClickHere_FieldText {
     public static void main(String[] args) throws Exception {
-        HWPFile hwpFile = HWPReader.fromFile("sample_hwp" + File.separator  + "basic" + File.separator + "필드-누름틀.hwp");
+        HWPFile hwpFile = HWPReader.fromFile("sample_hwp" + File.separator + "basic" + File.separator + "필드-누름틀.hwp");
         if (hwpFile != null) {
             {
                 ArrayList<String> textList = new ArrayList<String>();
@@ -29,7 +29,7 @@ public class Setting_ClickHere_FieldText {
                 System.out.println("필드2 설정경과  = " + sfr);
             }
 
-            HWPWriter.toFile(hwpFile, "sample_hwp" + File.separator  + "basic" + File.separator + "result-setting-필드-누름틀.hwp");
+            HWPWriter.toFile(hwpFile, "sample_hwp" + File.separator + "basic" + File.separator + "result-setting-필드-누름틀.hwp");
         }
     }
 }

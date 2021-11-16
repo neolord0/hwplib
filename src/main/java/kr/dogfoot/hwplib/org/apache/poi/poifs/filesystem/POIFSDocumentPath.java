@@ -1,4 +1,3 @@
-
 /* ====================================================================
    Licensed to the Apache Software Foundation (ASF) under one or more
    contributor license agreements.  See the NOTICE file distributed with
@@ -15,14 +14,14 @@
    See the License for the specific language governing permissions and
    limitations under the License.
 ==================================================================== */
-        
+
 
 package kr.dogfoot.hwplib.org.apache.poi.poifs.filesystem;
 
-import java.io.File;
-
-import kr.dogfoot.hwplib.org.apache.poi.util.POILogger;
 import kr.dogfoot.hwplib.org.apache.poi.util.POILogFactory;
+import kr.dogfoot.hwplib.org.apache.poi.util.POILogger;
+
+import java.io.File;
 
 /**
  * Class POIFSDocumentPath
@@ -31,10 +30,9 @@ import kr.dogfoot.hwplib.org.apache.poi.util.POILogFactory;
  * @version %I%, %G%
  */
 
-public class POIFSDocumentPath
-{
+public class POIFSDocumentPath {
     private static final POILogger log = POILogFactory.getLogger(POIFSDocumentPath.class);
-          
+
     private final String[] components;
     private int hashcode; //lazy-compute hashCode
 
@@ -55,32 +53,25 @@ public class POIFSDocumentPath
      *                   zero length, the POIFSDocumentPath is
      *                   appropriate for a document that is in the
      *                   root of a POIFSFileSystem
-     *
-     * @exception IllegalArgumentException if any of the elements in
-     *                                     the components parameter
-     *                                     are null or have zero
-     *                                     length
+     * @throws IllegalArgumentException if any of the elements in
+     *                                  the components parameter
+     *                                  are null or have zero
+     *                                  length
      */
 
-    public POIFSDocumentPath(final String [] components)
-        throws IllegalArgumentException
-    {
-        if (components == null)
-        {
-            this.components = new String[ 0 ];
-        }
-        else
-        {
-            this.components = new String[ components.length ];
-            for (int j = 0; j < components.length; j++)
-            {
-                if ((components[ j ] == null)
-                        || (components[ j ].length() == 0))
-                {
+    public POIFSDocumentPath(final String[] components)
+            throws IllegalArgumentException {
+        if (components == null) {
+            this.components = new String[0];
+        } else {
+            this.components = new String[components.length];
+            for (int j = 0; j < components.length; j++) {
+                if ((components[j] == null)
+                        || (components[j].length() == 0)) {
                     throw new IllegalArgumentException(
-                        "components cannot contain null or empty strings");
+                            "components cannot contain null or empty strings");
                 }
-                this.components[ j ] = components[ j ];
+                this.components[j] = components[j];
             }
         }
     }
@@ -92,54 +83,44 @@ public class POIFSDocumentPath
      * POIFSDocumentPath by passing it a null or empty String array
      */
 
-    public POIFSDocumentPath()
-    {
-        this.components = new String[ 0 ];
+    public POIFSDocumentPath() {
+        this.components = new String[0];
     }
 
     /**
      * constructor that adds additional subdirectories to an existing
      * path
      *
-     * @param path the existing path
+     * @param path       the existing path
      * @param components the additional subdirectory names to be added
-     *
-     * @exception IllegalArgumentException if any of the Strings in
-     *                                     components is null or zero
-     *                                     length
+     * @throws IllegalArgumentException if any of the Strings in
+     *                                  components is null or zero
+     *                                  length
      */
 
     public POIFSDocumentPath(final POIFSDocumentPath path,
-                             final String [] components)
-        throws IllegalArgumentException
-    {
-        if (components == null)
-        {
-            this.components = new String[ path.components.length ];
-        }
-        else
-        {
+                             final String[] components)
+            throws IllegalArgumentException {
+        if (components == null) {
+            this.components = new String[path.components.length];
+        } else {
             this.components =
-                new String[ path.components.length + components.length ];
+                    new String[path.components.length + components.length];
         }
         System.arraycopy(path.components, 0, this.components, 0, path.components.length);
-        if (components != null)
-        {
-            for (int j = 0; j < components.length; j++)
-            {
-                if (components[ j ] == null)
-                {
+        if (components != null) {
+            for (int j = 0; j < components.length; j++) {
+                if (components[j] == null) {
                     throw new IllegalArgumentException(
-                        "components cannot contain null");
+                            "components cannot contain null");
                 }
-                if (components[ j ].length() == 0)
-                {
+                if (components[j].length() == 0) {
                     log.log(POILogger.WARN, "Directory under " + path + " has an empty name, " +
                             "not all OLE2 readers will handle this file correctly!");
                 }
-                
-                this.components[ j + path.components.length ] =
-                    components[ j ];
+
+                this.components[j + path.components.length] =
+                        components[j];
             }
         }
     }
@@ -150,32 +131,23 @@ public class POIFSDocumentPath
      * component String is equal to its coresponding component String
      *
      * @param o the object we're checking equality for
-     *
      * @return true if the object is equal to this object
      */
 
-    public boolean equals(final Object o)
-    {
+    public boolean equals(final Object o) {
         boolean rval = false;
 
-        if ((o != null) && (o.getClass() == this.getClass()))
-        {
-            if (this == o)
-            {
+        if ((o != null) && (o.getClass() == this.getClass())) {
+            if (this == o) {
                 rval = true;
-            }
-            else
-            {
-                POIFSDocumentPath path = ( POIFSDocumentPath ) o;
+            } else {
+                POIFSDocumentPath path = (POIFSDocumentPath) o;
 
-                if (path.components.length == this.components.length)
-                {
+                if (path.components.length == this.components.length) {
                     rval = true;
-                    for (int j = 0; j < this.components.length; j++)
-                    {
-                        if (!path.components[ j ]
-                                .equals(this.components[ j ]))
-                        {
+                    for (int j = 0; j < this.components.length; j++) {
+                        if (!path.components[j]
+                                .equals(this.components[j])) {
                             rval = false;
                             break;
                         }
@@ -192,20 +164,17 @@ public class POIFSDocumentPath
      * @return hashcode
      */
 
-    public int hashCode()
-    {
-        if (hashcode == 0)
-        {
+    public int hashCode() {
+        if (hashcode == 0) {
             hashcode = computeHashCode();
         }
         return hashcode;
     }
-    
+
     private int computeHashCode() {
         int code = 0;
-        for (int j = 0; j < components.length; j++)
-        {
-            code += components[ j ].hashCode();
+        for (int j = 0; j < components.length; j++) {
+            code += components[j].hashCode();
         }
         return code;
     }
@@ -214,8 +183,7 @@ public class POIFSDocumentPath
      * @return the number of components
      */
 
-    public int length()
-    {
+    public int length() {
         return components.length;
     }
 
@@ -223,50 +191,44 @@ public class POIFSDocumentPath
      * get the specified component
      *
      * @param n which component (0 ... length() - 1)
-     *
      * @return the nth component;
-     *
-     * @exception ArrayIndexOutOfBoundsException if n &lt; 0 or n >= length()
+     * @throws ArrayIndexOutOfBoundsException if n &lt; 0 or n >= length()
      */
 
     public String getComponent(int n)
-        throws ArrayIndexOutOfBoundsException
-    {
-        return components[ n ];
+            throws ArrayIndexOutOfBoundsException {
+        return components[n];
     }
 
     /**
      * <p>Returns the path's parent or <code>null</code> if this path
      * is the root path.</p>
      *
-     * @since 2002-01-24
      * @return path of parent, or null if this path is the root path
+     * @since 2002-01-24
      */
 
-    public POIFSDocumentPath getParent()
-    {
+    public POIFSDocumentPath getParent() {
         final int length = components.length - 1;
 
-        if (length < 0)
-        {
+        if (length < 0) {
             return null;
         }
-        String[] parentComponents = new String[ length ];
+        String[] parentComponents = new String[length];
         System.arraycopy(components, 0, parentComponents, 0, length);
 
         return new POIFSDocumentPath(parentComponents);
     }
-    
+
     /**
      * <p>Returns the last name in the document path's name sequence.
      * If the document path's name sequence is empty, then the empty string is returned.</p>
      *
-     * @since 2016-04-09
      * @return The last name in the document path's name sequence, or empty string if this is the root path
+     * @since 2016-04-09
      */
 
-    public String getName()
-    {
+    public String getName() {
         if (components.length == 0) {
             return "";
         }
@@ -278,21 +240,17 @@ public class POIFSDocumentPath
      * separated by the platform-specific file separator {@link File#separatorChar}</p>
      *
      * @return string representation
-     *
      * @since 2002-01-24
      */
 
-    public String toString()
-    {
+    public String toString() {
         final StringBuilder b = new StringBuilder();
-        final int          l = length();
+        final int l = length();
 
         b.append(File.separatorChar);
-        for (int i = 0; i < l; i++)
-        {
+        for (int i = 0; i < l; i++) {
             b.append(getComponent(i));
-            if (i < l - 1)
-            {
+            if (i < l - 1) {
                 b.append(File.separatorChar);
             }
         }

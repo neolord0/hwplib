@@ -18,7 +18,7 @@ public class ParaNumber {
     public void reset(int headID, int level, int valueForLevel1) {
         levelNumbers[0] = valueForLevel1;
         for (int level2 = 1; level2 < LevelCount; level2++) {
-            if (level >= level2) { 
+            if (level >= level2) {
                 levelNumbers[level2] = 1;
             } else {
                 levelNumbers[level2] = 0;

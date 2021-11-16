@@ -16,7 +16,7 @@ public class CharShapeAdder {
         charShape.getFaceNameIds().setForAll(1);
         charShape.getRatios().setForAll((short) 100);
         charShape.getCharSpaces().setForAll((byte) 0);
-        charShape.getRelativeSizes().setForAll((short) 100);;
+        charShape.getRelativeSizes().setForAll((short) 100);
         charShape.getCharOffsets().setForAll((byte) 0);
         charShape.setBaseSize(1000);
         charShape.getProperty().setValue(0);
@@ -34,7 +34,7 @@ public class CharShapeAdder {
         charShape.getFaceNameIds().setForAll(0);
         charShape.getRatios().setForAll((short) 100);
         charShape.getCharSpaces().setForAll((byte) 0);
-        charShape.getRelativeSizes().setForAll((short) 100);;
+        charShape.getRelativeSizes().setForAll((short) 100);
         charShape.getCharOffsets().setForAll((byte) 0);
         charShape.setBaseSize(1000);
         charShape.getProperty().setValue(0);
@@ -52,7 +52,7 @@ public class CharShapeAdder {
         charShape.getFaceNameIds().setForAll(0);
         charShape.getRatios().setForAll((short) 100);
         charShape.getCharSpaces().setForAll((byte) 0);
-        charShape.getRelativeSizes().setForAll((short) 100);;
+        charShape.getRelativeSizes().setForAll((short) 100);
         charShape.getCharOffsets().setForAll((byte) 0);
         charShape.setBaseSize(900);
         charShape.getProperty().setValue(0);
@@ -70,7 +70,7 @@ public class CharShapeAdder {
         charShape.getFaceNameIds().setForAll(1);
         charShape.getRatios().setForAll((short) 100);
         charShape.getCharSpaces().setForAll((byte) 0);
-        charShape.getRelativeSizes().setForAll((short) 100);;
+        charShape.getRelativeSizes().setForAll((short) 100);
         charShape.getCharOffsets().setForAll((byte) 0);
         charShape.setBaseSize(900);
         charShape.getProperty().setValue(0);
@@ -88,7 +88,7 @@ public class CharShapeAdder {
         charShape.getFaceNameIds().setForAll(0);
         charShape.getRatios().setForAll((short) 100);
         charShape.getCharSpaces().setForAll((byte) -5);
-        charShape.getRelativeSizes().setForAll((short) 100);;
+        charShape.getRelativeSizes().setForAll((short) 100);
         charShape.getCharOffsets().setForAll((byte) 0);
         charShape.setBaseSize(900);
         charShape.getProperty().setValue(0);
