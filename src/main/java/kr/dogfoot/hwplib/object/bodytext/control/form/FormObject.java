@@ -22,4 +22,9 @@ public class FormObject {
     public PropertySet getProperties() {
         return properties;
     }
+
+    public void copy(FormObject from) {
+        type = from.type;
+        properties.copy(from.properties);
+    }
 }

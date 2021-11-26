@@ -2,8 +2,8 @@ package kr.dogfoot.hwplib.tool.paragraphadder.control;
 
 import kr.dogfoot.hwplib.object.bodytext.control.gso.*;
 import kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponenteach.*;
-import kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponenteach.curve.CurveSegmentType;
-import kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponenteach.picture.*;
+import kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponenteach.picture.InnerMargin;
+import kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponenteach.picture.PictureEffect;
 import kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponenteach.polygon.PositionXY;
 import kr.dogfoot.hwplib.object.bodytext.control.gso.textbox.ListHeaderForTextBox;
 import kr.dogfoot.hwplib.object.bodytext.control.gso.textbox.TextBox;
@@ -47,15 +47,10 @@ public class GsoCopier {
         }
     }
 
-
     private static void line(ControlLine source, ControlLine target, DocInfoAdder docInfoAdder) {
         ShapeComponentLine sourceSCL = source.getShapeComponentLine();
         ShapeComponentLine targetSCL = target.getShapeComponentLine();
-
-        targetSCL.setStartX(sourceSCL.getStartX());
-        targetSCL.setStartY(sourceSCL.getStartY());
-        targetSCL.setEndX(sourceSCL.getEndX());
-        targetSCL.setEndY(sourceSCL.getEndY());
+        targetSCL.copy(sourceSCL);
     }
 
     private static void rectangle(ControlRectangle source, ControlRectangle target, DocInfoAdder docInfoAdder) {
@@ -63,7 +58,10 @@ public class GsoCopier {
             target.createTextBox();
             textBox(source.getTextBox(), target.getTextBox(), docInfoAdder);
         }
-        shapeComponentRectangle(source.getShapeComponentRectangle(), target.getShapeComponentRectangle());
+
+        ShapeComponentRectangle sourceSCR = source.getShapeComponentRectangle();
+        ShapeComponentRectangle targetSCR = target.getShapeComponentRectangle();
+        targetSCR.copy(sourceSCR);
     }
 
     private static void textBox(TextBox source, TextBox target, DocInfoAdder docInfoAdder) {
@@ -72,27 +70,7 @@ public class GsoCopier {
     }
 
     private static void listHeader(ListHeaderForTextBox source, ListHeaderForTextBox target) {
-        target.setParaCount(source.getParaCount());
-        target.getProperty().setValue(source.getProperty().getValue());
-        target.setLeftMargin(source.getLeftMargin());
-        target.setRightMargin(source.getRightMargin());
-        target.setTopMargin(source.getTopMargin());
-        target.setBottomMargin(source.getBottomMargin());
-        target.setTextWidth(source.getTextWidth());
-        target.setEditableAtFormMode(source.isEditableAtFormMode());
-        target.setFieldName(source.getFieldName());
-    }
-
-    private static void shapeComponentRectangle(ShapeComponentRectangle source, ShapeComponentRectangle target) {
-        target.setRoundRate(source.getRoundRate());
-        target.setX1(source.getX1());
-        target.setY1(source.getY1());
-        target.setX2(source.getX2());
-        target.setY2(source.getY2());
-        target.setX3(source.getX3());
-        target.setY3(source.getY3());
-        target.setX4(source.getX4());
-        target.setY4(source.getY4());
+        target.copy(source);
     }
 
     private static void ellipse(ControlEllipse source, ControlEllipse target, DocInfoAdder docInfoAdder) {
@@ -100,43 +78,21 @@ public class GsoCopier {
             target.createTextBox();
             textBox(source.getTextBox(), target.getTextBox(), docInfoAdder);
         }
-        shapeComponentEllipse(source.getShapeComponentEllipse(), target.getShapeComponentEllipse());
-    }
 
-    private static void shapeComponentEllipse(ShapeComponentEllipse source, ShapeComponentEllipse target) {
-        target.getProperty().setValue(source.getProperty().getValue());
-        target.setCenterX(source.getCenterX());
-        target.setCenterY(source.getCenterY());
-        target.setAxis1X(source.getAxis1X());
-        target.setAxis1Y(source.getAxis1Y());
-        target.setAxis2X(source.getAxis2X());
-        target.setAxis2Y(source.getAxis2Y());
-        target.setStartX(source.getStartX());
-        target.setStartY(source.getStartY());
-        target.setEndX(source.getEndX());
-        target.setEndY(source.getEndY());
-        target.setStartX2(source.getStartX2());
-        target.setStartY2(source.getStartY2());
-        target.setEndX2(source.getEndX2());
-        target.setEndY2(source.getEndY2());
+        ShapeComponentEllipse sourceSCE = source.getShapeComponentEllipse();
+        ShapeComponentEllipse targetSCE = target.getShapeComponentEllipse();
+        targetSCE.copy(sourceSCE);
     }
 
     private static void arc(ControlArc source, ControlArc target, DocInfoAdder docInfoAdder) {
         if (source.getTextBox() != null) {
             target.createTextBox();
             textBox(source.getTextBox(), target.getTextBox(), docInfoAdder);
-            shapeComponentArc(source.getShapeComponentArc(), target.getShapeComponentArc());
         }
-    }
 
-    private static void shapeComponentArc(ShapeComponentArc source, ShapeComponentArc target) {
-        target.setArcBorder(source.getArcBorder());
-        target.setCenterX(source.getCenterX());
-        target.setCenterY(source.getCenterY());
-        target.setAxis1X(source.getAxis1X());
-        target.setAxis1Y(source.getAxis1Y());
-        target.setAxis2X(source.getAxis2X());
-        target.setAxis2Y(source.getAxis2Y());
+        ShapeComponentArc sourceSCA = source.getShapeComponentArc();
+        ShapeComponentArc targetSCA = target.getShapeComponentArc();
+        targetSCA.copy(sourceSCA);
     }
 
     private static void polygon(ControlPolygon source, ControlPolygon target, DocInfoAdder docInfoAdder) {
@@ -144,15 +100,10 @@ public class GsoCopier {
             target.createTextBox();
             textBox(source.getTextBox(), target.getTextBox(), docInfoAdder);
         }
-        shapeComponentPolygon(source.getShapeComponentPolygon(), target.getShapeComponentPolygon());
-    }
 
-    private static void shapeComponentPolygon(ShapeComponentPolygon source, ShapeComponentPolygon target) {
-        for (PositionXY positionXY : source.getPositionList()) {
-            PositionXY targetPositionXY = target.addNewPosition();
-            targetPositionXY.setX(positionXY.getX());
-            targetPositionXY.setY(positionXY.getY());
-        }
+        ShapeComponentPolygon sourceSCP = source.getShapeComponentPolygon();
+        ShapeComponentPolygon targetSCP = target.getShapeComponentPolygon();
+        targetSCP.copy(sourceSCP);
     }
 
     private static void curve(ControlCurve source, ControlCurve target, DocInfoAdder docInfoAdder) {
@@ -160,22 +111,10 @@ public class GsoCopier {
             target.createTextBox();
             textBox(source.getTextBox(), target.getTextBox(), docInfoAdder);
         }
-        shapeComponentCurve(source.getShapeComponentCurve(), target.getShapeComponentCurve());
-    }
 
-    private static void shapeComponentCurve(ShapeComponentCurve source, ShapeComponentCurve target) {
-        for (PositionXY positionXY : source.getPositionList()) {
-            positionXY(positionXY, target.addNewPosition());
-        }
-
-        for (CurveSegmentType curveSegmentType : source.getSegmentTypeList()) {
-            target.addCurveSegmentType(curveSegmentType);
-        }
-    }
-
-    private static void positionXY(PositionXY source, PositionXY target) {
-        target.setX(source.getX());
-        target.setY(source.getY());
+        ShapeComponentCurve sourceSCC = source.getShapeComponentCurve();
+        ShapeComponentCurve targetSCC = target.getShapeComponentCurve();
+        targetSCC.copy(sourceSCC);
     }
 
     private static void picture(ControlPicture source, ControlPicture target, DocInfoAdder docInfoAdder) {
@@ -202,88 +141,17 @@ public class GsoCopier {
         targetSCP.setImageHeight(sourceSCP.getImageHeight());
     }
 
-    private static void innerMargin(InnerMargin source, InnerMargin target) {
-        target.setLeft(source.getLeft());
-        target.setRight(source.getRight());
-        target.setTop(source.getTop());
-        target.setBottom(source.getBottom());
+    private static void positionXY(PositionXY source, PositionXY target) {
+        target.copy(source);
     }
 
+    private static void innerMargin(InnerMargin source, InnerMargin target) {
+        target.copy(source);
+    }
 
     private static void pictureEffect(PictureEffect source, PictureEffect target) {
-        target.getProperty().setValue(source.getProperty().getValue());
-        if (source.getProperty().hasShadowEffect()) {
-            target.createShadowEffect();
-            shadowEffect(source.getShadowEffect(), target.getShadowEffect());
-        }
-        if (source.getProperty().hasNeonEffect()) {
-            target.createNeonEffect();
-            neonEffect(source.getNeonEffect(), target.getNeonEffect());
-        }
-        if (source.getProperty().hasSoftBorderEffect()) {
-            target.createSoftEdgeEffect();
-            softEdgeEffect(source.getSoftEdgeEffect(), target.getSoftEdgeEffect());
-        }
-        if (source.getProperty().hasReflectionEffect()) {
-            target.createReflectionEffect();
-            reflectionEffect(source.getReflectionEffect(), target.getReflectionEffect());
-        }
+        target.copy(source);
     }
-
-    private static void shadowEffect(ShadowEffect source, ShadowEffect target) {
-        target.setStyle(source.getStyle());
-        target.setTransparency(source.getTransparency());
-        target.setCloudy(source.getCloudy());
-        target.setDirection(source.getDirection());
-        target.setDistance(source.getDistance());
-        target.setSort(source.getSort());
-        target.setTiltAngleX(source.getTiltAngleX());
-        target.setTiltAngleY(source.getTiltAngleY());
-        target.setZoomRateX(source.getZoomRateX());
-        target.setZoomRateY(source.getZoomRateY());
-        target.setRotateWithShape(source.getRotateWithShape());
-
-        colorWithEffect(source.getColor(), target.getColor());
-    }
-
-    private static void colorWithEffect(ColorWithEffect source, ColorWithEffect target) {
-        target.setType(source.getType());
-        target.setColor(source.getColor());
-        for (ColorEffect sourceCE : source.getColorEffectList()) {
-            ColorEffect targetCE = target.addNewColorEffect();
-
-            targetCE.setSort(sourceCE.getSort());
-            targetCE.setValue(sourceCE.getValue());
-        }
-    }
-
-    private static void neonEffect(NeonEffect source, NeonEffect target) {
-        target.setTransparency(source.getTransparency());
-        target.setRadius(source.getRadius());
-        colorWithEffect(source.getColor(), target.getColor());
-    }
-
-    private static void softEdgeEffect(SoftEdgeEffect source, SoftEdgeEffect target) {
-        target.setRadius(source.getRadius());
-    }
-
-    private static void reflectionEffect(ReflectionEffect source, ReflectionEffect target) {
-        target.setStyle(source.getStyle());
-        target.setRadius(source.getRadius());
-        target.setDirection(source.getDirection());
-        target.setDistance(source.getDistance());
-        target.setTiltAngleX(source.getTiltAngleX());
-        target.setTiltAngleY(source.getTiltAngleY());
-        target.setZoomRateX(source.getZoomRateX());
-        target.setZoomRateY(source.getZoomRateY());
-        target.setRotationStyle(source.getRotationStyle());
-        target.setStartTransparency(source.getStartTransparency());
-        target.setStartPosition(source.getStartPosition());
-        target.setEndTransparency(source.getEndTransparency());
-        target.setEndPosition(source.getEndPosition());
-        target.setOffsetDirection(source.getOffsetDirection());
-    }
-
 
     private static void ole(ControlOLE source, ControlOLE target, DocInfoAdder docInfoAdder) {
         ShapeComponentOLE sourceSCO = source.getShapeComponentOLE();
@@ -292,7 +160,7 @@ public class GsoCopier {
         targetSCO.getProperty().setValue(sourceSCO.getProperty().getValue());
         targetSCO.setExtentWidth(sourceSCO.getExtentWidth());
         targetSCO.setExtentHeight(sourceSCO.getExtentHeight());
-        targetSCO.setBinDataId(docInfoAdder.forBinData().processById(sourceSCO.getBinDataId()));
+        targetSCO.setBinDataId((docInfoAdder == null) ? sourceSCO.getBinDataId() : docInfoAdder.forBinData().processById(sourceSCO.getBinDataId()));
         targetSCO.getBorderColor().setValue(sourceSCO.getBorderColor().getValue());
         targetSCO.setBorderThickness(sourceSCO.getBorderThickness());
         targetSCO.getBorderProperty().setValue(sourceSCO.getBorderProperty().getValue());
@@ -310,11 +178,6 @@ public class GsoCopier {
     private static void objectLinkLine(ControlObjectLinkLine source, ControlObjectLinkLine target, DocInfoAdder docInfoAdder) {
         ShapeComponentLineForObjectLinkLine sourceSCL = source.getShapeComponentLine();
         ShapeComponentLineForObjectLinkLine targetSCL = target.getShapeComponentLine();
-
-        targetSCL.setStartX(sourceSCL.getStartX());
-        targetSCL.setStartY(sourceSCL.getStartY());
-        targetSCL.setEndX(sourceSCL.getEndX());
-        targetSCL.setEndY(sourceSCL.getEndY());
-        targetSCL.setUnknown(sourceSCL.getUnknown());
+        targetSCL.copy(sourceSCL);
     }
 }

@@ -25,6 +25,13 @@ public class PropertyNormal extends Property {
         this.value = value;
     }
 
+    public Property clone() {
+        PropertyNormal cloned = new PropertyNormal(getName());
+        cloned.type = type;
+        cloned.value = value;
+        return cloned;
+    }
+
     public String toString() {
         StringBuffer sb = new StringBuffer();
         if (type == PropertyType.WString) {

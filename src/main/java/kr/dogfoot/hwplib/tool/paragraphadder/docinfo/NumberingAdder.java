@@ -17,6 +17,10 @@ public class NumberingAdder {
     }
 
     public int processById(int sourceId) {
+        if (docInfoAdder.getSourceHWPFile() == docInfoAdder.getTargetHWPFile()) {
+            return sourceId;
+        }
+
         // id == index + 1
         Numbering source = docInfoAdder.getSourceHWPFile().getDocInfo().getNumberingList().get(sourceId - 1);
         int id = findFromTarget(source);

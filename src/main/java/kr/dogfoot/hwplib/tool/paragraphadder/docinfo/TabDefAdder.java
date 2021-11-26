@@ -18,6 +18,10 @@ public class TabDefAdder {
     }
 
     public int processById(int sourceId) {
+        if (docInfoAdder.getSourceHWPFile() == docInfoAdder.getTargetHWPFile()) {
+            return sourceId;
+        }
+
         TabDef source = docInfoAdder.getSourceHWPFile().getDocInfo().getTabDefList().get(sourceId);
         int index = findFromTarget(source);
         if (index == -1) {

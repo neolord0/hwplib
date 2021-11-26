@@ -312,7 +312,7 @@ public class ParaText {
      * 하이퍼 링크의 끝을 위한 확장 컨트롤 문자를 추가한다.
      */
     public void addExtendCharForHyperlinkEnd() {
-        HWPCharControlExtend chExtend = addNewExtendControlChar();
+        HWPCharControlInline chExtend = addNewInlineControlChar();
         chExtend.setCode((short) 0x0004);
         byte[] addition = new byte[12];
         addition[3] = '%';

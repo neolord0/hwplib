@@ -7,16 +7,10 @@ import kr.dogfoot.hwplib.tool.paragraphadder.docinfo.DocInfoAdder;
 
 public class CaptionCopier {
     public static void copy(Caption source, Caption target, DocInfoAdder docInfoAdder) {
-        listHeader(source.getListHeader(), target.getListHeader(), docInfoAdder);
-        ParagraphCopier.listCopy(source.getParagraphList(), target.getParagraphList(), docInfoAdder);
-    }
+        ListHeaderForCaption sourceLH = source.getListHeader();
+        ListHeaderForCaption targetLH = target.getListHeader();
+        targetLH.copy(sourceLH);
 
-    private static void listHeader(ListHeaderForCaption source, ListHeaderForCaption target, DocInfoAdder docInfoAdder) {
-        target.setParaCount(source.getParaCount());
-        target.getProperty().setValue(source.getProperty().getValue());
-        target.getCaptionProperty().setValue(source.getCaptionProperty().getValue());
-        target.setCaptionWidth(source.getCaptionWidth());
-        target.setSpaceBetweenCaptionAndFrame(source.getSpaceBetweenCaptionAndFrame());
-        target.setTextWidth(source.getTextWidth());
+        ParagraphCopier.listCopy(source.getParagraphList(), target.getParagraphList(), docInfoAdder);
     }
 }

@@ -7,42 +7,25 @@ import kr.dogfoot.hwplib.tool.paragraphadder.docinfo.DocInfoAdder;
 
 public class EquationCopier {
     public static void copy(ControlEquation source, ControlEquation target, DocInfoAdder docInfoAdder) {
-        header(source.getHeader(), target.getHeader());
-        caption(source, target, docInfoAdder);
-        eqEdit(source.getEQEdit(), target.getEQEdit(), docInfoAdder);
-    }
+        CtrlHeaderGso sourceH = source.getHeader();
+        CtrlHeaderGso targetH = target.getHeader();
+        targetH.copy(sourceH);
 
-    private static void header(CtrlHeaderGso source, CtrlHeaderGso target) {
-        target.getProperty().setValue(source.getProperty().getValue());
-        target.setyOffset(source.getyOffset());
-        target.setxOffset(source.getxOffset());
-        target.setWidth(source.getWidth());
-        target.setHeight(source.getHeight());
-        target.setzOrder(source.getzOrder());
-        target.setOutterMarginLeft(source.getOutterMarginLeft());
-        target.setOutterMarginRight(source.getOutterMarginRight());
-        target.setOutterMarginTop(source.getOutterMarginTop());
-        target.setOutterMarginBottom(source.getOutterMarginBottom());
-        target.setInstanceId(source.getInstanceId());
-        target.setPreventPageDivide(source.isPreventPageDivide());
-        target.getExplanation().copy(source.getExplanation());
+        CtrlDataCopier.copy(source, target, docInfoAdder);
+
+        caption(source, target, docInfoAdder);
+
+        EQEdit sourceEE = source.getEQEdit();
+        EQEdit targetEE = target.getEQEdit();
+        targetEE.copy(sourceEE);
     }
 
     private static void caption(ControlEquation source, ControlEquation target, DocInfoAdder docInfoAdder) {
         if (source.getCaption() != null) {
             target.createCaption();
             CaptionCopier.copy(source.getCaption(), target.getCaption(), docInfoAdder);
+        } else {
+            target.deleteCaption();
         }
-    }
-
-    private static void eqEdit(EQEdit source, EQEdit target, DocInfoAdder docInfoAdder) {
-        target.setProperty(source.getProperty());
-        target.getScript().copy(source.getScript());
-        target.setLetterSize(source.getLetterSize());
-        target.getLetterColor().setValue(source.getLetterColor().getValue());
-        target.setBaseLine(source.getBaseLine());
-        target.setUnknown(source.getUnknown());
-        target.getVersionInfo().copy(source.getVersionInfo());
-        target.getFontName().copy(source.getFontName());
     }
 }

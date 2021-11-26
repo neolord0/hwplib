@@ -16,6 +16,10 @@ public class BulletAdder {
     }
 
     public int processById(int sourceId) {
+        if (docInfoAdder.getSourceHWPFile() == docInfoAdder.getTargetHWPFile()) {
+            return sourceId;
+        }
+
         // id == index + 1
         Bullet source = docInfoAdder.getSourceHWPFile().getDocInfo().getBulletList().get(sourceId - 1);
         int id = findFromTarget(source);

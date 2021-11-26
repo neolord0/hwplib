@@ -60,6 +60,13 @@ public class Section implements ParagraphListInterface {
         return paragraphList.get(index);
     }
 
+    public Paragraph getLastParagraph() {
+        if (paragraphList.size() > 0) {
+            return paragraphList.get(paragraphList.size() - 1);
+        }
+        return null;
+    }
+
     /**
      * index 번째의 문단을 삭제한다.
      *

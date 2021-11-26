@@ -7,12 +7,8 @@ import kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponent.ShapeCompone
 import kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponent.ShapeComponentContainer;
 import kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponent.ShapeComponentNormal;
 import kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponent.lineinfo.LineInfo;
-import kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponent.renderingnfo.Matrix;
-import kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponent.renderingnfo.RenderingInfo;
-import kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponent.renderingnfo.ScaleRotateMatrixPair;
 import kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponent.shadowinfo.ShadowInfo;
 import kr.dogfoot.hwplib.object.docinfo.borderfill.fillinfo.*;
-import kr.dogfoot.hwplib.object.etc.Color4Byte;
 import kr.dogfoot.hwplib.tool.paragraphadder.docinfo.DocInfoAdder;
 
 public class GsoCommonPartCopier {
@@ -21,7 +17,7 @@ public class GsoCommonPartCopier {
         if (source.getHeader() != null) {
             ctrlHeader(source.getHeader(), target.getHeader());
         }
-        ctrlData(source, target, docInfoAdder);
+        CtrlDataCopier.copy(source, target, docInfoAdder);
         caption(source, target, docInfoAdder);
         if (source.getGsoType() == GsoControlType.Container) {
             shapeComponentGroup((ShapeComponentContainer) source.getShapeComponent(), (ShapeComponentContainer) target.getShapeComponent());
@@ -31,39 +27,17 @@ public class GsoCommonPartCopier {
     }
 
     private static void ctrlHeader(CtrlHeaderGso source, CtrlHeaderGso target) {
-        target.getProperty().setValue(source.getProperty().getValue());
-        target.setyOffset(source.getyOffset());
-        target.setxOffset(source.getxOffset());
-        target.setWidth(source.getWidth());
-        target.setHeight(source.getHeight());
-        target.setzOrder(source.getzOrder());
-        target.setOutterMarginLeft(source.getOutterMarginLeft());
-        target.setOutterMarginRight(source.getOutterMarginRight());
-        target.setOutterMarginTop(source.getOutterMarginTop());
-        target.setOutterMarginBottom(source.getOutterMarginBottom());
-        target.setInstanceId(source.getInstanceId());
-        target.setPreventPageDivide(source.isPreventPageDivide());
-        target.getExplanation().copy(source.getExplanation());
-    }
-
-    private static void ctrlData(GsoControl source, GsoControl target, DocInfoAdder docInfoAdder) {
-        if (source.getCtrlData() == null) {
-            return;
-        }
-
-        target.createCtrlData();
-        ParameterSetCopier.copy(source.getCtrlData().getParameterSet(), target.getCtrlData().getParameterSet(), docInfoAdder);
+        target.copy(source);
     }
 
     private static void caption(GsoControl source, GsoControl target, DocInfoAdder docInfoAdder) {
-        if (source.getCaption() == null) {
-            return;
+        if (source.getCaption() != null) {
+            target.createCaption();
+            CaptionCopier.copy(source.getCaption(), target.getCaption(), docInfoAdder);
+        } else {
+            target.deleteCaption();
         }
-
-        target.createCaption();
-        CaptionCopier.copy(source.getCaption(), target.getCaption(), docInfoAdder);
     }
-
 
     private static void shapeComponentNormal(ShapeComponentNormal source, ShapeComponentNormal target, DocInfoAdder docInfoAdder) {
         shapeComponent(source, target);
@@ -83,28 +57,11 @@ public class GsoCommonPartCopier {
     }
 
     private static void shapeComponent(ShapeComponent source, ShapeComponent target) {
-        target.setGsoId(source.getGsoId());
-        target.setOffsetX(source.getOffsetX());
-        target.setOffsetY(source.getOffsetY());
-        target.setGroupingCount(source.getGroupingCount());
-        target.setLocalFileVersion(source.getLocalFileVersion());
-        target.setWidthAtCreate(source.getWidthAtCreate());
-        target.setHeightAtCreate(source.getHeightAtCreate());
-        target.setWidthAtCurrent(source.getWidthAtCurrent());
-        target.setHeightAtCurrent(source.getHeightAtCurrent());
-        target.setProperty(source.getProperty());
-        target.setRotateAngle(source.getRotateAngle());
-        target.setRotateXCenter(source.getRotateXCenter());
-        target.setRotateYCenter(source.getRotateYCenter());
-
-        renderingInfo(source.getRenderingInfo(), target.getRenderingInfo());
+        target.copy(source);
     }
 
     private static void lineInfo(LineInfo source, LineInfo target) {
-        target.getColor().setValue(source.getColor().getValue());
-        target.setThickness(source.getThickness());
-        target.getProperty().setValue(source.getProperty().getValue());
-        target.setOutlineStyle(source.getOutlineStyle());
+        target.copy(source);
     }
 
     private static void fillInfo(FillInfo source, FillInfo target, DocInfoAdder docInfoAdder) {
@@ -116,9 +73,7 @@ public class GsoCommonPartCopier {
             PatternFill sourcePF = source.getPatternFill();
             PatternFill targetPF = target.getPatternFill();
 
-            targetPF.getBackColor().setValue(sourcePF.getBackColor().getValue());
-            targetPF.getPatternColor().setValue(sourcePF.getPatternColor().getValue());
-            targetPF.setPatternType(sourcePF.getPatternType());
+            targetPF.copy(sourcePF);
         }
 
         if (source.getType().hasGradientFill()) {
@@ -127,18 +82,8 @@ public class GsoCommonPartCopier {
             GradientFill sourceGF = source.getGradientFill();
             GradientFill targetGF = target.getGradientFill();
 
-            targetGF.setGradientType(sourceGF.getGradientType());
-            targetGF.setStartAngle(sourceGF.getStartAngle());
-            targetGF.setCenterX(sourceGF.getCenterX());
-            targetGF.setCenterY(sourceGF.getCenterY());
-            targetGF.setBlurringDegree(sourceGF.getBlurringDegree());
-            for (Integer point : sourceGF.getChangePointList()) {
-                targetGF.addChangePoint(point);
-            }
-            for (Color4Byte color : sourceGF.getColorList()) {
-                targetGF.addNewColor().setValue(color.getValue());
-            }
-            targetGF.setBlurringCenter(sourceGF.getBlurringCenter());
+            targetGF.copy(sourceGF);
+
         }
 
         if (source.getType().hasImageFill()) {
@@ -154,43 +99,17 @@ public class GsoCommonPartCopier {
     }
 
     private static void shadowInfo(ShadowInfo source, ShadowInfo target) {
-        target.setType(source.getType());
-        target.getColor().setValue(source.getColor().getValue());
-        target.setOffsetX(source.getOffsetX());
-        target.setOffsetY(source.getOffsetY());
-        target.setTransparent(source.getTransparent());
+        target.copy(source);
     }
 
     private static void shapeComponentGroup(ShapeComponentContainer source, ShapeComponentContainer target) {
-        shapeComponent(source, target);
-
-        for (Long childControlId : source.getChildControlIdList()) {
-            target.addChildControlId(childControlId);
-        }
-    }
-
-    private static void renderingInfo(RenderingInfo source, RenderingInfo target) {
-        matrix(source.getTranslationMatrix(), target.getTranslationMatrix());
-
-        for (ScaleRotateMatrixPair sourceMatrixPair : source.getScaleRotateMatrixPairList()) {
-            ScaleRotateMatrixPair targetMatrixPair = target.addNewScaleRotateMatrixPair();
-
-            matrix(sourceMatrixPair.getRotateMatrix(), targetMatrixPair.getRotateMatrix());
-            matrix(sourceMatrixPair.getScaleMatrix(), targetMatrixPair.getScaleMatrix());
-        }
-    }
-
-    private static void matrix(Matrix source, Matrix target) {
-        for (int index = 0; index < 6; index++) {
-            target.setValue(index, source.getValue(index));
-        }
+        target.copy(source);
     }
 
     public static void pictureInfo(PictureInfo source, PictureInfo target, DocInfoAdder docInfoAdder) {
         target.setBrightness(source.getBrightness());
         target.setContrast(source.getContrast());
         target.setEffect(source.getEffect());
-        target.setBinItemID(docInfoAdder.forBinData().processById(source.getBinItemID()));
+        target.setBinItemID((docInfoAdder == null) ? source.getBinItemID() : docInfoAdder.forBinData().processById(source.getBinItemID()));
     }
 }
-

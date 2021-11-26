@@ -9,7 +9,7 @@ import kr.dogfoot.hwplib.object.bodytext.paragraph.text.*;
  * @author neolord
  */
 public class ParaTextCopier {
-    public static int copy(ParaText source, ParaText target) throws Exception {
+    public static int copy(ParaText source, ParaText target, boolean includingSectionInfo) throws Exception {
         int notCopiedCharacterSize = 0;
         for (HWPChar hwpChar : source.getCharList()) {
             switch (hwpChar.getType()) {
@@ -23,14 +23,9 @@ public class ParaTextCopier {
                     copyInlineChar((HWPCharControlInline) hwpChar, target.addNewInlineControlChar());
                     break;
                 case ControlExtend:
-                    HWPCharControlExtend extendChar = (HWPCharControlExtend) hwpChar;
-                    if (extendChar.isGSO() ||
-                            extendChar.isTable() ||
-                            extendChar.isEquation() ||
-                            extendChar.isFieldStart() ||
-                            extendChar.isOverlappingLetter() ||
-                            extendChar.isColumnDefine()) {
-                        copyExtendChar((HWPCharControlExtend) hwpChar, target.addNewExtendControlChar());
+                    HWPCharControlExtend ec = (HWPCharControlExtend) hwpChar;
+                    if (includingSectionInfo || mustCopy(ec)) {
+                        copyExtendChar(ec, target.addNewExtendControlChar());
                     } else {
                         notCopiedCharacterSize += 8;
                     }
@@ -39,8 +34,25 @@ public class ParaTextCopier {
                     break;
             }
         }
+
         return notCopiedCharacterSize;
     }
+
+    private static boolean mustCopy(HWPCharControlExtend ec) {
+        if (ec.isColumnDefine() ||          // 단 정의
+                ec.getCode() == 3 ||        // 필드 시작(누름틀, 하이퍼링크, 블록 책갈피, 표 계산식 ...)
+                ec.getCode() == 11 ||       // 그리기 개체/표/수식
+                ec.getCode() == 15 ||       // 숨은 설명
+                ec.getCode() == 17 ||       // 각주/미주
+                ec.getCode() == 18 ||       // 자동번호(각주, 표 등)
+                ec.getCode() == 21 ||       // 페이지 컨트롤(감추기,새 번호로 시작 등)
+                ec.getCode() == 22 ||       // 책갈피/찾아보기 표식
+                ec.getCode() == 23) {       // 덧말/글자 겹침
+            return true;
+        }
+        return false;
+    }
+
 
     private static void copyNormalChar(HWPCharNormal source, HWPCharNormal target) {
         target.setCode(source.getCode());
@@ -52,17 +64,11 @@ public class ParaTextCopier {
 
     private static void copyInlineChar(HWPCharControlInline source, HWPCharControlInline target) throws Exception {
         target.setCode(source.getCode());
-        target.setAddition(clonedArray(source.getAddition()));
-    }
-
-    private static byte[] clonedArray(byte[] source) {
-        byte[] target = new byte[source.length];
-        System.arraycopy(source, 0, target, 0, source.length);
-        return target;
+        target.setAddition(source.getAddition().clone());
     }
 
     private static void copyExtendChar(HWPCharControlExtend source, HWPCharControlExtend target) throws Exception {
         target.setCode(source.getCode());
-        target.setAddition(clonedArray(source.getAddition()));
+        target.setAddition(source.getAddition().clone());
     }
 }

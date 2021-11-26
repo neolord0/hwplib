@@ -9,12 +9,7 @@ import kr.dogfoot.hwplib.tool.paragraphadder.docinfo.DocInfoAdder;
 public class OverlappingLetterCopier {
     public static void copy(ControlOverlappingLetter source, ControlOverlappingLetter target, DocInfoAdder docInfoAdder) {
         header(source.getHeader(), target.getHeader(), docInfoAdder);
-        if (source.getCtrlData() != null) {
-            target.createCtrlData();
-            target.getCtrlData().copy(source.getCtrlData());
-        } else {
-            target.deleteCtrlData();
-        }
+        CtrlDataCopier.copy(source, target, docInfoAdder);
     }
 
     private static void header(CtrlHeaderOverlappingLetter source, CtrlHeaderOverlappingLetter target, DocInfoAdder docInfoAdder) {
@@ -27,7 +22,7 @@ public class OverlappingLetterCopier {
         }
 
         for (Long charShapeId : source.getCharShapeIdList()) {
-            target.addCharShapeId(docInfoAdder.forCharShape().processById(charShapeId.intValue()));
+            target.addCharShapeId((docInfoAdder == null) ? charShapeId.intValue() : docInfoAdder.forCharShape().processById(charShapeId.intValue()));
         }
     }
 }

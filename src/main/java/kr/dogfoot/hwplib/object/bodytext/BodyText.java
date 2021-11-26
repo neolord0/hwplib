@@ -47,4 +47,11 @@ public class BodyText {
             sectionList.add(section.clone());
         }
     }
+
+    public Section getLastSection() {
+        if (sectionList.size() == 0) {
+            return null;
+        }
+        return sectionList.get(sectionList.size() - 1);
+    }
 }

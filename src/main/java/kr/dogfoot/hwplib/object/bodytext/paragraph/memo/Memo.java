@@ -59,4 +59,5 @@ public class Memo {
         cloned.paragraphList.copy(paragraphList);
         return cloned;
     }
+
 }

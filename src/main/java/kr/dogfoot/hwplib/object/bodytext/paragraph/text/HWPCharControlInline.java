@@ -67,4 +67,24 @@ public class HWPCharControlInline extends HWPChar {
     public int getCharSize() {
         return 8;
     }
+
+    public boolean isHyperlinkEnd() {
+        if (getCode() == 0x0004
+                && hasAddition('%', 'h', 'l', 'k')) {
+            return true;
+        }
+        return false;
+    }
+
+    private boolean hasAddition(char byte1, char byte2, char byte3, char byte4) {
+        if (addition != null
+                && addition[3] == byte1
+                && addition[2] == byte2
+                && addition[1] == byte3
+                && addition[0] == byte4) {
+            return true;
+        }
+        return false;
+    }
+
 }

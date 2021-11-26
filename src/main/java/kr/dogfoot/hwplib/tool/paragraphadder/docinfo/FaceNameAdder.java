@@ -19,6 +19,10 @@ public class FaceNameAdder {
     }
 
     public int processByHangulId(int sourceId) {
+        if (docInfoAdder.getSourceHWPFile() == docInfoAdder.getTargetHWPFile()) {
+            return sourceId;
+        }
+
         FaceName source = docInfoAdder.getSourceHWPFile().getDocInfo().getHangulFaceNameList().get(sourceId);
         ArrayList<FaceName> targetArray = docInfoAdder.getTargetHWPFile().getDocInfo().getHangulFaceNameList();
         return process(source, targetArray);

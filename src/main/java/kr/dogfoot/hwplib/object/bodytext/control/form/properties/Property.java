@@ -15,4 +15,6 @@ public abstract class Property {
     }
 
     public abstract PropertyType getType();
+
+    public abstract Property clone();
 }

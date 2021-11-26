@@ -16,6 +16,10 @@ public class CharShapeAdder {
     }
 
     public int processById(int sourceId) {
+        if (docInfoAdder.getSourceHWPFile() == docInfoAdder.getTargetHWPFile()) {
+            return sourceId;
+        }
+
         CharShape source;
         // id == index
         try {

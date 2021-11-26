@@ -2,7 +2,9 @@ package kr.dogfoot.hwplib.tool.textextractor.paraHead;
 
 import kr.dogfoot.hwplib.object.HWPFile;
 import kr.dogfoot.hwplib.object.bodytext.Section;
+import kr.dogfoot.hwplib.object.bodytext.control.Control;
 import kr.dogfoot.hwplib.object.bodytext.control.ControlSectionDefine;
+import kr.dogfoot.hwplib.object.bodytext.control.ControlType;
 import kr.dogfoot.hwplib.object.bodytext.paragraph.Paragraph;
 import kr.dogfoot.hwplib.object.docinfo.Bullet;
 import kr.dogfoot.hwplib.object.docinfo.Numbering;
@@ -34,7 +36,19 @@ public class ParaHeadMaker {
 
 
     private void setSectionDefine(Section section) {
-        sectionDefine = (ControlSectionDefine) section.getParagraph(0).getControlList().get(0);
+        if (section.getParagraphCount() > 0 && section.getParagraph(0).getControlList().size() > 0) {
+            Control firstControl = section.getParagraph(0).getControlList().get(0);
+            if (firstControl.getType() == ControlType.SectionDefine) {
+                sectionDefine = (ControlSectionDefine) firstControl;
+            } else {
+                if (section.getParagraph(0).getControlList().size() >= 2) {
+                    Control secondControl = section.getParagraph(0).getControlList().get(1);
+                    if (secondControl.getType() == ControlType.SectionDefine) {
+                        sectionDefine = (ControlSectionDefine) secondControl;
+                    }
+                }
+            }
+        }
     }
 
     public String paraHeadString(Paragraph paragraph) {

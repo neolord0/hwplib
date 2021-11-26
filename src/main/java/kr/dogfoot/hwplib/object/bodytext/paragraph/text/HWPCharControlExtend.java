@@ -75,8 +75,7 @@ public class HWPCharControlExtend extends HWPChar {
     }
 
     public boolean isSectionDefine() {
-        if (getCode() == 0x0002
-                && hasAddition('s', 'e', 'c', 'd')) {
+        if (getCode() == 0x0002 && hasAddition('s', 'e', 'c', 'd')) {
             return true;
         }
         return false;
@@ -94,48 +93,7 @@ public class HWPCharControlExtend extends HWPChar {
     }
 
     public boolean isColumnDefine() {
-        if (getCode() == 0x0002
-                && hasAddition('c', 'o', 'l', 'd')) {
-            return true;
-        }
-        return false;
-    }
-
-    public boolean isTable() {
-        if (getCode() == 0x000b
-                && hasAddition('t', 'b', 'l', ' ')) {
-            return true;
-        }
-        return false;
-    }
-
-    public boolean isGSO() {
-        if (getCode() == 0x000b
-                && hasAddition('g', 's', 'o', ' ')) {
-            return true;
-        }
-        return false;
-    }
-
-    public boolean isEquation() {
-        if (getCode() == 0x000b
-                && hasAddition('e', 'q', 'e', 'd')) {
-            return true;
-        }
-        return false;
-    }
-
-    public boolean isHyperlinkStart() {
-        if (getCode() == 0x0003
-                && hasAddition('%', 'h', 'l', 'k')) {
-            return true;
-        }
-        return false;
-    }
-
-    public boolean isHyperlinkEnd() {
-        if (getCode() == 0x0004
-                && hasAddition('%', 'h', 'l', 'k')) {
+        if (getCode() == 0x0002 && hasAddition('c', 'o', 'l', 'd')) {
             return true;
         }
         return false;
@@ -150,13 +108,134 @@ public class HWPCharControlExtend extends HWPChar {
         return false;
     }
 
-    public boolean isOverlappingLetter() {
-        if (getCode() == 0x0017
-                && hasAddition('t', 'c', 'p', 's')) {
+    public boolean isHyperlinkStart() {
+        if (getCode() == 0x0003 && hasAddition('%', 'h', 'l', 'k')) {
             return true;
         }
         return false;
     }
+
+    public boolean isTable() {
+        if (getCode() == 0x000b && hasAddition('t', 'b', 'l', ' ')) {
+            return true;
+        }
+        return false;
+    }
+
+    public boolean isGSO() {
+        if (getCode() == 0x000b && hasAddition('g', 's', 'o', ' ')) {
+            return true;
+        }
+        return false;
+    }
+
+    public boolean isEquation() {
+        if (getCode() == 0x000b && hasAddition('e', 'q', 'e', 'd')) {
+            return true;
+        }
+        return false;
+    }
+
+    public boolean isForm() {
+        if (getCode() == 0x000b && hasAddition('f', 'o', 'r', 'm')) {
+            return true;
+        }
+        return false;
+    }
+
+    public boolean isHiddenComment() {
+        if (getCode() == 0x000f && hasAddition('t', 'c', 'm', 't')) {
+            return true;
+        }
+        return false;
+    }
+
+    public boolean isHeader() {
+        if (getCode() == 0x0010 && hasAddition('h', 'e', 'a', 'd')) {
+            return true;
+        }
+        return false;
+    }
+
+    public boolean isFooter() {
+        if (getCode() == 0x0010 && hasAddition('f', 'o', 'o', 't')) {
+            return true;
+        }
+        return false;
+    }
+
+    public boolean isFootNote() {
+        if (getCode() == 0x11 && hasAddition('f', 'n', ' ', ' ')) {
+            return true;
+        }
+        return false;
+    }
+
+    public boolean isEndNote() {
+        if (getCode() == 0x11 && hasAddition('e', 'n', ' ', ' ')) {
+            return true;
+        }
+        return false;
+    }
+
+
+    public boolean isAutoNumber() {
+        if (getCode() == 0x12 && hasAddition('a', 't', 'n', 'o')) {
+            return true;
+        }
+        return false;
+    }
+
+    public boolean isPageHide() {
+        if (getCode() == 0x15 && hasAddition('p', 'g', 'h', 'd')) {
+            return true;
+        }
+        return false;
+    }
+
+    public boolean isPageOddEvenAdjust() {
+        if (getCode() == 0x15 && hasAddition('p', 'g', 'c', 't')) {
+            return true;
+        }
+        return false;
+    }
+
+    public boolean isPageNumberPosition() {
+        if (getCode() == 0x15 && hasAddition('p', 'g', 'n', 'p')) {
+            return true;
+        }
+        return false;
+    }
+
+    public boolean isIndexMark() {
+        if (getCode() == 0x0016 && hasAddition('i', 'd', 'x', 'm')) {
+            return true;
+        }
+        return false;
+    }
+
+    public boolean isBookmark() {
+        if (getCode() == 0x0016 && hasAddition('b', 'o', 'k', 'm')) {
+            return true;
+        }
+        return false;
+    }
+
+    public boolean isAdditionalText() {
+        if (getCode() == 0x0017 && hasAddition('t', 'd', 'u', 't')) {
+            return true;
+        }
+        return false;
+    }
+
+
+    public boolean isOverlappingLetter() {
+        if (getCode() == 0x0017 && hasAddition('t', 'c', 'p', 's')) {
+            return true;
+        }
+        return false;
+    }
+
 
     public HWPChar clone() {
         HWPCharControlExtend cloned = new HWPCharControlExtend();

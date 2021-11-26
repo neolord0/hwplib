@@ -84,6 +84,13 @@ public abstract class GsoControl extends Control {
     }
 
     /**
+     * 캡션 객체를 삭제한다.
+     */
+    public void deleteCaption() {
+        caption = null;
+    }
+
+    /**
      * 캡션 정보 객체를 반환한다.
      *
      * @return 캡션 정보 객체

@@ -2,7 +2,6 @@ package kr.dogfoot.hwplib.object.bodytext.control;
 
 import kr.dogfoot.hwplib.object.bodytext.control.ctrlheader.CtrlHeaderGso;
 import kr.dogfoot.hwplib.object.bodytext.control.form.FormObject;
-import kr.dogfoot.hwplib.util.compoundFile.reader.StreamReader;
 
 /**
  * 양식 개체 컨트롤
@@ -14,11 +13,8 @@ public class ControlForm extends Control {
 
     /**
      * 생성자
-     *
-     * @param header
-     * @param sr
      */
-    public ControlForm(CtrlHeaderGso header, StreamReader sr) {
+    public ControlForm() {
         this(new CtrlHeaderGso(ControlType.Form));
     }
 
@@ -43,7 +39,11 @@ public class ControlForm extends Control {
 
     @Override
     public Control clone() {
-        return null;
+        ControlForm cloned = new ControlForm();
+        cloned.copyControlPart(this);
+
+        cloned.formObject.copy(formObject);
+        return cloned;
     }
 
 }

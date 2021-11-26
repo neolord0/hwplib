@@ -34,6 +34,23 @@ public class PropertySet extends Property {
         return PropertyType.Set;
     }
 
+    public void copy(PropertySet from) {
+        setName(from.getName());
+
+        propertyMap.clear();
+        for (HashMap.Entry<String, Property> entry : from.propertyMap.entrySet()) {
+            propertyMap.put(entry.getKey(), entry.getValue().clone());
+        }
+    }
+
+    public Property clone() {
+        PropertySet cloned = new PropertySet(getName());
+        for (HashMap.Entry<String, Property> entry : propertyMap.entrySet()) {
+            cloned.propertyMap.put(entry.getKey(), entry.getValue().clone());
+        }
+        return cloned;
+    }
+
     public void parse(String data) {
         while (data.length() > 0) {
             int position = data.indexOf(":");

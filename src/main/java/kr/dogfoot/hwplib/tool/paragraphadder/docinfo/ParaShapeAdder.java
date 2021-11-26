@@ -15,6 +15,10 @@ public class ParaShapeAdder {
     }
 
     public int processById(int sourceId) {
+        if (docInfoAdder.getSourceHWPFile() == docInfoAdder.getTargetHWPFile()) {
+            return sourceId;
+        }
+
         ParaShape source = docInfoAdder.getSourceHWPFile().getDocInfo().getParaShapeList().get(sourceId);
         int index = findFromTarget(source);
         if (index == -1) {
@@ -60,7 +64,11 @@ public class ParaShapeAdder {
                     return true;
                 case Numbering:
                 case Outline:
-                    return docInfoAdder.forNumbering().equalById(source.getParaHeadId(), target.getParaHeadId());
+                    if (source.getParaHeadId() > 0) {
+                        return docInfoAdder.forNumbering().equalById(source.getParaHeadId(), target.getParaHeadId());
+                    } else {
+                        return false;
+                    }
                 case Bullet:
                     return docInfoAdder.forBullet().equalById(source.getParaHeadId(), target.getParaHeadId());
             }
@@ -98,7 +106,11 @@ public class ParaShapeAdder {
                 break;
             case Numbering:
             case Outline:
-                target.setParaHeadId(docInfoAdder.forNumbering().processById(source.getParaHeadId()));
+                if (source.getParaHeadId() > 0) {
+                    target.setParaHeadId(docInfoAdder.forNumbering().processById(source.getParaHeadId()));
+                } else {
+                    target.setParaHeadId(0);
+                }
                 break;
             case Bullet:
                 target.setParaHeadId(docInfoAdder.forBullet().processById(source.getParaHeadId()));

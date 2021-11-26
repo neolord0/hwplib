@@ -16,6 +16,10 @@ public class BorderFillAdder {
     }
 
     public int processById(int sourceId) {
+        if (docInfoAdder.getSourceHWPFile() == docInfoAdder.getTargetHWPFile()) {
+            return sourceId;
+        }
+
         BorderFill source = docInfoAdder.getSourceHWPFile().getDocInfo().getBorderFillList().get(sourceId - 1);
         int index = findFromTarget(source);
         if (index == -1) {

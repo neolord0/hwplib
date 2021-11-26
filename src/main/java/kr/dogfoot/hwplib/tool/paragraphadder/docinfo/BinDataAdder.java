@@ -25,11 +25,15 @@ public class BinDataAdder {
     /**
      * sourceID에 해당하는 BinData객체를 처리하여 target 한긒 파일의 BinData ID를 반환한다.
      *
-     * @param sourceID source BinData ID.
+     * @param sourceId source BinData ID.
      * @return target한글 파일의 BinData ID
      */
-    public int processById(int sourceID) {
-        BinData source = docInfoAdder.getSourceHWPFile().getDocInfo().getBinDataList().get(sourceID - 1);
+    public int processById(int sourceId) {
+        if (docInfoAdder.getSourceHWPFile() == docInfoAdder.getTargetHWPFile()) {
+            return sourceId;
+        }
+
+        BinData source = docInfoAdder.getSourceHWPFile().getDocInfo().getBinDataList().get(sourceId - 1);
         return addAndCopy(source);
     }
 

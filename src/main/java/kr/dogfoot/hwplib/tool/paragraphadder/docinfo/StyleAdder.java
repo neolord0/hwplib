@@ -16,6 +16,10 @@ public class StyleAdder {
     }
 
     public int processById(int sourceId) {
+        if (docInfoAdder.getSourceHWPFile() == docInfoAdder.getTargetHWPFile()) {
+            return sourceId;
+        }
+
         Style source = docInfoAdder.getSourceHWPFile().getDocInfo().getStyleList().get(sourceId);
         int index = findFromTarget(source, sourceId);
         if (index == -1) {

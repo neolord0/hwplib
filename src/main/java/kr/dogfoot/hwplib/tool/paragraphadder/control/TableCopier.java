@@ -8,32 +8,22 @@ import kr.dogfoot.hwplib.tool.paragraphadder.docinfo.DocInfoAdder;
 
 public class TableCopier {
     public static void copy(ControlTable source, ControlTable target, DocInfoAdder docInfoAdder) {
-        header(source.getHeader(), target.getHeader());
+        CtrlHeaderGso sourceH = source.getHeader();
+        CtrlHeaderGso targetH = target.getHeader();
+        targetH.copy(sourceH);
+
+        CtrlDataCopier.copy(source, target, docInfoAdder);
         caption(source, target, docInfoAdder);
         table(source.getTable(), target.getTable(), docInfoAdder);
         rows(source, target, docInfoAdder);
-    }
-
-    private static void header(CtrlHeaderGso source, CtrlHeaderGso target) {
-        target.getProperty().setValue(source.getProperty().getValue());
-        target.setyOffset(source.getyOffset());
-        target.setxOffset(source.getxOffset());
-        target.setWidth(source.getWidth());
-        target.setHeight(source.getHeight());
-        target.setzOrder(source.getzOrder());
-        target.setOutterMarginLeft(source.getOutterMarginLeft());
-        target.setOutterMarginRight(source.getOutterMarginRight());
-        target.setOutterMarginTop(source.getOutterMarginTop());
-        target.setOutterMarginBottom(source.getOutterMarginBottom());
-        target.setInstanceId(source.getInstanceId());
-        target.setPreventPageDivide(source.isPreventPageDivide());
-        target.getExplanation().copy(source.getExplanation());
     }
 
     private static void caption(ControlTable source, ControlTable target, DocInfoAdder docInfoAdder) {
         if (source.getCaption() != null) {
             target.createCaption();
             CaptionCopier.copy(source.getCaption(), target.getCaption(), docInfoAdder);
+        } else {
+            target.deleteCaption();
         }
     }
 
@@ -49,7 +39,7 @@ public class TableCopier {
         for (Integer cellCountOfRow : source.getCellCountOfRowList()) {
             target.addCellCountOfRow(cellCountOfRow);
         }
-        target.setBorderFillId(docInfoAdder.forBorderFill().processById(source.getBorderFillId()));
+        target.setBorderFillId((docInfoAdder == null) ? source.getBorderFillId() : docInfoAdder.forBorderFill().processById(source.getBorderFillId()));
         for (ZoneInfo zoneInfo : source.getZoneInfoList()) {
             zoneInfo(zoneInfo, target.addNewZoneInfo(), docInfoAdder);
         }
@@ -60,7 +50,7 @@ public class TableCopier {
         target.setStartRow(source.getStartRow());
         target.setEndColumn(source.getEndColumn());
         target.setEndRow(source.getEndRow());
-        target.setBorderFillId(docInfoAdder.forBorderFill().processById(source.getBorderFillId()));
+        target.setBorderFillId((docInfoAdder == null) ? source.getBorderFillId() : docInfoAdder.forBorderFill().processById(source.getBorderFillId()));
     }
 
     private static void rows(ControlTable source, ControlTable target, DocInfoAdder docInfoAdder) {
@@ -93,7 +83,7 @@ public class TableCopier {
         target.setRightMargin(source.getRightMargin());
         target.setTopMargin(source.getTopMargin());
         target.setBottomMargin(source.getBottomMargin());
-        target.setBorderFillId(docInfoAdder.forBorderFill().processById(source.getBorderFillId()));
+        target.setBorderFillId((docInfoAdder == null) ? source.getBorderFillId() : docInfoAdder.forBorderFill().processById(source.getBorderFillId()));
         target.setTextWidth(source.getTextWidth());
         target.setFieldName(source.getFieldName());
     }

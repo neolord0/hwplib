@@ -40,9 +40,7 @@ public class ParagraphAdder {
      */
     public void add(HWPFile hwpFile, Paragraph p) throws Exception {
         ParagraphCopier paraCopyer = new ParagraphCopier(new DocInfoAdder(hwpFile, targetHWPFile));
-
-        Paragraph targetParagraph = targetParaList.addNewParagraph();
-        paraCopyer.copy(p, targetParagraph);
+        paraCopyer.copy(p, targetParaList.addNewParagraph());
     }
 
     /**
@@ -55,19 +53,23 @@ public class ParagraphAdder {
     public void add(HWPFile hwpFile, ArrayList<Paragraph> list) throws Exception {
         ParagraphCopier copyer = new ParagraphCopier(new DocInfoAdder(hwpFile, targetHWPFile));
         for (Paragraph p : list) {
-            Paragraph targetParagraph = targetParaList.addNewParagraph();
-            copyer.copy(p, targetParagraph);
+            copyer.copy(p, targetParaList.addNewParagraph());
         }
     }
 
     public void add(HWPFile hwpFile, ParagraphListInterface paragraphListInterface) throws Exception {
         ParagraphCopier copyer = new ParagraphCopier(new DocInfoAdder(hwpFile, targetHWPFile));
         for (Paragraph p : paragraphListInterface) {
-            Paragraph targetParagraph = targetParaList.addNewParagraph();
-            copyer.copy(p, targetParagraph);
+            copyer.copy(p, targetParaList.addNewParagraph());
         }
     }
 
+    public void addIncludingSectionInfo(HWPFile hwpFile, ParagraphListInterface paragraphListInterface) throws Exception {
+        ParagraphCopier copyer = new ParagraphCopier(new DocInfoAdder(hwpFile, targetHWPFile));
+        for (Paragraph p : paragraphListInterface) {
+            copyer.copyIncludingSectionInfo(p, targetParaList.addNewParagraph());
+        }
+    }
 
     public void merge(Paragraph targetParagraph, HWPFile hwpFile, Paragraph p) throws Exception {
         ParagraphMerger merger = new ParagraphMerger(new DocInfoAdder(hwpFile, targetHWPFile));

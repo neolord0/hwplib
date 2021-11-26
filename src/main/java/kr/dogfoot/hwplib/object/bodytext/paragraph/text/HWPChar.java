@@ -32,7 +32,7 @@ public abstract class HWPChar {
             case 1: // 예약
             case 2: // 구역 정의/단 정의
             case 3: // 필드 시작(누름틀, 하이퍼링크, 블록 책갈피, 표 계산식 ...)
-            case 11: // 그리기 개체/표
+            case 11: // 그리기 개체/표/수식/양식 개체
             case 12: // 예약
             case 14: // 예약
             case 15: // 숨은 설명
