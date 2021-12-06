@@ -69,4 +69,10 @@ public class FieldData {
         this.endParaIndex = endParaIndex;
         this.endCharIndex = endCharIndex;
     }
+
+    public boolean isEmptyField() {
+        return ((type == FieldType.ClickHere || type == FieldType.ETC) &&
+                (startParaIndex != -1 && startParaIndex == endParaIndex) &&
+                endCharIndex - startCharIndex == 1);
+    }
 }

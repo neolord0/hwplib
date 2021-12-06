@@ -8,7 +8,7 @@ import kr.dogfoot.hwplib.object.docinfo.documentproperties.StartNumber;
  *
  * @author neolord
  */
-public class DocumentPropeties {
+public class DocumentProperties {
     /**
      * 구역 개수
      */
@@ -25,7 +25,7 @@ public class DocumentPropeties {
     /**
      * 생성자
      */
-    public DocumentPropeties() {
+    public DocumentProperties() {
         startNumber = new StartNumber();
         caretPosition = new CaretPosition();
     }
@@ -66,7 +66,7 @@ public class DocumentPropeties {
         return caretPosition;
     }
 
-    public void copy(DocumentPropeties from) {
+    public void copy(DocumentProperties from) {
         sectionCount = from.sectionCount;
         startNumber.copy(from.startNumber);
         caretPosition.copy(from.caretPosition);

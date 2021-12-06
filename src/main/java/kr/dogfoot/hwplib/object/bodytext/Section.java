@@ -35,6 +35,7 @@ public class Section implements ParagraphListInterface {
      *
      * @return 새로 생성된 문단
      */
+    @Override
     public Paragraph addNewParagraph() {
         Paragraph p = new Paragraph();
         paragraphList.add(p);
@@ -46,6 +47,7 @@ public class Section implements ParagraphListInterface {
      *
      * @return 문단 개수
      */
+    @Override
     public int getParagraphCount() {
         return paragraphList.size();
     }
@@ -56,15 +58,9 @@ public class Section implements ParagraphListInterface {
      * @param index 찾고자 하는 문단의 순번
      * @return index 번째의 문단
      */
+    @Override
     public Paragraph getParagraph(int index) {
         return paragraphList.get(index);
-    }
-
-    public Paragraph getLastParagraph() {
-        if (paragraphList.size() > 0) {
-            return paragraphList.get(paragraphList.size() - 1);
-        }
-        return null;
     }
 
     /**
@@ -72,13 +68,31 @@ public class Section implements ParagraphListInterface {
      *
      * @param index 삭제할 문단의 순번
      */
+    @Override
+    public Paragraph[] getParagraphs() {
+        return paragraphList.toArray(Paragraph.Zero_Array);
+    }
+
+    @Override
     public void deleteParagraph(int index) {
         paragraphList.remove(index);
     }
 
     @Override
-    public Paragraph[] getParagraphs() {
-        return paragraphList.toArray(Paragraph.Zero_Array);
+    public void deleteAllParagraphs() {
+        paragraphList.clear();
+    }
+
+    @Override
+    public void insertParagraph(int index, Paragraph para) {
+        paragraphList.add(index, para);
+    }
+
+    @Override
+    public Paragraph insertNewParagraph(int index) {
+        Paragraph p = new Paragraph();
+        paragraphList.add(index, p);
+        return p;
     }
 
     /**
@@ -86,8 +100,16 @@ public class Section implements ParagraphListInterface {
      *
      * @return Iterator<Paragraph> 객체
      */
+    @Override
     public Iterator<Paragraph> iterator() {
         return paragraphList.iterator();
+    }
+
+    public Paragraph getLastParagraph() {
+        if (paragraphList.size() > 0) {
+            return paragraphList.get(paragraphList.size() - 1);
+        }
+        return null;
     }
 
     /**

@@ -14,7 +14,7 @@ public class DocInfo {
     /**
      * 문서 속성
      */
-    private DocumentPropeties documentProperties;
+    private DocumentProperties documentProperties;
     /**
      * 아이디 매핑 헤더
      */
@@ -120,7 +120,7 @@ public class DocInfo {
      * 생성자
      */
     public DocInfo() {
-        documentProperties = new DocumentPropeties();
+        documentProperties = new DocumentProperties();
         idMappings = new IDMappings();
         binDataList = new ArrayList<BinData>();
         hangulFaceNameList = new ArrayList<FaceName>();
@@ -153,7 +153,7 @@ public class DocInfo {
      *
      * @return 문서 속성 객체
      */
-    public DocumentPropeties getDocumentProperties() {
+    public DocumentProperties getDocumentProperties() {
         return documentProperties;
     }
 

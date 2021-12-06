@@ -111,13 +111,13 @@ public class ParaTextSetter {
             }
         }
 
-        ArrayList<CharPositionShapeIdPair> deleting = new ArrayList<>();
+        ArrayList<CharPositionShapeIdPair> deletings = new ArrayList<>();
         for (CharPositionShapeIdPair cpsip : p.getCharShape().getPositonShapeIdPairList()) {
             if (cpsip.getPosition() > leftCharSize) {
-                deleting.add(cpsip);
+                deletings.add(cpsip);
             }
         }
-        for (CharPositionShapeIdPair cpsip : deleting) {
+        for (CharPositionShapeIdPair cpsip : deletings) {
             p.getCharShape().getPositonShapeIdPairList().remove(cpsip);
         }
     }
@@ -132,7 +132,7 @@ public class ParaTextSetter {
         int deleteCtrlCount = 0;
         int deleteCharSize = 0;
         if (p.getText() != null) {
-            for (int charIndex = 0; charIndex < to - 1 && charIndex < p.getText().getCharList().size() - 1; charIndex++) {
+            for (int charIndex = 0; charIndex < to + 1 && charIndex < p.getText().getCharList().size() - 1; charIndex++) {
                 HWPChar hwpChar = p.getText().getCharList().get(charIndex);
                 if (hwpChar.getType() == HWPCharType.ControlExtend) {
                     deleteCtrlCount++;
@@ -153,14 +153,18 @@ public class ParaTextSetter {
             }
         }
 
+        ArrayList<CharPositionShapeIdPair> deletings = new ArrayList<>();
         for (CharPositionShapeIdPair cpsip : p.getCharShape().getPositonShapeIdPairList()) {
             if (cpsip.getPosition() != 0) {
                 if (cpsip.getPosition() < to + 1) {
-                    p.getCharShape().getPositonShapeIdPairList().remove(cpsip);
+                    deletings.add(cpsip);
                 } else {
                     cpsip.setPosition(cpsip.getPosition() - deleteCharSize);
                 }
             }
+        }
+        for (CharPositionShapeIdPair cpsip : deletings) {
+            p.getCharShape().getPositonShapeIdPairList().remove(cpsip);
         }
     }
 

@@ -3,11 +3,13 @@ package kr.dogfoot.hwplib.writer.bodytext.paragraph.control.gso;
 import kr.dogfoot.hwplib.object.bodytext.control.gso.*;
 import kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponent.ShapeComponentContainer;
 import kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponent.ShapeComponentNormal;
+import kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponent.ShapeComponentUnknown;
 import kr.dogfoot.hwplib.util.compoundFile.writer.StreamWriter;
 import kr.dogfoot.hwplib.writer.bodytext.paragraph.control.gso.part.ForCaption;
 import kr.dogfoot.hwplib.writer.bodytext.paragraph.control.gso.part.ForCtrlHeaderGso;
 import kr.dogfoot.hwplib.writer.bodytext.paragraph.control.gso.part.shapecomponent.ForShapeComponentForContainer;
 import kr.dogfoot.hwplib.writer.bodytext.paragraph.control.gso.part.shapecomponent.ForShapeComponentForNormal;
+import kr.dogfoot.hwplib.writer.bodytext.paragraph.control.gso.part.shapecomponent.ForShapeComponentForUnknown;
 
 import java.io.IOException;
 
@@ -48,6 +50,9 @@ public class ForGsoControl {
         if (gso.getGsoType() == GsoControlType.Container) {
             ForShapeComponentForContainer.write(
                     (ShapeComponentContainer) gso.getShapeComponent(), sw);
+        } else if (gso.getGsoType() == GsoControlType.TextArt) {
+            ForShapeComponentForUnknown.write(
+                    (ShapeComponentUnknown) gso.getShapeComponent(), sw);
         } else {
             ForShapeComponentForNormal.write(
                     (ShapeComponentNormal) gso.getShapeComponent(), sw);
@@ -93,6 +98,9 @@ public class ForGsoControl {
                 break;
             case ObjectLinkLine:
                 ForControlObjectLinkLine.writeRest((ControlObjectLinkLine) gso, sw);
+                break;
+            case TextArt:
+                ForControlTextArt.writeRest((ControlTextArt) gso, sw);
                 break;
         }
     }

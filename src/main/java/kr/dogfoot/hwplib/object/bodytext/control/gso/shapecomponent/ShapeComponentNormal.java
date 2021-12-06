@@ -9,7 +9,7 @@ import kr.dogfoot.hwplib.object.docinfo.borderfill.fillinfo.FillInfo;
  *
  * @author neolord
  */
-public class ShapeComponentNormal extends ShapeComponent {
+public class ShapeComponentNormal extends ShapeComponentBasic {
     /**
      * 테두리 선 정보
      */
@@ -105,7 +105,7 @@ public class ShapeComponentNormal extends ShapeComponent {
 
     @Override
     public void copy(ShapeComponent from) {
-        copyShapeComponent(from);
+        copyShapeComponent((ShapeComponentBasic) from);
         ShapeComponentNormal from2 = (ShapeComponentNormal) from;
 
         if (from2.lineInfo != null) {

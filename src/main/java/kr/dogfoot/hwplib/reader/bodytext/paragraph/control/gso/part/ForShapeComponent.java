@@ -2,9 +2,7 @@ package kr.dogfoot.hwplib.reader.bodytext.paragraph.control.gso.part;
 
 import kr.dogfoot.hwplib.object.bodytext.control.gso.GsoControl;
 import kr.dogfoot.hwplib.object.bodytext.control.gso.GsoControlType;
-import kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponent.ShapeComponent;
-import kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponent.ShapeComponentContainer;
-import kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponent.ShapeComponentNormal;
+import kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponent.*;
 import kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponent.lineinfo.LineInfo;
 import kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponent.lineinfo.OutlineStyle;
 import kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponent.renderingnfo.Matrix;
@@ -33,20 +31,24 @@ public class ForShapeComponent {
      */
     public static void read(GsoControl gsoControl, StreamReader sr)
             throws IOException {
-        if (gsoControl.getGsoType() != GsoControlType.Container) {
-            shapeComponentForNormal(
-                    (ShapeComponentNormal) gsoControl.getShapeComponent(), sr);
-        } else {
+        if (gsoControl.getGsoType() == GsoControlType.Container) {
             shapeComponentForContainer(
                     (ShapeComponentContainer) gsoControl.getShapeComponent(),
                     sr);
+        } else if (gsoControl.getGsoType() == GsoControlType.TextArt) {
+            shapeComponentUnknown(
+                    (ShapeComponentUnknown) gsoControl.getShapeComponent(),
+                    sr);
+        } else {
+            shapeComponentForNormal(
+                    (ShapeComponentNormal) gsoControl.getShapeComponent(), sr);
         }
     }
 
     /**
      * 일반 컨트롤을 위한 객체 공통 속성 레코드을 읽는다.
      *
-     * @param sc 객체 공통 속성 레코드
+     * @param scn 객체 공통 속성 레코드
      * @param sr 스트림 리더
      * @throws IOException
      */
@@ -74,7 +76,7 @@ public class ForShapeComponent {
      * @param sr 스트림 리더
      * @throws IOException
      */
-    private static void commonPart(ShapeComponent sc, StreamReader sr)
+    private static void commonPart(ShapeComponentBasic sc, StreamReader sr)
             throws IOException {
         sc.setOffsetX(sr.readSInt4());
         sc.setOffsetY(sr.readSInt4());
@@ -176,7 +178,7 @@ public class ForShapeComponent {
     /**
      * 묶음 컨트롤을 위한 객체 공통 속성 레코드를 읽는다.
      *
-     * @param sc 객체 공통 속성 레코드
+     * @param scc 객체 공통 속성 레코드
      * @param sr 스트림 리더
      * @throws IOException
      */
@@ -213,4 +215,12 @@ public class ForShapeComponent {
     private static void unknown4Bytes(StreamReader sr) throws IOException {
         sr.skipToEndRecord();
     }
+
+
+    private static void shapeComponentUnknown(ShapeComponentUnknown scu, StreamReader sr) throws IOException {
+        byte[] unknown = new byte[(int) (sr.getCurrentRecordHeader().getSize() - sr.getCurrentPositionAfterHeader())];
+        sr.readBytes(unknown);
+        scu.setUnknown(unknown);
+    }
+
 }

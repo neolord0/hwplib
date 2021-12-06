@@ -41,7 +41,7 @@ public class ForDocInfo {
         this.docInfo = docInfo;
         this.sw = sw;
 
-        documentProerties();
+        documentProperties();
         idMappings();
 
         sw.upRecordLevel();
@@ -85,8 +85,8 @@ public class ForDocInfo {
      *
      * @throws IOException
      */
-    private void documentProerties() throws IOException {
-        DocumentPropeties dp = docInfo.getDocumentProperties();
+    private void documentProperties() throws IOException {
+        DocumentProperties dp = docInfo.getDocumentProperties();
         if (dp == null) {
             return;
         }

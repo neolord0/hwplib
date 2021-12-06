@@ -3,7 +3,7 @@ package kr.dogfoot.hwplib.tool.blankfilemaker;
 import kr.dogfoot.hwplib.object.HWPFile;
 import kr.dogfoot.hwplib.object.bodytext.Section;
 import kr.dogfoot.hwplib.object.docinfo.DocInfo;
-import kr.dogfoot.hwplib.object.docinfo.DocumentPropeties;
+import kr.dogfoot.hwplib.object.docinfo.DocumentProperties;
 import kr.dogfoot.hwplib.object.docinfo.LayoutCompatibility;
 import kr.dogfoot.hwplib.object.docinfo.compatibledocument.CompatibleDocumentSort;
 import kr.dogfoot.hwplib.object.docinfo.documentproperties.CaretPosition;
@@ -49,7 +49,7 @@ public class BlankFileMaker {
         fileHeader.setCCLDocument(false);
     }
 
-    private static void setDocumentProperties(DocumentPropeties documentProperties) {
+    private static void setDocumentProperties(DocumentProperties documentProperties) {
         documentProperties.setSectionCount(1);
 
         StartNumber startNumber = documentProperties.getStartNumber();

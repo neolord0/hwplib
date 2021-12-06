@@ -7,7 +7,7 @@ import java.util.ArrayList;
  *
  * @author neolord
  */
-public class ShapeComponentContainer extends ShapeComponent {
+public class ShapeComponentContainer extends ShapeComponentBasic {
     /**
      * 컨테이너에 포함된 컨트롤의 id 리스트
      */
@@ -40,7 +40,7 @@ public class ShapeComponentContainer extends ShapeComponent {
 
     @Override
     public void copy(ShapeComponent from) {
-        copyShapeComponent(from);
+        copyShapeComponent((ShapeComponentBasic) from);
         ShapeComponentContainer from2 = (ShapeComponentContainer) from;
 
         childControlIdList.clear();

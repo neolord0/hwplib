@@ -55,7 +55,7 @@ public class ForGsoControl {
         CtrlData ctrlData = ctrlData();
         long gsoId = gsoIDFromShapeComponent();
         gsoControl = createGsoControl(header, caption, ctrlData, gsoId);
-        restPartOfShapeCompponent();
+        restPartOfShapeComponent();
         restPartOfControl();
     }
 
@@ -149,7 +149,7 @@ public class ForGsoControl {
      *
      * @throws IOException
      */
-    private void restPartOfShapeCompponent() throws IOException {
+    private void restPartOfShapeComponent() throws IOException {
         ForShapeComponent.read(gsoControl, sr);
     }
 
@@ -189,6 +189,9 @@ public class ForGsoControl {
                 break;
             case ObjectLinkLine:
                 ForControlObjectLinkLine.readRest((ControlObjectLinkLine) gsoControl, sr);
+                break;
+            case TextArt:
+                ForControlTextArt.readRest((ControlTextArt) gsoControl, sr);
                 break;
         }
     }

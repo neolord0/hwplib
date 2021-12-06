@@ -29,6 +29,7 @@ public class ParagraphList implements ParagraphListInterface {
      *
      * @return 새로 생성된 문단
      */
+    @Override
     public Paragraph addNewParagraph() {
         Paragraph p = new Paragraph();
         paragraphList.add(p);
@@ -40,6 +41,7 @@ public class ParagraphList implements ParagraphListInterface {
      *
      * @return 문단 개수
      */
+    @Override
     public int getParagraphCount() {
         return paragraphList.size();
     }
@@ -50,24 +52,9 @@ public class ParagraphList implements ParagraphListInterface {
      * @param index 찾고자 하는 문단의 순번
      * @return index 번째의 문단
      */
+    @Override
     public Paragraph getParagraph(int index) {
         return paragraphList.get(index);
-    }
-
-    /**
-     * index 번째의 문단을 삭제한다.
-     *
-     * @param index 삭제할 문단의 순번
-     */
-    public void deleteParagraph(int index) {
-        paragraphList.remove(index);
-    }
-
-    /**
-     * 모든 문단을 삭제한다.
-     */
-    public void deleteAllParagraphs() {
-        paragraphList.clear();
     }
 
     @Override
@@ -76,10 +63,41 @@ public class ParagraphList implements ParagraphListInterface {
     }
 
     /**
+     * index 번째의 문단을 삭제한다.
+     *
+     * @param index 삭제할 문단의 순번
+     */
+    @Override
+    public void deleteParagraph(int index) {
+        paragraphList.remove(index);
+    }
+
+    /**
+     * 모든 문단을 삭제한다.
+     */
+    @Override
+    public void deleteAllParagraphs() {
+        paragraphList.clear();
+    }
+
+    @Override
+    public void insertParagraph(int index, Paragraph para) {
+        paragraphList.add(index, para);
+    }
+
+    @Override
+    public Paragraph insertNewParagraph(int index) {
+        Paragraph p = new Paragraph();
+        paragraphList.add(index, p);
+        return p;
+    }
+
+    /**
      * Iterator<Paragraph> 객체를 반환한다.
      *
      * @return Iterator<Paragraph> 객체
      */
+    @Override
     public Iterator<Paragraph> iterator() {
         return paragraphList.iterator();
     }

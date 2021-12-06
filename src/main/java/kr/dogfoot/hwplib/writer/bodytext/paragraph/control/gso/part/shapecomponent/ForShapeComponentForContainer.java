@@ -1,6 +1,7 @@
 package kr.dogfoot.hwplib.writer.bodytext.paragraph.control.gso.part.shapecomponent;
 
 import kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponent.ShapeComponent;
+import kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponent.ShapeComponentBasic;
 import kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponent.ShapeComponentContainer;
 import kr.dogfoot.hwplib.object.etc.HWPTag;
 import kr.dogfoot.hwplib.util.compoundFile.writer.StreamWriter;
@@ -80,7 +81,7 @@ public class ForShapeComponentForContainer {
      * @param sw 스트림 라이터
      * @throws IOException
      */
-    private static void commonPart(ShapeComponent sc, StreamWriter sw)
+    private static void commonPart(ShapeComponentBasic sc, StreamWriter sw)
             throws IOException {
         CommonPart.write(sc, sw);
     }

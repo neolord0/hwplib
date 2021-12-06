@@ -54,7 +54,7 @@ public class ForDocInfo {
     private void recordBody() throws Exception {
         switch (sr.getCurrentRecordHeader().getTagID()) {
             case HWPTag.DOCUMENT_PROPERTIES:
-                documentProerties(docInfo.getDocumentProperties());
+                documentProperties(docInfo.getDocumentProperties());
                 break;
             case HWPTag.ID_MAPPINGS:
                 idMappings(docInfo.getIDMappings());
@@ -122,7 +122,7 @@ public class ForDocInfo {
      * @param dp 읽은 내용을 저장할 객체
      * @throws IOException
      */
-    private void documentProerties(DocumentPropeties dp) throws IOException {
+    private void documentProperties(DocumentProperties dp) throws IOException {
         ForDocumentPropeties.read(dp, sr);
     }
 

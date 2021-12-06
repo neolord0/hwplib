@@ -1,6 +1,6 @@
 package kr.dogfoot.hwplib.reader.docinfo;
 
-import kr.dogfoot.hwplib.object.docinfo.DocumentPropeties;
+import kr.dogfoot.hwplib.object.docinfo.DocumentProperties;
 import kr.dogfoot.hwplib.object.docinfo.documentproperties.CaretPosition;
 import kr.dogfoot.hwplib.object.docinfo.documentproperties.StartNumber;
 import kr.dogfoot.hwplib.util.compoundFile.reader.StreamReader;
@@ -20,7 +20,7 @@ public class ForDocumentPropeties {
      * @param sr 스트림 리더
      * @throws IOException
      */
-    public static void read(DocumentPropeties dp,
+    public static void read(DocumentProperties dp,
                             StreamReader sr) throws IOException {
         property(dp, sr);
         startNumber(dp.getStartNumber(), sr);
@@ -34,7 +34,7 @@ public class ForDocumentPropeties {
      * @param sr 스트림 리더
      * @throws IOException
      */
-    private static void property(DocumentPropeties dp,
+    private static void property(DocumentProperties dp,
                                  StreamReader sr) throws IOException {
         dp.setSectionCount(sr.readUInt2());
     }

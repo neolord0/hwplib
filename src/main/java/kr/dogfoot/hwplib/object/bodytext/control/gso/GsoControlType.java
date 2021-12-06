@@ -47,7 +47,11 @@ public enum GsoControlType {
     /**
      * 객체 연결선
      */
-    ObjectLinkLine(CtrlID.make('$', 'c', 'o', 'l'));
+    ObjectLinkLine(CtrlID.make('$', 'c', 'o', 'l')),
+    /**
+     * 글맵시
+     */
+    TextArt(CtrlID.make('$', 't', 'a', 't'));
 
     /**
      * 아아디

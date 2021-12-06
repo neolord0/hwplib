@@ -1,6 +1,6 @@
 package kr.dogfoot.hwplib.writer.docinfo;
 
-import kr.dogfoot.hwplib.object.docinfo.DocumentPropeties;
+import kr.dogfoot.hwplib.object.docinfo.DocumentProperties;
 import kr.dogfoot.hwplib.object.docinfo.documentproperties.CaretPosition;
 import kr.dogfoot.hwplib.object.docinfo.documentproperties.StartNumber;
 import kr.dogfoot.hwplib.object.etc.HWPTag;
@@ -21,7 +21,7 @@ public class ForDocumentProperties {
      * @param sw 스트림 라이터
      * @throws IOException
      */
-    public static void write(DocumentPropeties dp, StreamWriter sw)
+    public static void write(DocumentProperties dp, StreamWriter sw)
             throws IOException {
         recordHeader(sw);
 

@@ -31,6 +31,13 @@ public interface ParagraphListInterface extends Iterable<Paragraph> {
     Paragraph getParagraph(int index);
 
     /**
+     * 문단 배열을 리턴한다.
+     *
+     * @return 문단 배열
+     */
+    Paragraph[] getParagraphs();
+
+    /**
      * index 번째의 문단을 삭제한다.
      *
      * @param index 삭제할 문단의 순번
@@ -38,11 +45,25 @@ public interface ParagraphListInterface extends Iterable<Paragraph> {
     void deleteParagraph(int index);
 
     /**
-     * 문단 배열을 리턴한다.
-     *
-     * @return 문단 배열
+     * 모든 문단을 삭제한다.
      */
-    Paragraph[] getParagraphs();
+    void deleteAllParagraphs();
+
+    /**
+     * 문단을 삽입한다.
+     *
+     * @param index  삽입할 위치
+     * @param para   문단
+     */
+    void insertParagraph(int index, Paragraph para);
+
+    /**
+     * index 번째의 문단을 새로 생성하여 삽입한다.
+     *
+     * @param index 상입하고자 하는 문단의 순번
+     * @return 새로 삽입된 문단
+     */
+    Paragraph insertNewParagraph(int index);
 }
 
 

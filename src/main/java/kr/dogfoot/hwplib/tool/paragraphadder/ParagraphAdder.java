@@ -19,7 +19,14 @@ public class ParagraphAdder {
      * target 문단 리스트
      */
     private ParagraphListInterface targetParaList;
-
+    /**
+     * 삽입할 곳의 문단 인덱스
+     */
+    private int indexToInsert;
+    /**
+     * 문단 복사기
+     */
+    private ParagraphCopier paraCopier;
     /**
      * 생성자
      *
@@ -29,6 +36,13 @@ public class ParagraphAdder {
     public ParagraphAdder(HWPFile targetHWPFile, ParagraphListInterface targetParaList) {
         this.targetHWPFile = targetHWPFile;
         this.targetParaList = targetParaList;
+        this.indexToInsert = -1;
+    }
+
+    public ParagraphAdder(HWPFile targetHWPFile, ParagraphListInterface targetParaList, int indexToInsert) {
+        this.targetHWPFile = targetHWPFile;
+        this.targetParaList = targetParaList;
+        this.indexToInsert = indexToInsert;
     }
 
     /**
@@ -39,8 +53,17 @@ public class ParagraphAdder {
      * @throws Exception
      */
     public void add(HWPFile hwpFile, Paragraph p) throws Exception {
-        ParagraphCopier paraCopyer = new ParagraphCopier(new DocInfoAdder(hwpFile, targetHWPFile));
-        paraCopyer.copy(p, targetParaList.addNewParagraph());
+        paraCopier = new ParagraphCopier(new DocInfoAdder(hwpFile, targetHWPFile));
+        copyAndAdd(p);
+    }
+
+    private void copyAndAdd(Paragraph p) throws Exception {
+        if (indexToInsert == -1) {
+            paraCopier.copy(p, targetParaList.addNewParagraph());
+        } else {
+            paraCopier.copy(p, targetParaList.insertNewParagraph(indexToInsert));
+            indexToInsert++;
+        }
     }
 
     /**
@@ -51,23 +74,24 @@ public class ParagraphAdder {
      * @throws Exception
      */
     public void add(HWPFile hwpFile, ArrayList<Paragraph> list) throws Exception {
-        ParagraphCopier copyer = new ParagraphCopier(new DocInfoAdder(hwpFile, targetHWPFile));
+        paraCopier = new ParagraphCopier(new DocInfoAdder(hwpFile, targetHWPFile));
         for (Paragraph p : list) {
-            copyer.copy(p, targetParaList.addNewParagraph());
+            copyAndAdd(p);
         }
     }
 
     public void add(HWPFile hwpFile, ParagraphListInterface paragraphListInterface) throws Exception {
-        ParagraphCopier copyer = new ParagraphCopier(new DocInfoAdder(hwpFile, targetHWPFile));
+        paraCopier = new ParagraphCopier(new DocInfoAdder(hwpFile, targetHWPFile));
         for (Paragraph p : paragraphListInterface) {
-            copyer.copy(p, targetParaList.addNewParagraph());
+            copyAndAdd(p);
         }
     }
 
     public void addIncludingSectionInfo(HWPFile hwpFile, ParagraphListInterface paragraphListInterface) throws Exception {
-        ParagraphCopier copyer = new ParagraphCopier(new DocInfoAdder(hwpFile, targetHWPFile));
+        paraCopier = new ParagraphCopier(new DocInfoAdder(hwpFile, targetHWPFile));
+
         for (Paragraph p : paragraphListInterface) {
-            copyer.copyIncludingSectionInfo(p, targetParaList.addNewParagraph());
+            paraCopier.copyIncludingSectionInfo(p, targetParaList.addNewParagraph());
         }
     }
 

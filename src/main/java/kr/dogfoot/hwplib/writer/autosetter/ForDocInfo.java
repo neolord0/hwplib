@@ -2,7 +2,7 @@ package kr.dogfoot.hwplib.writer.autosetter;
 
 import kr.dogfoot.hwplib.object.bodytext.BodyText;
 import kr.dogfoot.hwplib.object.docinfo.DocInfo;
-import kr.dogfoot.hwplib.object.docinfo.DocumentPropeties;
+import kr.dogfoot.hwplib.object.docinfo.DocumentProperties;
 import kr.dogfoot.hwplib.object.docinfo.IDMappings;
 
 /**
@@ -28,7 +28,7 @@ public class ForDocInfo {
      * @param dp 문서 속성 레코드
      * @param bt BodyText 스토리지 객체
      */
-    private static void documentProperties(DocumentPropeties dp, BodyText bt) {
+    private static void documentProperties(DocumentProperties dp, BodyText bt) {
         dp.setSectionCount(bt.getSectionList().size());
     }
 

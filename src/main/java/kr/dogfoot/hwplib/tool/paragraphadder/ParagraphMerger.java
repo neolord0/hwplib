@@ -32,7 +32,6 @@ public class ParagraphMerger {
         this.target = target;
 
         removeLastParaBreakCharFromTarget();
-
         moveTextAndCharShapeAndControl();
 
         deleteLineSeg();
@@ -55,6 +54,10 @@ public class ParagraphMerger {
     }
 
     private void moveTextAndCharShapeAndControl() {
+        if (target.getText() == null) {
+            target.createText();
+        }
+
         targetCharPosition = target.getText().getCharSize();
         sourceCharPosition = 0;
         sourceCharShapeIndex = 0;
