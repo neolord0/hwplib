@@ -52,8 +52,8 @@ public interface ParagraphListInterface extends Iterable<Paragraph> {
     /**
      * 문단을 삽입한다.
      *
-     * @param index  삽입할 위치
-     * @param para   문단
+     * @param index 삽입할 위치
+     * @param para  문단
      */
     void insertParagraph(int index, Paragraph para);
 

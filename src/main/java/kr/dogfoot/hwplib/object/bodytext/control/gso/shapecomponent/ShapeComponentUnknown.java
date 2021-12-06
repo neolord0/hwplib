@@ -1,8 +1,5 @@
 package kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponent;
 
-import kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponent.ShapeComponent;
-import kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponenteach.ShapeComponentTextArt;
-
 public class ShapeComponentUnknown extends ShapeComponent {
     /**
      * 알 수 없는 데이터

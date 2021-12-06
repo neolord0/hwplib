@@ -1,6 +1,5 @@
 package kr.dogfoot.hwplib.writer.bodytext.paragraph.control.gso.part.shapecomponent;
 
-import kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponent.ShapeComponent;
 import kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponent.ShapeComponentBasic;
 import kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponent.renderingnfo.Matrix;
 import kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponent.renderingnfo.RenderingInfo;

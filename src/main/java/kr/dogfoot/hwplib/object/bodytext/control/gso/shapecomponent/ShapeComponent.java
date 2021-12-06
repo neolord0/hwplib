@@ -1,8 +1,5 @@
 package kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponent;
 
-import kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponent.renderingnfo.RenderingInfo;
-import kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponent.renderingnfo.ScaleRotateMatrixPair;
-
 /**
  * 객체 공통 속성
  *

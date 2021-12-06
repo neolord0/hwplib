@@ -2,7 +2,10 @@ package kr.dogfoot.hwplib.reader.bodytext.paragraph.control.gso.part;
 
 import kr.dogfoot.hwplib.object.bodytext.control.gso.GsoControl;
 import kr.dogfoot.hwplib.object.bodytext.control.gso.GsoControlType;
-import kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponent.*;
+import kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponent.ShapeComponentBasic;
+import kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponent.ShapeComponentContainer;
+import kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponent.ShapeComponentNormal;
+import kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponent.ShapeComponentUnknown;
 import kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponent.lineinfo.LineInfo;
 import kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponent.lineinfo.OutlineStyle;
 import kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponent.renderingnfo.Matrix;
@@ -49,7 +52,7 @@ public class ForShapeComponent {
      * 일반 컨트롤을 위한 객체 공통 속성 레코드을 읽는다.
      *
      * @param scn 객체 공통 속성 레코드
-     * @param sr 스트림 리더
+     * @param sr  스트림 리더
      * @throws IOException
      */
     private static void shapeComponentForNormal(ShapeComponentNormal scn,
@@ -179,7 +182,7 @@ public class ForShapeComponent {
      * 묶음 컨트롤을 위한 객체 공통 속성 레코드를 읽는다.
      *
      * @param scc 객체 공통 속성 레코드
-     * @param sr 스트림 리더
+     * @param sr  스트림 리더
      * @throws IOException
      */
     private static void shapeComponentForContainer(ShapeComponentContainer scc,
