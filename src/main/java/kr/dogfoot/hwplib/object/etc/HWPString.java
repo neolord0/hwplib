@@ -23,6 +23,9 @@ public class HWPString {
     }
 
     public String toUTF16LEString() {
+        if (bytes == null) {
+            return null;
+        }
         return new String(bytes, StandardCharsets.UTF_16LE);
     }
 
