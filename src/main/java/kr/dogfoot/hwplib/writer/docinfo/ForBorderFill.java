@@ -30,8 +30,7 @@ public class ForBorderFill {
         eachBorder(bf.getRightBorder(), sw);
         eachBorder(bf.getTopBorder(), sw);
         eachBorder(bf.getBottomBorder(), sw);
-        diagonalLine(bf, sw);
-
+        eachBorder(bf.getDiagonalBorder(), sw);
         ForFillInfo.write(bf.getFillInfo(), sw);
     }
 
@@ -73,19 +72,5 @@ public class ForBorderFill {
         sw.writeUInt1(eb.getType().getValue());
         sw.writeUInt1(eb.getThickness().getValue());
         sw.writeUInt4(eb.getColor().getValue());
-    }
-
-    /**
-     * 대각선 정보 부분를 쓴다.
-     *
-     * @param bf 테두리/배경 레코드
-     * @param sw 스트림 라이터
-     * @throws IOException
-     */
-    private static void diagonalLine(BorderFill bf, StreamWriter sw)
-            throws IOException {
-        sw.writeUInt1(bf.getDiagonalSort().getValue());
-        sw.writeUInt1(bf.getDiagonalThickness().getValue());
-        sw.writeUInt4(bf.getDiagonalColor().getValue());
     }
 }

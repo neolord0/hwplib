@@ -21,10 +21,7 @@ public class BorderFillAdder {
         border(bf.getLeftBorder(), BorderType.None, BorderThickness.MM0_1, 0);
         border(bf.getTopBorder(), BorderType.None, BorderThickness.MM0_1, 0);
         border(bf.getBottomBorder(), BorderType.None, BorderThickness.MM0_1, 0);
-        bf.setDiagonalSort(BorderType.Solid);
-        bf.setDiagonalThickness(BorderThickness.MM0_1);
-        bf.getDiagonalColor().setValue(0);
-
+        border(bf.getDiagonalBorder(), BorderType.Solid, BorderThickness.MM0_1, 0);
         bf.getFillInfo().getType().setValue(0);
     }
 
@@ -41,10 +38,7 @@ public class BorderFillAdder {
         border(bf.getLeftBorder(), BorderType.None, BorderThickness.MM0_1, 0);
         border(bf.getTopBorder(), BorderType.None, BorderThickness.MM0_1, 0);
         border(bf.getBottomBorder(), BorderType.None, BorderThickness.MM0_1, 0);
-        bf.setDiagonalSort(BorderType.Solid);
-        bf.setDiagonalThickness(BorderThickness.MM0_1);
-        bf.getDiagonalColor().setValue(0);
-
+        border(bf.getDiagonalBorder(), BorderType.Solid, BorderThickness.MM0_1, 0);
         bf.getFillInfo().getType().setPatternFill(true);
         bf.getFillInfo().createPatternFill();
         PatternFill pf = bf.getFillInfo().getPatternFill();

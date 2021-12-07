@@ -30,7 +30,7 @@ public class ForBorderFill {
         eachBorder(bf.getRightBorder(), sr);
         eachBorder(bf.getTopBorder(), sr);
         eachBorder(bf.getBottomBorder(), sr);
-        diagonal(bf, sr);
+        eachBorder(bf.getDiagonalBorder(), sr);
         fillInfo(bf.getFillInfo(), sr);
     }
 
@@ -47,9 +47,9 @@ public class ForBorderFill {
     }
 
     /**
-     * 4방향의 테두리를 표현하는 각각의 선를 읽는다.
+     * 4방향의 테두리/대각선를 표현하는 각각의 선를 읽는다.
      *
-     * @param eb 4방향의 테두리를 표현하는 각각 선 객체
+     * @param eb 4방향의 테두리/대각선를 표현하는 각각 선 객체
      * @param sr 스트림 리더
      * @throws IOException
      */
@@ -58,20 +58,6 @@ public class ForBorderFill {
         eb.setType(BorderType.valueOf((byte) sr.readUInt1()));
         eb.setThickness(BorderThickness.valueOf((byte) sr.readUInt1()));
         eb.getColor().setValue(sr.readUInt4());
-    }
-
-    /**
-     * 대각선 정보 부분를 읽는다.
-     *
-     * @param bf 테두리/배경 레코드
-     * @param sr 스트림 리더
-     * @throws IOException
-     */
-    private static void diagonal(BorderFill bf, StreamReader sr)
-            throws IOException {
-        bf.setDiagonalSort(BorderType.valueOf((byte) sr.readUInt1()));
-        bf.setDiagonalThickness(BorderThickness.valueOf((byte) sr.readUInt1()));
-        bf.getDiagonalColor().setValue(sr.readUInt4());
     }
 
     /**

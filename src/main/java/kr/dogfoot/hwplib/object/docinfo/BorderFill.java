@@ -34,17 +34,9 @@ public class BorderFill {
      */
     private EachBorder bottomBorder;
     /**
-     * 대각선 종류
+     * 대각선의 속성
      */
-    private BorderType diagonalSort;
-    /**
-     * 대각선 굵기
-     */
-    private BorderThickness diagonalThickness;
-    /**
-     * 대각선 색상
-     */
-    private Color4Byte diagonalColor;
+    private EachBorder diagonalBorder;
     /**
      * 채우기 정보
      */
@@ -59,7 +51,7 @@ public class BorderFill {
         rightBorder = new EachBorder();
         topBorder = new EachBorder();
         bottomBorder = new EachBorder();
-        diagonalColor = new Color4Byte();
+        diagonalBorder = new EachBorder();
         fillInfo = new FillInfo();
     }
 
@@ -109,48 +101,12 @@ public class BorderFill {
     }
 
     /**
-     * 대각선의 종류를 반환한다.
+     * 대각선의 속성 객체를 반환한다.
      *
-     * @return 대각선의 종류
+     * @return 아래쪽 선의 속성 객체
      */
-    public BorderType getDiagonalSort() {
-        return diagonalSort;
-    }
-
-    /**
-     * 대각선의 종류를 설정한다.
-     *
-     * @param diagonalSort 대각선의 종류
-     */
-    public void setDiagonalSort(BorderType diagonalSort) {
-        this.diagonalSort = diagonalSort;
-    }
-
-    /**
-     * 대각선의 두께를 반환한다.
-     *
-     * @return 대각선의 두께
-     */
-    public BorderThickness getDiagonalThickness() {
-        return diagonalThickness;
-    }
-
-    /**
-     * 대각선의 두께를 설정한다.
-     *
-     * @param diagonalThickness 대각선의 두께
-     */
-    public void setDiagonalThickness(BorderThickness diagonalThickness) {
-        this.diagonalThickness = diagonalThickness;
-    }
-
-    /**
-     * 대각선의 색상 객체를 반환한다.
-     *
-     * @return 대각선의 색상 객체
-     */
-    public Color4Byte getDiagonalColor() {
-        return diagonalColor;
+    public EachBorder getDiagonalBorder() {
+        return bottomBorder;
     }
 
     /**
@@ -169,9 +125,7 @@ public class BorderFill {
         cloned.rightBorder.copy(rightBorder);
         cloned.topBorder.copy(topBorder);
         cloned.bottomBorder.copy(bottomBorder);
-        cloned.diagonalSort = diagonalSort;
-        cloned.diagonalThickness = diagonalThickness;
-        cloned.diagonalColor.copy(diagonalColor);
+        cloned.diagonalBorder.copy(diagonalBorder);
         cloned.fillInfo.copy(fillInfo);
         return cloned;
     }

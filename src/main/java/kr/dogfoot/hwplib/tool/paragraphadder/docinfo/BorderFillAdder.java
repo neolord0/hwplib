@@ -45,9 +45,7 @@ public class BorderFillAdder {
                 && equalEachBorder(source.getRightBorder(), target.getRightBorder())
                 && equalEachBorder(source.getTopBorder(), target.getTopBorder())
                 && equalEachBorder(source.getBottomBorder(), target.getBottomBorder())
-                && source.getDiagonalSort() == target.getDiagonalSort()
-                && source.getDiagonalThickness() == target.getDiagonalThickness()
-                && source.getDiagonalColor().getValue() == target.getDiagonalColor().getValue()
+                && equalEachBorder(source.getDiagonalBorder(), target.getDiagonalBorder())
                 && ForFillInfo.equal(source.getFillInfo(), target.getFillInfo());
     }
 
@@ -63,9 +61,7 @@ public class BorderFillAdder {
         copyEachBorder(source.getRightBorder(), target.getRightBorder());
         copyEachBorder(source.getTopBorder(), target.getTopBorder());
         copyEachBorder(source.getBottomBorder(), target.getBottomBorder());
-        target.setDiagonalSort(source.getDiagonalSort());
-        target.setDiagonalThickness(source.getDiagonalThickness());
-        target.getDiagonalColor().setValue(source.getDiagonalColor().getValue());
+        copyEachBorder(source.getDiagonalBorder(), target.getDiagonalBorder());
         ForFillInfo.copy(source.getFillInfo(), target.getFillInfo(), docInfoAdder);
         return docInfoAdder.getTargetHWPFile().getDocInfo().getBorderFillList().size();
     }

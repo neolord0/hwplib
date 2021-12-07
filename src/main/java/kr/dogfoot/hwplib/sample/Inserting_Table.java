@@ -139,9 +139,9 @@ public class Inserting_Table {
         bf.getBottomBorder().setType(BorderType.None);
         bf.getBottomBorder().setThickness(BorderThickness.MM0_5);
         bf.getBottomBorder().getColor().setValue(0x0);
-        bf.setDiagonalSort(BorderType.None);
-        bf.setDiagonalThickness(BorderThickness.MM0_5);
-        bf.getDiagonalColor().setValue(0x0);
+        bf.getDiagonalBorder().setType(BorderType.None);
+        bf.getDiagonalBorder().setThickness(BorderThickness.MM0_5);
+        bf.getDiagonalBorder().getColor().setValue(0x0);
 
         bf.getFillInfo().getType().setPatternFill(true);
         bf.getFillInfo().createPatternFill();
@@ -178,9 +178,9 @@ public class Inserting_Table {
         bf.getBottomBorder().setType(BorderType.Solid);
         bf.getBottomBorder().setThickness(BorderThickness.MM0_5);
         bf.getBottomBorder().getColor().setValue(0x0);
-        bf.setDiagonalSort(BorderType.None);
-        bf.setDiagonalThickness(BorderThickness.MM0_5);
-        bf.getDiagonalColor().setValue(0x0);
+        bf.getDiagonalBorder().setType(BorderType.None);
+        bf.getDiagonalBorder().setThickness(BorderThickness.MM0_5);
+        bf.getDiagonalBorder().getColor().setValue(0x0);
 
         bf.getFillInfo().getType().setPatternFill(true);
         bf.getFillInfo().createPatternFill();
