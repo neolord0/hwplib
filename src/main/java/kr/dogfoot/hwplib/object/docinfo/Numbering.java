@@ -53,6 +53,10 @@ public class Numbering {
         }
     }
 
+    public ArrayList<LevelNumbering> getLevelNumberingList() {
+        return levelNumberingList;
+    }
+
     /**
      * 시작 번호를 반환한다.
      *
