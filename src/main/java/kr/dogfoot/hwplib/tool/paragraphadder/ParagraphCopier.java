@@ -171,8 +171,8 @@ public class ParagraphCopier {
                 case PageOddEvenAdjust:
                     ETCControlCopier.copyPageOddEvenAdjust((ControlPageOddEvenAdjust) c, (ControlPageOddEvenAdjust) target.addNewControl(ControlType.PageOddEvenAdjust), docInfoAdder);
                     break;
-                case PageNumberPositon:
-                    ETCControlCopier.copyPageNumberPosition((ControlPageNumberPosition) c, (ControlPageNumberPosition) target.addNewControl(ControlType.PageNumberPositon), docInfoAdder);
+                case PageNumberPosition:
+                    ETCControlCopier.copyPageNumberPosition((ControlPageNumberPosition) c, (ControlPageNumberPosition) target.addNewControl(ControlType.PageNumberPosition), docInfoAdder);
                     break;
                 case IndexMark:
                     ETCControlCopier.copyIndexMark((ControlIndexMark) c, (ControlIndexMark) target.addNewControl(ControlType.IndexMark), docInfoAdder);

@@ -61,7 +61,7 @@ public class ForControl {
             case PageOddEvenAdjust:
                 ForControlPageOddEvenAdjust.write((ControlPageOddEvenAdjust) c, sw);
                 break;
-            case PageNumberPositon: // 쪽 번호 위치
+            case PageNumberPosition: // 쪽 번호 위치
                 ForControlPageNumberPosition.write((ControlPageNumberPosition) c, sw);
                 break;
             case IndexMark: // 찾아보기 표식

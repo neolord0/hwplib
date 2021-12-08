@@ -35,7 +35,7 @@ public class CtrlHeaderPageNumberPosition extends CtrlHeader {
      * 생성자
      */
     public CtrlHeaderPageNumberPosition() {
-        super(ControlType.PageNumberPositon.getCtrlId());
+        super(ControlType.PageNumberPosition.getCtrlId());
 
         property = new PageNumberPositionHeaderProperty();
         userSymbol = new HWPString();

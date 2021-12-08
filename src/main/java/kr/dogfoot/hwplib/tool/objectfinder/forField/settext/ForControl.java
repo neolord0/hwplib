@@ -56,7 +56,7 @@ public class ForControl {
                     break;
                 case PageOddEvenAdjust:
                     break;
-                case PageNumberPositon:
+                case PageNumberPosition:
                     break;
                 case IndexMark:
                     break;

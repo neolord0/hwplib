@@ -163,8 +163,8 @@ public class ParagraphMerger {
             case PageOddEvenAdjust:
                 ETCControlCopier.copyPageOddEvenAdjust((ControlPageOddEvenAdjust) sourceControl, (ControlPageOddEvenAdjust) target.addNewControl(ControlType.PageOddEvenAdjust), docInfoAdder);
                 break;
-            case PageNumberPositon:
-                ETCControlCopier.copyPageNumberPosition((ControlPageNumberPosition) sourceControl, (ControlPageNumberPosition) target.addNewControl(ControlType.PageNumberPositon), docInfoAdder);
+            case PageNumberPosition:
+                ETCControlCopier.copyPageNumberPosition((ControlPageNumberPosition) sourceControl, (ControlPageNumberPosition) target.addNewControl(ControlType.PageNumberPosition), docInfoAdder);
                 break;
             case IndexMark:
                 ETCControlCopier.copyIndexMark((ControlIndexMark) sourceControl, (ControlIndexMark) target.addNewControl(ControlType.IndexMark), docInfoAdder);

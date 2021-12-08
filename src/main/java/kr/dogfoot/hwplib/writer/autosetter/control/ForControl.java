@@ -60,7 +60,7 @@ public class ForControl {
                     break;
                 case PageHide:
                     break;
-                case PageNumberPositon:
+                case PageNumberPosition:
                     break;
                 case PageOddEvenAdjust:
                     break;

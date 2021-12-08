@@ -65,7 +65,7 @@ public class ForControlWithAllField {
                     break;
                 case PageOddEvenAdjust:
                     break;
-                case PageNumberPositon:
+                case PageNumberPosition:
                     break;
                 case IndexMark:
                     break;

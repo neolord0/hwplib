@@ -40,7 +40,7 @@ public class FactoryForControl {
             return new ControlPageHide();
         } else if (ctrlId == ControlType.PageOddEvenAdjust.getCtrlId()) {
             return new ControlPageOddEvenAdjust();
-        } else if (ctrlId == ControlType.PageNumberPositon.getCtrlId()) {
+        } else if (ctrlId == ControlType.PageNumberPosition.getCtrlId()) {
             return new ControlPageNumberPosition();
         } else if (ctrlId == ControlType.IndexMark.getCtrlId()) {
             return new ControlIndexMark();

@@ -64,7 +64,7 @@ public enum ControlType {
     /**
      * 쪽 번호 위치
      */
-    PageNumberPositon(CtrlID.make('p', 'g', 'n', 'p')),
+    PageNumberPosition(CtrlID.make('p', 'g', 'n', 'p')),
     /**
      * 찾아보기 표식
      */
