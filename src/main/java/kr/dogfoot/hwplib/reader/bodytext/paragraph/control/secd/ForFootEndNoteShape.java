@@ -31,11 +31,11 @@ public class ForFootEndNoteShape {
         fens.setDivideLineTopMargin(sr.readUInt2());
         fens.setDivideLineBottomMargin(sr.readUInt2());
         fens.setBetweenNotesMargin(sr.readUInt2());
-        fens.setDivideLineSort(BorderType.valueOf((byte) sr
+        fens.getDivideLine().setType(BorderType.valueOf((byte) sr
                 .readUInt1()));
-        fens.setDivideLineThickness(BorderThickness.valueOf((byte) sr
+        fens.getDivideLine().setThickness(BorderThickness.valueOf((byte) sr
                 .readUInt1()));
-        fens.getDivideLineColor().setValue(sr.readUInt4());
+        fens.getDivideLine().getColor().setValue(sr.readUInt4());
 
         if (sr.isEndOfRecord() == false) {
             fens.setUnknown(sr.readUInt4());

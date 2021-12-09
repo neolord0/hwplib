@@ -59,9 +59,9 @@ public class SectionDefineAdder {
         footNoteShape.setDivideLineTopMargin(850);
         footNoteShape.setDivideLineBottomMargin(567);
         footNoteShape.setBetweenNotesMargin(283);
-        footNoteShape.setDivideLineSort(BorderType.Solid);
-        footNoteShape.setDivideLineThickness(BorderThickness.MM0_12);
-        footNoteShape.getDivideLineColor().setValue(0);
+        footNoteShape.getDivideLine().setType(BorderType.Solid);
+        footNoteShape.getDivideLine().setThickness(BorderThickness.MM0_12);
+        footNoteShape.getDivideLine().getColor().setValue(0);
         footNoteShape.setUnknown(0);
     }
 
@@ -75,9 +75,9 @@ public class SectionDefineAdder {
         endNoteShape.setDivideLineTopMargin(850);
         endNoteShape.setDivideLineBottomMargin(567);
         endNoteShape.setBetweenNotesMargin(0);
-        endNoteShape.setDivideLineSort(BorderType.Solid);
-        endNoteShape.setDivideLineThickness(BorderThickness.MM0_12);
-        endNoteShape.getDivideLineColor().setValue(0);
+        endNoteShape.getDivideLine().setType(BorderType.Solid);
+        endNoteShape.getDivideLine().setThickness(BorderThickness.MM0_12);
+        endNoteShape.getDivideLine().getColor().setValue(0);
         endNoteShape.setUnknown(0);
     }
 

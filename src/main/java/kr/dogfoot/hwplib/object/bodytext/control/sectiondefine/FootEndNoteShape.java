@@ -2,6 +2,7 @@ package kr.dogfoot.hwplib.object.bodytext.control.sectiondefine;
 
 import kr.dogfoot.hwplib.object.docinfo.borderfill.BorderThickness;
 import kr.dogfoot.hwplib.object.docinfo.borderfill.BorderType;
+import kr.dogfoot.hwplib.object.docinfo.borderfill.EachBorder;
 import kr.dogfoot.hwplib.object.etc.Color4Byte;
 import kr.dogfoot.hwplib.object.etc.HWPString;
 
@@ -48,17 +49,9 @@ public class FootEndNoteShape {
      */
     private int betweenNotesMargin;
     /**
-     * 구분선 종류
+     * 구분선 정보
      */
-    private BorderType divideLineSort;
-    /**
-     * 구분선 굵기
-     */
-    private BorderThickness divideLineThickness;
-    /**
-     * 구분선 색상
-     */
-    private Color4Byte divideLineColor;
+    private EachBorder divideLine;
     /**
      * 알수 없는 4 byte;
      */
@@ -72,7 +65,7 @@ public class FootEndNoteShape {
         userSymbol = new HWPString();
         beforeDecorativeLetter = new HWPString();
         afterDecorativeLetter = new HWPString();
-        divideLineColor = new Color4Byte();
+        divideLine = new EachBorder();
     }
 
     /**
@@ -202,48 +195,12 @@ public class FootEndNoteShape {
     }
 
     /**
-     * 구분선 종류를 반환한다.
+     * 구분선 정보를 반환한다.
      *
-     * @return 구분선 종류
+     * @return 구분선 정보
      */
-    public BorderType getDivideLineSort() {
-        return divideLineSort;
-    }
-
-    /**
-     * 구분선 종류를 설정한다.
-     *
-     * @param divideLineSort 구분선 종류
-     */
-    public void setDivideLineSort(BorderType divideLineSort) {
-        this.divideLineSort = divideLineSort;
-    }
-
-    /**
-     * 구분선 굵기를 반환한다.
-     *
-     * @return 구분선 굵기
-     */
-    public BorderThickness getDivideLineThickness() {
-        return divideLineThickness;
-    }
-
-    /**
-     * 구분선 굵기를 설정한다.
-     *
-     * @param divideLineThickness 구분선 굵기
-     */
-    public void setDivideLineThickness(BorderThickness divideLineThickness) {
-        this.divideLineThickness = divideLineThickness;
-    }
-
-    /**
-     * 구분선 색상 객체를 반환한다.
-     *
-     * @return 구분선 색상 객체
-     */
-    public Color4Byte getDivideLineColor() {
-        return divideLineColor;
+    public EachBorder getDivideLine() {
+        return divideLine;
     }
 
     /**
@@ -274,9 +231,7 @@ public class FootEndNoteShape {
         divideLineTopMargin = from.divideLineTopMargin;
         divideLineBottomMargin = from.divideLineBottomMargin;
         betweenNotesMargin = from.betweenNotesMargin;
-        divideLineSort = from.divideLineSort;
-        divideLineThickness = from.divideLineThickness;
-        divideLineColor.copy(from.divideLineColor);
+        divideLine.copy(from.divideLine);
         unknown = from.unknown;
     }
 }

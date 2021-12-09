@@ -36,9 +36,9 @@ public class ForFootEndNoteShape {
         sw.writeUInt2(fens.getDivideLineTopMargin());
         sw.writeUInt2(fens.getDivideLineBottomMargin());
         sw.writeUInt2(fens.getBetweenNotesMargin());
-        sw.writeUInt1(fens.getDivideLineSort().getValue());
-        sw.writeUInt1(fens.getDivideLineThickness().getValue());
-        sw.writeUInt4(fens.getDivideLineColor().getValue());
+        sw.writeUInt1(fens.getDivideLine().getType().getValue());
+        sw.writeUInt1(fens.getDivideLine().getThickness().getValue());
+        sw.writeUInt4(fens.getDivideLine().getColor().getValue());
     }
 
     /**
