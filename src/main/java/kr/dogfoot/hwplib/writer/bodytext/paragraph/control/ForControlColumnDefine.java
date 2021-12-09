@@ -57,9 +57,9 @@ public class ForControlColumnDefine {
             columnInfos(h, sw);
         }
 
-        sw.writeUInt1(h.getDivideLineSort().getValue());
-        sw.writeUInt1(h.getDivideLineThickness().getValue());
-        sw.writeUInt4(h.getDivideLineColor().getValue());
+        sw.writeUInt1(h.getDivideLine().getType().getValue());
+        sw.writeUInt1(h.getDivideLine().getThickness().getValue());
+        sw.writeUInt4(h.getDivideLine().getColor().getValue());
     }
 
     /**

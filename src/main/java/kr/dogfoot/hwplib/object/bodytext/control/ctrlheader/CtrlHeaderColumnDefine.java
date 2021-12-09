@@ -5,6 +5,7 @@ import kr.dogfoot.hwplib.object.bodytext.control.ctrlheader.columndefine.ColumnD
 import kr.dogfoot.hwplib.object.bodytext.control.ctrlheader.columndefine.ColumnInfo;
 import kr.dogfoot.hwplib.object.docinfo.borderfill.BorderThickness;
 import kr.dogfoot.hwplib.object.docinfo.borderfill.BorderType;
+import kr.dogfoot.hwplib.object.docinfo.borderfill.EachBorder;
 import kr.dogfoot.hwplib.object.etc.Color4Byte;
 
 import java.util.ArrayList;
@@ -32,17 +33,9 @@ public class CtrlHeaderColumnDefine extends CtrlHeader {
      */
     private ArrayList<ColumnInfo> columnInfoList;
     /**
-     * 단 구분선 종류
+     * 단 구분선 정보
      */
-    private BorderType divideLineSort;
-    /**
-     * 단 구분선 굵기
-     */
-    private BorderThickness divideLineThickness;
-    /**
-     * 단 구분선 색상
-     */
-    private Color4Byte divideLineColor;
+    private EachBorder divideLine;
 
     /**
      * 생성자
@@ -52,7 +45,7 @@ public class CtrlHeaderColumnDefine extends CtrlHeader {
 
         property = new ColumnDefineHeaderProperty();
         columnInfoList = new ArrayList<ColumnInfo>();
-        divideLineColor = new Color4Byte();
+        divideLine = new EachBorder();
     }
 
     /**
@@ -121,48 +114,12 @@ public class CtrlHeaderColumnDefine extends CtrlHeader {
     }
 
     /**
-     * 단 구분선 종류를 반환한다.
+     * 단 구분선 정보를 반환한다.
      *
      * @return 단 구분선 종류
      */
-    public BorderType getDivideLineSort() {
-        return divideLineSort;
-    }
-
-    /**
-     * 단 구분선 종류를 설정한다.
-     *
-     * @param divideLineSort 단 구분선 종류
-     */
-    public void setDivideLineSort(BorderType divideLineSort) {
-        this.divideLineSort = divideLineSort;
-    }
-
-    /**
-     * 단 구분선 굵기를 반환한다.
-     *
-     * @return 단 구분선 굵기
-     */
-    public BorderThickness getDivideLineThickness() {
-        return divideLineThickness;
-    }
-
-    /**
-     * 단 구분선 굵기를 설정한다.
-     *
-     * @param divideLineThickness 단 구분선 굵기
-     */
-    public void setDivideLineThickness(BorderThickness divideLineThickness) {
-        this.divideLineThickness = divideLineThickness;
-    }
-
-    /**
-     * 단 구분선 색상를 반환한다.
-     *
-     * @return 단 구분선 색상
-     */
-    public Color4Byte getDivideLineColor() {
-        return divideLineColor;
+    public EachBorder getDivideLine() {
+        return divideLine;
     }
 
     @Override
@@ -175,9 +132,6 @@ public class CtrlHeaderColumnDefine extends CtrlHeader {
         for (ColumnInfo columnInfo : from2.columnInfoList) {
             columnInfoList.add(columnInfo.clone());
         }
-
-        divideLineSort = from2.divideLineSort;
-        divideLineThickness = from2.divideLineThickness;
-        divideLineColor.copy(from2.divideLineColor);
+        divideLine.copy(from2.divideLine);
     }
 }

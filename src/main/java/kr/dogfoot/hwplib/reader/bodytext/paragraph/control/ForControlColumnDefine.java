@@ -48,9 +48,9 @@ public class ForControlColumnDefine {
             columnInfos(h, sr);
         }
 
-        h.setDivideLineSort(BorderType.valueOf((byte) sr.readUInt1()));
-        h.setDivideLineThickness(BorderThickness.valueOf((byte) sr.readUInt1()));
-        h.getDivideLineColor().setValue(sr.readUInt4());
+        h.getDivideLine().setType(BorderType.valueOf((byte) sr.readUInt1()));
+        h.getDivideLine().setThickness(BorderThickness.valueOf((byte) sr.readUInt1()));
+        h.getDivideLine().getColor().setValue(sr.readUInt4());
 
         sr.skipToEndRecord();
     }

@@ -17,8 +17,8 @@ public class ColumnDefineAdder {
         header.getProperty().setValue(4100);
         header.setGapBetweenColumn(0);
         header.setProperty2(0);
-        header.setDivideLineSort(BorderType.None);
-        header.setDivideLineThickness(BorderThickness.MM0_1);
-        header.getDivideLineColor().setValue(0);
+        header.getDivideLine().setType(BorderType.None);
+        header.getDivideLine().setThickness(BorderThickness.MM0_1);
+        header.getDivideLine().getColor().setValue(0);
     }
 }
