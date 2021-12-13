@@ -1,6 +1,6 @@
 package kr.dogfoot.hwplib.writer.bodytext.paragraph.control.gso.part.shapecomponent;
 
-import kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponent.ShapeComponentBasic;
+import kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponent.ShapeComponent;
 import kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponent.renderingnfo.Matrix;
 import kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponent.renderingnfo.RenderingInfo;
 import kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponent.renderingnfo.ScaleRotateMatrixPair;
@@ -21,7 +21,7 @@ public class CommonPart {
      * @param sw 스트림 라이터
      * @throws IOException
      */
-    public static void write(ShapeComponentBasic sc, StreamWriter sw)
+    public static void write(ShapeComponent sc, StreamWriter sw)
             throws IOException {
         sw.writeSInt4(sc.getOffsetX());
         sw.writeSInt4(sc.getOffsetY());
@@ -76,7 +76,7 @@ public class CommonPart {
      * @param sc 그리기 개체의 객체 공통 속성 레코드
      * @return 그리기 개체의 객체 공통 속성 레코드의 공통 부분의 크기
      */
-    public static int getSize(ShapeComponentBasic sc) {
+    public static int getSize(ShapeComponent sc) {
         int size = 0;
         size += 42;
 

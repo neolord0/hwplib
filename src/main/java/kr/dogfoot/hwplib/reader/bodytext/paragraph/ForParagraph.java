@@ -1,6 +1,7 @@
 package kr.dogfoot.hwplib.reader.bodytext.paragraph;
 
 import kr.dogfoot.hwplib.object.bodytext.control.Control;
+import kr.dogfoot.hwplib.object.bodytext.control.ControlTable;
 import kr.dogfoot.hwplib.object.bodytext.control.ControlType;
 import kr.dogfoot.hwplib.object.bodytext.control.ctrlheader.CtrlID;
 import kr.dogfoot.hwplib.object.bodytext.paragraph.Paragraph;
@@ -172,9 +173,6 @@ public class ForParagraph {
      */
     private void control() throws Exception {
         long id = sr.readUInt4();
-
-        char[] ret = CtrlID.make(id);
-
         if (id == ControlType.Gso.getCtrlId()) {
             ForGsoControl fgc = new ForGsoControl();
             fgc.read(paragraph, sr);

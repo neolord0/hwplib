@@ -2,7 +2,6 @@ package kr.dogfoot.hwplib.object.bodytext.control.gso;
 
 import kr.dogfoot.hwplib.object.bodytext.control.Control;
 import kr.dogfoot.hwplib.object.bodytext.control.ctrlheader.CtrlHeaderGso;
-import kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponent.ShapeComponentUnknown;
 import kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponenteach.ShapeComponentTextArt;
 
 /**
@@ -28,8 +27,6 @@ public class ControlTextArt extends GsoControl {
      */
     public ControlTextArt(CtrlHeaderGso header) {
         super(header);
-        shapeComponent = new ShapeComponentUnknown();
-
         setGsoId(GsoControlType.TextArt.getId());
         shapeComponentTextArt = new ShapeComponentTextArt();
     }

@@ -2,10 +2,9 @@ package kr.dogfoot.hwplib.reader.bodytext.paragraph.control.gso.part;
 
 import kr.dogfoot.hwplib.object.bodytext.control.gso.GsoControl;
 import kr.dogfoot.hwplib.object.bodytext.control.gso.GsoControlType;
-import kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponent.ShapeComponentBasic;
+import kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponent.ShapeComponent;
 import kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponent.ShapeComponentContainer;
 import kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponent.ShapeComponentNormal;
-import kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponent.ShapeComponentUnknown;
 import kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponent.lineinfo.LineInfo;
 import kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponent.lineinfo.OutlineStyle;
 import kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponent.renderingnfo.Matrix;
@@ -37,10 +36,6 @@ public class ForShapeComponent {
         if (gsoControl.getGsoType() == GsoControlType.Container) {
             shapeComponentForContainer(
                     (ShapeComponentContainer) gsoControl.getShapeComponent(),
-                    sr);
-        } else if (gsoControl.getGsoType() == GsoControlType.TextArt) {
-            shapeComponentUnknown(
-                    (ShapeComponentUnknown) gsoControl.getShapeComponent(),
                     sr);
         } else {
             shapeComponentForNormal(
@@ -79,7 +74,7 @@ public class ForShapeComponent {
      * @param sr 스트림 리더
      * @throws IOException
      */
-    private static void commonPart(ShapeComponentBasic sc, StreamReader sr)
+    private static void commonPart(ShapeComponent sc, StreamReader sr)
             throws IOException {
         sc.setOffsetX(sr.readSInt4());
         sc.setOffsetY(sr.readSInt4());
@@ -218,12 +213,4 @@ public class ForShapeComponent {
     private static void unknown4Bytes(StreamReader sr) throws IOException {
         sr.skipToEndRecord();
     }
-
-
-    private static void shapeComponentUnknown(ShapeComponentUnknown scu, StreamReader sr) throws IOException {
-        byte[] unknown = new byte[(int) (sr.getCurrentRecordHeader().getSize() - sr.getCurrentPositionAfterHeader())];
-        sr.readBytes(unknown);
-        scu.setUnknown(unknown);
-    }
-
 }
