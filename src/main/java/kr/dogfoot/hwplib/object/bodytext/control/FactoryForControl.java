@@ -91,7 +91,7 @@ public class FactoryForControl {
         } else if (gsoId == GsoControlType.ObjectLinkLine.getId()) {
             return new ControlObjectLinkLine(header);
         } else if (gsoId == GsoControlType.TextArt.getId()) {
-            return new ControlTextArt();
+            return new ControlTextArt(header);
         }
         return null;
     }

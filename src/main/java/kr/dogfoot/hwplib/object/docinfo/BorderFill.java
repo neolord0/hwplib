@@ -106,7 +106,7 @@ public class BorderFill {
      * @return 아래쪽 선의 속성 객체
      */
     public EachBorder getDiagonalBorder() {
-        return bottomBorder;
+        return diagonalBorder;
     }
 
     /**

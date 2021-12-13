@@ -44,6 +44,7 @@ public class ForShapeComponentForNormal {
     private static void recordHeader(ShapeComponentNormal scn, StreamWriter sw)
             throws IOException {
         sw.writeRecordHeader(HWPTag.SHAPE_COMPONENT, getSize(scn));
+
     }
 
     /**
