@@ -39,6 +39,15 @@ public class Matrix {
         values[index] = value;
     }
 
+    /**
+     * 행렬의 원소를 저장하는 배열을 반홚한다.
+     *
+     * @return 행렬의 원소를 저장하는 배열
+     */
+    public double[] getValues() {
+        return values;
+    }
+
     public void copy(Matrix from) {
         values = from.values.clone();
     }
