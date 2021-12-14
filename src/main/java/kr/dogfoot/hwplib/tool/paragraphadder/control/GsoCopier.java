@@ -44,6 +44,9 @@ public class GsoCopier {
             case ObjectLinkLine:
                 objectLinkLine((ControlObjectLinkLine) source, (ControlObjectLinkLine) target, docInfoAdder);
                 break;
+            case TextArt:
+                textArt((ControlTextArt) source, (ControlTextArt) target, docInfoAdder);
+                break;
         }
     }
 
@@ -179,5 +182,11 @@ public class GsoCopier {
         ShapeComponentLineForObjectLinkLine sourceSCL = source.getShapeComponentLine();
         ShapeComponentLineForObjectLinkLine targetSCL = target.getShapeComponentLine();
         targetSCL.copy(sourceSCL);
+    }
+
+    private static void textArt(ControlTextArt source, ControlTextArt target, DocInfoAdder docInfoAdder) {
+        ShapeComponentTextArt sourceSCTA = source.getShapeComponentTextArt();
+        ShapeComponentTextArt targetSCTA = target.getShapeComponentTextArt();
+        targetSCTA.copy(sourceSCTA);
     }
 }
