@@ -20,7 +20,7 @@ public class ForGsoControl {
      * @param iid 인스턴스 아이디
      */
     public static void autoSet(GsoControl gc, InstanceID iid) {
-        ForCtrlHeaderGso.autoSet(gc.getHeader(), iid);
+        ForCtrlHeaderGso.autoSet(gc.getHeader(), gc.getCaption(), iid);
         ForCaption.autoSet(gc.getCaption(), iid);
         restPart(gc, iid);
     }
@@ -57,7 +57,9 @@ public class ForGsoControl {
             case Rectangle:
                 rectangle((ControlRectangle) gc, iid);
                 break;
-            default:
+            case ObjectLinkLine:
+                break;
+            case TextArt:
                 break;
         }
     }

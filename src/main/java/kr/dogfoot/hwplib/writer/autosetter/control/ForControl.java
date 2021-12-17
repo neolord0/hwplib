@@ -70,6 +70,8 @@ public class ForControl {
                 case Table:
                     ForControlTable.autoSet((ControlTable) c, iid);
                     break;
+                case Form:
+                    break;
                 default:
                     break;
             }

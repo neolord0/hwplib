@@ -3,10 +3,7 @@ package kr.dogfoot.hwplib.object.bodytext.control.ctrlheader;
 import kr.dogfoot.hwplib.object.bodytext.control.ControlType;
 import kr.dogfoot.hwplib.object.bodytext.control.ctrlheader.columndefine.ColumnDefineHeaderProperty;
 import kr.dogfoot.hwplib.object.bodytext.control.ctrlheader.columndefine.ColumnInfo;
-import kr.dogfoot.hwplib.object.docinfo.borderfill.BorderThickness;
-import kr.dogfoot.hwplib.object.docinfo.borderfill.BorderType;
 import kr.dogfoot.hwplib.object.docinfo.borderfill.EachBorder;
-import kr.dogfoot.hwplib.object.etc.Color4Byte;
 
 import java.util.ArrayList;
 

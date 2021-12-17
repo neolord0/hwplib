@@ -1,8 +1,8 @@
 package kr.dogfoot.hwplib.reader.bodytext.paragraph;
 
 import kr.dogfoot.hwplib.object.bodytext.paragraph.Paragraph;
-import kr.dogfoot.hwplib.object.bodytext.paragraph.rangetag.RangeTagItem;
 import kr.dogfoot.hwplib.object.bodytext.paragraph.rangetag.ParaRangeTag;
+import kr.dogfoot.hwplib.object.bodytext.paragraph.rangetag.RangeTagItem;
 import kr.dogfoot.hwplib.util.compoundFile.reader.StreamReader;
 
 import java.io.IOException;

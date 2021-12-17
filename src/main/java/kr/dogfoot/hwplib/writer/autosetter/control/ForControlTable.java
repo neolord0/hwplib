@@ -22,7 +22,7 @@ public class ForControlTable {
      * @param iid 인스턴스 id
      */
     public static void autoSet(ControlTable t, InstanceID iid) {
-        ForCtrlHeaderGso.autoSet(t.getHeader(), iid);
+        ForCtrlHeaderGso.autoSet(t.getHeader(), t.getCaption(), iid);
         ForCaption.autoSet(t.getCaption(), iid);
         table(t);
         cells(t, iid);

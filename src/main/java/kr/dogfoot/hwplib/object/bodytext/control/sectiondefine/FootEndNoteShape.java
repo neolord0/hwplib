@@ -1,9 +1,6 @@
 package kr.dogfoot.hwplib.object.bodytext.control.sectiondefine;
 
-import kr.dogfoot.hwplib.object.docinfo.borderfill.BorderThickness;
-import kr.dogfoot.hwplib.object.docinfo.borderfill.BorderType;
 import kr.dogfoot.hwplib.object.docinfo.borderfill.EachBorder;
-import kr.dogfoot.hwplib.object.etc.Color4Byte;
 import kr.dogfoot.hwplib.object.etc.HWPString;
 
 /**

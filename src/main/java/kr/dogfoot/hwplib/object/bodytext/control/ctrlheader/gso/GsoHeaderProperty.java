@@ -289,8 +289,25 @@ public class GsoHeaderProperty {
         value = BitFlag.set(value, 26, 28, objectNumberSort.getValue());
     }
 
+    /**
+     * 캡션을 가졌는지 유무(?)를 반환한다. (29 bit)
+     *
+     * @return 캡션을 가졌는지 유무(?)
+     */
+    public boolean hasCaption() {
+        return BitFlag.get(value, 29);
+    }
+
+    /**
+     * 캡션을 가졌는지 유무(?)를 설정한다. (29bit)
+     *
+     * @param hasCaption 캡션을 가졌는지 유무(?)
+     */
+    public void setHasCaption(boolean hasCaption) {
+        value = BitFlag.set(value, 29, hasCaption);
+    }
+
     public void copy(GsoHeaderProperty from) {
         value = from.value;
     }
-
 }

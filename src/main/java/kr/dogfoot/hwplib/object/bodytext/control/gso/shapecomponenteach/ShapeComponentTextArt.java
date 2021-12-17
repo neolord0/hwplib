@@ -1,11 +1,9 @@
 package kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponenteach;
 
-import javafx.geometry.Pos;
 import kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponenteach.polygon.PositionXY;
 import kr.dogfoot.hwplib.object.etc.Color4Byte;
 import kr.dogfoot.hwplib.object.etc.HWPString;
 
-import java.awt.*;
 import java.util.ArrayList;
 
 public class ShapeComponentTextArt {

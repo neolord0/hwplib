@@ -1,11 +1,8 @@
 package kr.dogfoot.hwplib.object.docinfo;
 
 import kr.dogfoot.hwplib.object.docinfo.borderfill.BorderFillProperty;
-import kr.dogfoot.hwplib.object.docinfo.borderfill.BorderThickness;
-import kr.dogfoot.hwplib.object.docinfo.borderfill.BorderType;
 import kr.dogfoot.hwplib.object.docinfo.borderfill.EachBorder;
 import kr.dogfoot.hwplib.object.docinfo.borderfill.fillinfo.FillInfo;
-import kr.dogfoot.hwplib.object.etc.Color4Byte;
 
 /**
  * 테두리/배경의 모양을 나타내는 레코드

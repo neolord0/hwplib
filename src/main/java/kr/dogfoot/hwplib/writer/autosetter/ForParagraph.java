@@ -108,7 +108,6 @@ public class ForParagraph {
                     cm.setHasLineBreak(true);
                     break;
                 case 11:
-                case 13:
                     cm.setHasGsoTable(true);
                     break;
                 case 15:

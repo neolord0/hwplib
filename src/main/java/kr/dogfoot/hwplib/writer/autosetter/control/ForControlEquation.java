@@ -18,7 +18,7 @@ public class ForControlEquation {
      * @param iid 인스턴스 id
      */
     public static void autoSet(ControlEquation eq, InstanceID iid) {
-        ForCtrlHeaderGso.autoSet(eq.getHeader(), iid);
+        ForCtrlHeaderGso.autoSet(eq.getHeader(), eq.getCaption(), iid);
         ForCaption.autoSet(eq.getCaption(), iid);
     }
 }
