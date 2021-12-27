@@ -54,8 +54,12 @@ public class ForParagraph {
         this.sr = sr;
         this.paragraph = paragraph;
         this.paraHeaderLevel = sr.getCurrentRecordHeader().getLevel();
+        paraHeaderBody();
+        paraText();
+        paraCharShape();
+        paraLineSeg();
+        paraRangeTag();
 
-        paraHeader();
         while (sr.isEndOfStream() == false) {
             if (sr.isImmediatelyAfterReadingHeader() == false) {
                 sr.readRecordHeder();
@@ -63,7 +67,7 @@ public class ForParagraph {
             if (isOutOfParagraph(sr) || isFollowLastBatangPageInfo(sr)) {
                 break;
             }
-            readBody();
+            controlAndMemo();
         }
     }
 
@@ -72,8 +76,80 @@ public class ForParagraph {
      *
      * @throws Exception
      */
-    private void paraHeader() throws Exception {
+    private void paraHeaderBody() throws Exception {
         ForParaHeader.read(paragraph.getHeader(), sr);
+    }
+
+    /**
+     * 문단의 텍스트 레코드을 읽는다.
+     *
+     * @throws Exception
+     */
+    private void paraText() throws Exception {
+        if (sr.isEndOfStream()) {
+            return;
+        }
+
+        if (sr.isImmediatelyAfterReadingHeader() == false) {
+            sr.readRecordHeder();
+        }
+        if (sr.getCurrentRecordHeader().getTagID() == HWPTag.PARA_TEXT) {
+            ForParaText.read(paragraph, sr);
+        }
+    }
+
+    /**
+     * 문단의 문자 모양 레코드를 읽는다.
+     *
+     * @throws IOException
+     */
+    private void paraCharShape() throws IOException {
+        if (sr.isEndOfStream()) {
+            return;
+        }
+
+        if (sr.isImmediatelyAfterReadingHeader() == false) {
+            sr.readRecordHeder();
+        }
+        if (sr.getCurrentRecordHeader().getTagID() == HWPTag.PARA_CHAR_SHAPE) {
+            ForParaCharShape.read(paragraph, sr);
+        }
+    }
+
+    /**
+     * 문단의 레이아웃 레코드를 읽는다.
+     *
+     * @throws IOException
+     */
+    private void paraLineSeg() throws IOException {
+        if (sr.isEndOfStream()) {
+            return;
+        }
+
+        if (sr.isImmediatelyAfterReadingHeader() == false) {
+            sr.readRecordHeder();
+        }
+        if (sr.getCurrentRecordHeader().getTagID() == HWPTag.PARA_LINE_SEG) {
+            ForParaLineSeq.read(paragraph, sr);
+        }
+    }
+
+    /**
+     * 문단의 영역 태그 레코드를 읽는다.
+     *
+     * @throws Exception
+     */
+    private void paraRangeTag() throws Exception {
+        if (sr.isEndOfStream()) {
+            return;
+        }
+
+        if (sr.isImmediatelyAfterReadingHeader() == false) {
+            sr.readRecordHeder();
+        }
+        if (sr.getCurrentRecordHeader().getTagID() == HWPTag.PARA_RANGE_TAG) {
+            ForParaRangeTag.read(paragraph, sr, sr.getCurrentRecordHeader().getSize());
+        }
     }
 
     /**
@@ -102,20 +178,8 @@ public class ForParagraph {
      *
      * @throws Exception
      */
-    private void readBody() throws Exception {
+    private void controlAndMemo() throws Exception {
         switch (sr.getCurrentRecordHeader().getTagID()) {
-            case HWPTag.PARA_TEXT:
-                paraText();
-                break;
-            case HWPTag.PARA_CHAR_SHAPE:
-                paraCharShape();
-                break;
-            case HWPTag.PARA_LINE_SEG:
-                paraLineSeg();
-                break;
-            case HWPTag.PARA_RANGE_TAG:
-                paraRangeTag();
-                break;
             case HWPTag.CTRL_HEADER:
                 control();
                 break;
@@ -126,42 +190,6 @@ public class ForParagraph {
                 skipETCRecord();
                 break;
         }
-    }
-
-    /**
-     * 문단의 텍스트 레코드을 읽는다.
-     *
-     * @throws Exception
-     */
-    private void paraText() throws Exception {
-        ForParaText.read(paragraph, sr);
-    }
-
-    /**
-     * 문단의 문자 모양 레코드를 읽는다.
-     *
-     * @throws IOException
-     */
-    private void paraCharShape() throws IOException {
-        ForParaCharShape.read(paragraph, sr);
-    }
-
-    /**
-     * 문단의 레이아웃 레코드를 읽는다.
-     *
-     * @throws IOException
-     */
-    private void paraLineSeg() throws IOException {
-        ForParaLineSeq.read(paragraph, sr);
-    }
-
-    /**
-     * 문단의 영역 태그 레코드를 읽는다.
-     *
-     * @throws Exception
-     */
-    private void paraRangeTag() throws Exception {
-        ForParaRangeTag.read(paragraph, sr, sr.getCurrentRecordHeader().getSize());
     }
 
     /**
