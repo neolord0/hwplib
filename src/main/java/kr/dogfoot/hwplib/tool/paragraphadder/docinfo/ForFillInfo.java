@@ -22,7 +22,11 @@ public class ForFillInfo {
                     && equalGradientFill(source.getGradientFill(), target.getGradientFill()) == false) {
                 return false;
             }
-            return !fillType.hasImageFill() || equalImageFill(source.getImageFill(), target.getImageFill()) != false;
+            if (fillType.hasImageFill()) {
+                // source.getImageFill().getPictureInfo().getBinItemID() 비교 불가..
+                return false;
+            }
+            // return !fillType.hasImageFill() || equalImageFill(source.getImageFill(), target.getImageFill()) != false;
         }
         return false;
     }
