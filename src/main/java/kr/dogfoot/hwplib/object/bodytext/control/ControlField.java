@@ -1,5 +1,6 @@
 package kr.dogfoot.hwplib.object.bodytext.control;
 
+import kr.dogfoot.hwplib.object.bodytext.control.bookmark.CtrlData;
 import kr.dogfoot.hwplib.object.bodytext.control.bookmark.ParameterItem;
 import kr.dogfoot.hwplib.object.bodytext.control.bookmark.ParameterType;
 import kr.dogfoot.hwplib.object.bodytext.control.ctrlheader.CtrlHeaderField;
@@ -44,6 +45,28 @@ public class ControlField extends Control {
             }
         }
         return null;
+    }
+
+    /**
+     * 필드 컨트롤의 이름응 설정한다.
+     *
+     * @param name 필드 이름
+     */
+    public void setName(String name) {
+        if (ctrlData == null) {
+            createCtrlData();
+            ctrlData.getParameterSet().setId(0x021B);
+        }
+
+        ParameterItem pi = ctrlData.getParameterSet().getParameterItem(
+                0x4000);
+        if (pi == null) {
+             pi = ctrlData.getParameterSet().addNewParameterItem();
+             pi.setId(0x4000);
+        }
+
+        pi.setType(ParameterType.String);
+        pi.setValue_BSTR(name);
     }
 
     @Override

@@ -27,10 +27,7 @@ import kr.dogfoot.hwplib.object.docinfo.borderfill.BorderType;
 import kr.dogfoot.hwplib.object.docinfo.borderfill.SlashDiagonalShape;
 import kr.dogfoot.hwplib.object.docinfo.borderfill.fillinfo.PatternFill;
 import kr.dogfoot.hwplib.object.docinfo.borderfill.fillinfo.PatternType;
-import kr.dogfoot.hwplib.object.docinfo.charshape.EmphasisSort;
-import kr.dogfoot.hwplib.object.docinfo.charshape.OutterLineSort;
-import kr.dogfoot.hwplib.object.docinfo.charshape.ShadowSort;
-import kr.dogfoot.hwplib.object.docinfo.charshape.UnderLineSort;
+import kr.dogfoot.hwplib.object.docinfo.charshape.*;
 import kr.dogfoot.hwplib.object.docinfo.parashape.Alignment;
 import kr.dogfoot.hwplib.reader.HWPReader;
 import kr.dogfoot.hwplib.writer.HWPWriter;
@@ -271,7 +268,7 @@ public class HtmlToTableExample {
         ctrlHeader.getProperty().setWidthCriterion(WidthCriterion.Absolute);
         ctrlHeader.getProperty().setHeightCriterion(HeightCriterion.Absolute);
         ctrlHeader.getProperty().setProtectSize(false);
-        ctrlHeader.getProperty().setTextFlowMethod(TextFlowMethod.Tight);
+        ctrlHeader.getProperty().setTextFlowMethod(TextFlowMethod.TakePlace);
         ctrlHeader.getProperty().setTextHorzArrange(TextHorzArrange.BothSides);
         ctrlHeader.getProperty().setObjectNumberSort(ObjectNumberSort.Table);
         ctrlHeader.setxOffset(mmToHwp(0.0)); // 좌표 X 위치
@@ -355,9 +352,9 @@ public class HtmlToTableExample {
         bf.getBottomBorder().setType(BorderType.Solid);
         bf.getBottomBorder().setThickness(BorderThickness.MM0_12);
         bf.getBottomBorder().getColor().setValue(0x0);
-        bf.setDiagonalSort(BorderType.Solid);
-        bf.setDiagonalThickness(BorderThickness.MM0_12);
-        bf.getDiagonalColor().setValue(0x0);
+        bf.getDiagonalBorder().setType(BorderType.Solid);
+        bf.getDiagonalBorder().setThickness(BorderThickness.MM0_12);
+        bf.getDiagonalBorder().getColor().setValue(0x0);
 
         bf.getFillInfo().getType().setPatternFill(true);
         bf.getFillInfo().createPatternFill();
@@ -466,7 +463,7 @@ public class HtmlToTableExample {
         ParaLineSeg pls = p.getLineSeg();
         LineSegItem lsi = pls.addNewLineSegItem();
 
-        lsi.setTextStartPositon(0);
+        lsi.setTextStartPosition(0);
         lsi.setLineVerticalPosition(0);
         lsi.setLineHeight(ptToLineHeight(10.0));
         lsi.setTextPartHeight(ptToLineHeight(10.0));
@@ -567,7 +564,7 @@ public class HtmlToTableExample {
         cs.getProperty().setStrikeLine(false);
         cs.getProperty().setEmphasisSort(EmphasisSort.None);
         cs.getProperty().setUsingSpaceAppropriateForFont(false);
-        cs.getProperty().setStrikeLineShape(BorderType.None);
+        cs.getProperty().setStrikeLineShape(BorderType2.Solid);
         cs.getProperty().setKerning(false);
 
         cs.setShadowGap1((byte) 0);
