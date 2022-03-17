@@ -88,6 +88,10 @@ public class ForGsoWithAllField {
      */
     private static void textBox(TextBox textBox, ControlType fieldType,
                                 String fieldName, TextExtractMethod temInField, ArrayList<String> textList) throws UnsupportedEncodingException {
+        if (textBox == null) {
+            return;
+        }
+
         ForParagraphList.getAllFieldText(textBox.getParagraphList(), fieldType, fieldName, temInField, textList);
     }
 

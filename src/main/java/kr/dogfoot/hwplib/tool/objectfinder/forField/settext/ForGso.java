@@ -79,6 +79,7 @@ public class ForGso {
         if (textBox == null) {
             return SetFieldResult.InProcess;
         }
+
         return ForParagraphList.setFieldText(textBox.getParagraphList(), fieldType, fieldName, textBuffer);
     }
 

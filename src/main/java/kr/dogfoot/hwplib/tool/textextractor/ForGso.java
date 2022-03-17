@@ -100,9 +100,11 @@ public class ForGso {
                                 TextExtractOption option,
                                 ParaHeadMaker paraHeadMaker,
                                 StringBuffer sb) throws UnsupportedEncodingException {
-        if (textBox != null) {
-            ForParagraphList.extract(textBox.getParagraphList(), option, paraHeadMaker, sb);
+        if (textBox == null) {
+            return;
         }
+
+        ForParagraphList.extract(textBox.getParagraphList(), option, paraHeadMaker, sb);
     }
 
     /**

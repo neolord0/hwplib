@@ -259,10 +259,9 @@ public class ControlFinder {
      * @param rectangle 사각형 컨트롤
      */
     private void forRectangle(ControlRectangle rectangle) {
-        if (rectangle.getTextBox() == null) {
-            return;
+        if (rectangle.getTextBox() != null) {
+            forParagraphList(rectangle.getTextBox().getParagraphList());
         }
-        forParagraphList(rectangle.getTextBox().getParagraphList());
     }
 
     /**

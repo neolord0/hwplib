@@ -96,6 +96,10 @@ public class ForControl {
     }
 
     private static void findInTextBox(TextBox textBox, FieldFormFinder.Result result, FieldFormFinder.Option option) throws FieldFormFinder.StopFindException {
+        if (textBox == null) {
+            return;
+        }
+
         if (option.findGso()) {
             String fieldName = textBox.getListHeader().getFieldName();
             if (fieldName != null && fieldName.length() > 0) {

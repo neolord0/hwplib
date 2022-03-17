@@ -201,8 +201,10 @@ public class CellFinder {
      * @param textBox 그리기 객체의 텍스트 박스
      */
     private void forTextBox(TextBox textBox) {
-        if (textBox != null) {
-            forParagraphList(textBox.getParagraphList());
+        if (textBox == null) {
+            return;
         }
+
+        forParagraphList(textBox.getParagraphList());
     }
 }
