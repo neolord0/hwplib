@@ -34,7 +34,7 @@ http://hwplib.dogfoot.kr:8080/webviewer/
         <artifactId>hwplib</artifactId>
     </dependency>
     ```
-2022.2.25
+2022.3.17
 =========================================================================================
 * 이슈 171 : FieldFinder.getAllClickHereText()에 글이 없는 사각형 개체을 포함하는 hwpFile을 입력하여 실행시 오류 수정 (typemild님 요청)
 
