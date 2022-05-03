@@ -9,8 +9,8 @@ import kr.dogfoot.hwplib.object.bodytext.paragraph.text.*;
  * @author neolord
  */
 public class ParaTextCopier {
-    public static int copy(ParaText source, ParaText target, boolean includingSectionInfo) throws Exception {
-        int notCopiedCharacterSize = 0;
+    public static boolean copy(ParaText source, ParaText target, boolean includingSectionDefine) throws Exception {
+        boolean excludedSectionDefine = false;
         for (HWPChar hwpChar : source.getCharList()) {
             switch (hwpChar.getType()) {
                 case Normal:
@@ -24,10 +24,14 @@ public class ParaTextCopier {
                     break;
                 case ControlExtend:
                     HWPCharControlExtend ec = (HWPCharControlExtend) hwpChar;
-                    if (includingSectionInfo || mustCopy(ec)) {
+                    if (includingSectionDefine) {
                         copyExtendChar(ec, target.addNewExtendControlChar());
                     } else {
-                        notCopiedCharacterSize += 8;
+                        if (notSectionDefine(ec)) {
+                            copyExtendChar(ec, target.addNewExtendControlChar());
+                        } else {
+                            excludedSectionDefine = true;
+                        }
                     }
                     break;
                 default:
@@ -35,10 +39,10 @@ public class ParaTextCopier {
             }
         }
 
-        return notCopiedCharacterSize;
+        return excludedSectionDefine;
     }
 
-    private static boolean mustCopy(HWPCharControlExtend ec) {
+    private static boolean notSectionDefine(HWPCharControlExtend ec) {
         if (ec.isColumnDefine() ||          // 단 정의
                 ec.getCode() == 3 ||        // 필드 시작(누름틀, 하이퍼링크, 블록 책갈피, 표 계산식 ...)
                 ec.getCode() == 11 ||       // 그리기 개체/표/수식

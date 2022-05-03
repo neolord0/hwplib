@@ -28,11 +28,11 @@ public class ParagraphCopier {
             }
         }
     }
-
     private DocInfoAdder docInfoAdder;
     private Paragraph source;
     private Paragraph target;
     private boolean includingSectionInfo;
+    private boolean excludedSectionDefine;
 
     public ParagraphCopier(DocInfoAdder docInfoAdder) {
         this.docInfoAdder = docInfoAdder;
@@ -88,7 +88,7 @@ public class ParagraphCopier {
     private void copyText() throws Exception {
         if (source.getText() != null) {
             target.createText();
-            ParaTextCopier.copy(source.getText(), target.getText(), includingSectionInfo);
+            excludedSectionDefine = ParaTextCopier.copy(source.getText(), target.getText(), includingSectionInfo);
         }
     }
 
@@ -97,7 +97,11 @@ public class ParagraphCopier {
             target.createCharShape();
 
             for (CharPositionShapeIdPair cpsp : source.getCharShape().getPositonShapeIdPairList()) {
-                target.getCharShape().addParaCharShape(cpsp.getPosition(), (docInfoAdder == null) ? cpsp.getShapeId() : docInfoAdder.forCharShape().processById((int) cpsp.getShapeId()));
+                if (excludedSectionDefine == true && cpsp.getPosition() > 0)  {
+                    target.getCharShape().addParaCharShape(cpsp.getPosition() - 8, (docInfoAdder == null) ? cpsp.getShapeId() : docInfoAdder.forCharShape().processById((int) cpsp.getShapeId()));
+                } else {
+                    target.getCharShape().addParaCharShape(cpsp.getPosition(), (docInfoAdder == null) ? cpsp.getShapeId() : docInfoAdder.forCharShape().processById((int) cpsp.getShapeId()));
+                }
             }
         }
     }
