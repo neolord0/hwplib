@@ -122,8 +122,8 @@ public enum ControlType {
     FIELD_REVISION_SPLIT(CtrlID.make('%', 's', 'p', 'l')),
     FIELD_REVISION_CHANGE(CtrlID.make('%', '%', 'm', 'r')),
     FIELD_MEMO(CtrlID.make('%', '%', 'm', 'e')),
-    FIELD_PRIVATE_INFO_SECURITY(CtrlID.make('%', 'c', 'p', 'r'));
-
+    FIELD_PRIVATE_INFO_SECURITY(CtrlID.make('%', 'c', 'p', 'r')),
+    FIELD_TABLEOFCONTENTS(CtrlID.make('%', 't', 'o', 'c'));
     /**
      * 컨트롤 id
      */
@@ -191,6 +191,7 @@ public enum ControlType {
                 || ctrlId == FIELD_REVISION_RIGHTMOVE.ctrlId || ctrlId == FIELD_REVISION_LEFTMOVE.ctrlId
                 || ctrlId == FIELD_REVISION_TRANSFER.ctrlId || ctrlId == FIELD_REVISION_SIMPLEINSERT.ctrlId
                 || ctrlId == FIELD_REVISION_SPLIT.ctrlId || ctrlId == FIELD_REVISION_CHANGE.ctrlId
-                || ctrlId == FIELD_MEMO.ctrlId || ctrlId == FIELD_PRIVATE_INFO_SECURITY.ctrlId;
+                || ctrlId == FIELD_MEMO.ctrlId || ctrlId == FIELD_PRIVATE_INFO_SECURITY.ctrlId
+                || ctrlId == FIELD_TABLEOFCONTENTS.ctrlId;
     }
 }

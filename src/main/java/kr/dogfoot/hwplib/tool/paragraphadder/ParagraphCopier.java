@@ -228,6 +228,7 @@ public class ParagraphCopier {
                 case FIELD_REVISION_CHANGE:
                 case FIELD_MEMO:
                 case FIELD_PRIVATE_INFO_SECURITY:
+                case FIELD_TABLEOFCONTENTS:
                     ETCControlCopier.copyField((ControlField) c, (ControlField) target.addNewControl(((ControlField) c).getHeader().getCtrlId()), docInfoAdder);
                     break;
             }

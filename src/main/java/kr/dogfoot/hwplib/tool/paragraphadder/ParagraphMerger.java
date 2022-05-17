@@ -216,6 +216,7 @@ public class ParagraphMerger {
             case FIELD_REVISION_CHANGE:
             case FIELD_MEMO:
             case FIELD_PRIVATE_INFO_SECURITY:
+            case FIELD_TABLEOFCONTENTS:
                 ETCControlCopier.copyField((ControlField) sourceControl, (ControlField) target.addNewControl(((ControlField) sourceControl).getHeader().getCtrlId()), docInfoAdder);
                 break;
         }
