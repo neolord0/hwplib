@@ -22,14 +22,6 @@
     </build>
 
     <dependencies>
-        <!-- https://mvnrepository.com/artifact/org.jsoup/jsoup -->
-
-        <dependency>
-            <groupId>kr.dogfoot</groupId>
-            <artifactId>hwplib</artifactId>
-            <version>1.0.5</version>
-        </dependency>
-
         <dependency>
             <scope>compile</scope>
             <groupId>org.apache.poi</groupId>
