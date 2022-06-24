@@ -1,7 +1,6 @@
 package kr.dogfoot.hwplib.sample;
 
 import kr.dogfoot.hwplib.object.HWPFile;
-import kr.dogfoot.hwplib.object.bodytext.Section;
 import kr.dogfoot.hwplib.object.bodytext.control.ctrlheader.CtrlHeaderGso;
 import kr.dogfoot.hwplib.object.bodytext.control.ctrlheader.gso.*;
 import kr.dogfoot.hwplib.object.bodytext.control.gso.ControlRectangle;

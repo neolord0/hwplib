@@ -3,9 +3,11 @@ package kr.dogfoot.hwplib.reader;
 import kr.dogfoot.hwplib.object.HWPFile;
 import kr.dogfoot.hwplib.object.docinfo.BinData;
 import kr.dogfoot.hwplib.object.docinfo.bindata.BinDataCompress;
+import kr.dogfoot.hwplib.object.etc.HWPTag;
 import kr.dogfoot.hwplib.object.fileheader.FileVersion;
 import kr.dogfoot.hwplib.reader.bodytext.ForParagraphList;
 import kr.dogfoot.hwplib.reader.bodytext.ForSection;
+import kr.dogfoot.hwplib.reader.bodytext.memo.ForMemo;
 import kr.dogfoot.hwplib.reader.docinfo.ForDocInfo;
 import kr.dogfoot.hwplib.tool.textextractor.TextExtractMethod;
 import kr.dogfoot.hwplib.tool.textextractor.TextExtractorListener;
@@ -185,14 +187,35 @@ public class HWPReader {
     /**
      * Section 스트림을 읽는다.
      *
-     * @param sectionIndex 섹션 인덱스
+     * @param index 섹션 인덱스
      * @throws Exception
      */
-    private void section(int sectionIndex) throws Exception {
-        StreamReader sr = cfr.getChildStreamReader("Section" + sectionIndex, isCompressed(), getVersion());
+    private void section(int index) throws Exception {
+        StreamReader sr = cfr.getChildStreamReader("Section" + index, isCompressed(), getVersion());
+
         sr.setDocInfo(hwpFile.getDocInfo());
         ForSection.read(hwpFile.getBodyText().addNewSection(), sr);
+        if (isLastSection(index)) {
+            memo(sr);
+        }
+
         sr.close();
+    }
+
+    private boolean isLastSection(int index) {
+        return index + 1 == hwpFile.getDocInfo().getDocumentProperties().getSectionCount();
+    }
+
+    private void memo(StreamReader sr) throws Exception {
+        while (!sr.isEndOfStream()) {
+            if (sr.isImmediatelyAfterReadingHeader() == false) {
+                sr.readRecordHeder();
+            }
+
+            if (sr.getCurrentRecordHeader().getTagID() == HWPTag.MEMO_LIST) {
+                ForMemo.read(hwpFile.getBodyText().addNewMemo(), sr);
+            }
+        }
     }
 
     /**
@@ -268,7 +291,6 @@ public class HWPReader {
         }
         return false;
     }
-
 
     /**
      * 텍스트를 추출하기 위해 hwp 파일을 읽는다.

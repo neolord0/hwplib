@@ -6,8 +6,11 @@ import kr.dogfoot.hwplib.object.bodytext.control.footnoteendnote.ListHeaderForFo
 import kr.dogfoot.hwplib.object.bodytext.control.form.FormObject;
 import kr.dogfoot.hwplib.object.bodytext.control.headerfooter.ListHeaderForHeaderFooter;
 import kr.dogfoot.hwplib.object.bodytext.control.hiddencomment.ListHeaderForHiddenComment;
+import kr.dogfoot.hwplib.object.bodytext.paragraph.memo.Memo;
 import kr.dogfoot.hwplib.tool.paragraphadder.ParagraphCopier;
 import kr.dogfoot.hwplib.tool.paragraphadder.docinfo.DocInfoAdder;
+
+import java.nio.charset.StandardCharsets;
 
 public class ETCControlCopier {
     public static void copyAutoNumber(ControlAutoNumber source, ControlAutoNumber target, DocInfoAdder docInfoAdder) {
@@ -44,8 +47,53 @@ public class ETCControlCopier {
         CtrlHeaderField sourceH = source.getHeader();
         CtrlHeaderField targetH = target.getHeader();
         targetH.copy(sourceH);
-
         CtrlDataCopier.copy(source, target, docInfoAdder);
+
+        if (isMemo(source)) {
+            Memo sourceMemo = getSourceMemo(sourceH.getMemoIndex(), docInfoAdder);
+            if (sourceMemo != null) {
+                long newMemoIndex = addMemoToTarget(sourceMemo, docInfoAdder);
+                setNewMemoIndex(targetH, newMemoIndex);
+            }
+        }
+    }
+
+    private static boolean isMemo(ControlField source) {
+        return source.getHeader().getCommand().toUTF16LEString().startsWith("MEMO");
+    }
+
+    private static Memo getSourceMemo(int memoIndex, DocInfoAdder docInfoAdder) {
+        if (docInfoAdder.getSourceHWPFile().getBodyText().getMemoList() != null) {
+            for (Memo memo : docInfoAdder.getSourceHWPFile().getBodyText().getMemoList()) {
+                if (memo.getMemoList().getMemoIndex() == memoIndex) {
+                    return memo;
+                }
+            }
+        }
+        return null;
+    }
+
+    private static long addMemoToTarget(Memo sourceMemo, DocInfoAdder docInfoAdder) {
+        long maxMemoIndex = 0;
+        if (docInfoAdder.getTargetHWPFile().getBodyText().getMemoList() != null) {
+            for (Memo memo : docInfoAdder.getTargetHWPFile().getBodyText().getMemoList()) {
+                maxMemoIndex = Math.max(maxMemoIndex, memo.getMemoList().getMemoIndex());
+            }
+        }
+        maxMemoIndex += 1;
+
+        Memo clonedMemo = sourceMemo.clone();
+        clonedMemo.getMemoList().setMemoIndex(maxMemoIndex);
+        docInfoAdder.getTargetHWPFile().getBodyText().getMemoList().add(clonedMemo);
+        return maxMemoIndex;
+    }
+
+
+    private static void setNewMemoIndex(CtrlHeaderField targetH, long newMemoIndex) {
+        String[] commands = targetH.getCommand().toUTF16LEString().split("/");
+        commands[2] = Long.toString(newMemoIndex);
+        targetH.getCommand().setBytes(String.join("/", commands).getBytes(StandardCharsets.UTF_16LE));
+        targetH.setMemoIndex((int) newMemoIndex);
     }
 
     public static void copyFooter(ControlFooter source, ControlFooter target, DocInfoAdder docInfoAdder) {

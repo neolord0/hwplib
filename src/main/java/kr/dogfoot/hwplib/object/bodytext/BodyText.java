@@ -1,5 +1,7 @@
 package kr.dogfoot.hwplib.object.bodytext;
 
+import kr.dogfoot.hwplib.object.bodytext.paragraph.memo.Memo;
+
 import java.util.ArrayList;
 
 /**
@@ -13,6 +15,11 @@ public class BodyText {
      * 문서 영역(섹션) 리스트
      */
     private ArrayList<Section> sectionList;
+
+    /**
+     * 메모 리스트
+     */
+    private ArrayList<Memo> memoList;
 
     /**
      * 생성자
@@ -41,17 +48,50 @@ public class BodyText {
         return sectionList;
     }
 
-    public void copy(BodyText from) {
-        sectionList.clear();
-        for (Section section : from.sectionList) {
-            sectionList.add(section.clone());
-        }
-    }
-
     public Section getLastSection() {
         if (sectionList.size() == 0) {
             return null;
         }
         return sectionList.get(sectionList.size() - 1);
+    }
+
+    /**
+     * 새로운 메모을 생성하여 반환한다.
+     *
+     * @return 새로 생성된 메모
+     */
+    public Memo addNewMemo() {
+        if (memoList == null) {
+            memoList = new ArrayList<Memo>();
+        }
+
+        Memo m = new Memo();
+        memoList.add(m);
+        return m;
+    }
+
+    /**
+     * 메모 리스트를 반환한다.
+     *
+     * @return 메모 리스트
+     */
+    public ArrayList<Memo> getMemoList() {
+        return memoList;
+    }
+
+    public void copy(BodyText from) {
+        sectionList.clear();
+        for (Section section : from.sectionList) {
+            sectionList.add(section.clone());
+        }
+
+        if (from.memoList != null) {
+            memoList = new ArrayList<Memo>();
+            for (Memo memo : from.memoList) {
+                memoList.add(memo.clone());
+            }
+        } else {
+            memoList = null;
+        }
     }
 }

@@ -10,7 +10,6 @@ import kr.dogfoot.hwplib.object.bodytext.control.gso.GsoControlType;
 import kr.dogfoot.hwplib.object.bodytext.paragraph.charshape.ParaCharShape;
 import kr.dogfoot.hwplib.object.bodytext.paragraph.header.ParaHeader;
 import kr.dogfoot.hwplib.object.bodytext.paragraph.lineseg.ParaLineSeg;
-import kr.dogfoot.hwplib.object.bodytext.paragraph.memo.Memo;
 import kr.dogfoot.hwplib.object.bodytext.paragraph.rangetag.ParaRangeTag;
 import kr.dogfoot.hwplib.object.bodytext.paragraph.text.ParaText;
 
@@ -49,11 +48,6 @@ public class Paragraph {
      * 컨트롤 리스트
      */
     private ArrayList<Control> controlList;
-
-    /**
-     * 메모 리스트
-     */
-    private ArrayList<Memo> memoList;
 
     /**
      * 생성자
@@ -273,30 +267,6 @@ public class Paragraph {
         return "";
     }
 
-    /**
-     * 새로운 메모을 생성하여 반환한다.
-     *
-     * @return 새로 생성된 메모
-     */
-    public Memo addNewMemo() {
-        if (memoList == null) {
-            memoList = new ArrayList<Memo>();
-        }
-
-        Memo m = new Memo();
-        memoList.add(m);
-        return m;
-    }
-
-    /**
-     * 메모 리스트를 반환한다.
-     *
-     * @return 메모 리스트
-     */
-    public ArrayList<Memo> getMemoList() {
-        return memoList;
-    }
-
     public Paragraph clone() {
         Paragraph cloned = new Paragraph();
 
@@ -333,15 +303,6 @@ public class Paragraph {
             }
         } else {
             cloned.controlList = null;
-        }
-
-        if (memoList != null) {
-            cloned.memoList = new ArrayList<Memo>();
-            for (Memo memo : memoList) {
-                cloned.memoList.add(memo.clone());
-            }
-        } else {
-            cloned.memoList = null;
         }
 
         return cloned;

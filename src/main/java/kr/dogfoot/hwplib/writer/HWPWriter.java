@@ -3,6 +3,7 @@ package kr.dogfoot.hwplib.writer;
 import kr.dogfoot.hwplib.object.HWPFile;
 import kr.dogfoot.hwplib.object.bindata.EmbeddedBinaryData;
 import kr.dogfoot.hwplib.object.bodytext.Section;
+import kr.dogfoot.hwplib.object.bodytext.paragraph.memo.Memo;
 import kr.dogfoot.hwplib.object.docinfo.bindata.BinDataCompress;
 import kr.dogfoot.hwplib.object.fileheader.FileVersion;
 import kr.dogfoot.hwplib.util.compoundFile.writer.CompoundFileWriter;
@@ -10,6 +11,7 @@ import kr.dogfoot.hwplib.util.compoundFile.writer.StreamWriter;
 import kr.dogfoot.hwplib.writer.autosetter.AutoSetter;
 import kr.dogfoot.hwplib.writer.autosetter.InstanceID;
 import kr.dogfoot.hwplib.writer.bodytext.ForSection;
+import kr.dogfoot.hwplib.writer.bodytext.paragraph.memo.ForMemo;
 import kr.dogfoot.hwplib.writer.docinfo.ForDocInfo;
 
 import java.io.IOException;
@@ -148,7 +150,6 @@ public class HWPWriter {
             seciton(index, s);
             index++;
         }
-
         cfw.closeCurrentStorage();
     }
 
@@ -163,7 +164,18 @@ public class HWPWriter {
         StreamWriter sw = cfw.openCurrentStream("Section" + index,
                 isCompressed(), getVersion());
         ForSection.write(s, sw);
+
+        if (isLastSection(index) && hwpFile.getBodyText().getMemoList() != null) {
+            for (Memo memo : hwpFile.getBodyText().getMemoList()) {
+                ForMemo.write(memo, sw);
+            }
+        }
+
         cfw.closeCurrentStream();
+    }
+
+    private boolean isLastSection(int index) {
+        return index + 1 == hwpFile.getBodyText().getSectionList().size();
     }
 
     /**

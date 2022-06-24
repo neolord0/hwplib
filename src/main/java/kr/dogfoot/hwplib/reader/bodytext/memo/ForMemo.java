@@ -1,4 +1,4 @@
-package kr.dogfoot.hwplib.reader.bodytext.paragraph.memo;
+package kr.dogfoot.hwplib.reader.bodytext.memo;
 
 import kr.dogfoot.hwplib.object.bodytext.paragraph.memo.ListHeaderForMemo;
 import kr.dogfoot.hwplib.object.bodytext.paragraph.memo.Memo;

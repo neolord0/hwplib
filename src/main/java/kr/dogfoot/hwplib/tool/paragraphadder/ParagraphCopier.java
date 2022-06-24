@@ -7,7 +7,6 @@ import kr.dogfoot.hwplib.object.bodytext.paragraph.ParagraphList;
 import kr.dogfoot.hwplib.object.bodytext.paragraph.charshape.CharPositionShapeIdPair;
 import kr.dogfoot.hwplib.object.bodytext.paragraph.header.ParaHeader;
 import kr.dogfoot.hwplib.object.bodytext.paragraph.lineseg.LineSegItem;
-import kr.dogfoot.hwplib.object.bodytext.paragraph.memo.Memo;
 import kr.dogfoot.hwplib.object.bodytext.paragraph.rangetag.RangeTagItem;
 import kr.dogfoot.hwplib.tool.paragraphadder.control.*;
 import kr.dogfoot.hwplib.tool.paragraphadder.docinfo.DocInfoAdder;
@@ -239,7 +238,9 @@ public class ParagraphCopier {
         copyMemoList(source, target, docInfoAdder);
     }
 
+
     public static void copyMemoList(Paragraph source, Paragraph target, DocInfoAdder docInfoAdder) {
+/*
         if (source.getMemoList() == null) {
             return;
         }
@@ -254,5 +255,7 @@ public class ParagraphCopier {
             cloned.getListHeader().copy(memo.getListHeader());
             ParagraphCopier.listCopy(memo.getParagraphList(), cloned.getParagraphList(), docInfoAdder);
         }
+
+ */
     }
 }

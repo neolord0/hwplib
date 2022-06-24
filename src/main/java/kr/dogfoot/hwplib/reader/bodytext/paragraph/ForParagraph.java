@@ -7,7 +7,6 @@ import kr.dogfoot.hwplib.object.etc.HWPTag;
 import kr.dogfoot.hwplib.reader.bodytext.paragraph.control.ForControl;
 import kr.dogfoot.hwplib.reader.bodytext.paragraph.control.form.ForFormControl;
 import kr.dogfoot.hwplib.reader.bodytext.paragraph.control.gso.ForGsoControl;
-import kr.dogfoot.hwplib.reader.bodytext.paragraph.memo.ForMemo;
 import kr.dogfoot.hwplib.util.compoundFile.reader.StreamReader;
 
 import java.io.IOException;
@@ -64,10 +63,16 @@ public class ForParagraph {
             if (sr.isImmediatelyAfterReadingHeader() == false) {
                 sr.readRecordHeder();
             }
-            if (isOutOfParagraph(sr) || isFollowLastBatangPageInfo(sr)) {
+            if (isOutOfParagraph(sr)
+                    || isFollowLastBatangPageInfo(sr)
+                    || isFollowMemo(sr)) {
                 break;
             }
-            controlAndMemo();
+            if (sr.getCurrentRecordHeader().getTagID() == HWPTag.CTRL_HEADER) {
+                control();
+            } else {
+                skipETCRecord();
+            }
         }
     }
 
@@ -169,27 +174,16 @@ public class ForParagraph {
      * @return 마지막 바탕쪽 정보가 뒤에 붙어 있는지 여부
      */
     private boolean isFollowLastBatangPageInfo(StreamReader sr) {
-        return this.paraHeaderLevel == 0 && sr.getCurrentRecordHeader().getTagID() == HWPTag.LIST_HEADER
+        return this.paraHeaderLevel == 0
+                && sr.getCurrentRecordHeader().getTagID() == HWPTag.LIST_HEADER
                 && sr.getCurrentRecordHeader().getLevel() == 1;
     }
 
-    /**
-     * 이미 읽은 레코드 헤더에 따른 레코드 내용을 읽는다.
-     *
-     * @throws Exception
-     */
-    private void controlAndMemo() throws Exception {
-        switch (sr.getCurrentRecordHeader().getTagID()) {
-            case HWPTag.CTRL_HEADER:
-                control();
-                break;
-            case HWPTag.MEMO_LIST:
-                memo();
-                break;
-            default:
-                skipETCRecord();
-                break;
-        }
+
+    private boolean isFollowMemo(StreamReader sr) {
+        return this.paraHeaderLevel == 0
+                && sr.getCurrentRecordHeader().getTagID() == HWPTag.MEMO_LIST
+                && sr.getCurrentRecordHeader().getLevel() == 1;
     }
 
     /**
@@ -209,15 +203,6 @@ public class ForParagraph {
             Control c = paragraph.addNewControl(id);
             ForControl.read(c, sr);
         }
-    }
-
-    /**
-     * 메모리를 읽는다.
-     *
-     * @throws Exception
-     */
-    private void memo() throws Exception {
-        ForMemo.read(paragraph.addNewMemo(), sr);
     }
 
     /**

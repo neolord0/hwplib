@@ -7,7 +7,6 @@ import kr.dogfoot.hwplib.util.compoundFile.writer.StreamWriter;
 import kr.dogfoot.hwplib.writer.bodytext.paragraph.ForParagraphList;
 
 import java.io.IOException;
-import java.util.ArrayList;
 
 /**
  * 메모를 쓰기 위한 객체
@@ -15,25 +14,7 @@ import java.util.ArrayList;
  * @author neolord
  */
 public class ForMemo {
-    /**
-     * 메모 리스트를 쓴다.
-     *
-     * @param memoList 메모 리스트
-     * @param sw       스트림 라이터
-     * @throws Exception
-     */
-    public static void write(ArrayList<Memo> memoList, StreamWriter sw)
-            throws Exception {
-        if (memoList == null) {
-            return;
-        }
-
-        for (Memo m : memoList) {
-            memo(m, sw);
-        }
-    }
-
-    private static void memo(Memo m, StreamWriter sw) throws Exception {
+    public static void write(Memo m, StreamWriter sw) throws Exception {
         ForMemoList.write(m.getMemoList(), sw);
         listHeader(m.getListHeader(), sw);
         ForParagraphList.write(m.getParagraphList(), sw);
