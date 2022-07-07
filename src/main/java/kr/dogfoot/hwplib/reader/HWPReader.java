@@ -56,6 +56,10 @@ public class HWPReader {
         if (r.hasPassword()) {
             throw new Exception("Files with passwords are not supported.");
         }
+        if (r.isDocumentForDeployment()) {
+            throw new Exception("Files for deployment are not supported.");
+        }
+
         r.docInfo();
         r.bodyText();
         r.binData();
@@ -91,6 +95,10 @@ public class HWPReader {
         if (r.hasPassword()) {
             throw new Exception("Files with passwords are not supported.");
         }
+        if (r.isDocumentForDeployment()) {
+            throw new Exception("Files for deployment are not supported.");
+        }
+
         r.docInfo();
         r.bodyText();
         r.binData();
@@ -138,6 +146,15 @@ public class HWPReader {
      */
     private boolean hasPassword() {
         return hwpFile.getFileHeader().hasPassword();
+    }
+
+    /**
+     * 배포용 문서 파일인지 여부를 반환한다.
+     *
+     * @return 암호화된 파일인지 여부
+     */
+    private boolean isDocumentForDeployment() {
+        return hwpFile.getFileHeader().isDeploymentDocument();
     }
 
     /**
@@ -321,6 +338,10 @@ public class HWPReader {
         if (r.hasPassword()) {
             throw new Exception("Files with passwords are not supported.");
         }
+        if (r.isDocumentForDeployment()) {
+            throw new Exception("Files for deployment are not supported.");
+        }
+
         r.docInfo();
         r.extractBodyText(listener, tem);
 

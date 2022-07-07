@@ -11,23 +11,24 @@ import kr.dogfoot.hwplib.object.docinfo.Numbering;
 import kr.dogfoot.hwplib.object.docinfo.ParaShape;
 import kr.dogfoot.hwplib.object.docinfo.numbering.LevelNumbering;
 import kr.dogfoot.hwplib.util.StringUtil;
+import org.omg.PortableInterceptor.SYSTEM_EXCEPTION;
 
 public class ParaHeadMaker {
     private HWPFile hwpFile;
     private ControlSectionDefine sectionDefine;
-    private ParaNumber outlineNumber;
+    private OutLineNumber outlineNumber;
     private ParaNumber paraNumber;
 
     public ParaHeadMaker(HWPFile hwpFile) {
         this.hwpFile = hwpFile;
         setSectionDefine(hwpFile.getBodyText().getSectionList().get(0));
-        outlineNumber = new ParaNumber();
+        outlineNumber = new OutLineNumber();
         paraNumber = new ParaNumber();
     }
 
     public void startSection(Section section) {
         setSectionDefine(section);
-        outlineNumber = new ParaNumber();
+        outlineNumber = new OutLineNumber();
     }
 
     public void endSection() {
@@ -57,29 +58,24 @@ public class ParaHeadMaker {
             case None:
                 return "";
             case Outline:
-                return numbering(outlineNumber,
-                        sectionDefine.getHeader().getNumberParaShapeId(),
-                        paraShape.getProperty1().getParaLevel());
+                return outline(paraShape.getProperty1().getParaLevel());
             case Numbering:
-                return numbering(
-                        paraNumber,
-                        paraShape.getParaHeadId(),
+                return numbering(paraShape.getParaHeadId(),
                         paraShape.getProperty1().getParaLevel());
             case Bullet:
-                return bullet(
-                        paraShape.getParaHeadId(),
+                return bullet(paraShape.getParaHeadId(),
                         paraShape.getProperty1().getParaLevel());
         }
         return null;
     }
 
-    private String numbering(ParaNumber paraNumber, int paraHeadID, byte paraLevel) {
-        Numbering numbering = hwpFile.getDocInfo().getNumberingList().get(paraHeadID - 1);
-
-        if (paraNumber.changedParaHead(paraHeadID)) {
-            paraNumber.reset(paraHeadID, paraLevel, numbering.getStartNumber());
+    private String outline(byte paraLevel) {
+        return outlineNumber.getText(paraLevel);
+        /*
+        if (outlineNumber.changedParaHead(paraHeadID)) {
+            outlineNumber.reset(paraHeadID, paraLevel, numbering.getStartNumber());
         } else {
-            paraNumber.increase(paraLevel);
+            outlineNumber.increase(paraLevel);
         }
 
         try {
@@ -89,6 +85,32 @@ public class ParaHeadMaker {
             e.printStackTrace();
         }
         return null;
+
+ */
+    }
+
+    private String numbering(int paraHeadID, byte paraLevel) {
+        Numbering numbering = hwpFile.getDocInfo().getNumberingList().get(paraHeadID - 1);
+
+        LevelNumbering lv;
+        try {
+            lv = numbering.getLevelNumbering(paraLevel + 1);
+        } catch (Exception e) {
+            e.printStackTrace();
+            lv = null;
+        }
+
+        if (lv != null) {
+            if (paraNumber.changedParaHead(paraHeadID)) {
+                paraNumber.reset(paraHeadID, paraLevel, (int) lv.getStartNumber());
+            } else {
+                paraNumber.increase(paraLevel);
+            }
+
+            return numberText(lv, paraNumber, paraLevel);
+        } else {
+            return null;
+        }
     }
 
     private String numberText(LevelNumbering lv, ParaNumber paraNumber, int paraLevel) {

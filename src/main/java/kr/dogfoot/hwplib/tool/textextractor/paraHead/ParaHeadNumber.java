@@ -140,6 +140,10 @@ public class ParaHeadNumber {
     }
 
     public static String toString(int value, ParagraphNumberFormat format) {
+        if (value <= 0) {
+            return "";
+        }
+
         switch (format) {
             case Number:
                 return String.valueOf(value);
@@ -221,7 +225,10 @@ public class ParaHeadNumber {
     }
 
     private static String hangul(int value) {
-        return hangul[(value - 1) % 84];
+        if (value > 0) {
+            return hangul[(value - 1) % 84];
+        }
+        return null;
     }
 
     private static String circledHangul(int value) {
