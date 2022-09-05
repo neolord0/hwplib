@@ -35,10 +35,12 @@ public class Adding_Paragraph_Between_Cloned_HWPFIle {
             paraAdder.add(sourceHWPFile, sourceParagraph);
         }
         {
-            Paragraph sourceParagraph = sourceHWPFile.getBodyText().getSectionList().get(0).getParagraph(1);
+            if (sourceHWPFile.getBodyText().getSectionList().get(0).getParagraphCount() > 2) {
+                Paragraph sourceParagraph = sourceHWPFile.getBodyText().getSectionList().get(0).getParagraph(1);
 
-            ParagraphAdder paraAdder = new ParagraphAdder(targetHWPFile, targetFirstSection);
-            paraAdder.add(sourceHWPFile, sourceParagraph);
+                ParagraphAdder paraAdder = new ParagraphAdder(targetHWPFile, targetFirstSection);
+                paraAdder.add(sourceHWPFile, sourceParagraph);
+            }
         }
     }
 }

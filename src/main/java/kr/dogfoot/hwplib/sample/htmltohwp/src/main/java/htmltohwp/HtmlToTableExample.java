@@ -482,7 +482,8 @@ public class HtmlToTableExample {
             ParaHeader ph = p.getHeader();
             ParaShape paraShape = hwpFile.getDocInfo().addNewParaShape();
             paraShape.getProperty1().setAlignment(Alignment.Center); // 가운데정렬
-            paraShape.setLineSpace(100); // 줄바꿈이 일어날 위치 지정.
+            paraShape.setLineSpace(100); // 줄바꿈이 일어날 위치 지정//
+            paraShape.setBorderFillId(1);
             int id = hwpFile.getDocInfo().getParaShapeList().size() - 1;
             ph.setParaShapeId(id);
         }
@@ -566,7 +567,6 @@ public class HtmlToTableExample {
         cs.getProperty().setUsingSpaceAppropriateForFont(false);
         cs.getProperty().setStrikeLineShape(BorderType2.Solid);
         cs.getProperty().setKerning(false);
-
         cs.setShadowGap1((byte) 0);
         cs.setShadowGap2((byte) 0);
         RGBColor rgbColor = hexToRgb(color);
@@ -576,7 +576,7 @@ public class HtmlToTableExample {
         cs.getUnderLineColor().setValue(0x00000000);
         cs.getShadeColor().setValue(-1);
         cs.getShadowColor().setValue(0x00b2b2b2);
-        cs.setBorderFillId(0);
+        cs.setBorderFillId(1);
 
         return hwpFile.getDocInfo().getCharShapeList().size() - 1;
     }
