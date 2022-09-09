@@ -9,30 +9,29 @@ import kr.dogfoot.hwplib.object.bodytext.paragraph.Paragraph;
 import kr.dogfoot.hwplib.object.docinfo.Bullet;
 import kr.dogfoot.hwplib.object.docinfo.Numbering;
 import kr.dogfoot.hwplib.object.docinfo.ParaShape;
+import kr.dogfoot.hwplib.object.docinfo.Style;
 import kr.dogfoot.hwplib.object.docinfo.numbering.LevelNumbering;
 import kr.dogfoot.hwplib.util.StringUtil;
-import org.omg.PortableInterceptor.SYSTEM_EXCEPTION;
 
 public class ParaHeadMaker {
     private HWPFile hwpFile;
     private ControlSectionDefine sectionDefine;
-    private OutLineNumber outlineNumber;
-    private ParaNumber paraNumber;
+    private ParaNumber paraNumberForNumbering;
+    private ParaNumber paraNumberForOutline;
 
     public ParaHeadMaker(HWPFile hwpFile) {
         this.hwpFile = hwpFile;
         setSectionDefine(hwpFile.getBodyText().getSectionList().get(0));
-        outlineNumber = new OutLineNumber();
-        paraNumber = new ParaNumber();
+        paraNumberForNumbering = new ParaNumber();
     }
 
     public void startSection(Section section) {
         setSectionDefine(section);
-        outlineNumber = new OutLineNumber();
+        paraNumberForOutline = new ParaNumber();
     }
 
     public void endSection() {
-        outlineNumber = null;
+        paraNumberForOutline = null;
     }
 
 
@@ -58,7 +57,8 @@ public class ParaHeadMaker {
             case None:
                 return "";
             case Outline:
-                return outline(paraShape.getProperty1().getParaLevel());
+                return outline(paragraph.getHeader().getStyleId(),
+                        paraShape.getProperty1().getParaLevel());
             case Numbering:
                 return numbering(paraShape.getParaHeadId(),
                         paraShape.getProperty1().getParaLevel());
@@ -69,24 +69,30 @@ public class ParaHeadMaker {
         return null;
     }
 
-    private String outline(byte paraLevel) {
-        return outlineNumber.getText(paraLevel);
-        /*
-        if (outlineNumber.changedParaHead(paraHeadID)) {
-            outlineNumber.reset(paraHeadID, paraLevel, numbering.getStartNumber());
-        } else {
-            outlineNumber.increase(paraLevel);
-        }
+    private String outline(int styleID, byte paraLevel) {
+        Style style = hwpFile.getDocInfo().getStyleList().get(styleID);
+        ParaShape outlineParaShape = hwpFile.getDocInfo().getParaShapeList().get(style.getParaShapeId());
 
+        Numbering numbering = hwpFile.getDocInfo().getNumberingList().get(outlineParaShape.getParaHeadId());
+        LevelNumbering lv;
         try {
-            LevelNumbering lv = numbering.getLevelNumbering(paraLevel + 1);
-            return numberText(lv, paraNumber, paraLevel);
+            lv = numbering.getLevelNumbering(paraLevel + 1);
         } catch (Exception e) {
             e.printStackTrace();
+            lv = null;
         }
-        return null;
 
- */
+        if (lv != null) {
+            if (paraNumberForOutline.changedParaHead(outlineParaShape.getParaHeadId())) {
+                paraNumberForOutline.reset(outlineParaShape.getParaHeadId(), paraLevel, (int) lv.getStartNumber());
+            } else {
+                paraNumberForOutline.increase(paraLevel);
+            }
+
+            return numberText(lv, paraNumberForOutline, paraLevel);
+        } else {
+            return null;
+        }
     }
 
     private String numbering(int paraHeadID, byte paraLevel) {
@@ -101,13 +107,13 @@ public class ParaHeadMaker {
         }
 
         if (lv != null) {
-            if (paraNumber.changedParaHead(paraHeadID)) {
-                paraNumber.reset(paraHeadID, paraLevel, (int) lv.getStartNumber());
+            if (paraNumberForNumbering.changedParaHead(paraHeadID)) {
+                paraNumberForNumbering.reset(paraHeadID, paraLevel, (int) lv.getStartNumber());
             } else {
-                paraNumber.increase(paraLevel);
+                paraNumberForNumbering.increase(paraLevel);
             }
 
-            return numberText(lv, paraNumber, paraLevel);
+            return numberText(lv, paraNumberForNumbering, paraLevel);
         } else {
             return null;
         }

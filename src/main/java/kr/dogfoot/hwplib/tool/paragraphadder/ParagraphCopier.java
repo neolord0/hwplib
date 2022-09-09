@@ -181,7 +181,7 @@ public class ParagraphCopier {
                     ETCControlCopier.copyIndexMark((ControlIndexMark) c, (ControlIndexMark) target.addNewControl(ControlType.IndexMark), docInfoAdder);
                     break;
                 case Bookmark:
-                    ETCControlCopier.copyBookmark((ControlBookmark) c, (ControlBookmark) target.addNewControl(ControlType.IndexMark), docInfoAdder);
+                    ETCControlCopier.copyBookmark((ControlBookmark) c, (ControlBookmark) target.addNewControl(ControlType.Bookmark), docInfoAdder);
                     break;
                 case OverlappingLetter:
                     OverlappingLetterCopier.copy((ControlOverlappingLetter) c, (ControlOverlappingLetter) target.addNewControl(ControlType.OverlappingLetter), docInfoAdder);  // 신규 추가

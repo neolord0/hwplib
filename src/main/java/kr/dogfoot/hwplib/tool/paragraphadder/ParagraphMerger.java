@@ -170,7 +170,7 @@ public class ParagraphMerger {
                 ETCControlCopier.copyIndexMark((ControlIndexMark) sourceControl, (ControlIndexMark) target.addNewControl(ControlType.IndexMark), docInfoAdder);
                 break;
             case Bookmark:
-                ETCControlCopier.copyBookmark((ControlBookmark) sourceControl, (ControlBookmark) target.addNewControl(ControlType.IndexMark), docInfoAdder);
+                ETCControlCopier.copyBookmark((ControlBookmark) sourceControl, (ControlBookmark) target.addNewControl(ControlType.Bookmark), docInfoAdder);
                 break;
             case OverlappingLetter:
                 OverlappingLetterCopier.copy((ControlOverlappingLetter) sourceControl, (ControlOverlappingLetter) target.addNewControl(ControlType.OverlappingLetter), docInfoAdder);  // 신규 추가
