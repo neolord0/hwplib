@@ -3,7 +3,7 @@
 
 한글과 컴퓨터(한컴)에서 만든 워드프로세서 "한글"의 파일에 대한 라이브러리입니다.<br>
 
-<span style="color:yellow">노란 글씨입니다.</span>
+<font color="green"> Some green text </font>
 
 사회 기여을 목적으로 시작한 hwplib 프로젝트가 지금은 이 라이브러리를 기반으로 하는 한글로젠이라는 제품을 위키랩(http://wikilab.co.kr/)에서 개발/판매하고 하고 있습니다.<br>
 라이브러리 사용, 버그 수정요청, 약간의 질문 등은 Apache-2.0 license에 의해 자유롭게 할 수 있습니다. <br>
