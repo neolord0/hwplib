@@ -23,9 +23,18 @@ public class FaceNameAdder {
             return sourceId;
         }
 
-        FaceName source = docInfoAdder.getSourceHWPFile().getDocInfo().getHangulFaceNameList().get(sourceId);
+        FaceName source = getFaceName(docInfoAdder.getSourceHWPFile().getDocInfo().getHangulFaceNameList(), sourceId);
         ArrayList<FaceName> targetArray = docInfoAdder.getTargetHWPFile().getDocInfo().getHangulFaceNameList();
         return process(source, targetArray);
+    }
+
+    private FaceName getFaceName(ArrayList<FaceName> faceNameList, int index) {
+        int count = faceNameList.size();
+        if (index >= count) {
+            return faceNameList.get(count - 1);
+        } else {
+            return faceNameList.get(index);
+        }
     }
 
     private int process(FaceName source, ArrayList<FaceName> targetArray) {
@@ -101,80 +110,104 @@ public class FaceNameAdder {
     }
 
     public int processByLatinId(int sourceId) {
-        FaceName source = docInfoAdder.getSourceHWPFile().getDocInfo().getEnglishFaceNameList().get(sourceId);
+        if (docInfoAdder.getSourceHWPFile() == docInfoAdder.getTargetHWPFile()) {
+            return sourceId;
+        }
+
+        FaceName source = getFaceName(docInfoAdder.getSourceHWPFile().getDocInfo().getEnglishFaceNameList(), sourceId);
         ArrayList<FaceName> targetArray = docInfoAdder.getTargetHWPFile().getDocInfo().getEnglishFaceNameList();
         return process(source, targetArray);
     }
 
     public int processByHanjaId(int sourceId) {
-        FaceName source = docInfoAdder.getSourceHWPFile().getDocInfo().getHanjaFaceNameList().get(sourceId);
+        if (docInfoAdder.getSourceHWPFile() == docInfoAdder.getTargetHWPFile()) {
+            return sourceId;
+        }
+
+        FaceName source = getFaceName(docInfoAdder.getSourceHWPFile().getDocInfo().getHanjaFaceNameList(), sourceId);
         ArrayList<FaceName> targetArray = docInfoAdder.getTargetHWPFile().getDocInfo().getHanjaFaceNameList();
         return process(source, targetArray);
     }
 
     public int processByJapaneseId(int sourceId) {
-        FaceName source = docInfoAdder.getSourceHWPFile().getDocInfo().getJapaneseFaceNameList().get(sourceId);
+        if (docInfoAdder.getSourceHWPFile() == docInfoAdder.getTargetHWPFile()) {
+            return sourceId;
+        }
+
+        FaceName source = getFaceName(docInfoAdder.getSourceHWPFile().getDocInfo().getJapaneseFaceNameList(), sourceId);
         ArrayList<FaceName> targetArray = docInfoAdder.getTargetHWPFile().getDocInfo().getJapaneseFaceNameList();
         return process(source, targetArray);
     }
 
     public int processByOtherId(int sourceId) {
-        FaceName source = docInfoAdder.getSourceHWPFile().getDocInfo().getEtcFaceNameList().get(sourceId);
+        if (docInfoAdder.getSourceHWPFile() == docInfoAdder.getTargetHWPFile()) {
+            return sourceId;
+        }
+
+        FaceName source = getFaceName(docInfoAdder.getSourceHWPFile().getDocInfo().getEtcFaceNameList(), sourceId);
         ArrayList<FaceName> targetArray = docInfoAdder.getTargetHWPFile().getDocInfo().getEtcFaceNameList();
         return process(source, targetArray);
     }
 
     public int processBySymbolId(int sourceId) {
-        FaceName source = docInfoAdder.getSourceHWPFile().getDocInfo().getSymbolFaceNameList().get(sourceId);
+        if (docInfoAdder.getSourceHWPFile() == docInfoAdder.getTargetHWPFile()) {
+            return sourceId;
+        }
+
+        FaceName source = getFaceName(docInfoAdder.getSourceHWPFile().getDocInfo().getSymbolFaceNameList(), sourceId);
         ArrayList<FaceName> targetArray = docInfoAdder.getTargetHWPFile().getDocInfo().getSymbolFaceNameList();
         return process(source, targetArray);
     }
 
     public int processByUserId(int sourceId) {
-        FaceName source = docInfoAdder.getSourceHWPFile().getDocInfo().getUserFaceNameList().get(sourceId);
+        if (docInfoAdder.getSourceHWPFile() == docInfoAdder.getTargetHWPFile()) {
+            return sourceId;
+        }
+
+        FaceName source = getFaceName(docInfoAdder.getSourceHWPFile().getDocInfo().getUserFaceNameList(), sourceId);
         ArrayList<FaceName> targetArray = docInfoAdder.getTargetHWPFile().getDocInfo().getUserFaceNameList();
         return process(source, targetArray);
     }
 
     public boolean equalByHangulId(int sourceId, int targetId) {
-        FaceName source = docInfoAdder.getSourceHWPFile().getDocInfo().getHangulFaceNameList().get(sourceId);
-        FaceName target = docInfoAdder.getTargetHWPFile().getDocInfo().getHangulFaceNameList().get(targetId);
+        FaceName source = getFaceName(docInfoAdder.getSourceHWPFile().getDocInfo().getHangulFaceNameList(), sourceId);
+        FaceName target = getFaceName(docInfoAdder.getTargetHWPFile().getDocInfo().getHangulFaceNameList(), targetId);
         return equal(source, target);
     }
 
     public boolean equalByLatinId(int sourceId, int targetId) {
-        FaceName source = docInfoAdder.getSourceHWPFile().getDocInfo().getEnglishFaceNameList().get(sourceId);
-        FaceName target = docInfoAdder.getTargetHWPFile().getDocInfo().getEnglishFaceNameList().get(targetId);
+        FaceName source = getFaceName(docInfoAdder.getSourceHWPFile().getDocInfo().getEnglishFaceNameList(), sourceId);
+        FaceName target = getFaceName(docInfoAdder.getTargetHWPFile().getDocInfo().getEnglishFaceNameList(), targetId);
         return equal(source, target);
     }
 
     public boolean equalByHanjaId(int sourceId, int targetId) {
-        FaceName source = docInfoAdder.getSourceHWPFile().getDocInfo().getHanjaFaceNameList().get(sourceId);
-        FaceName target = docInfoAdder.getTargetHWPFile().getDocInfo().getHanjaFaceNameList().get(targetId);
+        FaceName source = getFaceName(docInfoAdder.getSourceHWPFile().getDocInfo().getHanjaFaceNameList(), sourceId);
+        FaceName target = getFaceName(docInfoAdder.getTargetHWPFile().getDocInfo().getHanjaFaceNameList(), targetId);
         return equal(source, target);
     }
 
     public boolean equalByJapaneseId(int sourceId, int targetId) {
-        FaceName source = docInfoAdder.getSourceHWPFile().getDocInfo().getJapaneseFaceNameList().get(sourceId);
-        FaceName target = docInfoAdder.getTargetHWPFile().getDocInfo().getJapaneseFaceNameList().get(targetId);
+        FaceName source = getFaceName(docInfoAdder.getSourceHWPFile().getDocInfo().getJapaneseFaceNameList(), sourceId);
+        FaceName target = getFaceName(docInfoAdder.getTargetHWPFile().getDocInfo().getJapaneseFaceNameList(), targetId);
         return equal(source, target);
     }
 
     public boolean equalByOtherId(int sourceId, int targetId) {
-        FaceName source = docInfoAdder.getSourceHWPFile().getDocInfo().getEtcFaceNameList().get(sourceId);
-        FaceName target = docInfoAdder.getTargetHWPFile().getDocInfo().getEtcFaceNameList().get(targetId);
+        FaceName source = getFaceName(docInfoAdder.getSourceHWPFile().getDocInfo().getEtcFaceNameList(), sourceId);
+        FaceName target = getFaceName(docInfoAdder.getTargetHWPFile().getDocInfo().getEtcFaceNameList(), targetId);
         return equal(source, target);
     }
 
     public boolean equalBySymbolId(int sourceId, int targetId) {
-        FaceName source = docInfoAdder.getSourceHWPFile().getDocInfo().getSymbolFaceNameList().get(sourceId);
-        FaceName target = docInfoAdder.getTargetHWPFile().getDocInfo().getSymbolFaceNameList().get(targetId);
+        FaceName source = getFaceName(docInfoAdder.getSourceHWPFile().getDocInfo().getSymbolFaceNameList(), sourceId);
+        FaceName target = getFaceName(docInfoAdder.getTargetHWPFile().getDocInfo().getSymbolFaceNameList(), targetId);
         return equal(source, target);
     }
 
     public boolean equalByUserId(int sourceId, int targetId) {
-        FaceName source = docInfoAdder.getSourceHWPFile().getDocInfo().getUserFaceNameList().get(sourceId);
-        FaceName target = docInfoAdder.getTargetHWPFile().getDocInfo().getUserFaceNameList().get(targetId);
+        FaceName source = getFaceName(docInfoAdder.getSourceHWPFile().getDocInfo().getUserFaceNameList(), sourceId);
+        FaceName target = getFaceName(docInfoAdder.getTargetHWPFile().getDocInfo().getUserFaceNameList(), targetId);
         return equal(source, target);
     }
 }

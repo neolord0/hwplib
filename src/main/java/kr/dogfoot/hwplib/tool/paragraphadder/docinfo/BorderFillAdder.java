@@ -3,6 +3,8 @@ package kr.dogfoot.hwplib.tool.paragraphadder.docinfo;
 import kr.dogfoot.hwplib.object.docinfo.BorderFill;
 import kr.dogfoot.hwplib.object.docinfo.borderfill.EachBorder;
 
+import java.util.ArrayList;
+
 /**
  * DocInfo에 BorderFill를 복사하는 기능을 포함하는 클레스
  *
@@ -20,7 +22,7 @@ public class BorderFillAdder {
             return sourceId;
         }
 
-        BorderFill source = docInfoAdder.getSourceHWPFile().getDocInfo().getBorderFillList().get(sourceId - 1);
+        BorderFill source = getBorderFill(docInfoAdder.getSourceHWPFile().getDocInfo().getBorderFillList(), sourceId - 1);
         int index = findFromTarget(source);
         if (index == -1) {
             index = addAndCopy(source);
@@ -28,10 +30,21 @@ public class BorderFillAdder {
         return index;
     }
 
+    private BorderFill getBorderFill(ArrayList<BorderFill> borderFillList, int index) {
+        int count = borderFillList.size();
+        if (index >= count) {
+            return borderFillList.get(count - 1);
+        } else if (index < 0) {
+            return borderFillList.get(0);
+        } else {
+            return borderFillList.get(index);
+        }
+    }
+
     private int findFromTarget(BorderFill source) {
         int count = docInfoAdder.getTargetHWPFile().getDocInfo().getBorderFillList().size();
         for (int index = 0; index < count; index++) {
-            BorderFill target = docInfoAdder.getTargetHWPFile().getDocInfo().getBorderFillList().get(index);
+            BorderFill target  = docInfoAdder.getTargetHWPFile().getDocInfo().getBorderFillList().get(index);
             if (equal(source, target)) {
                 return index + 1;
             }
@@ -73,8 +86,8 @@ public class BorderFillAdder {
     }
 
     public boolean equalById(int sourceId, int targetId) {
-        BorderFill source = docInfoAdder.getSourceHWPFile().getDocInfo().getBorderFillList().get(sourceId - 1);
-        BorderFill target = docInfoAdder.getTargetHWPFile().getDocInfo().getBorderFillList().get(targetId - 1);
+        BorderFill source = getBorderFill(docInfoAdder.getSourceHWPFile().getDocInfo().getBorderFillList(), sourceId - 1);
+        BorderFill target = getBorderFill(docInfoAdder.getTargetHWPFile().getDocInfo().getBorderFillList(), targetId - 1);
         return equal(source, target);
     }
 }

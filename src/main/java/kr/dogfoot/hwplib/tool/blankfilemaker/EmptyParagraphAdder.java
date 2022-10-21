@@ -1,7 +1,9 @@
 package kr.dogfoot.hwplib.tool.blankfilemaker;
 
+import kr.dogfoot.hwplib.object.bodytext.ParagraphListInterface;
 import kr.dogfoot.hwplib.object.bodytext.Section;
 import kr.dogfoot.hwplib.object.bodytext.paragraph.Paragraph;
+import kr.dogfoot.hwplib.object.bodytext.paragraph.ParagraphList;
 import kr.dogfoot.hwplib.object.bodytext.paragraph.charshape.ParaCharShape;
 import kr.dogfoot.hwplib.object.bodytext.paragraph.header.ParaHeader;
 import kr.dogfoot.hwplib.object.bodytext.paragraph.lineseg.LineSegItem;
@@ -33,12 +35,31 @@ public class EmptyParagraphAdder {
         header.setIsMergedByTrack(0);
     }
 
+    public static void add(ParagraphList paragraphList) {
+        Paragraph paragraph = paragraphList.addNewParagraph();
+        header2(paragraph.getHeader());
+        charShape(paragraph);
+    }
+
+    private static void header2(ParaHeader header) {
+        header.setLastInList(true);
+        header.setCharacterCount(17);
+        header.getControlMask().setValue(4);
+        header.setParaShapeId(3);
+        header.setStyleId((short) 0);
+        header.getDivideSort().setValue((short) 0);
+        header.setCharShapeCount(1);
+        header.setRangeTagCount(0);
+        header.setLineAlignCount(1);
+        header.setInstanceID(0);
+        header.setIsMergedByTrack(0);
+    }
+
     private static void text(Paragraph paragraph) {
         paragraph.createText();
         ParaText paraText = paragraph.getText();
 
         paraText.addExtendCharForSectionDefine();
-        ;
         paraText.addExtendCharForColumnDefine();
     }
 
