@@ -32,7 +32,7 @@ public class ForMemo {
      * @throws Exception
      */
     private static void listHeader(ListHeaderForMemo listHeaderForMemo, StreamReader sr) throws Exception {
-        sr.readRecordHeder();
+        sr.readRecordHeader();
 
         listHeaderForMemo.setParaCount(sr.readSInt4());
         listHeaderForMemo.getProperty().setValue(sr.readUInt4());

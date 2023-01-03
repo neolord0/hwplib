@@ -12,7 +12,7 @@ import java.io.IOException;
 public class ForControlTextArt {
 
     public static void readRest(ControlTextArt textArt, StreamReader sr) throws IOException {
-        RecordHeader rh = sr.readRecordHeder();
+        RecordHeader rh = sr.readRecordHeader();
         if (rh.getTagID() == HWPTag.SHAPE_COMPONENT_TEXTART) {
             shapeComponentTextArt(textArt.getShapeComponentTextArt(), sr);
         }

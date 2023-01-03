@@ -26,12 +26,12 @@ public class ForControlCurve {
      */
     public static void readRest(ControlCurve curve, StreamReader sr)
             throws Exception {
-        RecordHeader rh = sr.readRecordHeder();
+        RecordHeader rh = sr.readRecordHeader();
         if (rh.getTagID() == HWPTag.LIST_HEADER) {
             curve.createTextBox();
             ForTextBox.read(curve.getTextBox(), sr);
             if (sr.isImmediatelyAfterReadingHeader() == false) {
-                rh = sr.readRecordHeder();
+                rh = sr.readRecordHeader();
             }
         }
         if (rh.getTagID() == HWPTag.SHAPE_COMPONENT_CURVE) {

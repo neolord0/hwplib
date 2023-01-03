@@ -22,7 +22,7 @@ public class ForControlOLE {
      * @throws IOException
      */
     public static void readRest(ControlOLE ole, StreamReader sr) throws IOException {
-        RecordHeader rh = sr.readRecordHeder();
+        RecordHeader rh = sr.readRecordHeader();
         if (rh.getTagID() == HWPTag.SHAPE_COMPONENT_OLE) {
             shapeComponentOLE(ole.getShapeComponentOLE(), sr);
         }

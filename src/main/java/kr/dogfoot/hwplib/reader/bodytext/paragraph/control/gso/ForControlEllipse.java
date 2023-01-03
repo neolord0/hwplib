@@ -24,12 +24,12 @@ public class ForControlEllipse {
      */
     public static void readRest(ControlEllipse ellipse, StreamReader sr)
             throws Exception {
-        RecordHeader rh = sr.readRecordHeder();
+        RecordHeader rh = sr.readRecordHeader();
         if (rh.getTagID() == HWPTag.LIST_HEADER) {
             ellipse.createTextBox();
             ForTextBox.read(ellipse.getTextBox(), sr);
             if (sr.isImmediatelyAfterReadingHeader() == false) {
-                rh = sr.readRecordHeder();
+                rh = sr.readRecordHeader();
             }
         }
         if (rh.getTagID() == HWPTag.SHAPE_COMPONENT_ELLIPSE) {

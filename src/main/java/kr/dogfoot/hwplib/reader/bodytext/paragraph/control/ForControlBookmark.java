@@ -33,7 +33,7 @@ public class ForControlBookmark {
      */
     private static void ctrlData(ControlBookmark b, StreamReader sr)
             throws Exception {
-        RecordHeader rh = sr.readRecordHeder();
+        RecordHeader rh = sr.readRecordHeader();
         if (rh.getTagID() == HWPTag.CTRL_DATA) {
             b.createCtrlData();
             ForCtrlData.read(b.getCtrlData(), sr);

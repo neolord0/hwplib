@@ -26,7 +26,7 @@ public class ForControlPicture {
      */
     public static void readRest(ControlPicture picture, StreamReader sr)
             throws Exception {
-        RecordHeader rh = sr.readRecordHeder();
+        RecordHeader rh = sr.readRecordHeader();
         if (rh.getTagID() == HWPTag.SHAPE_COMPONENT_PICTURE) {
             shapeComponentPicture(picture.getShapeComponentPicture(), sr);
         }

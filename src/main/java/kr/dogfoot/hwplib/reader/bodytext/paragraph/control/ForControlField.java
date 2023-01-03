@@ -72,7 +72,7 @@ public class ForControlField {
      */
     private static void ctrlData(ControlField field, StreamReader sr)
             throws IOException {
-        RecordHeader rh = sr.readRecordHeder();
+        RecordHeader rh = sr.readRecordHeader();
         if (rh.getTagID() == HWPTag.CTRL_DATA) {
             field.createCtrlData();
             ForCtrlData.read(field.getCtrlData(), sr);

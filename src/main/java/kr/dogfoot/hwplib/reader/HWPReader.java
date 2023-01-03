@@ -226,7 +226,7 @@ public class HWPReader {
     private void memo(StreamReader sr) throws Exception {
         while (!sr.isEndOfStream()) {
             if (sr.isImmediatelyAfterReadingHeader() == false) {
-                sr.readRecordHeder();
+                sr.readRecordHeader();
             }
 
             if (sr.getCurrentRecordHeader().getTagID() == HWPTag.MEMO_LIST) {

@@ -61,7 +61,7 @@ public class ForControlSectionDefine {
 
         while (sr.isEndOfStream() == false) {
             if (sr.isImmediatelyAfterReadingHeader() == false) {
-                sr.readRecordHeder();
+                sr.readRecordHeader();
             }
 
             if (ctrlHeaderLevel >= sr.getCurrentRecordHeader().getLevel()) {

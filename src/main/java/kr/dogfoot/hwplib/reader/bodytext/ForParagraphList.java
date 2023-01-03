@@ -23,7 +23,7 @@ public class ForParagraphList {
     public static void read(ParagraphListInterface pli, StreamReader sr)
             throws Exception {
         ForParagraph fp = new ForParagraph();
-        sr.readRecordHeder();
+        sr.readRecordHeader();
         while (sr.isEndOfStream() == false) {
             Paragraph para = pli.addNewParagraph();
             fp.read(para, sr);
@@ -45,7 +45,7 @@ public class ForParagraphList {
         StringBuffer sb = new StringBuffer();
 
         ForParagraph fp = new ForParagraph();
-        sr.readRecordHeder();
+        sr.readRecordHeader();
         while (sr.isEndOfStream() == false) {
             Paragraph para = new Paragraph();
             fp.read(para, sr);

@@ -69,7 +69,7 @@ public class ForControlTable {
      * @throws Exception
      */
     private void ctrlData() throws Exception {
-        sr.readRecordHeder();
+        sr.readRecordHeader();
         if (sr.getCurrentRecordHeader().getTagID() == HWPTag.CTRL_DATA) {
             table.createCtrlData();
             ForCtrlData.read(table.getCtrlData(), sr);
@@ -84,7 +84,7 @@ public class ForControlTable {
      */
     private void caption() throws Exception {
         if (sr.isImmediatelyAfterReadingHeader() == false) {
-            sr.readRecordHeder();
+            sr.readRecordHeader();
         }
         if (sr.getCurrentRecordHeader().getTagID() == HWPTag.LIST_HEADER) {
             table.createCaption();
@@ -99,7 +99,7 @@ public class ForControlTable {
      */
     private void table() throws IOException {
         if (sr.isImmediatelyAfterReadingHeader() == false) {
-            sr.readRecordHeder();
+            sr.readRecordHeader();
         }
         if (sr.getCurrentRecordHeader().getTagID() == HWPTag.TABLE) {
             ForTable.read(table.getTable(), sr);

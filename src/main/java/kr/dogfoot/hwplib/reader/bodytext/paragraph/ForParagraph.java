@@ -61,7 +61,7 @@ public class ForParagraph {
 
         while (sr.isEndOfStream() == false) {
             if (sr.isImmediatelyAfterReadingHeader() == false) {
-                sr.readRecordHeder();
+                sr.readRecordHeader();
             }
             if (isOutOfParagraph(sr)
                     || isFollowLastBatangPageInfo(sr)
@@ -96,7 +96,7 @@ public class ForParagraph {
         }
 
         if (sr.isImmediatelyAfterReadingHeader() == false) {
-            sr.readRecordHeder();
+            sr.readRecordHeader();
         }
         if (sr.getCurrentRecordHeader().getTagID() == HWPTag.PARA_TEXT) {
             ForParaText.read(paragraph, sr);
@@ -114,7 +114,7 @@ public class ForParagraph {
         }
 
         if (sr.isImmediatelyAfterReadingHeader() == false) {
-            sr.readRecordHeder();
+            sr.readRecordHeader();
         }
         if (sr.getCurrentRecordHeader().getTagID() == HWPTag.PARA_CHAR_SHAPE) {
             ForParaCharShape.read(paragraph, sr);
@@ -132,7 +132,7 @@ public class ForParagraph {
         }
 
         if (sr.isImmediatelyAfterReadingHeader() == false) {
-            sr.readRecordHeder();
+            sr.readRecordHeader();
         }
         if (sr.getCurrentRecordHeader().getTagID() == HWPTag.PARA_LINE_SEG) {
             ForParaLineSeq.read(paragraph, sr);
@@ -150,7 +150,7 @@ public class ForParagraph {
         }
 
         if (sr.isImmediatelyAfterReadingHeader() == false) {
-            sr.readRecordHeder();
+            sr.readRecordHeader();
         }
         if (sr.getCurrentRecordHeader().getTagID() == HWPTag.PARA_RANGE_TAG) {
             ForParaRangeTag.read(paragraph, sr, sr.getCurrentRecordHeader().getSize());

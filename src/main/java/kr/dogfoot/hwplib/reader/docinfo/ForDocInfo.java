@@ -41,7 +41,7 @@ public class ForDocInfo {
         this.docInfo = di;
 
         while (sr.isEndOfStream() == false) {
-            sr.readRecordHeder();
+            sr.readRecordHeader();
             recordBody();
         }
     }

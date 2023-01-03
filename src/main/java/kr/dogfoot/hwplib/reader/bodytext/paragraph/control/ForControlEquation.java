@@ -51,7 +51,7 @@ public class ForControlEquation {
 
         while (sr.isEndOfStream() == false) {
             if (sr.isImmediatelyAfterReadingHeader() == false) {
-                sr.readRecordHeder();
+                sr.readRecordHeader();
             }
 
             if (ctrlHeaderLevel >= sr.getCurrentRecordHeader().getLevel()) {
@@ -76,7 +76,7 @@ public class ForControlEquation {
      * @throws Exception
      */
     private void caption() throws Exception {
-        sr.readRecordHeder();
+        sr.readRecordHeader();
         if (sr.getCurrentRecordHeader().getTagID() == HWPTag.LIST_HEADER) {
             eqed.createCaption();
             ForCaption.read(eqed.getCaption(), sr);

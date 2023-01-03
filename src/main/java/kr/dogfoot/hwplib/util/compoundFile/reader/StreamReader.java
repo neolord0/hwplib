@@ -156,11 +156,12 @@ public abstract class StreamReader {
      * @return 한글 레코드 헤더
      * @throws IOException
      */
-    public RecordHeader readRecordHeder() throws IOException {
+    public RecordHeader readRecordHeader() throws IOException {
         long value = readUInt4();
         header.setTagID((short) BitFlag.get(value, 0, 9));
         header.setLevel((short) BitFlag.get(value, 10, 19));
         header.setSize((short) BitFlag.get(value, 20, 31));
+        System.out.println(header.getTagID() + " " + header.getLevel());
         if (header.getSize() == 4095) {
             header.setSize(readUInt4());
         }

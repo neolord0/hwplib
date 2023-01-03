@@ -24,12 +24,12 @@ public class ForControlArc {
      * @throws Exception
      */
     public static void readRest(ControlArc arc, StreamReader sr) throws Exception {
-        RecordHeader rh = sr.readRecordHeder();
+        RecordHeader rh = sr.readRecordHeader();
         if (rh.getTagID() == HWPTag.LIST_HEADER) {
             arc.createTextBox();
             ForTextBox.read(arc.getTextBox(), sr);
             if (sr.isImmediatelyAfterReadingHeader() == false) {
-                rh = sr.readRecordHeder();
+                rh = sr.readRecordHeader();
             }
         }
         if (rh.getTagID() == HWPTag.SHAPE_COMPONENT_ARC) {

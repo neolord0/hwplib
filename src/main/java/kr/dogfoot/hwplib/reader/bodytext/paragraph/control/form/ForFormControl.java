@@ -28,7 +28,7 @@ public class ForFormControl {
     }
 
     private static void formObject(FormObject formObject, StreamReader sr) throws IOException {
-        sr.readRecordHeder();
+        sr.readRecordHeader();
         if (sr.getCurrentRecordHeader().getTagID() == HWPTag.FORM_OBJECT) {
             long id = sr.readUInt4();
             long id2 = sr.readUInt4();

@@ -23,7 +23,7 @@ public class ForControlLine {
      */
     public static void readRest(ControlLine line, StreamReader sr)
             throws IOException {
-        RecordHeader rh = sr.readRecordHeder();
+        RecordHeader rh = sr.readRecordHeader();
         if (rh.getTagID() == HWPTag.SHAPE_COMPONENT_LINE) {
             shapeComponentLine(line.getShapeComponentLine(), sr);
         }

@@ -71,7 +71,7 @@ public class ForControlFootnote {
      * @throws Exception
      */
     private void listHeader() throws Exception {
-        RecordHeader rh = sr.readRecordHeder();
+        RecordHeader rh = sr.readRecordHeader();
         if (rh.getTagID() == HWPTag.LIST_HEADER) {
             ListHeaderForFootnodeEndnote lh = fn.getListHeader();
             lh.setParaCount(sr.readSInt4());

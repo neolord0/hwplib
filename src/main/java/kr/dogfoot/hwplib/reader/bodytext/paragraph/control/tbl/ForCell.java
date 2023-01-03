@@ -27,7 +27,7 @@ public class ForCell {
      */
     public static void read(Cell cell, StreamReader sr) throws Exception {
         if (sr.isImmediatelyAfterReadingHeader() == false) {
-            sr.readRecordHeder();
+            sr.readRecordHeader();
         }
         if (sr.getCurrentRecordHeader().getTagID() == HWPTag.LIST_HEADER) {
             listHeader(cell.getListHeader(), sr);

@@ -23,7 +23,7 @@ public class ForControlObjectLinkLine {
      */
     public static void readRest(ControlObjectLinkLine objectLinkerLine,
                                 StreamReader sr) throws IOException {
-        RecordHeader rh = sr.readRecordHeder();
+        RecordHeader rh = sr.readRecordHeader();
         if (rh.getTagID() == HWPTag.SHAPE_COMPONENT_LINE) {
             shapeComponentLine(objectLinkerLine.getShapeComponentLine(), sr);
         }

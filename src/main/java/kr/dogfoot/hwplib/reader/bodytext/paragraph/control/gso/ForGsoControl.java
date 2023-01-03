@@ -29,10 +29,15 @@ public class ForGsoControl {
      * 스트림 리더
      */
     private StreamReader sr;
+
     /**
      * 생성된 그리기 개체 컨트롤
      */
     private GsoControl gsoControl;
+
+    private CtrlHeaderGso header;
+    private Caption caption;
+    private CtrlData ctrlData;
 
     /**
      * 생성자
@@ -50,11 +55,12 @@ public class ForGsoControl {
     public void read(Paragraph paragraph, StreamReader sr) throws Exception {
         this.paragraph = paragraph;
         this.sr = sr;
-        CtrlHeaderGso header = ctrlHeader();
-        Caption caption = caption();
-        CtrlData ctrlData = ctrlData();
+
+        ctrlHeader();
+        captionAndCtrlData(sr);
+
         long gsoId = gsoIDFromShapeComponent();
-        gsoControl = createGsoControl(header, caption, ctrlData, gsoId);
+        gsoControl = createGsoControl(gsoId);
         restPartOfShapeComponent();
         restPartOfControl();
     }
@@ -65,45 +71,30 @@ public class ForGsoControl {
      * @return 그리기 개체의 컨트롤 헤더 레코드
      * @throws IOException
      */
-    private CtrlHeaderGso ctrlHeader() throws IOException {
-        CtrlHeaderGso header = new CtrlHeaderGso();
+    private void ctrlHeader() throws IOException {
+        header = new CtrlHeaderGso();
         ForCtrlHeaderGso.read(header, sr);
-        return header;
     }
 
-    /**
-     * 캡션 정보를 읽는다.
-     *
-     * @return 캡션 정보
-     * @throws Exception
-     */
-    private Caption caption() throws Exception {
-        sr.readRecordHeder();
-        if (sr.getCurrentRecordHeader().getTagID() == HWPTag.LIST_HEADER) {
-            Caption caption = new Caption();
-            ForCaption.read(caption, sr);
-            return caption;
-        } else {
-            return null;
-        }
-    }
+    private void captionAndCtrlData(StreamReader sr) throws Exception {
+        caption = null;
+        ctrlData = null;
 
-    /**
-     * 컨트롤 데이터를 읽는다.
-     *
-     * @return 컨트롤 데이터
-     * @throws IOException
-     */
-    private CtrlData ctrlData() throws IOException {
-        if (sr.isImmediatelyAfterReadingHeader() == false) {
-            sr.readRecordHeder();
-        }
-        if (sr.getCurrentRecordHeader().getTagID() == HWPTag.CTRL_DATA) {
-            CtrlData ctrlData = new CtrlData();
-            ForCtrlData.read(ctrlData, sr);
-            return ctrlData;
-        } else {
-            return null;
+        sr.readRecordHeader();
+        while (sr.getCurrentRecordHeader().getTagID() != HWPTag.SHAPE_COMPONENT) {
+            if (sr.getCurrentRecordHeader().getTagID() == HWPTag.LIST_HEADER) {
+                caption = new Caption();
+                ForCaption.read(caption, sr);
+                if (sr.isImmediatelyAfterReadingHeader() == false) {
+                    sr.readRecordHeader();
+                }
+            } else if (sr.getCurrentRecordHeader().getTagID() == HWPTag.CTRL_DATA) {
+                ctrlData = new CtrlData();
+                ForCtrlData.read(ctrlData, sr);
+                if (sr.isImmediatelyAfterReadingHeader() == false) {
+                    sr.readRecordHeader();
+                }
+            }
         }
     }
 
@@ -115,7 +106,7 @@ public class ForGsoControl {
      */
     private long gsoIDFromShapeComponent() throws Exception {
         if (sr.isImmediatelyAfterReadingHeader() == false) {
-            sr.readRecordHeder();
+            sr.readRecordHeader();
         }
         if (sr.getCurrentRecordHeader().getTagID() == HWPTag.SHAPE_COMPONENT) {
             long id = sr.readUInt4();
@@ -130,14 +121,10 @@ public class ForGsoControl {
     /**
      * 그리기 개체 컨트롤을 생성한다.
      *
-     * @param header   컨트롤 헤더
-     * @param caption  캡션 정보
-     * @param ctrlData 컨트롤 데이터
      * @param gsoId    그리기 개체 아이디
      * @return 생성된 그리기 개체 컨트롤
      */
-    private GsoControl createGsoControl(CtrlHeaderGso header, Caption caption,
-                                        CtrlData ctrlData, long gsoId) {
+    private GsoControl createGsoControl(long gsoId) {
         GsoControl gc = paragraph.addNewGsoControl(gsoId, header);
         gc.setCaption(caption);
         gc.setCtrlData(ctrlData);
@@ -216,7 +203,7 @@ public class ForGsoControl {
      * @throws Exception
      */
     private void shapeComponentInContainer() throws Exception {
-        sr.readRecordHeder();
+        sr.readRecordHeader();
         if (sr.getCurrentRecordHeader().getTagID() == HWPTag.SHAPE_COMPONENT) {
             long id = sr.readUInt4();
             gsoControl = FactoryForControl.createGso(id, null);

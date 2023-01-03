@@ -26,19 +26,19 @@ public class ForControlRectangle {
     public static void readRest(ControlRectangle rectangle, StreamReader sr)
             throws Exception {
         RecordHeader rh;
-        rh = sr.readRecordHeder();
+        rh = sr.readRecordHeader();
         if (rh.getTagID() == HWPTag.CTRL_DATA) {
             rectangle.createCtrlData();
             ForCtrlData.read(rectangle.getCtrlData(), sr);
             if (sr.isImmediatelyAfterReadingHeader() == false) {
-                rh = sr.readRecordHeder();
+                rh = sr.readRecordHeader();
             }
         }
         if (rh.getTagID() == HWPTag.LIST_HEADER) {
             rectangle.createTextBox();
             ForTextBox.read(rectangle.getTextBox(), sr);
             if (sr.isImmediatelyAfterReadingHeader() == false) {
-                rh = sr.readRecordHeder();
+                rh = sr.readRecordHeader();
             }
         }
         if (rh.getTagID() == HWPTag.SHAPE_COMPONENT_RECTANGLE) {

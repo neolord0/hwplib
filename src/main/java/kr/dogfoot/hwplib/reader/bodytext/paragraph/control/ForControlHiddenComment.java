@@ -49,7 +49,7 @@ public class ForControlHiddenComment {
      * @throws Exception
      */
     private void listHeader() throws Exception {
-        RecordHeader rh = sr.readRecordHeder();
+        RecordHeader rh = sr.readRecordHeader();
         if (rh.getTagID() == HWPTag.LIST_HEADER) {
             tcmt.getListHeader().setParaCount(sr.readSInt4());
             tcmt.getListHeader().getProperty().setValue(sr.readUInt4());

@@ -66,7 +66,7 @@ public class ForControlFooter {
      * @throws Exception
      */
     private void listHeader() throws Exception {
-        RecordHeader rh = sr.readRecordHeder();
+        RecordHeader rh = sr.readRecordHeader();
         if (rh.getTagID() == HWPTag.LIST_HEADER) {
             ListHeaderForHeaderFooter lh = foot.getListHeader();
             lh.setParaCount(sr.readSInt4());
