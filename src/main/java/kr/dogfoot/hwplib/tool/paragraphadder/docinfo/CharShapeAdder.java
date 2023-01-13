@@ -3,6 +3,8 @@ package kr.dogfoot.hwplib.tool.paragraphadder.docinfo;
 import kr.dogfoot.hwplib.object.docinfo.CharShape;
 import kr.dogfoot.hwplib.object.docinfo.charshape.*;
 
+import java.util.HashMap;
+
 /**
  * DocInfo에 CharShape을 복사하는 기능을 포함하는 클레스
  *
@@ -10,14 +12,21 @@ import kr.dogfoot.hwplib.object.docinfo.charshape.*;
  */
 public class CharShapeAdder {
     private DocInfoAdder docInfoAdder;
+    private HashMap<Integer, Integer> idMatchingMap;
 
     public CharShapeAdder(DocInfoAdder docInfoAdder) {
         this.docInfoAdder = docInfoAdder;
+        idMatchingMap = new HashMap<Integer, Integer>();
     }
 
     public int processById(int sourceId) {
         if (docInfoAdder.getSourceHWPFile() == docInfoAdder.getTargetHWPFile()) {
             return sourceId;
+        }
+
+        Integer targetID = idMatchingMap.get(sourceId);
+        if (targetID != null) {
+            return targetID;
         }
 
         CharShape source;
@@ -36,6 +45,7 @@ public class CharShapeAdder {
             id = addAndCopy(source);
         }
 
+        idMatchingMap.put(sourceId, id);
         return id;
     }
 

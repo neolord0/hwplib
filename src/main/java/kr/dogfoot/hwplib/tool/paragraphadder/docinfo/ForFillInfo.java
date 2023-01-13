@@ -12,7 +12,6 @@ import java.util.ArrayList;
  */
 public class ForFillInfo {
     public static boolean equal(FillInfo source, FillInfo target) {
-        // always false
         if (source.getType().getValue() == target.getType().getValue()) {
             FillType fillType = source.getType();
             if (fillType.hasPatternFill()
@@ -24,10 +23,10 @@ public class ForFillInfo {
                 return false;
             }
             if (fillType.hasImageFill()) {
-                // source.getImageFill().getPictureInfo().getBinItemID() 비교 불가..
+                // 이미지 비교 불가.
                 return false;
             }
-            // return !fillType.hasImageFill() || equalImageFill(source.getImageFill(), target.getImageFill()) != false;
+            return true;
         }
         return false;
     }

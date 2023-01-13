@@ -3,6 +3,8 @@ package kr.dogfoot.hwplib.tool.paragraphadder.docinfo;
 import kr.dogfoot.hwplib.object.docinfo.Style;
 import kr.dogfoot.hwplib.util.StringUtil;
 
+import java.util.HashMap;
+
 /**
  * DocInfo에 Style을 복사하는 기능을 포함하는 클레스
  *
@@ -10,9 +12,11 @@ import kr.dogfoot.hwplib.util.StringUtil;
  */
 public class StyleAdder {
     private DocInfoAdder docInfoAdder;
+    private HashMap<Integer, Integer> idMatchingMap;
 
     public StyleAdder(DocInfoAdder docInfoAdder) {
         this.docInfoAdder = docInfoAdder;
+        idMatchingMap = new HashMap<Integer, Integer>();
     }
 
     public int processById(int sourceId) {
@@ -20,12 +24,18 @@ public class StyleAdder {
             return sourceId;
         }
 
-        Style source = docInfoAdder.getSourceHWPFile().getDocInfo().getStyleList().get(sourceId);
-        int index = findFromTarget(source, sourceId);
-        if (index == -1) {
-            index = addAndCopy(source, sourceId);
+        Integer targetID = idMatchingMap.get(sourceId);
+        if (targetID != null) {
+            return targetID;
         }
-        return index;
+
+        Style source = docInfoAdder.getSourceHWPFile().getDocInfo().getStyleList().get(sourceId);
+        int id = findFromTarget(source, sourceId);
+        if (id == -1) {
+            id = addAndCopy(source, sourceId);
+        }
+        idMatchingMap.put(sourceId, id);
+        return id;
     }
 
     private int findFromTarget(Style source, int sourceId) {

@@ -4,6 +4,7 @@ import kr.dogfoot.hwplib.object.docinfo.TabDef;
 import kr.dogfoot.hwplib.object.docinfo.tabdef.TabInfo;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 /**
  * DocInfo에 TabDef을 복사하는 기능을 포함하는 클레스
@@ -12,9 +13,11 @@ import java.util.ArrayList;
  */
 public class TabDefAdder {
     private DocInfoAdder docInfoAdder;
+    private HashMap<Integer, Integer> idMatchingMap;
 
     public TabDefAdder(DocInfoAdder docInfoAdder) {
         this.docInfoAdder = docInfoAdder;
+        idMatchingMap = new HashMap<Integer, Integer>();
     }
 
     public int processById(int sourceId) {
@@ -22,12 +25,18 @@ public class TabDefAdder {
             return sourceId;
         }
 
-        TabDef source = docInfoAdder.getSourceHWPFile().getDocInfo().getTabDefList().get(sourceId);
-        int index = findFromTarget(source);
-        if (index == -1) {
-            index = addAndCopy(source);
+        Integer targetID = idMatchingMap.get(sourceId);
+        if (targetID != null) {
+            return targetID;
         }
-        return index;
+
+        TabDef source = docInfoAdder.getSourceHWPFile().getDocInfo().getTabDefList().get(sourceId);
+        int id = findFromTarget(source);
+        if (id == -1) {
+            id = addAndCopy(source);
+        }
+        idMatchingMap.put(sourceId, id);
+        return id;
     }
 
     private int findFromTarget(TabDef source) {

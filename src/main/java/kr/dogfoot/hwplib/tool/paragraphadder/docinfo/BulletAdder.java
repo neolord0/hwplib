@@ -3,6 +3,8 @@ package kr.dogfoot.hwplib.tool.paragraphadder.docinfo;
 import kr.dogfoot.hwplib.object.docinfo.Bullet;
 import kr.dogfoot.hwplib.object.docinfo.numbering.ParagraphHeadInfo;
 
+import java.util.HashMap;
+
 /**
  * DocInfo에 Bullet을 복사하는 기능을 포함하는 클레스
  *
@@ -10,14 +12,20 @@ import kr.dogfoot.hwplib.object.docinfo.numbering.ParagraphHeadInfo;
  */
 public class BulletAdder {
     private DocInfoAdder docInfoAdder;
+    private HashMap<Integer, Integer> idMatchingMap;
 
     public BulletAdder(DocInfoAdder docInfoAdder) {
         this.docInfoAdder = docInfoAdder;
+        idMatchingMap = new HashMap<Integer, Integer>();
     }
 
     public int processById(int sourceId) {
         if (docInfoAdder.getSourceHWPFile() == docInfoAdder.getTargetHWPFile()) {
             return sourceId;
+        }
+        Integer targetID = idMatchingMap.get(sourceId);
+        if (targetID != null) {
+            return targetID;
         }
 
         // id == index + 1
@@ -26,6 +34,8 @@ public class BulletAdder {
         if (id == -1) {
             id = addAndCopy(source);
         }
+
+        idMatchingMap.put(sourceId, id);
         return id;
     }
 

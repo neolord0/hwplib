@@ -1,6 +1,5 @@
 package kr.dogfoot.hwplib.tool.blankfilemaker;
 
-import kr.dogfoot.hwplib.object.bodytext.ParagraphListInterface;
 import kr.dogfoot.hwplib.object.bodytext.Section;
 import kr.dogfoot.hwplib.object.bodytext.paragraph.Paragraph;
 import kr.dogfoot.hwplib.object.bodytext.paragraph.ParagraphList;

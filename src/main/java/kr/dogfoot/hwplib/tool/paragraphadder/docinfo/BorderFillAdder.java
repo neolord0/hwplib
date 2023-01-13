@@ -4,6 +4,7 @@ import kr.dogfoot.hwplib.object.docinfo.BorderFill;
 import kr.dogfoot.hwplib.object.docinfo.borderfill.EachBorder;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 /**
  * DocInfo에 BorderFill를 복사하는 기능을 포함하는 클레스
@@ -12,9 +13,11 @@ import java.util.ArrayList;
  */
 public class BorderFillAdder {
     private DocInfoAdder docInfoAdder;
+    private HashMap<Integer, Integer> idMatchingMap;
 
     public BorderFillAdder(DocInfoAdder docInfoAdder) {
         this.docInfoAdder = docInfoAdder;
+        idMatchingMap = new HashMap<Integer, Integer>();
     }
 
     public int processById(int sourceId) {
@@ -22,11 +25,17 @@ public class BorderFillAdder {
             return sourceId;
         }
 
+        Integer targetID = idMatchingMap.get(sourceId);
+        if (targetID != null) {
+            return targetID;
+        }
+
         BorderFill source = getBorderFill(docInfoAdder.getSourceHWPFile().getDocInfo().getBorderFillList(), sourceId - 1);
         int index = findFromTarget(source);
         if (index == -1) {
             index = addAndCopy(source);
         }
+        idMatchingMap.put(sourceId, index);
         return index;
     }
 

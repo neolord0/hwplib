@@ -2,6 +2,8 @@ package kr.dogfoot.hwplib.tool.paragraphadder.docinfo;
 
 import kr.dogfoot.hwplib.object.docinfo.ParaShape;
 
+import java.util.HashMap;
+
 /**
  * DocInfo에 ParaShape을 복사하는 기능을 포함하는 클레스
  *
@@ -9,9 +11,11 @@ import kr.dogfoot.hwplib.object.docinfo.ParaShape;
  */
 public class ParaShapeAdder {
     private DocInfoAdder docInfoAdder;
+    private HashMap<Integer, Integer> idMatchingMap;
 
     public ParaShapeAdder(DocInfoAdder docInfoAdder) {
         this.docInfoAdder = docInfoAdder;
+        idMatchingMap = new HashMap<Integer, Integer>();
     }
 
     public int processById(int sourceId) {
@@ -19,12 +23,18 @@ public class ParaShapeAdder {
             return sourceId;
         }
 
-        ParaShape source = docInfoAdder.getSourceHWPFile().getDocInfo().getParaShapeList().get(sourceId);
-        int index = findFromTarget(source);
-        if (index == -1) {
-            index = addAndCopy(source);
+        Integer targetID = idMatchingMap.get(sourceId);
+        if (targetID != null) {
+            return targetID;
         }
-        return index;
+
+        ParaShape source = docInfoAdder.getSourceHWPFile().getDocInfo().getParaShapeList().get(sourceId);
+        int id = findFromTarget(source);
+        if (id == -1) {
+            id = addAndCopy(source);
+        }
+        idMatchingMap.put(sourceId, targetID);
+        return id;
     }
 
     private int findFromTarget(ParaShape source) {
