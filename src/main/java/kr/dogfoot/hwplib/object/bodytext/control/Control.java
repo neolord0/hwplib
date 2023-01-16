@@ -37,6 +37,11 @@ public abstract class Control {
         return ControlType.ctrlIdOf(header.getCtrlId());
     }
 
+    public boolean isNullHeader() {
+        return header == null;
+    }
+
+
     /**
      * 필드 컨트롤인지 여부를 반환한다.
      *
@@ -81,7 +86,7 @@ public abstract class Control {
         if (from.header != null) {
             header.copy(from.header);
         } else {
-            from.header = null;
+            header = null;
         }
 
         if (from.ctrlData != null) {

@@ -319,6 +319,9 @@ public class ControlFinder {
      */
     private void forContainer(ControlContainer container) {
         for (GsoControl child : container.getChildControlList()) {
+            if (filter.isMatched(child, currentParagraph, currentSection)) {
+                resultList.add(child);
+            }
             forGso(child);
         }
     }
