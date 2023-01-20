@@ -2,6 +2,7 @@ package kr.dogfoot.hwplib.util.compoundFile.writer;
 
 import kr.dogfoot.hwplib.object.fileheader.FileVersion;
 import kr.dogfoot.hwplib.org.apache.poi.poifs.filesystem.DirectoryEntry;
+import kr.dogfoot.hwplib.org.apache.poi.poifs.filesystem.DocumentOutputStream;
 import kr.dogfoot.hwplib.org.apache.poi.poifs.filesystem.POIFSFileSystem;
 
 import java.io.FileOutputStream;
@@ -97,6 +98,11 @@ public class CompoundFileWriter {
                                           FileVersion fileVersion) {
         currentStreamWriter = new StreamWriter(name, compress, fileVersion);
         return currentStreamWriter;
+    }
+
+    public void saveToStream(String name, InputStream is) throws IOException {
+        currentStorage.createDocument(name, is);
+        is.close();
     }
 
     /**

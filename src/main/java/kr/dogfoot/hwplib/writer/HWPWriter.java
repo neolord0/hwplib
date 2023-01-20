@@ -6,6 +6,10 @@ import kr.dogfoot.hwplib.object.bodytext.Section;
 import kr.dogfoot.hwplib.object.bodytext.paragraph.memo.Memo;
 import kr.dogfoot.hwplib.object.docinfo.bindata.BinDataCompress;
 import kr.dogfoot.hwplib.object.fileheader.FileVersion;
+import kr.dogfoot.hwplib.org.apache.poi.hpsf.SummaryInformation;
+import kr.dogfoot.hwplib.org.apache.poi.hpsf.WritingNotSupportedException;
+import kr.dogfoot.hwplib.org.apache.poi.poifs.filesystem.DocumentInputStream;
+import kr.dogfoot.hwplib.org.apache.poi.poifs.filesystem.DocumentOutputStream;
 import kr.dogfoot.hwplib.util.compoundFile.writer.CompoundFileWriter;
 import kr.dogfoot.hwplib.util.compoundFile.writer.StreamWriter;
 import kr.dogfoot.hwplib.writer.autosetter.AutoSetter;
@@ -14,6 +18,8 @@ import kr.dogfoot.hwplib.writer.bodytext.ForSection;
 import kr.dogfoot.hwplib.writer.bodytext.paragraph.memo.ForMemo;
 import kr.dogfoot.hwplib.writer.docinfo.ForDocInfo;
 
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
 
@@ -42,6 +48,7 @@ public class HWPWriter {
         w.docInfo();
         w.bodyText();
         w.binData();
+        w.summaryInformation();
         w.writeAndClose(filepath);
     }
 
@@ -64,6 +71,7 @@ public class HWPWriter {
         w.docInfo();
         w.bodyText();
         w.binData();
+        w.summaryInformation();
         w.writeAndClose(os);
     }
 
@@ -232,6 +240,16 @@ public class HWPWriter {
                 return false;
         }
         return false;
+    }
+
+    private void summaryInformation() throws WritingNotSupportedException, IOException {
+        if (hwpFile.getSummaryInformation() != null) {
+            ByteArrayOutputStream bos = new ByteArrayOutputStream();
+            hwpFile.getSummaryInformation().write(bos);
+            if (bos.size() > 0) {
+                cfw.saveToStream("\u0005HwpSummaryInformation", new ByteArrayInputStream(bos.toByteArray()));
+            }
+        }
     }
 
     /**

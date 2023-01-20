@@ -1,10 +1,7 @@
 package kr.dogfoot.hwplib.util.compoundFile.reader;
 
 import kr.dogfoot.hwplib.object.fileheader.FileVersion;
-import kr.dogfoot.hwplib.org.apache.poi.poifs.filesystem.DirectoryEntry;
-import kr.dogfoot.hwplib.org.apache.poi.poifs.filesystem.DocumentEntry;
-import kr.dogfoot.hwplib.org.apache.poi.poifs.filesystem.Entry;
-import kr.dogfoot.hwplib.org.apache.poi.poifs.filesystem.POIFSFileSystem;
+import kr.dogfoot.hwplib.org.apache.poi.poifs.filesystem.*;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -128,6 +125,15 @@ public class CompoundFileReader {
         } else {
             throw new Exception("this is not stream.");
         }
+    }
+
+
+    public DocumentInputStream getChildInputStream(String name) throws Exception {
+        Entry e = currentStorage.getEntry(name);
+        if (e != null && e.isDocumentEntry()) {
+            return new DocumentInputStream((DocumentEntry) e);
+        }
+        return null;
     }
 
     /**

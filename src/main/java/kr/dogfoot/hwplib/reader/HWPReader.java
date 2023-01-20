@@ -3,8 +3,14 @@ package kr.dogfoot.hwplib.reader;
 import kr.dogfoot.hwplib.object.HWPFile;
 import kr.dogfoot.hwplib.object.docinfo.BinData;
 import kr.dogfoot.hwplib.object.docinfo.bindata.BinDataCompress;
+import kr.dogfoot.hwplib.object.docinfo.style.StyleSort;
 import kr.dogfoot.hwplib.object.etc.HWPTag;
 import kr.dogfoot.hwplib.object.fileheader.FileVersion;
+import kr.dogfoot.hwplib.org.apache.poi.hpsf.Property;
+import kr.dogfoot.hwplib.org.apache.poi.hpsf.PropertySet;
+import kr.dogfoot.hwplib.org.apache.poi.hpsf.SummaryInformation;
+import kr.dogfoot.hwplib.org.apache.poi.poifs.filesystem.DocumentInputStream;
+import kr.dogfoot.hwplib.org.apache.poi.util.IOUtils;
 import kr.dogfoot.hwplib.reader.bodytext.ForParagraphList;
 import kr.dogfoot.hwplib.reader.bodytext.ForSection;
 import kr.dogfoot.hwplib.reader.bodytext.memo.ForMemo;
@@ -63,6 +69,7 @@ public class HWPReader {
         r.docInfo();
         r.bodyText();
         r.binData();
+        r.summaryInformation();
 
         r.cfr.close();
         return r.hwpFile;
@@ -102,6 +109,7 @@ public class HWPReader {
         r.docInfo();
         r.bodyText();
         r.binData();
+        r.summaryInformation();
 
         r.cfr.close();
         return r.hwpFile;
@@ -377,5 +385,13 @@ public class HWPReader {
         sr.setDocInfo(hwpFile.getDocInfo());
         ForParagraphList.extractText(sr, listener, tem);
         sr.close();
+    }
+
+    private void summaryInformation() throws Exception {
+        DocumentInputStream dis = cfr.getChildInputStream("\u0005HwpSummaryInformation");
+        if (dis != null) {
+            hwpFile.setSummaryInformation(new SummaryInformation(dis));
+        }
+        dis.close();
     }
 }

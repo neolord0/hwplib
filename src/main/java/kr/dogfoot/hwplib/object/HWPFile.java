@@ -4,6 +4,12 @@ import kr.dogfoot.hwplib.object.bindata.BinData;
 import kr.dogfoot.hwplib.object.bodytext.BodyText;
 import kr.dogfoot.hwplib.object.docinfo.DocInfo;
 import kr.dogfoot.hwplib.object.fileheader.FileHeader;
+import kr.dogfoot.hwplib.org.apache.poi.hpsf.PropertySet;
+import kr.dogfoot.hwplib.org.apache.poi.hpsf.SummaryInformation;
+import kr.dogfoot.hwplib.org.apache.poi.hpsf.UnexpectedPropertySetTypeException;
+import kr.dogfoot.hwplib.org.apache.poi.hpsf.WritingNotSupportedException;
+
+import java.io.IOException;
 
 /**
  * HWP File를 나타내는 객체
@@ -27,6 +33,7 @@ public class HWPFile {
      * 바이너리 데이터를 나타내는 객체. "BinData" storage에 저장된다.
      */
     private BinData binData;
+    private SummaryInformation summaryInformation;
 
     /**
      * 생성자
@@ -74,6 +81,19 @@ public class HWPFile {
         return binData;
     }
 
+
+    public SummaryInformation getSummaryInformation() {
+        return summaryInformation;
+    }
+
+    public void setSummaryInformation(SummaryInformation summaryInformation) {
+        this.summaryInformation = summaryInformation;
+    }
+
+    public void createSummaryInformation() {
+        summaryInformation = new SummaryInformation();
+    }
+
     public HWPFile clone(boolean deepCopyImage) {
         HWPFile cloned = new HWPFile();
         cloned.copy(this, deepCopyImage);
@@ -85,5 +105,21 @@ public class HWPFile {
         docInfo.copy(from.docInfo);
         bodyText.copy(from.bodyText);
         binData.copy(from.binData, deepCopyImage);
+
+        if (from.summaryInformation != null) {
+            copySummaryInformation(from.summaryInformation);
+        }
+    }
+
+    private void copySummaryInformation(SummaryInformation from) {
+        try {
+            byte[] source = from.toBytes();
+            summaryInformation = new SummaryInformation();
+            summaryInformation.init(source, 0, source.length);
+        } catch (WritingNotSupportedException e) {
+            throw new RuntimeException(e);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 }
