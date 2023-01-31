@@ -21,10 +21,7 @@ import kr.dogfoot.hwplib.util.compoundFile.reader.CompoundFileReader;
 import kr.dogfoot.hwplib.util.compoundFile.reader.StreamReader;
 
 import javax.xml.bind.DatatypeConverter;
-import java.io.ByteArrayInputStream;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.InputStream;
+import java.io.*;
 import java.net.URL;
 import java.util.Iterator;
 import java.util.Set;
@@ -388,10 +385,18 @@ public class HWPReader {
     }
 
     private void summaryInformation() throws Exception {
-        DocumentInputStream dis = cfr.getChildInputStream("\u0005HwpSummaryInformation");
+        DocumentInputStream dis;;
+
+        try {
+            dis = cfr.getChildInputStream("\u0005HwpSummaryInformation");
+        }
+        catch (FileNotFoundException e) {
+            dis = null;
+        }
+
         if (dis != null) {
             hwpFile.setSummaryInformation(new SummaryInformation(dis));
+            dis.close();
         }
-        dis.close();
     }
 }

@@ -126,7 +126,7 @@ public class ForControl {
      * @param sb       추출된 텍스트를 저정할 StringBuffer 객체
      */
     private static void equation(ControlEquation equation, StringBuffer sb) {
-        sb.append(equation.getEQEdit().getScript()).append("\n");
+        sb.append(equation.getEQEdit().getScript().toUTF16LEString()).append("\n");
     }
 
     /**
