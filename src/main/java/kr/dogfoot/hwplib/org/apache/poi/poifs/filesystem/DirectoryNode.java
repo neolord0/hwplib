@@ -285,6 +285,7 @@ public class DirectoryNode
             } else if (_byname.containsKey("VisioDocument")) {
                 throw new IllegalArgumentException("The document is really a VSD file");
             }
+
             // either a null name was given, or there is no such name
             throw new FileNotFoundException("no such entry: \"" + name
                     + "\", had: " + _byname.keySet());
