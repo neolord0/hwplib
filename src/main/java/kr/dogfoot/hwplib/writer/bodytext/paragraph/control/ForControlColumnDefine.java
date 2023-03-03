@@ -89,7 +89,7 @@ public class ForControlColumnDefine {
         if (columnCount < 2 || sameWidth == true) {
             size += 4;
         } else {
-            size += columnCount * 4;
+            size += 2 + columnCount * 4;
         }
         size += 6;
         return size;
@@ -106,7 +106,7 @@ public class ForControlColumnDefine {
             throws IOException {
         int count = h.getProperty().getColumnCount();
         for (int index = 0; index < count; index++) {
-            ColumnInfo ci = h.addNewColumnInfo();
+            ColumnInfo ci = h.getColumnInfoList().get(index);
             sw.writeUInt2(ci.getWidth());
             sw.writeUInt2(ci.getGap());
         }
