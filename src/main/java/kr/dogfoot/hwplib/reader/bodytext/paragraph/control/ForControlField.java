@@ -26,7 +26,9 @@ public class ForControlField {
     public static void read(ControlField field, StreamReader sr)
             throws IOException {
         ctrlHeader(field.getHeader(), sr);
-        ctrlData(field, sr);
+        if (!sr.isEndOfRecord()) {
+            ctrlData(field, sr);
+        }
     }
 
     /**
