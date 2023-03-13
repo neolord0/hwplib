@@ -35,7 +35,7 @@
         <artifactId>hwplib</artifactId>
     </dependency>
     ```
-* hwpx 파일에 대한 라이브러리는 : https://github.com/neolord0/hwpxlib 을 참조해 주세요.
+* hwpx 파일에 대한 라이브러리는 https://github.com/neolord0/hwpxlib 을 참조해 주세요.
 
 2023.3.7
 =========================================================================================
