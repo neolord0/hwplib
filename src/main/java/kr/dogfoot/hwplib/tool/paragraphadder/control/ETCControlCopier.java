@@ -92,8 +92,20 @@ public class ETCControlCopier {
     private static void setNewMemoIndex(CtrlHeaderField targetH, long newMemoIndex) {
         String[] commands = targetH.getCommand().toUTF16LEString().split("/");
         commands[2] = Long.toString(newMemoIndex);
-        targetH.getCommand().setBytes(String.join("/", commands).getBytes(StandardCharsets.UTF_16LE));
+        targetH.getCommand().setBytes(stringJoin("/", commands).getBytes(StandardCharsets.UTF_16LE));
         targetH.setMemoIndex((int) newMemoIndex);
+    }
+
+    private static String stringJoin(String s, String[] array) {
+        StringBuilder sb = new StringBuilder();
+        for (int index = 0; index < array.length; index++) {
+            if (index != array.length-1) {
+                sb.append(array[index]).append(s);
+            } else {
+                sb.append(array[index]);
+            }
+        }
+        return sb.toString();
     }
 
     public static void copyFooter(ControlFooter source, ControlFooter target, DocInfoAdder docInfoAdder) {

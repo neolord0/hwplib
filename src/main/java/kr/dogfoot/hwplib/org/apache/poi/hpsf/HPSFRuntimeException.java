@@ -22,6 +22,9 @@ package kr.dogfoot.hwplib.org.apache.poi.hpsf;
  * <p>This exception is the superclass of all other unchecked
  * exceptions thrown in this package. It supports a nested "reason"
  * throwable, i.e. an exception that caused this one to be thrown.</p>
+ *
+ * @author Rainer Klute <a
+ * href="mailto:klute@rainer-klute.de">&lt;klute@rainer-klute.de&gt;</a>
  */
 public class HPSFRuntimeException extends RuntimeException
 {
@@ -97,4 +100,47 @@ public class HPSFRuntimeException extends RuntimeException
     {
         return reason;
     }
+
+
+
+//    /**
+//     * @see Throwable#printStackTrace()
+//     */
+//    public void printStackTrace()
+//    {
+//        printStackTrace(System.err);
+//    }
+
+
+
+//    /**
+//     * @see Throwable#printStackTrace(java.io.PrintStream)
+//     */
+//    public void printStackTrace(final PrintStream p)
+//    {
+//        final Throwable reason = getReason();
+//        super.printStackTrace(p);
+//        if (reason != null)
+//        {
+//            p.println("Caused by:");
+//            reason.printStackTrace(p);
+//        }
+//    }
+
+
+
+//    /**
+//     * @see Throwable#printStackTrace(java.io.PrintWriter)
+//     */
+//    public void printStackTrace(final PrintWriter p)
+//    {
+//        final Throwable reason = getReason();
+//        super.printStackTrace(p);
+//        if (reason != null)
+//        {
+//            p.println("Caused by:");
+//            reason.printStackTrace(p);
+//        }
+//    }
+
 }

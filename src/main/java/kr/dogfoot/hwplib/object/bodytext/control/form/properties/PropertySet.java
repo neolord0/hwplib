@@ -3,6 +3,7 @@ package kr.dogfoot.hwplib.object.bodytext.control.form.properties;
 import kr.dogfoot.hwplib.object.etc.HWPString;
 
 import java.util.HashMap;
+import java.util.Map;
 
 public class PropertySet extends Property {
     private HashMap<String, Property> propertyMap;
@@ -38,14 +39,14 @@ public class PropertySet extends Property {
         setName(from.getName());
 
         propertyMap.clear();
-        for (HashMap.Entry<String, Property> entry : from.propertyMap.entrySet()) {
+        for (Map.Entry<String, Property> entry : from.propertyMap.entrySet()) {
             propertyMap.put(entry.getKey(), entry.getValue().clone());
         }
     }
 
     public Property clone() {
         PropertySet cloned = new PropertySet(getName());
-        for (HashMap.Entry<String, Property> entry : propertyMap.entrySet()) {
+        for (Map.Entry<String, Property> entry : propertyMap.entrySet()) {
             cloned.propertyMap.put(entry.getKey(), entry.getValue().clone());
         }
         return cloned;

@@ -1,3 +1,4 @@
+
 /* ====================================================================
    Licensed to the Apache Software Foundation (ASF) under one or more
    contributor license agreements.  See the NOTICE file distributed with
@@ -14,40 +15,28 @@
    See the License for the specific language governing permissions and
    limitations under the License.
 ==================================================================== */
-
+        
 
 package kr.dogfoot.hwplib.org.apache.poi.util;
 
 /**
  * A common exception thrown by our binary format parsers
- * (especially HSSF and DDF), when they hit invalid
- * format or data when processing a record.
+ *  (especially HSSF and DDF), when they hit invalid
+ *  format or data when processing a record.
  */
 public class RecordFormatException
-        extends RuntimeException {
-    public RecordFormatException(String exception) {
+    extends RuntimeException
+{
+    public RecordFormatException(String exception)
+    {
         super(exception);
     }
-
+    
     public RecordFormatException(String exception, Throwable thr) {
-        super(exception, thr);
+      super(exception, thr);
     }
-
+    
     public RecordFormatException(Throwable thr) {
-        super(thr);
-    }
-
-    /**
-     * Syntactic sugar to check whether a RecordFormatException should
-     * be thrown.  If assertTrue is <code>false</code>, this will throw this
-     * exception with the message.
-     *
-     * @param assertTrue If false, the exception is thrown, if true, no action is performed
-     * @param message    The message to include in the thrown exception
-     */
-    public static void check(boolean assertTrue, String message) {
-        if (!assertTrue) {
-            throw new RecordFormatException(message);
-        }
+      super(thr);
     }
 }

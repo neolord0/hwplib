@@ -1,3 +1,4 @@
+
 /* ====================================================================
    Licensed to the Apache Software Foundation (ASF) under one or more
    contributor license agreements.  See the NOTICE file distributed with
@@ -14,6 +15,7 @@
    See the License for the specific language governing permissions and
    limitations under the License.
 ==================================================================== */
+        
 
 package kr.dogfoot.hwplib.org.apache.poi.poifs.property;
 
@@ -22,8 +24,13 @@ import java.util.Iterator;
 
 /**
  * Behavior for parent (directory) properties
+ *
+ * @author Marc Johnson27591@hotmail.com
  */
-public interface Parent extends Child, Iterable<Property> {
+
+public interface Parent
+    extends Child
+{
 
     /**
      * Get an iterator over the children of this Parent; all elements
@@ -32,18 +39,19 @@ public interface Parent extends Child, Iterable<Property> {
      * @return Iterator of children; may refer to an empty collection
      */
 
-    public Iterator<Property> getChildren();
+    public Iterator getChildren();
 
     /**
      * Add a new child to the collection of children
      *
      * @param property the new child to be added; must not be null
-     * @throws IOException if the Parent already has a child with
-     *                     the same name
+     *
+     * @exception IOException if the Parent already has a child with
+     *                        the same name
      */
 
     public void addChild(final Property property)
-            throws IOException;
+        throws IOException;
 
     /**
      * Set the previous Child
@@ -62,4 +70,8 @@ public interface Parent extends Child, Iterable<Property> {
      */
 
     public void setNextChild(final Child child);
-}
+
+    /** *** end methods from interface Child *** */
+
+}   // end public interface Parent
+

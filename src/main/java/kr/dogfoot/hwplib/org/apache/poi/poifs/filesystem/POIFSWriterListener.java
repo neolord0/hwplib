@@ -1,3 +1,4 @@
+
 /* ====================================================================
    Licensed to the Apache Software Foundation (ASF) under one or more
    contributor license agreements.  See the NOTICE file distributed with
@@ -14,7 +15,7 @@
    See the License for the specific language governing permissions and
    limitations under the License.
 ==================================================================== */
-
+        
 
 package kr.dogfoot.hwplib.org.apache.poi.poifs.filesystem;
 
@@ -25,7 +26,8 @@ package kr.dogfoot.hwplib.org.apache.poi.poifs.filesystem;
  * @version %I%, %G%
  */
 
-public interface POIFSWriterListener {
+public interface POIFSWriterListener
+{
 
     /**
      * Process a POIFSWriterEvent that this listener had registered

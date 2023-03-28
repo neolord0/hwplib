@@ -17,39 +17,47 @@
 package kr.dogfoot.hwplib.org.apache.poi.hpsf;
 
 import kr.dogfoot.hwplib.org.apache.poi.util.Internal;
-import kr.dogfoot.hwplib.org.apache.poi.util.LittleEndianByteArrayInputStream;
+import kr.dogfoot.hwplib.org.apache.poi.util.LittleEndian;
 import kr.dogfoot.hwplib.org.apache.poi.util.POILogFactory;
 import kr.dogfoot.hwplib.org.apache.poi.util.POILogger;
 
 @Internal
-public class VariantBool {
-    private final static POILogger LOG = POILogFactory.getLogger( VariantBool.class );
+class VariantBool
+{
+    private final static POILogger logger = POILogFactory
+            .getLogger( VariantBool.class );
 
     static final int SIZE = 2;
 
     private boolean _value;
 
-    public void read( LittleEndianByteArrayInputStream lei ) {
-        short value = lei.readShort();
-        switch (value) {
-            case 0:
-                _value = false;
-                break;
-            case -1:
-                _value = true;
-                break;
-            default:
-                LOG.log( POILogger.WARN, "VARIANT_BOOL value '"+value+"' is incorrect" );
-                _value = true;
-                break;
+    VariantBool( byte[] data, int offset )
+    {
+        short value = LittleEndian.getShort( data, offset );
+        if ( value == 0x0000 )
+        {
+            _value = false;
+            return;
         }
+
+        if ( value == 0xffff )
+        {
+            _value = true;
+            return;
+        }
+
+        logger.log( POILogger.WARN, "VARIANT_BOOL value '",
+                Short.valueOf( value ), "' is incorrect" );
+        _value = value != 0;
     }
 
-    public boolean getValue() {
+    boolean getValue()
+    {
         return _value;
     }
 
-    public void setValue( boolean value ) {
+    void setValue( boolean value )
+    {
         this._value = value;
     }
 }

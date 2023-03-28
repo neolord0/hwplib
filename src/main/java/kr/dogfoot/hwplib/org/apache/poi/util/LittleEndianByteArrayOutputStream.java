@@ -17,26 +17,28 @@
 
 package kr.dogfoot.hwplib.org.apache.poi.util;
 
-import java.io.OutputStream;
 
 /**
- * Adapts a plain byte array to {@link LittleEndianOutput}
+ * Adapts a plain byte array to {@link LittleEndianOutput} 
+ * 
+ * 
+ * @author Josh Micich
  */
-public final class LittleEndianByteArrayOutputStream extends OutputStream implements LittleEndianOutput, DelayableLittleEndianOutput {
+public final class LittleEndianByteArrayOutputStream implements LittleEndianOutput, DelayableLittleEndianOutput {
 	private final byte[] _buf;
 	private final int _endIndex;
 	private int _writeIndex;
 
-	public LittleEndianByteArrayOutputStream(byte[] buf, int startOffset, int maxWriteLen) { // NOSONAR
+	public LittleEndianByteArrayOutputStream(byte[] buf, int startOffset, int maxWriteLen) {
 		if (startOffset < 0 || startOffset > buf.length) {
-			throw new IllegalArgumentException("Specified startOffset (" + startOffset
+			throw new IllegalArgumentException("Specified startOffset (" + startOffset 
 					+ ") is out of allowable range (0.." + buf.length + ")");
 		}
 		_buf = buf;
 		_writeIndex = startOffset;
 		_endIndex = startOffset + maxWriteLen;
 		if (_endIndex < startOffset ||  _endIndex > buf.length) {
-			throw new IllegalArgumentException("calculated end index (" + _endIndex
+			throw new IllegalArgumentException("calculated end index (" + _endIndex 
 					+ ") is out of allowable range (" + _writeIndex + ".." + buf.length + ")");
 		}
 	}
@@ -50,19 +52,16 @@ public final class LittleEndianByteArrayOutputStream extends OutputStream implem
 		}
 	}
 
-	@Override
-    public void writeByte(int v) {
+	public void writeByte(int v) {
 		checkPosition(1);
 		_buf[_writeIndex++] = (byte)v;
 	}
 
-	@Override
-    public void writeDouble(double v) {
+	public void writeDouble(double v) {
 		writeLong(Double.doubleToLongBits(v));
 	}
 
-	@Override
-    public void writeInt(int v) {
+	public void writeInt(int v) {
 		checkPosition(4);
 		int i = _writeIndex;
 		_buf[i++] = (byte)((v >>>  0) & 0xFF);
@@ -72,47 +71,33 @@ public final class LittleEndianByteArrayOutputStream extends OutputStream implem
 		_writeIndex = i;
 	}
 
-	@Override
-    public void writeLong(long v) {
+	public void writeLong(long v) {
 		writeInt((int)(v >>  0));
 		writeInt((int)(v >> 32));
 	}
 
-	@Override
-    public void writeShort(int v) {
+	public void writeShort(int v) {
 		checkPosition(2);
 		int i = _writeIndex;
 		_buf[i++] = (byte)((v >>>  0) & 0xFF);
 		_buf[i++] = (byte)((v >>>  8) & 0xFF);
 		_writeIndex = i;
 	}
-
-	@Override
-    public void write(int b) {
-	    writeByte(b);
-    }
-
-	@Override
-    public void write(byte[] b) {
+	public void write(byte[] b) {
 		int len = b.length;
 		checkPosition(len);
 		System.arraycopy(b, 0, _buf, _writeIndex, len);
 		_writeIndex += len;
 	}
-
-	@Override
-    public void write(byte[] b, int offset, int len) {
+	public void write(byte[] b, int offset, int len) {
 		checkPosition(len);
 		System.arraycopy(b, offset, _buf, _writeIndex, len);
 		_writeIndex += len;
 	}
-
 	public int getWriteIndex() {
 		return _writeIndex;
 	}
-
-	@Override
-    public LittleEndianOutput createDelayedOutput(int size) {
+	public LittleEndianOutput createDelayedOutput(int size) {
 		checkPosition(size);
 		LittleEndianOutput result = new LittleEndianByteArrayOutputStream(_buf, _writeIndex, size);
 		_writeIndex += size;

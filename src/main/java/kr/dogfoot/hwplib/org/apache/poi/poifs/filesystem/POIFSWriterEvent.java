@@ -1,3 +1,4 @@
+
 /* ====================================================================
    Licensed to the Apache Software Foundation (ASF) under one or more
    contributor license agreements.  See the NOTICE file distributed with
@@ -14,7 +15,7 @@
    See the License for the specific language governing permissions and
    limitations under the License.
 ==================================================================== */
-
+        
 
 package kr.dogfoot.hwplib.org.apache.poi.poifs.filesystem;
 
@@ -25,36 +26,39 @@ package kr.dogfoot.hwplib.org.apache.poi.poifs.filesystem;
  * @version %I%, %G%
  */
 
-public class POIFSWriterEvent {
+public class POIFSWriterEvent
+{
     private DocumentOutputStream stream;
-    private POIFSDocumentPath path;
-    private String documentName;
-    private int limit;
+    private POIFSDocumentPath    path;
+    private String               documentName;
+    private int                  limit;
 
     /**
      * package scoped constructor
      *
-     * @param stream       the DocumentOutputStream, freshly opened
-     * @param path         the path of the document
+     * @param stream the DocumentOutputStream, freshly opened
+     * @param path the path of the document
      * @param documentName the name of the document
-     * @param limit        the limit, in bytes, that can be written to the
-     *                     stream
+     * @param limit the limit, in bytes, that can be written to the
+     *              stream
      */
 
     POIFSWriterEvent(final DocumentOutputStream stream,
                      final POIFSDocumentPath path, final String documentName,
-                     final int limit) {
-        this.stream = stream;
-        this.path = path;
+                     final int limit)
+    {
+        this.stream       = stream;
+        this.path         = path;
         this.documentName = documentName;
-        this.limit = limit;
+        this.limit        = limit;
     }
 
     /**
      * @return the DocumentOutputStream, freshly opened
      */
 
-    public DocumentOutputStream getStream() {
+    public DocumentOutputStream getStream()
+    {
         return stream;
     }
 
@@ -62,7 +66,8 @@ public class POIFSWriterEvent {
      * @return the document's path
      */
 
-    public POIFSDocumentPath getPath() {
+    public POIFSDocumentPath getPath()
+    {
         return path;
     }
 
@@ -70,7 +75,8 @@ public class POIFSWriterEvent {
      * @return the document's name
      */
 
-    public String getName() {
+    public String getName()
+    {
         return documentName;
     }
 
@@ -78,7 +84,8 @@ public class POIFSWriterEvent {
      * @return the limit on writing, in bytes
      */
 
-    public int getLimit() {
+    public int getLimit()
+    {
         return limit;
     }
 }   // end public class POIFSWriterEvent

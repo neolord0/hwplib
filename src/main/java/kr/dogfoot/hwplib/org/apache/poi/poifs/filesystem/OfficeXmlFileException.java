@@ -1,3 +1,4 @@
+
 /* ====================================================================
    Licensed to the Apache Software Foundation (ASF) under one or more
    contributor license agreements.  See the NOTICE file distributed with
@@ -14,18 +15,22 @@
    See the License for the specific language governing permissions and
    limitations under the License.
 ==================================================================== */
+        
+
 
 package kr.dogfoot.hwplib.org.apache.poi.poifs.filesystem;
 
-import kr.dogfoot.hwplib.org.apache.poi.UnsupportedFileFormatException;
-
 /**
  * This exception is thrown when we try to open a file that's actually
- * an Office 2007+ XML file, rather than an OLE2 file (which is what
- * POIFS works with)
+ *  an Office 2007+ XML file, rather than an OLE2 file (which is what
+ *  POI works with)
+ *
+ * @author Nick Burch
  */
-public class OfficeXmlFileException extends UnsupportedFileFormatException {
-    public OfficeXmlFileException(String s) {
-        super(s);
-    }
+
+public class OfficeXmlFileException extends IllegalArgumentException
+{
+	public OfficeXmlFileException(String s) {
+		super(s);
+	}
 }

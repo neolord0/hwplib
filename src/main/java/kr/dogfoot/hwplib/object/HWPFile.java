@@ -4,11 +4,9 @@ import kr.dogfoot.hwplib.object.bindata.BinData;
 import kr.dogfoot.hwplib.object.bodytext.BodyText;
 import kr.dogfoot.hwplib.object.docinfo.DocInfo;
 import kr.dogfoot.hwplib.object.fileheader.FileHeader;
-import kr.dogfoot.hwplib.org.apache.poi.hpsf.PropertySet;
-import kr.dogfoot.hwplib.org.apache.poi.hpsf.SummaryInformation;
-import kr.dogfoot.hwplib.org.apache.poi.hpsf.UnexpectedPropertySetTypeException;
-import kr.dogfoot.hwplib.org.apache.poi.hpsf.WritingNotSupportedException;
+import kr.dogfoot.hwplib.org.apache.poi.hpsf.*;
 
+import java.io.ByteArrayInputStream;
 import java.io.IOException;
 
 /**
@@ -91,7 +89,7 @@ public class HWPFile {
     }
 
     public void createSummaryInformation() {
-        summaryInformation = new SummaryInformation();
+//        summaryInformation = new SummaryInformation();
     }
 
     public HWPFile clone(boolean deepCopyImage) {
@@ -114,11 +112,18 @@ public class HWPFile {
     private void copySummaryInformation(SummaryInformation from) {
         try {
             byte[] source = from.toBytes();
-            summaryInformation = new SummaryInformation();
-            summaryInformation.init(source, 0, source.length);
+            ByteArrayInputStream bis = new ByteArrayInputStream(source);
+            PropertySet propertySet = new PropertySet(bis);
+            summaryInformation = new SummaryInformation(propertySet);
         } catch (WritingNotSupportedException e) {
             throw new RuntimeException(e);
         } catch (IOException e) {
+            throw new RuntimeException(e);
+        } catch (UnexpectedPropertySetTypeException e) {
+            throw new RuntimeException(e);
+        } catch (NoPropertySetStreamException e) {
+            throw new RuntimeException(e);
+        } catch (MarkUnsupportedException e) {
             throw new RuntimeException(e);
         }
     }

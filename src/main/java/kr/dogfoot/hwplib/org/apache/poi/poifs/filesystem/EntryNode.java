@@ -1,3 +1,4 @@
+
 /* ====================================================================
    Licensed to the Apache Software Foundation (ASF) under one or more
    contributor license agreements.  See the NOTICE file distributed with
@@ -14,7 +15,7 @@
    See the License for the specific language governing permissions and
    limitations under the License.
 ==================================================================== */
-
+        
 
 package kr.dogfoot.hwplib.org.apache.poi.poifs.filesystem;
 
@@ -22,20 +23,21 @@ import kr.dogfoot.hwplib.org.apache.poi.poifs.property.Property;
 
 /**
  * Abstract implementation of Entry
- * <p>
+ *
  * Extending classes should override isDocument() or isDirectory(), as
  * appropriate
- * <p>
+ *
  * Extending classes must override isDeleteOK()
  *
  * @author Marc Johnson (mjohnson at apache dot org)
  */
 
 public abstract class EntryNode
-        implements Entry {
+    implements Entry
+{
 
     // the DocumentProperty backing this object
-    private Property _property;
+    private Property      _property;
 
     // this object's parent Entry
     private DirectoryNode _parent;
@@ -45,12 +47,13 @@ public abstract class EntryNode
      * is intended strictly for the internal use of extending classes
      *
      * @param property the Property for this Entry
-     * @param parent   the parent of this entry
+     * @param parent the parent of this entry
      */
 
-    protected EntryNode(final Property property, final DirectoryNode parent) {
+    protected EntryNode(final Property property, final DirectoryNode parent)
+    {
         _property = property;
-        _parent = parent;
+        _parent   = parent;
     }
 
     /**
@@ -59,7 +62,8 @@ public abstract class EntryNode
      * @return the property backing this entry
      */
 
-    protected Property getProperty() {
+    protected Property getProperty()
+    {
         return _property;
     }
 
@@ -69,7 +73,8 @@ public abstract class EntryNode
      * @return true if so, else false
      */
 
-    protected boolean isRoot() {
+    protected boolean isRoot()
+    {
 
         // only the root Entry has no parent ...
         return (_parent == null);
@@ -80,7 +85,7 @@ public abstract class EntryNode
      * deletion of the underlying store.
      *
      * @return true if it's ok to delete the underlying store, else
-     * false
+     *         false
      */
 
     protected abstract boolean isDeleteOK();
@@ -93,7 +98,8 @@ public abstract class EntryNode
      * @return name
      */
 
-    public String getName() {
+    public String getName()
+    {
         return _property.getName();
     }
 
@@ -103,7 +109,8 @@ public abstract class EntryNode
      * @return true if the Entry is a DirectoryEntry, else false
      */
 
-    public boolean isDirectoryEntry() {
+    public boolean isDirectoryEntry()
+    {
         return false;
     }
 
@@ -113,7 +120,8 @@ public abstract class EntryNode
      * @return true if the Entry is a DocumentEntry, else false
      */
 
-    public boolean isDocumentEntry() {
+    public boolean isDocumentEntry()
+    {
         return false;
     }
 
@@ -124,27 +132,30 @@ public abstract class EntryNode
      * @return this Entry's parent; null iff this is the root Entry
      */
 
-    public DirectoryEntry getParent() {
+    public DirectoryEntry getParent()
+    {
         return _parent;
     }
 
     /**
      * Delete this Entry. This operation should succeed, but there are
      * special circumstances when it will not:
-     * <p>
+     *
      * If this Entry is the root of the Entry tree, it cannot be
      * deleted, as there is no way to create another one.
-     * <p>
+     *
      * If this Entry is a directory, it cannot be deleted unless it is
      * empty.
      *
      * @return true if the Entry was successfully deleted, else false
      */
 
-    public boolean delete() {
+    public boolean delete()
+    {
         boolean rval = false;
 
-        if ((!isRoot()) && isDeleteOK()) {
+        if ((!isRoot()) && isDeleteOK())
+        {
             rval = _parent.deleteEntry(this);
         }
         return rval;
@@ -152,21 +163,24 @@ public abstract class EntryNode
 
     /**
      * Rename this Entry. This operation will fail if:
-     * <p>
+     *
      * There is a sibling Entry (i.e., an Entry whose parent is the
      * same as this Entry's parent) with the same name.
-     * <p>
+     *
      * This Entry is the root of the Entry tree. Its name is dictated
      * by the Filesystem and many not be changed.
      *
      * @param newName the new name for this Entry
+     *
      * @return true if the operation succeeded, else false
      */
 
-    public boolean renameTo(final String newName) {
+    public boolean renameTo(final String newName)
+    {
         boolean rval = false;
 
-        if (!isRoot()) {
+        if (!isRoot())
+        {
             rval = _parent.changeName(getName(), newName);
         }
         return rval;

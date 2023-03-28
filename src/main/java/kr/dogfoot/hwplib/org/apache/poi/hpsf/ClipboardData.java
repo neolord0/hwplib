@@ -16,61 +16,69 @@
 ==================================================================== */
 package kr.dogfoot.hwplib.org.apache.poi.hpsf;
 
-import kr.dogfoot.hwplib.org.apache.poi.util.IOUtils;
 import kr.dogfoot.hwplib.org.apache.poi.util.Internal;
-import kr.dogfoot.hwplib.org.apache.poi.util.LittleEndianByteArrayInputStream;
-import kr.dogfoot.hwplib.org.apache.poi.util.LittleEndianByteArrayOutputStream;
-import kr.dogfoot.hwplib.org.apache.poi.util.LittleEndianConsts;
+import kr.dogfoot.hwplib.org.apache.poi.util.LittleEndian;
 import kr.dogfoot.hwplib.org.apache.poi.util.POILogFactory;
 import kr.dogfoot.hwplib.org.apache.poi.util.POILogger;
 
-@Internal
-public class ClipboardData {
-    //arbitrarily selected; may need to increase
-    private static final int MAX_RECORD_LENGTH = 100_000_000;
+import java.io.IOException;
+import java.io.OutputStream;
 
-    private static final POILogger LOG = POILogFactory.getLogger( ClipboardData.class );
+@Internal
+class ClipboardData
+{
+    private static final POILogger logger = POILogFactory
+            .getLogger( ClipboardData.class );
 
     private int _format;
     private byte[] _value;
 
-    public void read( LittleEndianByteArrayInputStream lei ) {
-        int offset = lei.getReadIndex();
-        int size = lei.readInt();
+    ClipboardData( byte[] data, int offset )
+    {
+        int size = LittleEndian.getInt( data, offset );
 
-        if ( size < 4 ) {
-            String msg = 
-                "ClipboardData at offset "+offset+" size less than 4 bytes "+
-                "(doesn't even have format field!). Setting to format == 0 and hope for the best";
-            LOG.log( POILogger.WARN, msg);
+        if ( size < 4 )
+        {
+            logger.log( POILogger.WARN, "ClipboardData at offset ",
+                    Integer.valueOf( offset ), " size less than 4 bytes "
+                            + "(doesn't even have format field!). "
+                            + "Setting to format == 0 and hope for the best" );
             _format = 0;
             _value = new byte[0];
             return;
         }
 
-        _format = lei.readInt();
-        _value = IOUtils.safelyAllocate(size - LittleEndianConsts.INT_SIZE, MAX_RECORD_LENGTH);
-        lei.readFully(_value);
+        _format = LittleEndian.getInt( data, offset + LittleEndian.INT_SIZE );
+        _value = LittleEndian.getByteArray( data, offset
+                + LittleEndian.INT_SIZE * 2, size - LittleEndian.INT_SIZE );
     }
 
-    public byte[] getValue() {
+    int getSize()
+    {
+        return LittleEndian.INT_SIZE * 2 + _value.length;
+    }
+
+    byte[] getValue()
+    {
         return _value;
     }
 
-    public byte[] toByteArray() {
-        byte[] result = new byte[LittleEndianConsts.INT_SIZE*2+_value.length];
-        LittleEndianByteArrayOutputStream bos = new LittleEndianByteArrayOutputStream(result,0);
-        try {
-            bos.writeInt(LittleEndianConsts.INT_SIZE + _value.length);
-            bos.writeInt(_format);
-            bos.write(_value);
-            return result;
-        } finally {
-            IOUtils.closeQuietly(bos);
-        }
+    byte[] toByteArray()
+    {
+        byte[] result = new byte[getSize()];
+        LittleEndian.putInt( result, 0 * LittleEndian.INT_SIZE,
+                LittleEndian.INT_SIZE + _value.length );
+        LittleEndian.putInt( result, 1 * LittleEndian.INT_SIZE, _format );
+        System.arraycopy( _value, 0, result, LittleEndian.INT_SIZE
+                + LittleEndian.INT_SIZE, _value.length );
+        return result;
     }
 
-    public void setValue( byte[] value ) {
-        _value = value.clone();
+    int write( OutputStream out ) throws IOException
+    {
+        LittleEndian.putInt( LittleEndian.INT_SIZE + _value.length, out );
+        LittleEndian.putInt( _format, out );
+        out.write( _value );
+        return 2 * LittleEndian.INT_SIZE + _value.length;
     }
 }

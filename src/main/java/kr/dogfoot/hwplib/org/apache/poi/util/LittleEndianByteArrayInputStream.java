@@ -17,151 +17,103 @@
 
 package kr.dogfoot.hwplib.org.apache.poi.util;
 
-import java.io.ByteArrayInputStream;
-
 /**
  * Adapts a plain byte array to {@link LittleEndianInput}
+ *
+ * @author Josh Micich
  */
-public class LittleEndianByteArrayInputStream extends ByteArrayInputStream implements LittleEndianInput {
-	/**
-	 * Creates <code>LittleEndianByteArrayInputStream</code>
-	 * that uses <code>buf</code> as its
-	 * buffer array. The initial value of <code>pos</code>
-	 * is <code>offset</code> and the initial value
-	 * of <code>count</code> is the minimum of <code>offset+length</code>
-	 * and <code>buf.length</code>.
-	 * The buffer array is not copied. The buffer's mark is
-	 * set to the specified offset.
-	 *
-	 * @param   buf      the input buffer.
-	 * @param   offset   the offset in the buffer of the first byte to read.
-	 * @param   length   the maximum number of bytes to read from the buffer.
-	 */
-	public LittleEndianByteArrayInputStream(byte[] buf, int offset, int length) { // NOSONAR
-	    super(buf, offset, length);
-	}
+public final class LittleEndianByteArrayInputStream implements LittleEndianInput {
+	private final byte[] _buf;
+	private final int _endIndex;
+	private int _readIndex;
 
-	/**
-	 * Creates <code>LittleEndianByteArrayInputStream</code>
-	 * that uses <code>buf</code> as its
-	 * buffer array. The initial value of <code>pos</code>
-	 * is <code>offset</code> and the initial value
-	 * of <code>count</code> is the minimum of <code>offset+buf.length</code>
-	 * and <code>buf.length</code>.
-	 * The buffer array is not copied. The buffer's mark is
-	 * set to the specified offset.
-	 *
-	 * @param   buf      the input buffer.
-	 * @param   offset   the offset in the buffer of the first byte to read.
-	 */
-	public LittleEndianByteArrayInputStream(byte[] buf, int offset) {
-	    this(buf, offset, buf.length - offset);
+	public LittleEndianByteArrayInputStream(byte[] buf, int startOffset, int maxReadLen) {
+		_buf = buf;
+		_readIndex = startOffset;
+		_endIndex = startOffset + maxReadLen;
 	}
-
-	/**
-	 * Creates a <code>LittleEndianByteArrayInputStream</code>
-	 * so that it uses <code>buf</code> as its
-	 * buffer array.
-	 * The buffer array is not copied.
-	 * The initial value of <code>pos</code>
-	 * is <code>0</code> and the initial value
-	 * of <code>count</code> is the length of
-	 * <code>buf</code>.
-	 *
-	 * @param   buf   the input buffer.
-	 */
+	public LittleEndianByteArrayInputStream(byte[] buf, int startOffset) {
+		this(buf, startOffset, buf.length - startOffset);
+	}
 	public LittleEndianByteArrayInputStream(byte[] buf) {
-	    super(buf);
+		this(buf, 0, buf.length);
 	}
 
-	protected void checkPosition(int i) {
-		if (i > count - pos) {
-			throw new RuntimeException("Buffer overrun, having " + count + " bytes in the stream and position is at " + pos +
-					", but trying to increment position by " + i);
+	public int available() {
+		return _endIndex - _readIndex;
+	}
+	private void checkPosition(int i) {
+		if (i > _endIndex - _readIndex) {
+			throw new RuntimeException("Buffer overrun");
 		}
 	}
 
 	public int getReadIndex() {
-		return pos;
+		return _readIndex;
 	}
-
-	public void setReadIndex(int pos) {
-	   if (pos < 0 || pos >= count) {
-	        throw new IndexOutOfBoundsException();
-	   }
-	   this.pos = pos;
-	}
-	
-	
-	@Override
-    public byte readByte() {
+	public byte readByte() {
 		checkPosition(1);
-		return (byte)read();
+		return _buf[_readIndex++];
 	}
 
-	@Override
-    public int readInt() {
-	    final int size = LittleEndianConsts.INT_SIZE;
-		checkPosition(size);
-		int le = LittleEndian.getInt(buf, pos);
-        long skipped = super.skip(size);
-        assert skipped == size : "Buffer overrun";
-		return le;
+	public int readInt() {
+		checkPosition(4);
+		int i = _readIndex;
+
+		int b0 = _buf[i++] & 0xFF;
+		int b1 = _buf[i++] & 0xFF;
+		int b2 = _buf[i++] & 0xFF;
+		int b3 = _buf[i++] & 0xFF;
+		_readIndex = i;
+		return (b3 << 24) + (b2 << 16) + (b1 << 8) + (b0 << 0);
 	}
+	public long readLong() {
+		checkPosition(8);
+		int i = _readIndex;
 
-	@Override
-    public long readLong() {
-	    final int size = LittleEndianConsts.LONG_SIZE;
-		checkPosition(size);
-		long le = LittleEndian.getLong(buf, pos);
-        long skipped = super.skip(size);
-        assert skipped == size : "Buffer overrun";
-		return le;
+		int b0 = _buf[i++] & 0xFF;
+		int b1 = _buf[i++] & 0xFF;
+		int b2 = _buf[i++] & 0xFF;
+		int b3 = _buf[i++] & 0xFF;
+		int b4 = _buf[i++] & 0xFF;
+		int b5 = _buf[i++] & 0xFF;
+		int b6 = _buf[i++] & 0xFF;
+		int b7 = _buf[i++] & 0xFF;
+		_readIndex = i;
+		return (((long)b7 << 56) +
+				((long)b6 << 48) +
+				((long)b5 << 40) +
+				((long)b4 << 32) +
+				((long)b3 << 24) +
+				(b2 << 16) +
+				(b1 <<  8) +
+				(b0 <<  0));
 	}
-
-	@Override
-    public short readShort() {
-        final int size = LittleEndianConsts.SHORT_SIZE;
-        checkPosition(size);
-        short le = LittleEndian.getShort(buf, pos);
-        long skipped = super.skip(size);
-        assert skipped == size : "Buffer overrun";
-        return le;
+	public short readShort() {
+		return (short)readUShort();
 	}
-
-	@Override
-    public int readUByte() {
-	    return readByte() & 0x00FF;
+	public int readUByte() {
+		checkPosition(1);
+		return _buf[_readIndex++] & 0xFF;
 	}
+	public int readUShort() {
+		checkPosition(2);
+		int i = _readIndex;
 
-	@Override
-    public int readUShort() {
-        return readShort() & 0x00FFFF;
+		int b0 = _buf[i++] & 0xFF;
+		int b1 = _buf[i++] & 0xFF;
+		_readIndex = i;
+		return (b1 << 8) + (b0 << 0);
 	}
-
-	public long readUInt() {
-	    return readInt() & 0x00FFFFFFFFL; 
-    }
-
-    @Override
-    public double readDouble() {
-        return Double.longBitsToDouble(readLong());
-    }
-	
-	@Override
-    public void readFully(byte[] buffer, int off, int len) {
+	public void readFully(byte[] buf, int off, int len) {
 		checkPosition(len);
-		read(buffer, off, len);
+		System.arraycopy(_buf, _readIndex, buf, off, len);
+		_readIndex+=len;
 	}
-
-	@Override
-    public void readFully(byte[] buffer) {
-        checkPosition(buffer.length);
-        read(buffer, 0, buffer.length);
+	public void readFully(byte[] buf) {
+		readFully(buf, 0, buf.length);
 	}
-
-    @Override
-    public void readPlain(byte[] buf, int off, int len) {
-        readFully(buf, off, len);
-    }
+	public double readDouble() {
+		return Double.longBitsToDouble(readLong());
+	}
 }

@@ -1,3 +1,4 @@
+
 /* ====================================================================
    Licensed to the Apache Software Foundation (ASF) under one or more
    contributor license agreements.  See the NOTICE file distributed with
@@ -14,7 +15,7 @@
    See the License for the specific language governing permissions and
    limitations under the License.
 ==================================================================== */
-
+        
 
 package kr.dogfoot.hwplib.org.apache.poi.util;
 
@@ -31,8 +32,9 @@ import java.io.InputStream;
  */
 
 public class LongField
-        implements FixedField {
-    private long _value;
+    implements FixedField
+{
+    private long      _value;
     private final int _offset;
 
     /**
@@ -40,14 +42,17 @@ public class LongField
      * byte array
      *
      * @param offset of the field within its byte array
-     * @throws ArrayIndexOutOfBoundsException if offset is negative
+     *
+     * @exception ArrayIndexOutOfBoundsException if offset is negative
      */
 
     public LongField(final int offset)
-            throws ArrayIndexOutOfBoundsException {
-        if (offset < 0) {
+        throws ArrayIndexOutOfBoundsException
+    {
+        if (offset < 0)
+        {
             throw new ArrayIndexOutOfBoundsException("Illegal offset: "
-                    + offset);
+                                                     + offset);
         }
         _offset = offset;
     }
@@ -57,12 +62,14 @@ public class LongField
      * byte array and initialize its value
      *
      * @param offset of the field within its byte array
-     * @param value  the initial value
-     * @throws ArrayIndexOutOfBoundsException if offset is negative
+     * @param value the initial value
+     *
+     * @exception ArrayIndexOutOfBoundsException if offset is negative
      */
 
     public LongField(final int offset, final long value)
-            throws ArrayIndexOutOfBoundsException {
+        throws ArrayIndexOutOfBoundsException
+    {
         this(offset);
         set(value);
     }
@@ -72,13 +79,15 @@ public class LongField
      * byte array and initialize its value from its byte array
      *
      * @param offset of the field within its byte array
-     * @param data   the byte array to read the value from
-     * @throws ArrayIndexOutOfBoundsException if the offset is not
-     *                                        within the range of 0..(data.length - 1)
+     * @param data the byte array to read the value from
+     *
+     * @exception ArrayIndexOutOfBoundsException if the offset is not
+     *            within the range of 0..(data.length - 1)
      */
 
-    public LongField(final int offset, final byte[] data)
-            throws ArrayIndexOutOfBoundsException {
+    public LongField(final int offset, final byte [] data)
+        throws ArrayIndexOutOfBoundsException
+    {
         this(offset);
         readFromBytes(data);
     }
@@ -89,13 +98,15 @@ public class LongField
      * array
      *
      * @param offset of the field within its byte array
-     * @param value  the initial value
-     * @param data   the byte array to write the value to
-     * @throws ArrayIndexOutOfBoundsException if offset is negative
+     * @param value the initial value
+     * @param data the byte array to write the value to
+     *
+     * @exception ArrayIndexOutOfBoundsException if offset is negative
      */
 
-    public LongField(final int offset, final long value, final byte[] data)
-            throws ArrayIndexOutOfBoundsException {
+    public LongField(final int offset, final long value, final byte [] data)
+        throws ArrayIndexOutOfBoundsException
+    {
         this(offset);
         set(value, data);
     }
@@ -106,7 +117,8 @@ public class LongField
      * @return current value
      */
 
-    public long get() {
+    public long get()
+    {
         return _value;
     }
 
@@ -116,7 +128,8 @@ public class LongField
      * @param value to be set
      */
 
-    public void set(final long value) {
+    public void set(final long value)
+    {
         _value = value;
     }
 
@@ -124,13 +137,15 @@ public class LongField
      * set the LongField's current value and write it to a byte array
      *
      * @param value to be set
-     * @param data  the byte array to write the value to
-     * @throws ArrayIndexOutOfBoundsException if the offset is out
-     *                                        of range
+     * @param data the byte array to write the value to
+     *
+     * @exception ArrayIndexOutOfBoundsException if the offset is out
+     *            of range
      */
 
-    public void set(final long value, final byte[] data)
-            throws ArrayIndexOutOfBoundsException {
+    public void set(final long value, final byte [] data)
+        throws ArrayIndexOutOfBoundsException
+    {
         _value = value;
         writeToBytes(data);
     }
@@ -141,12 +156,14 @@ public class LongField
      * set the value from its offset into an array of bytes
      *
      * @param data the byte array from which the value is to be read
-     * @throws ArrayIndexOutOfBoundsException if the offset is out
-     *                                        of range
+     *
+     * @exception ArrayIndexOutOfBoundsException if the offset is out
+     *            of range
      */
 
-    public void readFromBytes(final byte[] data)
-            throws ArrayIndexOutOfBoundsException {
+    public void readFromBytes(final byte [] data)
+        throws ArrayIndexOutOfBoundsException
+    {
         _value = LittleEndian.getLong(data, _offset);
     }
 
@@ -155,14 +172,16 @@ public class LongField
      *
      * @param stream the InputStream from which the value is to be
      *               read
-     * @throws BufferUnderrunException if there is not enough data
-     *                                 available from the InputStream
-     * @throws IOException             if an IOException is thrown from reading
-     *                                 the InputStream
+     *
+     * @exception BufferUnderrunException if there is not enough data
+     *            available from the InputStream
+     * @exception IOException if an IOException is thrown from reading
+     *            the InputStream
      */
 
     public void readFromStream(final InputStream stream)
-            throws IOException {
+        throws IOException, BufferUnderrunException
+    {
         _value = LittleEndian.readLong(stream);
     }
 
@@ -172,12 +191,14 @@ public class LongField
      *
      * @param data the array of bytes to which the value is to be
      *             written
-     * @throws ArrayIndexOutOfBoundsException if the offset is out
-     *                                        of range
+     *
+     * @exception ArrayIndexOutOfBoundsException if the offset is out
+     *            of range
      */
 
-    public void writeToBytes(final byte[] data)
-            throws ArrayIndexOutOfBoundsException {
+    public void writeToBytes(final byte [] data)
+        throws ArrayIndexOutOfBoundsException
+    {
         LittleEndian.putLong(data, _offset, _value);
     }
 
@@ -187,7 +208,8 @@ public class LongField
      * @return the value as a String
      */
 
-    public String toString() {
+    public String toString()
+    {
         return String.valueOf(_value);
     }
 

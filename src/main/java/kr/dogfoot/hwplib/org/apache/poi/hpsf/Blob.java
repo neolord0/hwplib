@@ -16,23 +16,30 @@
 ==================================================================== */
 package kr.dogfoot.hwplib.org.apache.poi.hpsf;
 
-import kr.dogfoot.hwplib.org.apache.poi.util.IOUtils;
 import kr.dogfoot.hwplib.org.apache.poi.util.Internal;
-import kr.dogfoot.hwplib.org.apache.poi.util.LittleEndianInput;
+import kr.dogfoot.hwplib.org.apache.poi.util.LittleEndian;
 
 @Internal
-public class Blob {
-
-    //arbitrarily selected; may need to increase
-    private static final int MAX_RECORD_LENGTH = 10_000_000;
-
+class Blob
+{
     private byte[] _value;
 
-    public void read( LittleEndianInput lei ) {
-        int size = lei.readInt();
-        _value = IOUtils.safelyAllocate(size, MAX_RECORD_LENGTH);
-        if ( size > 0 ) {
-            lei.readFully(_value);
+    Blob( byte[] data, int offset )
+    {
+        int size = LittleEndian.getInt( data, offset );
+
+        if ( size == 0 )
+        {
+            _value = new byte[0];
+            return;
         }
+
+        _value = LittleEndian.getByteArray( data, offset
+                + LittleEndian.INT_SIZE, size );
+    }
+
+    int getSize()
+    {
+        return LittleEndian.INT_SIZE + _value.length;
     }
 }

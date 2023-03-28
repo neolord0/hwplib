@@ -17,15 +17,17 @@
 package kr.dogfoot.hwplib.org.apache.poi.hpsf;
 
 import kr.dogfoot.hwplib.org.apache.poi.util.Internal;
-import kr.dogfoot.hwplib.org.apache.poi.util.LittleEndianByteArrayInputStream;
+import kr.dogfoot.hwplib.org.apache.poi.util.LittleEndian;
 
 @Internal
-public class Currency {
-    private static final int SIZE = 8;
+class Currency
+{
+    static final int SIZE = 8;
 
-    private final byte[] _value = new byte[SIZE];
+    private byte[] _value;
 
-    public void read( LittleEndianByteArrayInputStream lei ) {
-        lei.readFully(_value);
+    Currency( byte[] data, int offset )
+    {
+        _value = LittleEndian.getByteArray( data, offset, SIZE );
     }
 }

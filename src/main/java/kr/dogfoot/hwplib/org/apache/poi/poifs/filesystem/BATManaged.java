@@ -1,3 +1,4 @@
+
 /* ====================================================================
    Licensed to the Apache Software Foundation (ASF) under one or more
    contributor license agreements.  See the NOTICE file distributed with
@@ -14,7 +15,7 @@
    See the License for the specific language governing permissions and
    limitations under the License.
 ==================================================================== */
-
+        
 
 package kr.dogfoot.hwplib.org.apache.poi.poifs.filesystem;
 
@@ -25,7 +26,8 @@ package kr.dogfoot.hwplib.org.apache.poi.poifs.filesystem;
  * @author Marc Johnson (mjohnson at apache dot org)
  */
 
-public interface BATManaged {
+public interface BATManaged
+{
 
     /**
      * Return the number of BigBlock's this instance uses
@@ -33,7 +35,7 @@ public interface BATManaged {
      * @return count of BigBlock instances
      */
 
-    int countBlocks();
+    public int countBlocks();
 
     /**
      * Set the start block for this instance
@@ -42,6 +44,6 @@ public interface BATManaged {
      *              up the the filesystem
      */
 
-    void setStartBlock(final int index);
+    public void setStartBlock(final int index);
 }   // end public interface BATManaged
 

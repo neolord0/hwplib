@@ -1,3 +1,4 @@
+
 /* ====================================================================
    Licensed to the Apache Software Foundation (ASF) under one or more
    contributor license agreements.  See the NOTICE file distributed with
@@ -14,7 +15,7 @@
    See the License for the specific language governing permissions and
    limitations under the License.
 ==================================================================== */
-
+        
 
 package kr.dogfoot.hwplib.org.apache.poi.poifs.property;
 
@@ -25,7 +26,9 @@ package kr.dogfoot.hwplib.org.apache.poi.poifs.property;
  * @author Marc Johnson (mjohnson at apache dot org)
  */
 
-public interface Child {
+public interface Child
+{
+
     /**
      * Get the next Child, if any
      *
@@ -59,4 +62,5 @@ public interface Child {
      */
 
     public void setPreviousChild(final Child child);
-}
+}   // end public interface Child
+

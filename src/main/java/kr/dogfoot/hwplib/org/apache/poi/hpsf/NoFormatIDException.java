@@ -18,47 +18,56 @@
 package kr.dogfoot.hwplib.org.apache.poi.hpsf;
 
 /**
- * This exception is thrown if a {@link PropertySet} is to be written
- * but does not have a formatID set (see {@link Section#setFormatID(ClassID)} or
- * {@link org.apache.poi.hpsf.Section#setFormatID(byte[])}. 
+ * <p>This exception is thrown if a {@link MutablePropertySet} is to be written
+ * but does not have a formatID set (see {@link
+ * MutableSection#setFormatID(ClassID)} or
+ * {@link org.apache.poi.hpsf.MutableSection#setFormatID(byte[])}. 
+ *
+ * @author Rainer Klute <a
+ * href="mailto:klute@rainer-klute.de">&lt;klute@rainer-klute.de&gt;</a>
  */
-public class NoFormatIDException extends HPSFRuntimeException {
+public class NoFormatIDException extends HPSFRuntimeException
+{
 
     /**
-     * Constructor
+     * <p>Constructor</p>
      */
-    public NoFormatIDException() {
+    public NoFormatIDException()
+    {
         super();
     }
 
 
     /**
-     * Constructor
+     * <p>Constructor</p>
      * 
      * @param msg The exception's message string
      */
-    public NoFormatIDException(final String msg) {
+    public NoFormatIDException(final String msg)
+    {
         super(msg);
     }
 
 
     /**
-     * Constructor
+     * <p>Constructor</p>
      * 
      * @param reason This exception's underlying reason
      */
-    public NoFormatIDException(final Throwable reason) {
+    public NoFormatIDException(final Throwable reason)
+    {
         super(reason);
     }
 
 
     /**
-     * Constructor
+     * <p>Constructor</p>
      * 
      * @param msg The exception's message string
      * @param reason This exception's underlying reason
      */
-    public NoFormatIDException(final String msg, final Throwable reason) {
+    public NoFormatIDException(final String msg, final Throwable reason)
+    {
         super(msg, reason);
     }
 

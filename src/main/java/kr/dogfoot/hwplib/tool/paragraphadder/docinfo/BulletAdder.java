@@ -23,20 +23,26 @@ public class BulletAdder {
         if (docInfoAdder.getSourceHWPFile() == docInfoAdder.getTargetHWPFile()) {
             return sourceId;
         }
-        Integer targetID = idMatchingMap.get(sourceId);
-        if (targetID != null) {
-            return targetID;
-        }
 
-        // id == index + 1
-        Bullet source = docInfoAdder.getSourceHWPFile().getDocInfo().getBulletList().get(sourceId - 1);
-        int id = findFromTarget(source);
-        if (id == -1) {
-            id = addAndCopy(source);
-        }
+        if (idMatchingMap.containsKey(sourceId)) {
+            return idMatchingMap.get(sourceId);
+        } else {
+            // id == index + 1
+            Bullet source;
+            try {
+                source = docInfoAdder.getSourceHWPFile().getDocInfo().getBulletList().get(sourceId - 1);
+            } catch (Exception e) {
+                return sourceId;
+            }
 
-        idMatchingMap.put(sourceId, id);
-        return id;
+            int id = findFromTarget(source);
+            if (id == -1) {
+                id = addAndCopy(source);
+            }
+
+            idMatchingMap.put(sourceId, id);
+            return id;
+        }
     }
 
     private int findFromTarget(Bullet source) {

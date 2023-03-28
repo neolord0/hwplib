@@ -1,3 +1,4 @@
+
 /* ====================================================================
    Licensed to the Apache Software Foundation (ASF) under one or more
    contributor license agreements.  See the NOTICE file distributed with
@@ -14,7 +15,7 @@
    See the License for the specific language governing permissions and
    limitations under the License.
 ==================================================================== */
-
+        
 
 package kr.dogfoot.hwplib.org.apache.poi.poifs.dev;
 
@@ -26,7 +27,7 @@ import java.util.Iterator;
  * viewer. The content is returned to the viewer as an array or as an
  * Iterator, and the object provides a clue as to which technique the
  * viewer should use to get its content.
- * <p>
+ *
  * A POIFSViewable object is also expected to provide a short
  * description of itself, that can be used by a viewer when the
  * viewable object is collapsed.
@@ -34,7 +35,8 @@ import java.util.Iterator;
  * @author Marc Johnson (mjohnson at apache dot org)
  */
 
-public interface POIFSViewable {
+public interface POIFSViewable
+{
 
     /**
      * Get an array of objects, some of which may implement
@@ -43,8 +45,8 @@ public interface POIFSViewable {
      * @return an array of Object; may not be null, but may be empty
      */
 
-    public Object[] getViewableArray();
-
+    public Object [] getViewableArray();
+    
     /**
      * Get an Iterator of objects, some of which may implement
      * POIFSViewable
@@ -52,14 +54,15 @@ public interface POIFSViewable {
      * @return an Iterator; may not be null, but may have an empty
      * back end store
      */
-    public Iterator<Object> getViewableIterator();
+    @SuppressWarnings("unchecked")
+    public Iterator getViewableIterator();
 
     /**
      * Give viewers a hint as to whether to call getViewableArray or
      * getViewableIterator
      *
      * @return true if a viewer should call getViewableArray, false if
-     * a viewer should call getViewableIterator
+     *         a viewer should call getViewableIterator
      */
 
     public boolean preferArray();

@@ -25,18 +25,22 @@ public class BorderFillAdder {
             return sourceId;
         }
 
-        Integer targetID = idMatchingMap.get(sourceId);
-        if (targetID != null) {
-            return targetID;
+        if (idMatchingMap.containsKey(sourceId)) {
+            return idMatchingMap.get(sourceId);
+        } else {
+            BorderFill source = null;
+            try {
+                source = docInfoAdder.getSourceHWPFile().getDocInfo().getBorderFillList().get(sourceId - 1);
+            } catch (Exception e) {
+                return sourceId;
+            }
+            int id = findFromTarget(source);
+            if (id == -1) {
+                id = addAndCopy(source);
+            }
+            idMatchingMap.put(sourceId, id);
+            return id;
         }
-
-        BorderFill source = getBorderFill(docInfoAdder.getSourceHWPFile().getDocInfo().getBorderFillList(), sourceId - 1);
-        int index = findFromTarget(source);
-        if (index == -1) {
-            index = addAndCopy(source);
-        }
-        idMatchingMap.put(sourceId, index);
-        return index;
     }
 
     private BorderFill getBorderFill(ArrayList<BorderFill> borderFillList, int index) {

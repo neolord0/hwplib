@@ -19,18 +19,21 @@
 package kr.dogfoot.hwplib.org.apache.poi.hpsf;
 
 import kr.dogfoot.hwplib.org.apache.poi.util.Internal;
-import kr.dogfoot.hwplib.org.apache.poi.util.LittleEndianByteArrayInputStream;
 
 @Internal
-public class VersionedStream
+class VersionedStream
 {
-    private final GUID _versionGuid = new GUID();
-    private final IndirectPropertyName _streamName = new IndirectPropertyName();
+    private GUID _versionGuid;
+    private IndirectPropertyName _streamName;
 
-    public VersionedStream() {}
+    VersionedStream( byte[] data, int offset )
+    {
+        _versionGuid = new GUID( data, offset );
+        _streamName = new IndirectPropertyName( data, offset + GUID.SIZE );
+    }
 
-    public void read( LittleEndianByteArrayInputStream lei ) {
-        _versionGuid.read(lei);
-        _streamName.read(lei);
+    int getSize()
+    {
+        return GUID.SIZE + _streamName.getSize();
     }
 }

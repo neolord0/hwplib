@@ -25,19 +25,24 @@ public class NumberingAdder {
             return sourceId;
         }
 
-        Integer targetID = idMatchingMap.get(sourceId);
-        if (targetID != null) {
-            return targetID;
-        }
+        if (idMatchingMap.containsKey(sourceId)) {
+            return idMatchingMap.get(sourceId);
+        } else {
+            // id == index + 1
+            Numbering source;
+            try {
+                source = docInfoAdder.getSourceHWPFile().getDocInfo().getNumberingList().get(sourceId - 1);
+            } catch (Exception e) {
+                return sourceId;
+            }
 
-        // id == index + 1
-        Numbering source = docInfoAdder.getSourceHWPFile().getDocInfo().getNumberingList().get(sourceId - 1);
-        int id = findFromTarget(source);
-        if (id == -1) {
-            id = addAndCopy(source);
+            int id = findFromTarget(source);
+            if (id == -1) {
+                id = addAndCopy(source);
+            }
+            idMatchingMap.put(sourceId, id);
+            return id;
         }
-        idMatchingMap.put(sourceId, id);
-        return id;
     }
 
     private int findFromTarget(Numbering source) {

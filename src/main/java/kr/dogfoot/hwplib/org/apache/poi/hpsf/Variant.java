@@ -22,247 +22,279 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * The {@code Variant} types as defined by Microsoft's COM.
+ * <p>The <em>Variant</em> types as defined by Microsoft's COM. I
+ * found this information in <a
+ * href="http://www.marin.clara.net/COM/variant_type_definitions.htm">
+ * http://www.marin.clara.net/COM/variant_type_definitions.htm</a>.</p>
  *
- * In the variant types descriptions the following shortcuts are used:
- * <ul>
- * <li>[V] - may appear in a VARIANT
- * <li>[T] - may appear in a TYPEDESC
- * <li>[P] - may appear in an OLE property set
- * <li>[S] - may appear in a Safe Array
- * </ul>
+ * <p>In the variant types descriptions the following shortcuts are
+ * used: <strong> [V]</strong> - may appear in a VARIANT,
+ * <strong>[T]</strong> - may appear in a TYPEDESC,
+ * <strong>[P]</strong> - may appear in an OLE property set,
+ * <strong>[S]</strong> - may appear in a Safe Array.</p>
+ *
+ * @author Rainer Klute (klute@rainer-klute.de)
  */
 public class Variant
 {
 
     /**
-     * [V][P] Nothing, i.e. not a single byte of data.
+     * <p>[V][P] Nothing, i.e. not a single byte of data.</p>
      */
     public static final int VT_EMPTY = 0;
 
     /**
-     * [V][P] SQL style Null.
+     * <p>[V][P] SQL style Null.</p>
      */
     public static final int VT_NULL = 1;
 
     /**
-     * [V][T][P][S] 2 byte signed int.
+     * <p>[V][T][P][S] 2 byte signed int.</p>
      */
     public static final int VT_I2 = 2;
 
     /**
-     * [V][T][P][S] 4 byte signed int.
+     * <p>[V][T][P][S] 4 byte signed int.</p>
      */
     public static final int VT_I4 = 3;
 
     /**
-     * [V][T][P][S] 4 byte real.
+     * <p>[V][T][P][S] 4 byte real.</p>
      */
     public static final int VT_R4 = 4;
 
     /**
-     * [V][T][P][S] 8 byte real.
+     * <p>[V][T][P][S] 8 byte real.</p>
      */
     public static final int VT_R8 = 5;
 
     /**
-     * [V][T][P][S] currency.
+     * <p>[V][T][P][S] currency. <span style="background-color:
+     * #ffff00">How long is this? How is it to be
+     * interpreted?</span></p>
      */
     public static final int VT_CY = 6;
 
     /**
-     * [V][T][P][S] date.
+     * <p>[V][T][P][S] date. <span style="background-color:
+     * #ffff00">How long is this? How is it to be
+     * interpreted?</span></p>
      */
     public static final int VT_DATE = 7;
 
     /**
-     * [V][T][P][S] OLE Automation string.
+     * <p>[V][T][P][S] OLE Automation string. <span
+     * style="background-color: #ffff00">How long is this? How is it
+     * to be interpreted?</span></p>
      */
     public static final int VT_BSTR = 8;
 
     /**
-     * [V][T][P][S] IDispatch
+     * <p>[V][T][P][S] IDispatch *. <span style="background-color:
+     * #ffff00">How long is this? How is it to be
+     * interpreted?</span></p>
      */
     public static final int VT_DISPATCH = 9;
 
     /**
-     * [V][T][S] SCODE
+     * <p>[V][T][S] SCODE. <span style="background-color: #ffff00">How
+     * long is this? How is it to be interpreted?</span></p>
      */
     public static final int VT_ERROR = 10;
 
     /**
-     * [V][T][P][S] True=-1, False=0.
+     * <p>[V][T][P][S] True=-1, False=0.</p>
      */
     public static final int VT_BOOL = 11;
 
     /**
-     * [V][T][P][S] VARIANT
+     * <p>[V][T][P][S] VARIANT *. <span style="background-color:
+     * #ffff00">How long is this? How is it to be
+     * interpreted?</span></p>
      */
     public static final int VT_VARIANT = 12;
 
     /**
-     * [V][T][S] IUnknown
+     * <p>[V][T][S] IUnknown *. <span style="background-color:
+     * #ffff00">How long is this? How is it to be
+     * interpreted?</span></p>
      */
     public static final int VT_UNKNOWN = 13;
 
     /**
-     * [V][T][S] 16 byte fixed point.
+     * <p>[V][T][S] 16 byte fixed point.</p>
      */
     public static final int VT_DECIMAL = 14;
 
     /**
-     * [T] signed char.
+     * <p>[T] signed char.</p>
      */
     public static final int VT_I1 = 16;
 
     /**
-     * [V][T][P][S] unsigned char.
+     * <p>[V][T][P][S] unsigned char.</p>
      */
     public static final int VT_UI1 = 17;
 
     /**
-     * [T][P] unsigned short.
+     * <p>[T][P] unsigned short.</p>
      */
     public static final int VT_UI2 = 18;
 
     /**
-     * [T][P] unsigned int.
+     * <p>[T][P] unsigned int.</p>
      */
     public static final int VT_UI4 = 19;
 
     /**
-     * [T][P] signed 64-bit int.
+     * <p>[T][P] signed 64-bit int.</p>
      */
     public static final int VT_I8 = 20;
 
     /**
-     * [T][P] unsigned 64-bit int.
+     * <p>[T][P] unsigned 64-bit int.</p>
      */
     public static final int VT_UI8 = 21;
 
     /**
-     * [T] signed machine int.
+     * <p>[T] signed machine int.</p>
      */
     public static final int VT_INT = 22;
 
     /**
-     * [T] unsigned machine int.
+     * <p>[T] unsigned machine int.</p>
      */
     public static final int VT_UINT = 23;
 
     /**
-     * [T] C style void.
+     * <p>[T] C style void.</p>
      */
     public static final int VT_VOID = 24;
 
     /**
-     * [T] Standard return type.
+     * <p>[T] Standard return type. <span style="background-color:
+     * #ffff00">How long is this? How is it to be
+     * interpreted?</span></p>
      */
     public static final int VT_HRESULT = 25;
 
     /**
-     * [T] pointer type.
+     * <p>[T] pointer type. <span style="background-color:
+     * #ffff00">How long is this? How is it to be
+     * interpreted?</span></p>
      */
     public static final int VT_PTR = 26;
 
     /**
-     * [T] (use VT_ARRAY in VARIANT).
+     * <p>[T] (use VT_ARRAY in VARIANT).</p>
      */
     public static final int VT_SAFEARRAY = 27;
 
     /**
-     * [T] C style array. <span style="background-color:
+     * <p>[T] C style array. <span style="background-color:
      * #ffff00">How long is this? How is it to be
-     * interpreted?</span>
+     * interpreted?</span></p>
      */
     public static final int VT_CARRAY = 28;
 
     /**
-     * [T] user defined type.
+     * <p>[T] user defined type. <span style="background-color:
+     * #ffff00">How long is this? How is it to be
+     * interpreted?</span></p>
      */
     public static final int VT_USERDEFINED = 29;
 
     /**
-     * [T][P] null terminated string.
+     * <p>[T][P] null terminated string.</p>
      */
     public static final int VT_LPSTR = 30;
 
     /**
-     * [T][P] wide (Unicode) null terminated string.
+     * <p>[T][P] wide (Unicode) null terminated string.</p>
      */
     public static final int VT_LPWSTR = 31;
 
     /**
-     * [P] FILETIME. The FILETIME structure holds a date and time
+     * <p>[P] FILETIME. The FILETIME structure holds a date and time
      * associated with a file. The structure identifies a 64-bit
      * integer specifying the number of 100-nanosecond intervals which
      * have passed since January 1, 1601. This 64-bit value is split
-     * into the two dwords stored in the structure.
+     * into the two dwords stored in the structure.</p>
      */
     public static final int VT_FILETIME = 64;
 
     /**
-     * [P] Length prefixed bytes.
+     * <p>[P] Length prefixed bytes.</p>
      */
     public static final int VT_BLOB = 65;
 
     /**
-     * [P] Name of the stream follows.
+     * <p>[P] Name of the stream follows.</p>
      */
     public static final int VT_STREAM = 66;
 
     /**
-     * [P] Name of the storage follows.
+     * <p>[P] Name of the storage follows.</p>
      */
     public static final int VT_STORAGE = 67;
 
     /**
-     * [P] Stream contains an object.
+     * <p>[P] Stream contains an object. <span
+     * style="background-color: #ffff00"> How long is this? How is it
+     * to be interpreted?</span></p>
      */
     public static final int VT_STREAMED_OBJECT = 68;
 
     /**
-     * [P] Storage contains an object.
+     * <p>[P] Storage contains an object. <span
+     * style="background-color: #ffff00"> How long is this? How is it
+     * to be interpreted?</span></p>
      */
     public static final int VT_STORED_OBJECT = 69;
 
     /**
-     * [P] Blob contains an object.
+     * <p>[P] Blob contains an object. <span style="background-color:
+     * #ffff00">How long is this? How is it to be
+     * interpreted?</span></p>
      */
     public static final int VT_BLOB_OBJECT = 70;
 
     /**
-     * [P] Clipboard format.
+     * <p>[P] Clipboard format. <span style="background-color:
+     * #ffff00">How long is this? How is it to be
+     * interpreted?</span></p>
      */
     public static final int VT_CF = 71;
 
     /**
-     * [P] A Class ID.<p>
+     * <p>[P] A Class ID.</p>
      *
-     * It consists of a 32 bit unsigned integer indicating the size
+     * <p>It consists of a 32 bit unsigned integer indicating the size
      * of the structure, a 32 bit signed integer indicating (Clipboard
      * Format Tag) indicating the type of data that it contains, and
-     * then a byte array containing the data.<p>
+     * then a byte array containing the data.</p>
      *
-     * The valid Clipboard Format Tags are:
+     * <p>The valid Clipboard Format Tags are:</p>
      *
      * <ul>
-     *  <li>{@link Thumbnail#CFTAG_WINDOWS}
-     *  <li>{@link Thumbnail#CFTAG_MACINTOSH}
-     *  <li>{@link Thumbnail#CFTAG_NODATA}
-     *  <li>{@link Thumbnail#CFTAG_FMTID}
+     *  <li>{@link Thumbnail#CFTAG_WINDOWS}</li>
+     *  <li>{@link Thumbnail#CFTAG_MACINTOSH}</li>
+     *  <li>{@link Thumbnail#CFTAG_NODATA}</li>
+     *  <li>{@link Thumbnail#CFTAG_FMTID}</li>
      * </ul>
      *
-     * <pre>{@code
-     * typedef struct tagCLIPDATA {
+     * <pre>typedef struct tagCLIPDATA {
      * // cbSize is the size of the buffer pointed to
      * // by pClipData, plus sizeof(ulClipFmt)
      * ULONG              cbSize;
      * long               ulClipFmt;
      * BYTE*              pClipData;
-     * } CLIPDATA;}</pre>
+     * } CLIPDATA;</pre>
      *
-     * @see <a href="https://msdn.microsoft.com/en-us/library/windows/desktop/aa380072(v=vs.85).aspx">PROPVARIANT structure</a>
+     * <p>See <a
+     * href="msdn.microsoft.com/library/en-us/com/stgrstrc_0uwk.asp"
+     * target="_blank">
+     * msdn.microsoft.com/library/en-us/com/stgrstrc_0uwk.asp</a>.</p>
      */
     public static final int VT_CLSID = 72;
 
@@ -275,156 +307,199 @@ public class Variant
     public static final int VT_VERSIONED_STREAM = 0x0049;
 
     /**
-     * [P] simple counted array. <span style="background-color:
+     * <p>[P] simple counted array. <span style="background-color:
      * #ffff00">How long is this? How is it to be
-     * interpreted?</span>
+     * interpreted?</span></p>
      */
     public static final int VT_VECTOR = 0x1000;
 
     /**
-     * [V] SAFEARRAY*. <span style="background-color: #ffff00">How
-     * long is this? How is it to be interpreted?</span>
+     * <p>[V] SAFEARRAY*. <span style="background-color: #ffff00">How
+     * long is this? How is it to be interpreted?</span></p>
      */
     public static final int VT_ARRAY = 0x2000;
 
     /**
-     * [V] void* for local use. <span style="background-color:
+     * <p>[V] void* for local use. <span style="background-color:
      * #ffff00">How long is this? How is it to be
-     * interpreted?</span>
+     * interpreted?</span></p>
      */
     public static final int VT_BYREF = 0x4000;
 
+    /**
+     * <p>FIXME (3): Document this!</p>
+     */
     public static final int VT_RESERVED = 0x8000;
 
+    /**
+     * <p>FIXME (3): Document this!</p>
+     */
     public static final int VT_ILLEGAL = 0xFFFF;
 
+    /**
+     * <p>FIXME (3): Document this!</p>
+     */
     public static final int VT_ILLEGALMASKED = 0xFFF;
 
+    /**
+     * <p>FIXME (3): Document this!</p>
+     */
     public static final int VT_TYPEMASK = 0xFFF;
 
 
 
     /**
-     * Maps the numbers denoting the variant types to their corresponding
-     * variant type names.
+     * <p>Maps the numbers denoting the variant types to their corresponding
+     * variant type names.</p>
      */
-    private static final Map<Long,String> numberToName;
+    private static Map numberToName;
 
-    private static final Map<Long,Integer> numberToLength;
+    private static Map numberToLength;
 
     /**
-     * Denotes a variant type with a length that is unknown to HPSF yet.
+     * <p>Denotes a variant type with a length that is unknown to HPSF yet.</p>
      */
-    public static final Integer LENGTH_UNKNOWN = -2;
+    public static final Integer LENGTH_UNKNOWN = Integer.valueOf(-2);
 
     /**
-     * Denotes a variant type with a variable length.
+     * <p>Denotes a variant type with a variable length.</p>
      */
-    public static final Integer LENGTH_VARIABLE = -1;
+    public static final Integer LENGTH_VARIABLE = Integer.valueOf(-1);
 
     /**
-     * Denotes a variant type with a length of 0 bytes.
+     * <p>Denotes a variant type with a length of 0 bytes.</p>
      */
-    public static final Integer LENGTH_0 = 0;
+    public static final Integer LENGTH_0 = Integer.valueOf(0);
 
     /**
-     * Denotes a variant type with a length of 2 bytes.
+     * <p>Denotes a variant type with a length of 2 bytes.</p>
      */
-    public static final Integer LENGTH_2 = 2;
+    public static final Integer LENGTH_2 = Integer.valueOf(2);
 
     /**
-     * Denotes a variant type with a length of 4 bytes.
+     * <p>Denotes a variant type with a length of 4 bytes.</p>
      */
-    public static final Integer LENGTH_4 = 4;
+    public static final Integer LENGTH_4 = Integer.valueOf(4);
 
     /**
-     * Denotes a variant type with a length of 8 bytes.
+     * <p>Denotes a variant type with a length of 8 bytes.</p>
      */
-    public static final Integer LENGTH_8 = 8;
+    public static final Integer LENGTH_8 = Integer.valueOf(8);
 
-    private static final Object[][] NUMBER_TO_NAME_LIST = {
-            {0L, "VT_EMPTY", LENGTH_0},
-            {1L, "VT_NULL", LENGTH_UNKNOWN},
-            {2L, "VT_I2", LENGTH_2},
-            {3L, "VT_I4", LENGTH_4},
-            {4L, "VT_R4", LENGTH_4},
-            {5L, "VT_R8", LENGTH_8},
-            {6L, "VT_CY", LENGTH_UNKNOWN},
-            {7L, "VT_DATE", LENGTH_UNKNOWN},
-            {8L, "VT_BSTR", LENGTH_UNKNOWN},
-            {9L, "VT_DISPATCH", LENGTH_UNKNOWN},
-            {10L, "VT_ERROR", LENGTH_UNKNOWN},
-            {11L, "VT_BOOL", LENGTH_UNKNOWN},
-            {12L, "VT_VARIANT", LENGTH_UNKNOWN},
-            {13L, "VT_UNKNOWN", LENGTH_UNKNOWN},
-            {14L, "VT_DECIMAL", LENGTH_UNKNOWN},
-            {16L, "VT_I1", LENGTH_UNKNOWN},
-            {17L, "VT_UI1", LENGTH_UNKNOWN},
-            {18L, "VT_UI2", LENGTH_UNKNOWN},
-            {19L, "VT_UI4", LENGTH_UNKNOWN},
-            {20L, "VT_I8", LENGTH_UNKNOWN},
-            {21L, "VT_UI8", LENGTH_UNKNOWN},
-            {22L, "VT_INT", LENGTH_UNKNOWN},
-            {23L, "VT_UINT", LENGTH_UNKNOWN},
-            {24L, "VT_VOID", LENGTH_UNKNOWN},
-            {25L, "VT_HRESULT", LENGTH_UNKNOWN},
-            {26L, "VT_PTR", LENGTH_UNKNOWN},
-            {27L, "VT_SAFEARRAY", LENGTH_UNKNOWN},
-            {28L, "VT_CARRAY", LENGTH_UNKNOWN},
-            {29L, "VT_USERDEFINED", LENGTH_UNKNOWN},
-            {30L, "VT_LPSTR", LENGTH_VARIABLE},
-            {31L, "VT_LPWSTR", LENGTH_UNKNOWN},
-            {64L, "VT_FILETIME", LENGTH_8},
-            {65L, "VT_BLOB", LENGTH_UNKNOWN},
-            {66L, "VT_STREAM", LENGTH_UNKNOWN},
-            {67L, "VT_STORAGE", LENGTH_UNKNOWN},
-            {68L, "VT_STREAMED_OBJECT", LENGTH_UNKNOWN},
-            {69L, "VT_STORED_OBJECT", LENGTH_UNKNOWN},
-            {70L, "VT_BLOB_OBJECT", LENGTH_UNKNOWN},
-            {71L, "VT_CF", LENGTH_UNKNOWN},
-            {72L, "VT_CLSID", LENGTH_UNKNOWN}
-    };
 
-    /* Initialize the number-to-name and number-to-length map: */
-    static {
-        Map<Long,String> number2Name = new HashMap<>(NUMBER_TO_NAME_LIST.length, 1.0F);
-        Map<Long,Integer> number2Len = new HashMap<>(NUMBER_TO_NAME_LIST.length, 1.0F);
 
-        for (Object[] nn : NUMBER_TO_NAME_LIST) {
-            number2Name.put((Long)nn[0], (String)nn[1]);
-            number2Len.put((Long)nn[0], (Integer)nn[2]);
-        }
-        numberToName = Collections.unmodifiableMap(number2Name);
-        numberToLength = Collections.unmodifiableMap(number2Len);
+    static
+    {
+        /* Initialize the number-to-name map: */
+        Map tm1 = new HashMap();
+        tm1.put(Long.valueOf(0), "VT_EMPTY");
+        tm1.put(Long.valueOf(1), "VT_NULL");
+        tm1.put(Long.valueOf(2), "VT_I2");
+        tm1.put(Long.valueOf(3), "VT_I4");
+        tm1.put(Long.valueOf(4), "VT_R4");
+        tm1.put(Long.valueOf(5), "VT_R8");
+        tm1.put(Long.valueOf(6), "VT_CY");
+        tm1.put(Long.valueOf(7), "VT_DATE");
+        tm1.put(Long.valueOf(8), "VT_BSTR");
+        tm1.put(Long.valueOf(9), "VT_DISPATCH");
+        tm1.put(Long.valueOf(10), "VT_ERROR");
+        tm1.put(Long.valueOf(11), "VT_BOOL");
+        tm1.put(Long.valueOf(12), "VT_VARIANT");
+        tm1.put(Long.valueOf(13), "VT_UNKNOWN");
+        tm1.put(Long.valueOf(14), "VT_DECIMAL");
+        tm1.put(Long.valueOf(16), "VT_I1");
+        tm1.put(Long.valueOf(17), "VT_UI1");
+        tm1.put(Long.valueOf(18), "VT_UI2");
+        tm1.put(Long.valueOf(19), "VT_UI4");
+        tm1.put(Long.valueOf(20), "VT_I8");
+        tm1.put(Long.valueOf(21), "VT_UI8");
+        tm1.put(Long.valueOf(22), "VT_INT");
+        tm1.put(Long.valueOf(23), "VT_UINT");
+        tm1.put(Long.valueOf(24), "VT_VOID");
+        tm1.put(Long.valueOf(25), "VT_HRESULT");
+        tm1.put(Long.valueOf(26), "VT_PTR");
+        tm1.put(Long.valueOf(27), "VT_SAFEARRAY");
+        tm1.put(Long.valueOf(28), "VT_CARRAY");
+        tm1.put(Long.valueOf(29), "VT_USERDEFINED");
+        tm1.put(Long.valueOf(30), "VT_LPSTR");
+        tm1.put(Long.valueOf(31), "VT_LPWSTR");
+        tm1.put(Long.valueOf(64), "VT_FILETIME");
+        tm1.put(Long.valueOf(65), "VT_BLOB");
+        tm1.put(Long.valueOf(66), "VT_STREAM");
+        tm1.put(Long.valueOf(67), "VT_STORAGE");
+        tm1.put(Long.valueOf(68), "VT_STREAMED_OBJECT");
+        tm1.put(Long.valueOf(69), "VT_STORED_OBJECT");
+        tm1.put(Long.valueOf(70), "VT_BLOB_OBJECT");
+        tm1.put(Long.valueOf(71), "VT_CF");
+        tm1.put(Long.valueOf(72), "VT_CLSID");
+        Map tm2 = new HashMap(tm1.size(), 1.0F);
+        tm2.putAll(tm1);
+        numberToName = Collections.unmodifiableMap(tm2);
+
+        /* Initialize the number-to-length map: */
+        tm1.clear();
+        tm1.put(Long.valueOf(0), LENGTH_0);
+        tm1.put(Long.valueOf(1), LENGTH_UNKNOWN);
+        tm1.put(Long.valueOf(2), LENGTH_2);
+        tm1.put(Long.valueOf(3), LENGTH_4);
+        tm1.put(Long.valueOf(4), LENGTH_4);
+        tm1.put(Long.valueOf(5), LENGTH_8);
+        tm1.put(Long.valueOf(6), LENGTH_UNKNOWN);
+        tm1.put(Long.valueOf(7), LENGTH_UNKNOWN);
+        tm1.put(Long.valueOf(8), LENGTH_UNKNOWN);
+        tm1.put(Long.valueOf(9), LENGTH_UNKNOWN);
+        tm1.put(Long.valueOf(10), LENGTH_UNKNOWN);
+        tm1.put(Long.valueOf(11), LENGTH_UNKNOWN);
+        tm1.put(Long.valueOf(12), LENGTH_UNKNOWN);
+        tm1.put(Long.valueOf(13), LENGTH_UNKNOWN);
+        tm1.put(Long.valueOf(14), LENGTH_UNKNOWN);
+        tm1.put(Long.valueOf(16), LENGTH_UNKNOWN);
+        tm1.put(Long.valueOf(17), LENGTH_UNKNOWN);
+        tm1.put(Long.valueOf(18), LENGTH_UNKNOWN);
+        tm1.put(Long.valueOf(19), LENGTH_UNKNOWN);
+        tm1.put(Long.valueOf(20), LENGTH_UNKNOWN);
+        tm1.put(Long.valueOf(21), LENGTH_UNKNOWN);
+        tm1.put(Long.valueOf(22), LENGTH_UNKNOWN);
+        tm1.put(Long.valueOf(23), LENGTH_UNKNOWN);
+        tm1.put(Long.valueOf(24), LENGTH_UNKNOWN);
+        tm1.put(Long.valueOf(25), LENGTH_UNKNOWN);
+        tm1.put(Long.valueOf(26), LENGTH_UNKNOWN);
+        tm1.put(Long.valueOf(27), LENGTH_UNKNOWN);
+        tm1.put(Long.valueOf(28), LENGTH_UNKNOWN);
+        tm1.put(Long.valueOf(29), LENGTH_UNKNOWN);
+        tm1.put(Long.valueOf(30), LENGTH_VARIABLE);
+        tm1.put(Long.valueOf(31), LENGTH_UNKNOWN);
+        tm1.put(Long.valueOf(64), LENGTH_8);
+        tm1.put(Long.valueOf(65), LENGTH_UNKNOWN);
+        tm1.put(Long.valueOf(66), LENGTH_UNKNOWN);
+        tm1.put(Long.valueOf(67), LENGTH_UNKNOWN);
+        tm1.put(Long.valueOf(68), LENGTH_UNKNOWN);
+        tm1.put(Long.valueOf(69), LENGTH_UNKNOWN);
+        tm1.put(Long.valueOf(70), LENGTH_UNKNOWN);
+        tm1.put(Long.valueOf(71), LENGTH_UNKNOWN);
+        tm1.put(Long.valueOf(72), LENGTH_UNKNOWN);
+        tm2 = new HashMap(tm1.size(), 1.0F);
+        tm2.putAll(tm1);
+        numberToLength = Collections.unmodifiableMap(tm2);
     }
 
+
+
     /**
-     * Returns the variant type name associated with a variant type
-     * number.
+     * <p>Returns the variant type name associated with a variant type
+     * number.</p>
      *
      * @param variantType The variant type number
      * @return The variant type name or the string "unknown variant type"
      */
-    public static String getVariantName(final long variantType) {
-        long vt = variantType;
-        String name = "";
-        if ((vt & VT_VECTOR) != 0) {
-            name = "Vector of ";
-            vt -= VT_VECTOR;
-        } else if ((vt & VT_ARRAY) != 0) {
-            name = "Array of ";
-            vt -= VT_ARRAY;
-        } else if ((vt & VT_BYREF) != 0) {
-            name = "ByRef of ";
-            vt -= VT_BYREF;
-        }
-        
-        name += numberToName.get(vt);
-        return !name.isEmpty() ? name : "unknown variant type";
+    public static String getVariantName(final long variantType)
+    {
+        final String name = (String) numberToName.get(Long.valueOf(variantType));
+        return name != null ? name : "unknown variant type";
     }
 
     /**
-     * Returns a variant type's length.
+     * <p>Returns a variant type's length.</p>
      *
      * @param variantType The variant type number
      * @return The length of the variant type's data in bytes. If the length is
@@ -432,9 +507,13 @@ public class Variant
      * know the length, -2 is returned. The latter usually indicates an
      * unsupported variant type.
      */
-    public static int getVariantLength(final long variantType) {
-        final Integer length = numberToLength.get(variantType);
-        return (length != null) ? length : LENGTH_UNKNOWN;
+    public static int getVariantLength(final long variantType)
+    {
+        final Long key = Long.valueOf((int) variantType);
+        final Long length = (Long) numberToLength.get(key);
+        if (length == null)
+            return -2;
+        return length.intValue();
     }
 
 }

@@ -23,6 +23,9 @@ package kr.dogfoot.hwplib.org.apache.poi.hpsf;
  * 
  * <p>The constructors of this class are analogous to those of its superclass
  * and are documented there.</p>
+ *
+ * @author Rainer Klute <a
+ * href="mailto:klute@rainer-klute.de">&lt;klute@rainer-klute.de&gt;</a>
  */
 public class NoPropertySetStreamException extends HPSFException
 {

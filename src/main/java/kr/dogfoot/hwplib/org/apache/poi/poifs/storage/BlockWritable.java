@@ -1,3 +1,4 @@
+
 /* ====================================================================
    Licensed to the Apache Software Foundation (ASF) under one or more
    contributor license agreements.  See the NOTICE file distributed with
@@ -14,7 +15,7 @@
    See the License for the specific language governing permissions and
    limitations under the License.
 ==================================================================== */
-
+        
 
 package kr.dogfoot.hwplib.org.apache.poi.poifs.storage;
 
@@ -27,17 +28,20 @@ import java.io.OutputStream;
  * @author Marc Johnson (mjohnson at apache dot org)
  */
 
-public interface BlockWritable {
+public interface BlockWritable
+{
 
     /**
      * Write the storage to an OutputStream
      *
      * @param stream the OutputStream to which the stored data should
      *               be written
-     * @throws IOException on problems writing to the specified
-     *                     stream
+     *
+     * @exception IOException on problems writing to the specified
+     *            stream
      */
 
-    void writeBlocks(final OutputStream stream) throws IOException;
+    public void writeBlocks(final OutputStream stream)
+        throws IOException;
 }   // end public interface BlockWritable
 

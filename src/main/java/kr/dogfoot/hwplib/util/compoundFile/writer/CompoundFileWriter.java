@@ -2,7 +2,6 @@ package kr.dogfoot.hwplib.util.compoundFile.writer;
 
 import kr.dogfoot.hwplib.object.fileheader.FileVersion;
 import kr.dogfoot.hwplib.org.apache.poi.poifs.filesystem.DirectoryEntry;
-import kr.dogfoot.hwplib.org.apache.poi.poifs.filesystem.DocumentOutputStream;
 import kr.dogfoot.hwplib.org.apache.poi.poifs.filesystem.POIFSFileSystem;
 
 import java.io.FileOutputStream;
@@ -66,7 +65,7 @@ public class CompoundFileWriter {
      * @throws IOException
      */
     public void close() throws IOException {
-        fs.close();
+        fs = null;
     }
 
     /**

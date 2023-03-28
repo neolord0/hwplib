@@ -23,18 +23,24 @@ public class ParaShapeAdder {
             return sourceId;
         }
 
-        Integer targetID = idMatchingMap.get(sourceId);
-        if (targetID != null) {
-            return targetID;
-        }
+        if (idMatchingMap.containsKey(sourceId)) {
+            return idMatchingMap.get(sourceId);
+        } else {
+            // id == index
+            ParaShape source;
+            try {
+                source = docInfoAdder.getSourceHWPFile().getDocInfo().getParaShapeList().get(sourceId);
+            } catch (Exception e) {
+                return sourceId;
+            }
 
-        ParaShape source = docInfoAdder.getSourceHWPFile().getDocInfo().getParaShapeList().get(sourceId);
-        int id = findFromTarget(source);
-        if (id == -1) {
-            id = addAndCopy(source);
+            int id = findFromTarget(source);
+            if (id == -1) {
+                id = addAndCopy(source);
+            }
+            idMatchingMap.put(sourceId, id);
+            return id;
         }
-        idMatchingMap.put(sourceId, targetID);
-        return id;
     }
 
     private int findFromTarget(ParaShape source) {

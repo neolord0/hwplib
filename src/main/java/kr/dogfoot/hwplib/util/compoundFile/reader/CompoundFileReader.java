@@ -3,10 +3,7 @@ package kr.dogfoot.hwplib.util.compoundFile.reader;
 import kr.dogfoot.hwplib.object.fileheader.FileVersion;
 import kr.dogfoot.hwplib.org.apache.poi.poifs.filesystem.*;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.io.InputStream;
+import java.io.*;
 import java.util.Set;
 
 /**
@@ -31,7 +28,7 @@ public class CompoundFileReader {
      * @throws IOException 파일 에러
      */
     public CompoundFileReader(File file) throws IOException {
-        fs = new POIFSFileSystem(file);
+        fs = new POIFSFileSystem(new FileInputStream(file));
         currentStorage = fs.getRoot();
     }
 
@@ -142,6 +139,6 @@ public class CompoundFileReader {
      * @throws IOException
      */
     public void close() throws IOException {
-        fs.close();
+        fs = null;
     }
 }

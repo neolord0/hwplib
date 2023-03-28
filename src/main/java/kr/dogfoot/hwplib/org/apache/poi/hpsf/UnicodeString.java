@@ -16,90 +16,70 @@
 ==================================================================== */
 package kr.dogfoot.hwplib.org.apache.poi.hpsf;
 
-import java.io.IOException;
-import java.io.OutputStream;
-import java.io.UnsupportedEncodingException;
-
-import kr.dogfoot.hwplib.org.apache.poi.util.CodePageUtil;
-import kr.dogfoot.hwplib.org.apache.poi.util.IOUtils;
-import kr.dogfoot.hwplib.org.apache.poi.util.Internal;
-import kr.dogfoot.hwplib.org.apache.poi.util.LittleEndian;
-import kr.dogfoot.hwplib.org.apache.poi.util.LittleEndianByteArrayInputStream;
-import kr.dogfoot.hwplib.org.apache.poi.util.LittleEndianConsts;
-import kr.dogfoot.hwplib.org.apache.poi.util.POILogFactory;
-import kr.dogfoot.hwplib.org.apache.poi.util.POILogger;
-import kr.dogfoot.hwplib.org.apache.poi.util.StringUtil;
+import kr.dogfoot.hwplib.org.apache.poi.util.*;
 
 @Internal
-public class UnicodeString {
-    private static final POILogger LOG = POILogFactory.getLogger( UnicodeString.class );
-    //arbitrarily selected; may need to increase
-    private static final int MAX_RECORD_LENGTH = 100_000;
+class UnicodeString
+{
+
+    private final static POILogger logger = POILogFactory
+            .getLogger( UnicodeString.class );
 
     private byte[] _value;
 
-    public void read(LittleEndianByteArrayInputStream lei) {
-        final int length = lei.readInt();
-        final int unicodeBytes = length*2;
-        _value = IOUtils.safelyAllocate(unicodeBytes, MAX_RECORD_LENGTH);
-        
-        // If Length is zero, this field MUST be zero bytes in length. If Length is
-        // nonzero, this field MUST be a null-terminated array of 16-bit Unicode characters, followed by
-        // zero padding to a multiple of 4 bytes. The string represented by this field SHOULD NOT
-        // contain embedded or additional trailing null characters.
-        
-        if (length == 0) {
+    UnicodeString( byte[] data, int offset )
+    {
+        int length = LittleEndian.getInt( data, offset );
+
+        if ( length == 0 )
+        {
+            _value = new byte[0];
             return;
         }
 
-        final int offset = lei.getReadIndex();
-        
-        lei.readFully(_value);
+        _value = LittleEndian.getByteArray( data, offset
+                + LittleEndian.INT_SIZE, length * 2 );
 
-        if (_value[unicodeBytes-2] != 0 || _value[unicodeBytes-1] != 0) {
-            String msg = "UnicodeString started at offset #" + offset + " is not NULL-terminated";
-            throw new IllegalPropertySetDataException(msg);
-        }
-        
-        TypedPropertyValue.skipPadding(lei);
+        if ( _value[length * 2 - 1] != 0 || _value[length * 2 - 2] != 0 )
+            throw new IllegalPropertySetDataException(
+                    "UnicodeString started at offset #" + offset
+                            + " is not NULL-terminated" );
     }
-    
-    public byte[] getValue() {
+
+    int getSize()
+    {
+        return LittleEndian.INT_SIZE + _value.length;
+    }
+
+    byte[] getValue()
+    {
         return _value;
     }
 
-    public String toJavaString() {
-        if ( _value.length == 0 ) {
+    String toJavaString()
+    {
+        if ( _value.length == 0 )
             return null;
-        }
 
-        String result = StringUtil.getFromUnicodeLE( _value, 0, _value.length >> 1 );
+        String result = StringUtil.getFromUnicodeLE( _value, 0,
+                _value.length >> 1 );
 
         final int terminator = result.indexOf( '\0' );
-        if ( terminator == -1 ) {
-            String msg =
-                "String terminator (\\0) for UnicodeString property value not found. " +
-                "Continue without trimming and hope for the best.";
-            LOG.log(POILogger.WARN, msg);
+        if ( terminator == -1 )
+        {
+            logger.log(
+                    POILogger.WARN,
+                    "String terminator (\\0) for UnicodeString property value not found."
+                            + "Continue without trimming and hope for the best." );
             return result;
         }
-        
-        if ( terminator != result.length() - 1 ) {
-            String msg =
-                "String terminator (\\0) for UnicodeString property value occured before the end of string. " +
-                "Trimming and hope for the best.";
-            LOG.log(POILogger.WARN, msg);
+        if ( terminator != result.length() - 1 )
+        {
+            logger.log(
+                    POILogger.WARN,
+                    "String terminator (\\0) for UnicodeString property value occured before the end of string. "
+                            + "Trimming and hope for the best." );
         }
         return result.substring( 0, terminator );
-    }
-
-    public void setJavaValue( String string ) throws UnsupportedEncodingException {
-        _value = CodePageUtil.getBytesInCodePage(string + "\0", CodePageUtil.CP_UNICODE);
-    }
-
-    public int write( OutputStream out ) throws IOException {
-        LittleEndian.putUInt( _value.length / 2, out );
-        out.write( _value );
-        return LittleEndianConsts.INT_SIZE + _value.length;
     }
 }

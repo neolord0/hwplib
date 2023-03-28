@@ -25,18 +25,24 @@ public class TabDefAdder {
             return sourceId;
         }
 
-        Integer targetID = idMatchingMap.get(sourceId);
-        if (targetID != null) {
-            return targetID;
-        }
+        if (idMatchingMap.containsKey(sourceId)) {
+            return idMatchingMap.get(sourceId);
+        } else {
+            // id == index
+            TabDef source;
+            try {
+                source = docInfoAdder.getSourceHWPFile().getDocInfo().getTabDefList().get(sourceId);
+            } catch (Exception e) {
+                return sourceId;
+            }
 
-        TabDef source = docInfoAdder.getSourceHWPFile().getDocInfo().getTabDefList().get(sourceId);
-        int id = findFromTarget(source);
-        if (id == -1) {
-            id = addAndCopy(source);
+            int id = findFromTarget(source);
+            if (id == -1) {
+                id = addAndCopy(source);
+            }
+            idMatchingMap.put(sourceId, id);
+            return id;
         }
-        idMatchingMap.put(sourceId, id);
-        return id;
     }
 
     private int findFromTarget(TabDef source) {

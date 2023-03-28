@@ -24,18 +24,24 @@ public class StyleAdder {
             return sourceId;
         }
 
-        Integer targetID = idMatchingMap.get(sourceId);
-        if (targetID != null) {
-            return targetID;
-        }
+        if (idMatchingMap.containsKey(sourceId)) {
+            return idMatchingMap.get(sourceId);
+        } else {
+            // id == index
+            Style source;
+            try {
+                source = docInfoAdder.getSourceHWPFile().getDocInfo().getStyleList().get(sourceId);
+            } catch (Exception e) {
+                return sourceId;
+            }
 
-        Style source = docInfoAdder.getSourceHWPFile().getDocInfo().getStyleList().get(sourceId);
-        int id = findFromTarget(source, sourceId);
-        if (id == -1) {
-            id = addAndCopy(source, sourceId);
+            int id = findFromTarget(source, sourceId);
+            if (id == -1) {
+                id = addAndCopy(source, sourceId);
+            }
+            idMatchingMap.put(sourceId, id);
+            return id;
         }
-        idMatchingMap.put(sourceId, id);
-        return id;
     }
 
     private int findFromTarget(Style source, int sourceId) {

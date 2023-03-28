@@ -18,181 +18,180 @@
  */
 package kr.dogfoot.hwplib.org.apache.poi.hpsf;
 
-import java.math.BigInteger;
-
 import kr.dogfoot.hwplib.org.apache.poi.util.Internal;
-import kr.dogfoot.hwplib.org.apache.poi.util.LittleEndianByteArrayInputStream;
-import kr.dogfoot.hwplib.org.apache.poi.util.LittleEndianConsts;
+import kr.dogfoot.hwplib.org.apache.poi.util.LittleEndian;
 import kr.dogfoot.hwplib.org.apache.poi.util.POILogFactory;
 import kr.dogfoot.hwplib.org.apache.poi.util.POILogger;
 
 @Internal
-public class TypedPropertyValue {
-    private static final POILogger LOG = POILogFactory.getLogger( TypedPropertyValue.class );
+class TypedPropertyValue
+{
+    private static final POILogger logger = POILogFactory
+            .getLogger( TypedPropertyValue.class );
 
     private int _type;
+
     private Object _value;
 
-    public TypedPropertyValue( int type, Object value ) {
+    TypedPropertyValue()
+    {
+    }
+
+    TypedPropertyValue( byte[] data, int startOffset )
+    {
+        read( data, startOffset );
+    }
+
+    TypedPropertyValue( int type, Object value )
+    {
         _type = type;
         _value = value;
     }
 
-    public Object getValue() {
+    Object getValue()
+    {
         return _value;
     }
 
-    public void read( LittleEndianByteArrayInputStream lei ) {
-        _type = lei.readShort();
-        short padding = lei.readShort();
-        if ( padding != 0 ) {
-            LOG.log( POILogger.WARN, "TypedPropertyValue padding at offset "
-                    + lei.getReadIndex() + " MUST be 0, but it's value is " + padding );
+    int read( byte[] data, int startOffset )
+    {
+        int offset = startOffset;
+
+        _type = LittleEndian.getShort( data, offset );
+        offset += LittleEndian.SHORT_SIZE;
+
+        short padding = LittleEndian.getShort( data, offset );
+        offset += LittleEndian.SHORT_SIZE;
+        if ( padding != 0 )
+        {
+            logger.log( POILogger.WARN, "TypedPropertyValue padding at offset "
+                    + offset + " MUST be 0, but it's value is " + padding );
         }
-        readValue( lei );
+
+        offset += readValue( data, offset );
+
+        return offset - startOffset;
     }
 
-    public void readValue( LittleEndianByteArrayInputStream lei ) {
-        switch ( _type ) {
+    int readValue( byte[] data, int offset )
+    {
+        switch ( _type )
+        {
         case Variant.VT_EMPTY:
         case Variant.VT_NULL:
             _value = null;
-            break;
-
-        case Variant.VT_I1:
-            _value = lei.readByte();
-            break;
-
-        case Variant.VT_UI1:
-            _value =  lei.readUByte();
-            break;
+            return 0;
 
         case Variant.VT_I2:
-            _value = lei.readShort();
-            break;
+            _value = Short.valueOf( LittleEndian.getShort( data, offset ) );
+            return 4;
 
-        case Variant.VT_UI2:
-            _value = lei.readUShort();
-            break;
-            
-        case Variant.VT_INT:
         case Variant.VT_I4:
-            _value = lei.readInt();
-            break;
+            _value = Integer.valueOf( LittleEndian.getInt( data, offset ) );
+            return 4;
 
-        case Variant.VT_UINT:
-        case Variant.VT_UI4:
-        case Variant.VT_ERROR:
-            _value = lei.readUInt();
-            break;
-
-        case Variant.VT_I8:
-            _value = lei.readLong();
-            break;
-
-        case Variant.VT_UI8: {
-            byte[] biBytesLE = new byte[LittleEndianConsts.LONG_SIZE];
-            lei.readFully(biBytesLE);
-
-            // first byte needs to be 0 for unsigned BigInteger
-            byte[] biBytesBE = new byte[9];
-            int i=biBytesLE.length;
-            for (byte b : biBytesLE) {
-                if (i<=8) {
-                    biBytesBE[i] = b;
-                }
-                i--;
-            }
-            _value = new BigInteger(biBytesBE);
-            break;
-        }
-
-            
         case Variant.VT_R4:
-            _value = Float.intBitsToFloat(lei.readInt());
-            break;
-            
+            _value = Short.valueOf( LittleEndian.getShort( data, offset ) );
+            return 4;
+
         case Variant.VT_R8:
-            _value = lei.readDouble();
-            break;
+            _value = Double.valueOf( LittleEndian.getDouble( data, offset ) );
+            return 8;
 
         case Variant.VT_CY:
-            Currency cur = new Currency();
-            cur.read(lei);
-            _value = cur;
-            break;
-            
+            _value = new Currency( data, offset );
+            return Currency.SIZE;
 
         case Variant.VT_DATE:
-            Date date = new Date();
-            date.read(lei);
-            _value = date;
-            break;
+            _value = new Date( data, offset );
+            return Date.SIZE;
 
         case Variant.VT_BSTR:
-        case Variant.VT_LPSTR:
-            CodePageString cps = new CodePageString();
-            cps.read(lei);
-            _value = cps;
-            break;
+            _value = new CodePageString( data, offset );
+            return ( (CodePageString) _value ).getSize();
+
+        case Variant.VT_ERROR:
+            _value = Long.valueOf( LittleEndian.getUInt( data, offset ) );
+            return 4;
 
         case Variant.VT_BOOL:
-            VariantBool vb = new VariantBool();
-            vb.read(lei);
-            _value = vb;
-            break;
+            _value = new VariantBool( data, offset );
+            return VariantBool.SIZE;
 
         case Variant.VT_DECIMAL:
-            Decimal dec = new Decimal();
-            dec.read(lei);
-            _value = dec;
-            break;
+            _value = new Decimal( data, offset );
+            return Decimal.SIZE;
+
+        case Variant.VT_I1:
+            _value = Byte.valueOf( data[offset] );
+            return 1;
+
+        case Variant.VT_UI1:
+            _value = Short.valueOf( LittleEndian.getUByte( data, offset ) );
+            return 2;
+
+        case Variant.VT_UI2:
+            _value = Integer.valueOf( LittleEndian.getUShort( data, offset ) );
+            return 4;
+
+        case Variant.VT_UI4:
+            _value = Long.valueOf( LittleEndian.getUInt( data, offset ) );
+            return 4;
+
+        case Variant.VT_I8:
+            _value = Long.valueOf( LittleEndian.getLong( data, offset ) );
+            return 8;
+
+        case Variant.VT_UI8:
+            _value = LittleEndian.getByteArray( data, offset, 8 );
+            return 8;
+
+        case Variant.VT_INT:
+            _value = Integer.valueOf( LittleEndian.getInt( data, offset ) );
+            return 4;
+
+        case Variant.VT_UINT:
+            _value = Long.valueOf( LittleEndian.getUInt( data, offset ) );
+            return 4;
+
+        case Variant.VT_LPSTR:
+            _value = new CodePageString( data, offset );
+            return ( (CodePageString) _value ).getSize();
 
         case Variant.VT_LPWSTR:
-            UnicodeString us = new UnicodeString();
-            us.read(lei);
-            _value = us;
-            break;
+            _value = new UnicodeString( data, offset );
+            return ( (UnicodeString) _value ).getSize();
 
         case Variant.VT_FILETIME:
-            Filetime ft = new Filetime();
-            ft.read(lei);
-            _value = ft;
-            break;
+            _value = new Filetime( data, offset );
+            return Filetime.SIZE;
 
         case Variant.VT_BLOB:
-        case Variant.VT_BLOB_OBJECT:
-            Blob blob = new Blob();
-            blob.read(lei);
-            _value = blob;
-            break;
+            _value = new Blob( data, offset );
+            return ( (Blob) _value ).getSize();
 
         case Variant.VT_STREAM:
         case Variant.VT_STORAGE:
         case Variant.VT_STREAMED_OBJECT:
         case Variant.VT_STORED_OBJECT:
-            IndirectPropertyName ipn = new IndirectPropertyName();
-            ipn.read(lei);
-            _value = ipn;
-            break;
+            _value = new IndirectPropertyName( data, offset );
+            return ( (IndirectPropertyName) _value ).getSize();
+
+        case Variant.VT_BLOB_OBJECT:
+            _value = new Blob( data, offset );
+            return ( (Blob) _value ).getSize();
 
         case Variant.VT_CF:
-            ClipboardData cd = new ClipboardData();
-            cd.read(lei);
-            _value = cd;
-            break;
+            _value = new ClipboardData( data, offset );
+            return ( (ClipboardData) _value ).getSize();
 
         case Variant.VT_CLSID:
-            GUID guid = new GUID();
-            guid.read(lei);
-            _value = lei;
-            break;
+            _value = new GUID( data, offset );
+            return GUID.SIZE;
 
         case Variant.VT_VERSIONED_STREAM:
-            VersionedStream vs = new VersionedStream();
-            vs.read(lei);
-            _value = vs;
-            break;
+            _value = new VersionedStream( data, offset );
+            return ( (VersionedStream) _value ).getSize();
 
         case Variant.VT_VECTOR | Variant.VT_I2:
         case Variant.VT_VECTOR | Variant.VT_I4:
@@ -215,10 +214,8 @@ public class TypedPropertyValue {
         case Variant.VT_VECTOR | Variant.VT_FILETIME:
         case Variant.VT_VECTOR | Variant.VT_CF:
         case Variant.VT_VECTOR | Variant.VT_CLSID:
-            Vector vec = new Vector( (short) ( _type & 0x0FFF ) );
-            vec.read(lei);
-            _value = vec;
-            break;
+            _value = new Vector( (short) ( _type & 0x0FFF ) );
+            return ( (Vector) _value ).read( data, offset );
 
         case Variant.VT_ARRAY | Variant.VT_I2:
         case Variant.VT_ARRAY | Variant.VT_I4:
@@ -237,27 +234,20 @@ public class TypedPropertyValue {
         case Variant.VT_ARRAY | Variant.VT_UI4:
         case Variant.VT_ARRAY | Variant.VT_INT:
         case Variant.VT_ARRAY | Variant.VT_UINT:
-            Array arr = new Array();
-            arr.read(lei);
-            _value = arr;
-            break;
+            _value = new Array();
+            return ( (Array) _value ).read( data, offset );
 
         default:
-            String msg = "Unknown (possibly, incorrect) TypedPropertyValue type: " + _type;
-            throw new UnsupportedOperationException(msg);
+            throw new UnsupportedOperationException(
+                    "Unknown (possibly, incorrect) TypedPropertyValue type: "
+                            + _type );
         }
     }
 
-    static void skipPadding( LittleEndianByteArrayInputStream lei ) {
-        final int offset = lei.getReadIndex();
-        int skipBytes = (4 - (offset & 3)) & 3;
-        for (int i=0; i<skipBytes; i++) {
-            lei.mark(1);
-            int b = lei.read();
-            if (b == -1 || b != 0) {
-                lei.reset();
-                break;
-            }
-        }
+    int readValuePadded( byte[] data, int offset )
+    {
+        int nonPadded = readValue( data, offset );
+        return ( nonPadded & 0x03 ) == 0 ? nonPadded : nonPadded
+                + ( 4 - ( nonPadded & 0x03 ) );
     }
 }
