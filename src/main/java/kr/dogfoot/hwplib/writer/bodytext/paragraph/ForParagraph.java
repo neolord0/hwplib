@@ -28,7 +28,7 @@ public class ForParagraph {
             ForParaText.write(p, sw);
         }
         ForParaCharShape.write(p.getCharShape(), sw);
-        ForParaLineSeq.write(p.getLineSeg(), sw);
+        ForParaLineSeg.write(p.getLineSeg(), sw);
         ForParaRangeTag.write(p.getRangeTag(), sw);
         controls(p, sw);
 

@@ -12,7 +12,7 @@ import java.io.IOException;
  *
  * @author neolord
  */
-public class ForParaLineSeq {
+public class ForParaLineSeg {
     /**
      * 문단의 레이아웃 레코드를 읽는다.
      *
@@ -22,7 +22,6 @@ public class ForParaLineSeq {
      */
     public static void read(Paragraph p, StreamReader sr) throws IOException {
         p.createLineSeg();
-
         ParaLineSeg pls = p.getLineSeg();
         int count = p.getHeader().getLineAlignCount();
         for (int index = 0; index < count; index++) {

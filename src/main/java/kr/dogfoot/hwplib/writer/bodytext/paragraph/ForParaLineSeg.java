@@ -12,7 +12,7 @@ import java.io.IOException;
  *
  * @author neolord
  */
-public class ForParaLineSeq {
+public class ForParaLineSeg {
     /**
      * 문단의 레이아웃 레코드를 쓴다.
      *

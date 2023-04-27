@@ -94,7 +94,6 @@ public class ForParagraph {
         if (sr.isEndOfStream()) {
             return;
         }
-
         if (sr.isImmediatelyAfterReadingHeader() == false) {
             sr.readRecordHeader();
         }
@@ -135,7 +134,7 @@ public class ForParagraph {
             sr.readRecordHeader();
         }
         if (sr.getCurrentRecordHeader().getTagID() == HWPTag.PARA_LINE_SEG) {
-            ForParaLineSeq.read(paragraph, sr);
+            ForParaLineSeg.read(paragraph, sr);
         }
     }
 
