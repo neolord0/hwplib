@@ -23,11 +23,15 @@ public class ForParaCharShape {
         paragraph.createCharShape();
 
         int count = paragraph.getHeader().getCharShapeCount();
-        for (int index = 0; index < count; index++) {
-            long position = sr.readUInt4();
-            long charShapeId = sr.readUInt4();
+        if (count != 0) {
+            for (int index = 0; index < count; index++) {
+                long position = sr.readUInt4();
+                long charShapeId = sr.readUInt4();
 
-            paragraph.getCharShape().addParaCharShape(position, charShapeId);
+                paragraph.getCharShape().addParaCharShape(position, charShapeId);
+            }
+        } else {
+            sr.nextRecord();
         }
     }
 }

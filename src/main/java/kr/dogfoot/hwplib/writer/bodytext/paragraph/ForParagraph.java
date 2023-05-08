@@ -22,34 +22,15 @@ public class ForParagraph {
      */
     public static void write(Paragraph p, StreamWriter sw) throws Exception {
         ForParaHeader.write(p.getHeader(), sw);
-
         sw.upRecordLevel();
-        if (emptyText(p) == false) {
-            ForParaText.write(p, sw);
-        }
+
+        ForParaText.write(p, sw);
         ForParaCharShape.write(p.getCharShape(), sw);
         ForParaLineSeg.write(p.getLineSeg(), sw);
         ForParaRangeTag.write(p.getRangeTag(), sw);
         controls(p, sw);
 
         sw.downRecordLevel();
-    }
-
-    private static boolean emptyText(Paragraph p) {
-        if (p.getHeader().getCharacterCount() <= 1) {
-            ParaText paraText = p.getText();
-            if (paraText == null) {
-                return true;
-            }
-
-            if (paraText.getCharList().size() <= 1) {
-                HWPChar hwpChar = paraText.getCharList().get(0);
-                if (hwpChar.getCode() == 0xd) {
-                    return true;
-                }
-            }
-        }
-        return false;
     }
 
     /**

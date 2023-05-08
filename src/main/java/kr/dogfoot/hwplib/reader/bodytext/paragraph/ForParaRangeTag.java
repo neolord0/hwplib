@@ -18,19 +18,23 @@ public class ForParaRangeTag {
      *
      * @param p    문단 객체
      * @param sr   스트림 리더
-     * @param size 레코드 크기
      * @throws Exception
      */
-    public static void read(Paragraph p, StreamReader sr, long size)
+    public static void read(Paragraph p, StreamReader sr)
             throws Exception {
         p.createRangeTag();
-        ParaRangeTag prt = p.getRangeTag();
-        long count = size / 12;
-        for (long index = 0; index < count; index++) {
-            RangeTagItem rti = prt.addNewRangeTagItem();
-            rti.setRangeStart(sr.readUInt4());
-            rti.setRangeEnd(sr.readUInt4());
-            tag(rti, sr);
+
+        if (sr.getCurrentRecordHeader().getSize() != 0) {
+            ParaRangeTag prt = p.getRangeTag();
+            long count = sr.getCurrentRecordHeader().getSize() / 12;
+            for (long index = 0; index < count; index++) {
+                RangeTagItem rti = prt.addNewRangeTagItem();
+                rti.setRangeStart(sr.readUInt4());
+                rti.setRangeEnd(sr.readUInt4());
+                tag(rti, sr);
+            }
+        } else {
+            sr.nextRecord();
         }
     }
 

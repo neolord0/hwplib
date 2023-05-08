@@ -303,7 +303,11 @@ public abstract class StreamReader {
      * @return 레코드 헤더를 읽은 직후 인지 여부
      */
     public boolean isImmediatelyAfterReadingHeader() {
-        return (header.getSize() != 0 && readAfterHeader == 0);
+        return (readAfterHeader == 0);
+    }
+
+    public void nextRecord() {
+        readAfterHeader = -1;
     }
 
     /**

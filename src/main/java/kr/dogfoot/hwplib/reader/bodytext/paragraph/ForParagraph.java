@@ -9,6 +9,7 @@ import kr.dogfoot.hwplib.reader.bodytext.paragraph.control.form.ForFormControl;
 import kr.dogfoot.hwplib.reader.bodytext.paragraph.control.gso.ForGsoControl;
 import kr.dogfoot.hwplib.util.compoundFile.reader.StreamReader;
 
+import java.awt.*;
 import java.io.IOException;
 
 /**
@@ -94,6 +95,7 @@ public class ForParagraph {
         if (sr.isEndOfStream()) {
             return;
         }
+
         if (sr.isImmediatelyAfterReadingHeader() == false) {
             sr.readRecordHeader();
         }
@@ -152,7 +154,7 @@ public class ForParagraph {
             sr.readRecordHeader();
         }
         if (sr.getCurrentRecordHeader().getTagID() == HWPTag.PARA_RANGE_TAG) {
-            ForParaRangeTag.read(paragraph, sr, sr.getCurrentRecordHeader().getSize());
+            ForParaRangeTag.read(paragraph, sr);
         }
     }
 

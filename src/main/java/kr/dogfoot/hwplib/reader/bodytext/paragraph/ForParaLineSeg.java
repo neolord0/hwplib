@@ -22,10 +22,14 @@ public class ForParaLineSeg {
      */
     public static void read(Paragraph p, StreamReader sr) throws IOException {
         p.createLineSeg();
-        ParaLineSeg pls = p.getLineSeg();
         int count = p.getHeader().getLineAlignCount();
-        for (int index = 0; index < count; index++) {
-            paraLineSeqItem(pls.addNewLineSegItem(), sr);
+        if (count != 0) {
+            ParaLineSeg pls = p.getLineSeg();
+            for (int index = 0; index < count; index++) {
+                paraLineSeqItem(pls.addNewLineSegItem(), sr);
+            }
+        } else {
+            sr.nextRecord();
         }
     }
 

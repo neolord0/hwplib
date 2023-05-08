@@ -22,7 +22,7 @@ public class ForParaText {
      * @throws IOException
      */
     public static void write(Paragraph p, StreamWriter sw) throws IOException {
-        if (p.getText() == null) {
+        if (emptyText(p)) {
             return;
         }
 
@@ -31,6 +31,23 @@ public class ForParaText {
         for (HWPChar hc : p.getText().getCharList()) {
             hwpChar(hc, sw);
         }
+    }
+
+    private static boolean emptyText(Paragraph p) {
+        if (p.getHeader().getCharacterCount() <= 1) {
+            ParaText paraText = p.getText();
+            if (paraText == null) {
+                return true;
+            }
+
+            if (paraText.getCharList().size() <= 1) {
+                HWPChar hwpChar = paraText.getCharList().get(0);
+                if (hwpChar.getCode() == 0xd) {
+                    return true;
+                }
+            }
+        }
+        return false;
     }
 
     /**
