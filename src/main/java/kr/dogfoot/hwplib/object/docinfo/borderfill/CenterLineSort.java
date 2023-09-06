@@ -1,31 +1,22 @@
 package kr.dogfoot.hwplib.object.docinfo.borderfill;
 
-/**
- * Slash 대각선 모양
- *
- * @author neolord
- */
-public enum SlashDiagonalShape {
+public enum CenterLineSort {
     /**
-     * none
+     * 선없음
      */
     None((byte) 0),
     /**
-     * slash (RightTop --> leftBottom) "/"
+     * 수평선
      */
-    Slash((byte) 2),
+    Horizontal((byte) 1),
     /**
-     * RightTop --> Bottom Edge
+     * 수직선
      */
-    RightTopToBottomEdge((byte) 3),
+    Vertical((byte) 2),
     /**
-     * RightTop --> Left Edge
+     * 교차
      */
-    RightTopToLeftEdge((byte) 6),
-    /**
-     * RightTop --> Bottom & Left Edge
-     */
-    RightTopToBottomLeftEdge((byte) 7);
+    Cross((byte) 3);
 
     /**
      * 파일에 저장되는 정수값
@@ -37,7 +28,7 @@ public enum SlashDiagonalShape {
      *
      * @param value 파일에 저장되는 정수값
      */
-    SlashDiagonalShape(byte value) {
+    CenterLineSort(byte value) {
         this.value = value;
     }
 
@@ -56,10 +47,10 @@ public enum SlashDiagonalShape {
      * @param value 파일에 저장되는 정수값
      * @return enum 값
      */
-    public static SlashDiagonalShape valueOf(byte value) {
-        for (SlashDiagonalShape sds : values()) {
-            if (sds.value == value) {
-                return sds;
+    public static CenterLineSort valueOf(byte value) {
+        for (CenterLineSort bt : values()) {
+            if (bt.value == value) {
+                return bt;
             }
         }
         return None;

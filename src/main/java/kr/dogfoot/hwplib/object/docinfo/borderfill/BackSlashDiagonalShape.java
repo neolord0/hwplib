@@ -11,21 +11,21 @@ public enum BackSlashDiagonalShape {
      */
     None((byte) 0),
     /**
-     * back slash
+     * back slash(leftTop --> rightBottom) "\"
      */
     BackSlash((byte) 2),
     /**
-     * RightTop --> Bottom Edge
+     * LeftTop --> Bottom Edge
      */
-    RightTopToBottomEdge((byte) 3),
+    LeftTopToBottomEdge((byte) 3),
     /**
-     * RightTop --> Left Edge
+     * LeftTop --> Right Edge
      */
-    RightTopToLeftEdge((byte) 6),
+    LeftTopToRightEdg((byte) 6),
     /**
-     * RightTop --> Bottom & Left Edge
+     * LeftTop --> Bottom & Right Edge
      */
-    RightTopToBottomLeftEdge((byte) 7);
+    LeftTopToBottomRightEdge((byte) 7);
 
     /**
      * 파일에 저장되는 정수값

@@ -109,6 +109,7 @@ public class BorderFillProperty {
         value = BitFlag.set(value, 5, 7, diagonaShape.getValue());
     }
 
+
     /**
      * Slash 대각선이 꺽은선인지 아닌지 여부를 반환한다. (8~9 BitFlag)
      *
@@ -198,6 +199,14 @@ public class BorderFillProperty {
      */
     public void setHasCenterLine(boolean hasCenterLine) {
         value = BitFlag.set(value, 13, hasCenterLine);
+    }
+
+    public CenterLineSort getCenterLineSort() {
+        return CenterLineSort.valueOf((byte) BitFlag.get(value, 8, 9));
+    }
+
+    public void setCenterLineSort(CenterLineSort centerLineSort) {
+        value = BitFlag.set(value, 8, 9, centerLineSort.getValue());
     }
 
     public void copy(BorderFillProperty from) {

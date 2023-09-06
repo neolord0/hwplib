@@ -88,10 +88,6 @@ public class HWPFile {
         this.summaryInformation = summaryInformation;
     }
 
-    public void createSummaryInformation() {
-//        summaryInformation = new SummaryInformation();
-    }
-
     public HWPFile clone(boolean deepCopyImage) {
         HWPFile cloned = new HWPFile();
         cloned.copy(this, deepCopyImage);
