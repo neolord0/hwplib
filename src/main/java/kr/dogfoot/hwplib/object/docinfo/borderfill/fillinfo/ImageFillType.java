@@ -67,9 +67,9 @@ public enum ImageFillType {
      */
     RightBottom((byte) 14),
     /**
-     * NONE
+     * 원래 크기에 비래하여
      */
-    None((byte) 15);
+    Zoom((byte) 15);
 
     /**
      * 파일에 저장되는 정수값
@@ -106,6 +106,6 @@ public enum ImageFillType {
                 return ift;
             }
         }
-        return None;
+        return Center;
     }
 }
