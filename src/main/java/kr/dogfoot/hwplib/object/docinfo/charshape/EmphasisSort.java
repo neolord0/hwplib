@@ -10,30 +10,18 @@ public enum EmphasisSort {
      * 없음
      */
     None((byte) 0),
-    /**
-     * 검정 동그라미 강조점
-     */
-    Circle((byte) 1),
-    /**
-     * 속 빈 동그라미 강조점
-     */
-    EmptyCircle((byte) 2),
-    /**
-     * v
-     */
-    Type3((byte) 3),
-    /**
-     * "
-     */
-    Type4((byte) 4),
-    /**
-     * .
-     */
-    Type5((byte) 5),
-    /**
-     * :
-     */
-    Type6((byte) 6);
+    DotAbove((byte) 1),
+    RingAbove((byte) 2),
+    Tilde((byte) 3),
+    Caron((byte) 4),
+    Side((byte) 5),
+    Colon((byte) 6),
+    GraveAccent((byte) 7),
+    AcuteAccent((byte) 8),
+    Circumflex((byte) 9),
+    Macron((byte) 10),
+    HookAbove((byte) 11),
+    DotBelow((byte) 12);
 
     /**
      * 파일에 저장되는 정수값
