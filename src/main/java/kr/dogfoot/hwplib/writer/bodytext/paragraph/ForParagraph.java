@@ -2,8 +2,6 @@ package kr.dogfoot.hwplib.writer.bodytext.paragraph;
 
 import kr.dogfoot.hwplib.object.bodytext.control.Control;
 import kr.dogfoot.hwplib.object.bodytext.paragraph.Paragraph;
-import kr.dogfoot.hwplib.object.bodytext.paragraph.text.HWPChar;
-import kr.dogfoot.hwplib.object.bodytext.paragraph.text.ParaText;
 import kr.dogfoot.hwplib.util.compoundFile.writer.StreamWriter;
 import kr.dogfoot.hwplib.writer.bodytext.paragraph.control.ForControl;
 

@@ -1,6 +1,7 @@
 package kr.dogfoot.hwplib.reader.docinfo;
 
 import kr.dogfoot.hwplib.object.docinfo.Bullet;
+import kr.dogfoot.hwplib.reader.docinfo.borderfill.ForFillInfo;
 import kr.dogfoot.hwplib.util.compoundFile.reader.StreamReader;
 
 import java.io.IOException;
@@ -21,16 +22,20 @@ public class ForBullet {
     public static void read(Bullet b, StreamReader sr) throws IOException {
         ForNumbering.paragraphHeadInfo(b.getParagraphHeadInfo(), sr);
         b.getBulletChar().setBytes(sr.readWChar());
-        unknownBytes(sr);
-    }
 
-    /**
-     * 알려지지 않은  바이트를 처리한다.
-     *
-     * @param sr 스트림 리더
-     * @throws IOException
-     */
-    private static void unknownBytes(StreamReader sr) throws IOException {
-        sr.skipToEndRecord();
+        long imageBullet = sr.readUInt4();
+        if (imageBullet == 1) {
+            b.setImageBullet(true);
+        } else {
+            b.setImageBullet(false);
+        }
+
+        ForFillInfo.pictureInfo(b.getImageBulletInfo(), sr);
+
+        long n = sr.getCurrentRecordHeader().getSize()
+                - sr.getCurrentPositionAfterHeader();
+        System.out.println("skip " + n);
+
+        b.getCheckBulletChar().setBytes(sr.readWChar());
     }
 }

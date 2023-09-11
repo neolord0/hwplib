@@ -129,7 +129,7 @@ public class ForFillInfo {
         copyPictureInfo(source.getPictureInfo(), target.getPictureInfo(), docInfoAdder);
     }
 
-    private static void copyPictureInfo(PictureInfo source, PictureInfo target, DocInfoAdder docInfoAdder) {
+    public static void copyPictureInfo(PictureInfo source, PictureInfo target, DocInfoAdder docInfoAdder) {
         target.setBrightness(source.getBrightness());
         target.setContrast(source.getContrast());
         target.setEffect(source.getEffect());

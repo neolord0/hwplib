@@ -1,5 +1,6 @@
 package kr.dogfoot.hwplib.object.docinfo;
 
+import kr.dogfoot.hwplib.object.docinfo.borderfill.fillinfo.PictureInfo;
 import kr.dogfoot.hwplib.object.docinfo.numbering.ParagraphHeadInfo;
 import kr.dogfoot.hwplib.object.etc.HWPString;
 
@@ -17,6 +18,18 @@ public class Bullet {
      * 글머리표 문자
      */
     private HWPString bulletChar;
+    /**
+     * 그림 글머리표 여부
+     */
+    private boolean imageBullet;
+    /**
+     * 그림 글머리표 정보
+     */
+    private PictureInfo imageBulletInfo;
+    /**
+     * 체크 글머리표 문자
+     */
+    private HWPString checkBulletChar;
 
     /**
      * 생성자
@@ -24,6 +37,9 @@ public class Bullet {
     public Bullet() {
         paragraphHeadInfo = new ParagraphHeadInfo();
         bulletChar = new HWPString();
+        imageBullet = false;
+        imageBulletInfo = new PictureInfo();
+        checkBulletChar = new HWPString();
     }
 
     /**
@@ -44,10 +60,29 @@ public class Bullet {
         return bulletChar;
     }
 
+    public boolean getImageBullet() {
+        return imageBullet;
+    }
+
+    public void setImageBullet(boolean imageBullet) {
+        this.imageBullet = imageBullet;
+    }
+
+    public PictureInfo getImageBulletInfo() {
+        return imageBulletInfo;
+    }
+
+    public HWPString getCheckBulletChar() {
+        return checkBulletChar;
+    }
+
     public Bullet clone() {
         Bullet cloned = new Bullet();
         cloned.paragraphHeadInfo.copy(paragraphHeadInfo);
         cloned.bulletChar.copy(bulletChar);
+        cloned.imageBullet = imageBullet;
+        cloned.imageBulletInfo.copy(imageBulletInfo);
+        cloned.checkBulletChar.copy(checkBulletChar);
         return cloned;
     }
 }

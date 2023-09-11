@@ -3,6 +3,7 @@ package kr.dogfoot.hwplib.writer.docinfo;
 import kr.dogfoot.hwplib.object.docinfo.Bullet;
 import kr.dogfoot.hwplib.object.etc.HWPTag;
 import kr.dogfoot.hwplib.util.compoundFile.writer.StreamWriter;
+import kr.dogfoot.hwplib.writer.docinfo.borderfill.ForFillInfo;
 
 import java.io.IOException;
 
@@ -24,7 +25,13 @@ public class ForBullet {
 
         ForNumbering.paragraphHeadInfo(b.getParagraphHeadInfo(), sw);
         sw.writeWChar(b.getBulletChar().getBytes());
-        sw.writeZero(9);
+        if (b.getImageBullet()) {
+            sw.writeUInt4(1);
+        } else {
+            sw.writeUInt4(0);
+        }
+        ForFillInfo.pictureInfo(b.getImageBulletInfo(), sw);
+        sw.writeWChar(b.getCheckBulletChar().getBytes());
     }
 
     /**

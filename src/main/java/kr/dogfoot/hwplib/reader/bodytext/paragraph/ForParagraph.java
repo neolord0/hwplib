@@ -9,7 +9,6 @@ import kr.dogfoot.hwplib.reader.bodytext.paragraph.control.form.ForFormControl;
 import kr.dogfoot.hwplib.reader.bodytext.paragraph.control.gso.ForGsoControl;
 import kr.dogfoot.hwplib.util.compoundFile.reader.StreamReader;
 
-import java.awt.*;
 import java.io.IOException;
 
 /**

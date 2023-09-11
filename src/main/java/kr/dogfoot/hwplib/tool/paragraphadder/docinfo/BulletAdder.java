@@ -58,7 +58,10 @@ public class BulletAdder {
 
     private boolean equal(Bullet source, Bullet target) {
         return equalParagraphHeadInfo(source.getParagraphHeadInfo(), target.getParagraphHeadInfo())
-                && source.getBulletChar().equals(target.getBulletChar());
+                && source.getBulletChar().equals(target.getBulletChar())
+                && source.getCheckBulletChar().equals(target.getCheckBulletChar())
+                && source.getImageBullet() == target.getImageBullet() == false;
+        // imageBulletInfo.binDataID 비교불가.
     }
 
     private boolean equalParagraphHeadInfo(ParagraphHeadInfo source, ParagraphHeadInfo target) {
@@ -72,6 +75,9 @@ public class BulletAdder {
         Bullet target = docInfoAdder.getTargetHWPFile().getDocInfo().addNewBullet();
         copyParagraphHeadInfo(source.getParagraphHeadInfo(), target.getParagraphHeadInfo());
         target.getBulletChar().copy(source.getBulletChar());
+        target.setImageBullet(source.getImageBullet());
+        ForFillInfo.copyPictureInfo(source.getImageBulletInfo(), target.getImageBulletInfo(), docInfoAdder);
+        target.getCheckBulletChar().copy(source.getCheckBulletChar());
 
         return docInfoAdder.getTargetHWPFile().getDocInfo().getBulletList().size();
     }
