@@ -7,13 +7,13 @@ package kr.dogfoot.hwplib.object.docinfo.parashape;
  */
 public enum LineDivideForHangul {
     /**
-     * 어절
-     */
-    ByWord((byte) 0),
-    /**
      * 글자
      */
-    ByLetter((byte) 1);
+    ByLetter((byte) 0),
+    /**
+     * 어절
+     */
+    ByWord((byte) 1);
 
     /**
      * 파일에 저장되는 정수값
