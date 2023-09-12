@@ -38,6 +38,22 @@ public class FaceNameProperty {
     }
 
     /**
+     * 글꼺 타입을 반환한다.(0~1 bit)
+     * @return 글꼺 타입
+     */
+    public FontType getType() {
+        return FontType.valueOf((byte) BitFlag.get(value, 0, 1));
+    }
+
+    /**
+     * 글꼴 타입을 설정한다.(0~1 bit)
+     * @param type 글꼴 타입
+     */
+    public void setType(FontType type) {
+        value = BitFlag.set(value, 0, 1, type.getValue());
+    }
+
+    /**
      * 대체 글꼴 존재 여부를 반환한다. (0x80)
      *
      * @return 대체 글꼴 존재 여부
