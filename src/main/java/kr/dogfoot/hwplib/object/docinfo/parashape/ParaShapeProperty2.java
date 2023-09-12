@@ -92,6 +92,24 @@ public class ParaShapeProperty2 {
         value = BitFlag.set(value, 5, autoAdjustGapHangulNumber);
     }
 
+    /**
+     * 줄번호 제거 여부를 반환한다. (6 bit)
+     *
+     * @return 줄번호 제거 여부
+     */
+    public boolean isSuppressLineNumbers() {
+        return BitFlag.get(value, 6);
+    }
+
+    /**
+     * 줄번호 제거 여부를 설정한다. (6 bit)
+     *
+     * @param suppressLineNumbers 줄번호 제거 여부
+     */
+    public void setSuppressLineNumbers(boolean suppressLineNumbers) {
+        value = BitFlag.set(value, 6, suppressLineNumbers);
+    }
+
     public void copy(ParaShapeProperty2 from) {
         value = from.value;
     }
