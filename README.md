@@ -37,6 +37,10 @@
     ```
 * hwpx 파일에 대한 라이브러리는 https://github.com/neolord0/hwpxlib 을 참조해 주세요.
 
+2023.9.13
+=========================================================================================
+* 메모모양(MemoShape) 레코드 읽고 쓰기
+
 2023.9.12
 =========================================================================================
 * ParaShapeProperty2에 suppressLineNumbers(줄번호 제거) 속성 추가
@@ -45,7 +49,6 @@
 * ImageFillType.None ==> ImageFillTYpe.Zoom
 * BorderFill에서 BackSlashDiagonalShape, SlashDiagonalShape의 방향 바꿈 
 * BorderFillProperty에 centerLineSort(중심선 종류) 속성 추가
-
 
 2023.5.8
 =========================================================================================
