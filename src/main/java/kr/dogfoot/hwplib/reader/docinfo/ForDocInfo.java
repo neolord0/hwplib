@@ -1,6 +1,7 @@
 package kr.dogfoot.hwplib.reader.docinfo;
 
 import kr.dogfoot.hwplib.object.docinfo.*;
+import kr.dogfoot.hwplib.object.etc.Color4Byte;
 import kr.dogfoot.hwplib.object.etc.HWPTag;
 import kr.dogfoot.hwplib.object.etc.UnknownRecord;
 import kr.dogfoot.hwplib.reader.ForUnknown;
@@ -317,8 +318,8 @@ public class ForDocInfo {
      * @throws IOException
      */
     private void memoShape() throws IOException {
-        UnknownRecord ur = docInfo.addNewMemoShape(sr.getCurrentRecordHeader());
-        ForUnknown.read(ur, sr);
+        MemoShape ms = docInfo.addNewMemoShape();
+        ForMemoShape.read(ms, sr);
     }
 
     /**

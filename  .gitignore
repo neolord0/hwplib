@@ -1,5 +1,5 @@
 *.iml
 
-test/
+test/*.*
 
-src/test/
+src/test/*.*

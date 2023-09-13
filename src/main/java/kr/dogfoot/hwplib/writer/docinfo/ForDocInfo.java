@@ -296,8 +296,8 @@ public class ForDocInfo {
      * @throws IOException
      */
     private void memoShape() throws IOException {
-        for (UnknownRecord memoShape : docInfo.getMemoShapeList()) {
-            ForUnknown.write(memoShape, HWPTag.MEMO_SHAPE, sw);
+        for (MemoShape memoShape : docInfo.getMemoShapeList()) {
+            ForMemoShape.write(memoShape, sw);
         }
     }
 

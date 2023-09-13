@@ -9,11 +9,11 @@ public enum LineDivideForHangul {
     /**
      * 글자
      */
-    ByLetter((byte) 0),
+    ByLetter((byte) 1),
     /**
      * 어절
      */
-    ByWord((byte) 1);
+    ByWord((byte) 0);
 
     /**
      * 파일에 저장되는 정수값

@@ -102,7 +102,7 @@ public class DocInfo {
     /**
      * 메모 모양 리스트
      */
-    private ArrayList<UnknownRecord> memoShapeList;
+    private ArrayList<MemoShape> memoShapeList;
     /**
      * 금칙처리 문자
      */
@@ -142,7 +142,7 @@ public class DocInfo {
         compatibleDocument = null;
         layoutCompatibility = null;
         trackChange = null;
-        memoShapeList = new ArrayList<UnknownRecord>();
+        memoShapeList = new ArrayList<MemoShape>();
         forbiddenChar = null;
         trackChange2List = new ArrayList<UnknownRecord>();
         trackChangeAuthorList = new ArrayList<UnknownRecord>();
@@ -593,10 +593,10 @@ public class DocInfo {
      * @param rh 레코드 헤더
      * @return 새로 생성된 메모 모양 객체
      */
-    public UnknownRecord addNewMemoShape(RecordHeader rh) {
-        UnknownRecord ur = new UnknownRecord(rh);
-        memoShapeList.add(ur);
-        return ur;
+    public MemoShape addNewMemoShape() {
+        MemoShape memoShape = new MemoShape();
+        memoShapeList.add(memoShape);
+        return memoShape;
     }
 
     /**
@@ -604,7 +604,7 @@ public class DocInfo {
      *
      * @return 메모 모양 객체 리스트
      */
-    public ArrayList<UnknownRecord> getMemoShapeList() {
+    public ArrayList<MemoShape> getMemoShapeList() {
         return memoShapeList;
     }
 
@@ -758,8 +758,8 @@ public class DocInfo {
         }
 
         memoShapeList.clear();
-        for (UnknownRecord unknownRecord : from.memoShapeList) {
-            memoShapeList.add(unknownRecord.clone());
+        for (MemoShape memoShape : from.memoShapeList) {
+            memoShapeList.add(memoShape.clone());
         }
 
         if (from.forbiddenChar != null) {
