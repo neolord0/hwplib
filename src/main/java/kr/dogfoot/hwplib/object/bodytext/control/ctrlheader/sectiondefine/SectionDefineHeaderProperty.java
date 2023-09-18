@@ -220,23 +220,21 @@ public class SectionDefineHeaderProperty {
     }
 
     /**
-     * 구역 나눔으로 새 페이지가 생길 때의 페이지 번호 적용할지 여부를 반환한다. (20~21 bit)
+     * 시작 쪽번호 타입을 반환한다. (20~21 bit)
      *
-     * @return 구역 나눔으로 새 페이지가 생길 때의 페이지 번호 적용할지 여부
+     * @return 시작 쪽번호 타입
      */
-    public boolean isApplyPageNumberByDivideSection() {
-        return BitFlag.get(value, 20) | BitFlag.get(value, 21);
+    public StartPageNumberType getStartPageNumberType() {
+        return StartPageNumberType.valueOf((byte) BitFlag.get(value, 20, 21));
     }
 
     /**
-     * 구역 나눔으로 새 페이지가 생길 때의 페이지 번호 적용할지 여부를 설정한다. (20~21 bit)
+     * 시작 쪽번호 타입을 설정한다. (20~21 bit)
      *
-     * @param applyPageNumberByDivideSection 구역 나눔으로 새 페이지가 생길 때의 페이지 번호 적용할지 여부
+     * @param startPageNumberType 시작 쪽번호 타입
      */
-    public void setApplyPageNumberByDivideSection(
-            boolean applyPageNumberByDivideSection) {
-        value = BitFlag.set(value, 20, applyPageNumberByDivideSection);
-        value = BitFlag.set(value, 21, applyPageNumberByDivideSection);
+    public void setStartPageNumberType(StartPageNumberType startPageNumberType) {
+        value = BitFlag.set(value, 20, 21, startPageNumberType.getValue());
     }
 
     /**
