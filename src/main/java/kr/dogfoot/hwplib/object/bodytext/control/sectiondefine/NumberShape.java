@@ -9,79 +9,79 @@ public enum NumberShape {
     /**
      * 1, 2, 3
      */
-    Type0((short) 0),
+    Number((short) 0),
     /**
      * 동그라미 쳐진 1, 2, 3
      */
-    Type1((short) 1),
+    CircledNumber((short) 1),
     /**
      * I, II, III
      */
-    Type2((short) 2),
+    UppercaseRomanNumber((short) 2),
     /**
      * i, ii, iii
      */
-    Type3((short) 3),
+    LowercaseRomanNumber((short) 3),
     /**
      * A, B, C
      */
-    Type4((short) 4),
+    UppercaseAlphabet((short) 4),
     /**
      * a, b, c
      */
-    Type5((short) 5),
+    LowercaseAlphabet((short) 5),
     /**
      * 동그라미 쳐진 A, B, C
      */
-    Type6((short) 6),
+    CircledUppercaseAlphabet((short) 6),
     /**
      * 동그라미 쳐진 a, b, c
      */
-    Type7((short) 7),
+    CircledLowercaseAlphabet((short) 7),
     /**
      * 가, 나, 다
      */
-    Type8((short) 8),
+    Hangul((short) 8),
     /**
      * 동그라미 쳐진 가,나,다
      */
-    Type9((short) 9),
+    CircledHangul((short) 9),
     /**
      * ㄱ, ㄴ, ㄷ
      */
-    Type10((short) 10),
+    HangulJamo((short) 10),
     /**
      * 동그라미 쳐진 ㄱ,ㄴ,ㄷ
      */
-    Type11((short) 11),
+    CircledHangulJamo((short) 11),
     /**
      * 일, 이, 삼
      */
-    Type12((short) 12),
+    HangulNumber((short) 12),
     /**
      * 一, 二, 三
      */
-    Type13((short) 13),
+    HanjaNumber((short) 13),
     /**
      * 동그라미 쳐진 一,二,三
      */
-    Type14((short) 14),
+    CircledHanjaNumber((short) 14),
     /**
      * 갑, 을, 병, 정, 무, 기, 경, 신, 임, 계
      */
-    Type15((short) 15),
+    HangulSibgan((short) 15),
     /**
      * 甲, 乙, 丙, 丁, 戊, 己, 庚, 辛, 壬, 癸
      */
-    Type16((short) 16),
+    HanjaSibgan((short) 16),
     /**
      * 4가지 문자가 차례로 반복(각주/미주 전용)
      */
-    Type128((short) 0x80),
+    Symbol((short) 0x80),
     /**
      * 사용자 지정 문자 반복
      */
-    Type129((short) 0x81);
+    UserChar((short) 0x81);
 
     /**
      * 파일에 저장되는 정수값
@@ -118,6 +118,6 @@ public enum NumberShape {
                 return ns;
             }
         }
-        return Type0;
+        return Number;
     }
 }
