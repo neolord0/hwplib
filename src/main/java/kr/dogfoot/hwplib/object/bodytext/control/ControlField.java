@@ -40,25 +40,26 @@ public class ControlField extends Control {
                 if (pi != null && pi.getType() == ParameterType.String) {
                     if (pi.getValue_BSTR() != null) {
                         return pi.getValue_BSTR();
-                    } else {
-                        return commandToName(getHeader().getCommand().toUTF16LEString());
                     }
                 }
             }
         }
-        return null;
+        return commandToName(getHeader().getCommand().toUTF16LEString());
     }
 
     private String commandToName(String command) {
+        if (command == null) {
+            return null;
+        }
+
         String[] properties = command.split(" ");
-        if (properties == null || properties.length < 1) {
-            return null;
+        if (properties != null && properties.length >= 1) {
+            String[] token = properties[0].split(":");
+            if (token != null && token.length >= 1) {
+                return token[token.length - 1];
+            }
         }
-        String[] token = properties[0].split(":");
-        if (token == null || token.length < 1) {
-            return null;
-        }
-        return token[token.length - 1];
+        return null;
     }
 
     /**
