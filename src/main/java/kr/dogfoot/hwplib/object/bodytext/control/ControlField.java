@@ -36,14 +36,29 @@ public class ControlField extends Control {
     public String getName() {
         if (ctrlData != null) {
             if (ctrlData.getParameterSet().getId() == 0x021B) {
-                ParameterItem pi = ctrlData.getParameterSet().getParameterItem(
-                        0x4000);
+                ParameterItem pi = ctrlData.getParameterSet().getParameterItem(0x4000);
                 if (pi != null && pi.getType() == ParameterType.String) {
-                    return pi.getValue_BSTR();
+                    if (pi.getValue_BSTR() != null) {
+                        return pi.getValue_BSTR();
+                    } else {
+                        return commandToName(getHeader().getCommand().toUTF16LEString());
+                    }
                 }
             }
         }
         return null;
+    }
+
+    private String commandToName(String command) {
+        String[] properties = command.split(" ");
+        if (properties == null || properties.length < 1) {
+            return null;
+        }
+        String[] token = properties[0].split(":");
+        if (token == null || token.length < 1) {
+            return null;
+        }
+        return token[token.length - 1];
     }
 
     /**
