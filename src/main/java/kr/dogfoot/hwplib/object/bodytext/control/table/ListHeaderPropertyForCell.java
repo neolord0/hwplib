@@ -132,6 +132,25 @@ public class ListHeaderPropertyForCell {
     }
 
     /**
+     * 제목셀 인지 여부를 반환한다. (18 bit)
+     *
+     * @return 셀 보호 여부
+     */
+    public boolean isTitleCell() {
+        return BitFlag.get(value, 18);
+    }
+
+    /**
+     * 제목셀 인지 여부를 설정한다. (18 bit)
+     *
+     * @param titleCell 제목셀 인지 여부
+     */
+    public void setTitleCell(boolean titleCell) {
+        value = BitFlag.set(value, 18, titleCell);
+    }
+
+
+    /**
      * 양식 모드에서 편집 가능 여부를 반환한다. (19 bit)
      *
      * @return 양식 모드에서 편집 가능 여부
