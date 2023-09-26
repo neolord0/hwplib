@@ -40,16 +40,7 @@ public class ForCaption {
         listHeader.setCaptionWidth(sr.readUInt4());
         listHeader.setSpaceBetweenCaptionAndFrame(sr.readUInt2());
         listHeader.setTextWidth(sr.readUInt4());
-        unknown8bytes(sr);
-    }
-
-    /**
-     * 알려지지 않은 8 바이트를 처리한다.
-     *
-     * @param sr 스트림 리더
-     * @throws IOException
-     */
-    private static void unknown8bytes(StreamReader sr) throws IOException {
-        sr.skip(8);
+        // 버전에 따라 8bytes가 있을 수 있음.
+        sr.skipToEndRecord();
     }
 }
