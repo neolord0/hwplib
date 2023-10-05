@@ -110,6 +110,25 @@ public class PageHideHeaderProperty {
     }
 
     /**
+     * 배경 숨김 여부를 반환하다. (4 bit)
+     *
+     * @return 배경 숨김 여부
+     */
+    public boolean isHideFill() {
+        return BitFlag.get(value, 4);
+    }
+
+    /**
+     * 배경 숨김 여부를 설정한다. (4 bit)
+     *
+     * @param hideFill 테두리 숨김 여부
+     */
+    public void setHideFill(boolean hideFill) {
+        value = BitFlag.set(value, 4, hideFill);
+    }
+
+
+    /**
      * 페이지 번호 숨김 여부를 반환한다. (4 bit)
      *
      * @return 페이지 번호 숨김 여부
