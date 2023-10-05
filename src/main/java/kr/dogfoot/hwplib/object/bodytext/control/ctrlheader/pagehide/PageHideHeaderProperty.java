@@ -127,23 +127,22 @@ public class PageHideHeaderProperty {
         value = BitFlag.set(value, 4, hideFill);
     }
 
-
     /**
-     * 페이지 번호 숨김 여부를 반환한다. (4 bit)
+     * 페이지 번호 숨김 여부를 반환한다. (5 bit)
      *
      * @return 페이지 번호 숨김 여부
      */
     public boolean isHidePageNumber() {
-        return BitFlag.get(value, 4);
+        return BitFlag.get(value, 5);
     }
 
     /**
-     * 페이지 번호 숨김 여부를 설정한다. (4 bit)
+     * 페이지 번호 숨김 여부를 설정한다. (5 bit)
      *
      * @param hidePageNumber 페이지 번호 숨김 여부
      */
     public void setHidePageNumber(boolean hidePageNumber) {
-        value = BitFlag.set(value, 4, hidePageNumber);
+        value = BitFlag.set(value, 5, hidePageNumber);
     }
 
     public void copy(PageHideHeaderProperty from) {
