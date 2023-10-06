@@ -5,6 +5,9 @@ import kr.dogfoot.hwplib.object.bodytext.control.Control;
 import kr.dogfoot.hwplib.object.bodytext.control.ControlField;
 import kr.dogfoot.hwplib.object.bodytext.control.ControlType;
 import kr.dogfoot.hwplib.object.bodytext.paragraph.Paragraph;
+import kr.dogfoot.hwplib.object.bodytext.paragraph.ParagraphList;
+import kr.dogfoot.hwplib.object.bodytext.paragraph.charshape.CharPositionShapeIdPair;
+import kr.dogfoot.hwplib.object.bodytext.paragraph.charshape.ParaCharShape;
 import kr.dogfoot.hwplib.object.bodytext.paragraph.text.HWPChar;
 import kr.dogfoot.hwplib.tool.objectfinder.SetFieldResult;
 import kr.dogfoot.hwplib.tool.objectfinder.TextBuffer;
@@ -61,7 +64,7 @@ public class ForParagraphList {
         int paraCount = paragraphList.getParagraphCount();
         for (int paraIndex = 0; paraIndex < paraCount; paraIndex++) {
             Paragraph p = paragraphList.getParagraph(paraIndex);
-            int fieldCharIndex = findFieldCharIndex(p, fieldType, fieldName);
+            int fieldCharIndex = findFieldCharIndex(p, fieldType, fieldName, -1);
             if (fieldCharIndex != -1) {
                 results.add(new FindPosition(paraIndex, fieldCharIndex));
                 if (allField == false) {
@@ -73,15 +76,42 @@ public class ForParagraphList {
     }
 
     /**
+     * 문단리스트에서 필드 객체의 시작 위치를 반환한다.
+     *
+     * @param paragraphList  문단리스트
+     * @param fieldType      필드 타입
+     * @param fieldName      필드 이름
+     * @param startParaIndex 찾기 시작할 문단 인덱스
+     * @param startCharIndex 찾기 시작할 문자 인덱스
+     * @return 찾은 필드의 위치. 없으면 null
+     */
+    private static FindPosition getFieldStartPosition(ParagraphListInterface paragraphList, ControlType fieldType, String fieldName, int startParaIndex, int startCharIndex) {
+        int paraCount = paragraphList.getParagraphCount();
+        for (int paraIndex = startParaIndex; paraIndex < paraCount; paraIndex++) {
+            Paragraph p = paragraphList.getParagraph(paraIndex);
+            int sci = startCharIndex;
+            if (paraIndex != startParaIndex) {
+                sci = 0;
+            }
+            int fieldCharIndex = findFieldCharIndex(p, fieldType, fieldName, sci);
+            if (fieldCharIndex != -1) {
+                return new FindPosition(paraIndex, fieldCharIndex);
+            }
+        }
+        return null;
+    }
+
+    /**
      * 문단내에서 필드 객체의 위치를 반환한다.
      *
      * @param p         문단
      * @param fieldType 필드 타입
      * @param fieldName 필드 이름
+     * @param startCharIndex 찾기 시작할 문자 인덱스
      * @return 찾은 필드의 문단 내부의 위치
      * @throws UnsupportedEncodingException
      */
-    private static int findFieldCharIndex(Paragraph p, ControlType fieldType, String fieldName) {
+    private static int findFieldCharIndex(Paragraph p, ControlType fieldType, String fieldName, int startCharIndex) {
         if (p.getControlList() == null) {
             return -1;
         }
@@ -91,7 +121,14 @@ public class ForParagraphList {
             if (c.getType() == fieldType) {
                 ControlField cf = (ControlField) c;
                 if (cf.getName() != null && cf.getName().equals(fieldName)) {
-                    return p.getText().getCharIndexFromExtendCharIndex(ctrlIndex);
+                    int charIndex = p.getText().getCharIndexFromExtendCharIndex(ctrlIndex);
+                    if (charIndex == -1) {
+                        return charIndex;
+                    }
+                    if (startCharIndex >= 0 && charIndex < startCharIndex) {
+                        continue;
+                    }
+                    return charIndex;
                 }
             }
         }
@@ -236,8 +273,8 @@ public class ForParagraphList {
             return SetFieldResult.InProcess;
         }
 
-        ArrayList<FindPosition> results = getFieldStartPosition(paragraphList, fieldType, fieldName, true);
-        for (FindPosition result : results) {
+        FindPosition result = getFieldStartPosition(paragraphList, fieldType, fieldName, 0, 0);
+        while (result != null) {
             if (getFieldEndPosition(paragraphList, result)) {
                 if (textBuffer.hasNext()) {
                     changeText(paragraphList, result, textBuffer.nextText());
@@ -246,6 +283,7 @@ public class ForParagraphList {
                     return SetFieldResult.NotEnoughText;
                 }
             }
+            result = getFieldStartPosition(paragraphList, fieldType, fieldName, result.endParaIndex, result.endCharIndex + 1);
         }
         return setFieldTextForControls(paragraphList, fieldType, fieldName, textBuffer);
     }
@@ -278,6 +316,11 @@ public class ForParagraphList {
         } else {
             Paragraph para = paragraphList.getParagraph(position.startParaIndex);
             ParaTextSetter.changeText(para, position.startCharIndex + 1, position.endCharIndex - 1, text);
+        }
+        // 필드의 텍스트를 변경시 end position변화 대응
+        FindPosition nextPosition = new FindPosition(position.startParaIndex, position.startCharIndex + 1);
+        if (getFieldEndPosition(paragraphList, nextPosition)) {
+            position.endPosition(nextPosition.endParaIndex, nextPosition.endCharIndex);
         }
     }
 
