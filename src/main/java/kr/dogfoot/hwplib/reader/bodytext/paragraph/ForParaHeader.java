@@ -35,7 +35,6 @@ public class ForParaHeader {
         if (sr.isEndOfRecord() == false) {
             sr.skipToEndRecord();
         }
-
     }
 
     /**
