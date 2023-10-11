@@ -84,7 +84,7 @@ public class ForShapeComponent {
         sc.setHeightAtCreate(sr.readUInt4());
         sc.setWidthAtCurrent(sr.readUInt4());
         sc.setHeightAtCurrent(sr.readUInt4());
-        sc.setProperty(sr.readUInt4());
+        sc.getProperty().setValue(sr.readUInt4());
         sc.setRotateAngle(sr.readUInt2());
         sc.setRotateXCenter(sr.readSInt4());
         sc.setRotateYCenter(sr.readSInt4());

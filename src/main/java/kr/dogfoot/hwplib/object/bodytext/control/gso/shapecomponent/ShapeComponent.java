@@ -48,7 +48,7 @@ public abstract class ShapeComponent {
     /**
      * 속성(정보 없음)
      */
-    private long property;
+    private ShapeComponentProperty property;
     /**
      * 회전각
      */
@@ -71,6 +71,7 @@ public abstract class ShapeComponent {
      */
     protected ShapeComponent() {
         renderingInfo = new RenderingInfo();
+        property = new ShapeComponentProperty();
     }
 
     /**
@@ -240,17 +241,8 @@ public abstract class ShapeComponent {
      *
      * @return 속성값
      */
-    public long getProperty() {
+    public ShapeComponentProperty getProperty() {
         return property;
-    }
-
-    /**
-     * 속성값을 설정한다.
-     *
-     * @param property 속성값
-     */
-    public void setProperty(long property) {
-        this.property = property;
     }
 
     /**
@@ -356,7 +348,7 @@ public abstract class ShapeComponent {
         heightAtCreate = from.heightAtCreate;
         widthAtCurrent = from.widthAtCurrent;
         heightAtCurrent = from.heightAtCurrent;
-        property = from.property;
+        property.setValue(from.property.getValue());
         rotateAngle = from.rotateAngle;
         rotateXCenter = from.rotateXCenter;
         rotateYCenter = from.rotateYCenter;

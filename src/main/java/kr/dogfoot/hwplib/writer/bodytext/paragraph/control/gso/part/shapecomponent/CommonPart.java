@@ -31,7 +31,7 @@ public class CommonPart {
         sw.writeUInt4(sc.getHeightAtCreate());
         sw.writeUInt4(sc.getWidthAtCurrent());
         sw.writeUInt4(sc.getHeightAtCurrent());
-        sw.writeUInt4(sc.getProperty());
+        sw.writeUInt4(sc.getProperty().getValue());
         sw.writeUInt2(sc.getRotateAngle());
         sw.writeSInt4(sc.getRotateXCenter());
         sw.writeSInt4(sc.getRotateYCenter());
