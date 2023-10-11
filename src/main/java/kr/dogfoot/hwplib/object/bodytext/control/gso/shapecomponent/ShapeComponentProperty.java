@@ -63,4 +63,21 @@ public class ShapeComponentProperty {
     public void setFlipVertical(boolean flipVertical) {
         value = BitFlag.set(value, 1, flipVertical);
     }
+
+    /**
+     * 그림 개체의 색 반전 여부를 반환한다. (24 bit)
+     * @return 그림 개체의 색 반전 여부
+     */
+    public boolean isReverseColor() {
+        return BitFlag.get(value, 24);
+    }
+
+    /**
+     * 그림 개체의 색 반전 여부를 설정한다. (24 bit)
+     * @param reverseColor 그림 개체의 색 반전 여부
+     */
+    public void setReverseColor(boolean reverseColor) {
+        value = BitFlag.set(value, 24, reverseColor);
+    }
+
 }
