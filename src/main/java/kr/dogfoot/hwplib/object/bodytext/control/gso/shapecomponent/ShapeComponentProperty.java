@@ -52,7 +52,7 @@ public class ShapeComponentProperty {
      * 개체가 상하 대칭인지 여부를 반환한다. (1 bit)
      * @return 상하 대칭인지 여부
      */
-    public boolean getFlipVertical() {
+    public boolean isFlipVertical() {
         return BitFlag.get(value, 1);
     }
 
