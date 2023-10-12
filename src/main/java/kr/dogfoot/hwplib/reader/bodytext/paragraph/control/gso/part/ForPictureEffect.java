@@ -59,7 +59,7 @@ public class ForPictureEffect {
         se.setZoomRateY(sr.readFloat());
         se.setRotateWithShape(sr.readSInt4());
 
-        colorPropery(se.getColor(), sr);
+        colorProperty(se.getColor(), sr);
     }
 
     /**
@@ -69,7 +69,7 @@ public class ForPictureEffect {
      * @param sr 스트림 리더
      * @throws Exception
      */
-    private static void colorPropery(ColorWithEffect cp, StreamReader sr)
+    private static void colorProperty(ColorWithEffect cp, StreamReader sr)
             throws Exception {
         cp.setType(sr.readSInt4());
         if (cp.getType() == 0) {
@@ -82,7 +82,7 @@ public class ForPictureEffect {
         int colorEffectCount = (int) sr.readUInt4();
         for (int index = 0; index < colorEffectCount; index++) {
             ColorEffect ce = cp.addNewColorEffect();
-            ce.setSort(sr.readSInt4());
+            ce.setSort(ColorEffectSort.valueOf(sr.readSInt4()));
             ce.setValue(sr.readFloat());
         }
     }
@@ -98,7 +98,7 @@ public class ForPictureEffect {
             throws Exception {
         ne.setTransparency(sr.readFloat());
         ne.setRadius(sr.readFloat());
-        colorPropery(ne.getColor(), sr);
+        colorProperty(ne.getColor(), sr);
     }
 
     /**

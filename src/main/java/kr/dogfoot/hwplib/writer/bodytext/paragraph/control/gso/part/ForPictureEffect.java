@@ -74,7 +74,7 @@ public class ForPictureEffect {
         sw.writeUInt4(colorEffectCount);
 
         for (ColorEffect ce : cp.getColorEffectList()) {
-            sw.writeSInt4(ce.getSort());
+            sw.writeSInt4(ce.getSort().getValue());
             sw.writeFloat(ce.getValue());
         }
     }

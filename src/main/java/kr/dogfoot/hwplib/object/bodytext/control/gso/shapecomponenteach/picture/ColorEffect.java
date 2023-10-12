@@ -9,7 +9,7 @@ public class ColorEffect {
     /**
      * 색상 효과 종류 (정보 없음)
      */
-    private int sort;
+    private ColorEffectSort sort;
     /**
      * 색상 효과 값
      */
@@ -22,20 +22,20 @@ public class ColorEffect {
     }
 
     /**
-     * 색상 효과 종류를 반환한다. (정보 없음)
+     * 색상 효과 종류를 반환한다.
      *
      * @return 색상 효과 종류
      */
-    public int getSort() {
+    public ColorEffectSort getSort() {
         return sort;
     }
 
     /**
-     * 색상 효과 종류를 설정한다. (정보 없음)
+     * 색상 효과 종류를 설정한다.
      *
      * @param sort 색상 효과 종류
      */
-    public void setSort(int sort) {
+    public void setSort(ColorEffectSort sort) {
         this.sort = sort;
     }
 
