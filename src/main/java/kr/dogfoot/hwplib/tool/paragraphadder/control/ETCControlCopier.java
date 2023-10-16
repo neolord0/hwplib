@@ -59,6 +59,9 @@ public class ETCControlCopier {
     }
 
     private static boolean isMemo(ControlField source) {
+        if (source.getHeader().getCommand().getBytes() == null) {
+            return false;
+        }
         return source.getHeader().getCommand().toUTF16LEString().startsWith("MEMO");
     }
 
@@ -90,10 +93,12 @@ public class ETCControlCopier {
 
 
     private static void setNewMemoIndex(CtrlHeaderField targetH, long newMemoIndex) {
-        String[] commands = targetH.getCommand().toUTF16LEString().split("/");
-        commands[2] = Long.toString(newMemoIndex);
-        targetH.getCommand().setBytes(stringJoin("/", commands).getBytes(StandardCharsets.UTF_16LE));
-        targetH.setMemoIndex((int) newMemoIndex);
+        if (targetH.getCommand().getBytes() != null) {
+            String[] commands = targetH.getCommand().toUTF16LEString().split("/");
+            commands[2] = Long.toString(newMemoIndex);
+            targetH.getCommand().setBytes(stringJoin("/", commands).getBytes(StandardCharsets.UTF_16LE));
+            targetH.setMemoIndex((int) newMemoIndex);
+        }
     }
 
     private static String stringJoin(String s, String[] array) {
