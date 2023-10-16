@@ -53,7 +53,9 @@ public class ParameterSetCopier {
                 array(source, target, docInfoAdder);
                 break;
             case BINDataID:
-                target.setValue_binData((docInfoAdder == null) ? source.getValue_binData() : docInfoAdder.forBinData().processById(source.getValue_binData()));
+                if (source.getValue_binData() > 0) {
+                    target.setValue_binData((docInfoAdder == null) ? source.getValue_binData() : docInfoAdder.forBinData().processById(source.getValue_binData()));
+                }
                 break;
         }
     }
