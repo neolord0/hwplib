@@ -23,6 +23,8 @@ public class ShapeComponentNormal extends ShapeComponent {
      */
     private ShadowInfo shadowInfo;
 
+    private long instid;
+
     /**
      * 생성자
      */
@@ -102,6 +104,21 @@ public class ShapeComponentNormal extends ShapeComponent {
         return shadowInfo;
     }
 
+    /**
+     * 객체의 인스턴스 아이디를 반환한다..
+     * @return 객체의 인스턴스 아이디
+     */
+    public long getInstid() {
+        return instid;
+    }
+
+    /**
+     * 객체의 인스턴스 아이디를 설정한다.
+     * @param instid 객체의 인스턴스 아이디
+     */
+    public void setInstid(long instid) {
+        this.instid = instid;
+    }
 
     @Override
     public void copy(ShapeComponent from) {
@@ -128,5 +145,7 @@ public class ShapeComponentNormal extends ShapeComponent {
         } else {
             shadowInfo = null;
         }
+
+        this.instid = from2.instid;
     }
 }

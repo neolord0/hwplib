@@ -32,6 +32,11 @@ public class ForShapeComponentForNormal {
         lineInfo(scn.getLineInfo(), sw);
         fillInfo(scn.getFillInfo(), sw);
         shadowInfo(scn.getShadowInfo(), sw);
+
+        sw.writeUInt4(scn.getInstid());
+        sw.writeZero(1);
+        sw.writeUInt1(scn.getShadowInfo().getTransparent());
+
     }
 
     /**
@@ -128,8 +133,6 @@ public class ForShapeComponentForNormal {
             sw.writeUInt4(si.getColor().getValue());
             sw.writeSInt4(si.getOffsetX());
             sw.writeSInt4(si.getOffsetY());
-            sw.writeZero(5);
-            sw.writeUInt1(si.getTransparent());
         }
     }
 

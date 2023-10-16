@@ -57,13 +57,16 @@ public class ForShapeComponent {
         if (sr.isEndOfRecord() == false) {
             lineInfo(scn, sr);
         }
-
         if (sr.isEndOfRecord() == false) {
             fillInfo(scn, sr);
         }
-
         if (sr.isEndOfRecord() == false) {
             shadowInfo(scn, sr);
+        }
+        if (sr.isEndOfStream() == false) {
+            scn.setInstid(sr.readUInt4());
+            sr.skip(1);
+            scn.getShadowInfo().setTransparent(sr.readUInt1());
         }
     }
 
@@ -169,8 +172,6 @@ public class ForShapeComponent {
         si.getColor().setValue(sr.readUInt4());
         si.setOffsetX(sr.readSInt4());
         si.setOffsetY(sr.readSInt4());
-        sr.skip(5);
-        si.setTransparent(sr.readUInt1());
     }
 
     /**
