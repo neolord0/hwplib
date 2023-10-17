@@ -15,33 +15,25 @@ public enum LineArrowShape {
      */
     Arrow((byte) 1),
     /**
+     * 선형 화살표
+     */
+    LinedArrow((byte) 2),
+    /**
      * 오목한 화살표
      */
-    ConcaveArrow((byte) 2),
+    ConcaveArrow((byte) 3),
     /**
      * 속이 빈 다이아몬드 모양
      */
-    EmptyDiamond((byte) 3),
+    Diamond((byte) 4),
     /**
      * 속이 빈 원 모양
      */
-    EmptyCircle((byte) 4),
+    Circle((byte) 5),
     /**
      * 속이 빈 사각형 모양
      */
-    EmptyRectangle((byte) 5),
-    /**
-     * 속이 채워진 다이아몬드 모양
-     */
-    Diamond((byte) 6),
-    /**
-     * 속이 채워진 원 모양
-     */
-    Circle((byte) 7),
-    /**
-     * 속이 채워진 사각형 모양
-     */
-    Rectangle((byte) 8);
+    Rectangle((byte) 6);
 
     /**
      * 파일에 저장되는 정수값
