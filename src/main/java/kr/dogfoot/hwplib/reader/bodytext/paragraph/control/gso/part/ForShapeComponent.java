@@ -63,7 +63,7 @@ public class ForShapeComponent {
         if (sr.isEndOfRecord() == false) {
             shadowInfo(scn, sr);
         }
-        if (sr.isEndOfStream() == false) {
+        if (sr.isEndOfRecord() == false) {
             scn.setInstid(sr.readUInt4());
             sr.skip(1);
             scn.getShadowInfo().setTransparent(sr.readUInt1());
