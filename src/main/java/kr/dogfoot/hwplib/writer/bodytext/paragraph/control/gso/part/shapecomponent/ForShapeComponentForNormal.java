@@ -32,12 +32,7 @@ public class ForShapeComponentForNormal {
         lineInfo(scn.getLineInfo(), sw);
         fillInfo(scn.getFillInfo(), sw);
         shadowInfo(scn.getShadowInfo(), sw);
-
-        if (scn.getShadowInfo() != null) {
-            sw.writeUInt4(scn.getInstid());
-            sw.writeZero(1);
-            sw.writeUInt1(scn.getShadowInfo().getTransparent());
-        }
+        rest(scn, sw);
     }
 
     /**
@@ -137,6 +132,14 @@ public class ForShapeComponentForNormal {
         }
     }
 
+    private static void rest(ShapeComponentNormal scn, StreamWriter sw) throws IOException {
+        if (scn.getShadowInfo() != null) {
+            sw.writeUInt4(scn.getInstid());
+            sw.writeZero(1);
+            sw.writeUInt1(scn.getShadowInfo().getTransparent());
+        }
+    }
+
     /**
      * 묶음 컨트톨에 포함되어 있는 일반 컨트롤의 객체 공통 속성 레코드을 쓴다.
      *
@@ -153,6 +156,7 @@ public class ForShapeComponentForNormal {
         lineInfo(scn.getLineInfo(), sw);
         fillInfo(scn.getFillInfo(), sw);
         shadowInfo(scn.getShadowInfo(), sw);
+        rest(scn, sw);
     }
 
     /**
