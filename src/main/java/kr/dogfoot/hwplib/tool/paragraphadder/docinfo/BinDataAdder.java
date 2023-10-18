@@ -33,6 +33,10 @@ public class BinDataAdder {
             return sourceId;
         }
 
+        if (sourceId == 0) {
+            return 0;
+        }
+
         BinData source = docInfoAdder.getSourceHWPFile().getDocInfo().getBinDataList().get(sourceId - 1);
         return addAndCopy(source);
     }
