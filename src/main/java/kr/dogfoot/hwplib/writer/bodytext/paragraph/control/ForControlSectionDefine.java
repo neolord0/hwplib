@@ -32,6 +32,7 @@ public class ForControlSectionDefine {
 
         sw.upRecordLevel();
 
+        ctrlData(sd, sw);
         ForPageDef.write(sd.getPageDef(), sw);
         ForFootEndNoteShape.write(sd.getFootNoteShape(), sw);
         ForFootEndNoteShape.write(sd.getEndNoteShape(), sw);
@@ -39,7 +40,6 @@ public class ForControlSectionDefine {
         ForPageBorderFill.write(sd.getEvenPageBorderFill(), sw);
         ForPageBorderFill.write(sd.getOddPageBorderFill(), sw);
         batangPageInfoList(sd, sw);
-        // ctrlData(sd, sw);
 
         sw.downRecordLevel();
     }

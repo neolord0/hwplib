@@ -22,7 +22,6 @@ public class ForBullet {
      */
     public static void write(Bullet b, StreamWriter sw) throws IOException {
         recordHeader(sw);
-
         ForNumbering.paragraphHeadInfo(b.getParagraphHeadInfo(), sw);
         sw.writeWChar(b.getBulletChar().getBytes());
         if (b.getImageBullet()) {
@@ -41,6 +40,6 @@ public class ForBullet {
      * @throws IOException
      */
     private static void recordHeader(StreamWriter sw) throws IOException {
-        sw.writeRecordHeader(HWPTag.BULLET, 23);
+        sw.writeRecordHeader(HWPTag.BULLET, 25);
     }
 }
