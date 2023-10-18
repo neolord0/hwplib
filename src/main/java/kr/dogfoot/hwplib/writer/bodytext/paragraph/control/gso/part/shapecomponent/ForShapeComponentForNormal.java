@@ -33,10 +33,11 @@ public class ForShapeComponentForNormal {
         fillInfo(scn.getFillInfo(), sw);
         shadowInfo(scn.getShadowInfo(), sw);
 
-        sw.writeUInt4(scn.getInstid());
-        sw.writeZero(1);
-        sw.writeUInt1(scn.getShadowInfo().getTransparent());
-
+        if (scn.getShadowInfo() != null) {
+            sw.writeUInt4(scn.getInstid());
+            sw.writeZero(1);
+            sw.writeUInt1(scn.getShadowInfo().getTransparent());
+        }
     }
 
     /**
