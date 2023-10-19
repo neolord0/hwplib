@@ -42,7 +42,7 @@ public class ForControlArc {
             throws IOException {
         recordHeader(sw);
 
-        sw.writeUInt1(sca.getArcBorder().getValue());
+        sw.writeUInt1(sca.getArcType().getValue());
         sw.writeSInt4(sca.getCenterX());
         sw.writeSInt4(sca.getCenterY());
         sw.writeSInt4(sca.getAxis1X());

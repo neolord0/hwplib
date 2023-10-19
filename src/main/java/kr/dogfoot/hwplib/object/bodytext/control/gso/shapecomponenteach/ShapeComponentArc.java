@@ -1,6 +1,6 @@
 package kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponenteach;
 
-import kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponenteach.arc.ArcBorder;
+import kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponenteach.arc.ArcType;
 
 /**
  * 호 개체 속성 레코드
@@ -9,9 +9,9 @@ import kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponenteach.arc.ArcB
  */
 public class ShapeComponentArc {
     /**
-     * 호 테두리
+     * 호 테두리 타입
      */
-    private ArcBorder arcBorder;
+    private ArcType arcType;
     /**
      * 타원의 중심 좌표 X값
      */
@@ -44,21 +44,21 @@ public class ShapeComponentArc {
     }
 
     /**
-     * 호 테두리 종류를 반환한다.
+     * 호 테두리 타입를 반환한다.
      *
-     * @return 호 테두리 종류
+     * @return 호 테두리 타입
      */
-    public ArcBorder getArcBorder() {
-        return arcBorder;
+    public ArcType getArcType() {
+        return arcType;
     }
 
     /**
-     * 호 테두리 종류를 설정한다.
+     * 호 테두리 타입를 설정한다.
      *
-     * @param arcBorder 호 테두리 종류
+     * @param arcType 호 테두리 타입
      */
-    public void setArcBorder(ArcBorder arcBorder) {
-        this.arcBorder = arcBorder;
+    public void setArcType(ArcType arcType) {
+        this.arcType = arcType;
     }
 
     /**
@@ -170,7 +170,7 @@ public class ShapeComponentArc {
     }
 
     public void copy(ShapeComponentArc from) {
-        arcBorder = from.arcBorder;
+        arcType = from.arcType;
         centerX = from.centerX;
         centerY = from.centerY;
         axis1X = from.axis1X;

@@ -3,7 +3,7 @@ package kr.dogfoot.hwplib.reader.bodytext.paragraph.control.gso;
 import kr.dogfoot.hwplib.object.RecordHeader;
 import kr.dogfoot.hwplib.object.bodytext.control.gso.ControlArc;
 import kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponenteach.ShapeComponentArc;
-import kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponenteach.arc.ArcBorder;
+import kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponenteach.arc.ArcType;
 import kr.dogfoot.hwplib.object.etc.HWPTag;
 import kr.dogfoot.hwplib.reader.bodytext.paragraph.control.gso.part.ForTextBox;
 import kr.dogfoot.hwplib.util.compoundFile.reader.StreamReader;
@@ -46,7 +46,7 @@ public class ForControlArc {
      */
     private static void shapeComponentArc(ShapeComponentArc sca, StreamReader sr)
             throws IOException {
-        sca.setArcBorder(ArcBorder.valueOf((byte) sr.readUInt1()));
+        sca.setArcType(ArcType.valueOf((byte) sr.readUInt1()));
         sca.setCenterX(sr.readSInt4());
         sca.setCenterY(sr.readSInt4());
         sca.setAxis1X(sr.readSInt4());

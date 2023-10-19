@@ -1,5 +1,6 @@
 package kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponenteach.ellipse;
 
+import kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponenteach.arc.ArcType;
 import kr.dogfoot.hwplib.util.binary.BitFlag;
 
 /**
@@ -75,21 +76,21 @@ public class ShapeComponentEllipseProperty {
     }
 
     /**
-     * 호(ARC)의 종류를 반환한다.(정보 부족) (2~9 bit)
+     * 호(ARC)의 타입를 반환한다. (2~9 bit)
      *
-     * @return 호(ARC)의 종류
+     * @return 호(ARC)의 타입
      */
-    public short getArcSort() {
-        return (short) BitFlag.get(value, 2, 9);
+    public ArcType getArcType() {
+        return ArcType.valueOf((byte)BitFlag.get(value, 2, 9));
     }
 
     /**
-     * 호(ARC)의 종류를 설정한다. (정보 부족) (2~9 bit)
+     * 호(ARC)의 타입를 설정한다. (2~9 bit)
      *
-     * @param arcSort 호(ARC)의 종류
+     * @param arcType 호(ARC)의 타입
      */
-    public void setArcSort(short arcSort) {
-        value = BitFlag.set(value, 2, 9, arcSort);
+    public void setArcType(ArcType arcType) {
+        value = BitFlag.set(value, 2, 9, arcType.getValue());
     }
 
     public void copy(ShapeComponentEllipseProperty from) {

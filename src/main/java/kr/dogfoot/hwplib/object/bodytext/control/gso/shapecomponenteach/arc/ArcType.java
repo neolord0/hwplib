@@ -5,7 +5,7 @@ package kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponenteach.arc;
  *
  * @author neolord
  */
-public enum ArcBorder {
+public enum ArcType {
     /**
      * 호
      */
@@ -29,7 +29,7 @@ public enum ArcBorder {
      *
      * @param value 파일에 저장되는 정수값
      */
-    ArcBorder(byte value) {
+    ArcType(byte value) {
         this.value = value;
     }
 
@@ -48,8 +48,8 @@ public enum ArcBorder {
      * @param value 파일에 저장되는 정수값
      * @return enum 값
      */
-    public static ArcBorder valueOf(byte value) {
-        for (ArcBorder ab : values()) {
+    public static ArcType valueOf(byte value) {
+        for (ArcType ab : values()) {
             if (ab.value == value) {
                 return ab;
             }

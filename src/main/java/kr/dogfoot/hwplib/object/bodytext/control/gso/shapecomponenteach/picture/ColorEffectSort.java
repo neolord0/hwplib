@@ -1,6 +1,5 @@
 package kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponenteach.picture;
 
-import kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponenteach.arc.ArcBorder;
 
 public enum ColorEffectSort {
     Alpha(0),
