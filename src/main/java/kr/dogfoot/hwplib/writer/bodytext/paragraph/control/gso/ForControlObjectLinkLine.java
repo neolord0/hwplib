@@ -2,6 +2,8 @@ package kr.dogfoot.hwplib.writer.bodytext.paragraph.control.gso;
 
 import kr.dogfoot.hwplib.object.bodytext.control.gso.ControlObjectLinkLine;
 import kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponenteach.ShapeComponentLineForObjectLinkLine;
+import kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponenteach.objectlinkline.ControlPoint;
+import kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponenteach.objectlinkline.LinkLineType;
 import kr.dogfoot.hwplib.object.etc.HWPTag;
 import kr.dogfoot.hwplib.util.compoundFile.writer.StreamWriter;
 
@@ -38,9 +40,20 @@ public class ForControlObjectLinkLine {
         sw.writeSInt4(scl.getStartY());
         sw.writeSInt4(scl.getEndX());
         sw.writeSInt4(scl.getEndY());
-        if (scl.getUnknown() != null) {
-            sw.writeBytes(scl.getUnknown());
+        sw.writeUInt4(scl.getType().getValue());
+        sw.writeUInt4(scl.getStartSubjectID());
+        sw.writeUInt4(scl.getStartSubjectIndex());
+        sw.writeUInt4(scl.getEndSubjectID());
+        sw.writeUInt4(scl.getEndSubjectIndex());
+
+        sw.writeUInt4(scl.getControlPoints().size());
+        for(ControlPoint cp : scl.getControlPoints()) {
+            sw.writeUInt4(cp.getX());
+            sw.writeUInt4(cp.getY());
+            sw.writeUInt2(cp.getType());
         }
+
+        sw.writeZero(4);
     }
 
     /**
@@ -62,9 +75,6 @@ public class ForControlObjectLinkLine {
      * @return 선 개체 속성 레코드의 크기
      */
     private static int getSize(ShapeComponentLineForObjectLinkLine scl) {
-        if (scl.getUnknown() != null) {
-            return 16 + scl.getUnknown().length;
-        }
-        return 16;
+        return 40 + scl.getControlPoints().size() * 10 + 4;
     }
 }

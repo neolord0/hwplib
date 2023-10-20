@@ -3,6 +3,8 @@ package kr.dogfoot.hwplib.reader.bodytext.paragraph.control.gso;
 import kr.dogfoot.hwplib.object.RecordHeader;
 import kr.dogfoot.hwplib.object.bodytext.control.gso.ControlObjectLinkLine;
 import kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponenteach.ShapeComponentLineForObjectLinkLine;
+import kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponenteach.objectlinkline.ControlPoint;
+import kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponenteach.objectlinkline.LinkLineType;
 import kr.dogfoot.hwplib.object.etc.HWPTag;
 import kr.dogfoot.hwplib.util.compoundFile.reader.StreamReader;
 
@@ -44,25 +46,27 @@ public class ForControlObjectLinkLine {
         scl.setStartY(sr.readSInt4());
         scl.setEndX(sr.readSInt4());
         scl.setEndY(sr.readSInt4());
-        unknownData(scl, sr);
-    }
 
-    /**
-     * 알 수 없는 데이터 블럭을 읽는다.
-     *
-     * @param scl 선 개체 속성 레코드
-     * @param sr  스트림 리더
-     * @throws IOException
-     */
-    private static void unknownData(ShapeComponentLineForObjectLinkLine scl,
-                                    StreamReader sr) throws IOException {
-        int unknownSize = (int) (sr.getCurrentRecordHeader().getSize() - sr
-                .getCurrentPositionAfterHeader());
-        if (unknownSize > 0) {
-            byte[] unknown = new byte[unknownSize];
-            sr.readBytes(unknown);
-            scl.setUnknown(unknown);
+        scl.setType(LinkLineType.valueOf((byte) sr.readUInt4()));
+        scl.setStartSubjectID(sr.readUInt4());
+        scl.setStartSubjectIndex(sr.readUInt4());
+        scl.setEndSubjectID(sr.readUInt4());
+        scl.setEndSubjectIndex(sr.readUInt4());
+
+        int countOfCP = (int) sr.readUInt4();
+        for (int index = 0; index < countOfCP;index++) {
+            ControlPoint cp = scl.addNewControlPoint();
+            cp.setX(sr.readUInt4());
+            cp.setY(sr.readUInt4());
+            cp.setType(sr.readUInt2());
+        }
+
+        if (sr.isEndOfRecord() == false) {
+            unknownBytes(sr);
         }
     }
 
+    private static void unknownBytes(StreamReader sr) throws IOException {
+        sr.skipToEndRecord();
+    }
 }

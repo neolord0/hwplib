@@ -1,5 +1,10 @@
 package kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponenteach;
 
+import kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponenteach.objectlinkline.ControlPoint;
+import kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponenteach.objectlinkline.LinkLineType;
+
+import java.util.ArrayList;
+
 /**
  * 객체 연결선 컨트롤을 위한 선 개체 속성 레코드
  *
@@ -22,6 +27,13 @@ public class ShapeComponentLineForObjectLinkLine {
      * 끝점 y 좌표
      */
     private int endY;
+    private LinkLineType type;
+    private long startSubjectID;
+    private long startSubjectIndex;
+    private long endSubjectID;
+    private long endSubjectIndex;
+    private ArrayList<ControlPoint> controlPoints;
+
     /**
      * 알 수 없는 데이터
      */
@@ -32,6 +44,7 @@ public class ShapeComponentLineForObjectLinkLine {
      */
     public ShapeComponentLineForObjectLinkLine() {
         unknown = null;
+        controlPoints = new ArrayList<ControlPoint>();
     }
 
     /**
@@ -106,22 +119,54 @@ public class ShapeComponentLineForObjectLinkLine {
         this.endY = endY;
     }
 
-    /**
-     * 알 수 없는 데이터를 반환한다.
-     *
-     * @return 알 수 없는 데이터
-     */
-    public byte[] getUnknown() {
-        return unknown;
+    public LinkLineType getType() {
+        return type;
     }
 
-    /**
-     * 알 수 없는 데이터를 설정한다.
-     *
-     * @param unknown
-     */
-    public void setUnknown(byte[] unknown) {
-        this.unknown = unknown;
+    public void setType(LinkLineType type) {
+        this.type = type;
+    }
+
+    public long getStartSubjectID() {
+        return startSubjectID;
+    }
+
+    public void setStartSubjectID(long startSubjectID) {
+        this.startSubjectID = startSubjectID;
+    }
+
+    public long getStartSubjectIndex() {
+        return startSubjectIndex;
+    }
+
+    public void setStartSubjectIndex(long startSubjectIndex) {
+        this.startSubjectIndex = startSubjectIndex;
+    }
+
+    public long getEndSubjectID() {
+        return endSubjectID;
+    }
+
+    public void setEndSubjectID(long endSubjectID) {
+        this.endSubjectID = endSubjectID;
+    }
+
+    public long getEndSubjectIndex() {
+        return endSubjectIndex;
+    }
+
+    public void setEndSubjectIndex(long endSubjectIndex) {
+        this.endSubjectIndex = endSubjectIndex;
+    }
+
+    public ControlPoint addNewControlPoint() {
+        ControlPoint newCP = new ControlPoint();
+        controlPoints.add(newCP);
+        return newCP;
+    }
+
+    public ArrayList<ControlPoint> getControlPoints() {
+        return controlPoints;
     }
 
     public void copy(ShapeComponentLineForObjectLinkLine from) {
@@ -129,11 +174,14 @@ public class ShapeComponentLineForObjectLinkLine {
         startY = from.startY;
         endX = from.endX;
         endY = from.endY;
+        type = from.type;
+        startSubjectID  = from.startSubjectID;
+        startSubjectIndex = from.startSubjectIndex;
+        endSubjectID = from.endSubjectID;
+        endSubjectIndex = from.endSubjectIndex;
 
-        if (from.unknown != null) {
-            unknown = from.unknown.clone();
-        } else {
-            unknown = null;
+        for (ControlPoint fromCP : from.controlPoints) {
+            addNewControlPoint().copy(fromCP);
         }
     }
-}
+ }
