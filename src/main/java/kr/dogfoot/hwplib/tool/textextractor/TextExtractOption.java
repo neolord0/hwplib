@@ -21,6 +21,14 @@ public class TextExtractOption {
         insertParaHead = true;
     }
 
+    public TextExtractOption(TextExtractMethod method, boolean appendEndingLF) {
+        this.method = method;
+        withControlChar = false;
+        this.appendEndingLF = appendEndingLF;
+        insertParaHead = true;
+    }
+
+
     public TextExtractOption(TextExtractOption that) {
         this.method = that.method;
         this.withControlChar = that.withControlChar;

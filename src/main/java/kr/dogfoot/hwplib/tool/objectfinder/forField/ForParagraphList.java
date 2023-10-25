@@ -183,7 +183,11 @@ public class ForParagraphList {
         for (int paraIndex = position.startParaIndex; paraIndex <= position.endParaIndex; paraIndex++) {
             int startCharIndex = (paraIndex == position.startParaIndex) ? position.startCharIndex : 0;
             int endCharIndex = (paraIndex == position.endParaIndex) ? position.endCharIndex : (paragraphList.getParagraph(paraIndex).getText() == null) ? 0 : paragraphList.getParagraph(paraIndex).getText().getCharList().size();
-            kr.dogfoot.hwplib.tool.textextractor.ForParagraphList.extract(paragraphList.getParagraph(paraIndex), startCharIndex, endCharIndex, temInField, null, sb);
+            kr.dogfoot.hwplib.tool.textextractor.ForParagraph.extract(paragraphList.getParagraph(paraIndex),
+                    startCharIndex, endCharIndex,
+                    temInField,
+                    null,
+                    sb);
         }
         return sb.toString();
     }
