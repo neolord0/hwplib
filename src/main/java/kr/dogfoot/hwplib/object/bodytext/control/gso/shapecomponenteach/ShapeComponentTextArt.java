@@ -1,6 +1,7 @@
 package kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponenteach;
 
 import kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponenteach.polygon.PositionXY;
+import kr.dogfoot.hwplib.object.docinfo.facename.FontType;
 import kr.dogfoot.hwplib.object.etc.Color4Byte;
 import kr.dogfoot.hwplib.object.etc.HWPString;
 
@@ -52,9 +53,9 @@ public class ShapeComponentTextArt {
      */
     private HWPString fontStyle;
     /**
-     * 글꼴 타입 = 1:TTF/OTF, 2:HTF
+     * 글꼴 타입
      */
-    private int fontType;
+    private FontType fontType;
     /**
      * 글맵시 모양
      */
@@ -274,18 +275,18 @@ public class ShapeComponentTextArt {
     /**
      * 글꼴 타입을 반환한다.
      *
-     * @return 글꼴 타입 = 1:TTF/OTF, 2:HTF
+     * @return 글꼴 타입
      */
-    public int getFontType() {
+    public FontType getFontType() {
         return fontType;
     }
 
     /**
      * 글꼴 타입을 설정한다.
      *
-     * @param fontType 글꼴 타입 = 1:TTF/OTF, 2:HTF
+     * @param fontType 글꼴 타입
      */
-    public void setFontType(int fontType) {
+    public void setFontType(FontType fontType) {
         this.fontType = fontType;
     }
 

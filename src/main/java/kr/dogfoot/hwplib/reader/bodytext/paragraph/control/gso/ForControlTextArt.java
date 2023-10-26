@@ -4,6 +4,7 @@ import kr.dogfoot.hwplib.object.RecordHeader;
 import kr.dogfoot.hwplib.object.bodytext.control.gso.ControlTextArt;
 import kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponenteach.ShapeComponentTextArt;
 import kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponenteach.polygon.PositionXY;
+import kr.dogfoot.hwplib.object.docinfo.facename.FontType;
 import kr.dogfoot.hwplib.object.etc.HWPTag;
 import kr.dogfoot.hwplib.util.compoundFile.reader.StreamReader;
 
@@ -30,7 +31,7 @@ public class ForControlTextArt {
         scta.getContent().setBytes(sr.readHWPString());
         scta.getFontName().setBytes(sr.readHWPString());
         scta.getFontStyle().setBytes(sr.readHWPString());
-        scta.setFontType(sr.readSInt4());
+        scta.setFontType(FontType.valueOf((byte) sr.readSInt4()));
         scta.setTextArtShape(sr.readSInt4());
         scta.setLineSpace(sr.readSInt4());
         scta.setCharSpace(sr.readSInt4());

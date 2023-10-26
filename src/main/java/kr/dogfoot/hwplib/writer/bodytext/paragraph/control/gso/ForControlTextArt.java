@@ -30,7 +30,7 @@ public class ForControlTextArt {
         sw.writeHWPString(scta.getContent());
         sw.writeHWPString(scta.getFontName());
         sw.writeHWPString(scta.getFontStyle());
-        sw.writeSInt4(scta.getFontType());
+        sw.writeSInt4(scta.getFontType().getValue());
         sw.writeSInt4(scta.getTextArtShape());
         sw.writeSInt4(scta.getLineSpace());
         sw.writeSInt4(scta.getCharSpace());
