@@ -185,8 +185,7 @@ public class ForShapeComponent {
                                                    StreamReader sr) throws IOException {
         commonPart(scc, sr);
         childInfo(scc, sr);
-
-        unknown4Bytes(sr);
+        scc.setInstid(sr.readUInt4());
     }
 
     /**
@@ -203,15 +202,5 @@ public class ForShapeComponent {
             long childId = sr.readUInt4();
             scc.addChildControlId(childId);
         }
-    }
-
-    /**
-     * 알려지지 않은 4 바이트를 처리한다.
-     *
-     * @param sr
-     * @throws IOException
-     */
-    private static void unknown4Bytes(StreamReader sr) throws IOException {
-        sr.skipToEndRecord();
     }
 }

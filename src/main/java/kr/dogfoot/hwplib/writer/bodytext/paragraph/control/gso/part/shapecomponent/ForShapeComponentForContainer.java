@@ -27,7 +27,7 @@ public class ForShapeComponentForContainer {
         gsoCtrlId(scc, sw);
         commonPart(scc, sw);
         childInfo(scc, sw);
-        sw.writeZero(4);
+        sw.writeUInt4(scc.getInstid());
     }
 
     /**

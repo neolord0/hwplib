@@ -66,6 +66,8 @@ public abstract class ShapeComponent {
      */
     private RenderingInfo renderingInfo;
 
+    private long instid;
+
     /**
      * 생성자
      */
@@ -335,6 +337,23 @@ public abstract class ShapeComponent {
         pair.getRotateMatrix().setValue(5, 0.0f);
     }
 
+    /**
+     * 객체의 인스턴스 아이디를 반환한다..
+     * @return 객체의 인스턴스 아이디
+     */
+    public long getInstid() {
+        return instid;
+    }
+
+    /**
+     * 객체의 인스턴스 아이디를 설정한다.
+     * @param instid 객체의 인스턴스 아이디
+     */
+    public void setInstid(long instid) {
+        this.instid = instid;
+    }
+
+
     public abstract void copy(ShapeComponent from);
 
     public void copyShapeComponent(ShapeComponent from) {
@@ -353,5 +372,6 @@ public abstract class ShapeComponent {
         rotateXCenter = from.rotateXCenter;
         rotateYCenter = from.rotateYCenter;
         renderingInfo.copy(from.renderingInfo);
+        instid = from.instid;
     }
 }
