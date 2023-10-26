@@ -39,8 +39,9 @@ public class ForControlTextArt {
         scta.setShadowOffsetX(sr.readSInt4());
         scta.setShadowOffsetY(sr.readSInt4());
         scta.getShadowColor().setValue(sr.readUInt4());
+
         int outlinePointCount = sr.readSInt4();
-        if (outlinePointCount > 0) {
+        for (int index = 0; index < outlinePointCount; index++) {
             PositionXY positionXY = new PositionXY();
             positionXY.setX(sr.readSInt4());
             positionXY.setY(sr.readSInt4());
