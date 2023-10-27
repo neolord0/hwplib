@@ -1,6 +1,8 @@
 package kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponenteach;
 
 import kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponenteach.polygon.PositionXY;
+import kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponenteach.textart.TextArtAlign;
+import kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponenteach.textart.TextArtShape;
 import kr.dogfoot.hwplib.object.docinfo.facename.FontType;
 import kr.dogfoot.hwplib.object.etc.Color4Byte;
 import kr.dogfoot.hwplib.object.etc.HWPString;
@@ -59,7 +61,7 @@ public class ShapeComponentTextArt {
     /**
      * 글맵시 모양
      */
-    private int textArtShape;
+    private TextArtShape textArtShape;
     /**
      * 줄 간격
      */
@@ -69,9 +71,9 @@ public class ShapeComponentTextArt {
      */
     private int charSpace;
     /**
-     * 문단 정렬 = 0:왼쪽, 1:오른쪽, 2:중앙, 3:양끝, 4:양끝(끝줄 포함)
+     * 문단 정렬
      */
-    private int paraAlignment;
+    private TextArtAlign paraAlignment;
     /**
      * 그림자 타입 = 0: 없음, 1:비연속
      */
@@ -295,7 +297,7 @@ public class ShapeComponentTextArt {
      *
      * @return 글맵시 모양
      */
-    public int getTextArtShape() {
+    public TextArtShape getTextArtShape() {
         return textArtShape;
     }
 
@@ -304,7 +306,7 @@ public class ShapeComponentTextArt {
      *
      * @param textArtShape 글맵시 모양
      */
-    public void setTextArtShape(int textArtShape) {
+    public void setTextArtShape(TextArtShape textArtShape) {
         this.textArtShape = textArtShape;
     }
 
@@ -349,7 +351,7 @@ public class ShapeComponentTextArt {
      *
      * @return 문단 정렬 = 0:왼쪽, 1:오른쪽, 2:중앙, 3:양끝, 4:양끝(끝줄 포함)
      */
-    public int getParaAlignment() {
+    public TextArtAlign getParaAlignment() {
         return paraAlignment;
     }
 
@@ -358,7 +360,7 @@ public class ShapeComponentTextArt {
      *
      * @param paraAlignment 문단 정렬 = 0:왼쪽, 1:오른쪽, 2:중앙, 3:양끝, 4:양끝(끝줄 포함)
      */
-    public void setParaAlignment(int paraAlignment) {
+    public void setParaAlignment(TextArtAlign paraAlignment) {
         this.paraAlignment = paraAlignment;
     }
 

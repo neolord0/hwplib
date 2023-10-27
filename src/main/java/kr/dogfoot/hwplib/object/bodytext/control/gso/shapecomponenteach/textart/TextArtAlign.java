@@ -1,16 +1,11 @@
-package kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponenteach.objectlinkline;
+package kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponenteach.textart;
 
-public enum LinkLineType {
-    Straight_NoArrow((byte) 0),
-    Straight_OneWay((byte) 1),
-    Straight_Both((byte) 2),
-    Stroke_NoArrow((byte) 3),
-    Stoke_OneWay((byte) 4),
-    Stoke_Both((byte) 5),
-    Arc_NoArrow((byte) 6),
-    Arc_OneWay((byte) 7),
-    Arc_Both((byte) 8);
-
+public enum TextArtAlign {
+    LEFT((byte) 0),
+    RIGHT((byte) 1),
+    CENTER((byte) 2),
+    FULL((byte) 3),
+    TABLE((byte) 4);
 
     /**
      * 파일에 저장되는 정수값
@@ -22,7 +17,7 @@ public enum LinkLineType {
      *
      * @param value 파일에 저장되는 정수값
      */
-    LinkLineType(byte value) {
+    TextArtAlign(byte value) {
         this.value = value;
     }
 
@@ -41,12 +36,13 @@ public enum LinkLineType {
      * @param value 파일에 저장되는 정수값
      * @return enum 값
      */
-    public static LinkLineType valueOf(byte value) {
-        for (LinkLineType llk : values()) {
-            if (llk.value == value) {
-                return llk;
+    public static TextArtAlign valueOf(byte value) {
+        for (TextArtAlign tas : values()) {
+            if (tas.value == value) {
+                return tas;
             }
         }
-        return Straight_NoArrow;
+        return LEFT;
     }
+
 }

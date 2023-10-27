@@ -1,7 +1,6 @@
 package kr.dogfoot.hwplib.reader.docinfo;
 
 import kr.dogfoot.hwplib.object.docinfo.*;
-import kr.dogfoot.hwplib.object.etc.Color4Byte;
 import kr.dogfoot.hwplib.object.etc.HWPTag;
 import kr.dogfoot.hwplib.object.etc.UnknownRecord;
 import kr.dogfoot.hwplib.reader.ForUnknown;

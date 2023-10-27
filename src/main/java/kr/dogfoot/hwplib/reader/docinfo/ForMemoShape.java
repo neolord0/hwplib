@@ -3,7 +3,6 @@ package kr.dogfoot.hwplib.reader.docinfo;
 import kr.dogfoot.hwplib.object.docinfo.MemoShape;
 import kr.dogfoot.hwplib.object.docinfo.borderfill.BorderThickness;
 import kr.dogfoot.hwplib.object.docinfo.borderfill.BorderType;
-import kr.dogfoot.hwplib.object.etc.Color4Byte;
 import kr.dogfoot.hwplib.util.compoundFile.reader.StreamReader;
 
 import java.io.IOException;

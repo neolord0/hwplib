@@ -31,10 +31,10 @@ public class ForControlTextArt {
         sw.writeHWPString(scta.getFontName());
         sw.writeHWPString(scta.getFontStyle());
         sw.writeSInt4(scta.getFontType().getValue());
-        sw.writeSInt4(scta.getTextArtShape());
+        sw.writeSInt4(scta.getTextArtShape().getValue());
         sw.writeSInt4(scta.getLineSpace());
         sw.writeSInt4(scta.getCharSpace());
-        sw.writeSInt4(scta.getParaAlignment());
+        sw.writeSInt4(scta.getParaAlignment().getValue());
         sw.writeSInt4(scta.getShadowType());
         sw.writeSInt4(scta.getShadowOffsetX());
         sw.writeSInt4(scta.getShadowOffsetY());

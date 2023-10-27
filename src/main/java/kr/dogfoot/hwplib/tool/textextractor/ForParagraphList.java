@@ -1,15 +1,10 @@
 package kr.dogfoot.hwplib.tool.textextractor;
 
 import kr.dogfoot.hwplib.object.bodytext.ParagraphListInterface;
-import kr.dogfoot.hwplib.object.bodytext.control.Control;
 import kr.dogfoot.hwplib.object.bodytext.paragraph.Paragraph;
-import kr.dogfoot.hwplib.object.bodytext.paragraph.text.HWPChar;
-import kr.dogfoot.hwplib.object.bodytext.paragraph.text.HWPCharNormal;
-import kr.dogfoot.hwplib.object.bodytext.paragraph.text.ParaText;
 import kr.dogfoot.hwplib.tool.textextractor.paraHead.ParaHeadMaker;
 
 import java.io.UnsupportedEncodingException;
-import java.util.ArrayList;
 
 /**
  * 문단 리스트를 위한 텍스트 추출기 객체

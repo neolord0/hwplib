@@ -1,8 +1,5 @@
 package kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponenteach.objectlinkline;
 
-import kr.dogfoot.hwplib.object.bodytext.control.gso.ControlPicture;
-import kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponenteach.ShapeComponentLineForObjectLinkLine;
-
 public class ControlPoint {
     private long x;
     private long y;
