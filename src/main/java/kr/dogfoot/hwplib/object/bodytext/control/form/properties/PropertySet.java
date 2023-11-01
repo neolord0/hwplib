@@ -4,6 +4,7 @@ import kr.dogfoot.hwplib.object.etc.HWPString;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Set;
 
 public class PropertySet extends Property {
     private HashMap<String, Property> propertyMap;
@@ -28,6 +29,10 @@ public class PropertySet extends Property {
 
     public Property getProperty(String name) {
         return propertyMap.get(name);
+    }
+
+    public Set<String> getNames() {
+        return propertyMap.keySet();
     }
 
     @Override

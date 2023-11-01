@@ -255,6 +255,60 @@ public class SectionDefineHeaderProperty {
         value = BitFlag.set(value, 22, applyWongoji);
     }
 
+    /**
+     * 양쪽 바탕쪽 적용 여부를 반환한다.(29 bit)
+     *
+     * @return 양쪽 바탕쪽 적용 여부
+     */
+    public boolean isApplyBothBatangPage() {
+        return BitFlag.get(value, 29);
+    }
+
+    /**
+     * 양쪽 바탕쪽 적용 여부를 설정한다.(29 bit)
+     *
+     * @param applyBothBatangPage 양쪽 바탕쪽 적용 여부
+     */
+    public void setApplyBothBatangPage(boolean applyBothBatangPage) {
+        value = BitFlag.set(value, 29, applyBothBatangPage);
+    }
+
+    /**
+     * 짝수쪽 바탕쪽 적용 여부를 반환한다.(30 bit)
+     *
+     * @return 짝수쪽 바탕쪽 적용 여부
+     */
+    public boolean isApplyEvenBatangPage() {
+        return BitFlag.get(value, 30);
+    }
+
+    /**
+     * 짝수쪽 바탕쪽 적용 여부를 설정한다.(30 bit)
+     *
+     * @param applyEvenBatangPage 짝수쪽 바탕쪽 적용 여부
+     */
+    public void setApplyEvenBatangPage(boolean applyEvenBatangPage) {
+        value = BitFlag.set(value, 30, applyEvenBatangPage);
+    }
+
+    /**
+     * 홀수쪽 바탕쪽 적용 여부를 반환한다.(31 bit)
+     *
+     * @return 홀수쪽 바탕쪽 적용 여부
+     */
+    public boolean isApplyOddBatangPage() {
+        return BitFlag.get(value, 31);
+    }
+
+    /**
+     * 홀수쪽 바탕쪽 적용 여부를 설정한다.(31 bit)
+     *
+     * @param applyOddBatangPage 홀수쪽 바탕쪽 적용 여부
+     */
+    public void setApplyOddBatangPage(boolean applyOddBatangPage) {
+        value = BitFlag.set(value, 31, applyOddBatangPage);
+    }
+
     public void copy(SectionDefineHeaderProperty from) {
         value = from.value;
     }
