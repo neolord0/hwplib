@@ -43,17 +43,6 @@ public class BorderFillAdder {
         }
     }
 
-    private BorderFill getBorderFill(ArrayList<BorderFill> borderFillList, int index) {
-        int count = borderFillList.size();
-        if (index >= count) {
-            return borderFillList.get(count - 1);
-        } else if (index < 0) {
-            return borderFillList.get(0);
-        } else {
-            return borderFillList.get(index);
-        }
-    }
-
     private int findFromTarget(BorderFill source) {
         int count = docInfoAdder.getTargetHWPFile().getDocInfo().getBorderFillList().size();
         for (int index = 0; index < count; index++) {
@@ -66,6 +55,10 @@ public class BorderFillAdder {
     }
 
     private boolean equal(BorderFill source, BorderFill target) {
+        if (source == null || target == null) {
+            return source == target;
+        }
+
         return source.getProperty().getValue() == target.getProperty().getValue()
                 && equalEachBorder(source.getLeftBorder(), target.getLeftBorder())
                 && equalEachBorder(source.getRightBorder(), target.getRightBorder())
@@ -99,8 +92,25 @@ public class BorderFillAdder {
     }
 
     public boolean equalById(int sourceId, int targetId) {
+        if (sourceId == 0 || targetId == 0) {
+            return sourceId == targetId;
+        }
         BorderFill source = getBorderFill(docInfoAdder.getSourceHWPFile().getDocInfo().getBorderFillList(), sourceId - 1);
         BorderFill target = getBorderFill(docInfoAdder.getTargetHWPFile().getDocInfo().getBorderFillList(), targetId - 1);
         return equal(source, target);
+    }
+
+    private BorderFill getBorderFill(ArrayList<BorderFill> borderFillList, int index) {
+        int count = borderFillList.size();
+        if (count == 0) {
+            return null;
+        }
+        if (index >= count) {
+            return borderFillList.get(count - 1);
+        } else if (index < 0) {
+            return borderFillList.get(0);
+        } else {
+            return borderFillList.get(index);
+        }
     }
 }
