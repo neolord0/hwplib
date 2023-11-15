@@ -194,7 +194,7 @@ public class ForParagraph {
                 sb.append("\t");
                 break;
             case 10:
-                sb.append("\r\n");
+                sb.append("\n");
                 break;
             case 24:
                 sb.append("_");
