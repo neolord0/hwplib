@@ -121,8 +121,8 @@ public class ForControl {
     }
 
     private static void findInContainer(ControlContainer container, FieldFormFinder.Result result, FieldFormFinder.Option option) throws FieldFormFinder.StopFindException {
-        for (Control childControl : container.getChildControlList()) {
-            findInControl(childControl, result, option);
+        for (GsoControl childControl : container.getChildControlList()) {
+            findInGso(childControl, result, option);
         }
     }
 

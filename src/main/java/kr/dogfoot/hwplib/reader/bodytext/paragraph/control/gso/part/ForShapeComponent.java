@@ -185,7 +185,9 @@ public class ForShapeComponent {
                                                    StreamReader sr) throws IOException {
         commonPart(scc, sr);
         childInfo(scc, sr);
-        scc.setInstid(sr.readUInt4());
+        if (!sr.isEndOfRecord()) {
+            scc.setInstid(sr.readUInt4());
+        }
     }
 
     /**
