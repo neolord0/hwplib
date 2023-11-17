@@ -76,6 +76,7 @@ public class CellFinder {
                 if (matchFieldName(cell, fieldName)) {
                     cellList.add(cell);
                 }
+                forParagraphList(cell.getParagraphList());
             }
         }
     }
