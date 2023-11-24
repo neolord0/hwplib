@@ -51,7 +51,11 @@ public enum GsoControlType {
     /**
      * 글맵시
      */
-    TextArt(CtrlID.make('$', 't', 'a', 't'));
+    TextArt(CtrlID.make('$', 't', 'a', 't')),
+    /**
+     * 알 수 없는 개체
+     */
+    Unknown(CtrlID.make('$', 'u', 'n', 'k'));
 
     /**
      * 아아디

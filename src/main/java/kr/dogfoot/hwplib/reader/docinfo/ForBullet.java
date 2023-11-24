@@ -22,6 +22,10 @@ public class ForBullet {
     public static void read(Bullet b, StreamReader sr) throws IOException {
         ForNumbering.paragraphHeadInfo(b.getParagraphHeadInfo(), sr);
         b.getBulletChar().setBytes(sr.readWChar());
+        if (sr.isEndOfRecord()) {
+            return;
+        }
+
         long imageBullet = sr.readUInt4();
         if (imageBullet == 1) {
             b.setImageBullet(true);
