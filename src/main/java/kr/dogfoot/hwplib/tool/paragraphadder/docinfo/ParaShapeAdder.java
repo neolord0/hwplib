@@ -70,7 +70,8 @@ public class ParaShapeAdder {
                 && source.getBottomBorderSpace() == target.getBottomBorderSpace()
                 && source.getProperty2().getValue() == target.getProperty2().getValue()
                 && source.getProperty3().getValue() == target.getProperty3().getValue()
-                && source.getLineSpace2() == target.getLineSpace2();
+                && source.getLineSpace2() == target.getLineSpace2()
+                && source.getParaLevel() == target.getParaLevel();
     }
 
     private boolean equalParaHead(ParaShape source, ParaShape target) {
@@ -111,6 +112,7 @@ public class ParaShapeAdder {
         target.getProperty2().setValue(source.getProperty2().getValue());
         target.getProperty3().setValue(source.getProperty3().getValue());
         target.setLineSpace2(source.getLineSpace2());
+        target.setParaLevel(source.getParaLevel());
 
         return docInfoAdder.getTargetHWPFile().getDocInfo().getParaShapeList().size() - 1;
     }

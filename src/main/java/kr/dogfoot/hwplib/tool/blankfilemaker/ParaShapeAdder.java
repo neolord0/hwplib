@@ -37,7 +37,7 @@ public class ParaShapeAdder {
         paraShape.getProperty2().setValue(0);
         paraShape.getProperty3().setValue(0);
         paraShape.setLineSpace2(130);
-        paraShape.setUnknown(0);
+        paraShape.setParaLevel(paraShape.getProperty1().getParaLevel());
     }
 
     private static void paraShape2(ParaShape paraShape) {
@@ -58,7 +58,7 @@ public class ParaShapeAdder {
         paraShape.getProperty2().setValue(0);
         paraShape.getProperty3().setValue(0);
         paraShape.setLineSpace2(130);
-        paraShape.setUnknown(0);
+        paraShape.setParaLevel(paraShape.getProperty1().getParaLevel());
     }
 
     private static void paraShape3(ParaShape paraShape) {
@@ -79,7 +79,7 @@ public class ParaShapeAdder {
         paraShape.getProperty2().setValue(0);
         paraShape.getProperty3().setValue(0);
         paraShape.setLineSpace2(150);
-        paraShape.setUnknown(0);
+        paraShape.setParaLevel(paraShape.getProperty1().getParaLevel());
     }
 
     private static void paraShape4(ParaShape paraShape) {
@@ -100,7 +100,7 @@ public class ParaShapeAdder {
         paraShape.getProperty2().setValue(0);
         paraShape.getProperty3().setValue(0);
         paraShape.setLineSpace2(160);
-        paraShape.setUnknown(0);
+        paraShape.setParaLevel(paraShape.getProperty1().getParaLevel());
     }
 
     private static void paraShape5(ParaShape paraShape) {
@@ -121,7 +121,7 @@ public class ParaShapeAdder {
         paraShape.getProperty2().setValue(0);
         paraShape.getProperty3().setValue(0);
         paraShape.setLineSpace2(160);
-        paraShape.setUnknown(0);
+        paraShape.setParaLevel(paraShape.getProperty1().getParaLevel());
     }
 
     private static void paraShape6(ParaShape paraShape) {
@@ -142,7 +142,7 @@ public class ParaShapeAdder {
         paraShape.getProperty2().setValue(0);
         paraShape.getProperty3().setValue(0);
         paraShape.setLineSpace2(160);
-        paraShape.setUnknown(0);
+        paraShape.setParaLevel(paraShape.getProperty1().getParaLevel());
     }
 
     private static void paraShape7(ParaShape paraShape) {
@@ -163,7 +163,7 @@ public class ParaShapeAdder {
         paraShape.getProperty2().setValue(0);
         paraShape.getProperty3().setValue(0);
         paraShape.setLineSpace2(160);
-        paraShape.setUnknown(0);
+        paraShape.setParaLevel(paraShape.getProperty1().getParaLevel());
     }
 
     private static void paraShape8(ParaShape paraShape) {
@@ -184,7 +184,7 @@ public class ParaShapeAdder {
         paraShape.getProperty2().setValue(0);
         paraShape.getProperty3().setValue(0);
         paraShape.setLineSpace2(160);
-        paraShape.setUnknown(0);
+        paraShape.setParaLevel(paraShape.getProperty1().getParaLevel());
     }
 
     private static void paraShape9(ParaShape paraShape) {
@@ -205,7 +205,7 @@ public class ParaShapeAdder {
         paraShape.getProperty2().setValue(0);
         paraShape.getProperty3().setValue(0);
         paraShape.setLineSpace2(160);
-        paraShape.setUnknown(0);
+        paraShape.setParaLevel(paraShape.getProperty1().getParaLevel());
     }
 
     private static void paraShape10(ParaShape paraShape) {
@@ -226,7 +226,7 @@ public class ParaShapeAdder {
         paraShape.getProperty2().setValue(0);
         paraShape.getProperty3().setValue(0);
         paraShape.setLineSpace2(160);
-        paraShape.setUnknown(0);
+        paraShape.setParaLevel(paraShape.getProperty1().getParaLevel());
     }
 
     private static void paraShape11(ParaShape paraShape) {
@@ -247,7 +247,7 @@ public class ParaShapeAdder {
         paraShape.getProperty2().setValue(0);
         paraShape.getProperty3().setValue(0);
         paraShape.setLineSpace2(160);
-        paraShape.setUnknown(0);
+        paraShape.setParaLevel(paraShape.getProperty1().getParaLevel());
     }
 
     private static void paraShape12(ParaShape paraShape) {
@@ -268,6 +268,6 @@ public class ParaShapeAdder {
         paraShape.getProperty2().setValue(0);
         paraShape.getProperty3().setValue(0);
         paraShape.setLineSpace2(160);
-        paraShape.setUnknown(0);
+        paraShape.setParaLevel(paraShape.getProperty1().getParaLevel());
     }
 }

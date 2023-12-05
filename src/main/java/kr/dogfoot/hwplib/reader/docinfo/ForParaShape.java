@@ -44,7 +44,7 @@ public class ForParaShape {
         }
 
         if (sr.isEndOfRecord() == false) {
-            ps.setUnknown(sr.readUInt4());
+            ps.setParaLevel(sr.readUInt4());
         }
     }
 }

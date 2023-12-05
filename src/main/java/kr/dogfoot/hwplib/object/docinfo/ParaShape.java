@@ -79,9 +79,10 @@ public class ParaShape {
      */
     private long lineSpace2;
     /**
-     * 알수 없음(5.1.0.0 버전 이상)
+     * 개요 수준(5.1.0.0 버전 이상)
+     * property1.paraLevel 대신 사용하는 듯.
      */
-    private long unknown;
+    private long paraLevel;
 
     /**
      * 생성자
@@ -372,21 +373,21 @@ public class ParaShape {
     }
 
     /**
-     * 알수 없음(5.1.0.0 버전 이상) 값을 반환한다.
+     * 개요 수준을 반환한다. (5.1.0.0 버전 이상)
      *
-     * @return 알수 없음(5.1.0.0 버전 이상)
+     * @return 개요 수준 (5.1.0.0 버전 이상)
      */
-    public long getUnknown() {
-        return unknown;
+    public long getParaLevel() {
+        return paraLevel;
     }
 
     /**
-     * 알수 없음(5.1.0.0 버전 이상) 값을 설정한다.
+     * 개요 수준을 설정한다. (5.1.0.0 버전 이상)
      *
-     * @param unknown 알수 없음(5.1.0.0 버전 이상) 값
+     * @param paraLevel 개요 수준
      */
-    public void setUnknown(long unknown) {
-        this.unknown = unknown;
+    public void setParaLevel(long paraLevel) {
+        this.paraLevel = paraLevel;
     }
 
     public ParaShape clone() {
@@ -408,7 +409,7 @@ public class ParaShape {
         cloned.property2.copy(property2);
         cloned.property3.copy(property3);
         cloned.lineSpace2 = lineSpace2;
-        cloned.unknown = unknown;
+        cloned.paraLevel = paraLevel;
         return cloned;
     }
 }

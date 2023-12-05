@@ -45,7 +45,7 @@ public class ForParaShape {
             sw.writeUInt4(ps.getLineSpace2());
         }
         if (sw.getFileVersion().isOver(5, 0, 255, 255)) {
-            sw.writeUInt4(ps.getUnknown());
+            sw.writeUInt4(ps.getParaLevel());
         }
     }
 
