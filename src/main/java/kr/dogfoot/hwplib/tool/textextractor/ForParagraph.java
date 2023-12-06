@@ -165,10 +165,10 @@ public class ForParagraph {
                         break;
                 }
             }
+        }
 
-            if (appendLF && option.isAppendEndingLF()) {
-                sb.append("\n");
-            }
+        if (appendLF && option.isAppendEndingLF()) {
+            sb.append("\n");
         }
 
         if (option.getMethod() == TextExtractMethod.AppendControlTextAfterParagraphText) {
