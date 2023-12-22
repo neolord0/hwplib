@@ -6,6 +6,7 @@ import kr.dogfoot.hwplib.object.bodytext.paragraph.Paragraph;
 public class FieldData {
     private String name;
     private FieldType type;
+    private Object parent;
 
     private ParagraphListInterface paragraphList;
     private int startParaIndex;
@@ -13,10 +14,11 @@ public class FieldData {
     private int endParaIndex;
     private int endCharIndex;
 
-    public FieldData(String name, FieldType type, ParagraphListInterface paragraphList) {
+    public FieldData(String name, FieldType type, Object parent, ParagraphListInterface paragraphList) {
         this.name = name;
         this.type = type;
         this.paragraphList = paragraphList;
+        this.parent = parent;
 
         startParaIndex = -1;
         startCharIndex = -1;
@@ -30,6 +32,10 @@ public class FieldData {
 
     public FieldType getType() {
         return type;
+    }
+
+    public Object getParent() {
+        return parent;
     }
 
     public ParagraphListInterface getParagraphList() {

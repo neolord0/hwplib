@@ -49,13 +49,20 @@ public class ForControl {
                     if (fieldName != null && fieldName.length() > 0) {
                         if (option.nameToFind() != null) {
                             if (option.nameToFind().equals(fieldName)) {
-                                result.addFieldData(fieldDataForAllParagraphs(fieldName, FieldType.Cell, cell.getParagraphList()));
+                                result.addFieldData(fieldDataForAllParagraphs(fieldName,
+                                        FieldType.Cell,
+                                        cell,
+                                        cell.getParagraphList()));
+
                                 if (option.onlyFirst()) {
                                     throw new FieldFormFinder.StopFindException();
                                 }
                             }
                         } else {
-                            result.addFieldData(fieldDataForAllParagraphs(fieldName, FieldType.Cell, cell.getParagraphList()));
+                            result.addFieldData(fieldDataForAllParagraphs(fieldName,
+                                    FieldType.Cell,
+                                    cell,
+                                    cell.getParagraphList()));
                         }
                     }
                 }
@@ -65,8 +72,8 @@ public class ForControl {
         }
     }
 
-    private static FieldData fieldDataForAllParagraphs(String fieldName, FieldType fieldType, ParagraphList paragraphList) {
-        FieldData fieldData = new FieldData(fieldName, fieldType, paragraphList);
+    private static FieldData fieldDataForAllParagraphs(String fieldName, FieldType fieldType, Object parent, ParagraphList paragraphList) {
+        FieldData fieldData = new FieldData(fieldName, fieldType, parent, paragraphList);
         fieldData.setStartPosition(0, 0);
         fieldData.setEndPosition(paragraphList.getParagraphCount() - 1, 0xffff);
         return fieldData;
@@ -75,19 +82,19 @@ public class ForControl {
     private static void findInGso(GsoControl control, FieldFormFinder.Result result, FieldFormFinder.Option option) throws FieldFormFinder.StopFindException {
         switch (control.getGsoType()) {
             case Rectangle:
-                findInTextBox(((ControlRectangle) control).getTextBox(), result, option);
+                findInTextBox(control, ((ControlRectangle) control).getTextBox(), result, option);
                 break;
             case Ellipse:
-                findInTextBox(((ControlEllipse) control).getTextBox(), result, option);
+                findInTextBox(control, ((ControlEllipse) control).getTextBox(), result, option);
                 break;
             case Arc:
-                findInTextBox(((ControlArc) control).getTextBox(), result, option);
+                findInTextBox(control, ((ControlArc) control).getTextBox(), result, option);
                 break;
             case Polygon:
-                findInTextBox(((ControlPolygon) control).getTextBox(), result, option);
+                findInTextBox(control, ((ControlPolygon) control).getTextBox(), result, option);
                 break;
             case Curve:
-                findInTextBox(((ControlCurve) control).getTextBox(), result, option);
+                findInTextBox(control, ((ControlCurve) control).getTextBox(), result, option);
                 break;
             case Container:
                 findInContainer((ControlContainer) control, result, option);
@@ -95,7 +102,7 @@ public class ForControl {
         }
     }
 
-    private static void findInTextBox(TextBox textBox, FieldFormFinder.Result result, FieldFormFinder.Option option) throws FieldFormFinder.StopFindException {
+    private static void findInTextBox(GsoControl control, TextBox textBox, FieldFormFinder.Result result, FieldFormFinder.Option option) throws FieldFormFinder.StopFindException {
         if (textBox == null) {
             return;
         }
@@ -105,13 +112,20 @@ public class ForControl {
             if (fieldName != null && fieldName.length() > 0) {
                 if (option.nameToFind() != null) {
                     if (option.nameToFind().equals(fieldName)) {
-                        result.addFieldData(fieldDataForAllParagraphs(fieldName, FieldType.Gso, textBox.getParagraphList()));
+                        result.addFieldData(fieldDataForAllParagraphs(fieldName,
+                                FieldType.Gso,
+                                control,
+                                textBox.getParagraphList()));
+
                         if (option.onlyFirst()) {
                             throw new FieldFormFinder.StopFindException();
                         }
                     }
                 } else {
-                    result.addFieldData(fieldDataForAllParagraphs(fieldName, FieldType.Gso, textBox.getParagraphList()));
+                    result.addFieldData(fieldDataForAllParagraphs(fieldName,
+                            FieldType.Gso,
+                            control,
+                            textBox.getParagraphList()));
                 }
 
             }

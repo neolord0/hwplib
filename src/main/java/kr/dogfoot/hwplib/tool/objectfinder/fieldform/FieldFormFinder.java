@@ -97,6 +97,7 @@ public class FieldFormFinder {
     private static void addStartingField(ParagraphListInterface paragraphList, int paraIndex, ArrayList<FieldData> results, Paragraph p, int ctrlIndex, ControlField field) {
         FieldData fieldData = new FieldData(field.getName(),
                 (field.getType() == ControlType.FIELD_CLICKHERE) ? FieldType.ClickHere : FieldType.ETC,
+                null,
                 paragraphList);
         fieldData.setStartPosition(paraIndex, p.getText().getCharIndexFromExtendCharIndex(ctrlIndex));
 

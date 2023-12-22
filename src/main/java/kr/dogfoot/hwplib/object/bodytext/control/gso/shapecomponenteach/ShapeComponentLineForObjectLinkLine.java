@@ -35,15 +35,9 @@ public class ShapeComponentLineForObjectLinkLine {
     private ArrayList<ControlPoint> controlPoints;
 
     /**
-     * 알 수 없는 데이터
-     */
-    private byte[] unknown;
-
-    /**
      * 생성자
      */
     public ShapeComponentLineForObjectLinkLine() {
-        unknown = null;
         controlPoints = new ArrayList<ControlPoint>();
     }
 
