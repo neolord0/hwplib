@@ -38,6 +38,15 @@
 * hwpx 파일에 대한 라이브러리는 https://github.com/neolord0/hwpxlib 을 참조해 주세요.
 * hwp파일을 hwpx파일로 변환하는 라이브러리는 https://github.com/neolord0/hwp2hwpx 을 참조해 주세요.
 
+2023.12.22
+=========================================================================================
+* FieldData.parent 추가.. 필드이름이 설정된 Cell or GsoControl
+* ShapeComponentLineForObjectLinkLine.unknown 삭제... 
+* TextExtractor 에서 문단에 text()가 null일때.. 개행문자가 출력되지 않은 문제 해결...
+* ParaShape.unknown을 ParaShape.paraLevel로 변경..
+* 섹션 마지막에 컨트롤이 있을 때 읽기 오류 수정
+* 구버전 글머리표 오류 수정
+* 알 수 없는 개체 처리
 
 2023.11.17
 =========================================================================================
