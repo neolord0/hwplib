@@ -63,6 +63,11 @@
                         <exclude>**/*.iml</exclude>
                         <exclude>**/*.hwp</exclude>
                     </excludes>
+                    <archive>
+                        <manifest>
+                            <mainClass>kr.dogfoot.hwplib.Main</mainClass>
+                        </manifest>
+                    </archive>
                 </configuration>
             </plugin>
 
