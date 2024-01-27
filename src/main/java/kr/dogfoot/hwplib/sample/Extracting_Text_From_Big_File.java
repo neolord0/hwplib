@@ -2,6 +2,7 @@ package kr.dogfoot.hwplib.sample;
 
 import kr.dogfoot.hwplib.reader.HWPReader;
 import kr.dogfoot.hwplib.tool.textextractor.TextExtractMethod;
+import kr.dogfoot.hwplib.tool.textextractor.TextExtractOption;
 import kr.dogfoot.hwplib.tool.textextractor.TextExtractorListener;
 
 import java.io.File;
@@ -14,6 +15,6 @@ public class Extracting_Text_From_Big_File {
     }
 
     public static void main(String[] args) throws Exception {
-        HWPReader.forExtractText("sample_hwp" + File.separator + "big_file.hwp", new MyListener(), TextExtractMethod.InsertControlTextBetweenParagraphText);
+        HWPReader.forExtractText("sample_hwp" + File.separator + "big_file.hwp", new MyListener(), new TextExtractOption(TextExtractMethod.InsertControlTextBetweenParagraphText));
     }
 }

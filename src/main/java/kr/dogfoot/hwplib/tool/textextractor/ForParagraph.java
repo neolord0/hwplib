@@ -89,19 +89,19 @@ public class ForParagraph {
      * 문단의 텍스트를 추출한다.
      *
      * @param p             문단
-     * @param tem           텍스트 추출 방법
+     * @param option        옵션
      * @param paraHeadMaker 문단 번호/글머리표 생성기
      * @param sb            추출된 텍스트를 저정할 StringBuffer 객체
      * @throws UnsupportedEncodingException
      */
     public static void extract(Paragraph p,
-                                 TextExtractMethod tem,
+                               TextExtractOption option,
                                  ParaHeadMaker paraHeadMaker,
                                  StringBuffer sb) throws UnsupportedEncodingException {
         extract(p,
                 ParaStart, ParaEnd,
-                false,
-                new TextExtractOption(tem),
+                true,
+                option,
                 paraHeadMaker,
                 sb);
     }

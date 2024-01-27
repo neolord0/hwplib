@@ -12,12 +12,11 @@ import kr.dogfoot.hwplib.reader.bodytext.ForParagraphList;
 import kr.dogfoot.hwplib.reader.bodytext.ForSection;
 import kr.dogfoot.hwplib.reader.bodytext.memo.ForMemo;
 import kr.dogfoot.hwplib.reader.docinfo.ForDocInfo;
-import kr.dogfoot.hwplib.tool.textextractor.TextExtractMethod;
+import kr.dogfoot.hwplib.tool.textextractor.TextExtractOption;
 import kr.dogfoot.hwplib.tool.textextractor.TextExtractorListener;
 import kr.dogfoot.hwplib.util.compoundFile.reader.CompoundFileReader;
 import kr.dogfoot.hwplib.util.compoundFile.reader.StreamReader;
 
-import javax.xml.bind.DatatypeConverter;
 import java.io.*;
 import java.net.URL;
 import java.util.Iterator;
@@ -107,12 +106,6 @@ public class HWPReader {
 
         r.cfr.close();
         return r.hwpFile;
-    }
-
-    public static HWPFile fromBase64String(String base64) throws Exception {
-        byte[] binary = DatatypeConverter.parseBase64Binary(base64);
-        ByteArrayInputStream byteArrayInputStream = new ByteArrayInputStream(binary);
-        return HWPReader.fromInputStream(byteArrayInputStream);
     }
 
     /**
@@ -316,11 +309,11 @@ public class HWPReader {
      *
      * @param filepath hwp파일의 경로
      * @param listener 텍스트 추출 리스너
-     * @param tem      추출 방법
+     * @param option   옵션
      * @throws Exception
      */
-    public static void forExtractText(String filepath, TextExtractorListener listener, TextExtractMethod tem) throws Exception {
-        forExtractText(new FileInputStream(filepath), listener, tem);
+    public static void forExtractText(String filepath, TextExtractorListener listener, TextExtractOption option) throws Exception {
+        forExtractText(new FileInputStream(filepath), listener, option);
     }
 
     /**
@@ -328,10 +321,10 @@ public class HWPReader {
      *
      * @param is       hwp파일을 가리키는 Input Stream ㅒ객체
      * @param listener 텍스트 추출 리스너
-     * @param tem      추출 방법
+     * @param option   옵션
      * @throws Exception
      */
-    private static void forExtractText(FileInputStream is, TextExtractorListener listener, TextExtractMethod tem) throws Exception {
+    private static void forExtractText(FileInputStream is, TextExtractorListener listener, TextExtractOption option) throws Exception {
         HWPReader r = new HWPReader();
         r.hwpFile = new HWPFile();
         r.cfr = new CompoundFileReader(is);
@@ -345,7 +338,7 @@ public class HWPReader {
         }
 
         r.docInfo();
-        r.extractBodyText(listener, tem);
+        r.extractBodyText(listener, option);
 
         r.cfr.close();
     }
@@ -354,14 +347,14 @@ public class HWPReader {
      * 텍스트를 추출하기 위해 hwp 파일의 bodyText 부분을 읽는다.
      *
      * @param listener 텍스트 추출 리스너
-     * @param tem      추출 방법
+     * @param option   옵션
      * @throws Exception
      */
-    private void extractBodyText(TextExtractorListener listener, TextExtractMethod tem) throws Exception {
+    private void extractBodyText(TextExtractorListener listener, TextExtractOption option) throws Exception {
         cfr.moveChildStorage("BodyText");
         int sectionCount = hwpFile.getDocInfo().getDocumentProperties().getSectionCount();
         for (int index = 0; index < sectionCount; index++) {
-            extractSectionText(index, listener, tem);
+            extractSectionText(index, listener, option);
         }
         cfr.moveParentStorage();
     }
@@ -371,13 +364,13 @@ public class HWPReader {
      *
      * @param sectionIndex 섹션 인덱스
      * @param listener     텍스트 추출 리스너
-     * @param tem          추출 방법
+     * @param option       옵션
      * @throws Exception
      */
-    private void extractSectionText(int sectionIndex, TextExtractorListener listener, TextExtractMethod tem) throws Exception {
+    private void extractSectionText(int sectionIndex, TextExtractorListener listener, TextExtractOption option) throws Exception {
         StreamReader sr = cfr.getChildStreamReader("Section" + sectionIndex, isCompressed(), getVersion());
         sr.setDocInfo(hwpFile.getDocInfo());
-        ForParagraphList.extractText(sr, listener, tem);
+        ForParagraphList.extractText(sr, listener, option);
         sr.close();
     }
 
