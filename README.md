@@ -1,6 +1,18 @@
 
 # hwplib
 
+[neolord0/hwplib](https://github.com/neolord0/hwplib)를 사용하는 커맨드라인 유틸리티입니다.
+
+주어진 경로의 `hwp` 파일을 읽어서 평문 텍스트 파일로 저장합니다. 
+
+```bash
+$ java -jar ./convert-hwp.jar "hwp 파일 경로" "출력 파일 경로"
+```
+
+아래는 [neolord0/hwplib](https://github.com/neolord0/hwplib)의 README입니다.
+
+----
+
 한글과 컴퓨터(한컴)에서 만든 워드프로세서 "한글"의 파일에 대한 라이브러리입니다.<br>
 
 개인적인 취미 생활 또는 사회기여 활동 목적으로 시작한 hwplib, hwpxlib 프로젝트가 이 라이브러리를 기반으로 하는 상용 제품이 개발하여 판매하고 있습니다.
