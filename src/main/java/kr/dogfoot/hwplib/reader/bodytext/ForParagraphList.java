@@ -49,14 +49,15 @@ public class ForParagraphList {
         while (sr.isEndOfStream() == false) {
             Paragraph para = new Paragraph();
             fp.read(para, sr);
-            if (para.getHeader().isLastInList()) {
-                break;
-            }
 
             kr.dogfoot.hwplib.tool.textextractor.ForParagraph.
                     extract(para, tem, null, sb);
             listener.paragraphText(sb.toString());
             sb.setLength(0);
+            
+            if (para.getHeader().isLastInList()) {
+                break;
+            }
         }
     }
 }
