@@ -62,6 +62,10 @@ public class CtrlHeaderGso extends CtrlHeader {
      * 개체 설명문
      */
     private HWPString explanation;
+    /**
+     * 알 수 없는 바이트 : 2024 버전에서...
+     */
+    private byte[] unknown;
 
     /**
      * 생성자
@@ -71,6 +75,7 @@ public class CtrlHeaderGso extends CtrlHeader {
 
         property = new GsoHeaderProperty();
         explanation = new HWPString();
+        unknown = null;
     }
 
     /**
@@ -301,6 +306,15 @@ public class CtrlHeaderGso extends CtrlHeader {
         return explanation;
     }
 
+
+    public byte[] getUnknown() {
+        return unknown;
+    }
+
+    public void setUnknown(byte[] unknown) {
+        this.unknown = unknown;
+    }
+
     @Override
     public void copy(CtrlHeader from) {
         CtrlHeaderGso from2 = (CtrlHeaderGso) from;
@@ -317,5 +331,7 @@ public class CtrlHeaderGso extends CtrlHeader {
         instanceId = from2.instanceId;
         preventPageDivide = from2.preventPageDivide;
         explanation.copy(from2.explanation);
+        unknown = new byte[from2.unknown.length];
+        System.arraycopy(from2.unknown, 0, unknown, 0, from2.unknown.length);
     }
 }

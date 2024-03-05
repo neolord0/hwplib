@@ -39,5 +39,11 @@ public class ForCtrlHeaderGso {
         if (sr.getCurrentRecordHeader().getSize() > sr.getCurrentPositionAfterHeader()) {
             header.getExplanation().setBytes(sr.readHWPString());
         }
+        if (sr.getCurrentRecordHeader().getSize() > sr.getCurrentPositionAfterHeader()) {
+            int length = (int) (sr.getCurrentRecordHeader().getSize() - sr.getCurrentPositionAfterHeader());
+            byte[] unknown = new byte[length];
+            sr.readBytes(unknown);
+            header.setUnknown(unknown);
+        }
     }
 }
