@@ -5,6 +5,7 @@ import kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponenteach.ShapeCom
 import kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponenteach.picture.InnerMargin;
 import kr.dogfoot.hwplib.object.etc.HWPTag;
 import kr.dogfoot.hwplib.util.compoundFile.writer.StreamWriter;
+import kr.dogfoot.hwplib.writer.bodytext.paragraph.control.bookmark.ForCtrlData;
 import kr.dogfoot.hwplib.writer.bodytext.paragraph.control.gso.part.ForPictureEffect;
 import kr.dogfoot.hwplib.writer.docinfo.borderfill.ForFillInfo;
 
@@ -27,9 +28,16 @@ public class ForControlPicture {
             throws Exception {
         sw.upRecordLevel();
 
+        ctrlData(pic, sw);
         shapeComponentPicture(pic.getShapeComponentPicture(), sw);
 
         sw.downRecordLevel();
+    }
+
+    private static void ctrlData(ControlPicture pic, StreamWriter sw) throws IOException {
+        if (pic.getCtrlData() != null) {
+            ForCtrlData.write(pic.getCtrlData(), sw);
+        }
     }
 
     /**

@@ -5,6 +5,7 @@ import kr.dogfoot.hwplib.object.bodytext.control.gso.ControlPicture;
 import kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponenteach.ShapeComponentPicture;
 import kr.dogfoot.hwplib.object.bodytext.control.gso.shapecomponenteach.picture.InnerMargin;
 import kr.dogfoot.hwplib.object.etc.HWPTag;
+import kr.dogfoot.hwplib.reader.bodytext.paragraph.control.bookmark.ForCtrlData;
 import kr.dogfoot.hwplib.reader.bodytext.paragraph.control.gso.part.ForPictureEffect;
 import kr.dogfoot.hwplib.reader.docinfo.borderfill.ForFillInfo;
 import kr.dogfoot.hwplib.util.compoundFile.reader.StreamReader;
@@ -27,6 +28,13 @@ public class ForControlPicture {
     public static void readRest(ControlPicture picture, StreamReader sr)
             throws Exception {
         RecordHeader rh = sr.readRecordHeader();
+        if (rh.getTagID() == HWPTag.CTRL_DATA) {
+            picture.createCtrlData();
+            ForCtrlData.read(picture.getCtrlData(), sr);
+            if (sr.isImmediatelyAfterReadingHeader() == false) {
+                rh = sr.readRecordHeader();
+            }
+        }
         if (rh.getTagID() == HWPTag.SHAPE_COMPONENT_PICTURE) {
             shapeComponentPicture(picture.getShapeComponentPicture(), sr);
         }
