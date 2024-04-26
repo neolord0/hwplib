@@ -331,7 +331,11 @@ public class CtrlHeaderGso extends CtrlHeader {
         instanceId = from2.instanceId;
         preventPageDivide = from2.preventPageDivide;
         explanation.copy(from2.explanation);
-        unknown = new byte[from2.unknown.length];
-        System.arraycopy(from2.unknown, 0, unknown, 0, from2.unknown.length);
+        if (from2.unknown != null) {
+            unknown = new byte[from2.unknown.length];
+            System.arraycopy(from2.unknown, 0, unknown, 0, from2.unknown.length);
+        } else {
+            unknown = null;
+        }
     }
 }
