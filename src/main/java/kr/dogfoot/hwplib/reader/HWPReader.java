@@ -104,6 +104,7 @@ public class HWPReader {
         r.bodyText();
         r.binData();
         r.summaryInformation();
+        r.scripts();
 
         r.cfr.close();
         return r.hwpFile;
@@ -311,6 +312,48 @@ public class HWPReader {
         return false;
     }
 
+
+    private void summaryInformation() throws Exception {
+        DocumentInputStream dis;
+        try {
+            dis = cfr.getChildInputStream("\u0005HwpSummaryInformation");
+        }
+        catch (FileNotFoundException e) {
+            dis = null;
+        }
+
+        if (dis != null) {
+            PropertySet propertySet = new PropertySet(dis);
+            hwpFile.setSummaryInformation(new SummaryInformation(propertySet));
+            dis.close();
+        }
+    }
+
+    private void scripts() throws Exception {
+        if (cfr.isChildStorage("Scripts")) {
+            cfr.moveChildStorage("Scripts");
+
+            {
+                StreamReader sr = cfr.getChildStreamReader("DefaultJScript", false, getVersion());
+                byte[] data = new byte[(int) sr.getSize()];
+                sr.readBytes(data);
+                sr.close();
+                hwpFile.getScripts().setDefaultJScript(data);
+            }
+
+            {
+                StreamReader sr = cfr.getChildStreamReader("JScriptVersion", false, getVersion());
+                byte[] data = new byte[(int) sr.getSize()];
+                sr.readBytes(data);
+                sr.close();
+                hwpFile.getScripts().setJScriptVersion(data);
+            }
+
+            cfr.moveParentStorage();
+        }
+    }
+
+
     /**
      * 텍스트를 추출하기 위해 hwp 파일을 읽는다.
      *
@@ -379,21 +422,5 @@ public class HWPReader {
         sr.setDocInfo(hwpFile.getDocInfo());
         ForParagraphList.extractText(sr, listener, tem);
         sr.close();
-    }
-
-    private void summaryInformation() throws Exception {
-        DocumentInputStream dis;
-        try {
-            dis = cfr.getChildInputStream("\u0005HwpSummaryInformation");
-        }
-        catch (FileNotFoundException e) {
-            dis = null;
-        }
-
-        if (dis != null) {
-            PropertySet propertySet = new PropertySet(dis);
-            hwpFile.setSummaryInformation(new SummaryInformation(propertySet));
-            dis.close();
-        }
     }
 }

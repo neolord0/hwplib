@@ -32,6 +32,7 @@ public class HWPFile {
      */
     private BinData binData;
     private SummaryInformation summaryInformation;
+    private Scripts scripts;
 
     /**
      * 생성자
@@ -41,6 +42,7 @@ public class HWPFile {
         docInfo = new DocInfo();
         bodyText = new BodyText();
         binData = new BinData();
+        scripts = new Scripts();
     }
 
     /**
@@ -88,6 +90,10 @@ public class HWPFile {
         this.summaryInformation = summaryInformation;
     }
 
+    public Scripts getScripts() {
+        return scripts;
+    }
+
     public HWPFile clone(boolean deepCopyImage) {
         HWPFile cloned = new HWPFile();
         cloned.copy(this, deepCopyImage);
@@ -99,10 +105,10 @@ public class HWPFile {
         docInfo.copy(from.docInfo);
         bodyText.copy(from.bodyText);
         binData.copy(from.binData, deepCopyImage);
-
         if (from.summaryInformation != null) {
             copySummaryInformation(from.summaryInformation);
         }
+        scripts.copy(from.scripts);
     }
 
     private void copySummaryInformation(SummaryInformation from) {
