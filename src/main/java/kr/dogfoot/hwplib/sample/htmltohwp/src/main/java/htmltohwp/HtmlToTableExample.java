@@ -105,13 +105,13 @@ public class HtmlToTableExample {
      * @param doc : HTML 내용을 Parse한 최상위 Document
      * @return Table 구조가 담긴 Map<String, List<List<TableCellDTO>>>
      */
-    private Map<String, List<List<TableCellDTO>>> parseTable(Document doc) {
+    private Map<String, List<List<htmltohwp.TableCellDTO>>> parseTable(Document doc) {
         int idtable = 1;
-        Map<String, List<List<TableCellDTO>>> tableMap = new HashMap<String, List<List<TableCellDTO>>>();
+        Map<String, List<List<htmltohwp.TableCellDTO>>> tableMap = new HashMap<String, List<List<TableCellDTO>>>();
         Elements table = doc.select("table");
         for (Element e : table) {
             String tableID = String.format("Table%d", idtable);
-            List<List<TableCellDTO>> parseData = parseList(e);
+            List<List<htmltohwp.TableCellDTO>> parseData = parseList(e);
             tableMap.put(tableID, parseData);
         }
         return tableMap;
