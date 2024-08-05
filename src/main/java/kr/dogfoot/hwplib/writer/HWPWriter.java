@@ -7,6 +7,7 @@ import kr.dogfoot.hwplib.object.bodytext.paragraph.memo.Memo;
 import kr.dogfoot.hwplib.object.docinfo.bindata.BinDataCompress;
 import kr.dogfoot.hwplib.object.fileheader.FileVersion;
 import kr.dogfoot.hwplib.org.apache.poi.hpsf.WritingNotSupportedException;
+import kr.dogfoot.hwplib.util.StringUtil;
 import kr.dogfoot.hwplib.util.compoundFile.writer.CompoundFileWriter;
 import kr.dogfoot.hwplib.util.compoundFile.writer.StreamWriter;
 import kr.dogfoot.hwplib.writer.autosetter.AutoSetter;
@@ -257,27 +258,15 @@ public class HWPWriter {
 
     private void scripts() throws IOException {
         cfw.openCurrentStorage("Scripts");
-        {
-            byte[] data;
-            if (hwpFile.getScripts().getDefaultJScript() != null) {
-                data = hwpFile.getScripts().getDefaultJScript();
-            } else {
-                data = new byte[] {0x63, 0x60, 0x40, 0x05, (byte) 0xff, (byte) 0x81, 0x00, 0x00, 0x6e, (byte) 0xbb, 0x6e, (byte) 0xe1, 0x14, 0x00, 0x00, 0x00};
-            }
+        if (hwpFile.getScripts().getDefaultJScript() != null) {
             StreamWriter sw = cfw.openCurrentStream("DefaultJScript", false, getVersion());
-            sw.writeBytes(data);
+            sw.writeBytes(hwpFile.getScripts().getDefaultJScript());
             cfw.closeCurrentStream();
         }
 
-        {
-            byte[] data;
-            if (hwpFile.getScripts().getJScriptVersion() != null) {
-                data = hwpFile.getScripts().getJScriptVersion();
-            } else {
-                data = new byte[] {0x63, 0x64, (byte) 0x80, 0x00, 0x00, (byte) 0xf7, (byte) 0xdf, (byte) 0x88, (byte) 0xa9, 0x08, 0x00, 0x00, 0x00};
-            }
+        if (hwpFile.getScripts().getJScriptVersion() != null) {
             StreamWriter sw = cfw.openCurrentStream("JScriptVersion", false, getVersion());
-            sw.writeBytes(data);
+            sw.writeBytes(hwpFile.getScripts().getJScriptVersion());
             cfw.closeCurrentStream();
         }
         cfw.closeCurrentStorage();
