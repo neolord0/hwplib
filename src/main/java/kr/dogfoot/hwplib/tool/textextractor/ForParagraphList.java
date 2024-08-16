@@ -48,27 +48,12 @@ public class ForParagraphList {
             return;
         }
 
-        if (paragraphList.getParagraphCount() == 1) {
-            ForParagraph.extract(paragraphList.getParagraph(0),
-                    ForParagraph.ParaStart, ForParagraph.ParaEnd,
-                    false,
-                    option,
-                    paraHeadMaker,
-                    sb);
-        } else {
-            for (int index = 0; index < paragraphList.getParagraphCount() - 2; index++) {
-                ForParagraph.extract(paragraphList.getParagraph(index),
-                        ForParagraph.ParaStart, ForParagraph.ParaEnd,
-                        true,
-                        option,
-                        paraHeadMaker,
-                        sb);
-            }
+        for (int index = 0; index < paragraphList.getParagraphCount(); index++) {
+            boolean isLast = index == paragraphList.getParagraphCount() - 1;
 
-            Paragraph lastPara = paragraphList.getParagraph(paragraphList.getParagraphCount() - 1);
-            ForParagraph.extract(lastPara,
+            ForParagraph.extract(paragraphList.getParagraph(index),
                     ForParagraph.ParaStart, ForParagraph.ParaEnd,
-                    false,
+                    !isLast,
                     option,
                     paraHeadMaker,
                     sb);
