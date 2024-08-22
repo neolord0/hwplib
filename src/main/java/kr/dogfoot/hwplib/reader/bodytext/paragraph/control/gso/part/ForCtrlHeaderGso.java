@@ -32,18 +32,21 @@ public class ForCtrlHeaderGso {
         header.setOutterMarginTop(sr.readUInt2());
         header.setOutterMarginBottom(sr.readUInt2());
         header.setInstanceId(sr.readUInt4());
-        if (sr.getCurrentRecordHeader().getSize() > sr.getCurrentPositionAfterHeader()) {
-            int temp = sr.readSInt4();
-            header.setPreventPageDivide(BitFlag.get(temp, 0));
-        }
-        if (sr.getCurrentRecordHeader().getSize() > sr.getCurrentPositionAfterHeader()) {
-            header.getExplanation().setBytes(sr.readHWPString());
-        }
-        if (sr.getCurrentRecordHeader().getSize() > sr.getCurrentPositionAfterHeader()) {
-            int length = (int) (sr.getCurrentRecordHeader().getSize() - sr.getCurrentPositionAfterHeader());
-            byte[] unknown = new byte[length];
-            sr.readBytes(unknown);
-            header.setUnknown(unknown);
-        }
+
+        if (sr.isEndOfRecord()) return;
+
+        int temp = sr.readSInt4();
+        header.setPreventPageDivide(BitFlag.get(temp, 0));
+
+        if (sr.isEndOfRecord()) return;
+
+        header.getExplanation().setBytes(sr.readHWPString());
+
+        if (sr.isEndOfRecord()) return;
+
+        int length = (int) (sr.getCurrentRecordHeader().getSize() - sr.getCurrentPositionAfterHeader());
+        byte[] unknown = new byte[length];
+        sr.readBytes(unknown);
+        header.setUnknown(unknown);
     }
 }

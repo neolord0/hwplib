@@ -36,9 +36,10 @@ public class ForFillInfo {
                 imageFill(fi.getImageFill(), sr);
             }
             additionalProperty(fi, sr);
-            if (sr.isEndOfRecord() == false) {
-                unknownBytes(fi, sr);
-            }
+
+            if (sr.isEndOfRecord()) return;
+
+            unknownBytes(fi, sr);
         } else {
             sr.skip(4);
         }

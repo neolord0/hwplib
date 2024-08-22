@@ -1,5 +1,6 @@
 package kr.dogfoot.hwplib.util.compoundFile.writer;
 
+import kr.dogfoot.hwplib.object.docinfo.DocInfo;
 import kr.dogfoot.hwplib.object.etc.HWPString;
 import kr.dogfoot.hwplib.object.fileheader.FileVersion;
 import kr.dogfoot.hwplib.util.binary.BitFlag;
@@ -40,6 +41,8 @@ public class StreamWriter {
      */
     private int currentRecordLevel;
 
+    private DocInfo docInfo;
+
     /**
      * 생성자
      *
@@ -54,6 +57,8 @@ public class StreamWriter {
 
         os = new ByteArrayOutputStream();
         currentRecordLevel = 0;
+
+        docInfo = null;
     }
 
     /**
@@ -353,4 +358,16 @@ public class StreamWriter {
         currentRecordLevel--;
     }
 
+
+    public void setDocInfo(DocInfo docInfo) {
+        this.docInfo = docInfo;
+    }
+
+    public int correctParaShapeId(int oldParaShapeId) {
+        if (docInfo != null) {
+            return oldParaShapeId + docInfo.getIDMappings().getParaShapeCount() - docInfo.getParaShapeList().size();
+        } else {
+            return oldParaShapeId;
+        }
+    }
 }

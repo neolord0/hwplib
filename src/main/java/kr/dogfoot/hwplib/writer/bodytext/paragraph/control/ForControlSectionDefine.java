@@ -61,7 +61,7 @@ public class ForControlSectionDefine {
         sw.writeUInt2(h.getVerticalLineAlign());
         sw.writeUInt2(h.getHorizontalLineAlign());
         sw.writeUInt4(h.getDefaultTabGap());
-        sw.writeUInt2(h.getNumberParaShapeId());
+        sw.writeUInt2(sw.correctParaShapeId(sw.correctParaShapeId(h.getNumberParaShapeId())));
         sw.writeUInt2(h.getPageStartNumber());
         sw.writeUInt2(h.getImageStartNumber());
         sw.writeUInt2(h.getTableStartNumber());

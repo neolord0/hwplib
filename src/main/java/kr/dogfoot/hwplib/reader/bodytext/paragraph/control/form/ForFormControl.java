@@ -29,14 +29,14 @@ public class ForFormControl {
 
     private static void formObject(FormObject formObject, StreamReader sr) throws IOException {
         sr.readRecordHeader();
-        if (sr.getCurrentRecordHeader().getTagID() == HWPTag.FORM_OBJECT) {
-            long id = sr.readUInt4();
-            long id2 = sr.readUInt4();
-            formObject.setType(FormObjectType.fromUint4(id));
-            sr.skip(4);
+        if (sr.getCurrentRecordHeader().getTagID() != HWPTag.FORM_OBJECT) return;
 
-            String propertiesString = new String(sr.readHWPString(), StandardCharsets.UTF_16LE);
-            formObject.getProperties().parse(propertiesString);
-        }
+        long id = sr.readUInt4();
+        long id2 = sr.readUInt4();
+        formObject.setType(FormObjectType.fromUint4(id));
+        sr.skip(4);
+
+        String propertiesString = new String(sr.readHWPString(), StandardCharsets.UTF_16LE);
+        formObject.getProperties().parse(propertiesString);
     }
 }

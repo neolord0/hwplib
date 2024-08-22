@@ -25,7 +25,7 @@ public class ForParaHeader {
 
         lastInList_TextCount(ph, sw);
         sw.writeUInt4(ph.getControlMask().getValue());
-        sw.writeUInt2(ph.getParaShapeId());
+        sw.writeUInt2(sw.correctParaShapeId(ph.getParaShapeId()));
         sw.writeUInt1(ph.getStyleId());
         sw.writeUInt1(ph.getDivideSort().getValue());
         sw.writeUInt2(ph.getCharShapeCount());

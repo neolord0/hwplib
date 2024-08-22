@@ -125,11 +125,26 @@ public class StreamReaderForCompress extends StreamReader {
     }
 
     @Override
+    public short readUInt1() throws IOException {
+        byte[] buffer = readBytes(1);
+        byte[] buffer2 = {buffer[0], 0};
+        return ByteBuffer.wrap(buffer2).order(ByteOrder.LITTLE_ENDIAN).getShort();
+    }
+
+    @Override
     public short readSInt2() throws IOException {
         byte[] buffer = readBytes(2);
         return ByteBuffer.wrap(buffer).order(ByteOrder.LITTLE_ENDIAN)
                 .getShort();
     }
+
+    @Override
+    public int readUInt2() throws IOException {
+        byte[] buffer = readBytes(2);
+        byte[] buffer2 = {buffer[0], buffer[1], 0, 0};
+        return ByteBuffer.wrap(buffer2).order(ByteOrder.LITTLE_ENDIAN).getInt();
+    }
+
 
     @Override
     public int readSInt4() throws IOException {
@@ -138,18 +153,10 @@ public class StreamReaderForCompress extends StreamReader {
     }
 
     @Override
-    public short readUInt1() throws IOException {
-        return (short) (readSInt1() & 0xff);
-    }
-
-    @Override
-    public int readUInt2() throws IOException {
-        return readSInt2() & 0xffff;
-    }
-
-    @Override
     public long readUInt4() throws IOException {
-        return readSInt4() & 0xffffffff;
+        byte[] buffer = readBytes(4);
+        byte[] buffer2 = {buffer[0], buffer[1], buffer[2], buffer[3], 0, 0, 0, 0};
+        return ByteBuffer.wrap(buffer2).order(ByteOrder.LITTLE_ENDIAN).getLong();
     }
 
     @Override

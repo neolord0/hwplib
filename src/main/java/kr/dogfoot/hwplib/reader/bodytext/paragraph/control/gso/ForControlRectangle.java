@@ -30,17 +30,21 @@ public class ForControlRectangle {
         if (rh.getTagID() == HWPTag.CTRL_DATA) {
             rectangle.createCtrlData();
             ForCtrlData.read(rectangle.getCtrlData(), sr);
+
             if (sr.isImmediatelyAfterReadingHeader() == false) {
                 rh = sr.readRecordHeader();
             }
         }
+
         if (rh.getTagID() == HWPTag.LIST_HEADER) {
             rectangle.createTextBox();
             ForTextBox.read(rectangle.getTextBox(), sr);
+
             if (sr.isImmediatelyAfterReadingHeader() == false) {
                 rh = sr.readRecordHeader();
             }
         }
+
         if (rh.getTagID() == HWPTag.SHAPE_COMPONENT_RECTANGLE) {
             shapeComponentRectangle(rectangle.getShapeComponentRectangle(), sr);
         }

@@ -28,7 +28,7 @@ public class ForStyle {
         sw.writeUInt1(s.getProeprty().getValue());
         sw.writeUInt1(s.getNextStyleId());
         sw.writeUInt2(s.getLanguageId());
-        sw.writeUInt2(s.getParaShapeId());
+        sw.writeUInt2(sw.correctParaShapeId(s.getParaShapeId()));
         sw.writeUInt2(s.getCharShapeId());
         sw.writeZero(2);
     }

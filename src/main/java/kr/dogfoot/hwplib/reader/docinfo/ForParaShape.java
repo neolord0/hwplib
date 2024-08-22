@@ -43,8 +43,8 @@ public class ForParaShape {
             ps.setLineSpace2(sr.readUInt4());
         }
 
-        if (sr.isEndOfRecord() == false) {
-            ps.setParaLevel(sr.readUInt4());
-        }
+        if (sr.isEndOfRecord()) return;
+
+        ps.setParaLevel(sr.readUInt4());
     }
 }

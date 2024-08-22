@@ -28,6 +28,7 @@ public class ForControlArc {
         if (rh.getTagID() == HWPTag.LIST_HEADER) {
             arc.createTextBox();
             ForTextBox.read(arc.getTextBox(), sr);
+
             if (sr.isImmediatelyAfterReadingHeader() == false) {
                 rh = sr.readRecordHeader();
             }

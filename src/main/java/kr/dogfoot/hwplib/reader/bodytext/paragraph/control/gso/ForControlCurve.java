@@ -30,6 +30,7 @@ public class ForControlCurve {
         if (rh.getTagID() == HWPTag.LIST_HEADER) {
             curve.createTextBox();
             ForTextBox.read(curve.getTextBox(), sr);
+
             if (sr.isImmediatelyAfterReadingHeader() == false) {
                 rh = sr.readRecordHeader();
             }

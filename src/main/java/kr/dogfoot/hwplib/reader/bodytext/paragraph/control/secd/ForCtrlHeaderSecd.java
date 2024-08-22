@@ -25,7 +25,7 @@ public class ForCtrlHeaderSecd {
         header.setVerticalLineAlign(sr.readUInt2());
         header.setHorizontalLineAlign(sr.readUInt2());
         header.setDefaultTabGap(sr.readUInt4());
-        header.setNumberParaShapeId(sr.readUInt2());
+        header.setNumberParaShapeId(sr.correctParaShapeId(sr.readUInt2()));
         header.setPageStartNumber(sr.readUInt2());
         header.setImageStartNumber(sr.readUInt2());
         header.setTableStartNumber(sr.readUInt2());
@@ -36,9 +36,9 @@ public class ForCtrlHeaderSecd {
             header.setDefaultLanguage(sr.readUInt2());
         }
 
-        if (sr.isEndOfRecord() == false) {
-            unknownRestBytes(sr);
-        }
+        if (sr.isEndOfRecord()) return;
+
+        unknownRestBytes(sr);
     }
 
     /**

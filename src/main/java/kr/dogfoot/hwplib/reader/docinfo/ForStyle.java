@@ -24,7 +24,7 @@ public class ForStyle {
         s.getProeprty().setValue(sr.readUInt1());
         s.setNextStyleId(sr.readUInt1());
         s.setLanguageId(sr.readSInt2());
-        s.setParaShapeId(sr.readUInt2());
+        s.setParaShapeId(sr.correctParaShapeId(sr.readUInt2()));
         s.setCharShapeId(sr.readUInt2());
         unknown2Bytes(sr);
     }

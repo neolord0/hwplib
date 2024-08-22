@@ -77,10 +77,10 @@ public class ForControlEquation {
      */
     private void caption() throws Exception {
         sr.readRecordHeader();
-        if (sr.getCurrentRecordHeader().getTagID() == HWPTag.LIST_HEADER) {
-            eqed.createCaption();
-            ForCaption.read(eqed.getCaption(), sr);
-        }
+        if (sr.getCurrentRecordHeader().getTagID() != HWPTag.LIST_HEADER) return;
+
+        eqed.createCaption();
+        ForCaption.read(eqed.getCaption(), sr);
     }
 
     /**

@@ -48,9 +48,9 @@ public class ForControlField {
             h.setMemoIndex(sr.readSInt4());
         }
 
-        if (sr.isEndOfRecord() == false) {
-            unknownBytes(sr);
-        }
+        if (sr.isEndOfRecord()) return;
+
+        unknownBytes(sr);
     }
 
     /**

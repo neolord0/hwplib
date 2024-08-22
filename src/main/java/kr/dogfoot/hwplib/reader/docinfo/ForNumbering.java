@@ -28,10 +28,10 @@ public class ForNumbering {
             startNumbersFor1To7(n, sr);
         }
 
-        if (sr.isEndOfRecord() == false) {
-            levelNumberingsFor8To10(n, sr);
-            startNumbersFor8To10(n, sr);
-        }
+        if (sr.isEndOfRecord()) return;
+
+        levelNumberingsFor8To10(n, sr);
+        startNumbersFor8To10(n, sr);
     }
 
     /**

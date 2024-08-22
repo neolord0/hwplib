@@ -32,9 +32,9 @@ public class ForParaHeader {
         if (sr.isEndOfRecord() == false && sr.getFileVersion().isOver(5, 0, 3, 2)) {
             ph.setIsMergedByTrack(sr.readUInt2());
         }
-        if (sr.isEndOfRecord() == false) {
-            sr.skipToEndRecord();
-        }
+        if (sr.isEndOfRecord()) return;
+
+        sr.skipToEndRecord();
     }
 
     /**
@@ -47,9 +47,9 @@ public class ForParaHeader {
     private static void lastInList_TextCount(ParaHeader ph, StreamReader sr)
             throws IOException {
         long value = sr.readUInt4();
-        if ((value & 0x80000000) == 0x80000000) {
+        if ((value & 0x80000000L) == 0x80000000L) {
             ph.setLastInList(true);
-            ph.setCharacterCount(value & 0x7fffffff);
+            ph.setCharacterCount(value & 0x7fffffffL);
         } else {
             ph.setLastInList(false);
             ph.setCharacterCount(value);

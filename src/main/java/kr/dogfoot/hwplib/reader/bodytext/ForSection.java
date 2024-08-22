@@ -21,11 +21,11 @@ public class ForSection {
      */
     public static void read(Section s, StreamReader sr) throws Exception {
         ForParagraphList.read(s, sr);
-        if (sr.isEndOfStream() == false
-                && sr.getCurrentRecordHeader().getTagID() == HWPTag.LIST_HEADER) {
-            s.createLastBatangPageInfo();
-            lastBatangPageInfo(s.getLastBatangPageInfo(), sr);
-        }
+        if (sr.isEndOfStream()
+                || sr.getCurrentRecordHeader().getTagID() != HWPTag.LIST_HEADER) return;
+
+        s.createLastBatangPageInfo();
+        lastBatangPageInfo(s.getLastBatangPageInfo(), sr);
     }
 
     /**

@@ -54,20 +54,23 @@ public class ForShapeComponent {
                                                 StreamReader sr) throws IOException {
         commonPart(scn, sr);
 
-        if (sr.isEndOfRecord() == false) {
-            lineInfo(scn, sr);
-        }
-        if (sr.isEndOfRecord() == false) {
-            fillInfo(scn, sr);
-        }
-        if (sr.isEndOfRecord() == false) {
-            shadowInfo(scn, sr);
-        }
-        if (sr.isEndOfRecord() == false) {
-            scn.setInstid(sr.readUInt4());
-            sr.skip(1);
-            scn.getShadowInfo().setTransparent(sr.readUInt1());
-        }
+        if (sr.isEndOfRecord()) return;
+
+        lineInfo(scn, sr);
+
+        if (sr.isEndOfRecord()) return;
+
+        fillInfo(scn, sr);
+
+        if (sr.isEndOfRecord()) return;
+
+        shadowInfo(scn, sr);
+
+        if (sr.isEndOfRecord()) return;
+
+        scn.setInstid(sr.readUInt4());
+        sr.skip(1);
+        scn.getShadowInfo().setTransparent(sr.readUInt1());
     }
 
     /**
@@ -185,9 +188,10 @@ public class ForShapeComponent {
                                                    StreamReader sr) throws IOException {
         commonPart(scc, sr);
         childInfo(scc, sr);
-        if (!sr.isEndOfRecord()) {
-            scc.setInstid(sr.readUInt4());
-        }
+
+        if (sr.isEndOfRecord()) return;
+
+        scc.setInstid(sr.readUInt4());
     }
 
     /**

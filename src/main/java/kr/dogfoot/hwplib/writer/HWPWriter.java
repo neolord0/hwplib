@@ -136,6 +136,7 @@ public class HWPWriter {
     private void docInfo() throws Exception {
         StreamWriter sw = cfw.openCurrentStream("DocInfo", isCompressed(),
                 getVersion());
+        sw.setDocInfo(hwpFile.getDocInfo());
         ForDocInfo fdi = new ForDocInfo();
         fdi.write(hwpFile.getDocInfo(), sw);
         cfw.closeCurrentStream();
@@ -175,6 +176,7 @@ public class HWPWriter {
     private void seciton(int index, Section s) throws Exception {
         StreamWriter sw = cfw.openCurrentStream("Section" + index,
                 isCompressed(), getVersion());
+        sw.setDocInfo(hwpFile.getDocInfo());
         ForSection.write(s, sw);
 
         if (isLastSection(index) && hwpFile.getBodyText().getMemoList() != null) {

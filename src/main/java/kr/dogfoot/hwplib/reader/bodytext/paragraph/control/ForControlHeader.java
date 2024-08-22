@@ -56,9 +56,9 @@ public class ForControlHeader {
         head.getHeader().setApplyPage(
                 HeaderFooterApplyPage.valueOf((byte) sr.readUInt4()));
 
-        if (sr.isEndOfRecord() == false) {
-            head.getHeader().setCreateIndex(sr.readSInt4());
-        }
+        if (sr.isEndOfRecord()) return;
+
+        head.getHeader().setCreateIndex(sr.readSInt4());
     }
 
     /**

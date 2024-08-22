@@ -24,21 +24,21 @@ public class ForEQEdit {
         eqEdit.setLetterSize(sr.readUInt4());
         eqEdit.getLetterColor().setValue(sr.readUInt4());
 
-        if (sr.isEndOfRecord() == false) {
-            eqEdit.setBaseLine(sr.readSInt2());
-        }
+        if (sr.isEndOfRecord()) return;
 
-        if (sr.isEndOfRecord() == false) {
-            eqEdit.setUnknown(sr.readUInt2());
-        }
+        eqEdit.setBaseLine(sr.readSInt2());
 
-        if (sr.isEndOfRecord() == false) {
-            eqEdit.getVersionInfo().setBytes(sr.readHWPString());
-        }
+        if (sr.isEndOfRecord()) return;
 
-        if (sr.isEndOfRecord() == false) {
-            eqEdit.getFontName().setBytes(sr.readHWPString());
-        }
+        eqEdit.setUnknown(sr.readUInt2());
+
+        if (sr.isEndOfRecord()) return;
+
+        eqEdit.getVersionInfo().setBytes(sr.readHWPString());
+
+        if (sr.isEndOfRecord()) return;
+
+        eqEdit.getFontName().setBytes(sr.readHWPString());
     }
 
 }

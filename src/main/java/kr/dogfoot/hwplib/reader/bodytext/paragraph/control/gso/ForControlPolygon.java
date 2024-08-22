@@ -28,6 +28,7 @@ public class ForControlPolygon {
         if (rh.getTagID() == HWPTag.LIST_HEADER) {
             polygon.createTextBox();
             ForTextBox.read(polygon.getTextBox(), sr);
+
             if (sr.isImmediatelyAfterReadingHeader() == false) {
                 rh = sr.readRecordHeader();
             }

@@ -46,22 +46,22 @@ public class ForTextBox {
         lh.setBottomMargin(sr.readUInt2());
         lh.setTextWidth(sr.readUInt4());
 
-        if (sr.isEndOfRecord() == false) {
-            unknownBytes(8, sr);
+        if (sr.isEndOfRecord()) return;
+
+        unknownBytes(8, sr);
+
+        if (sr.isEndOfRecord()) return;
+
+        int temp = sr.readSInt4();
+        if (temp == 1) {
+            lh.setEditableAtFormMode(true);
+        } else {
+            lh.setEditableAtFormMode(false);
         }
 
-        if (sr.isEndOfRecord() == false) {
-            int temp = sr.readSInt4();
-            if (temp == 1) {
-                lh.setEditableAtFormMode(true);
-            } else {
-                lh.setEditableAtFormMode(false);
-            }
-
-            short flag = sr.readUInt1();
-            if (flag == 0xff) {
-                fieldName(lh, sr);
-            }
+        short flag = sr.readUInt1();
+        if (flag == 0xff) {
+            fieldName(lh, sr);
         }
     }
 
@@ -88,12 +88,12 @@ public class ForTextBox {
         ParameterSet ps = new ParameterSet();
         ForParameterSet.read(ps, sr);
 
-        if (ps.getId() == 0x21b) {
-            for (ParameterItem pi : ps.getParameterItemList()) {
-                if (pi.getId() == 0x4000
-                        && pi.getType() == ParameterType.String) {
-                    lh.setFieldName(pi.getValue_BSTR());
-                }
+        if (ps.getId() != 0x21b) return;
+
+        for (ParameterItem pi : ps.getParameterItemList()) {
+            if (pi.getId() == 0x4000
+                    && pi.getType() == ParameterType.String) {
+                lh.setFieldName(pi.getValue_BSTR());
             }
         }
     }

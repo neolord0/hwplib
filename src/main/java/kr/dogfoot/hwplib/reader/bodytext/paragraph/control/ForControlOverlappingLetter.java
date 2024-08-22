@@ -36,13 +36,13 @@ public class ForControlOverlappingLetter {
                                    StreamReader sr) throws IOException {
         overlappingLetters(header, sr);
 
-        if (sr.isEndOfRecord() == false) {
-            header.setBorderType(sr.readUInt1());
-            header.setInternalFontSize(sr.readSInt1());
-            header.setExpendInsideLetter(sr.readUInt1());
+        if (sr.isEndOfRecord()) return;
 
-            charShapeIds(header, sr);
-        }
+        header.setBorderType(sr.readUInt1());
+        header.setInternalFontSize(sr.readSInt1());
+        header.setExpendInsideLetter(sr.readUInt1());
+
+        charShapeIds(header, sr);
     }
 
     /**

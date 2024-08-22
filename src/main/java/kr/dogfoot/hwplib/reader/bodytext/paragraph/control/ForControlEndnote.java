@@ -60,9 +60,9 @@ public class ForControlEndnote {
         h.getAfterDecorationLetter().setBytes(sr.readWChar());
         h.setNumberShape(NumberShape.valueOf((short) sr.readUInt4()));
 
-        if (sr.isEndOfRecord() == false) {
-            h.setInstanceId(sr.readUInt4());
-        }
+        if (sr.isEndOfRecord()) return;
+
+        h.setInstanceId(sr.readUInt4());
     }
 
     /**

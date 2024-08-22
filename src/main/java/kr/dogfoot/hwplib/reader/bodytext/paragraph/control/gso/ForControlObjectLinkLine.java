@@ -61,9 +61,9 @@ public class ForControlObjectLinkLine {
             cp.setType(sr.readUInt2());
         }
 
-        if (sr.isEndOfRecord() == false) {
-            unknownBytes(sr);
-        }
+        if (sr.isEndOfRecord()) return;
+
+        unknownBytes(sr);
     }
 
     private static void unknownBytes(StreamReader sr) throws IOException {

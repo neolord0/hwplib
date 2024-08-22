@@ -37,8 +37,8 @@ public class ForFootEndNoteShape {
                 .readUInt1()));
         fens.getDivideLine().getColor().setValue(sr.readUInt4());
 
-        if (sr.isEndOfRecord() == false) {
-            fens.setUnknown(sr.readUInt4());
-        }
+        if (sr.isEndOfRecord()) return;
+
+        fens.setUnknown(sr.readUInt4());
     }
 }

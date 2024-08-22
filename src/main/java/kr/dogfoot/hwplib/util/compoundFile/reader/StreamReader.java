@@ -340,5 +340,4 @@ public abstract class StreamReader {
             return oldParaShapeId;
         }
     }
-
 }

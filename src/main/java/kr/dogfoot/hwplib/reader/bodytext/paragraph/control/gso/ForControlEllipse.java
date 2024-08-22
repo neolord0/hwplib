@@ -28,6 +28,7 @@ public class ForControlEllipse {
         if (rh.getTagID() == HWPTag.LIST_HEADER) {
             ellipse.createTextBox();
             ForTextBox.read(ellipse.getTextBox(), sr);
+
             if (sr.isImmediatelyAfterReadingHeader() == false) {
                 rh = sr.readRecordHeader();
             }

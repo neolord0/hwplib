@@ -31,6 +31,7 @@ public class ForControlPicture {
         if (rh.getTagID() == HWPTag.CTRL_DATA) {
             picture.createCtrlData();
             ForCtrlData.read(picture.getCtrlData(), sr);
+
             if (sr.isImmediatelyAfterReadingHeader() == false) {
                 rh = sr.readRecordHeader();
             }
@@ -67,26 +68,26 @@ public class ForControlPicture {
         innerMargin(scp.getInnerMargin(), sr);
         ForFillInfo.pictureInfo(scp.getPictureInfo(), sr);
 
-        if (sr.isEndOfRecord() == false) {
-            scp.setBorderTransparency(sr.readUInt1());
-        }
+        if (sr.isEndOfRecord()) return;
 
-        if (sr.isEndOfRecord() == false) {
-            scp.setInstanceId(sr.readUInt4());
-        }
+        scp.setBorderTransparency(sr.readUInt1());
 
-        if (sr.isEndOfRecord() == false) {
-            ForPictureEffect.read(scp.getPictureEffect(), sr);
-        }
+        if (sr.isEndOfRecord()) return;
 
-        if (sr.isEndOfRecord() == false) {
-            scp.setImageWidth(sr.readUInt4());
-            scp.setImageHeight(sr.readUInt4());
-        }
+        scp.setInstanceId(sr.readUInt4());
 
-        if (sr.isEndOfRecord() == false) {
-            unknownBytes(sr);
-        }
+        if (sr.isEndOfRecord()) return;
+
+        ForPictureEffect.read(scp.getPictureEffect(), sr);
+
+        if (sr.isEndOfRecord()) return;
+
+        scp.setImageWidth(sr.readUInt4());
+        scp.setImageHeight(sr.readUInt4());
+
+        if (sr.isEndOfRecord()) return;
+
+        unknownBytes(sr);
     }
 
     private static void unknownBytes(StreamReader sr) throws IOException {

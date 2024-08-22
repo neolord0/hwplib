@@ -194,7 +194,7 @@ public class ForParagraph {
     private void control() throws Exception {
         long id = sr.readUInt4();
         if (id == ControlType.Gso.getCtrlId()) {
-            ForGsoControl fgc = new ForGsoControl();
+           ForGsoControl fgc = new ForGsoControl();
             fgc.read(paragraph, sr);
         } else if (id == ControlType.Form.getCtrlId()) {
             ForFormControl ffc = new ForFormControl();
