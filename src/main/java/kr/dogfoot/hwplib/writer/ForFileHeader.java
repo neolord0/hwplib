@@ -65,7 +65,7 @@ public class ForFileHeader {
         long properties = 0;
         properties = BitFlag.set(properties, 0, fh.isCompressed());
         properties = BitFlag.set(properties, 1, fh.hasPassword());
-        properties = BitFlag.set(properties, 2, fh.isDeploymentDocument());
+        properties = BitFlag.set(properties, 2, fh.isDistribution());
         properties = BitFlag.set(properties, 3, fh.isSaveScript());
         properties = BitFlag.set(properties, 4, fh.isDRMDocument());
         properties = BitFlag.set(properties, 5, fh.hasXMLTemplate());

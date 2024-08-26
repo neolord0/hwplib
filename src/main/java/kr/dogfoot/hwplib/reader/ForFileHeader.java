@@ -67,7 +67,7 @@ public class ForFileHeader {
         long flag = sr.readUInt4();
         fh.setCompressed(BitFlag.get(flag, 0));
         fh.setHasPassword(BitFlag.get(flag, 1));
-        fh.setDeploymentDocument(BitFlag.get(flag, 2));
+        fh.setDistribution(BitFlag.get(flag, 2));
         fh.setSaveScript(BitFlag.get(flag, 3));
         fh.setDRMDocument(BitFlag.get(flag, 4));
         fh.setHasXMLTemplate(BitFlag.get(flag, 5));

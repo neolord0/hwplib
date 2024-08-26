@@ -40,7 +40,7 @@ public class BlankFileMaker {
         fileHeader.getVersion().setVersion((short) 5, (short) 0, (short) 3, (short) 4);
         fileHeader.setCompressed(true);
         fileHeader.setHasPassword(false);
-        fileHeader.setDeploymentDocument(false);
+        fileHeader.setDistribution(false);
         fileHeader.setSaveScript(false);
         fileHeader.setDRMDocument(false);
         fileHeader.setHasXMLTemplate(false);

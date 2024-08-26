@@ -21,7 +21,7 @@ public class FileHeader {
     /**
      * 배포용 문서 여부
      */
-    private boolean isDeploymentDocument;
+    private boolean isDistribution;
     /**
      * 스크립트 저장 여부
      */
@@ -129,17 +129,17 @@ public class FileHeader {
      *
      * @return 배포용 문서 여부
      */
-    public boolean isDeploymentDocument() {
-        return isDeploymentDocument;
+    public boolean isDistribution() {
+        return isDistribution;
     }
 
     /**
      * 배포용 문서 여부를 설정한다.
      *
-     * @param isDeploymentDocument 배포용 문서 여부
+     * @param isDistribution 배포용 문서 여부
      */
-    public void setDeploymentDocument(boolean isDeploymentDocument) {
-        this.isDeploymentDocument = isDeploymentDocument;
+    public void setDistribution(boolean isDistribution) {
+        this.isDistribution = isDistribution;
     }
 
     /**
@@ -309,7 +309,7 @@ public class FileHeader {
         version.copy(from.version);
         compressed = from.compressed;
         hasPassword = from.hasPassword;
-        isDeploymentDocument = from.isDeploymentDocument;
+        isDistribution = from.isDistribution;
         saveScript = from.saveScript;
         isDRMDocument = from.isDRMDocument;
         hasXMLTemplate = from.hasXMLTemplate;
