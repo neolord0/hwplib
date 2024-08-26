@@ -335,23 +335,20 @@ public class HWPReader {
             cfr.moveChildStorage("Scripts");
 
             {
-                System.out.println("default jscript");
                 StreamReader sr = cfr.getChildStreamReader("DefaultJScript", isCompressed(), getVersion());
                 byte[] data = new byte[(int) sr.getSize()];
                 sr.readBytes(data);
                 sr.close();
 
-                System.out.println(StringUtil.bytesToHex(data));
                 hwpFile.getScripts().setDefaultJScript(data);
             }
 
             {
-                System.out.println("jscript version");
                 StreamReader sr = cfr.getChildStreamReader("JScriptVersion", isCompressed(), getVersion());
                 byte[] data = new byte[(int) sr.getSize()];
                 sr.readBytes(data);
                 sr.close();
-                System.out.println(StringUtil.bytesToHex(data));
+
                 hwpFile.getScripts().setJScriptVersion(data);
             }
 
