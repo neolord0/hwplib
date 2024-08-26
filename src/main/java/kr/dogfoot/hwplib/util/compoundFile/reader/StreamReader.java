@@ -3,17 +3,94 @@ package kr.dogfoot.hwplib.util.compoundFile.reader;
 import kr.dogfoot.hwplib.object.RecordHeader;
 import kr.dogfoot.hwplib.object.docinfo.DocInfo;
 import kr.dogfoot.hwplib.object.fileheader.FileVersion;
+import kr.dogfoot.hwplib.org.apache.poi.poifs.filesystem.DocumentEntry;
+import kr.dogfoot.hwplib.org.apache.poi.poifs.filesystem.DocumentInputStream;
 import kr.dogfoot.hwplib.util.binary.BitFlag;
 
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
+import java.nio.ByteBuffer;
+import java.nio.ByteOrder;
 import java.nio.charset.StandardCharsets;
+import java.util.zip.Inflater;
+import java.util.zip.InflaterInputStream;
 
 /**
  * MS Compound 파일의 스트림을 읽기 위한 객체
  *
  * @author neolord
  */
-public abstract class StreamReader {
+public class StreamReader {
+    public static StreamReader create(DocumentEntry de, boolean compress, FileVersion fileVersion) throws IOException {
+        StreamReader sr = new StreamReader();
+        sr.fileVersion = fileVersion;
+
+        if (!compress) {
+            sr.is = new DocumentInputStream(de);
+            sr.size = de.getSize();
+        } else {
+            try {
+                byte[] decompressed = getDecompressedBytes(new DocumentInputStream(de));
+                sr.is = new ByteArrayInputStream(decompressed);
+                sr.size = decompressed.length;
+            } catch (Exception e) {
+                sr.is = new DocumentInputStream(de);
+                sr.size = de.getSize();
+            }
+        }
+        return sr;
+    }
+
+    private static byte[] getDecompressedBytes(InputStream is) throws IOException {
+        InputStream iis = new InflaterInputStream(is, new Inflater(true));
+        ByteArrayOutputStream buffer = new ByteArrayOutputStream();
+        int nRead;
+        byte[] data = new byte[16384];
+        while ((nRead = iis.read(data, 0, data.length)) != -1) {
+            buffer.write(data, 0, nRead);
+        }
+        return buffer.toByteArray();
+    }
+
+    public static StreamReader create(InputStream is, boolean compress, FileVersion fileVersion) throws IOException {
+        StreamReader sr = new StreamReader();
+        sr.fileVersion = fileVersion;
+
+        if (!compress) {
+            byte[] streamBytes = getStreamBytes(is);
+            sr.is = new ByteArrayInputStream(streamBytes);
+            sr.size = streamBytes.length;
+        } else {
+            try {
+                byte[] decompressed = getDecompressedBytes(is);
+                sr.is = new ByteArrayInputStream(decompressed);
+                sr.size = decompressed.length;
+            } catch (Exception e) {
+                byte[] streamBytes = getStreamBytes(is);
+                sr.is = new ByteArrayInputStream(streamBytes);
+                sr.size = streamBytes.length;
+            }
+        }
+        return sr;
+    }
+
+    private static byte[] getStreamBytes(InputStream is) throws IOException {
+        ByteArrayOutputStream buffer = new ByteArrayOutputStream();
+        int nRead;
+        byte[] data = new byte[16384];
+        while ((nRead = is.read(data, 0, data.length)) != -1) {
+            buffer.write(data, 0, nRead);
+        }
+        return buffer.toByteArray();
+    }
+
+
+    /**
+     * 스트림을 읽기 위한 InputStream
+     */
+    private InputStream is;
     /**
      * 스트림 크기
      */
@@ -43,93 +120,6 @@ public abstract class StreamReader {
     private DocInfo docInfo;
 
     /**
-     * byte 배열의 크기 만큼 byte 배열을 읽은다.
-     *
-     * @param buffer byte 배열
-     * @throws IOException
-     */
-    public abstract void readBytes(byte[] buffer) throws IOException;
-
-    /**
-     * signed 1 byte 정수값을 읽어서 반환한다.
-     *
-     * @return signed 1 byte 정수값
-     * @throws IOException
-     */
-    public abstract byte readSInt1() throws IOException;
-
-    /**
-     * signed 2 byte 정수값을 읽어서 반환한다.
-     *
-     * @return signed 2 byte 정수값
-     * @throws IOException
-     */
-    public abstract short readSInt2() throws IOException;
-
-    /**
-     * signed 4 byte 정수값을 읽어서 반환한다.
-     *
-     * @return signed 4 byte 정수값
-     * @throws IOException
-     */
-    public abstract int readSInt4() throws IOException;
-
-    /**
-     * unsigned 1 byte 정수값을 읽어서 반환한다.
-     *
-     * @return unsigned 1 byte 정수값
-     * @throws IOException
-     */
-    public abstract short readUInt1() throws IOException;
-
-    /**
-     * unsigned 2 byte 정수값을 읽어서 반환한다.
-     *
-     * @return unsigned 2 byte 정수값
-     * @throws IOException
-     */
-    public abstract int readUInt2() throws IOException;
-
-    /**
-     * unsigned 4 byte 정수값을 읽어서 반환한다.
-     *
-     * @return unsigned 4 byte 정수값
-     * @throws IOException
-     */
-    public abstract long readUInt4() throws IOException;
-
-    /**
-     * double 값을 읽어서 반환한다.
-     *
-     * @return double 값
-     * @throws IOException
-     */
-    public abstract double readDouble() throws IOException;
-
-    /**
-     * float 값을 읽어서 반환한다.
-     *
-     * @return float 값
-     * @throws IOException
-     */
-    public abstract float readFloat() throws IOException;
-
-    /**
-     * n 바이트 만큼 건너뛴다.
-     *
-     * @param n 건너뛸 바이트 수
-     * @throws IOException
-     */
-    public abstract void skip(long n) throws IOException;
-
-    /**
-     * 스트림을 읽기 위한 객체를 닫는다.
-     *
-     * @throws IOException
-     */
-    public abstract void close() throws IOException;
-
-    /**
      * 생성자
      */
     protected StreamReader() {
@@ -140,6 +130,12 @@ public abstract class StreamReader {
         docInfo = null;
     }
 
+
+    public void readBytes(byte[] buffer) throws IOException {
+        is.read(buffer);
+        forwardPosition(buffer.length);
+    }
+
     /**
      * 현재까지 읽은 byte 수, 헤더를 읽은 후부터 현재까지 읽은 byte 수의 값을 n만큼 추가한다.
      *
@@ -148,6 +144,79 @@ public abstract class StreamReader {
     protected void forwardPosition(long n) {
         read += n;
         readAfterHeader += n;
+    }
+
+    public byte readSInt1() throws IOException {
+        byte[] buffer = readBytes(1);
+        return buffer[0];
+    }
+
+    /**
+     * n byte를 읽어서 byte 배열을 반환한다.
+     *
+     * @param n 읽을 바이트 수
+     * @return 새로 읽은 byte 배열
+     * @throws IOException
+     */
+    private byte[] readBytes(int n) throws IOException {
+        byte[] buffer = new byte[n];
+        readBytes(buffer);
+        return buffer;
+    }
+
+    public short readUInt1() throws IOException {
+        byte[] buffer = readBytes(1);
+        byte[] buffer2 = { buffer[0], 0} ;
+        return ByteBuffer.wrap(buffer2).order(ByteOrder.LITTLE_ENDIAN).getShort();
+    }
+
+    public short readSInt2() throws IOException {
+        byte[] buffer = readBytes(2);
+        return ByteBuffer.wrap(buffer).order(ByteOrder.LITTLE_ENDIAN)
+                .getShort();
+    }
+
+    public int readUInt2() throws IOException {
+        byte[] buffer = readBytes(2);
+        byte[] buffer2 = { buffer[0], buffer[1], 0, 0 };
+        return ByteBuffer.wrap(buffer2).order(ByteOrder.LITTLE_ENDIAN).getInt();
+    }
+
+    public int readSInt4() throws IOException {
+        byte[] buffer = readBytes(4);
+        return ByteBuffer.wrap(buffer).order(ByteOrder.LITTLE_ENDIAN).getInt();
+    }
+
+    public long readUInt4() throws IOException {
+        byte[] buffer = readBytes(4);
+        byte[] buffer2 = { buffer[0], buffer[1], buffer[2], buffer[3], 0, 0, 0, 0 };
+        return ByteBuffer.wrap(buffer2).order(ByteOrder.LITTLE_ENDIAN).getLong();
+    }
+
+    public double readDouble() throws IOException {
+        byte[] buffer = readBytes(8);
+        return ByteBuffer.wrap(buffer).order(ByteOrder.LITTLE_ENDIAN)
+                .getDouble();
+    }
+
+    public float readFloat() throws IOException {
+        byte[] buffer = readBytes(4);
+        return ByteBuffer.wrap(buffer).order(ByteOrder.LITTLE_ENDIAN)
+                .getFloat();
+    }
+
+    public void skip(int n) throws IOException {
+        readBytes(n);
+    }
+
+    /**
+     * 스트림을 읽기 위한 객체를 닫는다.
+     *
+     * @throws IOException
+     */
+    public void close() throws IOException {
+        is.close();
+        is = null;
     }
 
     /**
@@ -203,19 +272,6 @@ public abstract class StreamReader {
         }
     }
 
-    /**
-     * 한 글자를 읽어서 반환한다.
-     *
-     * @return 한 글자
-     * @throws IOException
-     */
-    /*
-    public String readWChar() throws IOException {
-        byte[] arr = new byte[2];
-        readBytes(arr);
-        return new String(arr, 0, 2, StandardCharsets.UTF_16LE);
-    }
-     */
     public byte[] readWChar() throws IOException {
         byte[] arr = new byte[2];
         readBytes(arr);
@@ -229,15 +285,6 @@ public abstract class StreamReader {
      */
     public long getSize() {
         return size;
-    }
-
-    /**
-     * 스트림 크기를 설정한다.
-     *
-     * @param size 스트림 크기
-     */
-    protected void setSize(long size) {
-        this.size = size;
     }
 
     /**
@@ -325,7 +372,7 @@ public abstract class StreamReader {
         long n = getCurrentRecordHeader().getSize()
                 - getCurrentPositionAfterHeader();
         if (n > 0) {
-            skip(n);
+            skip((int) n);
         }
     }
 

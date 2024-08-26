@@ -129,7 +129,7 @@ public class ForFillInfo {
                 fi.getGradientFill().setBlurringCenter(sr.readUInt1());
             }
         } else {
-            sr.skip(size);
+            sr.skip((int) size);
         }
     }
 

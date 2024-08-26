@@ -113,17 +113,11 @@ public class CompoundFileReader {
                                              FileVersion fileVersion) throws Exception {
         Entry e = currentStorage.getEntry(name);
         if (e != null && e.isDocumentEntry()) {
-            if (compress == true) {
-                return new StreamReaderForCompress((DocumentEntry) e,
-                        fileVersion);
-            } else {
-                return new StreamReaderForNormal((DocumentEntry) e, fileVersion);
-            }
+            return StreamReader.create((DocumentEntry) e, compress, fileVersion);
         } else {
             throw new Exception("this is not stream.");
         }
     }
-
 
     public DocumentInputStream getChildInputStream(String name) throws Exception {
         Entry e = currentStorage.getEntry(name);
@@ -140,5 +134,9 @@ public class CompoundFileReader {
      */
     public void close() throws IOException {
         fs = null;
+    }
+
+    protected DirectoryEntry getCurrentStorage() {
+        return currentStorage;
     }
 }

@@ -4,6 +4,7 @@ import kr.dogfoot.hwplib.object.docinfo.DocInfo;
 import kr.dogfoot.hwplib.object.etc.HWPString;
 import kr.dogfoot.hwplib.object.fileheader.FileVersion;
 import kr.dogfoot.hwplib.util.binary.BitFlag;
+import kr.dogfoot.hwplib.util.binary.Compressor;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
@@ -99,35 +100,9 @@ public class StreamWriter {
         if (compreess == false) {
             bytes = os.toByteArray();
         } else {
-            bytes = compressBytes();
+            bytes = Compressor.compress(os.toByteArray());
         }
         return new ByteArrayInputStream(bytes);
-    }
-
-    /**
-     * 스트림(파일)에 저장된 데이터를 압축한다.
-     *
-     * @return 압축된 스트림(파일) 데이터
-     * @throws IOException
-     */
-    private byte[] compressBytes() throws IOException {
-        byte[] original = os.toByteArray();
-
-        ByteArrayOutputStream bos = new ByteArrayOutputStream();
-        Deflater compresser = new Deflater(Deflater.DEFAULT_COMPRESSION, true);
-        compresser.setInput(original);
-        compresser.finish();
-        byte[] buf = new byte[1024];
-        while (!compresser.finished()) {
-            int count = compresser.deflate(buf);
-            bos.write(buf, 0, count);
-        }
-        byte[] zero = new byte[4];
-        bos.write(zero);
-        byte[] length = ByteBuffer.allocate(4).order(ByteOrder.LITTLE_ENDIAN)
-                .putInt(original.length).array();
-        bos.write(length);
-        return bos.toByteArray();
     }
 
     /**

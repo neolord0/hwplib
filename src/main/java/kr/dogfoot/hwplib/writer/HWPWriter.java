@@ -261,13 +261,13 @@ public class HWPWriter {
     private void scripts() throws IOException {
         cfw.openCurrentStorage("Scripts");
         if (hwpFile.getScripts().getDefaultJScript() != null) {
-            StreamWriter sw = cfw.openCurrentStream("DefaultJScript", false, getVersion());
+            StreamWriter sw = cfw.openCurrentStream("DefaultJScript", isCompressed(), getVersion());
             sw.writeBytes(hwpFile.getScripts().getDefaultJScript());
             cfw.closeCurrentStream();
         }
 
         if (hwpFile.getScripts().getJScriptVersion() != null) {
-            StreamWriter sw = cfw.openCurrentStream("JScriptVersion", false, getVersion());
+            StreamWriter sw = cfw.openCurrentStream("JScriptVersion", isCompressed(), getVersion());
             sw.writeBytes(hwpFile.getScripts().getJScriptVersion());
             cfw.closeCurrentStream();
         }

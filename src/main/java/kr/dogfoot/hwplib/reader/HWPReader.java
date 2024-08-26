@@ -14,6 +14,7 @@ import kr.dogfoot.hwplib.reader.bodytext.memo.ForMemo;
 import kr.dogfoot.hwplib.reader.docinfo.ForDocInfo;
 import kr.dogfoot.hwplib.tool.textextractor.TextExtractMethod;
 import kr.dogfoot.hwplib.tool.textextractor.TextExtractorListener;
+import kr.dogfoot.hwplib.util.StringUtil;
 import kr.dogfoot.hwplib.util.compoundFile.reader.CompoundFileReader;
 import kr.dogfoot.hwplib.util.compoundFile.reader.StreamReader;
 
@@ -334,18 +335,23 @@ public class HWPReader {
             cfr.moveChildStorage("Scripts");
 
             {
-                StreamReader sr = cfr.getChildStreamReader("DefaultJScript", false, getVersion());
+                System.out.println("default jscript");
+                StreamReader sr = cfr.getChildStreamReader("DefaultJScript", isCompressed(), getVersion());
                 byte[] data = new byte[(int) sr.getSize()];
                 sr.readBytes(data);
                 sr.close();
+
+                System.out.println(StringUtil.bytesToHex(data));
                 hwpFile.getScripts().setDefaultJScript(data);
             }
 
             {
-                StreamReader sr = cfr.getChildStreamReader("JScriptVersion", false, getVersion());
+                System.out.println("jscript version");
+                StreamReader sr = cfr.getChildStreamReader("JScriptVersion", isCompressed(), getVersion());
                 byte[] data = new byte[(int) sr.getSize()];
                 sr.readBytes(data);
                 sr.close();
+                System.out.println(StringUtil.bytesToHex(data));
                 hwpFile.getScripts().setJScriptVersion(data);
             }
 
