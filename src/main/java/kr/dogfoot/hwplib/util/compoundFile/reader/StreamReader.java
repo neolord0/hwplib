@@ -43,7 +43,7 @@ public class StreamReader {
         return sr;
     }
 
-    private static byte[] getDecompressedBytes(InputStream is) throws IOException {
+    protected static byte[] getDecompressedBytes(InputStream is) throws IOException {
         InputStream iis = new InflaterInputStream(is, new Inflater(true));
         ByteArrayOutputStream buffer = new ByteArrayOutputStream();
         int nRead;
@@ -54,47 +54,14 @@ public class StreamReader {
         return buffer.toByteArray();
     }
 
-    public static StreamReader create(InputStream is, boolean compress, FileVersion fileVersion) throws IOException {
-        StreamReader sr = new StreamReader();
-        sr.fileVersion = fileVersion;
-
-        if (!compress) {
-            byte[] streamBytes = getStreamBytes(is);
-            sr.is = new ByteArrayInputStream(streamBytes);
-            sr.size = streamBytes.length;
-        } else {
-            try {
-                byte[] decompressed = getDecompressedBytes(is);
-                sr.is = new ByteArrayInputStream(decompressed);
-                sr.size = decompressed.length;
-            } catch (Exception e) {
-                byte[] streamBytes = getStreamBytes(is);
-                sr.is = new ByteArrayInputStream(streamBytes);
-                sr.size = streamBytes.length;
-            }
-        }
-        return sr;
-    }
-
-    private static byte[] getStreamBytes(InputStream is) throws IOException {
-        ByteArrayOutputStream buffer = new ByteArrayOutputStream();
-        int nRead;
-        byte[] data = new byte[16384];
-        while ((nRead = is.read(data, 0, data.length)) != -1) {
-            buffer.write(data, 0, nRead);
-        }
-        return buffer.toByteArray();
-    }
-
-
     /**
      * 스트림을 읽기 위한 InputStream
      */
-    private InputStream is;
+    protected InputStream is;
     /**
      * 스트림 크기
      */
-    private long size;
+    protected long size;
     /**
      * 현재까지 읽은 byte 수.
      */
@@ -112,7 +79,7 @@ public class StreamReader {
     /**
      * 한글 파일 버전
      */
-    private FileVersion fileVersion;
+    protected FileVersion fileVersion;
 
     /**
      * 문서 정보를 나타내는 객체
@@ -129,7 +96,6 @@ public class StreamReader {
         readAfterHeader = 0;
         docInfo = null;
     }
-
 
     public void readBytes(byte[] buffer) throws IOException {
         is.read(buffer);

@@ -18,15 +18,15 @@ public class CompoundFileWriter {
     /**
      * 파일 시스템(Apache POI 라이브러리)
      */
-    private POIFSFileSystem fs;
+    protected POIFSFileSystem fs;
     /**
      * 현재 스토리지(디렉토리)
      */
-    private DirectoryEntry currentStorage;
+    protected DirectoryEntry currentStorage;
     /**
      * 현재 스크림(파일)을 쓰기 위한 객체
      */
-    private StreamWriter currentStreamWriter;
+    protected StreamWriter currentStreamWriter;
 
     /**
      * 생성자

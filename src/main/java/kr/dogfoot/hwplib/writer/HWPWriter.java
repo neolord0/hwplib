@@ -7,7 +7,6 @@ import kr.dogfoot.hwplib.object.bodytext.paragraph.memo.Memo;
 import kr.dogfoot.hwplib.object.docinfo.bindata.BinDataCompress;
 import kr.dogfoot.hwplib.object.fileheader.FileVersion;
 import kr.dogfoot.hwplib.org.apache.poi.hpsf.WritingNotSupportedException;
-import kr.dogfoot.hwplib.util.StringUtil;
 import kr.dogfoot.hwplib.util.compoundFile.writer.CompoundFileWriter;
 import kr.dogfoot.hwplib.util.compoundFile.writer.StreamWriter;
 import kr.dogfoot.hwplib.writer.autosetter.AutoSetter;
@@ -20,7 +19,6 @@ import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
-import java.nio.charset.StandardCharsets;
 
 /**
  * 한글 파일을 쓰기 위한 객체
@@ -113,8 +111,7 @@ public class HWPWriter {
      * @throws IOException
      */
     private void fileHeader() throws IOException {
-        StreamWriter sw = cfw.openCurrentStream("FileHeader", false,
-                getVersion());
+        StreamWriter sw = cfw.openCurrentStream("FileHeader", false, getVersion());
         ForFileHeader.write(hwpFile.getFileHeader(), sw);
         cfw.closeCurrentStream();
     }
@@ -134,11 +131,9 @@ public class HWPWriter {
      * @throws Exception
      */
     private void docInfo() throws Exception {
-        StreamWriter sw = cfw.openCurrentStream("DocInfo", isCompressed(),
-                getVersion());
+        StreamWriter sw = cfw.openCurrentStream("DocInfo", isCompressed(), getVersion());
         sw.setDocInfo(hwpFile.getDocInfo());
-        ForDocInfo fdi = new ForDocInfo();
-        fdi.write(hwpFile.getDocInfo(), sw);
+        new ForDocInfo().write(hwpFile.getDocInfo(), sw);
         cfw.closeCurrentStream();
     }
 
@@ -158,11 +153,13 @@ public class HWPWriter {
      */
     private void bodyText() throws Exception {
         cfw.openCurrentStorage("BodyText");
+
         int index = 0;
         for (Section s : hwpFile.getBodyText().getSectionList()) {
-            seciton(index, s);
+            section(index, s);
             index++;
         }
+
         cfw.closeCurrentStorage();
     }
 
@@ -173,12 +170,11 @@ public class HWPWriter {
      * @param s     구역 객체
      * @throws Exception
      */
-    private void seciton(int index, Section s) throws Exception {
-        StreamWriter sw = cfw.openCurrentStream("Section" + index,
-                isCompressed(), getVersion());
+    private void section(int index, Section s) throws Exception {
+        StreamWriter sw = cfw.openCurrentStream("Section" + index, isCompressed(), getVersion());
         sw.setDocInfo(hwpFile.getDocInfo());
-        ForSection.write(s, sw);
 
+        ForSection.write(s, sw);
         if (isLastSection(index) && hwpFile.getBodyText().getMemoList() != null) {
             for (Memo memo : hwpFile.getBodyText().getMemoList()) {
                 ForMemo.write(memo, sw);
@@ -200,10 +196,12 @@ public class HWPWriter {
     private void binData() throws IOException {
         if (hasBinData()) {
             cfw.openCurrentStorage("BinData");
+
             for (EmbeddedBinaryData ebd : hwpFile.getBinData()
                     .getEmbeddedBinaryDataList()) {
                 embeddedBinaryData(ebd);
             }
+
             cfw.closeCurrentStorage();
         }
     }
@@ -224,7 +222,8 @@ public class HWPWriter {
      * @throws IOException
      */
     private void embeddedBinaryData(EmbeddedBinaryData ebd) throws IOException {
-        StreamWriter sw = cfw.openCurrentStream(ebd.getName(), isCompressBinData(ebd.getCompressMethod()),
+        StreamWriter sw = cfw.openCurrentStream(ebd.getName(),
+                isCompressBinData(ebd.getCompressMethod()),
                 getVersion());
         sw.writeBytes(ebd.getData());
         cfw.closeCurrentStream();
@@ -260,6 +259,7 @@ public class HWPWriter {
 
     private void scripts() throws IOException {
         cfw.openCurrentStorage("Scripts");
+
         if (hwpFile.getScripts().getDefaultJScript() != null) {
             StreamWriter sw = cfw.openCurrentStream("DefaultJScript", isCompressed(), getVersion());
             sw.writeBytes(hwpFile.getScripts().getDefaultJScript());
@@ -271,6 +271,7 @@ public class HWPWriter {
             sw.writeBytes(hwpFile.getScripts().getJScriptVersion());
             cfw.closeCurrentStream();
         }
+
         cfw.closeCurrentStorage();
     }
 

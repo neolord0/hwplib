@@ -14,7 +14,6 @@ import kr.dogfoot.hwplib.reader.bodytext.memo.ForMemo;
 import kr.dogfoot.hwplib.reader.docinfo.ForDocInfo;
 import kr.dogfoot.hwplib.tool.textextractor.TextExtractMethod;
 import kr.dogfoot.hwplib.tool.textextractor.TextExtractorListener;
-import kr.dogfoot.hwplib.util.StringUtil;
 import kr.dogfoot.hwplib.util.compoundFile.reader.CompoundFileReader;
 import kr.dogfoot.hwplib.util.compoundFile.reader.StreamReader;
 
@@ -58,7 +57,7 @@ public class HWPReader {
             throw new Exception("Files with passwords are not supported.");
         }
         if (r.isDistribution()) {
-            throw new Exception("Files for deployment are not supported.");
+            throw new Exception("Files for distribution are not supported.");
         }
 
         r.docInfo();
@@ -98,7 +97,7 @@ public class HWPReader {
             throw new Exception("Files with passwords are not supported.");
         }
         if (r.isDistribution()) {
-            throw new Exception("Files for deployment are not supported.");
+            throw new Exception("Files for distribution are not supported.");
         }
 
         r.docInfo();
@@ -168,8 +167,7 @@ public class HWPReader {
      */
     private void docInfo() throws Exception {
         StreamReader sr = cfr.getChildStreamReader("DocInfo", isCompressed(), getVersion());
-        ForDocInfo forDocInfo = new ForDocInfo();
-        forDocInfo.read(hwpFile.getDocInfo(), sr);
+        new ForDocInfo().read(hwpFile.getDocInfo(), sr);
         sr.close();
     }
 
@@ -198,10 +196,12 @@ public class HWPReader {
      */
     private void bodyText() throws Exception {
         cfr.moveChildStorage("BodyText");
+
         int sectionCount = hwpFile.getDocInfo().getDocumentProperties().getSectionCount();
         for (int index = 0; index < sectionCount; index++) {
             section(index);
         }
+
         cfr.moveParentStorage();
     }
 
@@ -213,13 +213,11 @@ public class HWPReader {
      */
     private void section(int index) throws Exception {
         StreamReader sr = cfr.getChildStreamReader("Section" + index, isCompressed(), getVersion());
-
         sr.setDocInfo(hwpFile.getDocInfo());
         ForSection.read(hwpFile.getBodyText().addNewSection(), sr);
         if (isLastSection(index)) {
             memo(sr);
         }
-
         sr.close();
     }
 
@@ -247,22 +245,23 @@ public class HWPReader {
     private void binData() throws Exception {
         if (cfr.isChildStorage("BinData")) {
             cfr.moveChildStorage("BinData");
+
             Set<String> ss = cfr.listChildNames();
             Iterator<String> it = ss.iterator();
             while (it.hasNext()) {
                 String name = it.next();
                 int id = nameToID(name);
                 BinDataCompress compressMethod = getCompressMethod(id);
-                hwpFile.getBinData().addNewEmbeddedBinaryData(name, readEmbededBinaryData(name, compressMethod),
+                hwpFile.getBinData().addNewEmbeddedBinaryData(name, readEmbeddedBinaryData(name, compressMethod),
                         compressMethod);
             }
+
             cfr.moveParentStorage();
         }
     }
 
     private int nameToID(String name) {
         String id = name.substring(3, 7);
-
         return Integer.parseInt(id, 16);
     }
 
@@ -287,7 +286,7 @@ public class HWPReader {
      * @return 스트림에 저장된 데이타
      * @throws Exception
      */
-    private byte[] readEmbededBinaryData(String name, BinDataCompress compressMethod) throws Exception {
+    private byte[] readEmbeddedBinaryData(String name, BinDataCompress compressMethod) throws Exception {
         StreamReader sr = cfr.getChildStreamReader(name, isCompressBinData(compressMethod), null);
         byte[] binaryData = new byte[(int) sr.getSize()];
         sr.readBytes(binaryData);
@@ -339,7 +338,6 @@ public class HWPReader {
                 byte[] data = new byte[(int) sr.getSize()];
                 sr.readBytes(data);
                 sr.close();
-
                 hwpFile.getScripts().setDefaultJScript(data);
             }
 
@@ -348,7 +346,6 @@ public class HWPReader {
                 byte[] data = new byte[(int) sr.getSize()];
                 sr.readBytes(data);
                 sr.close();
-
                 hwpFile.getScripts().setJScriptVersion(data);
             }
 
@@ -386,6 +383,9 @@ public class HWPReader {
         if (r.hasPassword()) {
             throw new Exception("Files with passwords are not supported.");
         }
+        if (r.isDistribution()) {
+            throw new Exception("Distribution Files are not supported.");
+        }
 
         r.docInfo();
         r.extractBodyText(listener, tem);
@@ -402,10 +402,12 @@ public class HWPReader {
      */
     private void extractBodyText(TextExtractorListener listener, TextExtractMethod tem) throws Exception {
         cfr.moveChildStorage("BodyText");
+
         int sectionCount = hwpFile.getDocInfo().getDocumentProperties().getSectionCount();
         for (int index = 0; index < sectionCount; index++) {
             extractSectionText(index, listener, tem);
         }
+
         cfr.moveParentStorage();
     }
 
