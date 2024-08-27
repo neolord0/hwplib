@@ -25,7 +25,6 @@ public class ForBullet {
 
         if (sr.isEndOfRecord()) return;
 
-
         long imageBullet = sr.readUInt4();
         if (imageBullet == 1) {
             b.setImageBullet(true);
@@ -34,7 +33,7 @@ public class ForBullet {
         }
         ForFillInfo.pictureInfo(b.getImageBulletInfo(), sr);
 
-        if (sr.isEndOfRecord()) return;;
+        if (sr.isEndOfRecord()) return;
 
         b.getCheckBulletChar().setBytes(sr.readWChar());
     }
