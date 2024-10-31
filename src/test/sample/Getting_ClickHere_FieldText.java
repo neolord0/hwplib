@@ -8,7 +8,7 @@ import kr.dogfoot.hwplib.tool.textextractor.TextExtractMethod;
 import java.io.File;
 
 /**
- * 누름틀 필드 컨트롤의 텍스트를 구하는 샢플 프로그램.
+ * 누름틀 필드 컨트롤의 텍스트를 구하는 샘플 프로그램.
  */
 public class Getting_ClickHere_FieldText {
     public static void main(String[] args) throws Exception {

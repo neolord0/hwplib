@@ -30,7 +30,7 @@ import java.io.File;
 import java.io.UnsupportedEncodingException;
 
 /**
- * 파일에 새로운 테이븚를 추가하는 샘플 프로그램.
+ * 파일에 새로운 테이블을 추가하는 샘플 프로그램.
  */
 public class Inserting_Table {
 

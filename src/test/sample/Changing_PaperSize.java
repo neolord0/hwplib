@@ -10,7 +10,7 @@ import kr.dogfoot.hwplib.writer.HWPWriter;
 import java.io.File;
 
 /**
- * 페이지 크기를 변경하는 샢플 프로그램.
+ * 페이지 크기를 변경하는 샘플 프로그램.
  */
 public class Changing_PaperSize {
     private static class Size {
