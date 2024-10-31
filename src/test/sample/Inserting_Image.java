@@ -30,7 +30,7 @@ import java.io.IOException;
 import java.io.InputStream;
 
 /**
- * 파일에 이미지와 이미지 컨트롤를 삽입하는 샘플 프로그램
+ * 파일에 이미지와 이미지 컨트롤을 삽입하는 샘플 프로그램
  */
 public class Inserting_Image {
     public static void main(String[] args) throws Exception {
