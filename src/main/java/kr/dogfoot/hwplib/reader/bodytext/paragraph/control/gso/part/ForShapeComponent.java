@@ -86,10 +86,10 @@ public class ForShapeComponent {
         sc.setOffsetY(sr.readSInt4());
         sc.setGroupingCount(sr.readUInt2());
         sc.setLocalFileVersion(sr.readUInt2());
-        sc.setWidthAtCreate(sr.readUInt4());
-        sc.setHeightAtCreate(sr.readUInt4());
-        sc.setWidthAtCurrent(sr.readUInt4());
-        sc.setHeightAtCurrent(sr.readUInt4());
+        sc.setWidthAtCreate(sr.readSInt4());
+        sc.setHeightAtCreate(sr.readSInt4());
+        sc.setWidthAtCurrent(sr.readSInt4());
+        sc.setHeightAtCurrent(sr.readSInt4());
         sc.getProperty().setValue(sr.readUInt4());
         sc.setRotateAngle(sr.readUInt2());
         sc.setRotateXCenter(sr.readSInt4());

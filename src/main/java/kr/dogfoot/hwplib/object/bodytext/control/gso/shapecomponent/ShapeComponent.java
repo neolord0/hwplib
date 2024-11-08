@@ -32,19 +32,19 @@ public abstract class ShapeComponent {
     /**
      * 생성시 폭
      */
-    private long widthAtCreate;
+    private int widthAtCreate;
     /**
      * 생성시 높이
      */
-    private long heightAtCreate;
+    private int heightAtCreate;
     /**
      * 현재 폭
      */
-    private long widthAtCurrent;
+    private int widthAtCurrent;
     /**
      * 현재 높이
      */
-    private long heightAtCurrent;
+    private int heightAtCurrent;
     /**
      * 속성(정보 없음)
      */
@@ -171,7 +171,7 @@ public abstract class ShapeComponent {
      *
      * @return 생성시 폭
      */
-    public long getWidthAtCreate() {
+    public int getWidthAtCreate() {
         return widthAtCreate;
     }
 
@@ -180,7 +180,7 @@ public abstract class ShapeComponent {
      *
      * @param widthAtCreate 생성시 폭
      */
-    public void setWidthAtCreate(long widthAtCreate) {
+    public void setWidthAtCreate(int widthAtCreate) {
         this.widthAtCreate = widthAtCreate;
     }
 
@@ -189,7 +189,7 @@ public abstract class ShapeComponent {
      *
      * @return 생성시 높이
      */
-    public long getHeightAtCreate() {
+    public int getHeightAtCreate() {
         return heightAtCreate;
     }
 
@@ -198,7 +198,7 @@ public abstract class ShapeComponent {
      *
      * @param heightAtCreate 생성시 높이
      */
-    public void setHeightAtCreate(long heightAtCreate) {
+    public void setHeightAtCreate(int heightAtCreate) {
         this.heightAtCreate = heightAtCreate;
     }
 
@@ -207,7 +207,7 @@ public abstract class ShapeComponent {
      *
      * @return 현재 폭
      */
-    public long getWidthAtCurrent() {
+    public int getWidthAtCurrent() {
         return widthAtCurrent;
     }
 
@@ -216,7 +216,7 @@ public abstract class ShapeComponent {
      *
      * @param widthAtCurrent 현재 폭
      */
-    public void setWidthAtCurrent(long widthAtCurrent) {
+    public void setWidthAtCurrent(int widthAtCurrent) {
         this.widthAtCurrent = widthAtCurrent;
     }
 
@@ -225,7 +225,7 @@ public abstract class ShapeComponent {
      *
      * @return 현재 높이
      */
-    public long getHeightAtCurrent() {
+    public int getHeightAtCurrent() {
         return heightAtCurrent;
     }
 
@@ -234,7 +234,7 @@ public abstract class ShapeComponent {
      *
      * @param heightAtCurrent 현재 높이
      */
-    public void setHeightAtCurrent(long heightAtCurrent) {
+    public void setHeightAtCurrent(int heightAtCurrent) {
         this.heightAtCurrent = heightAtCurrent;
     }
 

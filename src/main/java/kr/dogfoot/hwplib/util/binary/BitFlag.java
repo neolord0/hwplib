@@ -14,7 +14,7 @@ public class BitFlag {
      * @return mask값에서 position번째 비트가 1인지 여부
      */
     public static boolean get(long mask, int position) {
-        long mask2 = 1 << position;
+        long mask2 = 1l << position;
         return (mask & mask2) == mask2;
     }
 

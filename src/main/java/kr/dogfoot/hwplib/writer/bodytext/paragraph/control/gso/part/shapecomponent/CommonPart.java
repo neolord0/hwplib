@@ -27,10 +27,10 @@ public class CommonPart {
         sw.writeSInt4(sc.getOffsetY());
         sw.writeUInt2(sc.getGroupingCount());
         sw.writeUInt2(sc.getLocalFileVersion());
-        sw.writeUInt4(sc.getWidthAtCreate());
-        sw.writeUInt4(sc.getHeightAtCreate());
-        sw.writeUInt4(sc.getWidthAtCurrent());
-        sw.writeUInt4(sc.getHeightAtCurrent());
+        sw.writeSInt4(sc.getWidthAtCreate());
+        sw.writeSInt4(sc.getHeightAtCreate());
+        sw.writeSInt4(sc.getWidthAtCurrent());
+        sw.writeSInt4(sc.getHeightAtCurrent());
         sw.writeUInt4(sc.getProperty().getValue());
         sw.writeUInt2(sc.getRotateAngle());
         sw.writeSInt4(sc.getRotateXCenter());

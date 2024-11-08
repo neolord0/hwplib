@@ -55,7 +55,7 @@ public class CtrlHeaderGso extends CtrlHeader {
      */
     private long instanceId;
     /**
-     * 쪽나눔 방지 on(1) / off(0)
+     * 쪽나눔 방지 on(1) / off(0) = (객체와 조판 부호를 항상 같은 쪽에 넣기) ??
      */
     private boolean preventPageDivide;
     /**
