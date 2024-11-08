@@ -40,6 +40,12 @@
 * hwpx 파일에 대한 라이브러리는 https://github.com/neolord0/hwpxlib 을 참조해 주세요.
 * hwp파일을 hwpx파일로 변환하는 라이브러리는 https://github.com/neolord0/hwp2hwpx 을 참조해 주세요.
 
+2024.11.08
+=========================================================================================
+* ShapeComponent.widthAtCreate, heightAtCreate, widthAtCurrent, heightAtCurrent:  long => int
+* BitFlag.get(long, int); 최상위 비트 값을 잘못 가져오는 오류수정
+* 메이븐 저장소에 1.1.8 버전 등록
+
 2024.08.27
 =========================================================================================
 * FileHeader에 배포용인지 나타내는 변수 이름을 isDeploymentDocument => isDistribution 로 변경함
