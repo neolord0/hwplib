@@ -14,6 +14,7 @@ import java.io.InputStream;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 import java.nio.charset.StandardCharsets;
+import java.security.Key;
 import java.util.zip.Inflater;
 import java.util.zip.InflaterInputStream;
 
@@ -23,20 +24,31 @@ import java.util.zip.InflaterInputStream;
  * @author neolord
  */
 public class StreamReader {
-    public static StreamReader create(DocumentEntry de, boolean compress, FileVersion fileVersion) throws IOException {
+    public static StreamReader create(DocumentEntry de, boolean encrypted, boolean compress, FileVersion fileVersion) throws IOException {
+        InputStream input = new DocumentInputStream(de);
+
+        if (encrypted) {
+            Key key = ViewModeCrypto.readKey(input);
+            try {
+                input = ViewModeCrypto.createDecryptStream(input, key);
+            } catch (Exception e) {
+                throw new IOException("decrypt failed", e);
+            }
+        }
+
         StreamReader sr = new StreamReader();
         sr.fileVersion = fileVersion;
 
         if (!compress) {
-            sr.is = new DocumentInputStream(de);
+            sr.is = input;
             sr.size = de.getSize();
         } else {
             try {
-                byte[] decompressed = getDecompressedBytes(new DocumentInputStream(de));
+                byte[] decompressed = getDecompressedBytes(input);
                 sr.is = new ByteArrayInputStream(decompressed);
                 sr.size = decompressed.length;
             } catch (Exception e) {
-                sr.is = new DocumentInputStream(de);
+                sr.is = input;
                 sr.size = de.getSize();
             }
         }

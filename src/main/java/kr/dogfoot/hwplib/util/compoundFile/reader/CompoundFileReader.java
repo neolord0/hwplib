@@ -109,11 +109,11 @@ public class CompoundFileReader {
      * @return 이름이 name인 스트림을 읽을 수 있는 스트림 리더 객체
      * @throws Exception
      */
-    public StreamReader getChildStreamReader(String name, boolean compress,
+    public StreamReader getChildStreamReader(String name, boolean encrypted, boolean compress,
                                              FileVersion fileVersion) throws Exception {
         Entry e = currentStorage.getEntry(name);
         if (e != null && e.isDocumentEntry()) {
-            return StreamReader.create((DocumentEntry) e, compress, fileVersion);
+            return StreamReader.create((DocumentEntry) e, encrypted, compress, fileVersion);
         } else {
             throw new Exception("this is not stream.");
         }
