@@ -25,7 +25,13 @@ public class ForSection {
                 || sr.getCurrentRecordHeader().getTagID() != HWPTag.LIST_HEADER) return;
 
         s.createLastBatangPageInfo();
-        lastBatangPageInfo(s.getLastBatangPageInfo(), sr);
+        batangPageInfo(s.getLastBatangPageInfo(), sr);
+
+        if (sr.isEndOfStream()
+                || sr.getCurrentRecordHeader().getTagID() != HWPTag.LIST_HEADER) return;
+
+        s.createAnyBatangPageInfo();
+        batangPageInfo(s.getAnyBatangPageInfo(), sr);
     }
 
     /**
@@ -35,8 +41,8 @@ public class ForSection {
      * @param sr                 스트림 리더
      * @throws Exception
      */
-    private static void lastBatangPageInfo(BatangPageInfo lastBatangPageInfo,
-                                           StreamReader sr) throws Exception {
+    private static void batangPageInfo(BatangPageInfo lastBatangPageInfo,
+                                       StreamReader sr) throws Exception {
         ForBatangPageInfo.read(lastBatangPageInfo, sr);
     }
 }

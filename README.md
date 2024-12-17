@@ -40,6 +40,10 @@
 * hwpx 파일에 대한 라이브러리는 https://github.com/neolord0/hwpxlib 을 참조해 주세요.
 * hwp파일을 hwpx파일로 변환하는 라이브러리는 https://github.com/neolord0/hwp2hwpx 을 참조해 주세요.
 
+2024.12.17
+=========================================================================================
+* 이슈 273 : 섹션 뒤에 확장 바탕쪽이 2개(마지막, 임의) 일 경우 오류수정
+
 2024.11.08
 =========================================================================================
 * ShapeComponent.widthAtCreate, heightAtCreate, widthAtCurrent, heightAtCurrent:  long => int

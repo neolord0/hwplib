@@ -21,6 +21,10 @@ public class Section implements ParagraphListInterface {
      * 마지막 바탕쪽 정보
      */
     private BatangPageInfo lastBatangPageInfo;
+    /**
+     * 임의의 바탕쪽 정보
+     */
+    private BatangPageInfo anyBatangPageInfo;
 
     /**
      * 생성자
@@ -28,6 +32,7 @@ public class Section implements ParagraphListInterface {
     public Section() {
         paragraphList = new ArrayList<Paragraph>();
         lastBatangPageInfo = null;
+        anyBatangPageInfo = null;
     }
 
     /**
@@ -63,16 +68,16 @@ public class Section implements ParagraphListInterface {
         return paragraphList.get(index);
     }
 
-    /**
-     * index 번째의 문단을 삭제한다.
-     *
-     * @param index 삭제할 문단의 순번
-     */
     @Override
     public Paragraph[] getParagraphs() {
         return paragraphList.toArray(Paragraph.Zero_Array);
     }
 
+    /**
+     * index 번째의 문단을 삭제한다.
+     *
+     * @param index 삭제할 문단의 순번
+     */
     @Override
     public void deleteParagraph(int index) {
         paragraphList.remove(index);
@@ -128,6 +133,23 @@ public class Section implements ParagraphListInterface {
         return lastBatangPageInfo;
     }
 
+    /**
+     * 임의의 바탕쪽 정보 객체를 생성한다.
+     */
+    public void createAnyBatangPageInfo() {
+        anyBatangPageInfo = new BatangPageInfo();
+    }
+
+    /**
+     * 임의의 바탕쪽 정보를 리턴한다.
+     *
+     * @return 마지막 바탕쪽 정보
+     */
+    public BatangPageInfo getAnyBatangPageInfo() {
+        return anyBatangPageInfo;
+    }
+
+
     public Section clone() {
         Section cloned = new Section();
 
@@ -140,6 +162,12 @@ public class Section implements ParagraphListInterface {
             cloned.lastBatangPageInfo = lastBatangPageInfo.clone();
         } else {
             cloned.lastBatangPageInfo = null;
+        }
+
+        if (anyBatangPageInfo != null) {
+            cloned.anyBatangPageInfo = anyBatangPageInfo.clone();
+        } else {
+            cloned.anyBatangPageInfo = null;
         }
 
         return cloned;
