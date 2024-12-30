@@ -6,16 +6,20 @@ import kr.dogfoot.hwplib.object.fileheader.FileVersion;
 import kr.dogfoot.hwplib.org.apache.poi.poifs.filesystem.DocumentEntry;
 import kr.dogfoot.hwplib.org.apache.poi.poifs.filesystem.DocumentInputStream;
 import kr.dogfoot.hwplib.util.binary.BitFlag;
+import kr.dogfoot.hwplib.util.binary.Compressor;
+import kr.dogfoot.hwplib.util.binary.Obfuscation;
 
+import javax.crypto.Cipher;
+import javax.crypto.CipherInputStream;
+import javax.crypto.spec.SecretKeySpec;
 import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 import java.nio.charset.StandardCharsets;
-import java.util.zip.Inflater;
-import java.util.zip.InflaterInputStream;
+import java.security.Key;
+import java.util.Arrays;
 
 /**
  * MS Compound 파일의 스트림을 읽기 위한 객체
@@ -23,35 +27,65 @@ import java.util.zip.InflaterInputStream;
  * @author neolord
  */
 public class StreamReader {
-    public static StreamReader create(DocumentEntry de, boolean compress, FileVersion fileVersion) throws IOException {
-        StreamReader sr = new StreamReader();
-        sr.fileVersion = fileVersion;
-
-        if (!compress) {
-            sr.is = new DocumentInputStream(de);
-            sr.size = de.getSize();
-        } else {
+    public static StreamReader create(DocumentEntry de, boolean compress, boolean distribution, FileVersion fileVersion) throws Exception {
+        InputStream is = documentInputStream(de, distribution);
+        if (compress) {
             try {
-                byte[] decompressed = getDecompressedBytes(new DocumentInputStream(de));
-                sr.is = new ByteArrayInputStream(decompressed);
-                sr.size = decompressed.length;
+                byte[] decompressed = Compressor.decompressedBytes(is);
+
+                return new StreamReader().init(
+                        fileVersion,
+                        new ByteArrayInputStream(decompressed),
+                        decompressed.length);
             } catch (Exception e) {
-                sr.is = new DocumentInputStream(de);
-                sr.size = de.getSize();
+                return new StreamReader().init(
+                        fileVersion,
+                        is,
+                        de.getSize());
             }
+        } else {
+            return new StreamReader().init(
+                    fileVersion,
+                    is,
+                    de.getSize());
         }
-        return sr;
     }
 
-    protected static byte[] getDecompressedBytes(InputStream is) throws IOException {
-        InputStream iis = new InflaterInputStream(is, new Inflater(true));
-        ByteArrayOutputStream buffer = new ByteArrayOutputStream();
-        int nRead;
-        byte[] data = new byte[16384];
-        while ((nRead = iis.read(data, 0, data.length)) != -1) {
-            buffer.write(data, 0, nRead);
+    private static InputStream documentInputStream(DocumentEntry de, boolean distribution) throws Exception {
+        InputStream is = new DocumentInputStream(de);
+        if (distribution) {
+            return decryptStream(is);
+        } else {
+            return is;
         }
-        return buffer.toByteArray();
+    }
+
+    private static InputStream decryptStream(InputStream is)
+            throws Exception {
+        Key secretKey = secretKey(is);
+
+        Cipher cipher = Cipher.getInstance("AES/ECB/PKCS5Padding");
+        cipher.init(Cipher.DECRYPT_MODE, secretKey);
+        return new CipherInputStream(is, cipher);
+    }
+
+
+    private static Key secretKey(InputStream is) throws IOException {
+        byte[] distributionDocumentData = readDistributionDocData(is);
+        int offset = 4 + (distributionDocumentData[0] & 0xF);
+
+        byte[] keyBytes = Arrays.copyOfRange(distributionDocumentData, offset, offset + 16);
+        return new SecretKeySpec(keyBytes, "AES");
+    }
+
+    private static byte[] readDistributionDocData(InputStream is) throws IOException {
+        byte[] header = new byte[4];
+        is.read(header, 0, 4); // record header,
+
+        byte[] body = new byte[256];
+        is.read(body, 0, 256);
+        Obfuscation.transform(body);
+        return body;
     }
 
     /**
@@ -95,6 +129,13 @@ public class StreamReader {
         header = new RecordHeader();
         readAfterHeader = 0;
         docInfo = null;
+    }
+
+    private StreamReader init(FileVersion fileVersion, InputStream is, int size) {
+        this.fileVersion = fileVersion;
+        this.is = is;
+        this.size = size;
+        return this;
     }
 
     public void readBytes(byte[] buffer) throws IOException {

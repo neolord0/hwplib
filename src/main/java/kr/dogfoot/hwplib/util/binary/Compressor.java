@@ -2,10 +2,12 @@ package kr.dogfoot.hwplib.util.binary;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 import java.util.zip.Deflater;
 import java.util.zip.Inflater;
+import java.util.zip.InflaterInputStream;
 
 public class Compressor {
     public static byte[] compress(byte[] original) throws IOException {
@@ -26,24 +28,14 @@ public class Compressor {
         return bos.toByteArray();
     }
 
-    public static byte[] decompress(byte[] compressed) throws Exception {
-        Inflater decompressor = new Inflater(true);
-        decompressor.setInput(compressed, 0, compressed.length);
-        ByteArrayOutputStream bos = new ByteArrayOutputStream(compressed.length);
-
-        // Decompress the data
-        byte[] buf = new byte[8096];
-        while (!decompressor.finished()) {
-            int count = decompressor.inflate(buf);
-            if (count > 0) {
-                bos.write(buf, 0, count);
-            } else {
-                throw new Exception("can't decompress data");
-            }
+    public static byte[] decompressedBytes(InputStream is) throws IOException {
+        InputStream iis = new InflaterInputStream(is, new Inflater(true));
+        ByteArrayOutputStream buffer = new ByteArrayOutputStream();
+        int nRead;
+        byte[] data = new byte[16384];
+        while ((nRead = iis.read(data, 0, data.length)) != -1) {
+            buffer.write(data, 0, nRead);
         }
-        bos.close();
-        return bos.toByteArray();
+        return buffer.toByteArray();
     }
-
-
 }

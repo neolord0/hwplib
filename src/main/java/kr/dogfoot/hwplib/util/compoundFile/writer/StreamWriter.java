@@ -6,7 +6,6 @@ import kr.dogfoot.hwplib.object.fileheader.FileVersion;
 import kr.dogfoot.hwplib.util.binary.BitFlag;
 import kr.dogfoot.hwplib.util.binary.Compressor;
 
-import javax.crypto.spec.SecretKeySpec;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -14,7 +13,6 @@ import java.io.InputStream;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 import java.nio.charset.StandardCharsets;
-import java.util.Arrays;
 
 /**
  * MS Compound 파일의 스트림에 내용을 저장하기 위한 객체
