@@ -113,9 +113,18 @@ public class CompoundFileReader {
                                              FileVersion fileVersion) throws Exception {
         Entry e = currentStorage.getEntry(name);
         if (e != null && e.isDocumentEntry()) {
-            return StreamReader.create((DocumentEntry) e, compress, fileVersion);
+            return StreamReader.create((DocumentEntry) e, compress, false, fileVersion);
         } else {
             throw new Exception("this is not stream.");
+        }
+    }
+
+    public StreamReader getChildStreamReaderForDistribution(String name, boolean compress, FileVersion fileVersion) throws Exception {
+        Entry e = getCurrentStorage().getEntry(name);
+        if (e != null && e.isDocumentEntry()) {
+            return StreamReader.create((DocumentEntry) e, compress, true, fileVersion);
+        } else {
+            throw new Exception(name + " is not stream.");
         }
     }
 

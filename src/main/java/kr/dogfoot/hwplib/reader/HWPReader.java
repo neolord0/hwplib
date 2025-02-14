@@ -56,9 +56,6 @@ public class HWPReader {
         if (r.hasPassword()) {
             throw new Exception("Files with passwords are not supported.");
         }
-        if (r.isDistribution()) {
-            throw new Exception("Files for distribution are not supported.");
-        }
 
         r.docInfo();
         r.bodyText();
@@ -95,9 +92,6 @@ public class HWPReader {
         r.fileHeader();
         if (r.hasPassword()) {
             throw new Exception("Files with passwords are not supported.");
-        }
-        if (r.isDistribution()) {
-            throw new Exception("Files for distribution are not supported.");
         }
 
         r.docInfo();
@@ -195,7 +189,11 @@ public class HWPReader {
      * @throws Exception
      */
     private void bodyText() throws Exception {
-        cfr.moveChildStorage("BodyText");
+        if (!isDistribution()) {
+            cfr.moveChildStorage("BodyText");
+        } else {
+            cfr.moveChildStorage("ViewText");
+        }
 
         int sectionCount = hwpFile.getDocInfo().getDocumentProperties().getSectionCount();
         for (int index = 0; index < sectionCount; index++) {
@@ -212,13 +210,21 @@ public class HWPReader {
      * @throws Exception
      */
     private void section(int index) throws Exception {
-        StreamReader sr = cfr.getChildStreamReader("Section" + index, isCompressed(), getVersion());
+        StreamReader sr = streamReader("Section" + index);
         sr.setDocInfo(hwpFile.getDocInfo());
         ForSection.read(hwpFile.getBodyText().addNewSection(), sr);
         if (isLastSection(index)) {
             memo(sr);
         }
         sr.close();
+    }
+
+    private StreamReader streamReader(String name) throws Exception {
+        if (!isDistribution()) {
+            return cfr.getChildStreamReader(name, isCompressed(), getVersion());
+        } else {
+            return cfr.getChildStreamReaderForDistribution(name, isCompressed(), getVersion());
+        }
     }
 
     private boolean isLastSection(int index) {
@@ -334,7 +340,7 @@ public class HWPReader {
             cfr.moveChildStorage("Scripts");
 
             {
-                StreamReader sr = cfr.getChildStreamReader("DefaultJScript", isCompressed(), getVersion());
+                StreamReader sr = streamReader("DefaultJScript");
                 byte[] data = new byte[(int) sr.getSize()];
                 sr.readBytes(data);
                 sr.close();
@@ -342,7 +348,7 @@ public class HWPReader {
             }
 
             {
-                StreamReader sr = cfr.getChildStreamReader("JScriptVersion", isCompressed(), getVersion());
+                StreamReader sr = streamReader("JScriptVersion");
                 byte[] data = new byte[(int) sr.getSize()];
                 sr.readBytes(data);
                 sr.close();
