@@ -65,6 +65,22 @@ public class ShapeComponentProperty {
     }
 
     /**
+     * 개체가 이미지와 함께 회전하는지 여부를 반환한다. (19 bit)
+     * @return 이미지와 함께 회전하는지 여부
+     */
+    public boolean isRotateWithImage() {
+        return BitFlag.get(value, 19);
+    }
+
+    /**
+     * 개체가 이미지와 함께 회전하는지 여부를 설정한다. (19 bit)
+     * @param rotateWithImage 개체가 이미지와 함께 회전하는지 여부
+     */
+    public void setRotateWithImage(boolean rotateWithImage) {
+        value = BitFlag.set(value, 19, rotateWithImage);
+    }
+
+    /**
      * 그림 개체의 색 반전 여부를 반환한다. (24 bit)
      * @return 그림 개체의 색 반전 여부
      */

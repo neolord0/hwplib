@@ -168,6 +168,7 @@ public class Inserting_Image {
 
     private void setShapeComponent() {
         ShapeComponentNormal sc = (ShapeComponentNormal) rectangle.getShapeComponent();
+        sc.getProperty().setRotateWithImage(true);
         sc.setOffsetX(0);
         sc.setOffsetY(0);
         sc.setGroupingCount(0);
