@@ -15,13 +15,13 @@ public class ParagraphList implements ParagraphListInterface {
     /**
      * 문단 리스트
      */
-    private ArrayList<Paragraph> paragraphList;
+    private final ArrayList<Paragraph> paragraphList;
 
     /**
      * 생성자
      */
     public ParagraphList() {
-        paragraphList = new ArrayList<Paragraph>();
+        paragraphList = new ArrayList<>();
     }
 
     /**
@@ -35,6 +35,15 @@ public class ParagraphList implements ParagraphListInterface {
         paragraphList.add(p);
         return p;
     }
+
+    /**
+     * 문단를 리스트에 추가한다.
+     * @param para 추가할 문단.
+     */
+    public void addParagraph(Paragraph para) {
+        paragraphList.add(para);
+    }
+
 
     /**
      * 문단 개수를 반환한다.
