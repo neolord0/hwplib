@@ -44,7 +44,6 @@ public class ParagraphList implements ParagraphListInterface {
         paragraphList.add(para);
     }
 
-
     /**
      * 문단 개수를 반환한다.
      *

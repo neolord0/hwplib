@@ -77,8 +77,6 @@ public class ControlEquation extends Control {
         if (caption != null) {
             cloned.createCaption();
             cloned.caption.copy(caption);
-        } else {
-            cloned = null;
         }
 
         cloned.eqEdit.copy(eqEdit);
