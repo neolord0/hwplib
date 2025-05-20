@@ -41,6 +41,7 @@
 
     <build>
         <plugins>
+            <!-- compile -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -53,6 +54,7 @@
                     <compilerVersion>1.7</compilerVersion>
                 </configuration>
             </plugin>
+            <!-- make jar -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-jar-plugin</artifactId>
@@ -65,7 +67,7 @@
                     </excludes>
                 </configuration>
             </plugin>
-
+            <!-- maven -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-source-plugin</artifactId>
@@ -80,13 +82,17 @@
                     </execution>
                 </executions>
             </plugin>
+            <!-- make javadoc -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-javadoc-plugin</artifactId>
-                <version>2.9.1</version>
+                <version>3.6.3</version>
                 <configuration>
-                    <additionalJOption>-Xdoclint:none</additionalJOption>
-                    <javadocExecutable>${java.home}/../bin/javadoc</javadocExecutable>
+                    <doclint>none</doclint>
+                    <additionalOptions>
+                        <additionalOption>-html5</additionalOption>
+                    </additionalOptions>
+                    <failOnError>false</failOnError>
                 </configuration>
                 <executions>
                     <execution>
@@ -98,6 +104,7 @@
                     </execution>
                 </executions>
             </plugin>
+            <!-- pgp 서명 -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-gpg-plugin</artifactId>
@@ -112,6 +119,7 @@
                     </execution>
                 </executions>
             </plugin>
+            <!-- publish -->
             <plugin>
                 <groupId>org.sonatype.central</groupId>
                 <artifactId>central-publishing-maven-plugin</artifactId>
@@ -124,5 +132,19 @@
             </plugin>
         </plugins>
     </build>
+
+    <repositories>
+        <repository>
+            <name>Central Portal Snapshots</name>
+            <id>central-portal-snapshots</id>
+            <url>https://central.sonatype.com/repository/maven-snapshots/</url>
+            <releases>
+                <enabled>false</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
 
 </project>
