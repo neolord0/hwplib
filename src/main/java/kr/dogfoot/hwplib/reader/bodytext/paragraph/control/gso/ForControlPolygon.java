@@ -53,6 +53,8 @@ public class ForControlPolygon {
             p.setX(sr.readSInt4());
             p.setY(sr.readSInt4());
         }
-        sr.skip(4);
+        if (!sr.isEndOfRecord()) {
+            sr.skipToEndRecord();
+        }
     }
 }
