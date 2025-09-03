@@ -77,7 +77,7 @@ public abstract class Control {
      * @param ctrlData 컨트롤 데이터
      */
     public void setCtrlData(CtrlData ctrlData) {
-        this.ctrlData = new CtrlData();
+        this.ctrlData = ctrlData;
     }
 
     public abstract Control clone();
