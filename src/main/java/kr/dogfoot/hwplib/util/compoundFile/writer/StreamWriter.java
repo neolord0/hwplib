@@ -131,6 +131,7 @@ public class StreamWriter {
                 os.write(value[i]);
             }
         } else if (value.length < count) {
+            os.write(value);
             writeZero(count - value.length);
         }
     }
