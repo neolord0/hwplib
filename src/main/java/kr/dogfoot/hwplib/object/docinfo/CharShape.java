@@ -272,7 +272,7 @@ public class CharShape {
         cloned.charColor.copy(charColor);
         cloned.underLineColor.copy(underLineColor);
         cloned.shadeColor.copy(shadeColor);
-        cloned.shadowColor.copy(shadeColor);
+        cloned.shadowColor.copy(shadowColor);
         cloned.borderFillId = borderFillId;
         cloned.strikeLineColor.copy(strikeLineColor);
         return cloned;
