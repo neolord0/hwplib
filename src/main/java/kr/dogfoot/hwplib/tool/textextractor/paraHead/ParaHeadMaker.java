@@ -11,6 +11,7 @@ import kr.dogfoot.hwplib.object.docinfo.Numbering;
 import kr.dogfoot.hwplib.object.docinfo.ParaShape;
 import kr.dogfoot.hwplib.object.docinfo.Style;
 import kr.dogfoot.hwplib.object.docinfo.numbering.LevelNumbering;
+import kr.dogfoot.hwplib.object.docinfo.numbering.ParagraphNumberFormat;
 import kr.dogfoot.hwplib.util.StringUtil;
 
 public class ParaHeadMaker {
@@ -18,11 +19,80 @@ public class ParaHeadMaker {
     private ControlSectionDefine sectionDefine;
     private ParaNumber paraNumberForNumbering;
     private ParaNumber paraNumberForOutline;
+    private Numbering defaultNumbering;
 
     public ParaHeadMaker(HWPFile hwpFile) {
         this.hwpFile = hwpFile;
+        
+        makeDefaultNumbering();
         setSectionDefine(hwpFile.getBodyText().getSectionList().get(0));
         paraNumberForNumbering = new ParaNumber();
+    }
+
+    private void makeDefaultNumbering() {
+        defaultNumbering = new Numbering();
+        defaultNumbering.setStartNumber(0);
+
+        {
+            LevelNumbering lv = defaultNumbering.getLevelNumberingList().get(0);
+            lv.setStartNumber(0);
+            lv.getParagraphHeadInfo().getProperty().setParagraphNumberFormat(ParagraphNumberFormat.Number);
+            lv.getNumberFormat().fromUTF16LEString(null);
+        }
+        {
+            LevelNumbering lv = defaultNumbering.getLevelNumberingList().get(1);
+            lv.setStartNumber(0);
+            lv.getParagraphHeadInfo().getProperty().setParagraphNumberFormat(ParagraphNumberFormat.Number);
+            lv.getNumberFormat().fromUTF16LEString("^2.");
+        }
+        {
+            LevelNumbering lv = defaultNumbering.getLevelNumberingList().get(2);
+            lv.setStartNumber(0);
+            lv.getParagraphHeadInfo().getProperty().setParagraphNumberFormat(ParagraphNumberFormat.Number);
+            lv.getNumberFormat().fromUTF16LEString("^2.^3.");
+        }
+        {
+            LevelNumbering lv = defaultNumbering.getLevelNumberingList().get(3);
+            lv.setStartNumber(0);
+            lv.getParagraphHeadInfo().getProperty().setParagraphNumberFormat(ParagraphNumberFormat.Number);
+            lv.getNumberFormat().fromUTF16LEString("^2.^3.^4.");
+        }
+        {
+            LevelNumbering lv = defaultNumbering.getLevelNumberingList().get(4);
+            lv.setStartNumber(0);
+            lv.getParagraphHeadInfo().getProperty().setParagraphNumberFormat(ParagraphNumberFormat.Number);
+            lv.getNumberFormat().fromUTF16LEString("^2.^3.^4.^5.");
+        }
+        {
+            LevelNumbering lv = defaultNumbering.getLevelNumberingList().get(5);
+            lv.setStartNumber(0);
+            lv.getParagraphHeadInfo().getProperty().setParagraphNumberFormat(ParagraphNumberFormat.Number);
+            lv.getNumberFormat().fromUTF16LEString("^2.^3.^4.^5.^6.");
+        }
+        {
+            LevelNumbering lv = defaultNumbering.getLevelNumberingList().get(6);
+            lv.setStartNumber(0);
+            lv.getParagraphHeadInfo().getProperty().setParagraphNumberFormat(ParagraphNumberFormat.Number);
+            lv.getNumberFormat().fromUTF16LEString("^2.^3.^4.^5.^6.^7.");
+        }
+        {
+            LevelNumbering lv = defaultNumbering.getLevelNumberingList().get(7);
+            lv.setStartNumber(0);
+            lv.getParagraphHeadInfo().getProperty().setParagraphNumberFormat(ParagraphNumberFormat.Number);
+            lv.getNumberFormat().fromUTF16LEString("^2.^3.^4.^5.^6.^7.^8.");
+        }
+        {
+            LevelNumbering lv = defaultNumbering.getLevelNumberingList().get(8);
+            lv.setStartNumber(0);
+            lv.getParagraphHeadInfo().getProperty().setParagraphNumberFormat(ParagraphNumberFormat.Number);
+            lv.getNumberFormat().fromUTF16LEString("^2.^3.^4.^5.^6.^7.^8.^9.");
+        }
+        {
+            LevelNumbering lv = defaultNumbering.getLevelNumberingList().get(9);
+            lv.setStartNumber(0);
+            lv.getParagraphHeadInfo().getProperty().setParagraphNumberFormat(ParagraphNumberFormat.Number);
+            lv.getNumberFormat().fromUTF16LEString("^2.^3.^4.^5.^6.^7.^8.^9.");
+        }
     }
 
     public void startSection(Section section) {
@@ -73,7 +143,7 @@ public class ParaHeadMaker {
         Style style = hwpFile.getDocInfo().getStyleList().get(styleID);
         ParaShape outlineParaShape = hwpFile.getDocInfo().getParaShapeList().get(style.getParaShapeId());
 
-        Numbering numbering = hwpFile.getDocInfo().getNumberingList().get(outlineParaShape.getParaHeadId());
+        Numbering numbering = getNumbering(outlineParaShape.getParaHeadId());
         LevelNumbering lv;
         try {
             lv = numbering.getLevelNumbering(paraLevel + 1);
@@ -81,7 +151,6 @@ public class ParaHeadMaker {
             e.printStackTrace();
             lv = null;
         }
-
         if (lv != null) {
             if (paraNumberForOutline.changedParaHead(outlineParaShape.getParaHeadId())) {
                 paraNumberForOutline.reset(outlineParaShape.getParaHeadId(), paraLevel, (int) lv.getStartNumber());
@@ -95,8 +164,13 @@ public class ParaHeadMaker {
         }
     }
 
+    private Numbering getNumbering(int paraHeadId) {
+        if (paraHeadId == 0) return defaultNumbering;
+        return hwpFile.getDocInfo().getNumberingList().get(paraHeadId - 1);
+    }
+
     private String numbering(int paraHeadID, byte paraLevel) {
-        Numbering numbering = hwpFile.getDocInfo().getNumberingList().get(paraHeadID - 1);
+        Numbering numbering = getNumbering(paraHeadID);
 
         LevelNumbering lv;
         try {
