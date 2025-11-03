@@ -857,36 +857,41 @@
     localStorage.setItem('hanja_list_v2', JSON.stringify(hanjaData));
 
     function parseMeaning(meaning) {
-      try {
-        const arr = JSON.parse(meaning.replace(/'/g, '"'));
-        if(Array.isArray(arr) && arr[0].length >= 2)
-          return arr[0][0][0] + " (" + arr[0][1][0] + ")";
-      } catch {
-        return meaning;
-      }
+    try {
+      const arr = JSON.parse(meaning.replace(/'/g, '"'));
+      if(Array.isArray(arr) && arr[0].length >= 2)
+        return arr[0][0][0] + " (" + arr[0][1][0] + ")";
+    } catch {
       return meaning;
     }
+    return meaning;
+  }
 
-    document.getElementById('searchForm').addEventListener('submit', function (e) {
-      e.preventDefault();
-      const no = parseInt(document.getElementById('inputNo').value, 10);
-      const data = JSON.parse(localStorage.getItem('hanja_list_v2') || '[]');
-      const found = data.find(row => row[7] === no);
-      const resultDiv = document.getElementById('result');
-      if (found) {
-        resultDiv.innerHTML = `
-          <div class="hanja-big">${found[2]}</div>
-          <div class="meaning-bold">${parseMeaning(found[3])}</div>
-          <div class="radical-info">부수: ${found[4]}</div>
-        `;
-      } else {
-        resultDiv.innerHTML = '해당 No의 한자 정보를 찾을 수 없습니다.';
-      }
-      resultDiv.style.display = 'block';
-    });
+  function searchHanja(no) {
+    const data = JSON.parse(localStorage.getItem('hanja_list_v2') || '[]');
+    const found = data.find(row => row[7] === no);
+    const resultDiv = document.getElementById('result');
+    if (found) {
+      resultDiv.innerHTML = `
+        <div class="hanja-big">${found[2]}</div>
+        <div class="meaning-bold">${parseMeaning(found[3])}</div>
+        <div class="radical-info">부수: ${found[4]}</div>
+      `;
+    } else {
+      resultDiv.innerHTML = '해당 No의 한자 정보를 찾을 수 없습니다.';
+    }
+    resultDiv.style.display = no ? 'block' : 'none';
+  }
+
+  document.getElementById('inputNo').addEventListener('input', function () {
+    const no = parseInt(this.value, 10);
+    if (!isNaN(no)) searchHanja(no);
+    else document.getElementById('result').style.display = 'none';
+  });
   </script>
 </body>
 </html>
+
 
 
 
