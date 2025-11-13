@@ -218,13 +218,12 @@ public class CharShapeProperty {
     }
 
     /**
-     * 취소선 여부를 반환한다. (18~20 bit)
+     * 취소선 여부를 반환한다. (18 bit)
      *
      * @return 취소선 여부
      */
     public boolean isStrikeLine() {
-        return BitFlag.get(value, 18) | BitFlag.get(value, 19)
-                | BitFlag.get(value, 20);
+        return BitFlag.get(value, 18);
     }
 
     /**
@@ -234,8 +233,6 @@ public class CharShapeProperty {
      */
     public void setStrikeLine(boolean strikeLine) {
         value = BitFlag.set(value, 18, strikeLine);
-        value = BitFlag.set(value, 19, strikeLine);
-        value = BitFlag.set(value, 20, strikeLine);
     }
 
     /**
@@ -313,5 +310,39 @@ public class CharShapeProperty {
 
     public void copy(CharShapeProperty from) {
         value = from.value;
+    }
+
+    public StrikeUnderLineMode getStrikeUnderLineMode() {
+        if (isStrikeLine() == false && getUnderLineSort() == UnderLineSort.None) {
+            return StrikeUnderLineMode.None;
+        } else if (isStrikeLine() == false && getUnderLineSort() == UnderLineSort.Bottom) {
+            return StrikeUnderLineMode.OnlyUnderLine;
+        } else if (isStrikeLine() == true && getUnderLineSort() == UnderLineSort.Middle) {
+            return StrikeUnderLineMode.OnlyStrike;
+        } else if (isStrikeLine() == true && getUnderLineSort() == UnderLineSort.Bottom) {
+            return StrikeUnderLineMode.StrikeAndUnderLine;
+        }
+        return StrikeUnderLineMode.None;
+    }
+
+    public void setStrikeUnderLineMode(StrikeUnderLineMode strikeUnderLineMode) {
+        switch (strikeUnderLineMode) {
+            case None:
+                setStrikeLine(false);
+                setUnderLineSort(UnderLineSort.None);
+                break;
+            case OnlyStrike:
+                setStrikeLine(true);
+                setUnderLineSort(UnderLineSort.Middle);
+                break;
+            case OnlyUnderLine:
+                setStrikeLine(false);
+                setUnderLineSort(UnderLineSort.Bottom);
+                break;
+            case StrikeAndUnderLine:
+                setStrikeLine(true);
+                setUnderLineSort(UnderLineSort.Bottom);
+                break;
+        }
     }
 }
