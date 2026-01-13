@@ -54,7 +54,6 @@ public class ForParagraph {
         } else {
             h.setLineAlignCount(0);
         }
-        h.setInstanceID(0);
     }
 
     /**
