@@ -71,7 +71,7 @@ public class Changing_ParagraphText {
     }
 
     private static String toString(ArrayList<HWPChar> listForText) throws UnsupportedEncodingException {
-        StringBuffer sb = new StringBuffer();
+        StringBuilder sb = new StringBuilder();
         for (HWPChar ch : listForText) {
             HWPCharNormal chn = (HWPCharNormal) ch;
             sb.append(chn.getCh());

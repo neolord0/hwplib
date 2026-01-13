@@ -33,7 +33,7 @@ public class TextExtractor {
      * @throws UnsupportedEncodingException
      */
     public static String extract(HWPFile hwpFile, TextExtractOption option) throws UnsupportedEncodingException {
-        StringBuffer sb = new StringBuffer();
+        StringBuilder sb = new StringBuilder();
         ParaHeadMaker paraHeadMaker = new ParaHeadMaker(hwpFile);
         for (Section s : hwpFile.getBodyText().getSectionList()) {
             paraHeadMaker.startSection(s);

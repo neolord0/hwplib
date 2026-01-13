@@ -135,7 +135,7 @@ public class ParaText {
         if (startIndex > endIndex) {
             return null;
         }
-        StringBuffer sb = new StringBuffer();
+        StringBuilder sb = new StringBuilder();
         for (int index = startIndex; index <= endIndex; index++) {
             HWPChar ch = charList.get(index);
             if (ch.getType() == HWPCharType.Normal) {

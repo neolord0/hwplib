@@ -117,7 +117,7 @@ public class ParagraphList implements ParagraphListInterface {
      * @throws UnsupportedEncodingException
      */
     public String getNormalString() throws UnsupportedEncodingException {
-        StringBuffer sb = new StringBuffer();
+        StringBuilder sb = new StringBuilder();
         for (Paragraph p : paragraphList) {
             sb.append(p.getNormalString());
             sb.append("\n");

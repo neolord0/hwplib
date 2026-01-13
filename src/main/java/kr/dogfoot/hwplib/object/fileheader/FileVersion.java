@@ -114,7 +114,7 @@ public class FileVersion {
      * @return 버젼 문자열
      */
     public String toString() {
-        StringBuffer sb = new StringBuffer();
+        StringBuilder sb = new StringBuilder();
         sb.append(mm).append(".").append(nn).append(".").append(pp).append(".").append(rr).append(".");
         return sb.toString();
     }

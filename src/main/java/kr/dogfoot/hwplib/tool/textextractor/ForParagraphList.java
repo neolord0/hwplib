@@ -18,13 +18,13 @@ public class ForParagraphList {
      * @param paragraphList 문단 리스트
      * @param tem           텍스트 추출 방법
      * @param paraHeadMaker 문단 번호/글머리표 생성기
-     * @param sb            추출된 텍스트를 저정할 StringBuffer 객체
+     * @param sb            추출된 텍스트를 저정할 StringBuilder 객체
      * @throws UnsupportedEncodingException
      */
     public static void extract(ParagraphListInterface paragraphList,
                                TextExtractMethod tem,
                                ParaHeadMaker paraHeadMaker,
-                               StringBuffer sb) throws UnsupportedEncodingException {
+                               StringBuilder sb) throws UnsupportedEncodingException {
         extract(paragraphList,
                 new TextExtractOption(tem, true),
                 paraHeadMaker,
@@ -37,13 +37,13 @@ public class ForParagraphList {
      * @param paragraphList 문단 리스트
      * @param option        추출 옵션
      * @param paraHeadMaker 문단 번호/글머리표 생성기
-     * @param sb            추출된 텍스트를 저정할 StringBuffer 객체
+     * @param sb            추출된 텍스트를 저정할 StringBuilder 객체
      * @throws UnsupportedEncodingException
      */
     public static void extract(ParagraphListInterface paragraphList,
                                TextExtractOption option,
                                ParaHeadMaker paraHeadMaker,
-                               StringBuffer sb) throws UnsupportedEncodingException {
+                               StringBuilder sb) throws UnsupportedEncodingException {
         if (paragraphList == null || paragraphList.getParagraphCount() == 0) {
             return;
         }
@@ -67,7 +67,7 @@ public class ForParagraphList {
                                int endParaIndex,
                                int endCharIndex,
                                TextExtractOption option,
-                               StringBuffer sb) throws UnsupportedEncodingException {
+                               StringBuilder sb) throws UnsupportedEncodingException {
         if (startParaIndex == endParaIndex) {
             ForParagraph.extract(paragraphList.getParagraph(startParaIndex),
                     startCharIndex, endCharIndex,
@@ -110,7 +110,7 @@ public class ForParagraphList {
                                int endCharIndex,
                                boolean appendLF,
                                TextExtractMethod tem,
-                               StringBuffer sb) throws UnsupportedEncodingException {
+                               StringBuilder sb) throws UnsupportedEncodingException {
         extract(paragraphList,
                 startParaIndex,
                 startCharIndex,

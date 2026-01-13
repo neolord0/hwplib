@@ -95,9 +95,9 @@ public class PropertySet extends Property {
     }
 
     public String toString() {
-        StringBuffer sb = new StringBuffer();
+        StringBuilder sb = new StringBuilder();
         if (getName() != null && getName().length() > 0) {
-            StringBuffer sb2 = new StringBuffer();
+            StringBuilder sb2 = new StringBuilder();
             for (Property property : propertyMap.values()) {
                 sb2.append(property.toString()).append(" ");
             }

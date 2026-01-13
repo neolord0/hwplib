@@ -33,7 +33,7 @@ public class PropertyNormal extends Property {
     }
 
     public String toString() {
-        StringBuffer sb = new StringBuffer();
+        StringBuilder sb = new StringBuilder();
         if (type == PropertyType.WString) {
             sb
                     .append(getName())

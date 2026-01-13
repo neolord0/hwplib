@@ -18,13 +18,13 @@ public class ForGso {
      * @param gc            그리기 개체 컨트롤
      * @param tem           텍스트 추출 방법
      * @param paraHeadMaker 문단 번호/글머리표 생성기
-     * @param sb            추출된 텍스트를 저정할 StringBuffer 객체
+     * @param sb            추출된 텍스트를 저정할 StringBuilder 객체
      * @throws UnsupportedEncodingException
      */
     public static void extract(GsoControl gc,
                                TextExtractMethod tem,
                                ParaHeadMaker paraHeadMaker,
-                               StringBuffer sb) throws UnsupportedEncodingException {
+                               StringBuilder sb) throws UnsupportedEncodingException {
         extract(gc, new TextExtractOption(tem), paraHeadMaker, sb);
     }
 
@@ -34,13 +34,13 @@ public class ForGso {
      * @param gc            그리기 개체 컨트롤
      * @param option        추출 옵션
      * @param paraHeadMaker 문단 번호/글머리표 생성기
-     * @param sb            추출된 텍스트를 저정할 StringBuffer 객체
+     * @param sb            추출된 텍스트를 저정할 StringBuilder 객체
      * @throws UnsupportedEncodingException
      */
     public static void extract(GsoControl gc,
                                TextExtractOption option,
                                ParaHeadMaker paraHeadMaker,
-                               StringBuffer sb) throws UnsupportedEncodingException {
+                               StringBuilder sb) throws UnsupportedEncodingException {
         switch (gc.getGsoType()) {
             case Line:
                 break;
@@ -77,13 +77,13 @@ public class ForGso {
      * @param rectangle     사각형 개체
      * @param option        추출 옵션
      * @param paraHeadMaker 문단 번호/글머리표 생성기
-     * @param sb            추출된 텍스트를 저정할 StringBuffer 객체
+     * @param sb            추출된 텍스트를 저정할 StringBuilder 객체
      * @throws UnsupportedEncodingException
      */
     private static void rectangle(ControlRectangle rectangle,
                                   TextExtractOption option,
                                   ParaHeadMaker paraHeadMaker,
-                                  StringBuffer sb) throws UnsupportedEncodingException {
+                                  StringBuilder sb) throws UnsupportedEncodingException {
         textBox(rectangle.getTextBox(), option, paraHeadMaker, sb);
     }
 
@@ -93,13 +93,13 @@ public class ForGso {
      * @param textBox       글상자 객체
      * @param option        추출 옵션
      * @param paraHeadMaker 문단 번호/글머리표 생성기
-     * @param sb            추출된 텍스트를 저정할 StringBuffer 객체
+     * @param sb            추출된 텍스트를 저정할 StringBuilder 객체
      * @throws UnsupportedEncodingException
      */
     private static void textBox(TextBox textBox,
                                 TextExtractOption option,
                                 ParaHeadMaker paraHeadMaker,
-                                StringBuffer sb) throws UnsupportedEncodingException {
+                                StringBuilder sb) throws UnsupportedEncodingException {
         if (textBox == null) {
             return;
         }
@@ -113,13 +113,13 @@ public class ForGso {
      * @param ellipse       타원 개체
      * @param option        추출 옵션
      * @param paraHeadMaker 문단 번호/글머리표 생성기
-     * @param sb            추출된 텍스트를 저정할 StringBuffer 객체
+     * @param sb            추출된 텍스트를 저정할 StringBuilder 객체
      * @throws UnsupportedEncodingException
      */
     private static void ellipse(ControlEllipse ellipse,
                                 TextExtractOption option,
                                 ParaHeadMaker paraHeadMaker,
-                                StringBuffer sb) throws UnsupportedEncodingException {
+                                StringBuilder sb) throws UnsupportedEncodingException {
         textBox(ellipse.getTextBox(), option, paraHeadMaker, sb);
     }
 
@@ -129,13 +129,13 @@ public class ForGso {
      * @param arc           호 개체
      * @param option        추출 옵션
      * @param paraHeadMaker 문단 번호/글머리표 생성기
-     * @param sb            추출된 텍스트를 저정할 StringBuffer 객체
+     * @param sb            추출된 텍스트를 저정할 StringBuilder 객체
      * @throws UnsupportedEncodingException
      */
     private static void arc(ControlArc arc,
                             TextExtractOption option,
                             ParaHeadMaker paraHeadMaker,
-                            StringBuffer sb) throws UnsupportedEncodingException {
+                            StringBuilder sb) throws UnsupportedEncodingException {
         textBox(arc.getTextBox(), option, paraHeadMaker, sb);
     }
 
@@ -145,13 +145,13 @@ public class ForGso {
      * @param polygon       다각형 개체
      * @param option        추출 옵션
      * @param paraHeadMaker 문단 번호/글머리표 생성기
-     * @param sb            추출된 텍스트를 저정할 StringBuffer 객체
+     * @param sb            추출된 텍스트를 저정할 StringBuilder 객체
      * @throws UnsupportedEncodingException
      */
     private static void polygon(ControlPolygon polygon,
                                 TextExtractOption option,
                                 ParaHeadMaker paraHeadMaker,
-                                StringBuffer sb) throws UnsupportedEncodingException {
+                                StringBuilder sb) throws UnsupportedEncodingException {
         textBox(polygon.getTextBox(), option, paraHeadMaker, sb);
     }
 
@@ -161,13 +161,13 @@ public class ForGso {
      * @param curve         곡선 개체
      * @param option        추출 옵션
      * @param paraHeadMaker 문단 번호/글머리표 생성기
-     * @param sb            추출된 텍스트를 저정할 StringBuffer 객체
+     * @param sb            추출된 텍스트를 저정할 StringBuilder 객체
      * @throws UnsupportedEncodingException
      */
     private static void curve(ControlCurve curve,
                               TextExtractOption option,
                               ParaHeadMaker paraHeadMaker,
-                              StringBuffer sb) throws UnsupportedEncodingException {
+                              StringBuilder sb) throws UnsupportedEncodingException {
         textBox(curve.getTextBox(), option, paraHeadMaker, sb);
     }
 
@@ -177,13 +177,13 @@ public class ForGso {
      * @param container     묶음 개체
      * @param option        추출 옵션
      * @param paraHeadMaker 문단 번호/글머리표 생성기
-     * @param sb            추출된 텍스트를 저정할 StringBuffer 객체
+     * @param sb            추출된 텍스트를 저정할 StringBuilder 객체
      * @throws UnsupportedEncodingException
      */
     private static void container(ControlContainer container,
                                   TextExtractOption option,
                                   ParaHeadMaker paraHeadMaker,
-                                  StringBuffer sb) throws UnsupportedEncodingException {
+                                  StringBuilder sb) throws UnsupportedEncodingException {
         for (GsoControl child : container.getChildControlList()) {
             extract(child, option, paraHeadMaker, sb);
         }

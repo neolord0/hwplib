@@ -176,7 +176,7 @@ public class ForParagraphList {
      * @throws UnsupportedEncodingException
      */
     private static String getText(ParagraphListInterface paragraphList, FindPosition position, TextExtractMethod temInField) throws UnsupportedEncodingException {
-        StringBuffer sb = new StringBuffer();
+        StringBuilder sb = new StringBuilder();
         for (int paraIndex = position.startParaIndex; paraIndex <= position.endParaIndex; paraIndex++) {
             int startCharIndex = (paraIndex == position.startParaIndex) ? position.startCharIndex : 0;
             int endCharIndex = (paraIndex == position.endParaIndex) ? position.endCharIndex : (paragraphList.getParagraph(paraIndex).getText() == null) ? 0 : paragraphList.getParagraph(paraIndex).getText().getCharList().size();

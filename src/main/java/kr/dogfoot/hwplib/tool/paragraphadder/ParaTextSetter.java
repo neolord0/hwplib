@@ -22,7 +22,7 @@ public class ParaTextSetter {
     }
 
     private static String replaceCRLF(String text) {
-        StringBuffer sb = new StringBuffer();
+        StringBuilder sb = new StringBuilder();
         int len = text.length();
         for (int index = 0; index < len; index++) {
             char ch = text.charAt(index);

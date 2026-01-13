@@ -42,7 +42,7 @@ public class ForParagraphList {
      * @throws Exception
      */
     public static void extractText(StreamReader sr, TextExtractorListener listener, TextExtractMethod tem) throws Exception {
-        StringBuffer sb = new StringBuffer();
+        StringBuilder sb = new StringBuilder();
 
         ForParagraph fp = new ForParagraph();
         sr.readRecordHeader();
