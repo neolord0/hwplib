@@ -61,6 +61,7 @@ public class HWPReader {
         r.bodyText();
         r.binData();
         r.summaryInformation();
+        r.scripts();
 
         r.cfr.close();
         return r.hwpFile;
@@ -338,21 +339,34 @@ public class HWPReader {
     private void scripts() throws Exception {
         if (cfr.isChildStorage("Scripts")) {
             cfr.moveChildStorage("Scripts");
+            StreamReader sr;
 
             {
-                StreamReader sr = streamReader("DefaultJScript");
-                byte[] data = new byte[(int) sr.getSize()];
-                sr.readBytes(data);
-                sr.close();
-                hwpFile.getScripts().setDefaultJScript(data);
+                try {
+                    sr = streamReader("DefaultJScript");
+                } catch (Exception e) {
+                    sr = null;
+                }
+                if (sr != null) {
+                    byte[] data = new byte[(int) sr.getSize()];
+                    sr.readBytes(data);
+                    sr.close();
+                    hwpFile.getScripts().setDefaultJScript(data);
+                }
             }
 
             {
-                StreamReader sr = streamReader("JScriptVersion");
-                byte[] data = new byte[(int) sr.getSize()];
-                sr.readBytes(data);
-                sr.close();
-                hwpFile.getScripts().setJScriptVersion(data);
+                try {
+                    sr = streamReader("JScriptVersion");
+                } catch (Exception e) {
+                    sr = null;
+                }
+                if (sr != null) {
+                    byte[] data = new byte[(int) sr.getSize()];
+                    sr.readBytes(data);
+                    sr.close();
+                    hwpFile.getScripts().setJScriptVersion(data);
+                }
             }
 
             cfr.moveParentStorage();
