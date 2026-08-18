@@ -66,7 +66,7 @@ public class ForControlPicture {
         scp.setRightAfterCutting(sr.readSInt4());
         scp.setBottomAfterCutting(sr.readSInt4());
         innerMargin(scp.getInnerMargin(), sr);
-        ForFillInfo.pictureInfo(scp.getPictureInfo(), sr);
+        ForFillInfo.pictureInfoInShapeComponentPicture(scp.getPictureInfo(), sr);
 
         if (sr.isEndOfRecord()) return;
 

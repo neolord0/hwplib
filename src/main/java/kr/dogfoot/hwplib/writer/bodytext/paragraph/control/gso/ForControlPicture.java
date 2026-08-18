@@ -67,7 +67,7 @@ public class ForControlPicture {
         sw.writeSInt4(scp.getRightAfterCutting());
         sw.writeSInt4(scp.getBottomAfterCutting());
         innerMargin(scp.getInnerMargin(), sw);
-        ForFillInfo.pictureInfo(scp.getPictureInfo(), sw);
+        ForFillInfo.pictureInfoInShapeComponentPicture(scp.getPictureInfo(), sw);
         sw.writeUInt1(scp.getBorderTransparency());
         sw.writeUInt4(scp.getInstanceId());
         ForPictureEffect.write(scp.getPictureEffect(), sw);

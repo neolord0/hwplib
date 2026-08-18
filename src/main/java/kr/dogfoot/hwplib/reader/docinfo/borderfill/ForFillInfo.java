@@ -100,7 +100,7 @@ public class ForFillInfo {
     }
 
     /**
-     * 그림 정보을 읽는다.
+     * ImageFill, Bullet 안에 있는 그림 정보을 읽는다.
      *
      * @param pi 그림 정보
      * @param sr 스트림 리더
@@ -108,11 +108,26 @@ public class ForFillInfo {
      */
     public static void pictureInfo(PictureInfo pi, StreamReader sr)
             throws IOException {
+        pi.setBrightness(sr.readSInt1());
+        pi.setContrast(sr.readSInt1());
+        pi.setEffect(PictureEffect.valueOf((byte) sr.readUInt1()));
+        pi.setBinItemID(sr.readUInt2());
+    }
+
+    /**
+     * ShapeComponentPicture 안에 그림 정보을 읽는다.
+     *
+     * @param pi 그림 정보
+     * @param sr 스트림 리더
+     * @throws IOException
+     */
+    public static void pictureInfoInShapeComponentPicture(PictureInfo pi, StreamReader sr) throws IOException {
         pi.setContrast(sr.readSInt1());
         pi.setBrightness(sr.readSInt1());
         pi.setEffect(PictureEffect.valueOf((byte) sr.readUInt1()));
         pi.setBinItemID(sr.readUInt2());
     }
+
 
     /**
      * 추가적인 속성을 읽는다.
@@ -152,4 +167,5 @@ public class ForFillInfo {
             sr.skip(1);
         }
     }
+
 }
