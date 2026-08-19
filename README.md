@@ -43,10 +43,6 @@ hwplib의 기능에 대한 질문, 버그 수정 요청은 issues 란을 이용�
 * hwpx 파일에 대한 라이브러리는 https://github.com/neolord0/hwpxlib 을 참조해 주세요.
 * hwp파일을 hwpx파일로 변환하는 라이브러리는 https://github.com/neolord0/hwp2hwpx 을 참조해 주세요.
 
-2026.8.18
-=========================================================================================
-* ImageFill과 ShapeComponentPicture 안에 PictueInfo의 brightness, contrast 속성의 파일 상의 순서가 다르게 저장되는 오류 수정
-
 2026.7.13
 =========================================================================================
 * PictueInfo에 brightness, contrast 속성 읽기/쓰기 수정
