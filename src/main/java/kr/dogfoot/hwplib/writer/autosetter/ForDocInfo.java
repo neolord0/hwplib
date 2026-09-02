@@ -1,6 +1,5 @@
 package kr.dogfoot.hwplib.writer.autosetter;
 
-import com.sun.jmx.snmp.agent.SnmpUserDataFactory;
 import kr.dogfoot.hwplib.object.bodytext.BodyText;
 import kr.dogfoot.hwplib.object.docinfo.DocInfo;
 import kr.dogfoot.hwplib.object.docinfo.DocumentProperties;
