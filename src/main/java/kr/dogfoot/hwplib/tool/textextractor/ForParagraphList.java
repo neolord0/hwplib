@@ -1,7 +1,6 @@
 package kr.dogfoot.hwplib.tool.textextractor;
 
 import kr.dogfoot.hwplib.object.bodytext.ParagraphListInterface;
-import kr.dogfoot.hwplib.object.bodytext.paragraph.Paragraph;
 import kr.dogfoot.hwplib.tool.textextractor.paraHead.ParaHeadMaker;
 
 import java.io.UnsupportedEncodingException;
