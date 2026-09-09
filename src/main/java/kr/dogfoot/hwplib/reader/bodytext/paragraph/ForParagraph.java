@@ -59,7 +59,30 @@ public class ForParagraph {
         paraLineSeg();
         paraRangeTag();
 
+        long lastPosition = -1;
         while (sr.isEndOfStream() == false) {
+            // 한 바퀴에 스트림이 한 바이트도 나아가지 않으면 다음 바퀴도 똑같다 —
+            // 그 상태로 두면 조건이 영원히 성립해 스레드가 CPU 를 태운다.
+            //
+            // 실제로 일어난다: 레코드 내용을 예상보다 적게 읽어 위치가 어긋나면,
+            // 어긋난 자리에서 크기 0 인 헤더로 읽힐 수 있다. 그러면
+            // skipETCRecord() 가 0 바이트를 읽고, readAfterHeader 가 0 이라
+            // isImmediatelyAfterReadingHeader() 가 계속 참이 되어 헤더조차 다시
+            // 읽지 않는다 — 완전한 정지다(진행 없음, 종료 없음).
+            //
+            // 파서는 잘못된 입력에 **멈춰야지 돌면 안 된다**. 여기서 끊고 알린다.
+            long position = sr.getCurrentPosition();
+            if (position == lastPosition) {
+                throw new IOException(String.format(
+                        "문단을 읽는 중 진행이 멈췄습니다 — position=%d tagID=%d level=%d size=%d."
+                                + " 앞선 레코드를 예상보다 적게 읽어 위치가 어긋났을 수 있습니다.",
+                        position,
+                        sr.getCurrentRecordHeader().getTagID(),
+                        sr.getCurrentRecordHeader().getLevel(),
+                        sr.getCurrentRecordHeader().getSize()));
+            }
+            lastPosition = position;
+
             if (sr.isImmediatelyAfterReadingHeader() == false) {
                 sr.readRecordHeader();
             }

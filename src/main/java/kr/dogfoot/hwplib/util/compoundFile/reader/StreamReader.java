@@ -358,6 +358,20 @@ public class StreamReader {
     }
 
     /**
+     * 현재 레코드에서 아직 읽지 않은 바이트 수를 반환한다.
+     *
+     * <p>{@link #isEndOfRecord()} 는 "끝에 닿았는가" 만 알려 준다. 그래서 2 바이트가
+     * 남은 상태에서 4 바이트를 읽으려는 코드를 막지 못하고, 그렇게 레코드 경계를 넘으면
+     * 그 뒤의 모든 레코드 위치가 어긋난다. <b>읽기 전에 남은 양을 확인할 때</b> 쓴다.
+     *
+     * @return 현재 레코드의 남은 바이트 수 (음수가 되지 않는다)
+     */
+    public long remainingInRecord() {
+        long remaining = header.getSize() - readAfterHeader;
+        return remaining > 0 ? remaining : 0;
+    }
+
+    /**
      * 레코드 헤더를 읽은 직후 인지 여부를 반환한다.
      *
      * @return 레코드 헤더를 읽은 직후 인지 여부
