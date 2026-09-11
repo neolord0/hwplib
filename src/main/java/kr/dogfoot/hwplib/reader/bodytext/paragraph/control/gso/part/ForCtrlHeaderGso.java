@@ -35,8 +35,10 @@ public class ForCtrlHeaderGso {
 
         if (sr.isEndOfRecord()) return;
 
-        int temp = sr.readSInt4();
-        header.setPreventPageDivide(BitFlag.get(temp, 0));
+        if (sr.getCurrentRecordHeader().getSize() - sr.getCurrentPositionAfterHeader() > 4) {
+            int temp = sr.readSInt4();
+            header.setPreventPageDivide(BitFlag.get(temp, 0));
+        }
 
         if (sr.isEndOfRecord()) return;
 
