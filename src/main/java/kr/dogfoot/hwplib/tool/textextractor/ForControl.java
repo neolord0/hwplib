@@ -201,8 +201,8 @@ public class ForControl {
      */
     private static void additionalText(ControlAdditionalText additionalText,
                                        StringBuilder sb) {
-        sb.append(additionalText.getHeader().getMainText()).append("\n");
-        sb.append(additionalText.getHeader().getSubText()).append("\n");
+        sb.append(additionalText.getHeader().getMainText().toUTF16LEString()).append("\n");
+        sb.append(additionalText.getHeader().getSubText().toUTF16LEString()).append("\n");
     }
 
     /**

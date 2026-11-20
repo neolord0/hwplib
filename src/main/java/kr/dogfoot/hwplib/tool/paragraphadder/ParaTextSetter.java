@@ -69,7 +69,7 @@ public class ParaTextSetter {
                 deleteItems.add(cpsip);
             } else if (cpsip.getPosition() > endIndex) {
                 int oldLen = endIndex - startIndex + 1;
-                cpsip.setPosition(cpsip.getPosition() + oldLen - len);
+                cpsip.setPosition(cpsip.getPosition() - oldLen + len);
             }
         }
         for (CharPositionShapeIdPair cpsip : deleteItems) {
