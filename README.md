@@ -40,6 +40,7 @@ hwplib의 기능에 대한 질문, 버그 수정 요청은 issues 란을 이용�
     ```
  - 1.1.5 버전 : CtrlHeaderGso.copy() 에러남 
 
+* hwp 파일 그리기 라이브러리는 https://github.com/neolord0/hwpdrawer 을 참조해 주세요.
 * hwpx 파일에 대한 라이브러리는 https://github.com/neolord0/hwpxlib 을 참조해 주세요.
 * hwp파일을 hwpx파일로 변환하는 라이브러리는 https://github.com/neolord0/hwp2hwpx 을 참조해 주세요.
 
